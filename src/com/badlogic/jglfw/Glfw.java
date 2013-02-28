@@ -168,7 +168,8 @@ public class Glfw {
 	
 	// @off
 	/*JNI 
-	#include <GL/glfw.h>	
+	#include <GL/glfw.h>
+	#include <GL/glext.h>
 	*/
 	
 	public static native boolean glfwInit(); /*

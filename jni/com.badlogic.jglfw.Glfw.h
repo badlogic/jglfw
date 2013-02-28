@@ -393,22 +393,6 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetWindowSizeHeight
 
 /*
  * Class:     com_badlogic_jglfw_Glfw
- * Method:    glfwSetWindowCloseCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowCloseCallback
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw
- * Method:    glfwSetWindowSizeCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowSizeCallback
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw
  * Method:    glfwIconifyWindow
  * Signature: ()V
  */
@@ -446,14 +430,6 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSwapBuffers
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSwapInterval
   (JNIEnv *, jclass, jint);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw
- * Method:    glfwSetWindowRefreshCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowRefreshCallback
-  (JNIEnv *, jclass);
 
 /*
  * Class:     com_badlogic_jglfw_Glfw
@@ -545,6 +521,30 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetMouseWheel
 
 /*
  * Class:     com_badlogic_jglfw_Glfw
+ * Method:    glfwSetWindowRefreshCallback
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowRefreshCallback
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     com_badlogic_jglfw_Glfw
+ * Method:    glfwSetWindowCloseCallback
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowCloseCallback
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     com_badlogic_jglfw_Glfw
+ * Method:    glfwSetWindowSizeCallback
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowSizeCallback
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     com_badlogic_jglfw_Glfw
  * Method:    glfwSetKeyCallback
  * Signature: ()V
  */
@@ -606,6 +606,30 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetJoystickPos
  */
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetJoystickButtons
   (JNIEnv *, jclass, jint, jbyteArray);
+
+/*
+ * Class:     com_badlogic_jglfw_Glfw
+ * Method:    glfwExtensionSupported
+ * Signature: (Ljava/lang/String;)Z
+ */
+JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_Glfw_glfwExtensionSupported
+  (JNIEnv *, jclass, jstring);
+
+/*
+ * Class:     com_badlogic_jglfw_Glfw
+ * Method:    glfwEnable
+ * Signature: (I)V
+ */
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwEnable
+  (JNIEnv *, jclass, jint);
+
+/*
+ * Class:     com_badlogic_jglfw_Glfw
+ * Method:    glfwDisable
+ * Signature: (I)V
+ */
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwDisable
+  (JNIEnv *, jclass, jint);
 
 #ifdef __cplusplus
 }
