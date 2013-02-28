@@ -18,9 +18,11 @@
 	<fileset id="gcc-files" dir="./">
 		<exclude name="target/"/>		
 				<include name="memcpy_wrap.c"/>
-		<include name="**/*.c"/>
+		<include name="glfw-2.7.7/lib/*.c"/>
+		<include name="glfw-2.7.7/lib/win32/*.c"/>
 
-		
+				<exclude name="**/win32_dllmain.c"/>
+
 	</fileset>
 	
 	<!-- define g++ compiler, options and files to compile -->
@@ -36,7 +38,7 @@
 	<!-- define linker and options -->
 	<property name="linker" value="${compilerPrefix}g++"/>
 	<property name="linker-opts" value="-Wl,--kill-at -shared -static-libgcc -static-libstdc++ -m64"/>
-	<property name="libraries" value=""/>
+	<property name="libraries" value="-lopengl32 -lwinmm -lgdi32"/>
 	
 	<!-- cleans the build directory, removes all object files and shared libs -->
 	<target name="clean">
@@ -89,7 +91,10 @@
 			<arg value="-Ijni-headers"/>
 			<arg value="-Ijni-headers/${jniPlatform}"/>
 			<arg value="-I."/>
-			
+						<arg value="-Iglfw-2.7.7/include"/>
+			<arg value="-Iglfw-2.7.7/lib"/>
+			<arg value="-Iglfw-2.7.7/lib/win32"/>
+
 			<srcfile/>
 			<arg value="-o"/>
 			<targetfile/>
@@ -104,7 +109,10 @@
 			<arg value="-Ijni-headers"/>
 			<arg value="-Ijni-headers/${jniPlatform}"/>
 			<arg value="-I."/>
-			
+						<arg value="-Iglfw-2.7.7/include"/>
+			<arg value="-Iglfw-2.7.7/lib"/>
+			<arg value="-Iglfw-2.7.7/lib/win32"/>
+
 			<srcfile/>
 			<arg value="-o"/>
 			<targetfile/>

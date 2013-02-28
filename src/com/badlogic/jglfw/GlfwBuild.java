@@ -22,8 +22,7 @@ public class GlfwBuild {
 		win32.headerDirs = new String[] { "glfw-2.7.7/include","glfw-2.7.7/lib", "glfw-2.7.7/lib/win32" };
 		win32.libraries = "-lopengl32 -lwinmm -lgdi32";
 		
-		BuildTarget win64 = BuildTarget.newDefaultTarget(TargetOs.Windows, false);
-		win64.compilerPrefix = "";
+		BuildTarget win64 = BuildTarget.newDefaultTarget(TargetOs.Windows, true);
 		win64.cIncludes = new String[] { "glfw-2.7.7/lib/*.c", "glfw-2.7.7/lib/win32/*.c" };
 		win64.cExcludes = new String[] { "**/win32_dllmain.c" };	
 		win64.headerDirs = new String[] { "glfw-2.7.7/include","glfw-2.7.7/lib", "glfw-2.7.7/lib/win32" };
