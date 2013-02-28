@@ -29,19 +29,10 @@ public class GlfwBuild {
 		win64.libraries = "-lopengl32 -lwinmm -lgdi32";
 		
 		new AntScriptGenerator().generate(config, win32, win64);
-		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true clean");
+//		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true clean");
 		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true");
 		BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
 		
-		new JniGenSharedLibraryLoader("libs/jglfw-natives.jar").load("jglfw");
-		
-		if(!glfwInit()) {
-			System.out.println("NOOOO");
-			System.exit(-1);
-		}
-		System.out.println(glfwGetVersion());		
-		glfwOpenWindow(480, 320, 0, 0, 0, 0, 0, 0, GLFW_WINDOW);
-		Thread.sleep(5000);
-		glfwTerminate();
+		new GlfwTest();
 	}
 }
