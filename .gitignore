@@ -4,3 +4,6 @@
 *.dll
 *.jar
 *.class
+libs/
+target/
+bin/
