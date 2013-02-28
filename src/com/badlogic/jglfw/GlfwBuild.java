@@ -33,6 +33,6 @@ public class GlfwBuild {
 		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true");
 		BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
 		
-		new GlfwTest();
+		GlfwTest.main(null);
 	}
 }

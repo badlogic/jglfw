@@ -13,11 +13,33 @@ public class GlfwTest {
 			System.exit(-1);
 		}
 		System.out.println(glfwGetVersion());		
+		
+		for(GlfwVideoMode mode: glfwGetVideoModes()) {
+			System.out.println(mode);
+		}
+		System.out.println("Desktop: " + glfwGetDesktopMode());
+		glfwOpenWindowHint(GLFW_WINDOW_NO_RESIZE, 0);
 		glfwOpenWindow(480, 320, 0, 0, 0, 0, 0, 0, GLFW_WINDOW);
-		int[] size = new int[2];
-		glfwGetWindowSize(size);
-		System.out.println(size);
-		Thread.sleep(5000);
+		System.out.println("" + glfwGetWindowSizeWidth() + ", " + glfwGetWindowSizeHeight());
+		
+		glfwSetWindowSize(640, 480);
+		glfwSetWindowPos(400, 400);
+		glfwSetWindowTitle("This is #öioßTest");
+		glfwIconifyWindow();
+		Thread.sleep(1000);
+		glfwRestoreWindow();
+		
+		glfwSetMousePos(320, 240);
+		
+		boolean running = true;
+		while(running) {
+			System.out.println("" + glfwGetMousePosX() + ", " + glfwGetMousePosY() + ", " + glfwGetMouseWheel());
+			glfwSwapBuffers();
+			running = glfwGetWindowParam(GLFW_OPENED) != 0 && 
+					 !glfwGetKey(GLFW_KEY_ESC) &&
+					 !glfwGetMouseButton(GLFW_MOUSE_BUTTON_LEFT);
+		}
+		
 		glfwTerminate();
 	}
 }

@@ -1,5 +1,8 @@
 package com.badlogic.jglfw;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Glfw {
 	public static final int GLFW_RELEASE = 0;
 	public static final int GLFW_PRESS = 1;
@@ -200,10 +203,7 @@ public class Glfw {
 		glfwCloseWindow();
 	*/
 	
-	public static native void glfwSetWindowCloseCallback(); /*
-		// FIXME
-	*/
-	
+	// FIXME UTF support
 	public static native void glfwSetWindowTitle(String title); /*
 		glfwSetWindowTitle(title);
 	*/
@@ -216,10 +216,184 @@ public class Glfw {
 		glfwSetWindowPos(x, y);
 	*/
 	
-	/**
-	 * @param size int array with at least 2 elements, width is stored in size[0], height in size[1]
-	 */
-	public static native void glfwGetWindowSize(int[] size); /*
-		glfwGetWindowSize(&size[0], &size[1]);
+	public static native int glfwGetWindowSizeWidth(); /*
+		int width, height;
+		glfwGetWindowSize(&width, &height);
+		return width;
+	*/
+	
+	public static native int glfwGetWindowSizeHeight(); /*
+		int width, height;
+		glfwGetWindowSize(&width, &height);
+		return height;
+	*/	
+	
+	public static native void glfwIconifyWindow(); /*
+		glfwIconifyWindow();
+	*/
+	
+	public static native void glfwRestoreWindow(); /*
+		glfwRestoreWindow();
+	*/
+	
+	public static native int glfwGetWindowParam(int param); /*
+		return glfwGetWindowParam(param);
+	*/
+	
+	public static native void glfwSwapBuffers(); /*
+		glfwSwapBuffers();
+	*/
+	
+	public static native void glfwSwapInterval(int interval); /*
+		glfwSwapInterval(interval);
+	*/
+	
+	public static List<GlfwVideoMode> glfwGetVideoModes() {
+		int[] buffer = new int[5 * 200]; // 200 video modes are enough for everyone...
+		int numModes = glfwGetVideoModesJni(buffer);
+		List<GlfwVideoMode> modes = new ArrayList<GlfwVideoMode>();
+		for(int i = 0, j=0; i < numModes; i++) {
+			GlfwVideoMode mode = new GlfwVideoMode();
+			mode.width = buffer[j++];
+			mode.height = buffer[j++];
+			mode.redBits = buffer[j++];
+			mode.greenBits = buffer[j++];
+			mode.blueBits = buffer[j++];
+			modes.add(mode);
+		}
+		return modes;
+	}
+	
+	private static native int glfwGetVideoModesJni(int[] modes); /*
+		GLFWvidmode vidModes[200];
+		int numModes = glfwGetVideoModes(vidModes, 200);
+		for(int i = 0, j = 0; i < numModes; i++) {
+			modes[j++] = vidModes[i].Width;
+			modes[j++] = vidModes[i].Height;
+			modes[j++] = vidModes[i].RedBits;
+			modes[j++] = vidModes[i].GreenBits;
+			modes[j++] = vidModes[i].BlueBits;
+		}
+		return numModes;
+	*/
+	
+	public static GlfwVideoMode glfwGetDesktopMode() {
+		int[] buffer = new int[5];
+		glfwGetDesktopModeJni(buffer);
+		GlfwVideoMode mode = new GlfwVideoMode();
+		mode.width = buffer[0];
+		mode.height = buffer[1];
+		mode.redBits = buffer[2];
+		mode.greenBits = buffer[3];
+		mode.blueBits = buffer[4];
+		return mode;
+	}
+	
+	private static native void glfwGetDesktopModeJni(int[] buffer); /*
+		GLFWvidmode mode;
+		glfwGetDesktopMode(&mode);
+		buffer[0] = mode.Width;
+		buffer[1] = mode.Height;
+		buffer[2] = mode.RedBits;
+		buffer[3] = mode.GreenBits;
+		buffer[4] = mode.BlueBits;
+	*/
+	
+	public static native void glfwPollEvents(); /*
+		glfwPollEvents();
+	*/
+	
+	public static native void glfwWaitEvents(); /*
+		glfwWaitEvents();
+	*/
+	
+	public static native boolean glfwGetKey(int key); /*
+		return glfwGetKey(key) == GLFW_PRESS;
+	*/
+	
+	public static native boolean glfwGetMouseButton(int button); /*
+		return glfwGetMouseButton(button) == GLFW_PRESS;
+	*/
+	
+	public static native int glfwGetMousePosX(); /*
+		int x, y;
+		glfwGetMousePos(&x, &y);
+		return x;
+	*/
+	
+	public static native int glfwGetMousePosY(); /*
+		int x, y;
+		glfwGetMousePos(&x, &y);
+		return y;
+	*/
+	
+	public static native void glfwSetMousePos(int x, int y); /*
+		glfwSetMousePos(x, y);
+	*/
+	
+	public static native int glfwGetMouseWheel(); /*
+		return glfwGetMouseWheel();
+	*/
+	
+	public static native void glfwSetMouseWheel(int pos); /*
+		glfwSetMouseWheel(pos);
+	*/
+	
+	public static native void glfwSetWindowRefreshCallback(); /*
+	  // FIXME
+	*/
+	
+	public static native void glfwSetWindowCloseCallback(); /*
+	// FIXME
+	*/
+	
+	public static native void glfwSetWindowSizeCallback(); /*
+	// FIXME
+	*/
+	
+	public static native void glfwSetKeyCallback(); /*
+	// FIXME
+	*/
+	
+	public static native void glfwSetCharCallback(); /*
+	// FIXME
+	*/
+	
+	public static native void glfwSetMouseButtonCallback(); /*
+	// FIXME
+	*/
+	
+	public static native void glfwSetMousePosCallback(); /*
+	// FIXME
+	*/
+	
+	public static native void glfwSetMouseWheelCallback(); /*
+	// FIXME
+	*/
+	
+	public static native int glfwGetJoystickParam(int joy, int param); /*
+		return glfwGetJoystickParam(joy, param);
+	*/
+	
+	public static native int glfwGetJoystickPos(int joy, float[] pos); /*
+		jsize len = env->GetArrayLength(obj_pos);
+		return glfwGetJoystickPos(joy, pos, len);
+	*/
+	
+	public static native int glfwGetJoystickButtons(int joy, byte[] buttons); /*
+		jsize len = env->GetArrayLength(obj_buttons);
+		return glfwGetJoystickButtons(joy, (unsigned char*)buttons, len);
+	*/
+	
+	public static native boolean glfwExtensionSupported(String extension); /*
+		return glfwExtensionSupported(extension) == GL_TRUE;
+	*/
+	
+	public static native void glfwEnable(int token); /*
+		glfwEnable(token);
+	*/
+	
+	public static native void glfwDisable(int token); /*
+		glfwDisable(token);
 	*/
 }
