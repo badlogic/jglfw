@@ -19,6 +19,12 @@ public class GLParser {
 	
 	public static class GLType {
 		public String text;
+		public int ptrCount;
+		
+		public GLType(String text, int ptrCount) {
+			this.text = text;
+			this.ptrCount = ptrCount;
+		}
 		
 		public String getJavaType() {
 			return ""; // FIXME
@@ -26,7 +32,7 @@ public class GLParser {
 
 		@Override
 		public String toString() {
-			return text;
+			return text + (ptrCount > 0?"|" + ptrCount:"");
 		}
 	}
 	
@@ -42,8 +48,14 @@ public class GLParser {
 	public static class GLProcedure {
 		public String text;
 		public boolean needsLoading;
+		public String name;
 		public List<GLParam> params = new ArrayList<GLParam>();
 		public GLType returnType;
+		@Override
+		public String toString() {
+			return "GLProcedure [name=" + name + ", params=" + params
+					+ ", returnType=" + returnType + "]";
+		}		
 	}
 	
 	/**
@@ -67,6 +79,11 @@ public class GLParser {
 		for(GLConstant c: constants) {
 			System.out.println(c);
 		}
+		
+		for(GLProcedure p: procs) {
+			System.out.println(p);
+		}
+		System.out.println(procs.size());
 	}
 	
 	private void parseGLHeader(File input, List<GLProcedure> procedures, List<GLConstant> constants) {
@@ -102,9 +119,39 @@ public class GLParser {
 	}
 	
 	private void parseProcedure(String line, List<GLProcedure> procedures) {
-		String[] tokens = line.split(" ");
+		line = line.substring("GLAPI".length());
+		String returnType = line.substring(0, line.indexOf("GLAPIENTRY")).trim();
+		String name = line.substring(line.indexOf("GLAPIENTRY") + "GLAPIENTRY".length(), line.indexOf("(")).trim();
+		String[] params = line.substring(line.indexOf("(") + 1, line.indexOf(")")).split(",");
 		GLProcedure proc = new GLProcedure();
 		proc.text = line;
+		proc.name = name;
+		proc.returnType = new GLType(returnType.replace('*', ' ').trim(), count(returnType, '*'));
+		proc.params = parseParameters(params);
+		procedures.add(proc);
+	}
+	
+	private List<GLParam> parseParameters(String[] params) {
+		List<GLParam> parameters = new ArrayList<GLParam>();
+		if(!(params.length == 1 && params[0].equals("void"))) {
+			for(String param: params) {
+				int pointers = count(param, '*');
+				param = param.replace('*', ' ').trim();
+				GLParam p = new GLParam();
+				p.name = param.substring(param.lastIndexOf(" ")).trim();
+				p.type = new GLType(param.substring(0, param.lastIndexOf(" ")).trim(), pointers);				
+				parameters.add(p);
+			}
+		}
+		return parameters;
+	}
+	
+	private int count(String text, char c) {
+		int sum = 0;
+		for(int i = 0; i < text.length(); i++) {
+			if(text.charAt(i) == c) sum++;
+		}
+		return sum;
 	}
 	
 	public static void main(String[] args) {
