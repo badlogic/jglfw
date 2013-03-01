@@ -25,7 +25,6 @@ public class GLGenerator {
 		generateFunctionPointers(buffer, procedures);
 		generateProcedures(buffer, procedures, customProcedures);
 		buffer.append("}");
-		System.out.println(buffer.toString());
 		try {
 			FileWriter writer = new FileWriter(new File(outputFile));
 			writer.write(buffer.toString());

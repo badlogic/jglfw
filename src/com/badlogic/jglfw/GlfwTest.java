@@ -25,7 +25,7 @@ public class GlfwTest {
 		
 		glfwSetWindowSize(640, 480);
 		glfwSetWindowPos(400, 400);
-		glfwSetWindowTitle("This is #�io�Test");
+		glfwSetWindowTitle("This is älpäöo0ßTest");
 		glfwIconifyWindow();
 		Thread.sleep(1000);
 		glfwRestoreWindow();
