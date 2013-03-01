@@ -28,9 +28,17 @@ public class GlfwBuild {
 		win64.headerDirs = new String[] { "glfw-2.7.7/include","glfw-2.7.7/lib", "glfw-2.7.7/lib/win32" };
 		win64.libraries = "-lopengl32 -lwinmm -lgdi32";
 		
-		new AntScriptGenerator().generate(config, win32, win64);
+		BuildTarget mac = BuildTarget.newDefaultTarget(TargetOs.MacOsX, false);
+		mac.cIncludes = new String[] { "glfw-2.7.7/lib/*.c", "glfw-2.7.7/lib/cocoa/*.c", "glfw-2.7.7/lib/cocoa/*.m" };
+		mac.cExcludes = new String[] { "**/win32_dllmain.c" };	
+		mac.headerDirs = new String[] { "glfw-2.7.7/include","glfw-2.7.7/lib", "glfw-2.7.7/lib/cocoa", "/usr/X11/include/" };
+		mac.libraries = "-framework Cocoa -framework OpenGL -framework IOKit";
+		
+		new AntScriptGenerator().generate(config, win32, win64, mac);
 //		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true clean");
-		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true");
+//		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true");
+		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true clean");
+		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true");
 		BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
 		
 		GlfwTest.main(null);
