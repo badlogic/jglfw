@@ -22,7 +22,7 @@ all: libglfw.a libglfw.dylib
 ##########################################################################
 CC     ?= cc
 CFLAGS ?= -O2 -g
-CFLAGS += -c -I. -I.. -Wall -fno-common
+CFLAGS += -c -I. -I.. -Wall -fno-common -arch i386 -arch x86_64 -mmacosx-version-min=10.5
 
 
 ##########################################################################
