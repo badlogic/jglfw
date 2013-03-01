@@ -3,6 +3,7 @@ package com.badlogic.jglfw;
 import static com.badlogic.jglfw.Glfw.*;
 
 import com.badlogic.gdx.jnigen.JniGenSharedLibraryLoader;
+import com.badlogic.jglfw.gl.GL;
 
 public class GlfwTest {
 	public static void main(String[] args) throws InterruptedException {
@@ -24,7 +25,7 @@ public class GlfwTest {
 		
 		glfwSetWindowSize(640, 480);
 		glfwSetWindowPos(400, 400);
-		glfwSetWindowTitle("This is #öioßTest");
+		glfwSetWindowTitle("This is #ï¿½ioï¿½Test");
 		glfwIconifyWindow();
 		Thread.sleep(1000);
 		glfwRestoreWindow();
@@ -33,6 +34,15 @@ public class GlfwTest {
 		
 		boolean running = true;
 		while(running) {
+			GL.glClearColor(1, 0, 0, 1);
+			GL.glClear(GL.GL_COLOR_BUFFER_BIT);
+			
+			GL.glBegin(GL.GL_TRIANGLES);
+			GL.glVertex2f(-1, -1);
+			GL.glVertex2f(1, -1);
+			GL.glVertex2f(0, 1);
+			GL.glEnd();
+			
 			System.out.println("" + glfwGetMousePosX() + ", " + glfwGetMousePosY() + ", " + glfwGetMouseWheel());
 			glfwSwapBuffers();
 			running = glfwGetWindowParam(GLFW_OPENED) != 0 && 

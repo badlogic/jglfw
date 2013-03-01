@@ -12,7 +12,7 @@ import static com.badlogic.jglfw.Glfw.*;
 public class GlfwBuild {
 	public static void main(String[] args) throws Exception {
 		NativeCodeGenerator jniGen = new NativeCodeGenerator();
-		jniGen.generate();
+		jniGen.generate("src/", "bin/", "jni", new String[] { "**/GL.java", "**/Glfw.java" }, null);
 		
 		BuildConfig config = new BuildConfig("jglfw");
 		BuildTarget win32 = BuildTarget.newDefaultTarget(TargetOs.Windows, false);

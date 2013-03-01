@@ -5,7 +5,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class GLParser {
 	public static class GLConstant {
@@ -18,22 +22,61 @@ public class GLParser {
 	}
 	
 	public static class GLType {
+		public static final Map<String, String> javaTypes = new HashMap<String, String>();
+		static {			
+			javaTypes.put("void", "void");
+			javaTypes.put("GLenum", "int");
+			javaTypes.put("GLbitfield", "int");
+			javaTypes.put("GLuint", "int");
+			javaTypes.put("GLint", "int");
+			javaTypes.put("GLsizei", "int");
+			javaTypes.put("GLboolean", "boolean");
+			javaTypes.put("GLbyte", "byte");
+			javaTypes.put("GLshort", "short");
+			javaTypes.put("GLubyte", "byte");
+			javaTypes.put("GLushort", "short");
+			javaTypes.put("GLulong", "long");
+			javaTypes.put("GLfloat", "float");
+			javaTypes.put("GLclampf", "float");
+			javaTypes.put("GLdouble", "double");
+			javaTypes.put("GLclampd", "double");
+		}
+		
+		
 		public String text;
 		public int ptrCount;
 		
 		public GLType(String text, int ptrCount) {
 			this.text = text;
 			this.ptrCount = ptrCount;
+			if(ptrCount == 0) {
+				if(!javaTypes.containsKey(text)) {
+					throw new RuntimeException("unknown C type " + text);
+				}
+			}
 		}
 		
 		public String getJavaType() {
-			return ""; // FIXME
+			if(ptrCount != 0) return "Buffer";
+			else return javaTypes.get(text);
+		}
+		
+		public String getCType() {
+			return text + repeat('*', ptrCount);
 		}
 
 		@Override
 		public String toString() {
 			return text + (ptrCount > 0?"|" + ptrCount:"");
 		}
+	}
+	
+	private static String repeat(char c, int times) {
+		StringBuffer buffer = new StringBuffer();
+		for(int i = 0; i < times; i++) {
+			buffer.append(c);
+		}
+		return buffer.toString();
 	}
 	
 	public static class GLParam {
@@ -59,37 +102,68 @@ public class GLParser {
 	}
 	
 	/**
-	 * Takes the glew header and generates a jnigen based Java file
-	 * that wraps OpenGL and all it's extensions.
+	 * Takes the glew header, parses it and returns a list of {@link GLConstant} and
+	 * {@link GLProcedure} instances for all GL constants and procedures found in the
+	 * header
 	 * @param inputFile the path to the glew.h file.
-	 * @param outputFile the path to the resulting Java output file, e.g. src/com/badlogic/jglfw/gl/GL.java
+	 * @param procedures list of {@link GLProcedure} instances, filled by this function
+	 * @param constants list of {@link GLConstant} instances, filled by this function
 	 */
-	public void generate(String inputFile, String outputFile) {
+	public void parse(String inputFile, List<GLProcedure> procedures, List<GLConstant> constants) {
 		File input = new File(inputFile);
-		File output = new File(outputFile);
 		if(!input.exists()) throw new RuntimeException(inputFile + " does not exist");
-		if(!output.getParentFile().exists()) {
-			if(!output.getParentFile().mkdirs()) throw new RuntimeException("Couldn't create output directory " + output.getParent());
-		}
 		
-		List<GLProcedure> procs = new ArrayList<GLProcedure>();
-		List<GLConstant> constants = new ArrayList<GLConstant>();
-		parseGLHeader(input, procs, constants);
+		parseGLHeader(input, procedures, constants);
 		
+		deduplicateConsts(constants);
+		sortConsts(constants);
 		for(GLConstant c: constants) {
 			System.out.println(c);
 		}
+		System.out.println(constants.size());
 		
-		for(GLProcedure p: procs) {
+		for(GLProcedure p: procedures) {
 			System.out.println(p);
 		}
-		System.out.println(procs.size());
+		System.out.println(procedures.size());
+		
+		printTypes(procedures);
 	}
 	
+	private void sortConsts (List<GLConstant> constants) {
+		// among all the silly things, this shall get
+		// the medal of stupidity. I'm tired.
+		for(int i = 0; i < constants.size(); i++) {
+			GLConstant c = constants.get(i);
+			if(c.value.startsWith("GL_")) {
+				for(int j = i; j < constants.size(); j++) {
+					GLConstant c2 = constants.get(j);
+					if(c2.name.equals(c.value)) {
+						constants.set(i, c2);
+						constants.set(j, c);
+						break;
+					}
+				}
+			}
+		}
+	}
+
+	private void deduplicateConsts (List<GLConstant> constants) {
+		List<GLConstant> newConsts = new ArrayList<GLConstant>();
+		Set<String> lookup = new HashSet<String>();
+		for(GLConstant c: constants) {
+			if(!lookup.contains(c.name)) {
+				newConsts.add(c);
+				lookup.add(c.name);
+			}
+		}
+		constants.clear();
+		constants.addAll(newConsts);
+	}
+
 	private void parseGLHeader(File input, List<GLProcedure> procedures, List<GLConstant> constants) {
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(input));
-			int lines = 0;
 			while(true) {				
 				String line = reader.readLine();
 				if(line == null) break;
@@ -146,6 +220,19 @@ public class GLParser {
 		return parameters;
 	}
 	
+	private void printTypes(List<GLProcedure> procs) {
+		Set<String> types = new HashSet<String>();
+		for(GLProcedure proc: procs) {
+			types.add(proc.returnType.getCType());
+			for(GLParam param: proc.params) {
+				types.add(param.type.getCType());
+			}
+		}
+		for(String type: types) {
+			System.out.println(type);
+		}
+	}
+	
 	private int count(String text, char c) {
 		int sum = 0;
 		for(int i = 0; i < text.length(); i++) {
@@ -155,6 +242,8 @@ public class GLParser {
 	}
 	
 	public static void main(String[] args) {
-		new GLParser().generate("jni/glew-headers/glew.h", "src/com/badlogic/jglfw/gl/GL.java");
+		List<GLProcedure> procs = new ArrayList<GLProcedure>();
+		List<GLConstant> consts = new ArrayList<GLConstant>();
+		new GLParser().parse("jni/glew-headers/glew.h", procs, consts);
 	}
 }
