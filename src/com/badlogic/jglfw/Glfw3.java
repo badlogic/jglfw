@@ -540,7 +540,97 @@ public class Glfw3 {
 		return glfwGetMouseButton((GLFWwindow*)window, button) == GLFW_PRESS;
 	*/
 	
+	public static native int glfwGetCursorPosX(long window); /*
+		int x = 0;
+		int y = 0;
+		glfwGetCursorPos((GLFWwindow*)window, &x, &y);
+		return x;
+	*/
+	
+	public static native int glfwGetCursorPosY(long window); /*
+		int x = 0;
+		int y = 0;
+		glfwGetCursorPos((GLFWwindow*)window, &x, &y);
+		return y;
+	*/
+	
+	public static native void glfwSetCursorPos(long window, int x, int y); /*
+		glfwSetCursorPos((GLFWwindow*)window, x, y);
+	*/
+	
+	private static native void glfwSetKeyCallback(); /*
+		// FIXME
+	*/
+	
+	private static native void glfwSetCharCallback(); /*
+		// FIXME
+	*/
+	
+	private static native void glfwSetMouseButtonCallback(); /*
+		// FIXME
+	*/
+	
+	private static native void glfwSetCursorPosCallback(); /*
+		// FIXME
+	*/
+	
+	private static native void glfwSetCursorEnterCallback(); /*
+		// FIXME
+	*/
+	
+	private static native void glfwSetScrollCallback(); /*
+		// FIXME
+	*/
+	
+	public static native int glfwGetJoystickParam(int joy, int param); /*
+		return glfwGetJoystickParam(joy, param);
+	*/
+	
+	public static native int glfwGetJoystickAxes(int joy, float[] axes); /*
+		return glfwGetJoystickAxes(joy, axes, env->GetArrayLength(obj_axes));
+	*/
+	
+	public static native int glfwGetJoystickButtons(int joy, byte[] buttons); /*
+		return glfwGetJoystickButtons(joy, (unsigned char*)buttons, env->GetArrayLength(obj_buttons));
+	*/
+	
+	public static native String glfwGetJoystickName(int joy); /*
+		return env->NewStringUTF(glfwGetJoystickName(joy));
+	*/
+	
+	public static native void glfwSetClipboardString(long window, String string); /*
+		glfwSetClipboardString((GLFWwindow*)window, string);
+	*/
+	
+	public static native String glfwGetClipboardString(long window); /*
+		return env->NewStringUTF(glfwGetClipboardString((GLFWwindow*)window));
+	*/
+	
+	public static native double glfwGetTime(); /*
+		return glfwGetTime();
+	*/
+	
+	public static native void glfwSetTime(double time); /*
+		glfwSetTime(time);
+	*/
+	
+	public static native void glfwMakeContextCurrent(long window); /*
+		glfwMakeContextCurrent((GLFWwindow*)window);
+	*/
+	
+	public static native long glfwGetCurrentContext(); /*
+		return (jlong)glfwGetCurrentContext();
+	*/
+	
 	public static native void glfwSwapBuffers(long window); /*
 		glfwSwapBuffers((GLFWwindow*)window);
+	*/
+	
+	public static native void glfwSwapInterval(int interval); /*
+		glfwSwapInterval(interval);
+	*/
+	
+	public static native boolean glfwExtensionSupported(String extension); /*
+		return glfwExtensionSupported(extension) == GL_TRUE;
 	*/
 }

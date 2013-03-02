@@ -107,6 +107,7 @@ public class GlfwBuild {
 			GL.glClear(GL.GL_COLOR_BUFFER_BIT);
 			glfwPollEvents();
 			glfwSwapBuffers(window);
+			System.out.println(glfwGetCursorPosX(window) + ", " + glfwGetCursorPosY(window));
 		}
 		
 		glfwDestroyWindow(window);

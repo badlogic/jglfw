@@ -559,13 +559,258 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetMouseButton(JNIE
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSwapBuffers(JNIEnv* env, jclass clazz, jlong window) {
+JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetCursorPosX(JNIEnv* env, jclass clazz, jlong window) {
 
 
 //@line:543
 
+		int x = 0;
+		int y = 0;
+		glfwGetCursorPos((GLFWwindow*)window, &x, &y);
+		return x;
+	
+
+}
+
+JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetCursorPosY(JNIEnv* env, jclass clazz, jlong window) {
+
+
+//@line:550
+
+		int x = 0;
+		int y = 0;
+		glfwGetCursorPos((GLFWwindow*)window, &x, &y);
+		return y;
+	
+
+}
+
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetCursorPos(JNIEnv* env, jclass clazz, jlong window, jint x, jint y) {
+
+
+//@line:557
+
+		glfwSetCursorPos((GLFWwindow*)window, x, y);
+	
+
+}
+
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetKeyCallback(JNIEnv* env, jclass clazz) {
+
+
+//@line:561
+
+		// FIXME
+	
+
+}
+
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetCharCallback(JNIEnv* env, jclass clazz) {
+
+
+//@line:565
+
+		// FIXME
+	
+
+}
+
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetMouseButtonCallback(JNIEnv* env, jclass clazz) {
+
+
+//@line:569
+
+		// FIXME
+	
+
+}
+
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetCursorPosCallback(JNIEnv* env, jclass clazz) {
+
+
+//@line:573
+
+		// FIXME
+	
+
+}
+
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetCursorEnterCallback(JNIEnv* env, jclass clazz) {
+
+
+//@line:577
+
+		// FIXME
+	
+
+}
+
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetScrollCallback(JNIEnv* env, jclass clazz) {
+
+
+//@line:581
+
+		// FIXME
+	
+
+}
+
+JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetJoystickParam(JNIEnv* env, jclass clazz, jint joy, jint param) {
+
+
+//@line:585
+
+		return glfwGetJoystickParam(joy, param);
+	
+
+}
+
+static inline jint wrapped_Java_com_badlogic_jglfw_Glfw3_glfwGetJoystickAxes
+(JNIEnv* env, jclass clazz, jint joy, jfloatArray obj_axes, float* axes) {
+
+//@line:589
+
+		return glfwGetJoystickAxes(joy, axes, env->GetArrayLength(obj_axes));
+	
+}
+
+JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetJoystickAxes(JNIEnv* env, jclass clazz, jint joy, jfloatArray obj_axes) {
+	float* axes = (float*)env->GetPrimitiveArrayCritical(obj_axes, 0);
+
+	jint JNI_returnValue = wrapped_Java_com_badlogic_jglfw_Glfw3_glfwGetJoystickAxes(env, clazz, joy, obj_axes, axes);
+
+	env->ReleasePrimitiveArrayCritical(obj_axes, axes, 0);
+
+	return JNI_returnValue;
+}
+
+static inline jint wrapped_Java_com_badlogic_jglfw_Glfw3_glfwGetJoystickButtons
+(JNIEnv* env, jclass clazz, jint joy, jbyteArray obj_buttons, char* buttons) {
+
+//@line:593
+
+		return glfwGetJoystickButtons(joy, (unsigned char*)buttons, env->GetArrayLength(obj_buttons));
+	
+}
+
+JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetJoystickButtons(JNIEnv* env, jclass clazz, jint joy, jbyteArray obj_buttons) {
+	char* buttons = (char*)env->GetPrimitiveArrayCritical(obj_buttons, 0);
+
+	jint JNI_returnValue = wrapped_Java_com_badlogic_jglfw_Glfw3_glfwGetJoystickButtons(env, clazz, joy, obj_buttons, buttons);
+
+	env->ReleasePrimitiveArrayCritical(obj_buttons, buttons, 0);
+
+	return JNI_returnValue;
+}
+
+JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetJoystickName(JNIEnv* env, jclass clazz, jint joy) {
+
+
+//@line:597
+
+		return env->NewStringUTF(glfwGetJoystickName(joy));
+	
+
+}
+
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetClipboardString(JNIEnv* env, jclass clazz, jlong window, jstring obj_string) {
+	char* string = (char*)env->GetStringUTFChars(obj_string, 0);
+
+
+//@line:601
+
+		glfwSetClipboardString((GLFWwindow*)window, string);
+	
+	env->ReleaseStringUTFChars(obj_string, string);
+
+}
+
+JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetClipboardString(JNIEnv* env, jclass clazz, jlong window) {
+
+
+//@line:605
+
+		return env->NewStringUTF(glfwGetClipboardString((GLFWwindow*)window));
+	
+
+}
+
+JNIEXPORT jdouble JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetTime(JNIEnv* env, jclass clazz) {
+
+
+//@line:609
+
+		return glfwGetTime();
+	
+
+}
+
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetTime(JNIEnv* env, jclass clazz, jdouble time) {
+
+
+//@line:613
+
+		glfwSetTime(time);
+	
+
+}
+
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwMakeContextCurrent(JNIEnv* env, jclass clazz, jlong window) {
+
+
+//@line:617
+
+		glfwMakeContextCurrent((GLFWwindow*)window);
+	
+
+}
+
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetCurrentContext(JNIEnv* env, jclass clazz) {
+
+
+//@line:621
+
+		return (jlong)glfwGetCurrentContext();
+	
+
+}
+
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSwapBuffers(JNIEnv* env, jclass clazz, jlong window) {
+
+
+//@line:625
+
 		glfwSwapBuffers((GLFWwindow*)window);
 	
 
+}
+
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSwapInterval(JNIEnv* env, jclass clazz, jint interval) {
+
+
+//@line:629
+
+		glfwSwapInterval(interval);
+	
+
+}
+
+static inline jboolean wrapped_Java_com_badlogic_jglfw_Glfw3_glfwExtensionSupported
+(JNIEnv* env, jclass clazz, jstring obj_extension, char* extension) {
+
+//@line:633
+
+		return glfwExtensionSupported(extension) == GL_TRUE;
+	
+}
+
+JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_Glfw3_glfwExtensionSupported(JNIEnv* env, jclass clazz, jstring obj_extension) {
+	char* extension = (char*)env->GetStringUTFChars(obj_extension, 0);
+
+	jboolean JNI_returnValue = wrapped_Java_com_badlogic_jglfw_Glfw3_glfwExtensionSupported(env, clazz, obj_extension, extension);
+
+	env->ReleaseStringUTFChars(obj_extension, extension);
+
+	return JNI_returnValue;
 }
 
