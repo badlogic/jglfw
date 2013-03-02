@@ -4152,7 +4152,7 @@ extern "C" {
 #undef com_badlogic_jglfw_gl_GL_GL_WAIT_FAILED
 #define com_badlogic_jglfw_gl_GL_GL_WAIT_FAILED 37149L
 #undef com_badlogic_jglfw_gl_GL_GL_TIMEOUT_IGNORED
-#define com_badlogic_jglfw_gl_GL_GL_TIMEOUT_IGNORED -1LL
+#define com_badlogic_jglfw_gl_GL_GL_TIMEOUT_IGNORED -1i64
 #undef com_badlogic_jglfw_gl_GL_GL_ARB_tessellation_shader
 #define com_badlogic_jglfw_gl_GL_GL_ARB_tessellation_shader 1L
 #undef com_badlogic_jglfw_gl_GL_GL_PATCHES

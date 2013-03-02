@@ -74,7 +74,7 @@ public class GLGenerator {
 		try {
 			buffer.append("\t// @off\n");
 			buffer.append("\t/*JNI\n"); 
-			buffer.append("\t#include <GL/glfw.h>\n");
+			buffer.append("\t#include <GL/glfw3.h>\n");
 			buffer.append("\t#include <GL/glext.h>\n");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(GLGenerator.class.getResourceAsStream("/com/badlogic/jglfw/gl/preamble.h")));
 			while(true) {

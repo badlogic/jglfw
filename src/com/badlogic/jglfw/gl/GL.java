@@ -4746,7 +4746,7 @@ public class GL {
 
 	// @off
 	/*JNI
-	#include <GL/glfw.h>
+	#include <GL/glfw3.h>
 	#include <GL/glext.h>
 	#if defined(_WIN32)
 	#ifndef APIENTRY
