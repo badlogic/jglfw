@@ -256,14 +256,221 @@ public class Glfw3 {
 
 	public static final int  GLFW_CONNECTED              = 0x00061000;
 	public static final int  GLFW_DISCONNECTED           = 0x00061001;
+	
+	private static Glfw3Callback callback = null;
 
 	// @off
 	/*JNI 
 	#include <GL/glfw3.h>
+	
+	// keeping this in statics is not the smartest move, but oh well...
+	static jclass callbackClass = 0;
+	static jmethodID errorId = 0;
+	static jmethodID monitorId = 0;
+	static jmethodID windowPosId = 0;
+	static jmethodID windowSizeId = 0;
+	static jmethodID windowCloseId = 0;
+	static jmethodID windowRefreshId = 0;
+	static jmethodID windowFocusId = 0;
+	static jmethodID windowIconifyId = 0;
+	static jmethodID keyId = 0;
+	static jmethodID characterId = 0;
+	static jmethodID mouseButtonId = 0;
+	static jmethodID cursorPosId = 0;
+	static jmethodID cursorEnterId = 0;
+	static jmethodID scrollId = 0;
+	static jobject callback = 0;
+	static JNIEnv* staticEnv;
+	
+	void error(int errorCode, const char* description) {
+		if(callback) {
+			staticEnv->CallVoidMethod(callback, errorId, (jint)errorCode, staticEnv->NewStringUTF(description));
+		}
+	}
+	
+	void windowPos(GLFWwindow* window, int x, int y) {
+		if(callback) {
+			staticEnv->CallVoidMethod(callback, windowPosId, (jlong)window, (jint)x, (jint)y);
+		}
+	}
+	
+	void windowSize(GLFWwindow* window, int width, int height) {
+		if(callback) {
+			staticEnv->CallVoidMethod(callback, windowSizeId, (jlong)window, (jint)width, (jint)height);
+		}
+	}
+	
+	int windowClose(GLFWwindow* window) {
+		if(callback) {
+			return staticEnv->CallBooleanMethod(callback, windowCloseId, (jlong)window);
+		}
+		return GL_TRUE;
+	}
+	
+	void windowRefresh(GLFWwindow* window) {
+		if(callback) {
+			staticEnv->CallVoidMethod(callback, windowRefreshId, (jlong)window);
+		}
+	}
+	
+	void windowFocus(GLFWwindow* window, int focused) {
+		if(callback) {
+			staticEnv->CallVoidMethod(callback, windowFocusId, (jlong)window, (jboolean)(GL_TRUE==focused));
+		}
+	}
+	
+	void windowIconify(GLFWwindow* window, int iconified) {
+		if(callback) {
+			staticEnv->CallVoidMethod(callback, windowIconifyId, (jlong)window, (jboolean)(GL_TRUE==iconified));
+		}
+	}
+	
+	void mouseButton(GLFWwindow* window, int button, int action) {
+		if(callback) {
+			staticEnv->CallVoidMethod(callback, mouseButtonId, (jlong)window, (jint)button, (jint)action);
+		}
+	}
+	
+	void cursorPos(GLFWwindow* window, int x, int y) {
+		if(callback) {
+			staticEnv->CallVoidMethod(callback, cursorPosId, (jlong)window, (jint)x, (jint)y);
+		}
+	}
+	
+	void cursorEnter(GLFWwindow* window, int entered) {
+		if(callback) {
+			staticEnv->CallVoidMethod(callback, cursorEnterId, (jlong)window, (jboolean)(GL_TRUE==entered));
+		}
+	}
+	
+	void scroll(GLFWwindow* window, double xpos, double ypos) {
+		if(callback) {
+			staticEnv->CallVoidMethod(callback, scrollId, (jlong)window, (jdouble)xpos, (jdouble)ypos);
+		}
+	}
+	
+	void key(GLFWwindow* window, int key, int action) {
+		if(callback) {
+			staticEnv->CallVoidMethod(callback, keyId, (jlong)window, (jint)key, (jint)key);
+		}
+	}
+	
+	void character(GLFWwindow* window, unsigned int character) {
+		if(callback) {
+			staticEnv->CallVoidMethod(callback, characterId, (jlong)window, (jchar)character);
+		}
+	}
+	
+	void monitor(GLFWmonitor* monitor, int event) {
+		if(callback) {
+			staticEnv->CallVoidMethod(callback, monitorId, (jlong)monitor, (jboolean)(GLFW_CONNECTED==event));
+		}
+	}
+	
 	*/
 	
 	public static native boolean glfwInit(); /*
-		return glfwInit() == GL_TRUE;
+		if(!callbackClass) {
+			jclass exception = env->FindClass("java/lang/Exception");
+		
+			callbackClass = (jclass)env->NewGlobalRef(env->FindClass("com/badlogic/jglfw/Glfw3Callback"));
+			if(!callbackClass) {
+				env->ThrowNew(exception, "Couldn't find class Glfw3Callback");
+				return false;
+			}
+		
+			errorId = env->GetMethodID(callbackClass, "error", "(ILjava/lang/String;)V");
+			if(!errorId) {
+				env->ThrowNew(exception, "Couldn't find error() method");
+				return false;
+			}
+		
+			monitorId = env->GetMethodID(callbackClass, "monitor", "(JZ)V");
+			if(!monitorId) {
+				env->ThrowNew(exception, "Couldn't find monitor() method");
+				return false;
+			}
+
+			windowPosId = env->GetMethodID(callbackClass, "windowPos", "(JII)V");
+			if(!windowPosId) {
+				env->ThrowNew(exception, "Couldn't find windowPosId() method");
+				return false;
+			}
+			
+			windowSizeId = env->GetMethodID(callbackClass, "windowSize", "(JII)V");
+			if(!windowSizeId) {
+				env->ThrowNew(exception, "Couldn't find windowSizeId() method");
+				return false;
+			}
+
+			windowCloseId = env->GetMethodID(callbackClass, "windowClose", "(J)Z");
+			if(!windowCloseId) {
+				env->ThrowNew(exception, "Couldn't find windowCloseId() method");
+				return false;
+			}
+
+			windowRefreshId = env->GetMethodID(callbackClass, "windowRefresh", "(J)V");
+			if(!windowRefreshId) {
+				env->ThrowNew(exception, "Couldn't find windowRefresh() method");
+				return false;
+			}
+
+			windowFocusId = env->GetMethodID(callbackClass, "windowFocus", "(JZ)V");
+			if(!windowFocusId) {
+				env->ThrowNew(exception, "Couldn't find windowFocus() method");
+				return false;
+			}
+
+			windowIconifyId = env->GetMethodID(callbackClass, "windowIconify", "(JZ)V");
+			if(!windowIconifyId) {
+				env->ThrowNew(exception, "Couldn't find windowIconify() method");
+				return false;
+			}
+
+			keyId = env->GetMethodID(callbackClass, "key", "(JII)V");
+			if(!keyId) {
+				env->ThrowNew(exception, "Couldn't find key() method");
+				return false;
+			}
+
+			characterId = env->GetMethodID(callbackClass, "character", "(JC)V");
+			if(!characterId) {
+				env->ThrowNew(exception, "Couldn't find character() method");
+				return false;
+			}
+			
+			mouseButtonId = env->GetMethodID(callbackClass, "mouseButton", "(JIZ)V");
+			if(!mouseButtonId) {
+				env->ThrowNew(exception, "Couldn't find mouseButton() method");
+				return false;
+			}
+			
+			cursorPosId = env->GetMethodID(callbackClass, "cursorPos", "(JII)V");
+			if(!cursorPosId) {
+				env->ThrowNew(exception, "Couldn't find cursorPos() method");
+				return false;
+			}
+			
+			cursorEnterId = env->GetMethodID(callbackClass, "cursorEnter", "(JZ)V");
+			if(!cursorEnterId) {
+				env->ThrowNew(exception, "Couldn't find cursorEnter() method");
+				return false;
+			}
+			
+			scrollId = env->GetMethodID(callbackClass, "scroll", "(JDD)V");
+			if(!scrollId) {
+				env->ThrowNew(exception, "Couldn't find scroll() method");
+				return false;
+			}
+		}
+	
+		jboolean result = glfwInit() == GL_TRUE;
+		if(result) {
+			glfwSetErrorCallback(error);
+			glfwSetMonitorCallback(monitor);
+			
+		}
+		return result;
 	*/
 	
 	public static native void glfwTerminate(); /*
@@ -276,10 +483,6 @@ public class Glfw3 {
 	
 	public static native String glfwGetVersionString(); /*
 		return env->NewStringUTF(glfwGetVersionString());
-	*/
-	
-	public static native void glfwSetErrorCallback(); /*
-		// FIXME
 	*/
 	
 	public static long[] glfwGetMonitors() {
@@ -335,10 +538,6 @@ public class Glfw3 {
 	
 	public static native String glfwGetMonitorName(long monitor); /*
 		return env->NewStringUTF(glfwGetMonitorName((GLFWmonitor*)monitor));
-	*/
-	
-	public static native void glfwSetMonitorCallback(); /*
-		// FIXME
 	*/
 	
 	public static List<GlfwVideoMode> glfwGetVideoModes(long monitor) {
@@ -412,7 +611,22 @@ public class Glfw3 {
 	*/
 	
 	public static native long glfwCreateWindow(int width, int height, String title, long monitor, long share); /*
-		return (jlong)glfwCreateWindow(width, height, title, (GLFWmonitor*)monitor, (GLFWwindow*)share);
+		GLFWwindow* window = glfwCreateWindow(width, height, title, (GLFWmonitor*)monitor, (GLFWwindow*)share);
+		if(window) {
+			glfwSetWindowPosCallback(window, windowPos);
+			glfwSetWindowSizeCallback(window, windowSize);
+			glfwSetWindowCloseCallback(window, windowClose);
+			glfwSetWindowRefreshCallback(window, windowRefresh);
+			glfwSetWindowFocusCallback(window, windowFocus);
+			glfwSetWindowIconifyCallback(window, windowIconify);
+			glfwSetKeyCallback(window, key);
+			glfwSetCharCallback(window, character);
+			glfwSetMouseButtonCallback(window, mouseButton);
+			glfwSetCursorPosCallback(window, cursorPos);
+			glfwSetCursorEnterCallback(window, cursorEnter);
+			glfwSetScrollCallback(window, scroll);
+		}
+		return (jlong)window;
 	*/
 	
 	public static native void glfwDestroyWindow(long window); /*
@@ -483,45 +697,38 @@ public class Glfw3 {
 		return glfwGetWindowParam((GLFWwindow*)window, param);
 	*/
 	
-	private static native void glfwSetWindowUserPointer(); /*
-		// FIXME
-	*/
 	
-	private static native void glfwGetWindowUserPointer(); /*
-		// FIXME
-	*/
+	/**
+	 * Sets the {@link Glfw3Callback} that will get invoked by
+	 * various events. Replaces the single callback functions of GLFW
+	 * @param callback the callback or null
+	 */
+	public static void glfwSetCallback(Glfw3Callback callback) {
+		Glfw3.callback = callback;
+	}
+		
+	public static void glfwPollEvents() {
+		glfwPollEventsJni(callback);
+	}
 	
-	private static native void glfwSetWindowPosCallback(); /*
-		// FIXME
-	*/
-	
-	private static native void glfwSetWindowSizeCallback(); /*
-		// FIXME
-	*/
-	
-	private static native void glfwSetWindowCloseCallback(); /*
-		// FIXME
-	*/
-	
-	
-	private static native void glfwSetWindowRefreshCallback(); /*
-		// FIXME
-	*/
-	
-	private static native void glfwSetWindowFocusCallback(); /*
-		// FIXME
-	*/
-	
-	private static native void glfwSetWindowIconifyCallback(); /*
-		// FIXME
-	*/
-
-	public static native void glfwPollEvents(); /*
+	private static native void glfwPollEventsJni(Glfw3Callback javaCallback); /*
+		callback = javaCallback;
+		staticEnv = env;
 		glfwPollEvents();
+		callback = 0;
+		staticEnv = 0;
 	*/
 	
-	public static native void glfwWaitEvents(); /*
+	public static void glfwWaitEvents() {
+		glfwWaitEventsJni(callback);
+	}
+	
+	private static native void glfwWaitEventsJni(Glfw3Callback javaCallback); /*
+		callback = javaCallback;
+		staticEnv = env;
 		glfwWaitEvents();
+		callback = 0;
+		staticEnv = 0;
 	*/
 	
 	public static native int glfwGetInputMode(long window, int mode); /*
@@ -556,30 +763,6 @@ public class Glfw3 {
 	
 	public static native void glfwSetCursorPos(long window, int x, int y); /*
 		glfwSetCursorPos((GLFWwindow*)window, x, y);
-	*/
-	
-	private static native void glfwSetKeyCallback(); /*
-		// FIXME
-	*/
-	
-	private static native void glfwSetCharCallback(); /*
-		// FIXME
-	*/
-	
-	private static native void glfwSetMouseButtonCallback(); /*
-		// FIXME
-	*/
-	
-	private static native void glfwSetCursorPosCallback(); /*
-		// FIXME
-	*/
-	
-	private static native void glfwSetCursorEnterCallback(); /*
-		// FIXME
-	*/
-	
-	private static native void glfwSetScrollCallback(); /*
-		// FIXME
 	*/
 	
 	public static native int glfwGetJoystickParam(int joy, int param); /*
@@ -633,4 +816,56 @@ public class Glfw3 {
 	public static native boolean glfwExtensionSupported(String extension); /*
 		return glfwExtensionSupported(extension) == GL_TRUE;
 	*/
+	
+	// Not used in JAva
+//	private static native void glfwSetWindowUserPointer(); /*
+//	*/
+//	
+//	private static native void glfwGetWindowUserPointer(); /*
+//	*/
+//	
+	
+	// These are all callback functions that are replaced by
+	// glfwSetCallback();
+//	public static native void glfwSetErrorCallback(); /*
+//	 */
+//	
+//	public static native void glfwSetMonitorCallback(); /*
+//	*/
+//	
+//	private static native void glfwSetWindowPosCallback(); /*
+//	*/
+//	
+//	private static native void glfwSetWindowSizeCallback(); /*
+//	*/
+//	
+//	private static native void glfwSetWindowCloseCallback(); /*
+//	*/
+//	
+//	private static native void glfwSetWindowRefreshCallback(); /*
+//	*/
+//	
+//	private static native void glfwSetWindowFocusCallback(); /*
+//	*/
+//	
+//	private static native void glfwSetWindowIconifyCallback(); /*
+//	*/
+//	
+//	private static native void glfwSetKeyCallback(); /*
+//	*/
+//	
+//	private static native void glfwSetCharCallback(); /*
+//	*/
+//	
+//	private static native void glfwSetMouseButtonCallback(); /*
+//	*/
+//	
+//	private static native void glfwSetCursorPosCallback(); /*
+//	*/
+//	
+//	private static native void glfwSetCursorEnterCallback(); /*
+//	*/
+//	
+//	private static native void glfwSetScrollCallback(); /*
+//	*/
 }

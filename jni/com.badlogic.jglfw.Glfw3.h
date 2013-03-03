@@ -483,14 +483,6 @@ JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetVersionString
 
 /*
  * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwSetErrorCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetErrorCallback
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
  * Method:    glfwGetMonitorsJni
  * Signature: ([J)I
  */
@@ -544,14 +536,6 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetMonitorPhysicalHeigh
  */
 JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetMonitorName
   (JNIEnv *, jclass, jlong);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwSetMonitorCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetMonitorCallback
-  (JNIEnv *, jclass);
 
 /*
  * Class:     com_badlogic_jglfw_Glfw3
@@ -731,83 +715,19 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetWindowParam
 
 /*
  * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwSetWindowUserPointer
- * Signature: ()V
+ * Method:    glfwPollEventsJni
+ * Signature: (Lcom/badlogic/jglfw/Glfw3Callback;)V
  */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetWindowUserPointer
-  (JNIEnv *, jclass);
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwPollEventsJni
+  (JNIEnv *, jclass, jobject);
 
 /*
  * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwGetWindowUserPointer
- * Signature: ()V
+ * Method:    glfwWaitEventsJni
+ * Signature: (Lcom/badlogic/jglfw/Glfw3Callback;)V
  */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetWindowUserPointer
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwSetWindowPosCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetWindowPosCallback
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwSetWindowSizeCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetWindowSizeCallback
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwSetWindowCloseCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetWindowCloseCallback
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwSetWindowRefreshCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetWindowRefreshCallback
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwSetWindowFocusCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetWindowFocusCallback
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwSetWindowIconifyCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetWindowIconifyCallback
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwPollEvents
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwPollEvents
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwWaitEvents
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwWaitEvents
-  (JNIEnv *, jclass);
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwWaitEventsJni
+  (JNIEnv *, jclass, jobject);
 
 /*
  * Class:     com_badlogic_jglfw_Glfw3
@@ -864,54 +784,6 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw3_glfwGetCursorPosY
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetCursorPos
   (JNIEnv *, jclass, jlong, jint, jint);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwSetKeyCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetKeyCallback
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwSetCharCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetCharCallback
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwSetMouseButtonCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetMouseButtonCallback
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwSetCursorPosCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetCursorPosCallback
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwSetCursorEnterCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetCursorEnterCallback
-  (JNIEnv *, jclass);
-
-/*
- * Class:     com_badlogic_jglfw_Glfw3
- * Method:    glfwSetScrollCallback
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw3_glfwSetScrollCallback
-  (JNIEnv *, jclass);
 
 /*
  * Class:     com_badlogic_jglfw_Glfw3

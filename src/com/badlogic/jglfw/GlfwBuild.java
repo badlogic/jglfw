@@ -90,6 +90,83 @@ public class GlfwBuild {
 		System.out.println(glfwGetVideoModes(monitor));
 		System.out.println(glfwGetVideoMode(monitor));
 		
+		glfwSetCallback(new Glfw3Callback() {
+			@Override
+			public void error (int error, String description) {
+				System.out.println("error: " + description);
+			}
+
+			@Override
+			public void monitor (long monitor, boolean connected) {
+				System.out.println("monitor " + monitor + " " + (connected?"connected":"disconnected"));
+			}
+
+			@Override
+			public void windowPos (long window, int x, int y) {
+				System.out.println("window position changed: " + x + ", " + y);
+			}
+
+			@Override
+			public void windowSize (long window, int width, int height) {
+				System.out.println("window size changed: " + width + ", " + height);
+			}
+
+			@Override
+			public boolean windowClose (long window) {
+				System.out.println("window closing");
+				return true;
+			}
+
+			@Override
+			public void windowRefresh (long window) {
+				System.out.println("window refresh needed");
+			}
+
+			@Override
+			public void windowFocus (long window, boolean focused) {
+				System.out.println("window " + (focused?"focused":"lost focus"));
+			}
+
+			@Override
+			public void windowIconify (long window, boolean iconified) {
+				System.out.println("window " + (iconified?"iconified": "deiconified"));
+			}
+
+			@Override
+			public void key (long window, int key, int action) {
+				String actionStr = "pressed";
+				if(action == GLFW_RELEASE) actionStr = "released";
+				if(action == GLFW_REPEAT) actionStr = "repeated";
+				System.out.println("key " + key + " " + actionStr);
+			}
+
+			@Override
+			public void character (long window, char character) {
+				System.out.println("character " + character);
+			}
+
+			@Override
+			public void mouseButton (long window, int button, boolean pressed) {
+				System.out.println("mouse button " + button + " " + (pressed?"pressed":"released"));
+			}
+
+			@Override
+			public void cursorPos (long window, int x, int y) {
+				System.out.println("cursor position " + x + ", " + y);
+			}
+
+			@Override
+			public void cursorEnter (long window, boolean entered) {
+				System.out.println("cursor " + (entered?"entered":"left"));
+			}
+
+			@Override
+			public void scroll (long window, double scrollX, double scrollY) {
+				System.out.println("scrolled " + scrollX + ", " + scrollY);
+			}
+			
+		});
+		
 		long window = glfwCreateWindow(480, 320, "Test", 0, 0);
 		System.out.println(glfwGetWindowX(window) + ", " + glfwGetWindowY(window));
 		System.out.println(glfwGetWindowWidth(window) + ", " + glfwGetWindowHeight(window));
@@ -103,11 +180,10 @@ public class GlfwBuild {
 		glfwShowWindow(window);
 		System.out.println(glfwGetWindowMonitor(window));
 		
-		while(!glfwGetKey(window, GLFW_KEY_ESCAPE) && !glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT)) {
+		while(!glfwGetKey(window, GLFW_KEY_ESCAPE)) {
 			GL.glClear(GL.GL_COLOR_BUFFER_BIT);
 			glfwPollEvents();
 			glfwSwapBuffers(window);
-			System.out.println(glfwGetCursorPosX(window) + ", " + glfwGetCursorPosY(window));
 		}
 		
 		glfwDestroyWindow(window);
