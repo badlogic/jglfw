@@ -1,0 +1,26 @@
+<project name="jglfw" default="package" basedir=".">
+	<property name="version" value="1.0"/>
+	
+	<target name="clean">
+	    <delete dir="target"/>
+	    <mkdir dir="target/java"/>
+	</target>
+	
+	<target name="compile" depends="clean">
+		<javac debug="on" 
+		       encoding="utf-8"
+		       source="1.6" target="1.6"
+		       srcdir="src/"
+		       destdir="target/java"
+		       excludes="**/GlfwBuild.java,**/GlfwTest.java"
+		       includeantruntime="false"/>
+	</target>
+	
+	<target name="package" depends="compile">
+		<jar destfile="target/jglfw.jar">
+			<fileset dir="target/java"/>
+		</jar>
+		<copy erroronfail="true" file="libs/jglfw-natives.jar" 
+tofile="target/"/>
+	</target>
+</project>
