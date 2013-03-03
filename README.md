@@ -6,7 +6,8 @@ OpenAL Soft ( http://kcat.strangesoft.net/openal.html).
 
 TODO
 ----
- - [X] GLFW basic wrapper for window handling, input
- - [ ] GLFW callbacks
- * [ ] OpenGL generator
+ - [X] Build system
+ - [X] Nightly builds, see http://libgdx.badlogicgames.com:8080, http://libgdx.badlogicgames.com/jglfw
+ - [X] GLFW wrapper
+ * [O] OpenGL generator
  * [ ] OpenAL generator
