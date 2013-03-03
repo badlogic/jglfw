@@ -1,9 +1,17 @@
-<project name="jglfw" default="package" basedir=".">
+<project name="jglfw" default="package" basedir="jglfw">
 	<property name="version" value="1.0"/>
 	
 	<target name="clean">
 	    <delete dir="target"/>
 	    <mkdir dir="target/java"/>
+	</target>
+	
+	<target name="compile-mac-natives">
+	    <ant antfile="build-macosx32.xml" dir="jni">
+	</target>
+	
+	<target name="compile-natives">
+	    <ant antfile="build.xml" dir="jni"/>
 	</target>
 	
 	<target name="compile" depends="clean">
@@ -20,7 +28,7 @@
 		<jar destfile="target/jglfw.jar">
 			<fileset dir="target/java"/>
 		</jar>
-		<copy erroronfail="true" file="libs/jglfw-natives.jar" 
-tofile="target/"/>
+		<copy failonerror="true" file="libs/jglfw-natives.jar" tofile="target/jglfw-natives.jar"/>
+		<zip destfile="../jglfw-${version}.zip" basedir="target" includes="**/jglfw.jar,**/jglfw-natives.jar"/>
 	</target>
 </project>
