@@ -3,6 +3,8 @@ package com.badlogic.jglfw;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.badlogic.jglfw.utils.SharedLibraryLoader;
+
 public class Glfw {
 	public static final int  GLFW_VERSION_MAJOR          = 3;
 	public static final int  GLFW_VERSION_MINOR          = 0;
@@ -369,7 +371,12 @@ public class Glfw {
 	
 	*/
 	
-	public static native boolean glfwInit(); /*
+	public static boolean glfwInit() {
+		new SharedLibraryLoader().load("jglfw");
+		return glfwInitJni();
+	}
+	
+	public static native boolean glfwInitJni(); /*
 		if(!callbackClass) {
 			jclass exception = env->FindClass("java/lang/Exception");
 		

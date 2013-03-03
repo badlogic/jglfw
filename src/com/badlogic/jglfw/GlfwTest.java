@@ -11,7 +11,6 @@ import com.badlogic.jglfw.gl.GL;
 
 public class GlfwTest {
 	public static void main (String[] args) throws InterruptedException {
-		new JniGenSharedLibraryLoader("libs/jglfw-natives.jar").load("jglfw");
 		if(!glfwInit()) {
 			System.out.println("Couldn't initialize GLFW");
 			System.exit(-1);

@@ -459,10 +459,10 @@ extern "C" {
 #define com_badlogic_jglfw_Glfw_GLFW_DISCONNECTED 397313L
 /*
  * Class:     com_badlogic_jglfw_Glfw
- * Method:    glfwInit
+ * Method:    glfwInitJni
  * Signature: ()Z
  */
-JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_Glfw_glfwInit
+JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_Glfw_glfwInitJni
   (JNIEnv *, jclass);
 
 /*

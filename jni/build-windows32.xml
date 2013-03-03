@@ -10,7 +10,7 @@
 	<!-- the jni header jniPlatform to use -->
 	<property name="jniPlatform" value="win32"/>
 	<!-- the compilerPrefix for the C & C++ compilers -->
-	<property name="compilerPrefix" value="i686-w64-mingw32-"/>
+	<property name="compilerPrefix" value=""/>
 	<!--  the compilerSuffix for the C & C++ compilers -->	
 	<property name="compilerSuffix" value="" />	
 	
