@@ -611,6 +611,14 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwDestroyWindow
 
 /*
  * Class:     com_badlogic_jglfw_Glfw
+ * Method:    glfwWindowShouldClose
+ * Signature: (J)Z
+ */
+JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_Glfw_glfwWindowShouldClose
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     com_badlogic_jglfw_Glfw
  * Method:    glfwSetWindowShouldClose
  * Signature: (JI)V
  */

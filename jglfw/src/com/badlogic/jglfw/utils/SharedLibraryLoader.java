@@ -1,6 +1,8 @@
 package com.badlogic.jglfw.utils;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,8 +31,8 @@ public class SharedLibraryLoader {
 		this.nativesJar = nativesJar;
 	}
 
-	private String crc (String nativeFile) {
-		InputStream input = SharedLibraryLoader.class.getResourceAsStream("/" + nativeFile);
+	/** Returns a CRC of the remaining bytes in the stream. */
+	public String crc (InputStream input) {
 		if (input == null) return "" + System.nanoTime(); // fallback
 		CRC32 crc = new CRC32();
 		byte[] buffer = new byte[4096];
@@ -56,29 +58,41 @@ public class SharedLibraryLoader {
 	}
 
 	private String extractLibrary (String sharedLibName) {
-		File nativesDir = new File(System.getProperty("java.io.tmpdir") + "/jnigen/" + crc(sharedLibName));
+		String srcCrc = crc(SharedLibraryLoader.class.getResourceAsStream("/" + sharedLibName));
+		File nativesDir = new File(System.getProperty("java.io.tmpdir") + "/jnigen/" + srcCrc);
 		File nativeFile = new File(nativesDir, sharedLibName);
-		try {
-			// Extract native from classpath to temp dir.
-			InputStream input = null;
-			if (nativesJar == null)
-				input = SharedLibraryLoader.class.getResourceAsStream("/" + sharedLibName);
-			else
-				input = getFromJar(nativesJar, sharedLibName);
-			if (input == null) return null;
-			nativesDir.mkdirs();
-			FileOutputStream output = new FileOutputStream(nativeFile);
-			byte[] buffer = new byte[4096];
-			while (true) {
-				int length = input.read(buffer);
-				if (length == -1) break;
-				output.write(buffer, 0, length);
+		
+		String extractedCrc = null;
+		if (nativeFile.exists()) {
+			try {
+				extractedCrc = crc(new FileInputStream(nativeFile));
+			} catch (FileNotFoundException ignored) {
 			}
-			input.close();
-			output.close();
-		} catch (IOException ex) {
-			ex.printStackTrace();
-			throw new RuntimeException(ex);
+		}
+		
+		if(extractedCrc == null || !extractedCrc.equals(srcCrc)) {
+			try {
+				// Extract native from classpath to temp dir.
+				InputStream input = null;
+				if (nativesJar == null)
+					input = SharedLibraryLoader.class.getResourceAsStream("/" + sharedLibName);
+				else
+					input = getFromJar(nativesJar, sharedLibName);
+				if (input == null) return null;
+				nativesDir.mkdirs();
+				FileOutputStream output = new FileOutputStream(nativeFile);
+				byte[] buffer = new byte[4096];
+				while (true) {
+					int length = input.read(buffer);
+					if (length == -1) break;
+					output.write(buffer, 0, length);
+				}
+				input.close();
+				output.close();
+			} catch (IOException ex) {
+				ex.printStackTrace();
+				throw new RuntimeException(ex);
+			}
 		}
 		return nativeFile.exists() ? nativeFile.getAbsolutePath() : null;
 	}

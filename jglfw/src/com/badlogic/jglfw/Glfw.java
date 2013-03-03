@@ -640,6 +640,10 @@ public class Glfw {
 		glfwDestroyWindow((GLFWwindow*)window);
 	*/
 	
+	public static native boolean glfwWindowShouldClose(long window); /*
+		return GL_TRUE == glfwWindowShouldClose((GLFWwindow*)window);
+	*/
+	
 	public static native void glfwSetWindowShouldClose(long window, int value); /*
 		glfwSetWindowShouldClose((GLFWwindow*)window, value);
 	*/
