@@ -82,11 +82,11 @@ public class GlfwBuild {
 		new AntScriptGenerator().generate(config, win32, win64, linux32, linux64);
 //		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true");
-		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true");
-		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true");
+//		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true clean");
+//		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true");
 
-//		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true clean");
-//		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true");
+		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true clean");
+		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true");
 //		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true");
 		BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
