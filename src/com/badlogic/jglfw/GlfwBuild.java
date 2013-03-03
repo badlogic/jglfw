@@ -39,7 +39,6 @@ public class GlfwBuild {
 		
 		
 		BuildTarget win32 = BuildTarget.newDefaultTarget(TargetOs.Windows, false);
-		win32.compilerPrefix = "";
 		win32.cIncludes = merge(commonSrc,
 			"glfw-3.0/src/win32_clipboard.c",
 			"glfw-3.0/src/win32_gamma.c",
@@ -55,7 +54,6 @@ public class GlfwBuild {
 		win32.libraries = "-lopengl32 -lwinmm -lgdi32";
 		
 		BuildTarget win64 = BuildTarget.newDefaultTarget(TargetOs.Windows, true);
-		win64.compilerPrefix = "";
 		win64.cIncludes = win32.cIncludes;
 		win32.cFlags += " -D_GLFW_WIN32 -D_GLFW_WGL -D_GLFW_USE_OPENGL";
 		win32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src" };
