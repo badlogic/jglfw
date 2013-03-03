@@ -480,7 +480,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowShouldClose(JNI
 
 //@line:636
 
-		glfwSetWindowShouldClose((GLFWwindow*)window, value);
+		// glfwSetWindowShouldClose((GLFWwindow*)window, value);
 	
 
 }

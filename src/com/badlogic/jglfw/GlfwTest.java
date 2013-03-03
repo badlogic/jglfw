@@ -121,6 +121,8 @@ public class GlfwTest {
 		glfwShowWindow(window);
 		System.out.println(glfwGetWindowMonitor(window));
 		
+		glfwMakeContextCurrent(window);
+		
 		while(!glfwGetKey(window, GLFW_KEY_ESCAPE)) {
 			GL.glClear(GL.GL_COLOR_BUFFER_BIT);
 			glfwPollEvents();
