@@ -7,11 +7,17 @@
 	</target>
 	
 	<target name="compile-mac-natives">
-	    <ant antfile="build-macosx32.xml" dir="jni"/>
+	    <ant antfile="build-macosx32.xml" dir="jni">
+	        <target name="clean"/>
+			<target name="postcompile"/>
+	    </ant>
 	</target>
 	
 	<target name="compile-natives">
-	    <ant antfile="build.xml" dir="jni"/>
+	    <ant antfile="build.xml" dir="jni">
+	        <target name="clean"/>
+			<target name="all"/>
+	    </ant>
 	</target>
 	
 	<target name="compile" depends="clean">
