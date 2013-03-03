@@ -11,7 +11,7 @@ import com.badlogic.gdx.jnigen.JniGenSharedLibraryLoader;
 import com.badlogic.gdx.jnigen.NativeCodeGenerator;
 import com.badlogic.jglfw.gl.GL;
 
-import static com.badlogic.jglfw.Glfw3.*;
+import static com.badlogic.jglfw.Glfw.*;
 
 public class GlfwBuild {
 	public static String[] merge(String[] a, String ... b) {
@@ -23,7 +23,7 @@ public class GlfwBuild {
 	
 	public static void main(String[] args) throws Exception {
 		NativeCodeGenerator jniGen = new NativeCodeGenerator();
-		jniGen.generate("src/", "bin/", "jni", new String[] { "**/GL.java", "**/Glfw3.java" }, null);
+		jniGen.generate("src/", "bin/", "jni", new String[] { "**/GL.java", "**/Glfw.java" }, null);
 		
 		String[] commonSrc = { 
 			"glfw-3.0/src/clipboard.c",
@@ -54,6 +54,13 @@ public class GlfwBuild {
 		win32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src" };
 		win32.libraries = "-lopengl32 -lwinmm -lgdi32";
 		
+		BuildTarget win64 = BuildTarget.newDefaultTarget(TargetOs.Windows, true);
+		win64.compilerPrefix = "";
+		win64.cIncludes = win32.cIncludes;
+		win32.cFlags += " -D_GLFW_WIN32 -D_GLFW_WGL -D_GLFW_USE_OPENGL";
+		win32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src" };
+		win32.libraries = "-lopengl32 -lwinmm -lgdi32";
+		
 //		BuildTarget win64 = BuildTarget.newDefaultTarget(TargetOs.Windows, true);
 //		win64.cIncludes = new String[] { "glfw-2.7.7/lib/*.c", "glfw-2.7.7/lib/win32/*.c" };
 //		win64.cExcludes = new String[] { "**/win32_dllmain.c" };	
@@ -67,126 +74,11 @@ public class GlfwBuild {
 //		mac.libraries = "-framework Cocoa -framework OpenGL -framework IOKit";
 		
 		BuildConfig config = new BuildConfig("jglfw");
-		new AntScriptGenerator().generate(config, win32);
+		new AntScriptGenerator().generate(config, win32, win64);
 //		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true clean");
-		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true");
+//		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true");
 //		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true");
-		BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
-		
-		new JniGenSharedLibraryLoader("libs/jglfw-natives.jar").load("jglfw");
-		if(!glfwInit()) {
-			System.out.println("Couldn't initialize GLFW");
-			System.exit(-1);
-		}
-		System.out.println(glfwGetVersion());
-		System.out.println(glfwGetVersionString());
-		System.out.println(Arrays.toString(glfwGetMonitors()));
-		long monitor = glfwGetPrimaryMonitor();
-		System.out.println(monitor);
-		System.out.println(glfwGetMonitorX(monitor) + ", " + glfwGetMonitorY(monitor));
-		System.out.println(glfwGetMonitorPhysicalWidth(monitor) + ", " + glfwGetMonitorPhysicalHeight(monitor));
-		System.out.println(glfwGetMonitorName(monitor));
-		System.out.println(glfwGetVideoModes(monitor));
-		System.out.println(glfwGetVideoMode(monitor));
-		
-		glfwSetCallback(new Glfw3Callback() {
-			@Override
-			public void error (int error, String description) {
-				System.out.println("error: " + description);
-			}
-
-			@Override
-			public void monitor (long monitor, boolean connected) {
-				System.out.println("monitor " + monitor + " " + (connected?"connected":"disconnected"));
-			}
-
-			@Override
-			public void windowPos (long window, int x, int y) {
-				System.out.println("window position changed: " + x + ", " + y);
-			}
-
-			@Override
-			public void windowSize (long window, int width, int height) {
-				System.out.println("window size changed: " + width + ", " + height);
-			}
-
-			@Override
-			public boolean windowClose (long window) {
-				System.out.println("window closing");
-				return true;
-			}
-
-			@Override
-			public void windowRefresh (long window) {
-				System.out.println("window refresh needed");
-			}
-
-			@Override
-			public void windowFocus (long window, boolean focused) {
-				System.out.println("window " + (focused?"focused":"lost focus"));
-			}
-
-			@Override
-			public void windowIconify (long window, boolean iconified) {
-				System.out.println("window " + (iconified?"iconified": "deiconified"));
-			}
-
-			@Override
-			public void key (long window, int key, int action) {
-				String actionStr = "pressed";
-				if(action == GLFW_RELEASE) actionStr = "released";
-				if(action == GLFW_REPEAT) actionStr = "repeated";
-				System.out.println("key " + key + " " + actionStr);
-			}
-
-			@Override
-			public void character (long window, char character) {
-				System.out.println("character " + character);
-			}
-
-			@Override
-			public void mouseButton (long window, int button, boolean pressed) {
-				System.out.println("mouse button " + button + " " + (pressed?"pressed":"released"));
-			}
-
-			@Override
-			public void cursorPos (long window, int x, int y) {
-				System.out.println("cursor position " + x + ", " + y);
-			}
-
-			@Override
-			public void cursorEnter (long window, boolean entered) {
-				System.out.println("cursor " + (entered?"entered":"left"));
-			}
-
-			@Override
-			public void scroll (long window, double scrollX, double scrollY) {
-				System.out.println("scrolled " + scrollX + ", " + scrollY);
-			}
-			
-		});
-		
-		long window = glfwCreateWindow(480, 320, "Test", 0, 0);
-		System.out.println(glfwGetWindowX(window) + ", " + glfwGetWindowY(window));
-		System.out.println(glfwGetWindowWidth(window) + ", " + glfwGetWindowHeight(window));
-		glfwSetWindowSize(window, 640, 480);
-		glfwIconifyWindow(window);
-		Thread.sleep(1000);
-		glfwRestoreWindow(window);
-		Thread.sleep(1000);
-		glfwHideWindow(window);
-		Thread.sleep(1000);
-		glfwShowWindow(window);
-		System.out.println(glfwGetWindowMonitor(window));
-		
-		while(!glfwGetKey(window, GLFW_KEY_ESCAPE)) {
-			GL.glClear(GL.GL_COLOR_BUFFER_BIT);
-			glfwPollEvents();
-			glfwSwapBuffers(window);
-		}
-		
-		glfwDestroyWindow(window);
-		glfwTerminate();
+//		BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
 	}
 }

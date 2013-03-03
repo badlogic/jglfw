@@ -3,7 +3,7 @@ package com.badlogic.jglfw;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Glfw3 {
+public class Glfw {
 	public static final int  GLFW_VERSION_MAJOR          = 3;
 	public static final int  GLFW_VERSION_MINOR          = 0;
 	public static final int  GLFW_VERSION_REVISION       = 0;
@@ -257,7 +257,7 @@ public class Glfw3 {
 	public static final int  GLFW_CONNECTED              = 0x00061000;
 	public static final int  GLFW_DISCONNECTED           = 0x00061001;
 	
-	private static Glfw3Callback callback = null;
+	private static GlfwCallback callback = null;
 
 	// @off
 	/*JNI 
@@ -302,7 +302,7 @@ public class Glfw3 {
 	
 	int windowClose(GLFWwindow* window) {
 		if(callback) {
-			return staticEnv->CallBooleanMethod(callback, windowCloseId, (jlong)window);
+			return (staticEnv->CallBooleanMethod(callback, windowCloseId, (jlong)window)?GL_TRUE:GL_FALSE);
 		}
 		return GL_TRUE;
 	}
@@ -373,7 +373,7 @@ public class Glfw3 {
 		if(!callbackClass) {
 			jclass exception = env->FindClass("java/lang/Exception");
 		
-			callbackClass = (jclass)env->NewGlobalRef(env->FindClass("com/badlogic/jglfw/Glfw3Callback"));
+			callbackClass = (jclass)env->NewGlobalRef(env->FindClass("com/badlogic/jglfw/GlfwCallback"));
 			if(!callbackClass) {
 				env->ThrowNew(exception, "Couldn't find class Glfw3Callback");
 				return false;
@@ -699,19 +699,19 @@ public class Glfw3 {
 	
 	
 	/**
-	 * Sets the {@link Glfw3Callback} that will get invoked by
+	 * Sets the {@link GlfwCallback} that will get invoked by
 	 * various events. Replaces the single callback functions of GLFW
 	 * @param callback the callback or null
 	 */
-	public static void glfwSetCallback(Glfw3Callback callback) {
-		Glfw3.callback = callback;
+	public static void glfwSetCallback(GlfwCallback callback) {
+		Glfw.callback = callback;
 	}
 		
 	public static void glfwPollEvents() {
 		glfwPollEventsJni(callback);
 	}
 	
-	private static native void glfwPollEventsJni(Glfw3Callback javaCallback); /*
+	private static native void glfwPollEventsJni(GlfwCallback javaCallback); /*
 		callback = javaCallback;
 		staticEnv = env;
 		glfwPollEvents();
@@ -723,7 +723,7 @@ public class Glfw3 {
 		glfwWaitEventsJni(callback);
 	}
 	
-	private static native void glfwWaitEventsJni(Glfw3Callback javaCallback); /*
+	private static native void glfwWaitEventsJni(GlfwCallback javaCallback); /*
 		callback = javaCallback;
 		staticEnv = env;
 		glfwWaitEvents();
