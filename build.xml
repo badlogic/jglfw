@@ -7,7 +7,7 @@
 	</target>
 	
 	<target name="compile-mac-natives">
-	    <ant antfile="build-macosx32.xml" dir="jni">
+	    <ant antfile="build-macosx32.xml" dir="jni"/>
 	</target>
 	
 	<target name="compile-natives">
