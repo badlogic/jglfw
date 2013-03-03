@@ -104,7 +104,11 @@ public class GlfwTest {
 			
 		});
 		
-		long window = glfwCreateWindow(480, 320, "Test", 0, 0);
+		glfwWindowHint(GLFW_DEPTH_BITS, 16); // this is needed on virtualbox...
+		long window = glfwCreateWindow(800, 600, "Test", 0, 0);
+		if(window == 0) {
+			throw new RuntimeException("Couldn't create window");
+		}
 		System.out.println(glfwGetWindowX(window) + ", " + glfwGetWindowY(window));
 		System.out.println(glfwGetWindowWidth(window) + ", " + glfwGetWindowHeight(window));
 		glfwSetWindowSize(window, 640, 480);

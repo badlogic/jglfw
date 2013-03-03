@@ -1,20 +1,20 @@
-<project name="jglfw-Windows-64" basedir="." default="postcompile">
+<project name="jglfw-Linux-32" basedir="." default="postcompile">
 	<!-- include the environment -->
 	<property environment="env"/>	
 	<!-- output directory for temporary object files -->
-	<property name="buildDir" value="target/windows64" />
+	<property name="buildDir" value="target/linux32" />
 	<!-- output directory for the shared library -->
-	<property name="libsDir" value="../libs/windows64" />
+	<property name="libsDir" value="../libs/linux32" />
 	<!-- the name of the shared library -->
-	<property name="libName" value="jglfw64.dll"/>
+	<property name="libName" value="libjglfw.so"/>
 	<!-- the jni header jniPlatform to use -->
-	<property name="jniPlatform" value="win32"/>
+	<property name="jniPlatform" value="linux"/>
 	<!-- the compilerPrefix for the C & C++ compilers -->
-	<property name="compilerPrefix" value="x86_64-w64-mingw32-"/>	
+	<property name="compilerPrefix" value=""/>	
 	
 	<!-- define gcc compiler, options and files to compile -->
 	<property name="gcc" value="${compilerPrefix}gcc"/>	
-	<property name="gcc-opts" value="-c -Wall -O2 -mfpmath=sse -msse2 -fmessage-length=0 -m64 -D_GLFW_WIN32 -D_GLFW_WGL -D_GLFW_USE_OPENGL"/>
+	<property name="gcc-opts" value="-c -Wall -O2 -mfpmath=sse -msse -fmessage-length=0 -m32 -fPIC -D_GLFW_X11 -D_GLFW_GLX -D_GLFW_USE_OPENGL -D_GLFW_HAS_DLOPEN"/>
 	<fileset id="gcc-files" dir="./">
 		<exclude name="target/"/>		
 				<include name="memcpy_wrap.c"/>
@@ -27,21 +27,22 @@
 		<include name="glfw-3.0/src/monitor.c"/>
 		<include name="glfw-3.0/src/time.c"/>
 		<include name="glfw-3.0/src/window.c"/>
-		<include name="glfw-3.0/src/win32_clipboard.c"/>
-		<include name="glfw-3.0/src/win32_gamma.c"/>
-		<include name="glfw-3.0/src/win32_init.c"/>
-		<include name="glfw-3.0/src/win32_joystick.c"/>
-		<include name="glfw-3.0/src/win32_monitor.c"/>
-		<include name="glfw-3.0/src/win32_time.c"/>
-		<include name="glfw-3.0/src/win32_window.c"/>
-		<include name="glfw-3.0/src/wgl_context.c"/>
+		<include name="glfw-3.0/src/x11_clipboard.c"/>
+		<include name="glfw-3.0/src/x11_gamma.c"/>
+		<include name="glfw-3.0/src/x11_init.c"/>
+		<include name="glfw-3.0/src/x11_joystick.c"/>
+		<include name="glfw-3.0/src/x11_monitor.c"/>
+		<include name="glfw-3.0/src/x11_time.c"/>
+		<include name="glfw-3.0/src/x11_unicode.c"/>
+		<include name="glfw-3.0/src/x11_window.c"/>
+		<include name="glfw-3.0/src/glx_context.c"/>
 
 		
 	</fileset>
 	
 	<!-- define g++ compiler, options and files to compile -->
 	<property name="g++" value="${compilerPrefix}g++"/>
-	<property name="g++-opts" value="-c -Wall -O2 -mfpmath=sse -msse2 -fmessage-length=0 -m64"/>
+	<property name="g++-opts" value="-c -Wall -O2 -mfpmath=sse -msse -fmessage-length=0 -m32 -fPIC"/>
 	<fileset id="g++-files" dir="./">
 		<exclude name="target/"/>
 				<include name="**/*.cpp"/>
@@ -51,8 +52,8 @@
 
 	<!-- define linker and options -->
 	<property name="linker" value="${compilerPrefix}g++"/>
-	<property name="linker-opts" value="-Wl,--kill-at -shared -static-libgcc -static-libstdc++ -m64"/>
-	<property name="libraries" value="-lopengl32 -lwinmm -lgdi32"/>
+	<property name="linker-opts" value="-shared -m32"/>
+	<property name="libraries" value="-lX11 -lXrandr -lXxf86vm"/>
 	
 	<!-- cleans the build directory, removes all object files and shared libs -->
 	<target name="clean">

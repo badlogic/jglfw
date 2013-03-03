@@ -4747,7 +4747,7 @@ public class GL {
 	// @off
 	/*JNI
 	#include <GL/glfw3.h>
-	#include <GL/glext.h>
+	#include "GL/glext.h"
 	#if defined(_WIN32)
 	#ifndef APIENTRY
 	#define GLEW_APIENTRY_DEFINED

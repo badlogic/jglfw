@@ -1,17 +1,11 @@
 package com.badlogic.jglfw;
 
-import java.util.Arrays;
-
 import com.badlogic.gdx.jnigen.AntScriptGenerator;
 import com.badlogic.gdx.jnigen.BuildConfig;
 import com.badlogic.gdx.jnigen.BuildExecutor;
 import com.badlogic.gdx.jnigen.BuildTarget;
 import com.badlogic.gdx.jnigen.BuildTarget.TargetOs;
-import com.badlogic.gdx.jnigen.JniGenSharedLibraryLoader;
 import com.badlogic.gdx.jnigen.NativeCodeGenerator;
-import com.badlogic.jglfw.gl.GL;
-
-import static com.badlogic.jglfw.Glfw.*;
 
 public class GlfwBuild {
 	public static String[] merge(String[] a, String ... b) {
@@ -37,7 +31,7 @@ public class GlfwBuild {
 			"glfw-3.0/src/window.c"
 		};
 		
-		
+		/* WINDOWS */
 		BuildTarget win32 = BuildTarget.newDefaultTarget(TargetOs.Windows, false);
 		win32.cIncludes = merge(commonSrc,
 			"glfw-3.0/src/win32_clipboard.c",
@@ -50,33 +44,51 @@ public class GlfwBuild {
 			"glfw-3.0/src/wgl_context.c"
 		);
 		win32.cFlags += " -D_GLFW_WIN32 -D_GLFW_WGL -D_GLFW_USE_OPENGL";
-		win32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src" };
+		win32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "glew-headers/" };
 		win32.libraries = "-lopengl32 -lwinmm -lgdi32";
 		
 		BuildTarget win64 = BuildTarget.newDefaultTarget(TargetOs.Windows, true);
 		win64.cIncludes = win32.cIncludes;
-		win32.cFlags += " -D_GLFW_WIN32 -D_GLFW_WGL -D_GLFW_USE_OPENGL";
-		win32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src" };
-		win32.libraries = "-lopengl32 -lwinmm -lgdi32";
+		win64.cFlags += " -D_GLFW_WIN32 -D_GLFW_WGL -D_GLFW_USE_OPENGL";
+		win64.headerDirs = win32.headerDirs;
+		win64.libraries = win32.libraries;
 		
-//		BuildTarget win64 = BuildTarget.newDefaultTarget(TargetOs.Windows, true);
-//		win64.cIncludes = new String[] { "glfw-2.7.7/lib/*.c", "glfw-2.7.7/lib/win32/*.c" };
-//		win64.cExcludes = new String[] { "**/win32_dllmain.c" };	
-//		win64.headerDirs = new String[] { "glfw-2.7.7/include","glfw-2.7.7/lib", "glfw-2.7.7/lib/win32" };
-//		win64.libraries = "-lopengl32 -lwinmm -lgdi32";
-//		
-//		BuildTarget mac = BuildTarget.newDefaultTarget(TargetOs.MacOsX, false);
-//		mac.cIncludes = new String[] { "glfw-2.7.7/lib/*.c", "glfw-2.7.7/lib/cocoa/*.c", "glfw-2.7.7/lib/cocoa/*.m" };
-//		mac.cExcludes = new String[] { "**/win32_dllmain.c" };	
-//		mac.headerDirs = new String[] { "glfw-2.7.7/include","glfw-2.7.7/lib", "glfw-2.7.7/lib/cocoa", "/usr/X11/include/" };
-//		mac.libraries = "-framework Cocoa -framework OpenGL -framework IOKit";
+		/* LINUX */
+		BuildTarget linux32 = BuildTarget.newDefaultTarget(TargetOs.Linux, false);
+		linux32.cIncludes = merge(commonSrc,
+			"glfw-3.0/src/x11_clipboard.c",
+			"glfw-3.0/src/x11_gamma.c",
+			"glfw-3.0/src/x11_init.c",
+			"glfw-3.0/src/x11_joystick.c",
+			"glfw-3.0/src/x11_monitor.c",
+			"glfw-3.0/src/x11_time.c",
+			"glfw-3.0/src/x11_unicode.c",
+			"glfw-3.0/src/x11_window.c",
+			"glfw-3.0/src/glx_context.c"
+		);
+		linux32.cFlags += " -D_GLFW_X11 -D_GLFW_GLX -D_GLFW_USE_OPENGL -D_GLFW_HAS_DLOPEN";
+		linux32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "glew-headers/" };
+		linux32.libraries = "-lX11 -lXrandr -lXxf86vm";
+		
+		BuildTarget linux64 = BuildTarget.newDefaultTarget(TargetOs.Linux, true);
+		linux64.cIncludes = linux32.cIncludes;
+		linux64.cFlags += " -D_GLFW_X11 -D_GLFW_GLX -D_GLFW_USE_OPENGL -D_GLFW_HAS_DLOPEN";
+		linux64.headerDirs = linux32.headerDirs;
+		linux64.libraries = linux32.libraries;
+		
+		/* MAC OS X */
 		
 		BuildConfig config = new BuildConfig("jglfw");
-		new AntScriptGenerator().generate(config, win32, win64);
+		new AntScriptGenerator().generate(config, win32, win64, linux32, linux64);
 //		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true");
+		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true");
+		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true");
+
+//		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true clean");
+//		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true");
 //		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true");
-//		BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
+		BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
 	}
 }
