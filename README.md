@@ -13,30 +13,57 @@ The build system consists of an ant script located in the root folder. The simpl
 
     ant clean package
    
-This will fetch the latest jglfw-natives.jar from the build server (http://libgdx.badlogicgames.com/jglfw), compile the Java sources and put everything into a versioned zip file.
+This will fetch the latest jglfw-natives.jar from the build server (http://libgdx.badlogicgames.com/jglfw), compile the Java sources and put everything into a versioned zip file. That way you do not need to worry about setting up all the cross-compilation toolchains.
 
 If you want to compile the native code yourself, you'll have a much more fun time. I only provide instructions to build on Linux and Mac OS X, on Windows you can try to use MinGW.
 
-## Linux (to compile for Windows 32-/64-bit and Linux 32-/64-bit)
-  * Install dependencies and devel libs
+#### Linux (to compile for Windows 32-/64-bit and Linux 32-/64-bit)
+Install dependencies and devel libs
 
     sudo apt-get install g++-mingw-w64-i686 g++-mingw-w64-x86-64 g++-multilib gcc-multilib libX11-dev libXrandr libXxf86vm libgl1-mesa-dev libgl1-mesa-glx
-    ant clean compile-natives package
 
-  * Compile
+Compile
  
     ant clean compile-natives package
     
-## Mac (XCode from the Mac OS X App Store)
+#### Mac
+Install the latest XCode from the Mac OS X App Store. To compile the Mac OS X natives (jglfw/libs/macosx32/libjglfw.dylib, a fat shared lib for 32-/64-bit):
 
+    ant clean compile-mac-natives
 
+You can add the resulting .dylib to the `jglfw-natives.jar` generated on Linux as shown above.
 
-  * Import jglfw into Eclipse
-  * Run GlGenerator if you modified the automatic binding generator
-  * Run GlfwBuild if you modified the jnigen bindings for GLFW
+#### Modifying the Wrapper Code
 
-This will regenerate any build files and C/C++ files as a result of your modifications. 
+To modify the GLFW bindings, modify GLFW.java
+To modify the OpenGL bindings, modify GlParser.java and GlGenerator. Customizing works through the [custom.txt](https://github.com/badlogic/jglfw/blob/master/jglfw/src/com/badlogic/jglfw/gl/custom.txt) file. You can specify your own jnigen method in there.
 
+If you modified any of the bindings or wrapper generators, you'll need to run GlGenerator and GlfwBuild, in that order. This will regenerate all build scripts and C/C++ files.
+
+Notes on the GLFW bindings
+----------------------
+The GLFW wrapper is kept as close to the original C API as possible. The following deviations exist:
+
+  * Instead of registering multiple callback procedures via `glfwSetErrorCallback` et. al, you can set a GlfwCallback (or GlfwCallbackAdapter) via Glfw#glfwSetCallback(). This interface contains all callback methods.
+  * Gamma ramps can only be set via the simple method at the moment.
+    * Instead `GLFWwindow*` and `GLFWmonitor*` pointers, you'll simply get a Java long. Not type-safe, but simple.
+  * You should execute all window managment and rendering code on the main thread, that is, the thread within your `main()` method was started.
+  * On Mac OS X you have to supply -XStartOnFirstThread as a JVM argument (SWT shares a similar issue). This is due to how Cocoa works (or doesn't, however you want to look at it...)
+
+Integration with Swing or AWT is not possible (so, no Applets either). You can however open Swing and AWT frames besides GLFW windows.
+
+Notes on the OpenGL bindings
+--------------------------------------------
+OpenGL JNI methods are generated from the GLEW headers. A few notes:
+
+  * Methods with pointer parameters, e.g. like in `glVertexPointer()`, have at least two Java method equivalents, one with the pointer converted to a Buffer and a byte offset, and another that only takes a long encoding a native heap memory address. If the concrete pointer parameter is known, e.g. `const float*`, a third method is generated that takes a Java array of equivalent type, plus an offset.
+  * The position and limit of a direct Buffer are ignored! Supply a byte offset instead.
+  * No bounds checking is performed, ever.
+  * Extension methods are automatically loaded on startup, much like in the case of GLEW. 
+
+Notes on the OpenAL bindings
+--------------------------------------------
+To be defined...
 TODO
 ----
  * [X] Build system
