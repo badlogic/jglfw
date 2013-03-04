@@ -15,6 +15,7 @@ public class GLParser {
 	public static class GLConstant {
 		public String name;
 		public String value;
+		public String type = "int";
 		@Override
 		public String toString() {
 			return "const " + name + " = " + value;
@@ -23,13 +24,13 @@ public class GLParser {
 	
 	public static class GLType {
 		public static final Map<String, String> javaTypes = new HashMap<String, String>();
+
 		static {			
 			javaTypes.put("void", "void");
 			javaTypes.put("GLenum", "int");
 			javaTypes.put("GLbitfield", "int");
 			javaTypes.put("GLuint", "int");
 			javaTypes.put("GLint", "int");
-			javaTypes.put("const GLint", "int");
 			javaTypes.put("GLsizei", "int");
 			javaTypes.put("GLboolean", "boolean");
 			javaTypes.put("GLbyte", "byte");
@@ -38,32 +39,34 @@ public class GLParser {
 			javaTypes.put("GLushort", "short");
 			javaTypes.put("GLulong", "long");
 			javaTypes.put("GLfloat", "float");
-			javaTypes.put("const GLfloat", "float");
 			javaTypes.put("GLclampf", "float");
 			javaTypes.put("GLdouble", "double");
 			javaTypes.put("GLclampd", "double");
-			javaTypes.put("GLsizeiptr", "int");
-			javaTypes.put("GLintptr", "int");
+			javaTypes.put("GLsizeiptr", "long");
+			javaTypes.put("GLintptr", "long");
 			javaTypes.put("GLsync", "long");
 			javaTypes.put("cl_context", "long");
 			javaTypes.put("cl_event", "long");
 			javaTypes.put("GLhandleARB", "int");
 			javaTypes.put("GLuint64", "long");
-			javaTypes.put("GLsizeiptrARB", "int");
-			javaTypes.put("GLintptrARB", "int");
+			javaTypes.put("GLsizeiptrARB", "long");
+			javaTypes.put("GLintptrARB", "long");
 			javaTypes.put("GLint64EXT", "long");
 			javaTypes.put("GLuint64EXT", "long");
 			javaTypes.put("GLhalf", "short");
 			javaTypes.put("GLhalfNV", "short");
 			javaTypes.put("GLvdpauSurfaceNV", "int");
+			javaTypes.put("GLfixed", "int");
 		}
 		
 		public String text;
 		public int ptrCount;
+		public boolean isConst;
 		
-		public GLType(String text, int ptrCount) {
+		public GLType(String text, int ptrCount, boolean isConst) {
 			this.text = text;
 			this.ptrCount = ptrCount;
+			this.isConst = isConst;
 			if(ptrCount == 0) {
 				if(!javaTypes.containsKey(text)) {
 					throw new RuntimeException("unknown C type " + text);
@@ -76,8 +79,13 @@ public class GLParser {
 			else return javaTypes.get(text);
 		}
 		
+		public String getJniType() {
+			if(ptrCount != 0) return getCType(); // should be a compile error
+			return "j" + javaTypes.get(text);
+		}
+		
 		public String getCType() {
-			return text + repeat('*', ptrCount);
+			return (isConst?"const ": "") + text + repeat('*', ptrCount);
 		}
 
 		@Override
@@ -193,20 +201,16 @@ public class GLParser {
 				if(line.startsWith("#define GL_")) {
 					parseConstant(line, constants);
 				} else if(line.startsWith("GLAPI") && !isExcludedProcedure(line)) {
-					parseProcedure(line, procedures);
-				} else if(line.startsWith("typedef") && line.contains("GLAPIENTRY") && !isExcludedProcedure(line)) {
-					parseExtensionDef(line, extensions);
-				} else if(line.startsWith("#define gl") && line.contains("GLEW_GET_FUN") && !isExcludedProcedure(line)) {
-					String name = line.substring("#define ".length(), line.indexOf("GLEW_GET_FUN")).trim();
-					String extName = "PFN" + name.toUpperCase() + "PROC";
+					GLProcedure proc = parseProcedure(line, procedures);
+					extensions.put("PFN" + proc.name.toUpperCase() + "PROC", proc);
+				} else if(line.startsWith("typedef") && line.contains("APIENTRYP") && !isExcludedProcedure(line)) {
+					String extName = line.substring(line.indexOf("PFNGL"), line.indexOf(")", line.indexOf("PFNGL"))).trim();
 					GLProcedure proc = extensions.remove(extName);
 					if(proc == null) {
-						throw new RuntimeException("Extension " + name + "|" + extName + " not defined");
+						throw new RuntimeException("Extension " + extName + " not defined");
 					}
 					proc.extensionName = extName;
 					proc.isExtension = true;
-					proc.name = name;
-					procedures.add(proc);
 				}
 			}			
 		} catch(IOException e) {
@@ -228,22 +232,6 @@ public class GLParser {
 		return false;
 	}
 
-	private void parseExtensionDef(String line, Map<String, GLProcedure> extensions) {		
-		line = line.substring("typedef".length());
-		String returnType = line.substring(0, line.indexOf("(GLAPIENTRY")).trim();
-		String name = line.substring(line.indexOf("PFNGL"), line.indexOf("PROC)") + "PROC)".length() - 1).trim();
-		line = line.substring(line.indexOf("PROC)") + "PROC)".length());
-		String[] params = line.substring(line.indexOf("(") + 1, line.indexOf(")")).split(",");
-		GLProcedure proc = new GLProcedure();
-		proc.text = line;
-		proc.returnType = new GLType(returnType.replace('*', ' ').trim(), count(returnType, '*'));
-		proc.params = parseParameters(params);
-		if(extensions.containsKey(name)) {
-			throw new RuntimeException("Extension " + name + " already defined!");
-		}
-		extensions.put(name, proc);
-	}
-
 	private void parseConstant(String line, List<GLConstant> constants) {
 		String[] tokens = line.split("\\s+");
 		if(tokens.length != 3) {
@@ -252,11 +240,18 @@ public class GLParser {
 			GLConstant constant = new GLConstant();
 			constant.name = tokens[1];
 			constant.value = tokens[2];
+			if(constant.value.endsWith("u")) {
+				constant.value = constant.value.substring(0, constant.value.length() - 1);
+			}
+			if(constant.value.equals("0xFFFFFFFFFFFFFFFFull")) {
+				constant.value = "0xFFFFFFFFFFFFFFFFl";
+				constant.type = "long";
+			}
 			constants.add(constant);
 		}
 	}
 	
-	private void parseProcedure(String line, List<GLProcedure> procedures) {
+	private GLProcedure parseProcedure(String line, List<GLProcedure> procedures) {
 		line = line.substring("GLAPI".length());
 		String returnType = line.substring(0, line.indexOf("APIENTRY")).trim();
 		String name = line.substring(line.indexOf("APIENTRY") + "APIENTRY".length(), line.indexOf("(")).trim();
@@ -264,9 +259,15 @@ public class GLParser {
 		GLProcedure proc = new GLProcedure();
 		proc.text = line;
 		proc.name = name;
-		proc.returnType = new GLType(returnType.replace('*', ' ').trim(), count(returnType, '*'));
+		boolean isConst = false;
+		if(returnType.contains("const")) {
+			returnType = returnType.replace("const", "");
+			isConst = true;
+		}
+		proc.returnType = new GLType(returnType.replace('*', ' ').trim(), count(returnType, '*'), isConst);
 		proc.params = parseParameters(params);
 		procedures.add(proc);
+		return proc;
 	}
 	
 	private List<GLParam> parseParameters(String[] params) {
@@ -283,14 +284,21 @@ public class GLParser {
 					param = param.replaceAll("\\[.*?\\]", "");
 				}
 				
+				// could be double const ...
+				boolean isConst = false;
+				if(param.contains("const")) {
+					param = param.replace("const", "").trim();
+					isConst = true;
+				}
+				
 				GLParam p = new GLParam();
 				int nameIndex = param.lastIndexOf(" ");
 				if(nameIndex == -1) {
 					p.name = "param" + i;
-					p.type = new GLType(param.trim(), pointers);
+					p.type = new GLType(param.trim(), pointers, isConst);
 				} else {
 					p.name = param.substring(nameIndex).trim();
-					p.type = new GLType(param.substring(0, param.lastIndexOf(" ")).trim(), pointers);				
+					p.type = new GLType(param.substring(0, param.lastIndexOf(" ")).trim(), pointers, isConst);				
 				}
 				parameters.add(p);
 			}

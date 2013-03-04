@@ -6202,8 +6202,10 @@ typedef char GLchar;
 
 #ifndef GL_VERSION_1_5
 /* GL types for handling large vertex buffer objects */
+#ifndef __APPLE_CC__
 typedef ptrdiff_t GLintptr;
 typedef ptrdiff_t GLsizeiptr;
+#endif
 #endif
 
 #ifndef GL_ARB_vertex_buffer_object
@@ -6264,6 +6266,22 @@ typedef unsigned __int64 uint64_t;
 #include <inttypes.h>
 #endif
 #endif
+// Needed so we can use this glext.h on all platforms. Question is if this breaks ABI
+// doesn't look like it does.
+#undef GL_VERSION_1_2
+#undef GL_VERSION_1_3
+#undef GL_VERSION_1_4
+#undef GL_VERSION_1_5
+#undef GL_VERSION_2_0
+#undef GL_VERSION_2_1
+#undef GL_VERSION_3_0
+#undef GL_VERSION_3_1
+#undef GL_VERSION_3_2
+#undef GL_VERSION_3_3
+#undef GL_VERSION_4_0
+#undef GL_VERSION_4_1
+#undef GL_VERSION_4_2
+#undef GL_VERSION_4_3
 
 #ifndef GL_EXT_timer_query
 typedef int64_t GLint64EXT;

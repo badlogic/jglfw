@@ -595,10 +595,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwWindowHint
 
 /*
  * Class:     com_badlogic_jglfw_Glfw
- * Method:    glfwCreateWindow
+ * Method:    glfwCreateWindowJni
  * Signature: (IILjava/lang/String;JJ)J
  */
-JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_Glfw_glfwCreateWindow
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_Glfw_glfwCreateWindowJni
   (JNIEnv *, jclass, jint, jint, jstring, jlong, jlong);
 
 /*

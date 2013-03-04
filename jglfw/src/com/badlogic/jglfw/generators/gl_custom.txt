@@ -5,12 +5,65 @@ glGetString
 -----
 glGetStringi
 	public static native Buffer glGetString(int name, int index); /*
-		return env->NewStringUTF((const char*)glGetStringi((GLenum)name, (GLuint)index));
+		return env->NewStringUTF((const char*)ext_glGetStringi((GLenum)name, (GLuint)index));
 	*/
 -----
 glMapBuffer
 	public static native Buffer glMapBuffer(int target, int access, long bufferSize); /*
-		GLVoid* buffer = (GLvoid*)glMapBuffer((GLenum)target, (GLenum)access);
+		GLvoid* buffer = (GLvoid*)ext_glMapBuffer((GLenum)target, (GLenum)access);
+		if(!buffer) return 0;
 		return env->NewDirectByteBuffer(buffer, bufferSize);
+	*/
+-----
+glMapBufferARB
+	public static native Buffer glMapBufferARB(int target, int access, long bufferSize); /*
+		GLvoid* buffer = (GLvoid*)ext_glMapBufferARB((GLenum)target, (GLenum)access);
+		if(!buffer) return 0;
+		return env->NewDirectByteBuffer(buffer, bufferSize);
+	*/
+-----
+glMapBufferRange
+	public static native Buffer glMapBufferRange(int target, int offset, int length, int access, long bufferSize); /*
+		GLvoid* buffer = (GLvoid*)ext_glMapBufferRange((GLenum)target, (GLintptr)offset, (GLsizeiptr)length, (GLbitfield)access);
+		if(!buffer) return 0;
+		return env->NewDirectByteBuffer(buffer, bufferSize);
+	*/
+-----
+glMapObjectBufferATI
+	public static native Buffer glMapObjectBufferATI(int buffer, long bufferSize); /*
+		GLvoid* bufferPtr = (GLvoid*)ext_glMapObjectBufferATI((GLuint)buffer);
+		if(!bufferPtr) return 0;
+		return env->NewDirectByteBuffer(bufferPtr, bufferSize);
+	*/
+-----
+glMapNamedBufferEXT
+	public static native Buffer glMapNamedBufferEXT(int buffer, int access, long bufferSize); /*
+		GLvoid* bufferPtr = (GLvoid*)ext_glMapNamedBufferEXT((GLuint)buffer, (GLenum)access);
+		if(!bufferPtr) return 0;
+		return env->NewDirectByteBuffer(bufferPtr, bufferSize);
+	*/
+-----
+glMapNamedBufferRangeEXT
+	public static native Buffer glMapNamedBufferRangeEXT(int buffer, int offset, int length, int access, int bufferSize); /*
+		GLvoid* bufferPtr = (GLvoid*)ext_glMapNamedBufferRangeEXT((GLuint)buffer, (GLintptr)offset, (GLsizeiptr)length, (GLbitfield)access);
+		if(!bufferPtr) return 0;
+		return env->NewDirectByteBuffer(bufferPtr, bufferSize);
+	*/
+-----
+glMapTexture2DINTEL
+	public static native Buffer glMapTexture2DINTEL(int texture, int level, int access, Buffer stride, int strideByteOffset, Buffer layout, int layoutByteOffset, long bufferSize); /*
+		GLvoid* bufferPtr = (GLvoid*)ext_glMapTexture2DINTEL((GLuint)texture, (GLint)level, (GLbitfield)access, (const GLint*)(stride + strideByteOffset), (const GLenum*)(layout + layoutByteOffset));
+		if(!bufferPtr) return 0;
+		return env->NewDirectByteBuffer(bufferPtr, bufferSize);
+	*/
+-----
+glShaderSource
+	public static native void glShaderSource(int shader, String string); /*
+		ext_glShaderSource((GLuint)shader, 1, &string, 0);
+	*/
+-----
+glShaderSourceARB
+	public static native void glShaderSourceARB(int shader, String string); /*
+		ext_glShaderSource((GLuint)shader, 1, &string, 0);
 	*/
 -----
