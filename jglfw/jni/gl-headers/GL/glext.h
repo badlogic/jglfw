@@ -6265,6 +6265,25 @@ typedef unsigned __int64 uint64_t;
 #endif
 #endif
 
+#undef GL_VERSION_1_2
+#undef GL_VERSION_1_3
+#undef GL_VERSION_1_4
+#undef GL_VERSION_1_5
+#undef GL_VERSION_2_0
+#undef GL_VERSION_2_1
+#undef GL_VERSION_3_0
+#undef GL_VERSION_3_1
+#undef GL_VERSION_3_2
+#undef GL_VERSION_3_3
+#undef GL_VERSION_4_0
+#undef GL_VERSION_4_1
+#undef GL_VERSION_4_2
+#undef GL_VERSION_4_3
+
+#ifdef GL_VERSION_1_2
+#warning "this can not be"
+#endif
+
 #ifndef GL_EXT_timer_query
 typedef int64_t GLint64EXT;
 typedef uint64_t GLuint64EXT;
