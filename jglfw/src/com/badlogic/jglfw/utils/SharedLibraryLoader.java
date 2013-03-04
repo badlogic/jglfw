@@ -1,5 +1,8 @@
 package com.badlogic.jglfw.utils;
 
+import com.badlogic.gdx.jnigen.AntScriptGenerator;
+import com.badlogic.gdx.jnigen.test.MyJniClass;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

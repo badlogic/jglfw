@@ -69,7 +69,7 @@ public interface GlfwCallback {
 	 * Called when a key was pressed or released
 	 * @param window the window handle
 	 * @param key the key code
-	 * @param pressed whether the key was pressed (GLFW_PRESSED), released (GLFW_RELEASE) or repeated (GLFW_REPEAT)
+	 * @param action whether the key was pressed (GLFW_PRESSED), released (GLFW_RELEASE) or repeated (GLFW_REPEAT)
 	 */
 	public void key(long window, int key, int action);
 	

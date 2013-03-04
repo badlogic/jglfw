@@ -86,7 +86,7 @@ public class GLParser {
 		}
 	}
 	
-	private static String repeat(char c, int times) {
+	static String repeat(char c, int times) {
 		StringBuffer buffer = new StringBuffer();
 		for(int i = 0; i < times; i++) {
 			buffer.append(c);
@@ -121,9 +121,9 @@ public class GLParser {
 	 * Takes the glew header, parses it and returns a list of {@link GLConstant} and
 	 * {@link GLProcedure} instances for all GL constants and procedures found in the
 	 * header
-	 * @param inputFile the path to the glew.h file.
 	 * @param procedures list of {@link GLProcedure} instances, filled by this function
 	 * @param constants list of {@link GLConstant} instances, filled by this function
+	 * @param inputFiles the path to the glew files.
 	 */
 	public void parse(List<GLProcedure> procedures, List<GLConstant> constants, String ... inputFiles) {
 		for(String inputFile: inputFiles) {
