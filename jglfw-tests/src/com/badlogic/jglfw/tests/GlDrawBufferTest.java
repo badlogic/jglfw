@@ -40,6 +40,9 @@ public class GlDrawBufferTest {
 			glfwPollEvents();
 			glfwSwapBuffers(window);
 		}
+		
+		Memory.free(vertices);
+		Memory.free(indices);
 		glfwTerminate();
 	}
 }

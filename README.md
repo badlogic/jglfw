@@ -14,6 +14,8 @@ Download the latest nightly build from http://libgdx.badlogicgames.com/jglfw/nig
 Create a Java project in your prefered way and add jglfw.jar and jglfw-natives.jar to your classpath. Check the [GLFW 3.0 documentation](https://github.com/elmindreda/glfw/blob/master/include/GL/glfw3.h). OpenGL
 and OpenAL should be straight forward to use. See the notes on GLFW, OpenGL and OpenAL below.
 
+Note: on Mac OS X you need to provide the -XStartOnFirstThread JVM argument, much like with SWT.
+
 Note: 32-bit Linux is currently not supported due to an issue with the build server. You can build the natives yourself, cd to jglfw/jni, then
 
     ant -f build-linux32.xml
