@@ -7,14 +7,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import com.badlogic.jglfw.generators.GLParser.GLConstant;
 import com.badlogic.jglfw.generators.GLParser.GLParam;
 import com.badlogic.jglfw.generators.GLParser.GLProcedure;
 
 public class GLGenerator {
+	private static final String EXT = "ext_";
+
 	public void generate(String outputFile, String packageName, String className, List<GLProcedure> procedures, List<GLConstant> constants) {
 		StringBuffer buffer = new StringBuffer();
 		Map<String, String> customProcedures = readCustomProcs();
@@ -32,64 +36,33 @@ public class GLGenerator {
 		} catch (IOException e) {
 			throw new RuntimeException("Couldn't write Java class file " + outputFile, e);
 		}
-	}
-	
-	private Map<String, String> readCustomProcs () {
-		Map<String, String> customProcs = new HashMap<String, String>();
-		String procName = null;
-		StringBuffer procBody = new StringBuffer();
-		
-		try {
-			BufferedReader reader = new BufferedReader(new InputStreamReader(GLGenerator.class.getResourceAsStream("/com/badlogic/jglfw/generators/gl_custom.txt")));
-			while(true) {
-				String line = reader.readLine();
-				if(line == null) {
-					break;
-				}
-				
-				if(line.startsWith("-")) {
-					customProcs.put(procName, procBody.toString());
-					procName = null;
-					procBody = new StringBuffer();
-					continue;
-				}
-				
-				if(procName == null) {
-					procName = line;
-				} else {
-					procBody.append(line + "\n");
-				}
-			}
-			if(procName != null) {
-				customProcs.put(procName, procBody.toString());
-			}
-			reader.close();
-			return customProcs;
-		} catch (IOException e) {
-			throw new RuntimeException("Couldn't read custom procedures", e);
-		}
-	}
+	}	
 
 	private void generatePreamble (StringBuffer buffer) {
-		try {
-			buffer.append("\t// @off\n");
-			buffer.append("\t/*JNI\n"); 
-			buffer.append("\t#include <GL/glfw3.h>\n");
-			buffer.append("\t#include \"GL/glext.h\"\n");
-			BufferedReader reader = new BufferedReader(new InputStreamReader(GLGenerator.class.getResourceAsStream("/com/badlogic/jglfw/generators/gl_preamble.h")));
-			while(true) {
-				String line = reader.readLine();
-				if(line == null) break;
-				buffer.append(line + "\n");
-			}
-			buffer.append("*/\n");
-			reader.close();
-		} catch (IOException e) {
-			throw new RuntimeException("Couldn't generate preamble");
-		}
+		buffer.append("\t// @off\n");
+		buffer.append("\t/*JNI\n"); 
+		buffer.append("\t#include <GL/glfw3.h>\n");
+		buffer.append("\t#include \"GL/glext.h\"\n");
+		buffer.append("\t*/\n");
 	}
 
 	private void generateFunctionPointers (StringBuffer buffer, List<GLProcedure> procedures) {
+		buffer.append("\t// @off\n");
+		buffer.append("\t/*JNI\n"); 
+		for(GLProcedure proc: procedures) {
+			if(proc.isExtension) {
+				buffer.append("\t" + proc.extensionName + " " + EXT + proc.name + ";\n");
+			}
+		}
+		buffer.append("\t*/\n");
+		
+		buffer.append("\n\tpublic static native void init(); /*\n");
+		for(GLProcedure proc: procedures) {
+			if(proc.isExtension) {
+//				buffer.append("\t\t" + proc.extensionName + " " + EXT + proc.name + ";\n");
+			}
+		}
+		buffer.append("\t*/\n\n");
 	}
 
 	private void generateProcedures (StringBuffer buffer, List<GLProcedure> procedures, Map<String, String> customProcedures) {
@@ -98,14 +71,28 @@ public class GLGenerator {
 				buffer.append(customProcedures.get(proc.name));
 				buffer.append("\n");
 			} else {
-				if(!hasDoublePointerParam(proc)) {
-					throw new RuntimeException("need custom procedure in custom.txt for " + proc.name + ", double pointer param detected");
+				if(hasDoublePointerParam(proc)) {
+					System.out.println("GLGenerator warning: double pointer param detected, " + proc.name + " may need custom procedure in custom.txt");
+				}
+				if(hasPointerReturnType(proc)) {
+					System.err.println("GLGenerator error: pointer return type, " + proc.name + " may need custom procedure in custom.txt");
 				}
 				generateProcedure(buffer, proc);
 			}
 		}
 	}	
 
+	private boolean hasPointerReturnType(GLProcedure proc) {
+		return proc.returnType.ptrCount > 0;			
+	}
+
+	private boolean hasPointerParam(GLProcedure proc) {
+		for(GLParam param: proc.params) {
+			if(param.type.ptrCount > 0) return true;
+		}
+		return false;
+	}
+	
 	private boolean hasDoublePointerParam(GLProcedure proc) {
 		for(GLParam param: proc.params) {
 			if(param.type.ptrCount > 1) return true;
@@ -124,7 +111,7 @@ public class GLGenerator {
 		} else {
 			buffer.append("\t\t");
 		}
-		buffer.append(proc.name + "(");
+		buffer.append((proc.isExtension?EXT: "") + proc.name + "(");
 		generateCParams(buffer, proc);
 		buffer.append(");\n");
 		buffer.append("\t*/\n\n");
@@ -174,10 +161,54 @@ public class GLGenerator {
 		buffer.append("public class " + className + " {\n");
 	}
 	
+	private Map<String, String> readCustomProcs () {
+		Map<String, String> customProcs = new HashMap<String, String>();
+		String procName = null;
+		StringBuffer procBody = new StringBuffer();
+		
+		try {
+			BufferedReader reader = new BufferedReader(new InputStreamReader(GLGenerator.class.getResourceAsStream("/com/badlogic/jglfw/generators/gl_custom.txt")));
+			while(true) {
+				String line = reader.readLine();
+				if(line == null) {
+					break;
+				}
+				
+				if(line.startsWith("-")) {
+					customProcs.put(procName, procBody.toString());
+					procName = null;
+					procBody = new StringBuffer();
+					continue;
+				}
+				
+				if(procName == null) {
+					procName = line.trim();
+				} else {
+					procBody.append(line + "\n");
+				}
+			}
+			if(procName != null) {
+				customProcs.put(procName, procBody.toString());
+			}
+			reader.close();
+			return customProcs;
+		} catch (IOException e) {
+			throw new RuntimeException("Couldn't read custom procedures", e);
+		}
+	}
+	
 	public static void main (String[] args) {
 		List<GLProcedure> procs = new ArrayList<GLProcedure>();
 		List<GLConstant> consts = new ArrayList<GLConstant>();
-		new GLParser().parse("jni/glew-headers/glew.h", procs, consts);
+		new GLParser().parse(procs, consts, "jni/gl-headers/GL/gl11.h"); //, "jni/gl-headers/GL/glext.h");
+		Set<String> names = new HashSet<String>();
+		for(GLProcedure proc: procs) {
+			if(names.contains(proc.name)) {
+				System.out.println("duplicate " + proc.name);
+			} else {
+				names.add(proc.name);
+			}
+		}
 		new GLGenerator().generate("src/com/badlogic/jglfw/gl/GL.java", "com.badlogic.jglfw.gl", "GL", procs, consts);
 	}
 }

@@ -3,3 +3,14 @@ glGetString
 		return env->NewStringUTF((const char*)glGetString((GLenum)name));
 	*/
 -----
+glGetStringi
+	public static native Buffer glGetString(int name, int index); /*
+		return env->NewStringUTF((const char*)glGetStringi((GLenum)name, (GLuint)index));
+	*/
+-----
+glMapBuffer
+	public static native Buffer glMapBuffer(int target, int access, long bufferSize); /*
+		GLVoid* buffer = (GLvoid*)glMapBuffer((GLenum)target, (GLenum)access);
+		return env->NewDirectByteBuffer(buffer, bufferSize);
+	*/
+-----

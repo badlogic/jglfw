@@ -54,6 +54,7 @@ public class GLParser {
 			javaTypes.put("GLint64EXT", "long");
 			javaTypes.put("GLuint64EXT", "long");
 			javaTypes.put("GLhalf", "short");
+			javaTypes.put("GLhalfNV", "short");
 			javaTypes.put("GLvdpauSurfaceNV", "int");
 		}
 		
@@ -124,25 +125,17 @@ public class GLParser {
 	 * @param procedures list of {@link GLProcedure} instances, filled by this function
 	 * @param constants list of {@link GLConstant} instances, filled by this function
 	 */
-	public void parse(String inputFile, List<GLProcedure> procedures, List<GLConstant> constants) {
-		File input = new File(inputFile);
-		if(!input.exists()) throw new RuntimeException(inputFile + " does not exist");
-		
-		parseGLHeader(input, procedures, constants);
-		
-		deduplicateConsts(constants);
-		sortConsts(constants);
-		for(GLConstant c: constants) {
-			System.out.println(c);
+	public void parse(List<GLProcedure> procedures, List<GLConstant> constants, String ... inputFiles) {
+		for(String inputFile: inputFiles) {
+			File input = new File(inputFile);
+			if(!input.exists()) throw new RuntimeException(inputFile + " does not exist");
+			
+			parseGLHeader(input, procedures, constants);
+			
+			deduplicateConsts(constants);
+			sortConsts(constants);
+			filterProcedures(procedures);
 		}
-		System.out.println(constants.size());
-		
-		for(GLProcedure p: procedures) {
-			System.out.println(p);
-		}
-		System.out.println(procedures.size());
-		
-		printTypes(procedures);
 	}
 	
 	private void sortConsts (List<GLConstant> constants) {
@@ -162,6 +155,19 @@ public class GLParser {
 			}
 		}
 	}
+	
+	private void filterProcedures(List<GLProcedure> procedures) {
+		List<GLProcedure> newProcs = new ArrayList<GLProcedure>();
+		for(GLProcedure proc: procedures) {
+			if(proc.name.contains("_")) {
+				System.out.println("GLParser warning: skipping " + proc.name + " due to underline in name, bug in jnigen");
+				continue;
+			}
+			newProcs.add(proc);
+		}
+		procedures.clear();
+		procedures.addAll(newProcs);
+	}
 
 	private void deduplicateConsts (List<GLConstant> constants) {
 		List<GLConstant> newConsts = new ArrayList<GLConstant>();
@@ -177,19 +183,20 @@ public class GLParser {
 	}
 
 	private void parseGLHeader(File input, List<GLProcedure> procedures, List<GLConstant> constants) {
+		BufferedReader reader = null;
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader(input));
+			reader = new BufferedReader(new FileReader(input));
 			Map<String, GLProcedure> extensions = new HashMap<String, GLProcedure>();
 			while(true) {				
 				String line = reader.readLine();
 				if(line == null) break;
 				if(line.startsWith("#define GL_")) {
 					parseConstant(line, constants);
-				} else if(line.startsWith("GLAPI")) {
+				} else if(line.startsWith("GLAPI") && !isExcludedProcedure(line)) {
 					parseProcedure(line, procedures);
-				} else if(line.startsWith("typedef") && line.contains("GLAPIENTRY") && !isExcludedExtension(line)) {
+				} else if(line.startsWith("typedef") && line.contains("GLAPIENTRY") && !isExcludedProcedure(line)) {
 					parseExtensionDef(line, extensions);
-				} else if(line.startsWith("#define gl") && line.contains("GLEW_GET_FUN") && !isExcludedExtension(line)) {
+				} else if(line.startsWith("#define gl") && line.contains("GLEW_GET_FUN") && !isExcludedProcedure(line)) {
 					String name = line.substring("#define ".length(), line.indexOf("GLEW_GET_FUN")).trim();
 					String extName = "PFN" + name.toUpperCase() + "PROC";
 					GLProcedure proc = extensions.remove(extName);
@@ -197,23 +204,25 @@ public class GLParser {
 						throw new RuntimeException("Extension " + name + "|" + extName + " not defined");
 					}
 					proc.extensionName = extName;
+					proc.isExtension = true;
 					proc.name = name;
 					procedures.add(proc);
 				}
-			}
-			reader.close();
+			}			
 		} catch(IOException e) {
 			throw new RuntimeException("Couldn't parse header file, " + e);
+		} finally {
+			if(reader != null) try { reader.close(); } catch(IOException e) { };
 		}
 	}
 	
-	private boolean isExcludedExtension(String line) {
+	private boolean isExcludedProcedure(String line) {
 		if(line.toLowerCase().contains("gldebug")) {
-			System.out.println("skipped " + line);
+			System.out.println("GLParser warning: skipped " + line);
 			return true;
 		}
 		if(line.toLowerCase().contains("glgetpointerv")) {
-			System.out.println("skipped " + line);
+			System.out.println("GLParser warning: skipped " + line);
 			return true;
 		}
 		return false;
@@ -225,7 +234,6 @@ public class GLParser {
 		String name = line.substring(line.indexOf("PFNGL"), line.indexOf("PROC)") + "PROC)".length() - 1).trim();
 		line = line.substring(line.indexOf("PROC)") + "PROC)".length());
 		String[] params = line.substring(line.indexOf("(") + 1, line.indexOf(")")).split(",");
-		System.out.println("extension: " + returnType + ", " + name);
 		GLProcedure proc = new GLProcedure();
 		proc.text = line;
 		proc.returnType = new GLType(returnType.replace('*', ' ').trim(), count(returnType, '*'));
@@ -237,9 +245,9 @@ public class GLParser {
 	}
 
 	private void parseConstant(String line, List<GLConstant> constants) {
-		String[] tokens = line.split(" ");
+		String[] tokens = line.split("\\s+");
 		if(tokens.length != 3) {
-			System.out.println("warning: couldn't parse constant '" + line + "'");
+			System.out.println("GLParser warning: couldn't parse constant '" + line + "'");
 		} else {
 			GLConstant constant = new GLConstant();
 			constant.name = tokens[1];
@@ -250,9 +258,9 @@ public class GLParser {
 	
 	private void parseProcedure(String line, List<GLProcedure> procedures) {
 		line = line.substring("GLAPI".length());
-		String returnType = line.substring(0, line.indexOf("GLAPIENTRY")).trim();
-		String name = line.substring(line.indexOf("GLAPIENTRY") + "GLAPIENTRY".length(), line.indexOf("(")).trim();
-		String[] params = line.substring(line.indexOf("(") + 1, line.indexOf(")")).split(",");
+		String returnType = line.substring(0, line.indexOf("APIENTRY")).trim();
+		String name = line.substring(line.indexOf("APIENTRY") + "APIENTRY".length(), line.indexOf("(")).trim();
+		String[] params = line.substring(line.indexOf("(") + 1, line.indexOf(")")).trim().split(",");
 		GLProcedure proc = new GLProcedure();
 		proc.text = line;
 		proc.name = name;
@@ -288,20 +296,7 @@ public class GLParser {
 			}
 		}
 		return parameters;
-	}
-	
-	private void printTypes(List<GLProcedure> procs) {
-		Set<String> types = new HashSet<String>();
-		for(GLProcedure proc: procs) {
-			types.add(proc.returnType.getCType());
-			for(GLParam param: proc.params) {
-				types.add(param.type.getCType());
-			}
-		}
-		for(String type: types) {
-			System.out.println(type);
-		}
-	}
+	}	
 	
 	private int count(String text, char c) {
 		int sum = 0;
@@ -314,6 +309,6 @@ public class GLParser {
 	public static void main(String[] args) {
 		List<GLProcedure> procs = new ArrayList<GLProcedure>();
 		List<GLConstant> consts = new ArrayList<GLConstant>();
-		new GLParser().parse("jni/glew-headers/glew.h", procs, consts);
+		new GLParser().parse(procs, consts, "jni/gl-headers/GL/gl11.h", "jni/gl-headers/GL/glext.h");
 	}
 }

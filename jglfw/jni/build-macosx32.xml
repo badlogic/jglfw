@@ -109,7 +109,7 @@
 			<arg value="-I."/>
 						<arg value="-Iglfw-3.0/include"/>
 			<arg value="-Iglfw-3.0/src"/>
-			<arg value="-Iglew-headers/"/>
+			<arg value="-Igl-headers/"/>
 
 			<srcfile/>
 			<arg value="-o"/>
@@ -127,7 +127,7 @@
 			<arg value="-I."/>
 						<arg value="-Iglfw-3.0/include"/>
 			<arg value="-Iglfw-3.0/src"/>
-			<arg value="-Iglew-headers/"/>
+			<arg value="-Igl-headers/"/>
 
 			<srcfile/>
 			<arg value="-o"/>
