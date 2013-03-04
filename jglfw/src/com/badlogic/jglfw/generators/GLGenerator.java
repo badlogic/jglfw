@@ -41,22 +41,7 @@ public class GLGenerator {
 	private void generatePreamble (StringBuffer buffer) {
 		buffer.append("\t// @off\n");
 		buffer.append("\t/*JNI\n"); 
-		buffer.append("\t#include <GL/glfw3.h>\n");
-		buffer.append("\t#undef GL_VERSION_1_2\n");
-		buffer.append("\t#undef GL_VERSION_1_3\n");
-		buffer.append("\t#undef GL_VERSION_1_4\n");
-		buffer.append("\t#undef GL_VERSION_1_5\n");
-		buffer.append("\t#undef GL_VERSION_2_0\n");
-		buffer.append("\t#undef GL_VERSION_2_1\n");
-		buffer.append("\t#undef GL_VERSION_3_0\n");
-		buffer.append("\t#undef GL_VERSION_3_1\n");
-		buffer.append("\t#undef GL_VERSION_3_2\n");
-		buffer.append("\t#undef GL_VERSION_3_3\n");
-		buffer.append("\t#undef GL_VERSION_4_0\n");
-		buffer.append("\t#undef GL_VERSION_4_1\n");
-		buffer.append("\t#undef GL_VERSION_4_2\n");
-		buffer.append("\t#undef GL_VERSION_4_3\n");
-		
+		buffer.append("\t#include <GL/glfw3.h>\n");		
 		buffer.append("\t#include \"GL/glext.h\"\n");
 		buffer.append("\t*/\n");
 	}
