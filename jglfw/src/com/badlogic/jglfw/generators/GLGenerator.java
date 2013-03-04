@@ -51,7 +51,7 @@ public class GLGenerator {
 		buffer.append("\t/*JNI\n"); 
 		for(GLProcedure proc: procedures) {
 			if(proc.isExtension) {
-				buffer.append("\t" + proc.extensionName + " " + EXT + proc.name + ";\n");
+				buffer.append("\t" + proc.extensionName + " " + EXT + proc.name + " = (" + proc.extensionName + ")0xdeadbeef;\n");
 			}
 		}
 		buffer.append("\tstatic int initialized = 0;");
