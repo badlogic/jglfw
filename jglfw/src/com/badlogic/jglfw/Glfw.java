@@ -662,7 +662,11 @@ public class Glfw {
 	public static native void glfwSetWindowTitle(long window, String title); /*
 		glfwSetWindowTitle((GLFWwindow*)window, title);
 	*/
-	
+
+	public static native int glfwSetWindowPos(long window,  int x, int y); /*
+		glfwSetWindowPos(window, x, y);
+	*/
+
 	public static native int glfwGetWindowX(long window); /*
 		int x = 0;
 		int y = 0;
