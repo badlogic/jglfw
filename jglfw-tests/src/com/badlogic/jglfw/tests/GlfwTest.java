@@ -121,8 +121,15 @@ public class GlfwTest {
 		
 		glfwMakeContextCurrent(window);
 		
-		while(!glfwGetKey(window, GLFW_KEY_ESCAPE)) {
+		while(!glfwWindowShouldClose(window)) {
+			GL.glViewport(0, 0, 640, 480);
 			GL.glClear(GL.GL_COLOR_BUFFER_BIT);
+			GL.glRotatef(0.01f, 0, 0, 1);
+			GL.glBegin(GL.GL_TRIANGLES);
+			GL.glVertex2f(-0.5f, -0.5f);
+			GL.glVertex2f(0.5f, -0.5f);
+			GL.glVertex2f(0, 0.5f);
+			GL.glEnd();
 			glfwPollEvents();
 			glfwSwapBuffers(window);
 		}
