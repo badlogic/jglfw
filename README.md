@@ -11,15 +11,15 @@ Building
 --------
 The build system consists of an ant script located in the root folder. The simplest way to build jglfw is to invoke ant as follows
 
-   ant clean package
+    ant clean package
    
 This will fetch the latest jglfw-natives.jar from the build server (http://libgdx.badlogicgames.com/jglfw), compile the Java sources and put everything into a versioned zip file.
 
 If you want to compile the native code yourself, you'll have a much more fun time. I only provide instructions to build on Linux and Mac OS X, on Windows you can try to use MinGW.
 
   * Linux (to compile for Windows 32-/64-bit and Linux 32-/64-bit)
-    * `sudo apt-get install g++-mingw-w64-i686 g++-mingw-w64-x86-64 g++-multilib gcc-multilib libX11-dev libXrandr libXxf86vm libgl1-mesa-dev libgl1-mesa-glx`
-    * `ant clean compile-natives package`
+    sudo apt-get install g++-mingw-w64-i686 g++-mingw-w64-x86-64 g++-multilib gcc-multilib libX11-dev libXrandr libXxf86vm libgl1-mesa-dev libgl1-mesa-glx
+    ant clean compile-natives package
   * Mac
     * Latest XCode from the Mac OS X App Store
 
