@@ -1,4 +1,4 @@
-package com.badlogic.jglfw.gl;
+package com.badlogic.jglfw.generators;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -29,6 +29,7 @@ public class GLParser {
 			javaTypes.put("GLbitfield", "int");
 			javaTypes.put("GLuint", "int");
 			javaTypes.put("GLint", "int");
+			javaTypes.put("const GLint", "int");
 			javaTypes.put("GLsizei", "int");
 			javaTypes.put("GLboolean", "boolean");
 			javaTypes.put("GLbyte", "byte");
@@ -37,11 +38,24 @@ public class GLParser {
 			javaTypes.put("GLushort", "short");
 			javaTypes.put("GLulong", "long");
 			javaTypes.put("GLfloat", "float");
+			javaTypes.put("const GLfloat", "float");
 			javaTypes.put("GLclampf", "float");
 			javaTypes.put("GLdouble", "double");
 			javaTypes.put("GLclampd", "double");
+			javaTypes.put("GLsizeiptr", "int");
+			javaTypes.put("GLintptr", "int");
+			javaTypes.put("GLsync", "long");
+			javaTypes.put("cl_context", "long");
+			javaTypes.put("cl_event", "long");
+			javaTypes.put("GLhandleARB", "int");
+			javaTypes.put("GLuint64", "long");
+			javaTypes.put("GLsizeiptrARB", "int");
+			javaTypes.put("GLintptrARB", "int");
+			javaTypes.put("GLint64EXT", "long");
+			javaTypes.put("GLuint64EXT", "long");
+			javaTypes.put("GLhalf", "short");
+			javaTypes.put("GLvdpauSurfaceNV", "int");
 		}
-		
 		
 		public String text;
 		public int ptrCount;
@@ -90,7 +104,8 @@ public class GLParser {
 	
 	public static class GLProcedure {
 		public String text;
-		public boolean needsLoading;
+		public boolean isExtension;
+		public String extensionName;
 		public String name;
 		public List<GLParam> params = new ArrayList<GLParam>();
 		public GLType returnType;
@@ -164,6 +179,7 @@ public class GLParser {
 	private void parseGLHeader(File input, List<GLProcedure> procedures, List<GLConstant> constants) {
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(input));
+			Map<String, GLProcedure> extensions = new HashMap<String, GLProcedure>();
 			while(true) {				
 				String line = reader.readLine();
 				if(line == null) break;
@@ -171,8 +187,19 @@ public class GLParser {
 					parseConstant(line, constants);
 				} else if(line.startsWith("GLAPI")) {
 					parseProcedure(line, procedures);
+				} else if(line.startsWith("typedef") && line.contains("GLAPIENTRY") && !isExcludedExtension(line)) {
+					parseExtensionDef(line, extensions);
+				} else if(line.startsWith("#define gl") && line.contains("GLEW_GET_FUN") && !isExcludedExtension(line)) {
+					String name = line.substring("#define ".length(), line.indexOf("GLEW_GET_FUN")).trim();
+					String extName = "PFN" + name.toUpperCase() + "PROC";
+					GLProcedure proc = extensions.remove(extName);
+					if(proc == null) {
+						throw new RuntimeException("Extension " + name + "|" + extName + " not defined");
+					}
+					proc.extensionName = extName;
+					proc.name = name;
+					procedures.add(proc);
 				}
-						  
 			}
 			reader.close();
 		} catch(IOException e) {
@@ -180,6 +207,35 @@ public class GLParser {
 		}
 	}
 	
+	private boolean isExcludedExtension(String line) {
+		if(line.toLowerCase().contains("gldebug")) {
+			System.out.println("skipped " + line);
+			return true;
+		}
+		if(line.toLowerCase().contains("glgetpointerv")) {
+			System.out.println("skipped " + line);
+			return true;
+		}
+		return false;
+	}
+
+	private void parseExtensionDef(String line, Map<String, GLProcedure> extensions) {		
+		line = line.substring("typedef".length());
+		String returnType = line.substring(0, line.indexOf("(GLAPIENTRY")).trim();
+		String name = line.substring(line.indexOf("PFNGL"), line.indexOf("PROC)") + "PROC)".length() - 1).trim();
+		line = line.substring(line.indexOf("PROC)") + "PROC)".length());
+		String[] params = line.substring(line.indexOf("(") + 1, line.indexOf(")")).split(",");
+		System.out.println("extension: " + returnType + ", " + name);
+		GLProcedure proc = new GLProcedure();
+		proc.text = line;
+		proc.returnType = new GLType(returnType.replace('*', ' ').trim(), count(returnType, '*'));
+		proc.params = parseParameters(params);
+		if(extensions.containsKey(name)) {
+			throw new RuntimeException("Extension " + name + " already defined!");
+		}
+		extensions.put(name, proc);
+	}
+
 	private void parseConstant(String line, List<GLConstant> constants) {
 		String[] tokens = line.split(" ");
 		if(tokens.length != 3) {
@@ -208,12 +264,26 @@ public class GLParser {
 	private List<GLParam> parseParameters(String[] params) {
 		List<GLParam> parameters = new ArrayList<GLParam>();
 		if(!(params.length == 1 && params[0].equals("void"))) {
-			for(String param: params) {
+			for(int i = 0; i < params.length; i++) {
+				String param = params[i];
 				int pointers = count(param, '*');
 				param = param.replace('*', ' ').trim();
+				
+				// could be an array as well for some extensions..
+				if(param.contains("[")) {
+					pointers = 1;
+					param = param.replaceAll("\\[.*?\\]", "");
+				}
+				
 				GLParam p = new GLParam();
-				p.name = param.substring(param.lastIndexOf(" ")).trim();
-				p.type = new GLType(param.substring(0, param.lastIndexOf(" ")).trim(), pointers);				
+				int nameIndex = param.lastIndexOf(" ");
+				if(nameIndex == -1) {
+					p.name = "param" + i;
+					p.type = new GLType(param.trim(), pointers);
+				} else {
+					p.name = param.substring(nameIndex).trim();
+					p.type = new GLType(param.substring(0, param.lastIndexOf(" ")).trim(), pointers);				
+				}
 				parameters.add(p);
 			}
 		}

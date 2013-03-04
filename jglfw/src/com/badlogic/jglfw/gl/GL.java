@@ -6247,4 +6247,8284 @@ public class GL {
 		glViewport((GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
 	*/
 
+	public static native void glCopyTexSubImage3D(int target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height); /*
+		glCopyTexSubImage3D((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glDrawRangeElements(int mode, int start, int end, int count, int type, Buffer indices, int indicesByteOffset); /*
+		glDrawRangeElements((GLenum)mode, (GLuint)start, (GLuint)end, (GLsizei)count, (GLenum)type, (const GLvoid*)(indices + indicesByteOffset));
+	*/
+
+	public static native void glTexImage3D(int target, int level, int internalFormat, int width, int height, int depth, int border, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glTexImage3D((GLenum)target, (GLint)level, (GLint)internalFormat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glTexSubImage3D(int target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glTexSubImage3D((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glActiveTexture(int texture); /*
+		glActiveTexture((GLenum)texture);
+	*/
+
+	public static native void glClientActiveTexture(int texture); /*
+		glClientActiveTexture((GLenum)texture);
+	*/
+
+	public static native void glCompressedTexImage1D(int target, int level, int internalformat, int width, int border, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTexImage1D((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLint)border, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTexImage2D(int target, int level, int internalformat, int width, int height, int border, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTexImage2D((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLint)border, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTexImage3D(int target, int level, int internalformat, int width, int height, int depth, int border, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTexImage3D((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTexSubImage1D(int target, int level, int xoffset, int width, int format, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTexSubImage1D((GLenum)target, (GLint)level, (GLint)xoffset, (GLsizei)width, (GLenum)format, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTexSubImage2D(int target, int level, int xoffset, int yoffset, int width, int height, int format, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTexSubImage2D((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTexSubImage3D(int target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int format, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTexSubImage3D((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetCompressedTexImage(int target, int lod, Buffer img, int imgByteOffset); /*
+		glGetCompressedTexImage((GLenum)target, (GLint)lod, (GLvoid*)(img + imgByteOffset));
+	*/
+
+	public static native void glLoadTransposeMatrixd(Buffer m, int mByteOffset); /*
+		glLoadTransposeMatrixd((const GLdouble*)(m + mByteOffset));
+	*/
+
+	public static native void glLoadTransposeMatrixf(Buffer m, int mByteOffset); /*
+		glLoadTransposeMatrixf((const GLfloat*)(m + mByteOffset));
+	*/
+
+	public static native void glMultTransposeMatrixd(Buffer m, int mByteOffset); /*
+		glMultTransposeMatrixd((const GLdouble*)(m + mByteOffset));
+	*/
+
+	public static native void glMultTransposeMatrixf(Buffer m, int mByteOffset); /*
+		glMultTransposeMatrixf((const GLfloat*)(m + mByteOffset));
+	*/
+
+	public static native void glMultiTexCoord1d(int target, double s); /*
+		glMultiTexCoord1d((GLenum)target, (GLdouble)s);
+	*/
+
+	public static native void glMultiTexCoord1dv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord1dv((GLenum)target, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord1f(int target, float s); /*
+		glMultiTexCoord1f((GLenum)target, (GLfloat)s);
+	*/
+
+	public static native void glMultiTexCoord1fv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord1fv((GLenum)target, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord1i(int target, int s); /*
+		glMultiTexCoord1i((GLenum)target, (GLint)s);
+	*/
+
+	public static native void glMultiTexCoord1iv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord1iv((GLenum)target, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord1s(int target, short s); /*
+		glMultiTexCoord1s((GLenum)target, (GLshort)s);
+	*/
+
+	public static native void glMultiTexCoord1sv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord1sv((GLenum)target, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord2d(int target, double s, double t); /*
+		glMultiTexCoord2d((GLenum)target, (GLdouble)s, (GLdouble)t);
+	*/
+
+	public static native void glMultiTexCoord2dv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord2dv((GLenum)target, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord2f(int target, float s, float t); /*
+		glMultiTexCoord2f((GLenum)target, (GLfloat)s, (GLfloat)t);
+	*/
+
+	public static native void glMultiTexCoord2fv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord2fv((GLenum)target, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord2i(int target, int s, int t); /*
+		glMultiTexCoord2i((GLenum)target, (GLint)s, (GLint)t);
+	*/
+
+	public static native void glMultiTexCoord2iv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord2iv((GLenum)target, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord2s(int target, short s, short t); /*
+		glMultiTexCoord2s((GLenum)target, (GLshort)s, (GLshort)t);
+	*/
+
+	public static native void glMultiTexCoord2sv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord2sv((GLenum)target, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord3d(int target, double s, double t, double r); /*
+		glMultiTexCoord3d((GLenum)target, (GLdouble)s, (GLdouble)t, (GLdouble)r);
+	*/
+
+	public static native void glMultiTexCoord3dv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord3dv((GLenum)target, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord3f(int target, float s, float t, float r); /*
+		glMultiTexCoord3f((GLenum)target, (GLfloat)s, (GLfloat)t, (GLfloat)r);
+	*/
+
+	public static native void glMultiTexCoord3fv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord3fv((GLenum)target, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord3i(int target, int s, int t, int r); /*
+		glMultiTexCoord3i((GLenum)target, (GLint)s, (GLint)t, (GLint)r);
+	*/
+
+	public static native void glMultiTexCoord3iv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord3iv((GLenum)target, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord3s(int target, short s, short t, short r); /*
+		glMultiTexCoord3s((GLenum)target, (GLshort)s, (GLshort)t, (GLshort)r);
+	*/
+
+	public static native void glMultiTexCoord3sv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord3sv((GLenum)target, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord4d(int target, double s, double t, double r, double q); /*
+		glMultiTexCoord4d((GLenum)target, (GLdouble)s, (GLdouble)t, (GLdouble)r, (GLdouble)q);
+	*/
+
+	public static native void glMultiTexCoord4dv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord4dv((GLenum)target, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord4f(int target, float s, float t, float r, float q); /*
+		glMultiTexCoord4f((GLenum)target, (GLfloat)s, (GLfloat)t, (GLfloat)r, (GLfloat)q);
+	*/
+
+	public static native void glMultiTexCoord4fv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord4fv((GLenum)target, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord4i(int target, int s, int t, int r, int q); /*
+		glMultiTexCoord4i((GLenum)target, (GLint)s, (GLint)t, (GLint)r, (GLint)q);
+	*/
+
+	public static native void glMultiTexCoord4iv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord4iv((GLenum)target, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord4s(int target, short s, short t, short r, short q); /*
+		glMultiTexCoord4s((GLenum)target, (GLshort)s, (GLshort)t, (GLshort)r, (GLshort)q);
+	*/
+
+	public static native void glMultiTexCoord4sv(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord4sv((GLenum)target, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glSampleCoverage(float value, boolean invert); /*
+		glSampleCoverage((GLclampf)value, (GLboolean)invert);
+	*/
+
+	public static native void glBlendColor(float red, float green, float blue, float alpha); /*
+		glBlendColor((GLclampf)red, (GLclampf)green, (GLclampf)blue, (GLclampf)alpha);
+	*/
+
+	public static native void glBlendEquation(int mode); /*
+		glBlendEquation((GLenum)mode);
+	*/
+
+	public static native void glBlendFuncSeparate(int sfactorRGB, int dfactorRGB, int sfactorAlpha, int dfactorAlpha); /*
+		glBlendFuncSeparate((GLenum)sfactorRGB, (GLenum)dfactorRGB, (GLenum)sfactorAlpha, (GLenum)dfactorAlpha);
+	*/
+
+	public static native void glFogCoordPointer(int type, int stride, Buffer pointer, int pointerByteOffset); /*
+		glFogCoordPointer((GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glFogCoordd(double coord); /*
+		glFogCoordd((GLdouble)coord);
+	*/
+
+	public static native void glFogCoorddv(Buffer coord, int coordByteOffset); /*
+		glFogCoorddv((const GLdouble*)(coord + coordByteOffset));
+	*/
+
+	public static native void glFogCoordf(float coord); /*
+		glFogCoordf((GLfloat)coord);
+	*/
+
+	public static native void glFogCoordfv(Buffer coord, int coordByteOffset); /*
+		glFogCoordfv((const GLfloat*)(coord + coordByteOffset));
+	*/
+
+	public static native void glMultiDrawArrays(int mode, Buffer first, int firstByteOffset, Buffer count, int countByteOffset, int drawcount); /*
+		glMultiDrawArrays((GLenum)mode, (const GLint*)(first + firstByteOffset), (const GLsizei*)(count + countByteOffset), (GLsizei)drawcount);
+	*/
+
+	public static native void glMultiDrawElements(int mode, Buffer count, int countByteOffset, int type, Buffer indices, int indicesByteOffset, int drawcount); /*
+		glMultiDrawElements((GLenum)mode, (const GLsizei*)(count + countByteOffset), (GLenum)type, (const GLvoid**)(indices + indicesByteOffset), (GLsizei)drawcount);
+	*/
+
+	public static native void glPointParameterf(int pname, float param); /*
+		glPointParameterf((GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glPointParameterfv(int pname, Buffer params, int paramsByteOffset); /*
+		glPointParameterfv((GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glPointParameteri(int pname, int param); /*
+		glPointParameteri((GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glPointParameteriv(int pname, Buffer params, int paramsByteOffset); /*
+		glPointParameteriv((GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glSecondaryColor3b(byte red, byte green, byte blue); /*
+		glSecondaryColor3b((GLbyte)red, (GLbyte)green, (GLbyte)blue);
+	*/
+
+	public static native void glSecondaryColor3bv(Buffer v, int vByteOffset); /*
+		glSecondaryColor3bv((const GLbyte*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColor3d(double red, double green, double blue); /*
+		glSecondaryColor3d((GLdouble)red, (GLdouble)green, (GLdouble)blue);
+	*/
+
+	public static native void glSecondaryColor3dv(Buffer v, int vByteOffset); /*
+		glSecondaryColor3dv((const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColor3f(float red, float green, float blue); /*
+		glSecondaryColor3f((GLfloat)red, (GLfloat)green, (GLfloat)blue);
+	*/
+
+	public static native void glSecondaryColor3fv(Buffer v, int vByteOffset); /*
+		glSecondaryColor3fv((const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColor3i(int red, int green, int blue); /*
+		glSecondaryColor3i((GLint)red, (GLint)green, (GLint)blue);
+	*/
+
+	public static native void glSecondaryColor3iv(Buffer v, int vByteOffset); /*
+		glSecondaryColor3iv((const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColor3s(short red, short green, short blue); /*
+		glSecondaryColor3s((GLshort)red, (GLshort)green, (GLshort)blue);
+	*/
+
+	public static native void glSecondaryColor3sv(Buffer v, int vByteOffset); /*
+		glSecondaryColor3sv((const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColor3ub(byte red, byte green, byte blue); /*
+		glSecondaryColor3ub((GLubyte)red, (GLubyte)green, (GLubyte)blue);
+	*/
+
+	public static native void glSecondaryColor3ubv(Buffer v, int vByteOffset); /*
+		glSecondaryColor3ubv((const GLubyte*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColor3ui(int red, int green, int blue); /*
+		glSecondaryColor3ui((GLuint)red, (GLuint)green, (GLuint)blue);
+	*/
+
+	public static native void glSecondaryColor3uiv(Buffer v, int vByteOffset); /*
+		glSecondaryColor3uiv((const GLuint*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColor3us(short red, short green, short blue); /*
+		glSecondaryColor3us((GLushort)red, (GLushort)green, (GLushort)blue);
+	*/
+
+	public static native void glSecondaryColor3usv(Buffer v, int vByteOffset); /*
+		glSecondaryColor3usv((const GLushort*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColorPointer(int size, int type, int stride, Buffer pointer, int pointerByteOffset); /*
+		glSecondaryColorPointer((GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glWindowPos2d(double x, double y); /*
+		glWindowPos2d((GLdouble)x, (GLdouble)y);
+	*/
+
+	public static native void glWindowPos2dv(Buffer p, int pByteOffset); /*
+		glWindowPos2dv((const GLdouble*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos2f(float x, float y); /*
+		glWindowPos2f((GLfloat)x, (GLfloat)y);
+	*/
+
+	public static native void glWindowPos2fv(Buffer p, int pByteOffset); /*
+		glWindowPos2fv((const GLfloat*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos2i(int x, int y); /*
+		glWindowPos2i((GLint)x, (GLint)y);
+	*/
+
+	public static native void glWindowPos2iv(Buffer p, int pByteOffset); /*
+		glWindowPos2iv((const GLint*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos2s(short x, short y); /*
+		glWindowPos2s((GLshort)x, (GLshort)y);
+	*/
+
+	public static native void glWindowPos2sv(Buffer p, int pByteOffset); /*
+		glWindowPos2sv((const GLshort*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos3d(double x, double y, double z); /*
+		glWindowPos3d((GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glWindowPos3dv(Buffer p, int pByteOffset); /*
+		glWindowPos3dv((const GLdouble*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos3f(float x, float y, float z); /*
+		glWindowPos3f((GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glWindowPos3fv(Buffer p, int pByteOffset); /*
+		glWindowPos3fv((const GLfloat*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos3i(int x, int y, int z); /*
+		glWindowPos3i((GLint)x, (GLint)y, (GLint)z);
+	*/
+
+	public static native void glWindowPos3iv(Buffer p, int pByteOffset); /*
+		glWindowPos3iv((const GLint*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos3s(short x, short y, short z); /*
+		glWindowPos3s((GLshort)x, (GLshort)y, (GLshort)z);
+	*/
+
+	public static native void glWindowPos3sv(Buffer p, int pByteOffset); /*
+		glWindowPos3sv((const GLshort*)(p + pByteOffset));
+	*/
+
+	public static native void glBeginQuery(int target, int id); /*
+		glBeginQuery((GLenum)target, (GLuint)id);
+	*/
+
+	public static native void glBindBuffer(int target, int buffer); /*
+		glBindBuffer((GLenum)target, (GLuint)buffer);
+	*/
+
+	public static native void glBufferData(int target, int size, Buffer data, int dataByteOffset, int usage); /*
+		glBufferData((GLenum)target, (GLsizeiptr)size, (const GLvoid*)(data + dataByteOffset), (GLenum)usage);
+	*/
+
+	public static native void glBufferSubData(int target, int offset, int size, Buffer data, int dataByteOffset); /*
+		glBufferSubData((GLenum)target, (GLintptr)offset, (GLsizeiptr)size, (const GLvoid*)(data + dataByteOffset));
+	*/
+
+	public static native void glDeleteBuffers(int n, Buffer buffers, int buffersByteOffset); /*
+		glDeleteBuffers((GLsizei)n, (const GLuint*)(buffers + buffersByteOffset));
+	*/
+
+	public static native void glDeleteQueries(int n, Buffer ids, int idsByteOffset); /*
+		glDeleteQueries((GLsizei)n, (const GLuint*)(ids + idsByteOffset));
+	*/
+
+	public static native void glEndQuery(int target); /*
+		glEndQuery((GLenum)target);
+	*/
+
+	public static native void glGenBuffers(int n, Buffer buffers, int buffersByteOffset); /*
+		glGenBuffers((GLsizei)n, (GLuint*)(buffers + buffersByteOffset));
+	*/
+
+	public static native void glGenQueries(int n, Buffer ids, int idsByteOffset); /*
+		glGenQueries((GLsizei)n, (GLuint*)(ids + idsByteOffset));
+	*/
+
+	public static native void glGetBufferParameteriv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetBufferParameteriv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetBufferPointerv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetBufferPointerv((GLenum)target, (GLenum)pname, (GLvoid**)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetBufferSubData(int target, int offset, int size, Buffer data, int dataByteOffset); /*
+		glGetBufferSubData((GLenum)target, (GLintptr)offset, (GLsizeiptr)size, (GLvoid*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetQueryObjectiv(int id, int pname, Buffer params, int paramsByteOffset); /*
+		glGetQueryObjectiv((GLuint)id, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetQueryObjectuiv(int id, int pname, Buffer params, int paramsByteOffset); /*
+		glGetQueryObjectuiv((GLuint)id, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetQueryiv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetQueryiv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native boolean glIsBuffer(int buffer); /*
+		return (GLboolean)glIsBuffer((GLuint)buffer);
+	*/
+
+	public static native boolean glIsQuery(int id); /*
+		return (GLboolean)glIsQuery((GLuint)id);
+	*/
+
+	public static native Buffer glMapBuffer(int target, int access); /*
+		return (GLvoid*)glMapBuffer((GLenum)target, (GLenum)access);
+	*/
+
+	public static native boolean glUnmapBuffer(int target); /*
+		return (GLboolean)glUnmapBuffer((GLenum)target);
+	*/
+
+	public static native void glAttachShader(int program, int shader); /*
+		glAttachShader((GLuint)program, (GLuint)shader);
+	*/
+
+	public static native void glBindAttribLocation(int program, int index, Buffer name, int nameByteOffset); /*
+		glBindAttribLocation((GLuint)program, (GLuint)index, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glBlendEquationSeparate(int param0, int param1); /*
+		glBlendEquationSeparate((GLenum)param0, (GLenum)param1);
+	*/
+
+	public static native void glCompileShader(int shader); /*
+		glCompileShader((GLuint)shader);
+	*/
+
+	public static native int glCreateProgram(); /*
+		return (GLuint)glCreateProgram();
+	*/
+
+	public static native int glCreateShader(int type); /*
+		return (GLuint)glCreateShader((GLenum)type);
+	*/
+
+	public static native void glDeleteProgram(int program); /*
+		glDeleteProgram((GLuint)program);
+	*/
+
+	public static native void glDeleteShader(int shader); /*
+		glDeleteShader((GLuint)shader);
+	*/
+
+	public static native void glDetachShader(int program, int shader); /*
+		glDetachShader((GLuint)program, (GLuint)shader);
+	*/
+
+	public static native void glDisableVertexAttribArray(int param0); /*
+		glDisableVertexAttribArray((GLuint)param0);
+	*/
+
+	public static native void glDrawBuffers(int n, Buffer bufs, int bufsByteOffset); /*
+		glDrawBuffers((GLsizei)n, (const GLenum*)(bufs + bufsByteOffset));
+	*/
+
+	public static native void glEnableVertexAttribArray(int param0); /*
+		glEnableVertexAttribArray((GLuint)param0);
+	*/
+
+	public static native void glGetActiveAttrib(int program, int index, int maxLength, Buffer length, int lengthByteOffset, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset, Buffer name, int nameByteOffset); /*
+		glGetActiveAttrib((GLuint)program, (GLuint)index, (GLsizei)maxLength, (GLsizei*)(length + lengthByteOffset), (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glGetActiveUniform(int program, int index, int maxLength, Buffer length, int lengthByteOffset, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset, Buffer name, int nameByteOffset); /*
+		glGetActiveUniform((GLuint)program, (GLuint)index, (GLsizei)maxLength, (GLsizei*)(length + lengthByteOffset), (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glGetAttachedShaders(int program, int maxCount, Buffer count, int countByteOffset, Buffer shaders, int shadersByteOffset); /*
+		glGetAttachedShaders((GLuint)program, (GLsizei)maxCount, (GLsizei*)(count + countByteOffset), (GLuint*)(shaders + shadersByteOffset));
+	*/
+
+	public static native int glGetAttribLocation(int program, Buffer name, int nameByteOffset); /*
+		return (GLint)glGetAttribLocation((GLuint)program, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glGetProgramInfoLog(int program, int bufSize, Buffer length, int lengthByteOffset, Buffer infoLog, int infoLogByteOffset); /*
+		glGetProgramInfoLog((GLuint)program, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(infoLog + infoLogByteOffset));
+	*/
+
+	public static native void glGetProgramiv(int program, int pname, Buffer param, int paramByteOffset); /*
+		glGetProgramiv((GLuint)program, (GLenum)pname, (GLint*)(param + paramByteOffset));
+	*/
+
+	public static native void glGetShaderInfoLog(int shader, int bufSize, Buffer length, int lengthByteOffset, Buffer infoLog, int infoLogByteOffset); /*
+		glGetShaderInfoLog((GLuint)shader, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(infoLog + infoLogByteOffset));
+	*/
+
+	public static native void glGetShaderSource(int obj, int maxLength, Buffer length, int lengthByteOffset, Buffer source, int sourceByteOffset); /*
+		glGetShaderSource((GLuint)obj, (GLsizei)maxLength, (GLsizei*)(length + lengthByteOffset), (GLchar*)(source + sourceByteOffset));
+	*/
+
+	public static native void glGetShaderiv(int shader, int pname, Buffer param, int paramByteOffset); /*
+		glGetShaderiv((GLuint)shader, (GLenum)pname, (GLint*)(param + paramByteOffset));
+	*/
+
+	public static native int glGetUniformLocation(int program, Buffer name, int nameByteOffset); /*
+		return (GLint)glGetUniformLocation((GLuint)program, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glGetUniformfv(int program, int location, Buffer params, int paramsByteOffset); /*
+		glGetUniformfv((GLuint)program, (GLint)location, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetUniformiv(int program, int location, Buffer params, int paramsByteOffset); /*
+		glGetUniformiv((GLuint)program, (GLint)location, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVertexAttribPointerv(int param0, int param1, Buffer param2, int param2ByteOffset); /*
+		glGetVertexAttribPointerv((GLuint)param0, (GLenum)param1, (GLvoid**)(param2 + param2ByteOffset));
+	*/
+
+	public static native void glGetVertexAttribdv(int param0, int param1, Buffer param2, int param2ByteOffset); /*
+		glGetVertexAttribdv((GLuint)param0, (GLenum)param1, (GLdouble*)(param2 + param2ByteOffset));
+	*/
+
+	public static native void glGetVertexAttribfv(int param0, int param1, Buffer param2, int param2ByteOffset); /*
+		glGetVertexAttribfv((GLuint)param0, (GLenum)param1, (GLfloat*)(param2 + param2ByteOffset));
+	*/
+
+	public static native void glGetVertexAttribiv(int param0, int param1, Buffer param2, int param2ByteOffset); /*
+		glGetVertexAttribiv((GLuint)param0, (GLenum)param1, (GLint*)(param2 + param2ByteOffset));
+	*/
+
+	public static native boolean glIsProgram(int program); /*
+		return (GLboolean)glIsProgram((GLuint)program);
+	*/
+
+	public static native boolean glIsShader(int shader); /*
+		return (GLboolean)glIsShader((GLuint)shader);
+	*/
+
+	public static native void glLinkProgram(int program); /*
+		glLinkProgram((GLuint)program);
+	*/
+
+	public static native void glShaderSource(int shader, int count, Buffer strings, int stringsByteOffset, Buffer lengths, int lengthsByteOffset); /*
+		glShaderSource((GLuint)shader, (GLsizei)count, (const GLchar**)(strings + stringsByteOffset), (const GLint*)(lengths + lengthsByteOffset));
+	*/
+
+	public static native void glStencilFuncSeparate(int frontfunc, int backfunc, int ref, int mask); /*
+		glStencilFuncSeparate((GLenum)frontfunc, (GLenum)backfunc, (GLint)ref, (GLuint)mask);
+	*/
+
+	public static native void glStencilMaskSeparate(int param0, int param1); /*
+		glStencilMaskSeparate((GLenum)param0, (GLuint)param1);
+	*/
+
+	public static native void glStencilOpSeparate(int face, int sfail, int dpfail, int dppass); /*
+		glStencilOpSeparate((GLenum)face, (GLenum)sfail, (GLenum)dpfail, (GLenum)dppass);
+	*/
+
+	public static native void glUniform1f(int location, float v0); /*
+		glUniform1f((GLint)location, (GLfloat)v0);
+	*/
+
+	public static native void glUniform1fv(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform1fv((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform1i(int location, int v0); /*
+		glUniform1i((GLint)location, (GLint)v0);
+	*/
+
+	public static native void glUniform1iv(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform1iv((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform2f(int location, float v0, float v1); /*
+		glUniform2f((GLint)location, (GLfloat)v0, (GLfloat)v1);
+	*/
+
+	public static native void glUniform2fv(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform2fv((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform2i(int location, int v0, int v1); /*
+		glUniform2i((GLint)location, (GLint)v0, (GLint)v1);
+	*/
+
+	public static native void glUniform2iv(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform2iv((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform3f(int location, float v0, float v1, float v2); /*
+		glUniform3f((GLint)location, (GLfloat)v0, (GLfloat)v1, (GLfloat)v2);
+	*/
+
+	public static native void glUniform3fv(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform3fv((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform3i(int location, int v0, int v1, int v2); /*
+		glUniform3i((GLint)location, (GLint)v0, (GLint)v1, (GLint)v2);
+	*/
+
+	public static native void glUniform3iv(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform3iv((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform4f(int location, float v0, float v1, float v2, float v3); /*
+		glUniform4f((GLint)location, (GLfloat)v0, (GLfloat)v1, (GLfloat)v2, (GLfloat)v3);
+	*/
+
+	public static native void glUniform4fv(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform4fv((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform4i(int location, int v0, int v1, int v2, int v3); /*
+		glUniform4i((GLint)location, (GLint)v0, (GLint)v1, (GLint)v2, (GLint)v3);
+	*/
+
+	public static native void glUniform4iv(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform4iv((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix2fv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix2fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix3fv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix3fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix4fv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix4fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUseProgram(int program); /*
+		glUseProgram((GLuint)program);
+	*/
+
+	public static native void glValidateProgram(int program); /*
+		glValidateProgram((GLuint)program);
+	*/
+
+	public static native void glVertexAttrib1d(int index, double x); /*
+		glVertexAttrib1d((GLuint)index, (GLdouble)x);
+	*/
+
+	public static native void glVertexAttrib1dv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib1dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib1f(int index, float x); /*
+		glVertexAttrib1f((GLuint)index, (GLfloat)x);
+	*/
+
+	public static native void glVertexAttrib1fv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib1fv((GLuint)index, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib1s(int index, short x); /*
+		glVertexAttrib1s((GLuint)index, (GLshort)x);
+	*/
+
+	public static native void glVertexAttrib1sv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib1sv((GLuint)index, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib2d(int index, double x, double y); /*
+		glVertexAttrib2d((GLuint)index, (GLdouble)x, (GLdouble)y);
+	*/
+
+	public static native void glVertexAttrib2dv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib2dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib2f(int index, float x, float y); /*
+		glVertexAttrib2f((GLuint)index, (GLfloat)x, (GLfloat)y);
+	*/
+
+	public static native void glVertexAttrib2fv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib2fv((GLuint)index, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib2s(int index, short x, short y); /*
+		glVertexAttrib2s((GLuint)index, (GLshort)x, (GLshort)y);
+	*/
+
+	public static native void glVertexAttrib2sv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib2sv((GLuint)index, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib3d(int index, double x, double y, double z); /*
+		glVertexAttrib3d((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glVertexAttrib3dv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib3dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib3f(int index, float x, float y, float z); /*
+		glVertexAttrib3f((GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glVertexAttrib3fv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib3fv((GLuint)index, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib3s(int index, short x, short y, short z); /*
+		glVertexAttrib3s((GLuint)index, (GLshort)x, (GLshort)y, (GLshort)z);
+	*/
+
+	public static native void glVertexAttrib3sv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib3sv((GLuint)index, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4Nbv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4Nbv((GLuint)index, (const GLbyte*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4Niv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4Niv((GLuint)index, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4Nsv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4Nsv((GLuint)index, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4Nub(int index, byte x, byte y, byte z, byte w); /*
+		glVertexAttrib4Nub((GLuint)index, (GLubyte)x, (GLubyte)y, (GLubyte)z, (GLubyte)w);
+	*/
+
+	public static native void glVertexAttrib4Nubv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4Nubv((GLuint)index, (const GLubyte*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4Nuiv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4Nuiv((GLuint)index, (const GLuint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4Nusv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4Nusv((GLuint)index, (const GLushort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4bv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4bv((GLuint)index, (const GLbyte*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4d(int index, double x, double y, double z, double w); /*
+		glVertexAttrib4d((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
+	*/
+
+	public static native void glVertexAttrib4dv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4f(int index, float x, float y, float z, float w); /*
+		glVertexAttrib4f((GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
+	*/
+
+	public static native void glVertexAttrib4fv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4fv((GLuint)index, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4iv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4iv((GLuint)index, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4s(int index, short x, short y, short z, short w); /*
+		glVertexAttrib4s((GLuint)index, (GLshort)x, (GLshort)y, (GLshort)z, (GLshort)w);
+	*/
+
+	public static native void glVertexAttrib4sv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4sv((GLuint)index, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4ubv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4ubv((GLuint)index, (const GLubyte*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4uiv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4uiv((GLuint)index, (const GLuint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4usv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4usv((GLuint)index, (const GLushort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribPointer(int index, int size, int type, boolean normalized, int stride, Buffer pointer, int pointerByteOffset); /*
+		glVertexAttribPointer((GLuint)index, (GLint)size, (GLenum)type, (GLboolean)normalized, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glUniformMatrix2x3fv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix2x3fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix2x4fv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix2x4fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix3x2fv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix3x2fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix3x4fv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix3x4fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix4x2fv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix4x2fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix4x3fv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix4x3fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glBeginConditionalRender(int param0, int param1); /*
+		glBeginConditionalRender((GLuint)param0, (GLenum)param1);
+	*/
+
+	public static native void glBeginTransformFeedback(int param0); /*
+		glBeginTransformFeedback((GLenum)param0);
+	*/
+
+	public static native void glBindFragDataLocation(int param0, int param1, Buffer GLchar, int GLcharByteOffset); /*
+		glBindFragDataLocation((GLuint)param0, (GLuint)param1, (const*)(GLchar + GLcharByteOffset));
+	*/
+
+	public static native void glClampColor(int param0, int param1); /*
+		glClampColor((GLenum)param0, (GLenum)param1);
+	*/
+
+	public static native void glClearBufferfi(int param0, int param1, float param2, int param3); /*
+		glClearBufferfi((GLenum)param0, (GLint)param1, (GLfloat)param2, (GLint)param3);
+	*/
+
+	public static native void glClearBufferfv(int param0, int param1, Buffer GLfloat, int GLfloatByteOffset); /*
+		glClearBufferfv((GLenum)param0, (GLint)param1, (const*)(GLfloat + GLfloatByteOffset));
+	*/
+
+	public static native void glClearBufferiv(int param0, int param1, Buffer GLint, int GLintByteOffset); /*
+		glClearBufferiv((GLenum)param0, (GLint)param1, (const*)(GLint + GLintByteOffset));
+	*/
+
+	public static native void glClearBufferuiv(int param0, int param1, Buffer GLuint, int GLuintByteOffset); /*
+		glClearBufferuiv((GLenum)param0, (GLint)param1, (const*)(GLuint + GLuintByteOffset));
+	*/
+
+	public static native void glColorMaski(int param0, boolean param1, boolean param2, boolean param3, boolean param4); /*
+		glColorMaski((GLuint)param0, (GLboolean)param1, (GLboolean)param2, (GLboolean)param3, (GLboolean)param4);
+	*/
+
+	public static native void glDisablei(int param0, int param1); /*
+		glDisablei((GLenum)param0, (GLuint)param1);
+	*/
+
+	public static native void glEnablei(int param0, int param1); /*
+		glEnablei((GLenum)param0, (GLuint)param1);
+	*/
+
+	public static native void glEndConditionalRender(); /*
+		glEndConditionalRender();
+	*/
+
+	public static native void glEndTransformFeedback(); /*
+		glEndTransformFeedback();
+	*/
+
+	public static native void glGetBooleani_v(int param0, int param1, Buffer param2, int param2ByteOffset); /*
+		glGetBooleani_v((GLenum)param0, (GLuint)param1, (GLboolean*)(param2 + param2ByteOffset));
+	*/
+
+	public static native int glGetFragDataLocation(int param0, Buffer GLchar, int GLcharByteOffset); /*
+		return (GLint)glGetFragDataLocation((GLuint)param0, (const*)(GLchar + GLcharByteOffset));
+	*/
+
+	public static native Buffer glGetStringi(int param0, int param1); /*
+		return (const GLubyte*)glGetStringi((GLenum)param0, (GLuint)param1);
+	*/
+
+	public static native void glGetTexParameterIiv(int param0, int param1, Buffer param2, int param2ByteOffset); /*
+		glGetTexParameterIiv((GLenum)param0, (GLenum)param1, (GLint*)(param2 + param2ByteOffset));
+	*/
+
+	public static native void glGetTexParameterIuiv(int param0, int param1, Buffer param2, int param2ByteOffset); /*
+		glGetTexParameterIuiv((GLenum)param0, (GLenum)param1, (GLuint*)(param2 + param2ByteOffset));
+	*/
+
+	public static native void glGetTransformFeedbackVarying(int param0, int param1, int param2, Buffer param3, int param3ByteOffset, Buffer param4, int param4ByteOffset, Buffer param5, int param5ByteOffset, Buffer param6, int param6ByteOffset); /*
+		glGetTransformFeedbackVarying((GLuint)param0, (GLuint)param1, (GLsizei)param2, (GLsizei*)(param3 + param3ByteOffset), (GLsizei*)(param4 + param4ByteOffset), (GLenum*)(param5 + param5ByteOffset), (GLchar*)(param6 + param6ByteOffset));
+	*/
+
+	public static native void glGetUniformuiv(int param0, int param1, Buffer param2, int param2ByteOffset); /*
+		glGetUniformuiv((GLuint)param0, (GLint)param1, (GLuint*)(param2 + param2ByteOffset));
+	*/
+
+	public static native void glGetVertexAttribIiv(int param0, int param1, Buffer param2, int param2ByteOffset); /*
+		glGetVertexAttribIiv((GLuint)param0, (GLenum)param1, (GLint*)(param2 + param2ByteOffset));
+	*/
+
+	public static native void glGetVertexAttribIuiv(int param0, int param1, Buffer param2, int param2ByteOffset); /*
+		glGetVertexAttribIuiv((GLuint)param0, (GLenum)param1, (GLuint*)(param2 + param2ByteOffset));
+	*/
+
+	public static native boolean glIsEnabledi(int param0, int param1); /*
+		return (GLboolean)glIsEnabledi((GLenum)param0, (GLuint)param1);
+	*/
+
+	public static native void glTexParameterIiv(int param0, int param1, Buffer GLint, int GLintByteOffset); /*
+		glTexParameterIiv((GLenum)param0, (GLenum)param1, (const*)(GLint + GLintByteOffset));
+	*/
+
+	public static native void glTexParameterIuiv(int param0, int param1, Buffer GLuint, int GLuintByteOffset); /*
+		glTexParameterIuiv((GLenum)param0, (GLenum)param1, (const*)(GLuint + GLuintByteOffset));
+	*/
+
+	public static native void glTransformFeedbackVaryings(int param0, int param1, Buffer GLchar, int GLcharByteOffset, int param3); /*
+		glTransformFeedbackVaryings((GLuint)param0, (GLsizei)param1, (const**)(GLchar + GLcharByteOffset), (GLenum)param3);
+	*/
+
+	public static native void glUniform1ui(int param0, int param1); /*
+		glUniform1ui((GLint)param0, (GLuint)param1);
+	*/
+
+	public static native void glUniform1uiv(int param0, int param1, Buffer GLuint, int GLuintByteOffset); /*
+		glUniform1uiv((GLint)param0, (GLsizei)param1, (const*)(GLuint + GLuintByteOffset));
+	*/
+
+	public static native void glUniform2ui(int param0, int param1, int param2); /*
+		glUniform2ui((GLint)param0, (GLuint)param1, (GLuint)param2);
+	*/
+
+	public static native void glUniform2uiv(int param0, int param1, Buffer GLuint, int GLuintByteOffset); /*
+		glUniform2uiv((GLint)param0, (GLsizei)param1, (const*)(GLuint + GLuintByteOffset));
+	*/
+
+	public static native void glUniform3ui(int param0, int param1, int param2, int param3); /*
+		glUniform3ui((GLint)param0, (GLuint)param1, (GLuint)param2, (GLuint)param3);
+	*/
+
+	public static native void glUniform3uiv(int param0, int param1, Buffer GLuint, int GLuintByteOffset); /*
+		glUniform3uiv((GLint)param0, (GLsizei)param1, (const*)(GLuint + GLuintByteOffset));
+	*/
+
+	public static native void glUniform4ui(int param0, int param1, int param2, int param3, int param4); /*
+		glUniform4ui((GLint)param0, (GLuint)param1, (GLuint)param2, (GLuint)param3, (GLuint)param4);
+	*/
+
+	public static native void glUniform4uiv(int param0, int param1, Buffer GLuint, int GLuintByteOffset); /*
+		glUniform4uiv((GLint)param0, (GLsizei)param1, (const*)(GLuint + GLuintByteOffset));
+	*/
+
+	public static native void glVertexAttribI1i(int param0, int param1); /*
+		glVertexAttribI1i((GLuint)param0, (GLint)param1);
+	*/
+
+	public static native void glVertexAttribI1iv(int param0, Buffer GLint, int GLintByteOffset); /*
+		glVertexAttribI1iv((GLuint)param0, (const*)(GLint + GLintByteOffset));
+	*/
+
+	public static native void glVertexAttribI1ui(int param0, int param1); /*
+		glVertexAttribI1ui((GLuint)param0, (GLuint)param1);
+	*/
+
+	public static native void glVertexAttribI1uiv(int param0, Buffer GLuint, int GLuintByteOffset); /*
+		glVertexAttribI1uiv((GLuint)param0, (const*)(GLuint + GLuintByteOffset));
+	*/
+
+	public static native void glVertexAttribI2i(int param0, int param1, int param2); /*
+		glVertexAttribI2i((GLuint)param0, (GLint)param1, (GLint)param2);
+	*/
+
+	public static native void glVertexAttribI2iv(int param0, Buffer GLint, int GLintByteOffset); /*
+		glVertexAttribI2iv((GLuint)param0, (const*)(GLint + GLintByteOffset));
+	*/
+
+	public static native void glVertexAttribI2ui(int param0, int param1, int param2); /*
+		glVertexAttribI2ui((GLuint)param0, (GLuint)param1, (GLuint)param2);
+	*/
+
+	public static native void glVertexAttribI2uiv(int param0, Buffer GLuint, int GLuintByteOffset); /*
+		glVertexAttribI2uiv((GLuint)param0, (const*)(GLuint + GLuintByteOffset));
+	*/
+
+	public static native void glVertexAttribI3i(int param0, int param1, int param2, int param3); /*
+		glVertexAttribI3i((GLuint)param0, (GLint)param1, (GLint)param2, (GLint)param3);
+	*/
+
+	public static native void glVertexAttribI3iv(int param0, Buffer GLint, int GLintByteOffset); /*
+		glVertexAttribI3iv((GLuint)param0, (const*)(GLint + GLintByteOffset));
+	*/
+
+	public static native void glVertexAttribI3ui(int param0, int param1, int param2, int param3); /*
+		glVertexAttribI3ui((GLuint)param0, (GLuint)param1, (GLuint)param2, (GLuint)param3);
+	*/
+
+	public static native void glVertexAttribI3uiv(int param0, Buffer GLuint, int GLuintByteOffset); /*
+		glVertexAttribI3uiv((GLuint)param0, (const*)(GLuint + GLuintByteOffset));
+	*/
+
+	public static native void glVertexAttribI4bv(int param0, Buffer GLbyte, int GLbyteByteOffset); /*
+		glVertexAttribI4bv((GLuint)param0, (const*)(GLbyte + GLbyteByteOffset));
+	*/
+
+	public static native void glVertexAttribI4i(int param0, int param1, int param2, int param3, int param4); /*
+		glVertexAttribI4i((GLuint)param0, (GLint)param1, (GLint)param2, (GLint)param3, (GLint)param4);
+	*/
+
+	public static native void glVertexAttribI4iv(int param0, Buffer GLint, int GLintByteOffset); /*
+		glVertexAttribI4iv((GLuint)param0, (const*)(GLint + GLintByteOffset));
+	*/
+
+	public static native void glVertexAttribI4sv(int param0, Buffer GLshort, int GLshortByteOffset); /*
+		glVertexAttribI4sv((GLuint)param0, (const*)(GLshort + GLshortByteOffset));
+	*/
+
+	public static native void glVertexAttribI4ubv(int param0, Buffer GLubyte, int GLubyteByteOffset); /*
+		glVertexAttribI4ubv((GLuint)param0, (const*)(GLubyte + GLubyteByteOffset));
+	*/
+
+	public static native void glVertexAttribI4ui(int param0, int param1, int param2, int param3, int param4); /*
+		glVertexAttribI4ui((GLuint)param0, (GLuint)param1, (GLuint)param2, (GLuint)param3, (GLuint)param4);
+	*/
+
+	public static native void glVertexAttribI4uiv(int param0, Buffer GLuint, int GLuintByteOffset); /*
+		glVertexAttribI4uiv((GLuint)param0, (const*)(GLuint + GLuintByteOffset));
+	*/
+
+	public static native void glVertexAttribI4usv(int param0, Buffer GLushort, int GLushortByteOffset); /*
+		glVertexAttribI4usv((GLuint)param0, (const*)(GLushort + GLushortByteOffset));
+	*/
+
+	public static native void glVertexAttribIPointer(int param0, int param1, int param2, int param3, Buffer GLvoid, int GLvoidByteOffset); /*
+		glVertexAttribIPointer((GLuint)param0, (GLint)param1, (GLenum)param2, (GLsizei)param3, (const*)(GLvoid + GLvoidByteOffset));
+	*/
+
+	public static native void glDrawArraysInstanced(int param0, int param1, int param2, int param3); /*
+		glDrawArraysInstanced((GLenum)param0, (GLint)param1, (GLsizei)param2, (GLsizei)param3);
+	*/
+
+	public static native void glDrawElementsInstanced(int param0, int param1, int param2, Buffer GLvoid, int GLvoidByteOffset, int param4); /*
+		glDrawElementsInstanced((GLenum)param0, (GLsizei)param1, (GLenum)param2, (const*)(GLvoid + GLvoidByteOffset), (GLsizei)param4);
+	*/
+
+	public static native void glPrimitiveRestartIndex(int param0); /*
+		glPrimitiveRestartIndex((GLuint)param0);
+	*/
+
+	public static native void glTexBuffer(int param0, int param1, int param2); /*
+		glTexBuffer((GLenum)param0, (GLenum)param1, (GLuint)param2);
+	*/
+
+	public static native void glFramebufferTexture(int param0, int param1, int param2, int param3); /*
+		glFramebufferTexture((GLenum)param0, (GLenum)param1, (GLuint)param2, (GLint)param3);
+	*/
+
+	public static native void glGetBufferParameteri64v(int param0, int param1, Buffer param2, int param2ByteOffset); /*
+		glGetBufferParameteri64v((GLenum)param0, (GLenum)param1, (GLint64*)(param2 + param2ByteOffset));
+	*/
+
+	public static native void glGetInteger64i_v(int param0, int param1, Buffer param2, int param2ByteOffset); /*
+		glGetInteger64i_v((GLenum)param0, (GLuint)param1, (GLint64*)(param2 + param2ByteOffset));
+	*/
+
+	public static native void glVertexAttribDivisor(int index, int divisor); /*
+		glVertexAttribDivisor((GLuint)index, (GLuint)divisor);
+	*/
+
+	public static native void glBlendEquationSeparatei(int buf, int modeRGB, int modeAlpha); /*
+		glBlendEquationSeparatei((GLuint)buf, (GLenum)modeRGB, (GLenum)modeAlpha);
+	*/
+
+	public static native void glBlendEquationi(int buf, int mode); /*
+		glBlendEquationi((GLuint)buf, (GLenum)mode);
+	*/
+
+	public static native void glBlendFuncSeparatei(int buf, int srcRGB, int dstRGB, int srcAlpha, int dstAlpha); /*
+		glBlendFuncSeparatei((GLuint)buf, (GLenum)srcRGB, (GLenum)dstRGB, (GLenum)srcAlpha, (GLenum)dstAlpha);
+	*/
+
+	public static native void glBlendFunci(int buf, int src, int dst); /*
+		glBlendFunci((GLuint)buf, (GLenum)src, (GLenum)dst);
+	*/
+
+	public static native void glMinSampleShading(float value); /*
+		glMinSampleShading((GLclampf)value);
+	*/
+
+	public static native void glTbufferMask3DFX(int mask); /*
+		glTbufferMask3DFX((GLuint)mask);
+	*/
+
+	public static native int glGetDebugMessageLogAMD(int count, int bufsize, Buffer categories, int categoriesByteOffset, Buffer severities, int severitiesByteOffset, Buffer ids, int idsByteOffset, Buffer lengths, int lengthsByteOffset, Buffer message, int messageByteOffset); /*
+		return (GLuint)glGetDebugMessageLogAMD((GLuint)count, (GLsizei)bufsize, (GLenum*)(categories + categoriesByteOffset), (GLuint*)(severities + severitiesByteOffset), (GLuint*)(ids + idsByteOffset), (GLsizei*)(lengths + lengthsByteOffset), (GLchar*)(message + messageByteOffset));
+	*/
+
+	public static native void glBlendEquationIndexedAMD(int buf, int mode); /*
+		glBlendEquationIndexedAMD((GLuint)buf, (GLenum)mode);
+	*/
+
+	public static native void glBlendEquationSeparateIndexedAMD(int buf, int modeRGB, int modeAlpha); /*
+		glBlendEquationSeparateIndexedAMD((GLuint)buf, (GLenum)modeRGB, (GLenum)modeAlpha);
+	*/
+
+	public static native void glBlendFuncIndexedAMD(int buf, int src, int dst); /*
+		glBlendFuncIndexedAMD((GLuint)buf, (GLenum)src, (GLenum)dst);
+	*/
+
+	public static native void glBlendFuncSeparateIndexedAMD(int buf, int srcRGB, int dstRGB, int srcAlpha, int dstAlpha); /*
+		glBlendFuncSeparateIndexedAMD((GLuint)buf, (GLenum)srcRGB, (GLenum)dstRGB, (GLenum)srcAlpha, (GLenum)dstAlpha);
+	*/
+
+	public static native void glMultiDrawArraysIndirectAMD(int mode, Buffer indirect, int indirectByteOffset, int primcount, int stride); /*
+		glMultiDrawArraysIndirectAMD((GLenum)mode, (const void*)(indirect + indirectByteOffset), (GLsizei)primcount, (GLsizei)stride);
+	*/
+
+	public static native void glMultiDrawElementsIndirectAMD(int mode, int type, Buffer indirect, int indirectByteOffset, int primcount, int stride); /*
+		glMultiDrawElementsIndirectAMD((GLenum)mode, (GLenum)type, (const void*)(indirect + indirectByteOffset), (GLsizei)primcount, (GLsizei)stride);
+	*/
+
+	public static native void glDeleteNamesAMD(int identifier, int num, Buffer names, int namesByteOffset); /*
+		glDeleteNamesAMD((GLenum)identifier, (GLuint)num, (const GLuint*)(names + namesByteOffset));
+	*/
+
+	public static native void glGenNamesAMD(int identifier, int num, Buffer names, int namesByteOffset); /*
+		glGenNamesAMD((GLenum)identifier, (GLuint)num, (GLuint*)(names + namesByteOffset));
+	*/
+
+	public static native boolean glIsNameAMD(int identifier, int name); /*
+		return (GLboolean)glIsNameAMD((GLenum)identifier, (GLuint)name);
+	*/
+
+	public static native void glBeginPerfMonitorAMD(int monitor); /*
+		glBeginPerfMonitorAMD((GLuint)monitor);
+	*/
+
+	public static native void glDeletePerfMonitorsAMD(int n, Buffer monitors, int monitorsByteOffset); /*
+		glDeletePerfMonitorsAMD((GLsizei)n, (GLuint*)(monitors + monitorsByteOffset));
+	*/
+
+	public static native void glEndPerfMonitorAMD(int monitor); /*
+		glEndPerfMonitorAMD((GLuint)monitor);
+	*/
+
+	public static native void glGenPerfMonitorsAMD(int n, Buffer monitors, int monitorsByteOffset); /*
+		glGenPerfMonitorsAMD((GLsizei)n, (GLuint*)(monitors + monitorsByteOffset));
+	*/
+
+	public static native void glGetPerfMonitorCounterDataAMD(int monitor, int pname, int dataSize, Buffer data, int dataByteOffset, Buffer bytesWritten, int bytesWrittenByteOffset); /*
+		glGetPerfMonitorCounterDataAMD((GLuint)monitor, (GLenum)pname, (GLsizei)dataSize, (GLuint*)(data + dataByteOffset), (GLint*)(bytesWritten + bytesWrittenByteOffset));
+	*/
+
+	public static native void glGetPerfMonitorCounterInfoAMD(int group, int counter, int pname, Buffer data, int dataByteOffset); /*
+		glGetPerfMonitorCounterInfoAMD((GLuint)group, (GLuint)counter, (GLenum)pname, (void*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetPerfMonitorCounterStringAMD(int group, int counter, int bufSize, Buffer length, int lengthByteOffset, Buffer counterString, int counterStringByteOffset); /*
+		glGetPerfMonitorCounterStringAMD((GLuint)group, (GLuint)counter, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(counterString + counterStringByteOffset));
+	*/
+
+	public static native void glGetPerfMonitorCountersAMD(int group, Buffer numCounters, int numCountersByteOffset, Buffer maxActiveCounters, int maxActiveCountersByteOffset, int countersSize, Buffer counters, int countersByteOffset); /*
+		glGetPerfMonitorCountersAMD((GLuint)group, (GLint*)(numCounters + numCountersByteOffset), (GLint*)(maxActiveCounters + maxActiveCountersByteOffset), (GLsizei)countersSize, (GLuint*)(counters + countersByteOffset));
+	*/
+
+	public static native void glGetPerfMonitorGroupStringAMD(int group, int bufSize, Buffer length, int lengthByteOffset, Buffer groupString, int groupStringByteOffset); /*
+		glGetPerfMonitorGroupStringAMD((GLuint)group, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(groupString + groupStringByteOffset));
+	*/
+
+	public static native void glGetPerfMonitorGroupsAMD(Buffer numGroups, int numGroupsByteOffset, int groupsSize, Buffer groups, int groupsByteOffset); /*
+		glGetPerfMonitorGroupsAMD((GLint*)(numGroups + numGroupsByteOffset), (GLsizei)groupsSize, (GLuint*)(groups + groupsByteOffset));
+	*/
+
+	public static native void glSelectPerfMonitorCountersAMD(int monitor, boolean enable, int group, int numCounters, Buffer counterList, int counterListByteOffset); /*
+		glSelectPerfMonitorCountersAMD((GLuint)monitor, (GLboolean)enable, (GLuint)group, (GLint)numCounters, (GLuint*)(counterList + counterListByteOffset));
+	*/
+
+	public static native void glSetMultisamplefvAMD(int pname, int index, Buffer val, int valByteOffset); /*
+		glSetMultisamplefvAMD((GLenum)pname, (GLuint)index, (const GLfloat*)(val + valByteOffset));
+	*/
+
+	public static native void glStencilOpValueAMD(int face, int value); /*
+		glStencilOpValueAMD((GLenum)face, (GLuint)value);
+	*/
+
+	public static native void glTessellationFactorAMD(float factor); /*
+		glTessellationFactorAMD((GLfloat)factor);
+	*/
+
+	public static native void glTessellationModeAMD(int mode); /*
+		glTessellationModeAMD((GLenum)mode);
+	*/
+
+	public static native void glDrawElementArrayAPPLE(int mode, int first, int count); /*
+		glDrawElementArrayAPPLE((GLenum)mode, (GLint)first, (GLsizei)count);
+	*/
+
+	public static native void glDrawRangeElementArrayAPPLE(int mode, int start, int end, int first, int count); /*
+		glDrawRangeElementArrayAPPLE((GLenum)mode, (GLuint)start, (GLuint)end, (GLint)first, (GLsizei)count);
+	*/
+
+	public static native void glElementPointerAPPLE(int type, Buffer pointer, int pointerByteOffset); /*
+		glElementPointerAPPLE((GLenum)type, (const void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glMultiDrawElementArrayAPPLE(int mode, Buffer first, int firstByteOffset, Buffer count, int countByteOffset, int primcount); /*
+		glMultiDrawElementArrayAPPLE((GLenum)mode, (const GLint*)(first + firstByteOffset), (const GLsizei*)(count + countByteOffset), (GLsizei)primcount);
+	*/
+
+	public static native void glMultiDrawRangeElementArrayAPPLE(int mode, int start, int end, Buffer first, int firstByteOffset, Buffer count, int countByteOffset, int primcount); /*
+		glMultiDrawRangeElementArrayAPPLE((GLenum)mode, (GLuint)start, (GLuint)end, (const GLint*)(first + firstByteOffset), (const GLsizei*)(count + countByteOffset), (GLsizei)primcount);
+	*/
+
+	public static native void glDeleteFencesAPPLE(int n, Buffer fences, int fencesByteOffset); /*
+		glDeleteFencesAPPLE((GLsizei)n, (const GLuint*)(fences + fencesByteOffset));
+	*/
+
+	public static native void glFinishFenceAPPLE(int fence); /*
+		glFinishFenceAPPLE((GLuint)fence);
+	*/
+
+	public static native void glFinishObjectAPPLE(int object, int name); /*
+		glFinishObjectAPPLE((GLenum)object, (GLint)name);
+	*/
+
+	public static native void glGenFencesAPPLE(int n, Buffer fences, int fencesByteOffset); /*
+		glGenFencesAPPLE((GLsizei)n, (GLuint*)(fences + fencesByteOffset));
+	*/
+
+	public static native boolean glIsFenceAPPLE(int fence); /*
+		return (GLboolean)glIsFenceAPPLE((GLuint)fence);
+	*/
+
+	public static native void glSetFenceAPPLE(int fence); /*
+		glSetFenceAPPLE((GLuint)fence);
+	*/
+
+	public static native boolean glTestFenceAPPLE(int fence); /*
+		return (GLboolean)glTestFenceAPPLE((GLuint)fence);
+	*/
+
+	public static native boolean glTestObjectAPPLE(int object, int name); /*
+		return (GLboolean)glTestObjectAPPLE((GLenum)object, (GLuint)name);
+	*/
+
+	public static native void glBufferParameteriAPPLE(int target, int pname, int param); /*
+		glBufferParameteriAPPLE((GLenum)target, (GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glFlushMappedBufferRangeAPPLE(int target, int offset, int size); /*
+		glFlushMappedBufferRangeAPPLE((GLenum)target, (GLintptr)offset, (GLsizeiptr)size);
+	*/
+
+	public static native void glGetObjectParameterivAPPLE(int objectType, int name, int pname, Buffer params, int paramsByteOffset); /*
+		glGetObjectParameterivAPPLE((GLenum)objectType, (GLuint)name, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native int glObjectPurgeableAPPLE(int objectType, int name, int option); /*
+		return (GLenum)glObjectPurgeableAPPLE((GLenum)objectType, (GLuint)name, (GLenum)option);
+	*/
+
+	public static native int glObjectUnpurgeableAPPLE(int objectType, int name, int option); /*
+		return (GLenum)glObjectUnpurgeableAPPLE((GLenum)objectType, (GLuint)name, (GLenum)option);
+	*/
+
+	public static native void glGetTexParameterPointervAPPLE(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetTexParameterPointervAPPLE((GLenum)target, (GLenum)pname, (GLvoid**)(params + paramsByteOffset));
+	*/
+
+	public static native void glTextureRangeAPPLE(int target, int length, Buffer pointer, int pointerByteOffset); /*
+		glTextureRangeAPPLE((GLenum)target, (GLsizei)length, (GLvoid*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glBindVertexArrayAPPLE(int array); /*
+		glBindVertexArrayAPPLE((GLuint)array);
+	*/
+
+	public static native void glDeleteVertexArraysAPPLE(int n, Buffer arrays, int arraysByteOffset); /*
+		glDeleteVertexArraysAPPLE((GLsizei)n, (const GLuint*)(arrays + arraysByteOffset));
+	*/
+
+	public static native void glGenVertexArraysAPPLE(int n, Buffer arrays, int arraysByteOffset); /*
+		glGenVertexArraysAPPLE((GLsizei)n, (const GLuint*)(arrays + arraysByteOffset));
+	*/
+
+	public static native boolean glIsVertexArrayAPPLE(int array); /*
+		return (GLboolean)glIsVertexArrayAPPLE((GLuint)array);
+	*/
+
+	public static native void glFlushVertexArrayRangeAPPLE(int length, Buffer pointer, int pointerByteOffset); /*
+		glFlushVertexArrayRangeAPPLE((GLsizei)length, (void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glVertexArrayParameteriAPPLE(int pname, int param); /*
+		glVertexArrayParameteriAPPLE((GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glVertexArrayRangeAPPLE(int length, Buffer pointer, int pointerByteOffset); /*
+		glVertexArrayRangeAPPLE((GLsizei)length, (void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glDisableVertexAttribAPPLE(int index, int pname); /*
+		glDisableVertexAttribAPPLE((GLuint)index, (GLenum)pname);
+	*/
+
+	public static native void glEnableVertexAttribAPPLE(int index, int pname); /*
+		glEnableVertexAttribAPPLE((GLuint)index, (GLenum)pname);
+	*/
+
+	public static native boolean glIsVertexAttribEnabledAPPLE(int index, int pname); /*
+		return (GLboolean)glIsVertexAttribEnabledAPPLE((GLuint)index, (GLenum)pname);
+	*/
+
+	public static native void glMapVertexAttrib1dAPPLE(int index, int size, double u1, double u2, int stride, int order, Buffer points, int pointsByteOffset); /*
+		glMapVertexAttrib1dAPPLE((GLuint)index, (GLuint)size, (GLdouble)u1, (GLdouble)u2, (GLint)stride, (GLint)order, (const GLdouble*)(points + pointsByteOffset));
+	*/
+
+	public static native void glMapVertexAttrib1fAPPLE(int index, int size, float u1, float u2, int stride, int order, Buffer points, int pointsByteOffset); /*
+		glMapVertexAttrib1fAPPLE((GLuint)index, (GLuint)size, (GLfloat)u1, (GLfloat)u2, (GLint)stride, (GLint)order, (const GLfloat*)(points + pointsByteOffset));
+	*/
+
+	public static native void glMapVertexAttrib2dAPPLE(int index, int size, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, Buffer points, int pointsByteOffset); /*
+		glMapVertexAttrib2dAPPLE((GLuint)index, (GLuint)size, (GLdouble)u1, (GLdouble)u2, (GLint)ustride, (GLint)uorder, (GLdouble)v1, (GLdouble)v2, (GLint)vstride, (GLint)vorder, (const GLdouble*)(points + pointsByteOffset));
+	*/
+
+	public static native void glMapVertexAttrib2fAPPLE(int index, int size, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, Buffer points, int pointsByteOffset); /*
+		glMapVertexAttrib2fAPPLE((GLuint)index, (GLuint)size, (GLfloat)u1, (GLfloat)u2, (GLint)ustride, (GLint)uorder, (GLfloat)v1, (GLfloat)v2, (GLint)vstride, (GLint)vorder, (const GLfloat*)(points + pointsByteOffset));
+	*/
+
+	public static native void glClearDepthf(float d); /*
+		glClearDepthf((GLclampf)d);
+	*/
+
+	public static native void glDepthRangef(float n, float f); /*
+		glDepthRangef((GLclampf)n, (GLclampf)f);
+	*/
+
+	public static native void glGetShaderPrecisionFormat(int shadertype, int precisiontype, Buffer range, int rangeByteOffset, Buffer precision, int precisionByteOffset); /*
+		glGetShaderPrecisionFormat((GLenum)shadertype, (GLenum)precisiontype, (GLint*)(range + rangeByteOffset), (GLint*)(precision + precisionByteOffset));
+	*/
+
+	public static native void glReleaseShaderCompiler(); /*
+		glReleaseShaderCompiler();
+	*/
+
+	public static native void glShaderBinary(int count, Buffer shaders, int shadersByteOffset, int binaryformat, Buffer binary, int binaryByteOffset, int length); /*
+		glShaderBinary((GLsizei)count, (const GLuint*)(shaders + shadersByteOffset), (GLenum)binaryformat, (const GLvoid*)(binary + binaryByteOffset), (GLsizei)length);
+	*/
+
+	public static native void glDrawArraysInstancedBaseInstance(int mode, int first, int count, int primcount, int baseinstance); /*
+		glDrawArraysInstancedBaseInstance((GLenum)mode, (GLint)first, (GLsizei)count, (GLsizei)primcount, (GLuint)baseinstance);
+	*/
+
+	public static native void glDrawElementsInstancedBaseInstance(int mode, int count, int type, Buffer indices, int indicesByteOffset, int primcount, int baseinstance); /*
+		glDrawElementsInstancedBaseInstance((GLenum)mode, (GLsizei)count, (GLenum)type, (const void*)(indices + indicesByteOffset), (GLsizei)primcount, (GLuint)baseinstance);
+	*/
+
+	public static native void glDrawElementsInstancedBaseVertexBaseInstance(int mode, int count, int type, Buffer indices, int indicesByteOffset, int primcount, int basevertex, int baseinstance); /*
+		glDrawElementsInstancedBaseVertexBaseInstance((GLenum)mode, (GLsizei)count, (GLenum)type, (const void*)(indices + indicesByteOffset), (GLsizei)primcount, (GLint)basevertex, (GLuint)baseinstance);
+	*/
+
+	public static native void glBindFragDataLocationIndexed(int program, int colorNumber, int index, Buffer name, int nameByteOffset); /*
+		glBindFragDataLocationIndexed((GLuint)program, (GLuint)colorNumber, (GLuint)index, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native int glGetFragDataIndex(int program, Buffer name, int nameByteOffset); /*
+		return (GLint)glGetFragDataIndex((GLuint)program, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native long glCreateSyncFromCLeventARB(long context, long event, int flags); /*
+		return (GLsync)glCreateSyncFromCLeventARB((cl_context)context, (cl_event)event, (GLbitfield)flags);
+	*/
+
+	public static native void glClearBufferData(int target, int internalformat, int format, int type, Buffer data, int dataByteOffset); /*
+		glClearBufferData((GLenum)target, (GLenum)internalformat, (GLenum)format, (GLenum)type, (const GLvoid*)(data + dataByteOffset));
+	*/
+
+	public static native void glClearBufferSubData(int target, int internalformat, int offset, int size, int format, int type, Buffer data, int dataByteOffset); /*
+		glClearBufferSubData((GLenum)target, (GLenum)internalformat, (GLintptr)offset, (GLsizeiptr)size, (GLenum)format, (GLenum)type, (const GLvoid*)(data + dataByteOffset));
+	*/
+
+	public static native void glClearNamedBufferDataEXT(int buffer, int internalformat, int format, int type, Buffer data, int dataByteOffset); /*
+		glClearNamedBufferDataEXT((GLuint)buffer, (GLenum)internalformat, (GLenum)format, (GLenum)type, (const GLvoid*)(data + dataByteOffset));
+	*/
+
+	public static native void glClearNamedBufferSubDataEXT(int buffer, int internalformat, int offset, int size, int format, int type, Buffer data, int dataByteOffset); /*
+		glClearNamedBufferSubDataEXT((GLuint)buffer, (GLenum)internalformat, (GLintptr)offset, (GLsizeiptr)size, (GLenum)format, (GLenum)type, (const GLvoid*)(data + dataByteOffset));
+	*/
+
+	public static native void glClampColorARB(int target, int clamp); /*
+		glClampColorARB((GLenum)target, (GLenum)clamp);
+	*/
+
+	public static native void glDispatchCompute(int num_groups_x, int num_groups_y, int num_groups_z); /*
+		glDispatchCompute((GLuint)num_groups_x, (GLuint)num_groups_y, (GLuint)num_groups_z);
+	*/
+
+	public static native void glDispatchComputeIndirect(int indirect); /*
+		glDispatchComputeIndirect((GLintptr)indirect);
+	*/
+
+	public static native void glCopyBufferSubData(int readtarget, int writetarget, int readoffset, int writeoffset, int size); /*
+		glCopyBufferSubData((GLenum)readtarget, (GLenum)writetarget, (GLintptr)readoffset, (GLintptr)writeoffset, (GLsizeiptr)size);
+	*/
+
+	public static native void glCopyImageSubData(int srcName, int srcTarget, int srcLevel, int srcX, int srcY, int srcZ, int dstName, int dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth); /*
+		glCopyImageSubData((GLuint)srcName, (GLenum)srcTarget, (GLint)srcLevel, (GLint)srcX, (GLint)srcY, (GLint)srcZ, (GLuint)dstName, (GLenum)dstTarget, (GLint)dstLevel, (GLint)dstX, (GLint)dstY, (GLint)dstZ, (GLsizei)srcWidth, (GLsizei)srcHeight, (GLsizei)srcDepth);
+	*/
+
+	public static native int glGetDebugMessageLogARB(int count, int bufsize, Buffer sources, int sourcesByteOffset, Buffer types, int typesByteOffset, Buffer ids, int idsByteOffset, Buffer severities, int severitiesByteOffset, Buffer lengths, int lengthsByteOffset, Buffer messageLog, int messageLogByteOffset); /*
+		return (GLuint)glGetDebugMessageLogARB((GLuint)count, (GLsizei)bufsize, (GLenum*)(sources + sourcesByteOffset), (GLenum*)(types + typesByteOffset), (GLuint*)(ids + idsByteOffset), (GLenum*)(severities + severitiesByteOffset), (GLsizei*)(lengths + lengthsByteOffset), (GLchar*)(messageLog + messageLogByteOffset));
+	*/
+
+	public static native void glDrawBuffersARB(int n, Buffer bufs, int bufsByteOffset); /*
+		glDrawBuffersARB((GLsizei)n, (const GLenum*)(bufs + bufsByteOffset));
+	*/
+
+	public static native void glBlendEquationSeparateiARB(int buf, int modeRGB, int modeAlpha); /*
+		glBlendEquationSeparateiARB((GLuint)buf, (GLenum)modeRGB, (GLenum)modeAlpha);
+	*/
+
+	public static native void glBlendEquationiARB(int buf, int mode); /*
+		glBlendEquationiARB((GLuint)buf, (GLenum)mode);
+	*/
+
+	public static native void glBlendFuncSeparateiARB(int buf, int srcRGB, int dstRGB, int srcAlpha, int dstAlpha); /*
+		glBlendFuncSeparateiARB((GLuint)buf, (GLenum)srcRGB, (GLenum)dstRGB, (GLenum)srcAlpha, (GLenum)dstAlpha);
+	*/
+
+	public static native void glBlendFunciARB(int buf, int src, int dst); /*
+		glBlendFunciARB((GLuint)buf, (GLenum)src, (GLenum)dst);
+	*/
+
+	public static native void glDrawElementsBaseVertex(int mode, int count, int type, Buffer indices, int indicesByteOffset, int basevertex); /*
+		glDrawElementsBaseVertex((GLenum)mode, (GLsizei)count, (GLenum)type, (void*)(indices + indicesByteOffset), (GLint)basevertex);
+	*/
+
+	public static native void glDrawElementsInstancedBaseVertex(int mode, int count, int type, Buffer indices, int indicesByteOffset, int primcount, int basevertex); /*
+		glDrawElementsInstancedBaseVertex((GLenum)mode, (GLsizei)count, (GLenum)type, (const void*)(indices + indicesByteOffset), (GLsizei)primcount, (GLint)basevertex);
+	*/
+
+	public static native void glDrawRangeElementsBaseVertex(int mode, int start, int end, int count, int type, Buffer indices, int indicesByteOffset, int basevertex); /*
+		glDrawRangeElementsBaseVertex((GLenum)mode, (GLuint)start, (GLuint)end, (GLsizei)count, (GLenum)type, (void*)(indices + indicesByteOffset), (GLint)basevertex);
+	*/
+
+	public static native void glMultiDrawElementsBaseVertex(int mode, Buffer count, int countByteOffset, int type, Buffer indices, int indicesByteOffset, int primcount, Buffer basevertex, int basevertexByteOffset); /*
+		glMultiDrawElementsBaseVertex((GLenum)mode, (GLsizei*)(count + countByteOffset), (GLenum)type, (GLvoid**)(indices + indicesByteOffset), (GLsizei)primcount, (GLint*)(basevertex + basevertexByteOffset));
+	*/
+
+	public static native void glDrawArraysIndirect(int mode, Buffer indirect, int indirectByteOffset); /*
+		glDrawArraysIndirect((GLenum)mode, (const void*)(indirect + indirectByteOffset));
+	*/
+
+	public static native void glDrawElementsIndirect(int mode, int type, Buffer indirect, int indirectByteOffset); /*
+		glDrawElementsIndirect((GLenum)mode, (GLenum)type, (const void*)(indirect + indirectByteOffset));
+	*/
+
+	public static native void glFramebufferParameteri(int target, int pname, int param); /*
+		glFramebufferParameteri((GLenum)target, (GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glGetFramebufferParameteriv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetFramebufferParameteriv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetNamedFramebufferParameterivEXT(int framebuffer, int pname, Buffer params, int paramsByteOffset); /*
+		glGetNamedFramebufferParameterivEXT((GLuint)framebuffer, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glNamedFramebufferParameteriEXT(int framebuffer, int pname, int param); /*
+		glNamedFramebufferParameteriEXT((GLuint)framebuffer, (GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glBindFramebuffer(int target, int framebuffer); /*
+		glBindFramebuffer((GLenum)target, (GLuint)framebuffer);
+	*/
+
+	public static native void glBindRenderbuffer(int target, int renderbuffer); /*
+		glBindRenderbuffer((GLenum)target, (GLuint)renderbuffer);
+	*/
+
+	public static native void glBlitFramebuffer(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, int mask, int filter); /*
+		glBlitFramebuffer((GLint)srcX0, (GLint)srcY0, (GLint)srcX1, (GLint)srcY1, (GLint)dstX0, (GLint)dstY0, (GLint)dstX1, (GLint)dstY1, (GLbitfield)mask, (GLenum)filter);
+	*/
+
+	public static native int glCheckFramebufferStatus(int target); /*
+		return (GLenum)glCheckFramebufferStatus((GLenum)target);
+	*/
+
+	public static native void glDeleteFramebuffers(int n, Buffer framebuffers, int framebuffersByteOffset); /*
+		glDeleteFramebuffers((GLsizei)n, (const GLuint*)(framebuffers + framebuffersByteOffset));
+	*/
+
+	public static native void glDeleteRenderbuffers(int n, Buffer renderbuffers, int renderbuffersByteOffset); /*
+		glDeleteRenderbuffers((GLsizei)n, (const GLuint*)(renderbuffers + renderbuffersByteOffset));
+	*/
+
+	public static native void glFramebufferRenderbuffer(int target, int attachment, int renderbuffertarget, int renderbuffer); /*
+		glFramebufferRenderbuffer((GLenum)target, (GLenum)attachment, (GLenum)renderbuffertarget, (GLuint)renderbuffer);
+	*/
+
+	public static native void glFramebufferTexture1D(int target, int attachment, int textarget, int texture, int level); /*
+		glFramebufferTexture1D((GLenum)target, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level);
+	*/
+
+	public static native void glFramebufferTexture2D(int target, int attachment, int textarget, int texture, int level); /*
+		glFramebufferTexture2D((GLenum)target, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level);
+	*/
+
+	public static native void glFramebufferTexture3D(int target, int attachment, int textarget, int texture, int level, int layer); /*
+		glFramebufferTexture3D((GLenum)target, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level, (GLint)layer);
+	*/
+
+	public static native void glFramebufferTextureLayer(int target, int attachment, int texture, int level, int layer); /*
+		glFramebufferTextureLayer((GLenum)target, (GLenum)attachment, (GLuint)texture, (GLint)level, (GLint)layer);
+	*/
+
+	public static native void glGenFramebuffers(int n, Buffer framebuffers, int framebuffersByteOffset); /*
+		glGenFramebuffers((GLsizei)n, (GLuint*)(framebuffers + framebuffersByteOffset));
+	*/
+
+	public static native void glGenRenderbuffers(int n, Buffer renderbuffers, int renderbuffersByteOffset); /*
+		glGenRenderbuffers((GLsizei)n, (GLuint*)(renderbuffers + renderbuffersByteOffset));
+	*/
+
+	public static native void glGenerateMipmap(int target); /*
+		glGenerateMipmap((GLenum)target);
+	*/
+
+	public static native void glGetFramebufferAttachmentParameteriv(int target, int attachment, int pname, Buffer params, int paramsByteOffset); /*
+		glGetFramebufferAttachmentParameteriv((GLenum)target, (GLenum)attachment, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetRenderbufferParameteriv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetRenderbufferParameteriv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native boolean glIsFramebuffer(int framebuffer); /*
+		return (GLboolean)glIsFramebuffer((GLuint)framebuffer);
+	*/
+
+	public static native boolean glIsRenderbuffer(int renderbuffer); /*
+		return (GLboolean)glIsRenderbuffer((GLuint)renderbuffer);
+	*/
+
+	public static native void glRenderbufferStorage(int target, int internalformat, int width, int height); /*
+		glRenderbufferStorage((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glRenderbufferStorageMultisample(int target, int samples, int internalformat, int width, int height); /*
+		glRenderbufferStorageMultisample((GLenum)target, (GLsizei)samples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glFramebufferTextureARB(int target, int attachment, int texture, int level); /*
+		glFramebufferTextureARB((GLenum)target, (GLenum)attachment, (GLuint)texture, (GLint)level);
+	*/
+
+	public static native void glFramebufferTextureFaceARB(int target, int attachment, int texture, int level, int face); /*
+		glFramebufferTextureFaceARB((GLenum)target, (GLenum)attachment, (GLuint)texture, (GLint)level, (GLenum)face);
+	*/
+
+	public static native void glFramebufferTextureLayerARB(int target, int attachment, int texture, int level, int layer); /*
+		glFramebufferTextureLayerARB((GLenum)target, (GLenum)attachment, (GLuint)texture, (GLint)level, (GLint)layer);
+	*/
+
+	public static native void glProgramParameteriARB(int program, int pname, int value); /*
+		glProgramParameteriARB((GLuint)program, (GLenum)pname, (GLint)value);
+	*/
+
+	public static native void glGetProgramBinary(int program, int bufSize, Buffer length, int lengthByteOffset, Buffer binaryFormat, int binaryFormatByteOffset, Buffer binary, int binaryByteOffset); /*
+		glGetProgramBinary((GLuint)program, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLenum*)(binaryFormat + binaryFormatByteOffset), (GLvoid*)(binary + binaryByteOffset));
+	*/
+
+	public static native void glProgramBinary(int program, int binaryFormat, Buffer binary, int binaryByteOffset, int length); /*
+		glProgramBinary((GLuint)program, (GLenum)binaryFormat, (const void*)(binary + binaryByteOffset), (GLsizei)length);
+	*/
+
+	public static native void glProgramParameteri(int program, int pname, int value); /*
+		glProgramParameteri((GLuint)program, (GLenum)pname, (GLint)value);
+	*/
+
+	public static native void glGetUniformdv(int program, int location, Buffer params, int paramsByteOffset); /*
+		glGetUniformdv((GLuint)program, (GLint)location, (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glUniform1d(int location, double x); /*
+		glUniform1d((GLint)location, (GLdouble)x);
+	*/
+
+	public static native void glUniform1dv(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform1dv((GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform2d(int location, double x, double y); /*
+		glUniform2d((GLint)location, (GLdouble)x, (GLdouble)y);
+	*/
+
+	public static native void glUniform2dv(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform2dv((GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform3d(int location, double x, double y, double z); /*
+		glUniform3d((GLint)location, (GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glUniform3dv(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform3dv((GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform4d(int location, double x, double y, double z, double w); /*
+		glUniform4d((GLint)location, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
+	*/
+
+	public static native void glUniform4dv(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform4dv((GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix2dv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix2dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix2x3dv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix2x3dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix2x4dv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix2x4dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix3dv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix3dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix3x2dv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix3x2dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix3x4dv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix3x4dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix4dv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix4dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix4x2dv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix4x2dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix4x3dv(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix4x3dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glColorSubTable(int target, int start, int count, int format, int type, Buffer data, int dataByteOffset); /*
+		glColorSubTable((GLenum)target, (GLsizei)start, (GLsizei)count, (GLenum)format, (GLenum)type, (const GLvoid*)(data + dataByteOffset));
+	*/
+
+	public static native void glColorTable(int target, int internalformat, int width, int format, int type, Buffer table, int tableByteOffset); /*
+		glColorTable((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLenum)format, (GLenum)type, (const GLvoid*)(table + tableByteOffset));
+	*/
+
+	public static native void glColorTableParameterfv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glColorTableParameterfv((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glColorTableParameteriv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glColorTableParameteriv((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glConvolutionFilter1D(int target, int internalformat, int width, int format, int type, Buffer image, int imageByteOffset); /*
+		glConvolutionFilter1D((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLenum)format, (GLenum)type, (const GLvoid*)(image + imageByteOffset));
+	*/
+
+	public static native void glConvolutionFilter2D(int target, int internalformat, int width, int height, int format, int type, Buffer image, int imageByteOffset); /*
+		glConvolutionFilter2D((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const GLvoid*)(image + imageByteOffset));
+	*/
+
+	public static native void glConvolutionParameterf(int target, int pname, float params); /*
+		glConvolutionParameterf((GLenum)target, (GLenum)pname, (GLfloat)params);
+	*/
+
+	public static native void glConvolutionParameterfv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glConvolutionParameterfv((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glConvolutionParameteri(int target, int pname, int params); /*
+		glConvolutionParameteri((GLenum)target, (GLenum)pname, (GLint)params);
+	*/
+
+	public static native void glConvolutionParameteriv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glConvolutionParameteriv((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glCopyColorSubTable(int target, int start, int x, int y, int width); /*
+		glCopyColorSubTable((GLenum)target, (GLsizei)start, (GLint)x, (GLint)y, (GLsizei)width);
+	*/
+
+	public static native void glCopyColorTable(int target, int internalformat, int x, int y, int width); /*
+		glCopyColorTable((GLenum)target, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width);
+	*/
+
+	public static native void glCopyConvolutionFilter1D(int target, int internalformat, int x, int y, int width); /*
+		glCopyConvolutionFilter1D((GLenum)target, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width);
+	*/
+
+	public static native void glCopyConvolutionFilter2D(int target, int internalformat, int x, int y, int width, int height); /*
+		glCopyConvolutionFilter2D((GLenum)target, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glGetColorTable(int target, int format, int type, Buffer table, int tableByteOffset); /*
+		glGetColorTable((GLenum)target, (GLenum)format, (GLenum)type, (GLvoid*)(table + tableByteOffset));
+	*/
+
+	public static native void glGetColorTableParameterfv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetColorTableParameterfv((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetColorTableParameteriv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetColorTableParameteriv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetConvolutionFilter(int target, int format, int type, Buffer image, int imageByteOffset); /*
+		glGetConvolutionFilter((GLenum)target, (GLenum)format, (GLenum)type, (GLvoid*)(image + imageByteOffset));
+	*/
+
+	public static native void glGetConvolutionParameterfv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetConvolutionParameterfv((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetConvolutionParameteriv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetConvolutionParameteriv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetHistogram(int target, boolean reset, int format, int type, Buffer values, int valuesByteOffset); /*
+		glGetHistogram((GLenum)target, (GLboolean)reset, (GLenum)format, (GLenum)type, (GLvoid*)(values + valuesByteOffset));
+	*/
+
+	public static native void glGetHistogramParameterfv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetHistogramParameterfv((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetHistogramParameteriv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetHistogramParameteriv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMinmax(int target, boolean reset, int format, int types, Buffer values, int valuesByteOffset); /*
+		glGetMinmax((GLenum)target, (GLboolean)reset, (GLenum)format, (GLenum)types, (GLvoid*)(values + valuesByteOffset));
+	*/
+
+	public static native void glGetMinmaxParameterfv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMinmaxParameterfv((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMinmaxParameteriv(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMinmaxParameteriv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetSeparableFilter(int target, int format, int type, Buffer row, int rowByteOffset, Buffer column, int columnByteOffset, Buffer span, int spanByteOffset); /*
+		glGetSeparableFilter((GLenum)target, (GLenum)format, (GLenum)type, (GLvoid*)(row + rowByteOffset), (GLvoid*)(column + columnByteOffset), (GLvoid*)(span + spanByteOffset));
+	*/
+
+	public static native void glHistogram(int target, int width, int internalformat, boolean sink); /*
+		glHistogram((GLenum)target, (GLsizei)width, (GLenum)internalformat, (GLboolean)sink);
+	*/
+
+	public static native void glMinmax(int target, int internalformat, boolean sink); /*
+		glMinmax((GLenum)target, (GLenum)internalformat, (GLboolean)sink);
+	*/
+
+	public static native void glResetHistogram(int target); /*
+		glResetHistogram((GLenum)target);
+	*/
+
+	public static native void glResetMinmax(int target); /*
+		glResetMinmax((GLenum)target);
+	*/
+
+	public static native void glSeparableFilter2D(int target, int internalformat, int width, int height, int format, int type, Buffer row, int rowByteOffset, Buffer column, int columnByteOffset); /*
+		glSeparableFilter2D((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const GLvoid*)(row + rowByteOffset), (const GLvoid*)(column + columnByteOffset));
+	*/
+
+	public static native void glDrawArraysInstancedARB(int mode, int first, int count, int primcount); /*
+		glDrawArraysInstancedARB((GLenum)mode, (GLint)first, (GLsizei)count, (GLsizei)primcount);
+	*/
+
+	public static native void glDrawElementsInstancedARB(int mode, int count, int type, Buffer indices, int indicesByteOffset, int primcount); /*
+		glDrawElementsInstancedARB((GLenum)mode, (GLsizei)count, (GLenum)type, (const void*)(indices + indicesByteOffset), (GLsizei)primcount);
+	*/
+
+	public static native void glVertexAttribDivisorARB(int index, int divisor); /*
+		glVertexAttribDivisorARB((GLuint)index, (GLuint)divisor);
+	*/
+
+	public static native void glGetInternalformativ(int target, int internalformat, int pname, int bufSize, Buffer params, int paramsByteOffset); /*
+		glGetInternalformativ((GLenum)target, (GLenum)internalformat, (GLenum)pname, (GLsizei)bufSize, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetInternalformati64v(int target, int internalformat, int pname, int bufSize, Buffer params, int paramsByteOffset); /*
+		glGetInternalformati64v((GLenum)target, (GLenum)internalformat, (GLenum)pname, (GLsizei)bufSize, (GLint64*)(params + paramsByteOffset));
+	*/
+
+	public static native void glInvalidateBufferData(int buffer); /*
+		glInvalidateBufferData((GLuint)buffer);
+	*/
+
+	public static native void glInvalidateBufferSubData(int buffer, int offset, int length); /*
+		glInvalidateBufferSubData((GLuint)buffer, (GLintptr)offset, (GLsizeiptr)length);
+	*/
+
+	public static native void glInvalidateFramebuffer(int target, int numAttachments, Buffer attachments, int attachmentsByteOffset); /*
+		glInvalidateFramebuffer((GLenum)target, (GLsizei)numAttachments, (const GLenum*)(attachments + attachmentsByteOffset));
+	*/
+
+	public static native void glInvalidateSubFramebuffer(int target, int numAttachments, Buffer attachments, int attachmentsByteOffset, int x, int y, int width, int height); /*
+		glInvalidateSubFramebuffer((GLenum)target, (GLsizei)numAttachments, (const GLenum*)(attachments + attachmentsByteOffset), (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glInvalidateTexImage(int texture, int level); /*
+		glInvalidateTexImage((GLuint)texture, (GLint)level);
+	*/
+
+	public static native void glInvalidateTexSubImage(int texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth); /*
+		glInvalidateTexSubImage((GLuint)texture, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth);
+	*/
+
+	public static native void glFlushMappedBufferRange(int target, int offset, int length); /*
+		glFlushMappedBufferRange((GLenum)target, (GLintptr)offset, (GLsizeiptr)length);
+	*/
+
+	public static native Buffer glMapBufferRange(int target, int offset, int length, int access); /*
+		return (GLvoid*)glMapBufferRange((GLenum)target, (GLintptr)offset, (GLsizeiptr)length, (GLbitfield)access);
+	*/
+
+	public static native void glCurrentPaletteMatrixARB(int index); /*
+		glCurrentPaletteMatrixARB((GLint)index);
+	*/
+
+	public static native void glMatrixIndexPointerARB(int size, int type, int stride, Buffer pointer, int pointerByteOffset); /*
+		glMatrixIndexPointerARB((GLint)size, (GLenum)type, (GLsizei)stride, (GLvoid*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glMatrixIndexubvARB(int size, Buffer indices, int indicesByteOffset); /*
+		glMatrixIndexubvARB((GLint)size, (GLubyte*)(indices + indicesByteOffset));
+	*/
+
+	public static native void glMatrixIndexuivARB(int size, Buffer indices, int indicesByteOffset); /*
+		glMatrixIndexuivARB((GLint)size, (GLuint*)(indices + indicesByteOffset));
+	*/
+
+	public static native void glMatrixIndexusvARB(int size, Buffer indices, int indicesByteOffset); /*
+		glMatrixIndexusvARB((GLint)size, (GLushort*)(indices + indicesByteOffset));
+	*/
+
+	public static native void glMultiDrawArraysIndirect(int mode, Buffer indirect, int indirectByteOffset, int primcount, int stride); /*
+		glMultiDrawArraysIndirect((GLenum)mode, (const void*)(indirect + indirectByteOffset), (GLsizei)primcount, (GLsizei)stride);
+	*/
+
+	public static native void glMultiDrawElementsIndirect(int mode, int type, Buffer indirect, int indirectByteOffset, int primcount, int stride); /*
+		glMultiDrawElementsIndirect((GLenum)mode, (GLenum)type, (const void*)(indirect + indirectByteOffset), (GLsizei)primcount, (GLsizei)stride);
+	*/
+
+	public static native void glSampleCoverageARB(float value, boolean invert); /*
+		glSampleCoverageARB((GLclampf)value, (GLboolean)invert);
+	*/
+
+	public static native void glActiveTextureARB(int texture); /*
+		glActiveTextureARB((GLenum)texture);
+	*/
+
+	public static native void glClientActiveTextureARB(int texture); /*
+		glClientActiveTextureARB((GLenum)texture);
+	*/
+
+	public static native void glMultiTexCoord1dARB(int target, double s); /*
+		glMultiTexCoord1dARB((GLenum)target, (GLdouble)s);
+	*/
+
+	public static native void glMultiTexCoord1dvARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord1dvARB((GLenum)target, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord1fARB(int target, float s); /*
+		glMultiTexCoord1fARB((GLenum)target, (GLfloat)s);
+	*/
+
+	public static native void glMultiTexCoord1fvARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord1fvARB((GLenum)target, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord1iARB(int target, int s); /*
+		glMultiTexCoord1iARB((GLenum)target, (GLint)s);
+	*/
+
+	public static native void glMultiTexCoord1ivARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord1ivARB((GLenum)target, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord1sARB(int target, short s); /*
+		glMultiTexCoord1sARB((GLenum)target, (GLshort)s);
+	*/
+
+	public static native void glMultiTexCoord1svARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord1svARB((GLenum)target, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord2dARB(int target, double s, double t); /*
+		glMultiTexCoord2dARB((GLenum)target, (GLdouble)s, (GLdouble)t);
+	*/
+
+	public static native void glMultiTexCoord2dvARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord2dvARB((GLenum)target, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord2fARB(int target, float s, float t); /*
+		glMultiTexCoord2fARB((GLenum)target, (GLfloat)s, (GLfloat)t);
+	*/
+
+	public static native void glMultiTexCoord2fvARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord2fvARB((GLenum)target, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord2iARB(int target, int s, int t); /*
+		glMultiTexCoord2iARB((GLenum)target, (GLint)s, (GLint)t);
+	*/
+
+	public static native void glMultiTexCoord2ivARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord2ivARB((GLenum)target, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord2sARB(int target, short s, short t); /*
+		glMultiTexCoord2sARB((GLenum)target, (GLshort)s, (GLshort)t);
+	*/
+
+	public static native void glMultiTexCoord2svARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord2svARB((GLenum)target, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord3dARB(int target, double s, double t, double r); /*
+		glMultiTexCoord3dARB((GLenum)target, (GLdouble)s, (GLdouble)t, (GLdouble)r);
+	*/
+
+	public static native void glMultiTexCoord3dvARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord3dvARB((GLenum)target, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord3fARB(int target, float s, float t, float r); /*
+		glMultiTexCoord3fARB((GLenum)target, (GLfloat)s, (GLfloat)t, (GLfloat)r);
+	*/
+
+	public static native void glMultiTexCoord3fvARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord3fvARB((GLenum)target, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord3iARB(int target, int s, int t, int r); /*
+		glMultiTexCoord3iARB((GLenum)target, (GLint)s, (GLint)t, (GLint)r);
+	*/
+
+	public static native void glMultiTexCoord3ivARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord3ivARB((GLenum)target, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord3sARB(int target, short s, short t, short r); /*
+		glMultiTexCoord3sARB((GLenum)target, (GLshort)s, (GLshort)t, (GLshort)r);
+	*/
+
+	public static native void glMultiTexCoord3svARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord3svARB((GLenum)target, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord4dARB(int target, double s, double t, double r, double q); /*
+		glMultiTexCoord4dARB((GLenum)target, (GLdouble)s, (GLdouble)t, (GLdouble)r, (GLdouble)q);
+	*/
+
+	public static native void glMultiTexCoord4dvARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord4dvARB((GLenum)target, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord4fARB(int target, float s, float t, float r, float q); /*
+		glMultiTexCoord4fARB((GLenum)target, (GLfloat)s, (GLfloat)t, (GLfloat)r, (GLfloat)q);
+	*/
+
+	public static native void glMultiTexCoord4fvARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord4fvARB((GLenum)target, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord4iARB(int target, int s, int t, int r, int q); /*
+		glMultiTexCoord4iARB((GLenum)target, (GLint)s, (GLint)t, (GLint)r, (GLint)q);
+	*/
+
+	public static native void glMultiTexCoord4ivARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord4ivARB((GLenum)target, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord4sARB(int target, short s, short t, short r, short q); /*
+		glMultiTexCoord4sARB((GLenum)target, (GLshort)s, (GLshort)t, (GLshort)r, (GLshort)q);
+	*/
+
+	public static native void glMultiTexCoord4svARB(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord4svARB((GLenum)target, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glBeginQueryARB(int target, int id); /*
+		glBeginQueryARB((GLenum)target, (GLuint)id);
+	*/
+
+	public static native void glDeleteQueriesARB(int n, Buffer ids, int idsByteOffset); /*
+		glDeleteQueriesARB((GLsizei)n, (const GLuint*)(ids + idsByteOffset));
+	*/
+
+	public static native void glEndQueryARB(int target); /*
+		glEndQueryARB((GLenum)target);
+	*/
+
+	public static native void glGenQueriesARB(int n, Buffer ids, int idsByteOffset); /*
+		glGenQueriesARB((GLsizei)n, (GLuint*)(ids + idsByteOffset));
+	*/
+
+	public static native void glGetQueryObjectivARB(int id, int pname, Buffer params, int paramsByteOffset); /*
+		glGetQueryObjectivARB((GLuint)id, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetQueryObjectuivARB(int id, int pname, Buffer params, int paramsByteOffset); /*
+		glGetQueryObjectuivARB((GLuint)id, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetQueryivARB(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetQueryivARB((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native boolean glIsQueryARB(int id); /*
+		return (GLboolean)glIsQueryARB((GLuint)id);
+	*/
+
+	public static native void glPointParameterfARB(int pname, float param); /*
+		glPointParameterfARB((GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glPointParameterfvARB(int pname, Buffer params, int paramsByteOffset); /*
+		glPointParameterfvARB((GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetProgramInterfaceiv(int program, int programInterface, int pname, Buffer params, int paramsByteOffset); /*
+		glGetProgramInterfaceiv((GLuint)program, (GLenum)programInterface, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native int glGetProgramResourceIndex(int program, int programInterface, Buffer name, int nameByteOffset); /*
+		return (GLuint)glGetProgramResourceIndex((GLuint)program, (GLenum)programInterface, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native int glGetProgramResourceLocation(int program, int programInterface, Buffer name, int nameByteOffset); /*
+		return (GLint)glGetProgramResourceLocation((GLuint)program, (GLenum)programInterface, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native int glGetProgramResourceLocationIndex(int program, int programInterface, Buffer name, int nameByteOffset); /*
+		return (GLint)glGetProgramResourceLocationIndex((GLuint)program, (GLenum)programInterface, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glGetProgramResourceName(int program, int programInterface, int index, int bufSize, Buffer length, int lengthByteOffset, Buffer name, int nameByteOffset); /*
+		glGetProgramResourceName((GLuint)program, (GLenum)programInterface, (GLuint)index, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glGetProgramResourceiv(int program, int programInterface, int index, int propCount, Buffer props, int propsByteOffset, int bufSize, Buffer length, int lengthByteOffset, Buffer params, int paramsByteOffset); /*
+		glGetProgramResourceiv((GLuint)program, (GLenum)programInterface, (GLuint)index, (GLsizei)propCount, (const GLenum*)(props + propsByteOffset), (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProvokingVertex(int mode); /*
+		glProvokingVertex((GLenum)mode);
+	*/
+
+	public static native int glGetGraphicsResetStatusARB(); /*
+		return (GLenum)glGetGraphicsResetStatusARB();
+	*/
+
+	public static native void glGetnColorTableARB(int target, int format, int type, int bufSize, Buffer table, int tableByteOffset); /*
+		glGetnColorTableARB((GLenum)target, (GLenum)format, (GLenum)type, (GLsizei)bufSize, (void*)(table + tableByteOffset));
+	*/
+
+	public static native void glGetnCompressedTexImageARB(int target, int lod, int bufSize, Buffer img, int imgByteOffset); /*
+		glGetnCompressedTexImageARB((GLenum)target, (GLint)lod, (GLsizei)bufSize, (void*)(img + imgByteOffset));
+	*/
+
+	public static native void glGetnConvolutionFilterARB(int target, int format, int type, int bufSize, Buffer image, int imageByteOffset); /*
+		glGetnConvolutionFilterARB((GLenum)target, (GLenum)format, (GLenum)type, (GLsizei)bufSize, (void*)(image + imageByteOffset));
+	*/
+
+	public static native void glGetnHistogramARB(int target, boolean reset, int format, int type, int bufSize, Buffer values, int valuesByteOffset); /*
+		glGetnHistogramARB((GLenum)target, (GLboolean)reset, (GLenum)format, (GLenum)type, (GLsizei)bufSize, (void*)(values + valuesByteOffset));
+	*/
+
+	public static native void glGetnMapdvARB(int target, int query, int bufSize, Buffer v, int vByteOffset); /*
+		glGetnMapdvARB((GLenum)target, (GLenum)query, (GLsizei)bufSize, (GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glGetnMapfvARB(int target, int query, int bufSize, Buffer v, int vByteOffset); /*
+		glGetnMapfvARB((GLenum)target, (GLenum)query, (GLsizei)bufSize, (GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glGetnMapivARB(int target, int query, int bufSize, Buffer v, int vByteOffset); /*
+		glGetnMapivARB((GLenum)target, (GLenum)query, (GLsizei)bufSize, (GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glGetnMinmaxARB(int target, boolean reset, int format, int type, int bufSize, Buffer values, int valuesByteOffset); /*
+		glGetnMinmaxARB((GLenum)target, (GLboolean)reset, (GLenum)format, (GLenum)type, (GLsizei)bufSize, (void*)(values + valuesByteOffset));
+	*/
+
+	public static native void glGetnPixelMapfvARB(int map, int bufSize, Buffer values, int valuesByteOffset); /*
+		glGetnPixelMapfvARB((GLenum)map, (GLsizei)bufSize, (GLfloat*)(values + valuesByteOffset));
+	*/
+
+	public static native void glGetnPixelMapuivARB(int map, int bufSize, Buffer values, int valuesByteOffset); /*
+		glGetnPixelMapuivARB((GLenum)map, (GLsizei)bufSize, (GLuint*)(values + valuesByteOffset));
+	*/
+
+	public static native void glGetnPixelMapusvARB(int map, int bufSize, Buffer values, int valuesByteOffset); /*
+		glGetnPixelMapusvARB((GLenum)map, (GLsizei)bufSize, (GLushort*)(values + valuesByteOffset));
+	*/
+
+	public static native void glGetnPolygonStippleARB(int bufSize, Buffer pattern, int patternByteOffset); /*
+		glGetnPolygonStippleARB((GLsizei)bufSize, (GLubyte*)(pattern + patternByteOffset));
+	*/
+
+	public static native void glGetnSeparableFilterARB(int target, int format, int type, int rowBufSize, Buffer row, int rowByteOffset, int columnBufSize, Buffer column, int columnByteOffset, Buffer span, int spanByteOffset); /*
+		glGetnSeparableFilterARB((GLenum)target, (GLenum)format, (GLenum)type, (GLsizei)rowBufSize, (void*)(row + rowByteOffset), (GLsizei)columnBufSize, (GLvoid*)(column + columnByteOffset), (GLvoid*)(span + spanByteOffset));
+	*/
+
+	public static native void glGetnTexImageARB(int target, int level, int format, int type, int bufSize, Buffer img, int imgByteOffset); /*
+		glGetnTexImageARB((GLenum)target, (GLint)level, (GLenum)format, (GLenum)type, (GLsizei)bufSize, (void*)(img + imgByteOffset));
+	*/
+
+	public static native void glGetnUniformdvARB(int program, int location, int bufSize, Buffer params, int paramsByteOffset); /*
+		glGetnUniformdvARB((GLuint)program, (GLint)location, (GLsizei)bufSize, (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetnUniformfvARB(int program, int location, int bufSize, Buffer params, int paramsByteOffset); /*
+		glGetnUniformfvARB((GLuint)program, (GLint)location, (GLsizei)bufSize, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetnUniformivARB(int program, int location, int bufSize, Buffer params, int paramsByteOffset); /*
+		glGetnUniformivARB((GLuint)program, (GLint)location, (GLsizei)bufSize, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetnUniformuivARB(int program, int location, int bufSize, Buffer params, int paramsByteOffset); /*
+		glGetnUniformuivARB((GLuint)program, (GLint)location, (GLsizei)bufSize, (GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glReadnPixelsARB(int x, int y, int width, int height, int format, int type, int bufSize, Buffer data, int dataByteOffset); /*
+		glReadnPixelsARB((GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (GLsizei)bufSize, (void*)(data + dataByteOffset));
+	*/
+
+	public static native void glMinSampleShadingARB(float value); /*
+		glMinSampleShadingARB((GLclampf)value);
+	*/
+
+	public static native void glBindSampler(int unit, int sampler); /*
+		glBindSampler((GLuint)unit, (GLuint)sampler);
+	*/
+
+	public static native void glDeleteSamplers(int count, Buffer samplers, int samplersByteOffset); /*
+		glDeleteSamplers((GLsizei)count, (const GLuint*)(samplers + samplersByteOffset));
+	*/
+
+	public static native void glGenSamplers(int count, Buffer samplers, int samplersByteOffset); /*
+		glGenSamplers((GLsizei)count, (GLuint*)(samplers + samplersByteOffset));
+	*/
+
+	public static native void glGetSamplerParameterIiv(int sampler, int pname, Buffer params, int paramsByteOffset); /*
+		glGetSamplerParameterIiv((GLuint)sampler, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetSamplerParameterIuiv(int sampler, int pname, Buffer params, int paramsByteOffset); /*
+		glGetSamplerParameterIuiv((GLuint)sampler, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetSamplerParameterfv(int sampler, int pname, Buffer params, int paramsByteOffset); /*
+		glGetSamplerParameterfv((GLuint)sampler, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetSamplerParameteriv(int sampler, int pname, Buffer params, int paramsByteOffset); /*
+		glGetSamplerParameteriv((GLuint)sampler, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native boolean glIsSampler(int sampler); /*
+		return (GLboolean)glIsSampler((GLuint)sampler);
+	*/
+
+	public static native void glSamplerParameterIiv(int sampler, int pname, Buffer params, int paramsByteOffset); /*
+		glSamplerParameterIiv((GLuint)sampler, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glSamplerParameterIuiv(int sampler, int pname, Buffer params, int paramsByteOffset); /*
+		glSamplerParameterIuiv((GLuint)sampler, (GLenum)pname, (const GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glSamplerParameterf(int sampler, int pname, float param); /*
+		glSamplerParameterf((GLuint)sampler, (GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glSamplerParameterfv(int sampler, int pname, Buffer params, int paramsByteOffset); /*
+		glSamplerParameterfv((GLuint)sampler, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glSamplerParameteri(int sampler, int pname, int param); /*
+		glSamplerParameteri((GLuint)sampler, (GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glSamplerParameteriv(int sampler, int pname, Buffer params, int paramsByteOffset); /*
+		glSamplerParameteriv((GLuint)sampler, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glActiveShaderProgram(int pipeline, int program); /*
+		glActiveShaderProgram((GLuint)pipeline, (GLuint)program);
+	*/
+
+	public static native void glBindProgramPipeline(int pipeline); /*
+		glBindProgramPipeline((GLuint)pipeline);
+	*/
+
+	public static native int glCreateShaderProgramv(int type, int count, Buffer strings, int stringsByteOffset); /*
+		return (GLuint)glCreateShaderProgramv((GLenum)type, (GLsizei)count, (const GLchar**)(strings + stringsByteOffset));
+	*/
+
+	public static native void glDeleteProgramPipelines(int n, Buffer pipelines, int pipelinesByteOffset); /*
+		glDeleteProgramPipelines((GLsizei)n, (const GLuint*)(pipelines + pipelinesByteOffset));
+	*/
+
+	public static native void glGenProgramPipelines(int n, Buffer pipelines, int pipelinesByteOffset); /*
+		glGenProgramPipelines((GLsizei)n, (GLuint*)(pipelines + pipelinesByteOffset));
+	*/
+
+	public static native void glGetProgramPipelineInfoLog(int pipeline, int bufSize, Buffer length, int lengthByteOffset, Buffer infoLog, int infoLogByteOffset); /*
+		glGetProgramPipelineInfoLog((GLuint)pipeline, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(infoLog + infoLogByteOffset));
+	*/
+
+	public static native void glGetProgramPipelineiv(int pipeline, int pname, Buffer params, int paramsByteOffset); /*
+		glGetProgramPipelineiv((GLuint)pipeline, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native boolean glIsProgramPipeline(int pipeline); /*
+		return (GLboolean)glIsProgramPipeline((GLuint)pipeline);
+	*/
+
+	public static native void glProgramUniform1d(int program, int location, double x); /*
+		glProgramUniform1d((GLuint)program, (GLint)location, (GLdouble)x);
+	*/
+
+	public static native void glProgramUniform1dv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform1dv((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform1f(int program, int location, float x); /*
+		glProgramUniform1f((GLuint)program, (GLint)location, (GLfloat)x);
+	*/
+
+	public static native void glProgramUniform1fv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform1fv((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform1i(int program, int location, int x); /*
+		glProgramUniform1i((GLuint)program, (GLint)location, (GLint)x);
+	*/
+
+	public static native void glProgramUniform1iv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform1iv((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform1ui(int program, int location, int x); /*
+		glProgramUniform1ui((GLuint)program, (GLint)location, (GLuint)x);
+	*/
+
+	public static native void glProgramUniform1uiv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform1uiv((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform2d(int program, int location, double x, double y); /*
+		glProgramUniform2d((GLuint)program, (GLint)location, (GLdouble)x, (GLdouble)y);
+	*/
+
+	public static native void glProgramUniform2dv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform2dv((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform2f(int program, int location, float x, float y); /*
+		glProgramUniform2f((GLuint)program, (GLint)location, (GLfloat)x, (GLfloat)y);
+	*/
+
+	public static native void glProgramUniform2fv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform2fv((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform2i(int program, int location, int x, int y); /*
+		glProgramUniform2i((GLuint)program, (GLint)location, (GLint)x, (GLint)y);
+	*/
+
+	public static native void glProgramUniform2iv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform2iv((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform2ui(int program, int location, int x, int y); /*
+		glProgramUniform2ui((GLuint)program, (GLint)location, (GLuint)x, (GLuint)y);
+	*/
+
+	public static native void glProgramUniform2uiv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform2uiv((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform3d(int program, int location, double x, double y, double z); /*
+		glProgramUniform3d((GLuint)program, (GLint)location, (GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glProgramUniform3dv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform3dv((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform3f(int program, int location, float x, float y, float z); /*
+		glProgramUniform3f((GLuint)program, (GLint)location, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glProgramUniform3fv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform3fv((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform3i(int program, int location, int x, int y, int z); /*
+		glProgramUniform3i((GLuint)program, (GLint)location, (GLint)x, (GLint)y, (GLint)z);
+	*/
+
+	public static native void glProgramUniform3iv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform3iv((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform3ui(int program, int location, int x, int y, int z); /*
+		glProgramUniform3ui((GLuint)program, (GLint)location, (GLuint)x, (GLuint)y, (GLuint)z);
+	*/
+
+	public static native void glProgramUniform3uiv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform3uiv((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform4d(int program, int location, double x, double y, double z, double w); /*
+		glProgramUniform4d((GLuint)program, (GLint)location, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
+	*/
+
+	public static native void glProgramUniform4dv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform4dv((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform4f(int program, int location, float x, float y, float z, float w); /*
+		glProgramUniform4f((GLuint)program, (GLint)location, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
+	*/
+
+	public static native void glProgramUniform4fv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform4fv((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform4i(int program, int location, int x, int y, int z, int w); /*
+		glProgramUniform4i((GLuint)program, (GLint)location, (GLint)x, (GLint)y, (GLint)z, (GLint)w);
+	*/
+
+	public static native void glProgramUniform4iv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform4iv((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform4ui(int program, int location, int x, int y, int z, int w); /*
+		glProgramUniform4ui((GLuint)program, (GLint)location, (GLuint)x, (GLuint)y, (GLuint)z, (GLuint)w);
+	*/
+
+	public static native void glProgramUniform4uiv(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform4uiv((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix2dv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix2dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix2fv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix2fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix2x3dv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix2x3dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix2x3fv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix2x3fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix2x4dv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix2x4dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix2x4fv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix2x4fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix3dv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix3dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix3fv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix3fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix3x2dv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix3x2dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix3x2fv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix3x2fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix3x4dv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix3x4dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix3x4fv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix3x4fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix4dv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix4dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix4fv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix4fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix4x2dv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix4x2dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix4x2fv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix4x2fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix4x3dv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix4x3dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix4x3fv(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix4x3fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUseProgramStages(int pipeline, int stages, int program); /*
+		glUseProgramStages((GLuint)pipeline, (GLbitfield)stages, (GLuint)program);
+	*/
+
+	public static native void glValidateProgramPipeline(int pipeline); /*
+		glValidateProgramPipeline((GLuint)pipeline);
+	*/
+
+	public static native void glGetActiveAtomicCounterBufferiv(int program, int bufferIndex, int pname, Buffer params, int paramsByteOffset); /*
+		glGetActiveAtomicCounterBufferiv((GLuint)program, (GLuint)bufferIndex, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glBindImageTexture(int unit, int texture, int level, boolean layered, int layer, int access, int format); /*
+		glBindImageTexture((GLuint)unit, (GLuint)texture, (GLint)level, (GLboolean)layered, (GLint)layer, (GLenum)access, (GLenum)format);
+	*/
+
+	public static native void glMemoryBarrier(int barriers); /*
+		glMemoryBarrier((GLbitfield)barriers);
+	*/
+
+	public static native void glAttachObjectARB(int containerObj, int obj); /*
+		glAttachObjectARB((GLhandleARB)containerObj, (GLhandleARB)obj);
+	*/
+
+	public static native void glCompileShaderARB(int shaderObj); /*
+		glCompileShaderARB((GLhandleARB)shaderObj);
+	*/
+
+	public static native int glCreateProgramObjectARB(); /*
+		return (GLhandleARB)glCreateProgramObjectARB();
+	*/
+
+	public static native int glCreateShaderObjectARB(int shaderType); /*
+		return (GLhandleARB)glCreateShaderObjectARB((GLenum)shaderType);
+	*/
+
+	public static native void glDeleteObjectARB(int obj); /*
+		glDeleteObjectARB((GLhandleARB)obj);
+	*/
+
+	public static native void glDetachObjectARB(int containerObj, int attachedObj); /*
+		glDetachObjectARB((GLhandleARB)containerObj, (GLhandleARB)attachedObj);
+	*/
+
+	public static native void glGetActiveUniformARB(int programObj, int index, int maxLength, Buffer length, int lengthByteOffset, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset, Buffer name, int nameByteOffset); /*
+		glGetActiveUniformARB((GLhandleARB)programObj, (GLuint)index, (GLsizei)maxLength, (GLsizei*)(length + lengthByteOffset), (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLcharARB*)(name + nameByteOffset));
+	*/
+
+	public static native void glGetAttachedObjectsARB(int containerObj, int maxCount, Buffer count, int countByteOffset, Buffer obj, int objByteOffset); /*
+		glGetAttachedObjectsARB((GLhandleARB)containerObj, (GLsizei)maxCount, (GLsizei*)(count + countByteOffset), (GLhandleARB*)(obj + objByteOffset));
+	*/
+
+	public static native int glGetHandleARB(int pname); /*
+		return (GLhandleARB)glGetHandleARB((GLenum)pname);
+	*/
+
+	public static native void glGetInfoLogARB(int obj, int maxLength, Buffer length, int lengthByteOffset, Buffer infoLog, int infoLogByteOffset); /*
+		glGetInfoLogARB((GLhandleARB)obj, (GLsizei)maxLength, (GLsizei*)(length + lengthByteOffset), (GLcharARB*)(infoLog + infoLogByteOffset));
+	*/
+
+	public static native void glGetObjectParameterfvARB(int obj, int pname, Buffer params, int paramsByteOffset); /*
+		glGetObjectParameterfvARB((GLhandleARB)obj, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetObjectParameterivARB(int obj, int pname, Buffer params, int paramsByteOffset); /*
+		glGetObjectParameterivARB((GLhandleARB)obj, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetShaderSourceARB(int obj, int maxLength, Buffer length, int lengthByteOffset, Buffer source, int sourceByteOffset); /*
+		glGetShaderSourceARB((GLhandleARB)obj, (GLsizei)maxLength, (GLsizei*)(length + lengthByteOffset), (GLcharARB*)(source + sourceByteOffset));
+	*/
+
+	public static native int glGetUniformLocationARB(int programObj, Buffer name, int nameByteOffset); /*
+		return (GLint)glGetUniformLocationARB((GLhandleARB)programObj, (const GLcharARB*)(name + nameByteOffset));
+	*/
+
+	public static native void glGetUniformfvARB(int programObj, int location, Buffer params, int paramsByteOffset); /*
+		glGetUniformfvARB((GLhandleARB)programObj, (GLint)location, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetUniformivARB(int programObj, int location, Buffer params, int paramsByteOffset); /*
+		glGetUniformivARB((GLhandleARB)programObj, (GLint)location, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glLinkProgramARB(int programObj); /*
+		glLinkProgramARB((GLhandleARB)programObj);
+	*/
+
+	public static native void glShaderSourceARB(int shaderObj, int count, Buffer string, int stringByteOffset, Buffer length, int lengthByteOffset); /*
+		glShaderSourceARB((GLhandleARB)shaderObj, (GLsizei)count, (const GLcharARB**)(string + stringByteOffset), (const GLint*)(length + lengthByteOffset));
+	*/
+
+	public static native void glUniform1fARB(int location, float v0); /*
+		glUniform1fARB((GLint)location, (GLfloat)v0);
+	*/
+
+	public static native void glUniform1fvARB(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform1fvARB((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform1iARB(int location, int v0); /*
+		glUniform1iARB((GLint)location, (GLint)v0);
+	*/
+
+	public static native void glUniform1ivARB(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform1ivARB((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform2fARB(int location, float v0, float v1); /*
+		glUniform2fARB((GLint)location, (GLfloat)v0, (GLfloat)v1);
+	*/
+
+	public static native void glUniform2fvARB(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform2fvARB((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform2iARB(int location, int v0, int v1); /*
+		glUniform2iARB((GLint)location, (GLint)v0, (GLint)v1);
+	*/
+
+	public static native void glUniform2ivARB(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform2ivARB((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform3fARB(int location, float v0, float v1, float v2); /*
+		glUniform3fARB((GLint)location, (GLfloat)v0, (GLfloat)v1, (GLfloat)v2);
+	*/
+
+	public static native void glUniform3fvARB(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform3fvARB((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform3iARB(int location, int v0, int v1, int v2); /*
+		glUniform3iARB((GLint)location, (GLint)v0, (GLint)v1, (GLint)v2);
+	*/
+
+	public static native void glUniform3ivARB(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform3ivARB((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform4fARB(int location, float v0, float v1, float v2, float v3); /*
+		glUniform4fARB((GLint)location, (GLfloat)v0, (GLfloat)v1, (GLfloat)v2, (GLfloat)v3);
+	*/
+
+	public static native void glUniform4fvARB(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform4fvARB((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform4iARB(int location, int v0, int v1, int v2, int v3); /*
+		glUniform4iARB((GLint)location, (GLint)v0, (GLint)v1, (GLint)v2, (GLint)v3);
+	*/
+
+	public static native void glUniform4ivARB(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform4ivARB((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix2fvARB(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix2fvARB((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix3fvARB(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix3fvARB((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformMatrix4fvARB(int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glUniformMatrix4fvARB((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glUseProgramObjectARB(int programObj); /*
+		glUseProgramObjectARB((GLhandleARB)programObj);
+	*/
+
+	public static native void glValidateProgramARB(int programObj); /*
+		glValidateProgramARB((GLhandleARB)programObj);
+	*/
+
+	public static native void glShaderStorageBlockBinding(int program, int storageBlockIndex, int storageBlockBinding); /*
+		glShaderStorageBlockBinding((GLuint)program, (GLuint)storageBlockIndex, (GLuint)storageBlockBinding);
+	*/
+
+	public static native void glGetActiveSubroutineName(int program, int shadertype, int index, int bufsize, Buffer length, int lengthByteOffset, Buffer name, int nameByteOffset); /*
+		glGetActiveSubroutineName((GLuint)program, (GLenum)shadertype, (GLuint)index, (GLsizei)bufsize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glGetActiveSubroutineUniformName(int program, int shadertype, int index, int bufsize, Buffer length, int lengthByteOffset, Buffer name, int nameByteOffset); /*
+		glGetActiveSubroutineUniformName((GLuint)program, (GLenum)shadertype, (GLuint)index, (GLsizei)bufsize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glGetActiveSubroutineUniformiv(int program, int shadertype, int index, int pname, Buffer values, int valuesByteOffset); /*
+		glGetActiveSubroutineUniformiv((GLuint)program, (GLenum)shadertype, (GLuint)index, (GLenum)pname, (GLint*)(values + valuesByteOffset));
+	*/
+
+	public static native void glGetProgramStageiv(int program, int shadertype, int pname, Buffer values, int valuesByteOffset); /*
+		glGetProgramStageiv((GLuint)program, (GLenum)shadertype, (GLenum)pname, (GLint*)(values + valuesByteOffset));
+	*/
+
+	public static native int glGetSubroutineIndex(int program, int shadertype, Buffer name, int nameByteOffset); /*
+		return (GLuint)glGetSubroutineIndex((GLuint)program, (GLenum)shadertype, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native int glGetSubroutineUniformLocation(int program, int shadertype, Buffer name, int nameByteOffset); /*
+		return (GLint)glGetSubroutineUniformLocation((GLuint)program, (GLenum)shadertype, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glGetUniformSubroutineuiv(int shadertype, int location, Buffer params, int paramsByteOffset); /*
+		glGetUniformSubroutineuiv((GLenum)shadertype, (GLint)location, (GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glUniformSubroutinesuiv(int shadertype, int count, Buffer indices, int indicesByteOffset); /*
+		glUniformSubroutinesuiv((GLenum)shadertype, (GLsizei)count, (const GLuint*)(indices + indicesByteOffset));
+	*/
+
+	public static native void glCompileShaderIncludeARB(int shader, int count, Buffer path, int pathByteOffset, Buffer length, int lengthByteOffset); /*
+		glCompileShaderIncludeARB((GLuint)shader, (GLsizei)count, (const GLchar**)(path + pathByteOffset), (const GLint*)(length + lengthByteOffset));
+	*/
+
+	public static native void glDeleteNamedStringARB(int namelen, Buffer name, int nameByteOffset); /*
+		glDeleteNamedStringARB((GLint)namelen, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glGetNamedStringARB(int namelen, Buffer name, int nameByteOffset, int bufSize, Buffer stringlen, int stringlenByteOffset, Buffer string, int stringByteOffset); /*
+		glGetNamedStringARB((GLint)namelen, (const GLchar*)(name + nameByteOffset), (GLsizei)bufSize, (GLint*)(stringlen + stringlenByteOffset), (GLchar*)(string + stringByteOffset));
+	*/
+
+	public static native void glGetNamedStringivARB(int namelen, Buffer name, int nameByteOffset, int pname, Buffer params, int paramsByteOffset); /*
+		glGetNamedStringivARB((GLint)namelen, (const GLchar*)(name + nameByteOffset), (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native boolean glIsNamedStringARB(int namelen, Buffer name, int nameByteOffset); /*
+		return (GLboolean)glIsNamedStringARB((GLint)namelen, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glNamedStringARB(int type, int namelen, Buffer name, int nameByteOffset, int stringlen, Buffer string, int stringByteOffset); /*
+		glNamedStringARB((GLenum)type, (GLint)namelen, (const GLchar*)(name + nameByteOffset), (GLint)stringlen, (const GLchar*)(string + stringByteOffset));
+	*/
+
+	public static native int glClientWaitSync(long GLsync, int flags, long timeout); /*
+		return (GLenum)glClientWaitSync((GLsync)GLsync, (GLbitfield)flags, (GLuint64)timeout);
+	*/
+
+	public static native void glDeleteSync(long GLsync); /*
+		glDeleteSync((GLsync)GLsync);
+	*/
+
+	public static native long glFenceSync(int condition, int flags); /*
+		return (GLsync)glFenceSync((GLenum)condition, (GLbitfield)flags);
+	*/
+
+	public static native void glGetInteger64v(int pname, Buffer params, int paramsByteOffset); /*
+		glGetInteger64v((GLenum)pname, (GLint64*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetSynciv(long GLsync, int pname, int bufSize, Buffer length, int lengthByteOffset, Buffer values, int valuesByteOffset); /*
+		glGetSynciv((GLsync)GLsync, (GLenum)pname, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLint*)(values + valuesByteOffset));
+	*/
+
+	public static native boolean glIsSync(long GLsync); /*
+		return (GLboolean)glIsSync((GLsync)GLsync);
+	*/
+
+	public static native void glWaitSync(long GLsync, int flags, long timeout); /*
+		glWaitSync((GLsync)GLsync, (GLbitfield)flags, (GLuint64)timeout);
+	*/
+
+	public static native void glPatchParameterfv(int pname, Buffer values, int valuesByteOffset); /*
+		glPatchParameterfv((GLenum)pname, (const GLfloat*)(values + valuesByteOffset));
+	*/
+
+	public static native void glPatchParameteri(int pname, int value); /*
+		glPatchParameteri((GLenum)pname, (GLint)value);
+	*/
+
+	public static native void glTexBufferARB(int target, int internalformat, int buffer); /*
+		glTexBufferARB((GLenum)target, (GLenum)internalformat, (GLuint)buffer);
+	*/
+
+	public static native void glTexBufferRange(int target, int internalformat, int buffer, int offset, int size); /*
+		glTexBufferRange((GLenum)target, (GLenum)internalformat, (GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size);
+	*/
+
+	public static native void glTextureBufferRangeEXT(int texture, int target, int internalformat, int buffer, int offset, int size); /*
+		glTextureBufferRangeEXT((GLuint)texture, (GLenum)target, (GLenum)internalformat, (GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size);
+	*/
+
+	public static native void glCompressedTexImage1DARB(int target, int level, int internalformat, int width, int border, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTexImage1DARB((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLint)border, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTexImage2DARB(int target, int level, int internalformat, int width, int height, int border, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTexImage2DARB((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLint)border, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTexImage3DARB(int target, int level, int internalformat, int width, int height, int depth, int border, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTexImage3DARB((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTexSubImage1DARB(int target, int level, int xoffset, int width, int format, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTexSubImage1DARB((GLenum)target, (GLint)level, (GLint)xoffset, (GLsizei)width, (GLenum)format, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTexSubImage2DARB(int target, int level, int xoffset, int yoffset, int width, int height, int format, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTexSubImage2DARB((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTexSubImage3DARB(int target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int format, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTexSubImage3DARB((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetCompressedTexImageARB(int target, int lod, Buffer img, int imgByteOffset); /*
+		glGetCompressedTexImageARB((GLenum)target, (GLint)lod, (void*)(img + imgByteOffset));
+	*/
+
+	public static native void glGetMultisamplefv(int pname, int index, Buffer val, int valByteOffset); /*
+		glGetMultisamplefv((GLenum)pname, (GLuint)index, (GLfloat*)(val + valByteOffset));
+	*/
+
+	public static native void glSampleMaski(int index, int mask); /*
+		glSampleMaski((GLuint)index, (GLbitfield)mask);
+	*/
+
+	public static native void glTexImage2DMultisample(int target, int samples, int internalformat, int width, int height, boolean fixedsamplelocations); /*
+		glTexImage2DMultisample((GLenum)target, (GLsizei)samples, (GLint)internalformat, (GLsizei)width, (GLsizei)height, (GLboolean)fixedsamplelocations);
+	*/
+
+	public static native void glTexImage3DMultisample(int target, int samples, int internalformat, int width, int height, int depth, boolean fixedsamplelocations); /*
+		glTexImage3DMultisample((GLenum)target, (GLsizei)samples, (GLint)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLboolean)fixedsamplelocations);
+	*/
+
+	public static native void glTexStorage1D(int target, int levels, int internalformat, int width); /*
+		glTexStorage1D((GLenum)target, (GLsizei)levels, (GLenum)internalformat, (GLsizei)width);
+	*/
+
+	public static native void glTexStorage2D(int target, int levels, int internalformat, int width, int height); /*
+		glTexStorage2D((GLenum)target, (GLsizei)levels, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glTexStorage3D(int target, int levels, int internalformat, int width, int height, int depth); /*
+		glTexStorage3D((GLenum)target, (GLsizei)levels, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth);
+	*/
+
+	public static native void glTextureStorage1DEXT(int texture, int target, int levels, int internalformat, int width); /*
+		glTextureStorage1DEXT((GLuint)texture, (GLenum)target, (GLsizei)levels, (GLenum)internalformat, (GLsizei)width);
+	*/
+
+	public static native void glTextureStorage2DEXT(int texture, int target, int levels, int internalformat, int width, int height); /*
+		glTextureStorage2DEXT((GLuint)texture, (GLenum)target, (GLsizei)levels, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glTextureStorage3DEXT(int texture, int target, int levels, int internalformat, int width, int height, int depth); /*
+		glTextureStorage3DEXT((GLuint)texture, (GLenum)target, (GLsizei)levels, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth);
+	*/
+
+	public static native void glTexStorage2DMultisample(int target, int samples, int internalformat, int width, int height, boolean fixedsamplelocations); /*
+		glTexStorage2DMultisample((GLenum)target, (GLsizei)samples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLboolean)fixedsamplelocations);
+	*/
+
+	public static native void glTexStorage3DMultisample(int target, int samples, int internalformat, int width, int height, int depth, boolean fixedsamplelocations); /*
+		glTexStorage3DMultisample((GLenum)target, (GLsizei)samples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLboolean)fixedsamplelocations);
+	*/
+
+	public static native void glTextureStorage2DMultisampleEXT(int texture, int target, int samples, int internalformat, int width, int height, boolean fixedsamplelocations); /*
+		glTextureStorage2DMultisampleEXT((GLuint)texture, (GLenum)target, (GLsizei)samples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLboolean)fixedsamplelocations);
+	*/
+
+	public static native void glTextureStorage3DMultisampleEXT(int texture, int target, int samples, int internalformat, int width, int height, int depth, boolean fixedsamplelocations); /*
+		glTextureStorage3DMultisampleEXT((GLuint)texture, (GLenum)target, (GLsizei)samples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLboolean)fixedsamplelocations);
+	*/
+
+	public static native void glTextureView(int texture, int target, int origtexture, int internalformat, int minlevel, int numlevels, int minlayer, int numlayers); /*
+		glTextureView((GLuint)texture, (GLenum)target, (GLuint)origtexture, (GLenum)internalformat, (GLuint)minlevel, (GLuint)numlevels, (GLuint)minlayer, (GLuint)numlayers);
+	*/
+
+	public static native void glGetQueryObjecti64v(int id, int pname, Buffer params, int paramsByteOffset); /*
+		glGetQueryObjecti64v((GLuint)id, (GLenum)pname, (GLint64*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetQueryObjectui64v(int id, int pname, Buffer params, int paramsByteOffset); /*
+		glGetQueryObjectui64v((GLuint)id, (GLenum)pname, (GLuint64*)(params + paramsByteOffset));
+	*/
+
+	public static native void glQueryCounter(int id, int target); /*
+		glQueryCounter((GLuint)id, (GLenum)target);
+	*/
+
+	public static native void glBindTransformFeedback(int target, int id); /*
+		glBindTransformFeedback((GLenum)target, (GLuint)id);
+	*/
+
+	public static native void glDeleteTransformFeedbacks(int n, Buffer ids, int idsByteOffset); /*
+		glDeleteTransformFeedbacks((GLsizei)n, (const GLuint*)(ids + idsByteOffset));
+	*/
+
+	public static native void glDrawTransformFeedback(int mode, int id); /*
+		glDrawTransformFeedback((GLenum)mode, (GLuint)id);
+	*/
+
+	public static native void glGenTransformFeedbacks(int n, Buffer ids, int idsByteOffset); /*
+		glGenTransformFeedbacks((GLsizei)n, (GLuint*)(ids + idsByteOffset));
+	*/
+
+	public static native boolean glIsTransformFeedback(int id); /*
+		return (GLboolean)glIsTransformFeedback((GLuint)id);
+	*/
+
+	public static native void glPauseTransformFeedback(); /*
+		glPauseTransformFeedback();
+	*/
+
+	public static native void glResumeTransformFeedback(); /*
+		glResumeTransformFeedback();
+	*/
+
+	public static native void glBeginQueryIndexed(int target, int index, int id); /*
+		glBeginQueryIndexed((GLenum)target, (GLuint)index, (GLuint)id);
+	*/
+
+	public static native void glDrawTransformFeedbackStream(int mode, int id, int stream); /*
+		glDrawTransformFeedbackStream((GLenum)mode, (GLuint)id, (GLuint)stream);
+	*/
+
+	public static native void glEndQueryIndexed(int target, int index); /*
+		glEndQueryIndexed((GLenum)target, (GLuint)index);
+	*/
+
+	public static native void glGetQueryIndexediv(int target, int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetQueryIndexediv((GLenum)target, (GLuint)index, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glDrawTransformFeedbackInstanced(int mode, int id, int primcount); /*
+		glDrawTransformFeedbackInstanced((GLenum)mode, (GLuint)id, (GLsizei)primcount);
+	*/
+
+	public static native void glDrawTransformFeedbackStreamInstanced(int mode, int id, int stream, int primcount); /*
+		glDrawTransformFeedbackStreamInstanced((GLenum)mode, (GLuint)id, (GLuint)stream, (GLsizei)primcount);
+	*/
+
+	public static native void glLoadTransposeMatrixdARB(Buffer m, int mByteOffset); /*
+		glLoadTransposeMatrixdARB((GLdouble*)(m + mByteOffset));
+	*/
+
+	public static native void glLoadTransposeMatrixfARB(Buffer m, int mByteOffset); /*
+		glLoadTransposeMatrixfARB((GLfloat*)(m + mByteOffset));
+	*/
+
+	public static native void glMultTransposeMatrixdARB(Buffer m, int mByteOffset); /*
+		glMultTransposeMatrixdARB((GLdouble*)(m + mByteOffset));
+	*/
+
+	public static native void glMultTransposeMatrixfARB(Buffer m, int mByteOffset); /*
+		glMultTransposeMatrixfARB((GLfloat*)(m + mByteOffset));
+	*/
+
+	public static native void glBindBufferBase(int target, int index, int buffer); /*
+		glBindBufferBase((GLenum)target, (GLuint)index, (GLuint)buffer);
+	*/
+
+	public static native void glBindBufferRange(int target, int index, int buffer, int offset, int size); /*
+		glBindBufferRange((GLenum)target, (GLuint)index, (GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size);
+	*/
+
+	public static native void glGetActiveUniformBlockName(int program, int uniformBlockIndex, int bufSize, Buffer length, int lengthByteOffset, Buffer uniformBlockName, int uniformBlockNameByteOffset); /*
+		glGetActiveUniformBlockName((GLuint)program, (GLuint)uniformBlockIndex, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(uniformBlockName + uniformBlockNameByteOffset));
+	*/
+
+	public static native void glGetActiveUniformBlockiv(int program, int uniformBlockIndex, int pname, Buffer params, int paramsByteOffset); /*
+		glGetActiveUniformBlockiv((GLuint)program, (GLuint)uniformBlockIndex, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetActiveUniformName(int program, int uniformIndex, int bufSize, Buffer length, int lengthByteOffset, Buffer uniformName, int uniformNameByteOffset); /*
+		glGetActiveUniformName((GLuint)program, (GLuint)uniformIndex, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(uniformName + uniformNameByteOffset));
+	*/
+
+	public static native void glGetActiveUniformsiv(int program, int uniformCount, Buffer uniformIndices, int uniformIndicesByteOffset, int pname, Buffer params, int paramsByteOffset); /*
+		glGetActiveUniformsiv((GLuint)program, (GLsizei)uniformCount, (const GLuint*)(uniformIndices + uniformIndicesByteOffset), (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetIntegeri_v(int target, int index, Buffer data, int dataByteOffset); /*
+		glGetIntegeri_v((GLenum)target, (GLuint)index, (GLint*)(data + dataByteOffset));
+	*/
+
+	public static native int glGetUniformBlockIndex(int program, Buffer uniformBlockName, int uniformBlockNameByteOffset); /*
+		return (GLuint)glGetUniformBlockIndex((GLuint)program, (const GLchar*)(uniformBlockName + uniformBlockNameByteOffset));
+	*/
+
+	public static native void glGetUniformIndices(int program, int uniformCount, Buffer uniformNames, int uniformNamesByteOffset, Buffer uniformIndices, int uniformIndicesByteOffset); /*
+		glGetUniformIndices((GLuint)program, (GLsizei)uniformCount, (const GLchar**)(uniformNames + uniformNamesByteOffset), (GLuint*)(uniformIndices + uniformIndicesByteOffset));
+	*/
+
+	public static native void glUniformBlockBinding(int program, int uniformBlockIndex, int uniformBlockBinding); /*
+		glUniformBlockBinding((GLuint)program, (GLuint)uniformBlockIndex, (GLuint)uniformBlockBinding);
+	*/
+
+	public static native void glBindVertexArray(int array); /*
+		glBindVertexArray((GLuint)array);
+	*/
+
+	public static native void glDeleteVertexArrays(int n, Buffer arrays, int arraysByteOffset); /*
+		glDeleteVertexArrays((GLsizei)n, (const GLuint*)(arrays + arraysByteOffset));
+	*/
+
+	public static native void glGenVertexArrays(int n, Buffer arrays, int arraysByteOffset); /*
+		glGenVertexArrays((GLsizei)n, (GLuint*)(arrays + arraysByteOffset));
+	*/
+
+	public static native boolean glIsVertexArray(int array); /*
+		return (GLboolean)glIsVertexArray((GLuint)array);
+	*/
+
+	public static native void glGetVertexAttribLdv(int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVertexAttribLdv((GLuint)index, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glVertexAttribL1d(int index, double x); /*
+		glVertexAttribL1d((GLuint)index, (GLdouble)x);
+	*/
+
+	public static native void glVertexAttribL1dv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL1dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribL2d(int index, double x, double y); /*
+		glVertexAttribL2d((GLuint)index, (GLdouble)x, (GLdouble)y);
+	*/
+
+	public static native void glVertexAttribL2dv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL2dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribL3d(int index, double x, double y, double z); /*
+		glVertexAttribL3d((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glVertexAttribL3dv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL3dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribL4d(int index, double x, double y, double z, double w); /*
+		glVertexAttribL4d((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
+	*/
+
+	public static native void glVertexAttribL4dv(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL4dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribLPointer(int index, int size, int type, int stride, Buffer pointer, int pointerByteOffset); /*
+		glVertexAttribLPointer((GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride, (const void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glBindVertexBuffer(int bindingindex, int buffer, int offset, int stride); /*
+		glBindVertexBuffer((GLuint)bindingindex, (GLuint)buffer, (GLintptr)offset, (GLsizei)stride);
+	*/
+
+	public static native void glVertexAttribBinding(int attribindex, int bindingindex); /*
+		glVertexAttribBinding((GLuint)attribindex, (GLuint)bindingindex);
+	*/
+
+	public static native void glVertexAttribFormat(int attribindex, int size, int type, boolean normalized, int relativeoffset); /*
+		glVertexAttribFormat((GLuint)attribindex, (GLint)size, (GLenum)type, (GLboolean)normalized, (GLuint)relativeoffset);
+	*/
+
+	public static native void glVertexAttribIFormat(int attribindex, int size, int type, int relativeoffset); /*
+		glVertexAttribIFormat((GLuint)attribindex, (GLint)size, (GLenum)type, (GLuint)relativeoffset);
+	*/
+
+	public static native void glVertexAttribLFormat(int attribindex, int size, int type, int relativeoffset); /*
+		glVertexAttribLFormat((GLuint)attribindex, (GLint)size, (GLenum)type, (GLuint)relativeoffset);
+	*/
+
+	public static native void glVertexBindingDivisor(int bindingindex, int divisor); /*
+		glVertexBindingDivisor((GLuint)bindingindex, (GLuint)divisor);
+	*/
+
+	public static native void glVertexBlendARB(int count); /*
+		glVertexBlendARB((GLint)count);
+	*/
+
+	public static native void glWeightPointerARB(int size, int type, int stride, Buffer pointer, int pointerByteOffset); /*
+		glWeightPointerARB((GLint)size, (GLenum)type, (GLsizei)stride, (GLvoid*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glWeightbvARB(int size, Buffer weights, int weightsByteOffset); /*
+		glWeightbvARB((GLint)size, (GLbyte*)(weights + weightsByteOffset));
+	*/
+
+	public static native void glWeightdvARB(int size, Buffer weights, int weightsByteOffset); /*
+		glWeightdvARB((GLint)size, (GLdouble*)(weights + weightsByteOffset));
+	*/
+
+	public static native void glWeightfvARB(int size, Buffer weights, int weightsByteOffset); /*
+		glWeightfvARB((GLint)size, (GLfloat*)(weights + weightsByteOffset));
+	*/
+
+	public static native void glWeightivARB(int size, Buffer weights, int weightsByteOffset); /*
+		glWeightivARB((GLint)size, (GLint*)(weights + weightsByteOffset));
+	*/
+
+	public static native void glWeightsvARB(int size, Buffer weights, int weightsByteOffset); /*
+		glWeightsvARB((GLint)size, (GLshort*)(weights + weightsByteOffset));
+	*/
+
+	public static native void glWeightubvARB(int size, Buffer weights, int weightsByteOffset); /*
+		glWeightubvARB((GLint)size, (GLubyte*)(weights + weightsByteOffset));
+	*/
+
+	public static native void glWeightuivARB(int size, Buffer weights, int weightsByteOffset); /*
+		glWeightuivARB((GLint)size, (GLuint*)(weights + weightsByteOffset));
+	*/
+
+	public static native void glWeightusvARB(int size, Buffer weights, int weightsByteOffset); /*
+		glWeightusvARB((GLint)size, (GLushort*)(weights + weightsByteOffset));
+	*/
+
+	public static native void glBindBufferARB(int target, int buffer); /*
+		glBindBufferARB((GLenum)target, (GLuint)buffer);
+	*/
+
+	public static native void glBufferDataARB(int target, int size, Buffer data, int dataByteOffset, int usage); /*
+		glBufferDataARB((GLenum)target, (GLsizeiptrARB)size, (const GLvoid*)(data + dataByteOffset), (GLenum)usage);
+	*/
+
+	public static native void glBufferSubDataARB(int target, int offset, int size, Buffer data, int dataByteOffset); /*
+		glBufferSubDataARB((GLenum)target, (GLintptrARB)offset, (GLsizeiptrARB)size, (const GLvoid*)(data + dataByteOffset));
+	*/
+
+	public static native void glDeleteBuffersARB(int n, Buffer buffers, int buffersByteOffset); /*
+		glDeleteBuffersARB((GLsizei)n, (const GLuint*)(buffers + buffersByteOffset));
+	*/
+
+	public static native void glGenBuffersARB(int n, Buffer buffers, int buffersByteOffset); /*
+		glGenBuffersARB((GLsizei)n, (GLuint*)(buffers + buffersByteOffset));
+	*/
+
+	public static native void glGetBufferParameterivARB(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetBufferParameterivARB((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetBufferPointervARB(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetBufferPointervARB((GLenum)target, (GLenum)pname, (GLvoid**)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetBufferSubDataARB(int target, int offset, int size, Buffer data, int dataByteOffset); /*
+		glGetBufferSubDataARB((GLenum)target, (GLintptrARB)offset, (GLsizeiptrARB)size, (GLvoid*)(data + dataByteOffset));
+	*/
+
+	public static native boolean glIsBufferARB(int buffer); /*
+		return (GLboolean)glIsBufferARB((GLuint)buffer);
+	*/
+
+	public static native Buffer glMapBufferARB(int target, int access); /*
+		return (GLvoid*)glMapBufferARB((GLenum)target, (GLenum)access);
+	*/
+
+	public static native boolean glUnmapBufferARB(int target); /*
+		return (GLboolean)glUnmapBufferARB((GLenum)target);
+	*/
+
+	public static native void glBindProgramARB(int target, int program); /*
+		glBindProgramARB((GLenum)target, (GLuint)program);
+	*/
+
+	public static native void glDeleteProgramsARB(int n, Buffer programs, int programsByteOffset); /*
+		glDeleteProgramsARB((GLsizei)n, (const GLuint*)(programs + programsByteOffset));
+	*/
+
+	public static native void glDisableVertexAttribArrayARB(int index); /*
+		glDisableVertexAttribArrayARB((GLuint)index);
+	*/
+
+	public static native void glEnableVertexAttribArrayARB(int index); /*
+		glEnableVertexAttribArrayARB((GLuint)index);
+	*/
+
+	public static native void glGenProgramsARB(int n, Buffer programs, int programsByteOffset); /*
+		glGenProgramsARB((GLsizei)n, (GLuint*)(programs + programsByteOffset));
+	*/
+
+	public static native void glGetProgramEnvParameterdvARB(int target, int index, Buffer params, int paramsByteOffset); /*
+		glGetProgramEnvParameterdvARB((GLenum)target, (GLuint)index, (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetProgramEnvParameterfvARB(int target, int index, Buffer params, int paramsByteOffset); /*
+		glGetProgramEnvParameterfvARB((GLenum)target, (GLuint)index, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetProgramLocalParameterdvARB(int target, int index, Buffer params, int paramsByteOffset); /*
+		glGetProgramLocalParameterdvARB((GLenum)target, (GLuint)index, (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetProgramLocalParameterfvARB(int target, int index, Buffer params, int paramsByteOffset); /*
+		glGetProgramLocalParameterfvARB((GLenum)target, (GLuint)index, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetProgramStringARB(int target, int pname, Buffer string, int stringByteOffset); /*
+		glGetProgramStringARB((GLenum)target, (GLenum)pname, (void*)(string + stringByteOffset));
+	*/
+
+	public static native void glGetProgramivARB(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetProgramivARB((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVertexAttribPointervARB(int index, int pname, Buffer pointer, int pointerByteOffset); /*
+		glGetVertexAttribPointervARB((GLuint)index, (GLenum)pname, (GLvoid**)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glGetVertexAttribdvARB(int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVertexAttribdvARB((GLuint)index, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVertexAttribfvARB(int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVertexAttribfvARB((GLuint)index, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVertexAttribivARB(int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVertexAttribivARB((GLuint)index, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native boolean glIsProgramARB(int program); /*
+		return (GLboolean)glIsProgramARB((GLuint)program);
+	*/
+
+	public static native void glProgramEnvParameter4dARB(int target, int index, double x, double y, double z, double w); /*
+		glProgramEnvParameter4dARB((GLenum)target, (GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
+	*/
+
+	public static native void glProgramEnvParameter4dvARB(int target, int index, Buffer params, int paramsByteOffset); /*
+		glProgramEnvParameter4dvARB((GLenum)target, (GLuint)index, (const GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramEnvParameter4fARB(int target, int index, float x, float y, float z, float w); /*
+		glProgramEnvParameter4fARB((GLenum)target, (GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
+	*/
+
+	public static native void glProgramEnvParameter4fvARB(int target, int index, Buffer params, int paramsByteOffset); /*
+		glProgramEnvParameter4fvARB((GLenum)target, (GLuint)index, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramLocalParameter4dARB(int target, int index, double x, double y, double z, double w); /*
+		glProgramLocalParameter4dARB((GLenum)target, (GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
+	*/
+
+	public static native void glProgramLocalParameter4dvARB(int target, int index, Buffer params, int paramsByteOffset); /*
+		glProgramLocalParameter4dvARB((GLenum)target, (GLuint)index, (const GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramLocalParameter4fARB(int target, int index, float x, float y, float z, float w); /*
+		glProgramLocalParameter4fARB((GLenum)target, (GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
+	*/
+
+	public static native void glProgramLocalParameter4fvARB(int target, int index, Buffer params, int paramsByteOffset); /*
+		glProgramLocalParameter4fvARB((GLenum)target, (GLuint)index, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramStringARB(int target, int format, int len, Buffer string, int stringByteOffset); /*
+		glProgramStringARB((GLenum)target, (GLenum)format, (GLsizei)len, (const void*)(string + stringByteOffset));
+	*/
+
+	public static native void glVertexAttrib1dARB(int index, double x); /*
+		glVertexAttrib1dARB((GLuint)index, (GLdouble)x);
+	*/
+
+	public static native void glVertexAttrib1dvARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib1dvARB((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib1fARB(int index, float x); /*
+		glVertexAttrib1fARB((GLuint)index, (GLfloat)x);
+	*/
+
+	public static native void glVertexAttrib1fvARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib1fvARB((GLuint)index, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib1sARB(int index, short x); /*
+		glVertexAttrib1sARB((GLuint)index, (GLshort)x);
+	*/
+
+	public static native void glVertexAttrib1svARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib1svARB((GLuint)index, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib2dARB(int index, double x, double y); /*
+		glVertexAttrib2dARB((GLuint)index, (GLdouble)x, (GLdouble)y);
+	*/
+
+	public static native void glVertexAttrib2dvARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib2dvARB((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib2fARB(int index, float x, float y); /*
+		glVertexAttrib2fARB((GLuint)index, (GLfloat)x, (GLfloat)y);
+	*/
+
+	public static native void glVertexAttrib2fvARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib2fvARB((GLuint)index, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib2sARB(int index, short x, short y); /*
+		glVertexAttrib2sARB((GLuint)index, (GLshort)x, (GLshort)y);
+	*/
+
+	public static native void glVertexAttrib2svARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib2svARB((GLuint)index, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib3dARB(int index, double x, double y, double z); /*
+		glVertexAttrib3dARB((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glVertexAttrib3dvARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib3dvARB((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib3fARB(int index, float x, float y, float z); /*
+		glVertexAttrib3fARB((GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glVertexAttrib3fvARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib3fvARB((GLuint)index, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib3sARB(int index, short x, short y, short z); /*
+		glVertexAttrib3sARB((GLuint)index, (GLshort)x, (GLshort)y, (GLshort)z);
+	*/
+
+	public static native void glVertexAttrib3svARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib3svARB((GLuint)index, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4NbvARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4NbvARB((GLuint)index, (const GLbyte*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4NivARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4NivARB((GLuint)index, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4NsvARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4NsvARB((GLuint)index, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4NubARB(int index, byte x, byte y, byte z, byte w); /*
+		glVertexAttrib4NubARB((GLuint)index, (GLubyte)x, (GLubyte)y, (GLubyte)z, (GLubyte)w);
+	*/
+
+	public static native void glVertexAttrib4NubvARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4NubvARB((GLuint)index, (const GLubyte*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4NuivARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4NuivARB((GLuint)index, (const GLuint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4NusvARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4NusvARB((GLuint)index, (const GLushort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4bvARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4bvARB((GLuint)index, (const GLbyte*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4dARB(int index, double x, double y, double z, double w); /*
+		glVertexAttrib4dARB((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
+	*/
+
+	public static native void glVertexAttrib4dvARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4dvARB((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4fARB(int index, float x, float y, float z, float w); /*
+		glVertexAttrib4fARB((GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
+	*/
+
+	public static native void glVertexAttrib4fvARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4fvARB((GLuint)index, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4ivARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4ivARB((GLuint)index, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4sARB(int index, short x, short y, short z, short w); /*
+		glVertexAttrib4sARB((GLuint)index, (GLshort)x, (GLshort)y, (GLshort)z, (GLshort)w);
+	*/
+
+	public static native void glVertexAttrib4svARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4svARB((GLuint)index, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4ubvARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4ubvARB((GLuint)index, (const GLubyte*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4uivARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4uivARB((GLuint)index, (const GLuint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4usvARB(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4usvARB((GLuint)index, (const GLushort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribPointerARB(int index, int size, int type, boolean normalized, int stride, Buffer pointer, int pointerByteOffset); /*
+		glVertexAttribPointerARB((GLuint)index, (GLint)size, (GLenum)type, (GLboolean)normalized, (GLsizei)stride, (const void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glBindAttribLocationARB(int programObj, int index, Buffer name, int nameByteOffset); /*
+		glBindAttribLocationARB((GLhandleARB)programObj, (GLuint)index, (const GLcharARB*)(name + nameByteOffset));
+	*/
+
+	public static native void glGetActiveAttribARB(int programObj, int index, int maxLength, Buffer length, int lengthByteOffset, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset, Buffer name, int nameByteOffset); /*
+		glGetActiveAttribARB((GLhandleARB)programObj, (GLuint)index, (GLsizei)maxLength, (GLsizei*)(length + lengthByteOffset), (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLcharARB*)(name + nameByteOffset));
+	*/
+
+	public static native int glGetAttribLocationARB(int programObj, Buffer name, int nameByteOffset); /*
+		return (GLint)glGetAttribLocationARB((GLhandleARB)programObj, (const GLcharARB*)(name + nameByteOffset));
+	*/
+
+	public static native void glColorP3ui(int type, int color); /*
+		glColorP3ui((GLenum)type, (GLuint)color);
+	*/
+
+	public static native void glColorP3uiv(int type, Buffer color, int colorByteOffset); /*
+		glColorP3uiv((GLenum)type, (const GLuint*)(color + colorByteOffset));
+	*/
+
+	public static native void glColorP4ui(int type, int color); /*
+		glColorP4ui((GLenum)type, (GLuint)color);
+	*/
+
+	public static native void glColorP4uiv(int type, Buffer color, int colorByteOffset); /*
+		glColorP4uiv((GLenum)type, (const GLuint*)(color + colorByteOffset));
+	*/
+
+	public static native void glMultiTexCoordP1ui(int texture, int type, int coords); /*
+		glMultiTexCoordP1ui((GLenum)texture, (GLenum)type, (GLuint)coords);
+	*/
+
+	public static native void glMultiTexCoordP1uiv(int texture, int type, Buffer coords, int coordsByteOffset); /*
+		glMultiTexCoordP1uiv((GLenum)texture, (GLenum)type, (const GLuint*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glMultiTexCoordP2ui(int texture, int type, int coords); /*
+		glMultiTexCoordP2ui((GLenum)texture, (GLenum)type, (GLuint)coords);
+	*/
+
+	public static native void glMultiTexCoordP2uiv(int texture, int type, Buffer coords, int coordsByteOffset); /*
+		glMultiTexCoordP2uiv((GLenum)texture, (GLenum)type, (const GLuint*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glMultiTexCoordP3ui(int texture, int type, int coords); /*
+		glMultiTexCoordP3ui((GLenum)texture, (GLenum)type, (GLuint)coords);
+	*/
+
+	public static native void glMultiTexCoordP3uiv(int texture, int type, Buffer coords, int coordsByteOffset); /*
+		glMultiTexCoordP3uiv((GLenum)texture, (GLenum)type, (const GLuint*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glMultiTexCoordP4ui(int texture, int type, int coords); /*
+		glMultiTexCoordP4ui((GLenum)texture, (GLenum)type, (GLuint)coords);
+	*/
+
+	public static native void glMultiTexCoordP4uiv(int texture, int type, Buffer coords, int coordsByteOffset); /*
+		glMultiTexCoordP4uiv((GLenum)texture, (GLenum)type, (const GLuint*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glNormalP3ui(int type, int coords); /*
+		glNormalP3ui((GLenum)type, (GLuint)coords);
+	*/
+
+	public static native void glNormalP3uiv(int type, Buffer coords, int coordsByteOffset); /*
+		glNormalP3uiv((GLenum)type, (const GLuint*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glSecondaryColorP3ui(int type, int color); /*
+		glSecondaryColorP3ui((GLenum)type, (GLuint)color);
+	*/
+
+	public static native void glSecondaryColorP3uiv(int type, Buffer color, int colorByteOffset); /*
+		glSecondaryColorP3uiv((GLenum)type, (const GLuint*)(color + colorByteOffset));
+	*/
+
+	public static native void glTexCoordP1ui(int type, int coords); /*
+		glTexCoordP1ui((GLenum)type, (GLuint)coords);
+	*/
+
+	public static native void glTexCoordP1uiv(int type, Buffer coords, int coordsByteOffset); /*
+		glTexCoordP1uiv((GLenum)type, (const GLuint*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glTexCoordP2ui(int type, int coords); /*
+		glTexCoordP2ui((GLenum)type, (GLuint)coords);
+	*/
+
+	public static native void glTexCoordP2uiv(int type, Buffer coords, int coordsByteOffset); /*
+		glTexCoordP2uiv((GLenum)type, (const GLuint*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glTexCoordP3ui(int type, int coords); /*
+		glTexCoordP3ui((GLenum)type, (GLuint)coords);
+	*/
+
+	public static native void glTexCoordP3uiv(int type, Buffer coords, int coordsByteOffset); /*
+		glTexCoordP3uiv((GLenum)type, (const GLuint*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glTexCoordP4ui(int type, int coords); /*
+		glTexCoordP4ui((GLenum)type, (GLuint)coords);
+	*/
+
+	public static native void glTexCoordP4uiv(int type, Buffer coords, int coordsByteOffset); /*
+		glTexCoordP4uiv((GLenum)type, (const GLuint*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexAttribP1ui(int index, int type, boolean normalized, int value); /*
+		glVertexAttribP1ui((GLuint)index, (GLenum)type, (GLboolean)normalized, (GLuint)value);
+	*/
+
+	public static native void glVertexAttribP1uiv(int index, int type, boolean normalized, Buffer value, int valueByteOffset); /*
+		glVertexAttribP1uiv((GLuint)index, (GLenum)type, (GLboolean)normalized, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glVertexAttribP2ui(int index, int type, boolean normalized, int value); /*
+		glVertexAttribP2ui((GLuint)index, (GLenum)type, (GLboolean)normalized, (GLuint)value);
+	*/
+
+	public static native void glVertexAttribP2uiv(int index, int type, boolean normalized, Buffer value, int valueByteOffset); /*
+		glVertexAttribP2uiv((GLuint)index, (GLenum)type, (GLboolean)normalized, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glVertexAttribP3ui(int index, int type, boolean normalized, int value); /*
+		glVertexAttribP3ui((GLuint)index, (GLenum)type, (GLboolean)normalized, (GLuint)value);
+	*/
+
+	public static native void glVertexAttribP3uiv(int index, int type, boolean normalized, Buffer value, int valueByteOffset); /*
+		glVertexAttribP3uiv((GLuint)index, (GLenum)type, (GLboolean)normalized, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glVertexAttribP4ui(int index, int type, boolean normalized, int value); /*
+		glVertexAttribP4ui((GLuint)index, (GLenum)type, (GLboolean)normalized, (GLuint)value);
+	*/
+
+	public static native void glVertexAttribP4uiv(int index, int type, boolean normalized, Buffer value, int valueByteOffset); /*
+		glVertexAttribP4uiv((GLuint)index, (GLenum)type, (GLboolean)normalized, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glVertexP2ui(int type, int value); /*
+		glVertexP2ui((GLenum)type, (GLuint)value);
+	*/
+
+	public static native void glVertexP2uiv(int type, Buffer value, int valueByteOffset); /*
+		glVertexP2uiv((GLenum)type, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glVertexP3ui(int type, int value); /*
+		glVertexP3ui((GLenum)type, (GLuint)value);
+	*/
+
+	public static native void glVertexP3uiv(int type, Buffer value, int valueByteOffset); /*
+		glVertexP3uiv((GLenum)type, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glVertexP4ui(int type, int value); /*
+		glVertexP4ui((GLenum)type, (GLuint)value);
+	*/
+
+	public static native void glVertexP4uiv(int type, Buffer value, int valueByteOffset); /*
+		glVertexP4uiv((GLenum)type, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glDepthRangeArrayv(int first, int count, Buffer v, int vByteOffset); /*
+		glDepthRangeArrayv((GLuint)first, (GLsizei)count, (const GLclampd*)(v + vByteOffset));
+	*/
+
+	public static native void glDepthRangeIndexed(int index, double n, double f); /*
+		glDepthRangeIndexed((GLuint)index, (GLclampd)n, (GLclampd)f);
+	*/
+
+	public static native void glGetDoublei_v(int target, int index, Buffer data, int dataByteOffset); /*
+		glGetDoublei_v((GLenum)target, (GLuint)index, (GLdouble*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetFloati_v(int target, int index, Buffer data, int dataByteOffset); /*
+		glGetFloati_v((GLenum)target, (GLuint)index, (GLfloat*)(data + dataByteOffset));
+	*/
+
+	public static native void glScissorArrayv(int first, int count, Buffer v, int vByteOffset); /*
+		glScissorArrayv((GLuint)first, (GLsizei)count, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glScissorIndexed(int index, int left, int bottom, int width, int height); /*
+		glScissorIndexed((GLuint)index, (GLint)left, (GLint)bottom, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glScissorIndexedv(int index, Buffer v, int vByteOffset); /*
+		glScissorIndexedv((GLuint)index, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glViewportArrayv(int first, int count, Buffer v, int vByteOffset); /*
+		glViewportArrayv((GLuint)first, (GLsizei)count, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glViewportIndexedf(int index, float x, float y, float w, float h); /*
+		glViewportIndexedf((GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)w, (GLfloat)h);
+	*/
+
+	public static native void glViewportIndexedfv(int index, Buffer v, int vByteOffset); /*
+		glViewportIndexedfv((GLuint)index, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glWindowPos2dARB(double x, double y); /*
+		glWindowPos2dARB((GLdouble)x, (GLdouble)y);
+	*/
+
+	public static native void glWindowPos2dvARB(Buffer p, int pByteOffset); /*
+		glWindowPos2dvARB((const GLdouble*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos2fARB(float x, float y); /*
+		glWindowPos2fARB((GLfloat)x, (GLfloat)y);
+	*/
+
+	public static native void glWindowPos2fvARB(Buffer p, int pByteOffset); /*
+		glWindowPos2fvARB((const GLfloat*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos2iARB(int x, int y); /*
+		glWindowPos2iARB((GLint)x, (GLint)y);
+	*/
+
+	public static native void glWindowPos2ivARB(Buffer p, int pByteOffset); /*
+		glWindowPos2ivARB((const GLint*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos2sARB(short x, short y); /*
+		glWindowPos2sARB((GLshort)x, (GLshort)y);
+	*/
+
+	public static native void glWindowPos2svARB(Buffer p, int pByteOffset); /*
+		glWindowPos2svARB((const GLshort*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos3dARB(double x, double y, double z); /*
+		glWindowPos3dARB((GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glWindowPos3dvARB(Buffer p, int pByteOffset); /*
+		glWindowPos3dvARB((const GLdouble*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos3fARB(float x, float y, float z); /*
+		glWindowPos3fARB((GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glWindowPos3fvARB(Buffer p, int pByteOffset); /*
+		glWindowPos3fvARB((const GLfloat*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos3iARB(int x, int y, int z); /*
+		glWindowPos3iARB((GLint)x, (GLint)y, (GLint)z);
+	*/
+
+	public static native void glWindowPos3ivARB(Buffer p, int pByteOffset); /*
+		glWindowPos3ivARB((const GLint*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos3sARB(short x, short y, short z); /*
+		glWindowPos3sARB((GLshort)x, (GLshort)y, (GLshort)z);
+	*/
+
+	public static native void glWindowPos3svARB(Buffer p, int pByteOffset); /*
+		glWindowPos3svARB((const GLshort*)(p + pByteOffset));
+	*/
+
+	public static native void glDrawBuffersATI(int n, Buffer bufs, int bufsByteOffset); /*
+		glDrawBuffersATI((GLsizei)n, (const GLenum*)(bufs + bufsByteOffset));
+	*/
+
+	public static native void glDrawElementArrayATI(int mode, int count); /*
+		glDrawElementArrayATI((GLenum)mode, (GLsizei)count);
+	*/
+
+	public static native void glDrawRangeElementArrayATI(int mode, int start, int end, int count); /*
+		glDrawRangeElementArrayATI((GLenum)mode, (GLuint)start, (GLuint)end, (GLsizei)count);
+	*/
+
+	public static native void glElementPointerATI(int type, Buffer pointer, int pointerByteOffset); /*
+		glElementPointerATI((GLenum)type, (const void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glGetTexBumpParameterfvATI(int pname, Buffer param, int paramByteOffset); /*
+		glGetTexBumpParameterfvATI((GLenum)pname, (GLfloat*)(param + paramByteOffset));
+	*/
+
+	public static native void glGetTexBumpParameterivATI(int pname, Buffer param, int paramByteOffset); /*
+		glGetTexBumpParameterivATI((GLenum)pname, (GLint*)(param + paramByteOffset));
+	*/
+
+	public static native void glTexBumpParameterfvATI(int pname, Buffer param, int paramByteOffset); /*
+		glTexBumpParameterfvATI((GLenum)pname, (GLfloat*)(param + paramByteOffset));
+	*/
+
+	public static native void glTexBumpParameterivATI(int pname, Buffer param, int paramByteOffset); /*
+		glTexBumpParameterivATI((GLenum)pname, (GLint*)(param + paramByteOffset));
+	*/
+
+	public static native void glAlphaFragmentOp1ATI(int op, int dst, int dstMod, int arg1, int arg1Rep, int arg1Mod); /*
+		glAlphaFragmentOp1ATI((GLenum)op, (GLuint)dst, (GLuint)dstMod, (GLuint)arg1, (GLuint)arg1Rep, (GLuint)arg1Mod);
+	*/
+
+	public static native void glAlphaFragmentOp2ATI(int op, int dst, int dstMod, int arg1, int arg1Rep, int arg1Mod, int arg2, int arg2Rep, int arg2Mod); /*
+		glAlphaFragmentOp2ATI((GLenum)op, (GLuint)dst, (GLuint)dstMod, (GLuint)arg1, (GLuint)arg1Rep, (GLuint)arg1Mod, (GLuint)arg2, (GLuint)arg2Rep, (GLuint)arg2Mod);
+	*/
+
+	public static native void glAlphaFragmentOp3ATI(int op, int dst, int dstMod, int arg1, int arg1Rep, int arg1Mod, int arg2, int arg2Rep, int arg2Mod, int arg3, int arg3Rep, int arg3Mod); /*
+		glAlphaFragmentOp3ATI((GLenum)op, (GLuint)dst, (GLuint)dstMod, (GLuint)arg1, (GLuint)arg1Rep, (GLuint)arg1Mod, (GLuint)arg2, (GLuint)arg2Rep, (GLuint)arg2Mod, (GLuint)arg3, (GLuint)arg3Rep, (GLuint)arg3Mod);
+	*/
+
+	public static native void glBeginFragmentShaderATI(); /*
+		glBeginFragmentShaderATI();
+	*/
+
+	public static native void glBindFragmentShaderATI(int id); /*
+		glBindFragmentShaderATI((GLuint)id);
+	*/
+
+	public static native void glColorFragmentOp1ATI(int op, int dst, int dstMask, int dstMod, int arg1, int arg1Rep, int arg1Mod); /*
+		glColorFragmentOp1ATI((GLenum)op, (GLuint)dst, (GLuint)dstMask, (GLuint)dstMod, (GLuint)arg1, (GLuint)arg1Rep, (GLuint)arg1Mod);
+	*/
+
+	public static native void glColorFragmentOp2ATI(int op, int dst, int dstMask, int dstMod, int arg1, int arg1Rep, int arg1Mod, int arg2, int arg2Rep, int arg2Mod); /*
+		glColorFragmentOp2ATI((GLenum)op, (GLuint)dst, (GLuint)dstMask, (GLuint)dstMod, (GLuint)arg1, (GLuint)arg1Rep, (GLuint)arg1Mod, (GLuint)arg2, (GLuint)arg2Rep, (GLuint)arg2Mod);
+	*/
+
+	public static native void glColorFragmentOp3ATI(int op, int dst, int dstMask, int dstMod, int arg1, int arg1Rep, int arg1Mod, int arg2, int arg2Rep, int arg2Mod, int arg3, int arg3Rep, int arg3Mod); /*
+		glColorFragmentOp3ATI((GLenum)op, (GLuint)dst, (GLuint)dstMask, (GLuint)dstMod, (GLuint)arg1, (GLuint)arg1Rep, (GLuint)arg1Mod, (GLuint)arg2, (GLuint)arg2Rep, (GLuint)arg2Mod, (GLuint)arg3, (GLuint)arg3Rep, (GLuint)arg3Mod);
+	*/
+
+	public static native void glDeleteFragmentShaderATI(int id); /*
+		glDeleteFragmentShaderATI((GLuint)id);
+	*/
+
+	public static native void glEndFragmentShaderATI(); /*
+		glEndFragmentShaderATI();
+	*/
+
+	public static native int glGenFragmentShadersATI(int range); /*
+		return (GLuint)glGenFragmentShadersATI((GLuint)range);
+	*/
+
+	public static native void glPassTexCoordATI(int dst, int coord, int swizzle); /*
+		glPassTexCoordATI((GLuint)dst, (GLuint)coord, (GLenum)swizzle);
+	*/
+
+	public static native void glSampleMapATI(int dst, int interp, int swizzle); /*
+		glSampleMapATI((GLuint)dst, (GLuint)interp, (GLenum)swizzle);
+	*/
+
+	public static native void glSetFragmentShaderConstantATI(int dst, Buffer value, int valueByteOffset); /*
+		glSetFragmentShaderConstantATI((GLuint)dst, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native Buffer glMapObjectBufferATI(int buffer); /*
+		return (GLvoid*)glMapObjectBufferATI((GLuint)buffer);
+	*/
+
+	public static native void glUnmapObjectBufferATI(int buffer); /*
+		glUnmapObjectBufferATI((GLuint)buffer);
+	*/
+
+	public static native void glPNTrianglesfATI(int pname, float param); /*
+		glPNTrianglesfATI((GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glPNTrianglesiATI(int pname, int param); /*
+		glPNTrianglesiATI((GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glStencilFuncSeparateATI(int frontfunc, int backfunc, int ref, int mask); /*
+		glStencilFuncSeparateATI((GLenum)frontfunc, (GLenum)backfunc, (GLint)ref, (GLuint)mask);
+	*/
+
+	public static native void glStencilOpSeparateATI(int face, int sfail, int dpfail, int dppass); /*
+		glStencilOpSeparateATI((GLenum)face, (GLenum)sfail, (GLenum)dpfail, (GLenum)dppass);
+	*/
+
+	public static native void glArrayObjectATI(int array, int size, int type, int stride, int buffer, int offset); /*
+		glArrayObjectATI((GLenum)array, (GLint)size, (GLenum)type, (GLsizei)stride, (GLuint)buffer, (GLuint)offset);
+	*/
+
+	public static native void glFreeObjectBufferATI(int buffer); /*
+		glFreeObjectBufferATI((GLuint)buffer);
+	*/
+
+	public static native void glGetArrayObjectfvATI(int array, int pname, Buffer params, int paramsByteOffset); /*
+		glGetArrayObjectfvATI((GLenum)array, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetArrayObjectivATI(int array, int pname, Buffer params, int paramsByteOffset); /*
+		glGetArrayObjectivATI((GLenum)array, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetObjectBufferfvATI(int buffer, int pname, Buffer params, int paramsByteOffset); /*
+		glGetObjectBufferfvATI((GLuint)buffer, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetObjectBufferivATI(int buffer, int pname, Buffer params, int paramsByteOffset); /*
+		glGetObjectBufferivATI((GLuint)buffer, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVariantArrayObjectfvATI(int id, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVariantArrayObjectfvATI((GLuint)id, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVariantArrayObjectivATI(int id, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVariantArrayObjectivATI((GLuint)id, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native boolean glIsObjectBufferATI(int buffer); /*
+		return (GLboolean)glIsObjectBufferATI((GLuint)buffer);
+	*/
+
+	public static native int glNewObjectBufferATI(int size, Buffer pointer, int pointerByteOffset, int usage); /*
+		return (GLuint)glNewObjectBufferATI((GLsizei)size, (const void*)(pointer + pointerByteOffset), (GLenum)usage);
+	*/
+
+	public static native void glUpdateObjectBufferATI(int buffer, int offset, int size, Buffer pointer, int pointerByteOffset, int preserve); /*
+		glUpdateObjectBufferATI((GLuint)buffer, (GLuint)offset, (GLsizei)size, (const void*)(pointer + pointerByteOffset), (GLenum)preserve);
+	*/
+
+	public static native void glVariantArrayObjectATI(int id, int type, int stride, int buffer, int offset); /*
+		glVariantArrayObjectATI((GLuint)id, (GLenum)type, (GLsizei)stride, (GLuint)buffer, (GLuint)offset);
+	*/
+
+	public static native void glGetVertexAttribArrayObjectfvATI(int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVertexAttribArrayObjectfvATI((GLuint)index, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVertexAttribArrayObjectivATI(int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVertexAttribArrayObjectivATI((GLuint)index, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glVertexAttribArrayObjectATI(int index, int size, int type, boolean normalized, int stride, int buffer, int offset); /*
+		glVertexAttribArrayObjectATI((GLuint)index, (GLint)size, (GLenum)type, (GLboolean)normalized, (GLsizei)stride, (GLuint)buffer, (GLuint)offset);
+	*/
+
+	public static native void glClientActiveVertexStreamATI(int stream); /*
+		glClientActiveVertexStreamATI((GLenum)stream);
+	*/
+
+	public static native void glNormalStream3bATI(int stream, byte x, byte y, byte z); /*
+		glNormalStream3bATI((GLenum)stream, (GLbyte)x, (GLbyte)y, (GLbyte)z);
+	*/
+
+	public static native void glNormalStream3bvATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glNormalStream3bvATI((GLenum)stream, (const GLbyte*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glNormalStream3dATI(int stream, double x, double y, double z); /*
+		glNormalStream3dATI((GLenum)stream, (GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glNormalStream3dvATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glNormalStream3dvATI((GLenum)stream, (const GLdouble*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glNormalStream3fATI(int stream, float x, float y, float z); /*
+		glNormalStream3fATI((GLenum)stream, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glNormalStream3fvATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glNormalStream3fvATI((GLenum)stream, (const GLfloat*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glNormalStream3iATI(int stream, int x, int y, int z); /*
+		glNormalStream3iATI((GLenum)stream, (GLint)x, (GLint)y, (GLint)z);
+	*/
+
+	public static native void glNormalStream3ivATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glNormalStream3ivATI((GLenum)stream, (const GLint*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glNormalStream3sATI(int stream, short x, short y, short z); /*
+		glNormalStream3sATI((GLenum)stream, (GLshort)x, (GLshort)y, (GLshort)z);
+	*/
+
+	public static native void glNormalStream3svATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glNormalStream3svATI((GLenum)stream, (const GLshort*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexBlendEnvfATI(int pname, float param); /*
+		glVertexBlendEnvfATI((GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glVertexBlendEnviATI(int pname, int param); /*
+		glVertexBlendEnviATI((GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glVertexStream1dATI(int stream, double x); /*
+		glVertexStream1dATI((GLenum)stream, (GLdouble)x);
+	*/
+
+	public static native void glVertexStream1dvATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream1dvATI((GLenum)stream, (const GLdouble*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexStream1fATI(int stream, float x); /*
+		glVertexStream1fATI((GLenum)stream, (GLfloat)x);
+	*/
+
+	public static native void glVertexStream1fvATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream1fvATI((GLenum)stream, (const GLfloat*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexStream1iATI(int stream, int x); /*
+		glVertexStream1iATI((GLenum)stream, (GLint)x);
+	*/
+
+	public static native void glVertexStream1ivATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream1ivATI((GLenum)stream, (const GLint*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexStream1sATI(int stream, short x); /*
+		glVertexStream1sATI((GLenum)stream, (GLshort)x);
+	*/
+
+	public static native void glVertexStream1svATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream1svATI((GLenum)stream, (const GLshort*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexStream2dATI(int stream, double x, double y); /*
+		glVertexStream2dATI((GLenum)stream, (GLdouble)x, (GLdouble)y);
+	*/
+
+	public static native void glVertexStream2dvATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream2dvATI((GLenum)stream, (const GLdouble*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexStream2fATI(int stream, float x, float y); /*
+		glVertexStream2fATI((GLenum)stream, (GLfloat)x, (GLfloat)y);
+	*/
+
+	public static native void glVertexStream2fvATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream2fvATI((GLenum)stream, (const GLfloat*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexStream2iATI(int stream, int x, int y); /*
+		glVertexStream2iATI((GLenum)stream, (GLint)x, (GLint)y);
+	*/
+
+	public static native void glVertexStream2ivATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream2ivATI((GLenum)stream, (const GLint*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexStream2sATI(int stream, short x, short y); /*
+		glVertexStream2sATI((GLenum)stream, (GLshort)x, (GLshort)y);
+	*/
+
+	public static native void glVertexStream2svATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream2svATI((GLenum)stream, (const GLshort*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexStream3dATI(int stream, double x, double y, double z); /*
+		glVertexStream3dATI((GLenum)stream, (GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glVertexStream3dvATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream3dvATI((GLenum)stream, (const GLdouble*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexStream3fATI(int stream, float x, float y, float z); /*
+		glVertexStream3fATI((GLenum)stream, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glVertexStream3fvATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream3fvATI((GLenum)stream, (const GLfloat*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexStream3iATI(int stream, int x, int y, int z); /*
+		glVertexStream3iATI((GLenum)stream, (GLint)x, (GLint)y, (GLint)z);
+	*/
+
+	public static native void glVertexStream3ivATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream3ivATI((GLenum)stream, (const GLint*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexStream3sATI(int stream, short x, short y, short z); /*
+		glVertexStream3sATI((GLenum)stream, (GLshort)x, (GLshort)y, (GLshort)z);
+	*/
+
+	public static native void glVertexStream3svATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream3svATI((GLenum)stream, (const GLshort*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexStream4dATI(int stream, double x, double y, double z, double w); /*
+		glVertexStream4dATI((GLenum)stream, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
+	*/
+
+	public static native void glVertexStream4dvATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream4dvATI((GLenum)stream, (const GLdouble*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexStream4fATI(int stream, float x, float y, float z, float w); /*
+		glVertexStream4fATI((GLenum)stream, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
+	*/
+
+	public static native void glVertexStream4fvATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream4fvATI((GLenum)stream, (const GLfloat*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexStream4iATI(int stream, int x, int y, int z, int w); /*
+		glVertexStream4iATI((GLenum)stream, (GLint)x, (GLint)y, (GLint)z, (GLint)w);
+	*/
+
+	public static native void glVertexStream4ivATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream4ivATI((GLenum)stream, (const GLint*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glVertexStream4sATI(int stream, short x, short y, short z, short w); /*
+		glVertexStream4sATI((GLenum)stream, (GLshort)x, (GLshort)y, (GLshort)z, (GLshort)w);
+	*/
+
+	public static native void glVertexStream4svATI(int stream, Buffer coords, int coordsByteOffset); /*
+		glVertexStream4svATI((GLenum)stream, (const GLshort*)(coords + coordsByteOffset));
+	*/
+
+	public static native int glGetUniformBufferSizeEXT(int program, int location); /*
+		return (GLint)glGetUniformBufferSizeEXT((GLuint)program, (GLint)location);
+	*/
+
+	public static native int glGetUniformOffsetEXT(int program, int location); /*
+		return (GLintptr)glGetUniformOffsetEXT((GLuint)program, (GLint)location);
+	*/
+
+	public static native void glUniformBufferEXT(int program, int location, int buffer); /*
+		glUniformBufferEXT((GLuint)program, (GLint)location, (GLuint)buffer);
+	*/
+
+	public static native void glBlendColorEXT(float red, float green, float blue, float alpha); /*
+		glBlendColorEXT((GLclampf)red, (GLclampf)green, (GLclampf)blue, (GLclampf)alpha);
+	*/
+
+	public static native void glBlendEquationSeparateEXT(int modeRGB, int modeAlpha); /*
+		glBlendEquationSeparateEXT((GLenum)modeRGB, (GLenum)modeAlpha);
+	*/
+
+	public static native void glBlendFuncSeparateEXT(int sfactorRGB, int dfactorRGB, int sfactorAlpha, int dfactorAlpha); /*
+		glBlendFuncSeparateEXT((GLenum)sfactorRGB, (GLenum)dfactorRGB, (GLenum)sfactorAlpha, (GLenum)dfactorAlpha);
+	*/
+
+	public static native void glBlendEquationEXT(int mode); /*
+		glBlendEquationEXT((GLenum)mode);
+	*/
+
+	public static native void glColorSubTableEXT(int target, int start, int count, int format, int type, Buffer data, int dataByteOffset); /*
+		glColorSubTableEXT((GLenum)target, (GLsizei)start, (GLsizei)count, (GLenum)format, (GLenum)type, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCopyColorSubTableEXT(int target, int start, int x, int y, int width); /*
+		glCopyColorSubTableEXT((GLenum)target, (GLsizei)start, (GLint)x, (GLint)y, (GLsizei)width);
+	*/
+
+	public static native void glLockArraysEXT(int first, int count); /*
+		glLockArraysEXT((GLint)first, (GLsizei)count);
+	*/
+
+	public static native void glUnlockArraysEXT(); /*
+		glUnlockArraysEXT();
+	*/
+
+	public static native void glConvolutionFilter1DEXT(int target, int internalformat, int width, int format, int type, Buffer image, int imageByteOffset); /*
+		glConvolutionFilter1DEXT((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLenum)format, (GLenum)type, (const void*)(image + imageByteOffset));
+	*/
+
+	public static native void glConvolutionFilter2DEXT(int target, int internalformat, int width, int height, int format, int type, Buffer image, int imageByteOffset); /*
+		glConvolutionFilter2DEXT((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const void*)(image + imageByteOffset));
+	*/
+
+	public static native void glConvolutionParameterfEXT(int target, int pname, float param); /*
+		glConvolutionParameterfEXT((GLenum)target, (GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glConvolutionParameterfvEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glConvolutionParameterfvEXT((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glConvolutionParameteriEXT(int target, int pname, int param); /*
+		glConvolutionParameteriEXT((GLenum)target, (GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glConvolutionParameterivEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glConvolutionParameterivEXT((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glCopyConvolutionFilter1DEXT(int target, int internalformat, int x, int y, int width); /*
+		glCopyConvolutionFilter1DEXT((GLenum)target, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width);
+	*/
+
+	public static native void glCopyConvolutionFilter2DEXT(int target, int internalformat, int x, int y, int width, int height); /*
+		glCopyConvolutionFilter2DEXT((GLenum)target, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glGetConvolutionFilterEXT(int target, int format, int type, Buffer image, int imageByteOffset); /*
+		glGetConvolutionFilterEXT((GLenum)target, (GLenum)format, (GLenum)type, (void*)(image + imageByteOffset));
+	*/
+
+	public static native void glGetConvolutionParameterfvEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetConvolutionParameterfvEXT((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetConvolutionParameterivEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetConvolutionParameterivEXT((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetSeparableFilterEXT(int target, int format, int type, Buffer row, int rowByteOffset, Buffer column, int columnByteOffset, Buffer span, int spanByteOffset); /*
+		glGetSeparableFilterEXT((GLenum)target, (GLenum)format, (GLenum)type, (void*)(row + rowByteOffset), (void*)(column + columnByteOffset), (void*)(span + spanByteOffset));
+	*/
+
+	public static native void glSeparableFilter2DEXT(int target, int internalformat, int width, int height, int format, int type, Buffer row, int rowByteOffset, Buffer column, int columnByteOffset); /*
+		glSeparableFilter2DEXT((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const void*)(row + rowByteOffset), (const void*)(column + columnByteOffset));
+	*/
+
+	public static native void glBinormalPointerEXT(int type, int stride, Buffer pointer, int pointerByteOffset); /*
+		glBinormalPointerEXT((GLenum)type, (GLsizei)stride, (void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glTangentPointerEXT(int type, int stride, Buffer pointer, int pointerByteOffset); /*
+		glTangentPointerEXT((GLenum)type, (GLsizei)stride, (void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glCopyTexImage1DEXT(int target, int level, int internalformat, int x, int y, int width, int border); /*
+		glCopyTexImage1DEXT((GLenum)target, (GLint)level, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLint)border);
+	*/
+
+	public static native void glCopyTexImage2DEXT(int target, int level, int internalformat, int x, int y, int width, int height, int border); /*
+		glCopyTexImage2DEXT((GLenum)target, (GLint)level, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height, (GLint)border);
+	*/
+
+	public static native void glCopyTexSubImage1DEXT(int target, int level, int xoffset, int x, int y, int width); /*
+		glCopyTexSubImage1DEXT((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)x, (GLint)y, (GLsizei)width);
+	*/
+
+	public static native void glCopyTexSubImage2DEXT(int target, int level, int xoffset, int yoffset, int x, int y, int width, int height); /*
+		glCopyTexSubImage2DEXT((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glCopyTexSubImage3DEXT(int target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height); /*
+		glCopyTexSubImage3DEXT((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glCullParameterdvEXT(int pname, Buffer params, int paramsByteOffset); /*
+		glCullParameterdvEXT((GLenum)pname, (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glCullParameterfvEXT(int pname, Buffer params, int paramsByteOffset); /*
+		glCullParameterfvEXT((GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glInsertEventMarkerEXT(int length, Buffer marker, int markerByteOffset); /*
+		glInsertEventMarkerEXT((GLsizei)length, (const GLchar*)(marker + markerByteOffset));
+	*/
+
+	public static native void glPopGroupMarkerEXT(); /*
+		glPopGroupMarkerEXT();
+	*/
+
+	public static native void glPushGroupMarkerEXT(int length, Buffer marker, int markerByteOffset); /*
+		glPushGroupMarkerEXT((GLsizei)length, (const GLchar*)(marker + markerByteOffset));
+	*/
+
+	public static native void glDepthBoundsEXT(double zmin, double zmax); /*
+		glDepthBoundsEXT((GLclampd)zmin, (GLclampd)zmax);
+	*/
+
+	public static native void glBindMultiTextureEXT(int texunit, int target, int texture); /*
+		glBindMultiTextureEXT((GLenum)texunit, (GLenum)target, (GLuint)texture);
+	*/
+
+	public static native int glCheckNamedFramebufferStatusEXT(int framebuffer, int target); /*
+		return (GLenum)glCheckNamedFramebufferStatusEXT((GLuint)framebuffer, (GLenum)target);
+	*/
+
+	public static native void glClientAttribDefaultEXT(int mask); /*
+		glClientAttribDefaultEXT((GLbitfield)mask);
+	*/
+
+	public static native void glCompressedMultiTexImage1DEXT(int texunit, int target, int level, int internalformat, int width, int border, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedMultiTexImage1DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLint)border, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedMultiTexImage2DEXT(int texunit, int target, int level, int internalformat, int width, int height, int border, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedMultiTexImage2DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLint)border, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedMultiTexImage3DEXT(int texunit, int target, int level, int internalformat, int width, int height, int depth, int border, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedMultiTexImage3DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedMultiTexSubImage1DEXT(int texunit, int target, int level, int xoffset, int width, int format, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedMultiTexSubImage1DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLsizei)width, (GLenum)format, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedMultiTexSubImage2DEXT(int texunit, int target, int level, int xoffset, int yoffset, int width, int height, int format, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedMultiTexSubImage2DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedMultiTexSubImage3DEXT(int texunit, int target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int format, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedMultiTexSubImage3DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTextureImage1DEXT(int texture, int target, int level, int internalformat, int width, int border, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTextureImage1DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLint)border, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTextureImage2DEXT(int texture, int target, int level, int internalformat, int width, int height, int border, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTextureImage2DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLint)border, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTextureImage3DEXT(int texture, int target, int level, int internalformat, int width, int height, int depth, int border, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTextureImage3DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTextureSubImage1DEXT(int texture, int target, int level, int xoffset, int width, int format, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTextureSubImage1DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLsizei)width, (GLenum)format, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTextureSubImage2DEXT(int texture, int target, int level, int xoffset, int yoffset, int width, int height, int format, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTextureSubImage2DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCompressedTextureSubImage3DEXT(int texture, int target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int format, int imageSize, Buffer data, int dataByteOffset); /*
+		glCompressedTextureSubImage3DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLsizei)imageSize, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glCopyMultiTexImage1DEXT(int texunit, int target, int level, int internalformat, int x, int y, int width, int border); /*
+		glCopyMultiTexImage1DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLint)border);
+	*/
+
+	public static native void glCopyMultiTexImage2DEXT(int texunit, int target, int level, int internalformat, int x, int y, int width, int height, int border); /*
+		glCopyMultiTexImage2DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height, (GLint)border);
+	*/
+
+	public static native void glCopyMultiTexSubImage1DEXT(int texunit, int target, int level, int xoffset, int x, int y, int width); /*
+		glCopyMultiTexSubImage1DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)x, (GLint)y, (GLsizei)width);
+	*/
+
+	public static native void glCopyMultiTexSubImage2DEXT(int texunit, int target, int level, int xoffset, int yoffset, int x, int y, int width, int height); /*
+		glCopyMultiTexSubImage2DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glCopyMultiTexSubImage3DEXT(int texunit, int target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height); /*
+		glCopyMultiTexSubImage3DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glCopyTextureImage1DEXT(int texture, int target, int level, int internalformat, int x, int y, int width, int border); /*
+		glCopyTextureImage1DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLint)border);
+	*/
+
+	public static native void glCopyTextureImage2DEXT(int texture, int target, int level, int internalformat, int x, int y, int width, int height, int border); /*
+		glCopyTextureImage2DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height, (GLint)border);
+	*/
+
+	public static native void glCopyTextureSubImage1DEXT(int texture, int target, int level, int xoffset, int x, int y, int width); /*
+		glCopyTextureSubImage1DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)x, (GLint)y, (GLsizei)width);
+	*/
+
+	public static native void glCopyTextureSubImage2DEXT(int texture, int target, int level, int xoffset, int yoffset, int x, int y, int width, int height); /*
+		glCopyTextureSubImage2DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glCopyTextureSubImage3DEXT(int texture, int target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height); /*
+		glCopyTextureSubImage3DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glDisableClientStateIndexedEXT(int array, int index); /*
+		glDisableClientStateIndexedEXT((GLenum)array, (GLuint)index);
+	*/
+
+	public static native void glDisableClientStateiEXT(int array, int index); /*
+		glDisableClientStateiEXT((GLenum)array, (GLuint)index);
+	*/
+
+	public static native void glDisableVertexArrayAttribEXT(int vaobj, int index); /*
+		glDisableVertexArrayAttribEXT((GLuint)vaobj, (GLuint)index);
+	*/
+
+	public static native void glDisableVertexArrayEXT(int vaobj, int array); /*
+		glDisableVertexArrayEXT((GLuint)vaobj, (GLenum)array);
+	*/
+
+	public static native void glEnableClientStateIndexedEXT(int array, int index); /*
+		glEnableClientStateIndexedEXT((GLenum)array, (GLuint)index);
+	*/
+
+	public static native void glEnableClientStateiEXT(int array, int index); /*
+		glEnableClientStateiEXT((GLenum)array, (GLuint)index);
+	*/
+
+	public static native void glEnableVertexArrayAttribEXT(int vaobj, int index); /*
+		glEnableVertexArrayAttribEXT((GLuint)vaobj, (GLuint)index);
+	*/
+
+	public static native void glEnableVertexArrayEXT(int vaobj, int array); /*
+		glEnableVertexArrayEXT((GLuint)vaobj, (GLenum)array);
+	*/
+
+	public static native void glFlushMappedNamedBufferRangeEXT(int buffer, int offset, int length); /*
+		glFlushMappedNamedBufferRangeEXT((GLuint)buffer, (GLintptr)offset, (GLsizeiptr)length);
+	*/
+
+	public static native void glFramebufferDrawBufferEXT(int framebuffer, int mode); /*
+		glFramebufferDrawBufferEXT((GLuint)framebuffer, (GLenum)mode);
+	*/
+
+	public static native void glFramebufferDrawBuffersEXT(int framebuffer, int n, Buffer bufs, int bufsByteOffset); /*
+		glFramebufferDrawBuffersEXT((GLuint)framebuffer, (GLsizei)n, (const GLenum*)(bufs + bufsByteOffset));
+	*/
+
+	public static native void glFramebufferReadBufferEXT(int framebuffer, int mode); /*
+		glFramebufferReadBufferEXT((GLuint)framebuffer, (GLenum)mode);
+	*/
+
+	public static native void glGenerateMultiTexMipmapEXT(int texunit, int target); /*
+		glGenerateMultiTexMipmapEXT((GLenum)texunit, (GLenum)target);
+	*/
+
+	public static native void glGenerateTextureMipmapEXT(int texture, int target); /*
+		glGenerateTextureMipmapEXT((GLuint)texture, (GLenum)target);
+	*/
+
+	public static native void glGetCompressedMultiTexImageEXT(int texunit, int target, int level, Buffer img, int imgByteOffset); /*
+		glGetCompressedMultiTexImageEXT((GLenum)texunit, (GLenum)target, (GLint)level, (void*)(img + imgByteOffset));
+	*/
+
+	public static native void glGetCompressedTextureImageEXT(int texture, int target, int level, Buffer img, int imgByteOffset); /*
+		glGetCompressedTextureImageEXT((GLuint)texture, (GLenum)target, (GLint)level, (void*)(img + imgByteOffset));
+	*/
+
+	public static native void glGetDoubleIndexedvEXT(int target, int index, Buffer params, int paramsByteOffset); /*
+		glGetDoubleIndexedvEXT((GLenum)target, (GLuint)index, (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetDoublei_vEXT(int pname, int index, Buffer params, int paramsByteOffset); /*
+		glGetDoublei_vEXT((GLenum)pname, (GLuint)index, (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetFloatIndexedvEXT(int target, int index, Buffer params, int paramsByteOffset); /*
+		glGetFloatIndexedvEXT((GLenum)target, (GLuint)index, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetFloati_vEXT(int pname, int index, Buffer params, int paramsByteOffset); /*
+		glGetFloati_vEXT((GLenum)pname, (GLuint)index, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetFramebufferParameterivEXT(int framebuffer, int pname, Buffer param, int paramByteOffset); /*
+		glGetFramebufferParameterivEXT((GLuint)framebuffer, (GLenum)pname, (GLint*)(param + paramByteOffset));
+	*/
+
+	public static native void glGetMultiTexEnvfvEXT(int texunit, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMultiTexEnvfvEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMultiTexEnvivEXT(int texunit, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMultiTexEnvivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMultiTexGendvEXT(int texunit, int coord, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMultiTexGendvEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMultiTexGenfvEXT(int texunit, int coord, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMultiTexGenfvEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMultiTexGenivEXT(int texunit, int coord, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMultiTexGenivEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMultiTexImageEXT(int texunit, int target, int level, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glGetMultiTexImageEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)format, (GLenum)type, (void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glGetMultiTexLevelParameterfvEXT(int texunit, int target, int level, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMultiTexLevelParameterfvEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMultiTexLevelParameterivEXT(int texunit, int target, int level, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMultiTexLevelParameterivEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMultiTexParameterIivEXT(int texunit, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMultiTexParameterIivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMultiTexParameterIuivEXT(int texunit, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMultiTexParameterIuivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMultiTexParameterfvEXT(int texunit, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMultiTexParameterfvEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMultiTexParameterivEXT(int texunit, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMultiTexParameterivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetNamedBufferParameterivEXT(int buffer, int pname, Buffer params, int paramsByteOffset); /*
+		glGetNamedBufferParameterivEXT((GLuint)buffer, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetNamedBufferPointervEXT(int buffer, int pname, Buffer params, int paramsByteOffset); /*
+		glGetNamedBufferPointervEXT((GLuint)buffer, (GLenum)pname, (void**)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetNamedBufferSubDataEXT(int buffer, int offset, int size, Buffer data, int dataByteOffset); /*
+		glGetNamedBufferSubDataEXT((GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size, (void*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetNamedFramebufferAttachmentParameterivEXT(int framebuffer, int attachment, int pname, Buffer params, int paramsByteOffset); /*
+		glGetNamedFramebufferAttachmentParameterivEXT((GLuint)framebuffer, (GLenum)attachment, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetNamedProgramLocalParameterIivEXT(int program, int target, int index, Buffer params, int paramsByteOffset); /*
+		glGetNamedProgramLocalParameterIivEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetNamedProgramLocalParameterIuivEXT(int program, int target, int index, Buffer params, int paramsByteOffset); /*
+		glGetNamedProgramLocalParameterIuivEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetNamedProgramLocalParameterdvEXT(int program, int target, int index, Buffer params, int paramsByteOffset); /*
+		glGetNamedProgramLocalParameterdvEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetNamedProgramLocalParameterfvEXT(int program, int target, int index, Buffer params, int paramsByteOffset); /*
+		glGetNamedProgramLocalParameterfvEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetNamedProgramStringEXT(int program, int target, int pname, Buffer string, int stringByteOffset); /*
+		glGetNamedProgramStringEXT((GLuint)program, (GLenum)target, (GLenum)pname, (void*)(string + stringByteOffset));
+	*/
+
+	public static native void glGetNamedProgramivEXT(int program, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetNamedProgramivEXT((GLuint)program, (GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetNamedRenderbufferParameterivEXT(int renderbuffer, int pname, Buffer params, int paramsByteOffset); /*
+		glGetNamedRenderbufferParameterivEXT((GLuint)renderbuffer, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetPointerIndexedvEXT(int target, int index, Buffer params, int paramsByteOffset); /*
+		glGetPointerIndexedvEXT((GLenum)target, (GLuint)index, (GLvoid**)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetPointeri_vEXT(int pname, int index, Buffer params, int paramsByteOffset); /*
+		glGetPointeri_vEXT((GLenum)pname, (GLuint)index, (GLvoid**)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetTextureImageEXT(int texture, int target, int level, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glGetTextureImageEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)format, (GLenum)type, (void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glGetTextureLevelParameterfvEXT(int texture, int target, int level, int pname, Buffer params, int paramsByteOffset); /*
+		glGetTextureLevelParameterfvEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetTextureLevelParameterivEXT(int texture, int target, int level, int pname, Buffer params, int paramsByteOffset); /*
+		glGetTextureLevelParameterivEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetTextureParameterIivEXT(int texture, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetTextureParameterIivEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetTextureParameterIuivEXT(int texture, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetTextureParameterIuivEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetTextureParameterfvEXT(int texture, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetTextureParameterfvEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetTextureParameterivEXT(int texture, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetTextureParameterivEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVertexArrayIntegeri_vEXT(int vaobj, int index, int pname, Buffer param, int paramByteOffset); /*
+		glGetVertexArrayIntegeri_vEXT((GLuint)vaobj, (GLuint)index, (GLenum)pname, (GLint*)(param + paramByteOffset));
+	*/
+
+	public static native void glGetVertexArrayIntegervEXT(int vaobj, int pname, Buffer param, int paramByteOffset); /*
+		glGetVertexArrayIntegervEXT((GLuint)vaobj, (GLenum)pname, (GLint*)(param + paramByteOffset));
+	*/
+
+	public static native void glGetVertexArrayPointeri_vEXT(int vaobj, int index, int pname, Buffer param, int paramByteOffset); /*
+		glGetVertexArrayPointeri_vEXT((GLuint)vaobj, (GLuint)index, (GLenum)pname, (GLvoid**)(param + paramByteOffset));
+	*/
+
+	public static native void glGetVertexArrayPointervEXT(int vaobj, int pname, Buffer param, int paramByteOffset); /*
+		glGetVertexArrayPointervEXT((GLuint)vaobj, (GLenum)pname, (GLvoid**)(param + paramByteOffset));
+	*/
+
+	public static native Buffer glMapNamedBufferEXT(int buffer, int access); /*
+		return (GLvoid*)glMapNamedBufferEXT((GLuint)buffer, (GLenum)access);
+	*/
+
+	public static native Buffer glMapNamedBufferRangeEXT(int buffer, int offset, int length, int access); /*
+		return (GLvoid*)glMapNamedBufferRangeEXT((GLuint)buffer, (GLintptr)offset, (GLsizeiptr)length, (GLbitfield)access);
+	*/
+
+	public static native void glMatrixFrustumEXT(int matrixMode, double l, double r, double b, double t, double n, double f); /*
+		glMatrixFrustumEXT((GLenum)matrixMode, (GLdouble)l, (GLdouble)r, (GLdouble)b, (GLdouble)t, (GLdouble)n, (GLdouble)f);
+	*/
+
+	public static native void glMatrixLoadIdentityEXT(int matrixMode); /*
+		glMatrixLoadIdentityEXT((GLenum)matrixMode);
+	*/
+
+	public static native void glMatrixLoadTransposedEXT(int matrixMode, Buffer m, int mByteOffset); /*
+		glMatrixLoadTransposedEXT((GLenum)matrixMode, (const GLdouble*)(m + mByteOffset));
+	*/
+
+	public static native void glMatrixLoadTransposefEXT(int matrixMode, Buffer m, int mByteOffset); /*
+		glMatrixLoadTransposefEXT((GLenum)matrixMode, (const GLfloat*)(m + mByteOffset));
+	*/
+
+	public static native void glMatrixLoaddEXT(int matrixMode, Buffer m, int mByteOffset); /*
+		glMatrixLoaddEXT((GLenum)matrixMode, (const GLdouble*)(m + mByteOffset));
+	*/
+
+	public static native void glMatrixLoadfEXT(int matrixMode, Buffer m, int mByteOffset); /*
+		glMatrixLoadfEXT((GLenum)matrixMode, (const GLfloat*)(m + mByteOffset));
+	*/
+
+	public static native void glMatrixMultTransposedEXT(int matrixMode, Buffer m, int mByteOffset); /*
+		glMatrixMultTransposedEXT((GLenum)matrixMode, (const GLdouble*)(m + mByteOffset));
+	*/
+
+	public static native void glMatrixMultTransposefEXT(int matrixMode, Buffer m, int mByteOffset); /*
+		glMatrixMultTransposefEXT((GLenum)matrixMode, (const GLfloat*)(m + mByteOffset));
+	*/
+
+	public static native void glMatrixMultdEXT(int matrixMode, Buffer m, int mByteOffset); /*
+		glMatrixMultdEXT((GLenum)matrixMode, (const GLdouble*)(m + mByteOffset));
+	*/
+
+	public static native void glMatrixMultfEXT(int matrixMode, Buffer m, int mByteOffset); /*
+		glMatrixMultfEXT((GLenum)matrixMode, (const GLfloat*)(m + mByteOffset));
+	*/
+
+	public static native void glMatrixOrthoEXT(int matrixMode, double l, double r, double b, double t, double n, double f); /*
+		glMatrixOrthoEXT((GLenum)matrixMode, (GLdouble)l, (GLdouble)r, (GLdouble)b, (GLdouble)t, (GLdouble)n, (GLdouble)f);
+	*/
+
+	public static native void glMatrixPopEXT(int matrixMode); /*
+		glMatrixPopEXT((GLenum)matrixMode);
+	*/
+
+	public static native void glMatrixPushEXT(int matrixMode); /*
+		glMatrixPushEXT((GLenum)matrixMode);
+	*/
+
+	public static native void glMatrixRotatedEXT(int matrixMode, double angle, double x, double y, double z); /*
+		glMatrixRotatedEXT((GLenum)matrixMode, (GLdouble)angle, (GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glMatrixRotatefEXT(int matrixMode, float angle, float x, float y, float z); /*
+		glMatrixRotatefEXT((GLenum)matrixMode, (GLfloat)angle, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glMatrixScaledEXT(int matrixMode, double x, double y, double z); /*
+		glMatrixScaledEXT((GLenum)matrixMode, (GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glMatrixScalefEXT(int matrixMode, float x, float y, float z); /*
+		glMatrixScalefEXT((GLenum)matrixMode, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glMatrixTranslatedEXT(int matrixMode, double x, double y, double z); /*
+		glMatrixTranslatedEXT((GLenum)matrixMode, (GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glMatrixTranslatefEXT(int matrixMode, float x, float y, float z); /*
+		glMatrixTranslatefEXT((GLenum)matrixMode, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glMultiTexBufferEXT(int texunit, int target, int internalformat, int buffer); /*
+		glMultiTexBufferEXT((GLenum)texunit, (GLenum)target, (GLenum)internalformat, (GLuint)buffer);
+	*/
+
+	public static native void glMultiTexCoordPointerEXT(int texunit, int size, int type, int stride, Buffer pointer, int pointerByteOffset); /*
+		glMultiTexCoordPointerEXT((GLenum)texunit, (GLint)size, (GLenum)type, (GLsizei)stride, (const void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glMultiTexEnvfEXT(int texunit, int target, int pname, float param); /*
+		glMultiTexEnvfEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glMultiTexEnvfvEXT(int texunit, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glMultiTexEnvfvEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glMultiTexEnviEXT(int texunit, int target, int pname, int param); /*
+		glMultiTexEnviEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glMultiTexEnvivEXT(int texunit, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glMultiTexEnvivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glMultiTexGendEXT(int texunit, int coord, int pname, double param); /*
+		glMultiTexGendEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (GLdouble)param);
+	*/
+
+	public static native void glMultiTexGendvEXT(int texunit, int coord, int pname, Buffer params, int paramsByteOffset); /*
+		glMultiTexGendvEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (const GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glMultiTexGenfEXT(int texunit, int coord, int pname, float param); /*
+		glMultiTexGenfEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glMultiTexGenfvEXT(int texunit, int coord, int pname, Buffer params, int paramsByteOffset); /*
+		glMultiTexGenfvEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glMultiTexGeniEXT(int texunit, int coord, int pname, int param); /*
+		glMultiTexGeniEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glMultiTexGenivEXT(int texunit, int coord, int pname, Buffer params, int paramsByteOffset); /*
+		glMultiTexGenivEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glMultiTexImage1DEXT(int texunit, int target, int level, int internalformat, int width, int border, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glMultiTexImage1DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)internalformat, (GLsizei)width, (GLint)border, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glMultiTexImage2DEXT(int texunit, int target, int level, int internalformat, int width, int height, int border, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glMultiTexImage2DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)internalformat, (GLsizei)width, (GLsizei)height, (GLint)border, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glMultiTexImage3DEXT(int texunit, int target, int level, int internalformat, int width, int height, int depth, int border, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glMultiTexImage3DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glMultiTexParameterIivEXT(int texunit, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glMultiTexParameterIivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glMultiTexParameterIuivEXT(int texunit, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glMultiTexParameterIuivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (const GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glMultiTexParameterfEXT(int texunit, int target, int pname, float param); /*
+		glMultiTexParameterfEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glMultiTexParameterfvEXT(int texunit, int target, int pname, Buffer param, int paramByteOffset); /*
+		glMultiTexParameterfvEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (const GLfloat*)(param + paramByteOffset));
+	*/
+
+	public static native void glMultiTexParameteriEXT(int texunit, int target, int pname, int param); /*
+		glMultiTexParameteriEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glMultiTexParameterivEXT(int texunit, int target, int pname, Buffer param, int paramByteOffset); /*
+		glMultiTexParameterivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (const GLint*)(param + paramByteOffset));
+	*/
+
+	public static native void glMultiTexRenderbufferEXT(int texunit, int target, int renderbuffer); /*
+		glMultiTexRenderbufferEXT((GLenum)texunit, (GLenum)target, (GLuint)renderbuffer);
+	*/
+
+	public static native void glMultiTexSubImage1DEXT(int texunit, int target, int level, int xoffset, int width, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glMultiTexSubImage1DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLsizei)width, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glMultiTexSubImage2DEXT(int texunit, int target, int level, int xoffset, int yoffset, int width, int height, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glMultiTexSubImage2DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glMultiTexSubImage3DEXT(int texunit, int target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glMultiTexSubImage3DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glNamedBufferDataEXT(int buffer, int size, Buffer data, int dataByteOffset, int usage); /*
+		glNamedBufferDataEXT((GLuint)buffer, (GLsizeiptr)size, (const void*)(data + dataByteOffset), (GLenum)usage);
+	*/
+
+	public static native void glNamedBufferSubDataEXT(int buffer, int offset, int size, Buffer data, int dataByteOffset); /*
+		glNamedBufferSubDataEXT((GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glNamedCopyBufferSubDataEXT(int readBuffer, int writeBuffer, int readOffset, int writeOffset, int size); /*
+		glNamedCopyBufferSubDataEXT((GLuint)readBuffer, (GLuint)writeBuffer, (GLintptr)readOffset, (GLintptr)writeOffset, (GLsizeiptr)size);
+	*/
+
+	public static native void glNamedFramebufferRenderbufferEXT(int framebuffer, int attachment, int renderbuffertarget, int renderbuffer); /*
+		glNamedFramebufferRenderbufferEXT((GLuint)framebuffer, (GLenum)attachment, (GLenum)renderbuffertarget, (GLuint)renderbuffer);
+	*/
+
+	public static native void glNamedFramebufferTexture1DEXT(int framebuffer, int attachment, int textarget, int texture, int level); /*
+		glNamedFramebufferTexture1DEXT((GLuint)framebuffer, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level);
+	*/
+
+	public static native void glNamedFramebufferTexture2DEXT(int framebuffer, int attachment, int textarget, int texture, int level); /*
+		glNamedFramebufferTexture2DEXT((GLuint)framebuffer, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level);
+	*/
+
+	public static native void glNamedFramebufferTexture3DEXT(int framebuffer, int attachment, int textarget, int texture, int level, int zoffset); /*
+		glNamedFramebufferTexture3DEXT((GLuint)framebuffer, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level, (GLint)zoffset);
+	*/
+
+	public static native void glNamedFramebufferTextureEXT(int framebuffer, int attachment, int texture, int level); /*
+		glNamedFramebufferTextureEXT((GLuint)framebuffer, (GLenum)attachment, (GLuint)texture, (GLint)level);
+	*/
+
+	public static native void glNamedFramebufferTextureFaceEXT(int framebuffer, int attachment, int texture, int level, int face); /*
+		glNamedFramebufferTextureFaceEXT((GLuint)framebuffer, (GLenum)attachment, (GLuint)texture, (GLint)level, (GLenum)face);
+	*/
+
+	public static native void glNamedFramebufferTextureLayerEXT(int framebuffer, int attachment, int texture, int level, int layer); /*
+		glNamedFramebufferTextureLayerEXT((GLuint)framebuffer, (GLenum)attachment, (GLuint)texture, (GLint)level, (GLint)layer);
+	*/
+
+	public static native void glNamedProgramLocalParameter4dEXT(int program, int target, int index, double x, double y, double z, double w); /*
+		glNamedProgramLocalParameter4dEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
+	*/
+
+	public static native void glNamedProgramLocalParameter4dvEXT(int program, int target, int index, Buffer params, int paramsByteOffset); /*
+		glNamedProgramLocalParameter4dvEXT((GLuint)program, (GLenum)target, (GLuint)index, (const GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glNamedProgramLocalParameter4fEXT(int program, int target, int index, float x, float y, float z, float w); /*
+		glNamedProgramLocalParameter4fEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
+	*/
+
+	public static native void glNamedProgramLocalParameter4fvEXT(int program, int target, int index, Buffer params, int paramsByteOffset); /*
+		glNamedProgramLocalParameter4fvEXT((GLuint)program, (GLenum)target, (GLuint)index, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glNamedProgramLocalParameterI4iEXT(int program, int target, int index, int x, int y, int z, int w); /*
+		glNamedProgramLocalParameterI4iEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLint)x, (GLint)y, (GLint)z, (GLint)w);
+	*/
+
+	public static native void glNamedProgramLocalParameterI4ivEXT(int program, int target, int index, Buffer params, int paramsByteOffset); /*
+		glNamedProgramLocalParameterI4ivEXT((GLuint)program, (GLenum)target, (GLuint)index, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glNamedProgramLocalParameterI4uiEXT(int program, int target, int index, int x, int y, int z, int w); /*
+		glNamedProgramLocalParameterI4uiEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLuint)x, (GLuint)y, (GLuint)z, (GLuint)w);
+	*/
+
+	public static native void glNamedProgramLocalParameterI4uivEXT(int program, int target, int index, Buffer params, int paramsByteOffset); /*
+		glNamedProgramLocalParameterI4uivEXT((GLuint)program, (GLenum)target, (GLuint)index, (const GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glNamedProgramLocalParameters4fvEXT(int program, int target, int index, int count, Buffer params, int paramsByteOffset); /*
+		glNamedProgramLocalParameters4fvEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLsizei)count, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glNamedProgramLocalParametersI4ivEXT(int program, int target, int index, int count, Buffer params, int paramsByteOffset); /*
+		glNamedProgramLocalParametersI4ivEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLsizei)count, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glNamedProgramLocalParametersI4uivEXT(int program, int target, int index, int count, Buffer params, int paramsByteOffset); /*
+		glNamedProgramLocalParametersI4uivEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLsizei)count, (const GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glNamedProgramStringEXT(int program, int target, int format, int len, Buffer string, int stringByteOffset); /*
+		glNamedProgramStringEXT((GLuint)program, (GLenum)target, (GLenum)format, (GLsizei)len, (const void*)(string + stringByteOffset));
+	*/
+
+	public static native void glNamedRenderbufferStorageEXT(int renderbuffer, int internalformat, int width, int height); /*
+		glNamedRenderbufferStorageEXT((GLuint)renderbuffer, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glNamedRenderbufferStorageMultisampleCoverageEXT(int renderbuffer, int coverageSamples, int colorSamples, int internalformat, int width, int height); /*
+		glNamedRenderbufferStorageMultisampleCoverageEXT((GLuint)renderbuffer, (GLsizei)coverageSamples, (GLsizei)colorSamples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glNamedRenderbufferStorageMultisampleEXT(int renderbuffer, int samples, int internalformat, int width, int height); /*
+		glNamedRenderbufferStorageMultisampleEXT((GLuint)renderbuffer, (GLsizei)samples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glProgramUniform1dEXT(int program, int location, double x); /*
+		glProgramUniform1dEXT((GLuint)program, (GLint)location, (GLdouble)x);
+	*/
+
+	public static native void glProgramUniform1dvEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform1dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform1fEXT(int program, int location, float v0); /*
+		glProgramUniform1fEXT((GLuint)program, (GLint)location, (GLfloat)v0);
+	*/
+
+	public static native void glProgramUniform1fvEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform1fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform1iEXT(int program, int location, int v0); /*
+		glProgramUniform1iEXT((GLuint)program, (GLint)location, (GLint)v0);
+	*/
+
+	public static native void glProgramUniform1ivEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform1ivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform1uiEXT(int program, int location, int v0); /*
+		glProgramUniform1uiEXT((GLuint)program, (GLint)location, (GLuint)v0);
+	*/
+
+	public static native void glProgramUniform1uivEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform1uivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform2dEXT(int program, int location, double x, double y); /*
+		glProgramUniform2dEXT((GLuint)program, (GLint)location, (GLdouble)x, (GLdouble)y);
+	*/
+
+	public static native void glProgramUniform2dvEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform2dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform2fEXT(int program, int location, float v0, float v1); /*
+		glProgramUniform2fEXT((GLuint)program, (GLint)location, (GLfloat)v0, (GLfloat)v1);
+	*/
+
+	public static native void glProgramUniform2fvEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform2fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform2iEXT(int program, int location, int v0, int v1); /*
+		glProgramUniform2iEXT((GLuint)program, (GLint)location, (GLint)v0, (GLint)v1);
+	*/
+
+	public static native void glProgramUniform2ivEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform2ivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform2uiEXT(int program, int location, int v0, int v1); /*
+		glProgramUniform2uiEXT((GLuint)program, (GLint)location, (GLuint)v0, (GLuint)v1);
+	*/
+
+	public static native void glProgramUniform2uivEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform2uivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform3dEXT(int program, int location, double x, double y, double z); /*
+		glProgramUniform3dEXT((GLuint)program, (GLint)location, (GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glProgramUniform3dvEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform3dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform3fEXT(int program, int location, float v0, float v1, float v2); /*
+		glProgramUniform3fEXT((GLuint)program, (GLint)location, (GLfloat)v0, (GLfloat)v1, (GLfloat)v2);
+	*/
+
+	public static native void glProgramUniform3fvEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform3fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform3iEXT(int program, int location, int v0, int v1, int v2); /*
+		glProgramUniform3iEXT((GLuint)program, (GLint)location, (GLint)v0, (GLint)v1, (GLint)v2);
+	*/
+
+	public static native void glProgramUniform3ivEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform3ivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform3uiEXT(int program, int location, int v0, int v1, int v2); /*
+		glProgramUniform3uiEXT((GLuint)program, (GLint)location, (GLuint)v0, (GLuint)v1, (GLuint)v2);
+	*/
+
+	public static native void glProgramUniform3uivEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform3uivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform4dEXT(int program, int location, double x, double y, double z, double w); /*
+		glProgramUniform4dEXT((GLuint)program, (GLint)location, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
+	*/
+
+	public static native void glProgramUniform4dvEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform4dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform4fEXT(int program, int location, float v0, float v1, float v2, float v3); /*
+		glProgramUniform4fEXT((GLuint)program, (GLint)location, (GLfloat)v0, (GLfloat)v1, (GLfloat)v2, (GLfloat)v3);
+	*/
+
+	public static native void glProgramUniform4fvEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform4fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform4iEXT(int program, int location, int v0, int v1, int v2, int v3); /*
+		glProgramUniform4iEXT((GLuint)program, (GLint)location, (GLint)v0, (GLint)v1, (GLint)v2, (GLint)v3);
+	*/
+
+	public static native void glProgramUniform4ivEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform4ivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform4uiEXT(int program, int location, int v0, int v1, int v2, int v3); /*
+		glProgramUniform4uiEXT((GLuint)program, (GLint)location, (GLuint)v0, (GLuint)v1, (GLuint)v2, (GLuint)v3);
+	*/
+
+	public static native void glProgramUniform4uivEXT(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform4uivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix2dvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix2dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix2fvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix2fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix2x3dvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix2x3dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix2x3fvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix2x3fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix2x4dvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix2x4dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix2x4fvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix2x4fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix3dvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix3dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix3fvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix3fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix3x2dvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix3x2dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix3x2fvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix3x2fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix3x4dvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix3x4dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix3x4fvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix3x4fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix4dvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix4dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix4fvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix4fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix4x2dvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix4x2dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix4x2fvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix4x2fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix4x3dvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix4x3dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniformMatrix4x3fvEXT(int program, int location, int count, boolean transpose, Buffer value, int valueByteOffset); /*
+		glProgramUniformMatrix4x3fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glPushClientAttribDefaultEXT(int mask); /*
+		glPushClientAttribDefaultEXT((GLbitfield)mask);
+	*/
+
+	public static native void glTextureBufferEXT(int texture, int target, int internalformat, int buffer); /*
+		glTextureBufferEXT((GLuint)texture, (GLenum)target, (GLenum)internalformat, (GLuint)buffer);
+	*/
+
+	public static native void glTextureImage1DEXT(int texture, int target, int level, int internalformat, int width, int border, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glTextureImage1DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)internalformat, (GLsizei)width, (GLint)border, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glTextureImage2DEXT(int texture, int target, int level, int internalformat, int width, int height, int border, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glTextureImage2DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)internalformat, (GLsizei)width, (GLsizei)height, (GLint)border, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glTextureImage3DEXT(int texture, int target, int level, int internalformat, int width, int height, int depth, int border, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glTextureImage3DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glTextureParameterIivEXT(int texture, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glTextureParameterIivEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glTextureParameterIuivEXT(int texture, int target, int pname, Buffer params, int paramsByteOffset); /*
+		glTextureParameterIuivEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (const GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glTextureParameterfEXT(int texture, int target, int pname, float param); /*
+		glTextureParameterfEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glTextureParameterfvEXT(int texture, int target, int pname, Buffer param, int paramByteOffset); /*
+		glTextureParameterfvEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (const GLfloat*)(param + paramByteOffset));
+	*/
+
+	public static native void glTextureParameteriEXT(int texture, int target, int pname, int param); /*
+		glTextureParameteriEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glTextureParameterivEXT(int texture, int target, int pname, Buffer param, int paramByteOffset); /*
+		glTextureParameterivEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (const GLint*)(param + paramByteOffset));
+	*/
+
+	public static native void glTextureRenderbufferEXT(int texture, int target, int renderbuffer); /*
+		glTextureRenderbufferEXT((GLuint)texture, (GLenum)target, (GLuint)renderbuffer);
+	*/
+
+	public static native void glTextureSubImage1DEXT(int texture, int target, int level, int xoffset, int width, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glTextureSubImage1DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLsizei)width, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glTextureSubImage2DEXT(int texture, int target, int level, int xoffset, int yoffset, int width, int height, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glTextureSubImage2DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glTextureSubImage3DEXT(int texture, int target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glTextureSubImage3DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native boolean glUnmapNamedBufferEXT(int buffer); /*
+		return (GLboolean)glUnmapNamedBufferEXT((GLuint)buffer);
+	*/
+
+	public static native void glVertexArrayColorOffsetEXT(int vaobj, int buffer, int size, int type, int stride, int offset); /*
+		glVertexArrayColorOffsetEXT((GLuint)vaobj, (GLuint)buffer, (GLint)size, (GLenum)type, (GLsizei)stride, (GLintptr)offset);
+	*/
+
+	public static native void glVertexArrayEdgeFlagOffsetEXT(int vaobj, int buffer, int stride, int offset); /*
+		glVertexArrayEdgeFlagOffsetEXT((GLuint)vaobj, (GLuint)buffer, (GLsizei)stride, (GLintptr)offset);
+	*/
+
+	public static native void glVertexArrayFogCoordOffsetEXT(int vaobj, int buffer, int type, int stride, int offset); /*
+		glVertexArrayFogCoordOffsetEXT((GLuint)vaobj, (GLuint)buffer, (GLenum)type, (GLsizei)stride, (GLintptr)offset);
+	*/
+
+	public static native void glVertexArrayIndexOffsetEXT(int vaobj, int buffer, int type, int stride, int offset); /*
+		glVertexArrayIndexOffsetEXT((GLuint)vaobj, (GLuint)buffer, (GLenum)type, (GLsizei)stride, (GLintptr)offset);
+	*/
+
+	public static native void glVertexArrayMultiTexCoordOffsetEXT(int vaobj, int buffer, int texunit, int size, int type, int stride, int offset); /*
+		glVertexArrayMultiTexCoordOffsetEXT((GLuint)vaobj, (GLuint)buffer, (GLenum)texunit, (GLint)size, (GLenum)type, (GLsizei)stride, (GLintptr)offset);
+	*/
+
+	public static native void glVertexArrayNormalOffsetEXT(int vaobj, int buffer, int type, int stride, int offset); /*
+		glVertexArrayNormalOffsetEXT((GLuint)vaobj, (GLuint)buffer, (GLenum)type, (GLsizei)stride, (GLintptr)offset);
+	*/
+
+	public static native void glVertexArraySecondaryColorOffsetEXT(int vaobj, int buffer, int size, int type, int stride, int offset); /*
+		glVertexArraySecondaryColorOffsetEXT((GLuint)vaobj, (GLuint)buffer, (GLint)size, (GLenum)type, (GLsizei)stride, (GLintptr)offset);
+	*/
+
+	public static native void glVertexArrayTexCoordOffsetEXT(int vaobj, int buffer, int size, int type, int stride, int offset); /*
+		glVertexArrayTexCoordOffsetEXT((GLuint)vaobj, (GLuint)buffer, (GLint)size, (GLenum)type, (GLsizei)stride, (GLintptr)offset);
+	*/
+
+	public static native void glVertexArrayVertexAttribIOffsetEXT(int vaobj, int buffer, int index, int size, int type, int stride, int offset); /*
+		glVertexArrayVertexAttribIOffsetEXT((GLuint)vaobj, (GLuint)buffer, (GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride, (GLintptr)offset);
+	*/
+
+	public static native void glVertexArrayVertexAttribOffsetEXT(int vaobj, int buffer, int index, int size, int type, boolean normalized, int stride, int offset); /*
+		glVertexArrayVertexAttribOffsetEXT((GLuint)vaobj, (GLuint)buffer, (GLuint)index, (GLint)size, (GLenum)type, (GLboolean)normalized, (GLsizei)stride, (GLintptr)offset);
+	*/
+
+	public static native void glVertexArrayVertexOffsetEXT(int vaobj, int buffer, int size, int type, int stride, int offset); /*
+		glVertexArrayVertexOffsetEXT((GLuint)vaobj, (GLuint)buffer, (GLint)size, (GLenum)type, (GLsizei)stride, (GLintptr)offset);
+	*/
+
+	public static native void glColorMaskIndexedEXT(int buf, boolean r, boolean g, boolean b, boolean a); /*
+		glColorMaskIndexedEXT((GLuint)buf, (GLboolean)r, (GLboolean)g, (GLboolean)b, (GLboolean)a);
+	*/
+
+	public static native void glDisableIndexedEXT(int target, int index); /*
+		glDisableIndexedEXT((GLenum)target, (GLuint)index);
+	*/
+
+	public static native void glEnableIndexedEXT(int target, int index); /*
+		glEnableIndexedEXT((GLenum)target, (GLuint)index);
+	*/
+
+	public static native void glGetBooleanIndexedvEXT(int value, int index, Buffer data, int dataByteOffset); /*
+		glGetBooleanIndexedvEXT((GLenum)value, (GLuint)index, (GLboolean*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetIntegerIndexedvEXT(int value, int index, Buffer data, int dataByteOffset); /*
+		glGetIntegerIndexedvEXT((GLenum)value, (GLuint)index, (GLint*)(data + dataByteOffset));
+	*/
+
+	public static native boolean glIsEnabledIndexedEXT(int target, int index); /*
+		return (GLboolean)glIsEnabledIndexedEXT((GLenum)target, (GLuint)index);
+	*/
+
+	public static native void glDrawArraysInstancedEXT(int mode, int start, int count, int primcount); /*
+		glDrawArraysInstancedEXT((GLenum)mode, (GLint)start, (GLsizei)count, (GLsizei)primcount);
+	*/
+
+	public static native void glDrawElementsInstancedEXT(int mode, int count, int type, Buffer indices, int indicesByteOffset, int primcount); /*
+		glDrawElementsInstancedEXT((GLenum)mode, (GLsizei)count, (GLenum)type, (const GLvoid*)(indices + indicesByteOffset), (GLsizei)primcount);
+	*/
+
+	public static native void glDrawRangeElementsEXT(int mode, int start, int end, int count, int type, Buffer indices, int indicesByteOffset); /*
+		glDrawRangeElementsEXT((GLenum)mode, (GLuint)start, (GLuint)end, (GLsizei)count, (GLenum)type, (const GLvoid*)(indices + indicesByteOffset));
+	*/
+
+	public static native void glFogCoordPointerEXT(int type, int stride, Buffer pointer, int pointerByteOffset); /*
+		glFogCoordPointerEXT((GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glFogCoorddEXT(double coord); /*
+		glFogCoorddEXT((GLdouble)coord);
+	*/
+
+	public static native void glFogCoorddvEXT(Buffer coord, int coordByteOffset); /*
+		glFogCoorddvEXT((const GLdouble*)(coord + coordByteOffset));
+	*/
+
+	public static native void glFogCoordfEXT(float coord); /*
+		glFogCoordfEXT((GLfloat)coord);
+	*/
+
+	public static native void glFogCoordfvEXT(Buffer coord, int coordByteOffset); /*
+		glFogCoordfvEXT((const GLfloat*)(coord + coordByteOffset));
+	*/
+
+	public static native void glFragmentColorMaterialEXT(int face, int mode); /*
+		glFragmentColorMaterialEXT((GLenum)face, (GLenum)mode);
+	*/
+
+	public static native void glFragmentLightModelfEXT(int pname, float param); /*
+		glFragmentLightModelfEXT((GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glFragmentLightModelfvEXT(int pname, Buffer params, int paramsByteOffset); /*
+		glFragmentLightModelfvEXT((GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glFragmentLightModeliEXT(int pname, int param); /*
+		glFragmentLightModeliEXT((GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glFragmentLightModelivEXT(int pname, Buffer params, int paramsByteOffset); /*
+		glFragmentLightModelivEXT((GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glFragmentLightfEXT(int light, int pname, float param); /*
+		glFragmentLightfEXT((GLenum)light, (GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glFragmentLightfvEXT(int light, int pname, Buffer params, int paramsByteOffset); /*
+		glFragmentLightfvEXT((GLenum)light, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glFragmentLightiEXT(int light, int pname, int param); /*
+		glFragmentLightiEXT((GLenum)light, (GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glFragmentLightivEXT(int light, int pname, Buffer params, int paramsByteOffset); /*
+		glFragmentLightivEXT((GLenum)light, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glFragmentMaterialfEXT(int face, int pname, float param); /*
+		glFragmentMaterialfEXT((GLenum)face, (GLenum)pname, (const GLfloat)param);
+	*/
+
+	public static native void glFragmentMaterialfvEXT(int face, int pname, Buffer params, int paramsByteOffset); /*
+		glFragmentMaterialfvEXT((GLenum)face, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glFragmentMaterialiEXT(int face, int pname, int param); /*
+		glFragmentMaterialiEXT((GLenum)face, (GLenum)pname, (const GLint)param);
+	*/
+
+	public static native void glFragmentMaterialivEXT(int face, int pname, Buffer params, int paramsByteOffset); /*
+		glFragmentMaterialivEXT((GLenum)face, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetFragmentLightfvEXT(int light, int pname, Buffer params, int paramsByteOffset); /*
+		glGetFragmentLightfvEXT((GLenum)light, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetFragmentLightivEXT(int light, int pname, Buffer params, int paramsByteOffset); /*
+		glGetFragmentLightivEXT((GLenum)light, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetFragmentMaterialfvEXT(int face, int pname, Buffer params, int paramsByteOffset); /*
+		glGetFragmentMaterialfvEXT((GLenum)face, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetFragmentMaterialivEXT(int face, int pname, Buffer params, int paramsByteOffset); /*
+		glGetFragmentMaterialivEXT((GLenum)face, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glLightEnviEXT(int pname, int param); /*
+		glLightEnviEXT((GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glBlitFramebufferEXT(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, int mask, int filter); /*
+		glBlitFramebufferEXT((GLint)srcX0, (GLint)srcY0, (GLint)srcX1, (GLint)srcY1, (GLint)dstX0, (GLint)dstY0, (GLint)dstX1, (GLint)dstY1, (GLbitfield)mask, (GLenum)filter);
+	*/
+
+	public static native void glRenderbufferStorageMultisampleEXT(int target, int samples, int internalformat, int width, int height); /*
+		glRenderbufferStorageMultisampleEXT((GLenum)target, (GLsizei)samples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glBindFramebufferEXT(int target, int framebuffer); /*
+		glBindFramebufferEXT((GLenum)target, (GLuint)framebuffer);
+	*/
+
+	public static native void glBindRenderbufferEXT(int target, int renderbuffer); /*
+		glBindRenderbufferEXT((GLenum)target, (GLuint)renderbuffer);
+	*/
+
+	public static native int glCheckFramebufferStatusEXT(int target); /*
+		return (GLenum)glCheckFramebufferStatusEXT((GLenum)target);
+	*/
+
+	public static native void glDeleteFramebuffersEXT(int n, Buffer framebuffers, int framebuffersByteOffset); /*
+		glDeleteFramebuffersEXT((GLsizei)n, (const GLuint*)(framebuffers + framebuffersByteOffset));
+	*/
+
+	public static native void glDeleteRenderbuffersEXT(int n, Buffer renderbuffers, int renderbuffersByteOffset); /*
+		glDeleteRenderbuffersEXT((GLsizei)n, (const GLuint*)(renderbuffers + renderbuffersByteOffset));
+	*/
+
+	public static native void glFramebufferRenderbufferEXT(int target, int attachment, int renderbuffertarget, int renderbuffer); /*
+		glFramebufferRenderbufferEXT((GLenum)target, (GLenum)attachment, (GLenum)renderbuffertarget, (GLuint)renderbuffer);
+	*/
+
+	public static native void glFramebufferTexture1DEXT(int target, int attachment, int textarget, int texture, int level); /*
+		glFramebufferTexture1DEXT((GLenum)target, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level);
+	*/
+
+	public static native void glFramebufferTexture2DEXT(int target, int attachment, int textarget, int texture, int level); /*
+		glFramebufferTexture2DEXT((GLenum)target, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level);
+	*/
+
+	public static native void glFramebufferTexture3DEXT(int target, int attachment, int textarget, int texture, int level, int zoffset); /*
+		glFramebufferTexture3DEXT((GLenum)target, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level, (GLint)zoffset);
+	*/
+
+	public static native void glGenFramebuffersEXT(int n, Buffer framebuffers, int framebuffersByteOffset); /*
+		glGenFramebuffersEXT((GLsizei)n, (GLuint*)(framebuffers + framebuffersByteOffset));
+	*/
+
+	public static native void glGenRenderbuffersEXT(int n, Buffer renderbuffers, int renderbuffersByteOffset); /*
+		glGenRenderbuffersEXT((GLsizei)n, (GLuint*)(renderbuffers + renderbuffersByteOffset));
+	*/
+
+	public static native void glGenerateMipmapEXT(int target); /*
+		glGenerateMipmapEXT((GLenum)target);
+	*/
+
+	public static native void glGetFramebufferAttachmentParameterivEXT(int target, int attachment, int pname, Buffer params, int paramsByteOffset); /*
+		glGetFramebufferAttachmentParameterivEXT((GLenum)target, (GLenum)attachment, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetRenderbufferParameterivEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetRenderbufferParameterivEXT((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native boolean glIsFramebufferEXT(int framebuffer); /*
+		return (GLboolean)glIsFramebufferEXT((GLuint)framebuffer);
+	*/
+
+	public static native boolean glIsRenderbufferEXT(int renderbuffer); /*
+		return (GLboolean)glIsRenderbufferEXT((GLuint)renderbuffer);
+	*/
+
+	public static native void glRenderbufferStorageEXT(int target, int internalformat, int width, int height); /*
+		glRenderbufferStorageEXT((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glFramebufferTextureEXT(int target, int attachment, int texture, int level); /*
+		glFramebufferTextureEXT((GLenum)target, (GLenum)attachment, (GLuint)texture, (GLint)level);
+	*/
+
+	public static native void glFramebufferTextureFaceEXT(int target, int attachment, int texture, int level, int face); /*
+		glFramebufferTextureFaceEXT((GLenum)target, (GLenum)attachment, (GLuint)texture, (GLint)level, (GLenum)face);
+	*/
+
+	public static native void glProgramParameteriEXT(int program, int pname, int value); /*
+		glProgramParameteriEXT((GLuint)program, (GLenum)pname, (GLint)value);
+	*/
+
+	public static native void glProgramEnvParameters4fvEXT(int target, int index, int count, Buffer params, int paramsByteOffset); /*
+		glProgramEnvParameters4fvEXT((GLenum)target, (GLuint)index, (GLsizei)count, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramLocalParameters4fvEXT(int target, int index, int count, Buffer params, int paramsByteOffset); /*
+		glProgramLocalParameters4fvEXT((GLenum)target, (GLuint)index, (GLsizei)count, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glBindFragDataLocationEXT(int program, int color, Buffer name, int nameByteOffset); /*
+		glBindFragDataLocationEXT((GLuint)program, (GLuint)color, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native int glGetFragDataLocationEXT(int program, Buffer name, int nameByteOffset); /*
+		return (GLint)glGetFragDataLocationEXT((GLuint)program, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glGetUniformuivEXT(int program, int location, Buffer params, int paramsByteOffset); /*
+		glGetUniformuivEXT((GLuint)program, (GLint)location, (GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVertexAttribIivEXT(int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVertexAttribIivEXT((GLuint)index, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVertexAttribIuivEXT(int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVertexAttribIuivEXT((GLuint)index, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glUniform1uiEXT(int location, int v0); /*
+		glUniform1uiEXT((GLint)location, (GLuint)v0);
+	*/
+
+	public static native void glUniform1uivEXT(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform1uivEXT((GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform2uiEXT(int location, int v0, int v1); /*
+		glUniform2uiEXT((GLint)location, (GLuint)v0, (GLuint)v1);
+	*/
+
+	public static native void glUniform2uivEXT(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform2uivEXT((GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform3uiEXT(int location, int v0, int v1, int v2); /*
+		glUniform3uiEXT((GLint)location, (GLuint)v0, (GLuint)v1, (GLuint)v2);
+	*/
+
+	public static native void glUniform3uivEXT(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform3uivEXT((GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform4uiEXT(int location, int v0, int v1, int v2, int v3); /*
+		glUniform4uiEXT((GLint)location, (GLuint)v0, (GLuint)v1, (GLuint)v2, (GLuint)v3);
+	*/
+
+	public static native void glUniform4uivEXT(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform4uivEXT((GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
+	*/
+
+	public static native void glVertexAttribI1iEXT(int index, int x); /*
+		glVertexAttribI1iEXT((GLuint)index, (GLint)x);
+	*/
+
+	public static native void glVertexAttribI1ivEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribI1ivEXT((GLuint)index, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribI1uiEXT(int index, int x); /*
+		glVertexAttribI1uiEXT((GLuint)index, (GLuint)x);
+	*/
+
+	public static native void glVertexAttribI1uivEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribI1uivEXT((GLuint)index, (const GLuint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribI2iEXT(int index, int x, int y); /*
+		glVertexAttribI2iEXT((GLuint)index, (GLint)x, (GLint)y);
+	*/
+
+	public static native void glVertexAttribI2ivEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribI2ivEXT((GLuint)index, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribI2uiEXT(int index, int x, int y); /*
+		glVertexAttribI2uiEXT((GLuint)index, (GLuint)x, (GLuint)y);
+	*/
+
+	public static native void glVertexAttribI2uivEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribI2uivEXT((GLuint)index, (const GLuint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribI3iEXT(int index, int x, int y, int z); /*
+		glVertexAttribI3iEXT((GLuint)index, (GLint)x, (GLint)y, (GLint)z);
+	*/
+
+	public static native void glVertexAttribI3ivEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribI3ivEXT((GLuint)index, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribI3uiEXT(int index, int x, int y, int z); /*
+		glVertexAttribI3uiEXT((GLuint)index, (GLuint)x, (GLuint)y, (GLuint)z);
+	*/
+
+	public static native void glVertexAttribI3uivEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribI3uivEXT((GLuint)index, (const GLuint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribI4bvEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribI4bvEXT((GLuint)index, (const GLbyte*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribI4iEXT(int index, int x, int y, int z, int w); /*
+		glVertexAttribI4iEXT((GLuint)index, (GLint)x, (GLint)y, (GLint)z, (GLint)w);
+	*/
+
+	public static native void glVertexAttribI4ivEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribI4ivEXT((GLuint)index, (const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribI4svEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribI4svEXT((GLuint)index, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribI4ubvEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribI4ubvEXT((GLuint)index, (const GLubyte*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribI4uiEXT(int index, int x, int y, int z, int w); /*
+		glVertexAttribI4uiEXT((GLuint)index, (GLuint)x, (GLuint)y, (GLuint)z, (GLuint)w);
+	*/
+
+	public static native void glVertexAttribI4uivEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribI4uivEXT((GLuint)index, (const GLuint*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribI4usvEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribI4usvEXT((GLuint)index, (const GLushort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribIPointerEXT(int index, int size, int type, int stride, Buffer pointer, int pointerByteOffset); /*
+		glVertexAttribIPointerEXT((GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glGetHistogramEXT(int target, boolean reset, int format, int type, Buffer values, int valuesByteOffset); /*
+		glGetHistogramEXT((GLenum)target, (GLboolean)reset, (GLenum)format, (GLenum)type, (void*)(values + valuesByteOffset));
+	*/
+
+	public static native void glGetHistogramParameterfvEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetHistogramParameterfvEXT((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetHistogramParameterivEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetHistogramParameterivEXT((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMinmaxEXT(int target, boolean reset, int format, int type, Buffer values, int valuesByteOffset); /*
+		glGetMinmaxEXT((GLenum)target, (GLboolean)reset, (GLenum)format, (GLenum)type, (void*)(values + valuesByteOffset));
+	*/
+
+	public static native void glGetMinmaxParameterfvEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMinmaxParameterfvEXT((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMinmaxParameterivEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMinmaxParameterivEXT((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glHistogramEXT(int target, int width, int internalformat, boolean sink); /*
+		glHistogramEXT((GLenum)target, (GLsizei)width, (GLenum)internalformat, (GLboolean)sink);
+	*/
+
+	public static native void glMinmaxEXT(int target, int internalformat, boolean sink); /*
+		glMinmaxEXT((GLenum)target, (GLenum)internalformat, (GLboolean)sink);
+	*/
+
+	public static native void glResetHistogramEXT(int target); /*
+		glResetHistogramEXT((GLenum)target);
+	*/
+
+	public static native void glResetMinmaxEXT(int target); /*
+		glResetMinmaxEXT((GLenum)target);
+	*/
+
+	public static native void glIndexFuncEXT(int func, float ref); /*
+		glIndexFuncEXT((GLenum)func, (GLfloat)ref);
+	*/
+
+	public static native void glIndexMaterialEXT(int face, int mode); /*
+		glIndexMaterialEXT((GLenum)face, (GLenum)mode);
+	*/
+
+	public static native void glApplyTextureEXT(int mode); /*
+		glApplyTextureEXT((GLenum)mode);
+	*/
+
+	public static native void glTextureLightEXT(int pname); /*
+		glTextureLightEXT((GLenum)pname);
+	*/
+
+	public static native void glTextureMaterialEXT(int face, int mode); /*
+		glTextureMaterialEXT((GLenum)face, (GLenum)mode);
+	*/
+
+	public static native void glMultiDrawArraysEXT(int mode, Buffer first, int firstByteOffset, Buffer count, int countByteOffset, int primcount); /*
+		glMultiDrawArraysEXT((GLenum)mode, (const GLint*)(first + firstByteOffset), (const GLsizei*)(count + countByteOffset), (GLsizei)primcount);
+	*/
+
+	public static native void glMultiDrawElementsEXT(int mode, Buffer count, int countByteOffset, int type, Buffer indices, int indicesByteOffset, int primcount); /*
+		glMultiDrawElementsEXT((GLenum)mode, (GLsizei*)(count + countByteOffset), (GLenum)type, (const GLvoid**)(indices + indicesByteOffset), (GLsizei)primcount);
+	*/
+
+	public static native void glSampleMaskEXT(float value, boolean invert); /*
+		glSampleMaskEXT((GLclampf)value, (GLboolean)invert);
+	*/
+
+	public static native void glSamplePatternEXT(int pattern); /*
+		glSamplePatternEXT((GLenum)pattern);
+	*/
+
+	public static native void glColorTableEXT(int target, int internalFormat, int width, int format, int type, Buffer data, int dataByteOffset); /*
+		glColorTableEXT((GLenum)target, (GLenum)internalFormat, (GLsizei)width, (GLenum)format, (GLenum)type, (const void*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetColorTableEXT(int target, int format, int type, Buffer data, int dataByteOffset); /*
+		glGetColorTableEXT((GLenum)target, (GLenum)format, (GLenum)type, (void*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetColorTableParameterfvEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetColorTableParameterfvEXT((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetColorTableParameterivEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetColorTableParameterivEXT((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetPixelTransformParameterfvEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetPixelTransformParameterfvEXT((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetPixelTransformParameterivEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetPixelTransformParameterivEXT((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glPixelTransformParameterfEXT(int target, int pname, float param); /*
+		glPixelTransformParameterfEXT((GLenum)target, (GLenum)pname, (const GLfloat)param);
+	*/
+
+	public static native void glPixelTransformParameterfvEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glPixelTransformParameterfvEXT((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glPixelTransformParameteriEXT(int target, int pname, int param); /*
+		glPixelTransformParameteriEXT((GLenum)target, (GLenum)pname, (const GLint)param);
+	*/
+
+	public static native void glPixelTransformParameterivEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glPixelTransformParameterivEXT((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glPointParameterfEXT(int pname, float param); /*
+		glPointParameterfEXT((GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glPointParameterfvEXT(int pname, Buffer params, int paramsByteOffset); /*
+		glPointParameterfvEXT((GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glPolygonOffsetEXT(float factor, float bias); /*
+		glPolygonOffsetEXT((GLfloat)factor, (GLfloat)bias);
+	*/
+
+	public static native void glProvokingVertexEXT(int mode); /*
+		glProvokingVertexEXT((GLenum)mode);
+	*/
+
+	public static native void glBeginSceneEXT(); /*
+		glBeginSceneEXT();
+	*/
+
+	public static native void glEndSceneEXT(); /*
+		glEndSceneEXT();
+	*/
+
+	public static native void glSecondaryColor3bEXT(byte red, byte green, byte blue); /*
+		glSecondaryColor3bEXT((GLbyte)red, (GLbyte)green, (GLbyte)blue);
+	*/
+
+	public static native void glSecondaryColor3bvEXT(Buffer v, int vByteOffset); /*
+		glSecondaryColor3bvEXT((const GLbyte*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColor3dEXT(double red, double green, double blue); /*
+		glSecondaryColor3dEXT((GLdouble)red, (GLdouble)green, (GLdouble)blue);
+	*/
+
+	public static native void glSecondaryColor3dvEXT(Buffer v, int vByteOffset); /*
+		glSecondaryColor3dvEXT((const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColor3fEXT(float red, float green, float blue); /*
+		glSecondaryColor3fEXT((GLfloat)red, (GLfloat)green, (GLfloat)blue);
+	*/
+
+	public static native void glSecondaryColor3fvEXT(Buffer v, int vByteOffset); /*
+		glSecondaryColor3fvEXT((const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColor3iEXT(int red, int green, int blue); /*
+		glSecondaryColor3iEXT((GLint)red, (GLint)green, (GLint)blue);
+	*/
+
+	public static native void glSecondaryColor3ivEXT(Buffer v, int vByteOffset); /*
+		glSecondaryColor3ivEXT((const GLint*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColor3sEXT(short red, short green, short blue); /*
+		glSecondaryColor3sEXT((GLshort)red, (GLshort)green, (GLshort)blue);
+	*/
+
+	public static native void glSecondaryColor3svEXT(Buffer v, int vByteOffset); /*
+		glSecondaryColor3svEXT((const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColor3ubEXT(byte red, byte green, byte blue); /*
+		glSecondaryColor3ubEXT((GLubyte)red, (GLubyte)green, (GLubyte)blue);
+	*/
+
+	public static native void glSecondaryColor3ubvEXT(Buffer v, int vByteOffset); /*
+		glSecondaryColor3ubvEXT((const GLubyte*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColor3uiEXT(int red, int green, int blue); /*
+		glSecondaryColor3uiEXT((GLuint)red, (GLuint)green, (GLuint)blue);
+	*/
+
+	public static native void glSecondaryColor3uivEXT(Buffer v, int vByteOffset); /*
+		glSecondaryColor3uivEXT((const GLuint*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColor3usEXT(short red, short green, short blue); /*
+		glSecondaryColor3usEXT((GLushort)red, (GLushort)green, (GLushort)blue);
+	*/
+
+	public static native void glSecondaryColor3usvEXT(Buffer v, int vByteOffset); /*
+		glSecondaryColor3usvEXT((const GLushort*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColorPointerEXT(int size, int type, int stride, Buffer pointer, int pointerByteOffset); /*
+		glSecondaryColorPointerEXT((GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glActiveProgramEXT(int program); /*
+		glActiveProgramEXT((GLuint)program);
+	*/
+
+	public static native int glCreateShaderProgramEXT(int type, Buffer string, int stringByteOffset); /*
+		return (GLuint)glCreateShaderProgramEXT((GLenum)type, (const GLchar*)(string + stringByteOffset));
+	*/
+
+	public static native void glUseShaderProgramEXT(int type, int program); /*
+		glUseShaderProgramEXT((GLenum)type, (GLuint)program);
+	*/
+
+	public static native void glBindImageTextureEXT(int index, int texture, int level, boolean layered, int layer, int access, int format); /*
+		glBindImageTextureEXT((GLuint)index, (GLuint)texture, (GLint)level, (GLboolean)layered, (GLint)layer, (GLenum)access, (GLint)format);
+	*/
+
+	public static native void glMemoryBarrierEXT(int barriers); /*
+		glMemoryBarrierEXT((GLbitfield)barriers);
+	*/
+
+	public static native void glActiveStencilFaceEXT(int face); /*
+		glActiveStencilFaceEXT((GLenum)face);
+	*/
+
+	public static native void glTexSubImage1DEXT(int target, int level, int xoffset, int width, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glTexSubImage1DEXT((GLenum)target, (GLint)level, (GLint)xoffset, (GLsizei)width, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glTexSubImage2DEXT(int target, int level, int xoffset, int yoffset, int width, int height, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glTexSubImage2DEXT((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glTexSubImage3DEXT(int target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glTexSubImage3DEXT((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glTexImage3DEXT(int target, int level, int internalformat, int width, int height, int depth, int border, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glTexImage3DEXT((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glFramebufferTextureLayerEXT(int target, int attachment, int texture, int level, int layer); /*
+		glFramebufferTextureLayerEXT((GLenum)target, (GLenum)attachment, (GLuint)texture, (GLint)level, (GLint)layer);
+	*/
+
+	public static native void glTexBufferEXT(int target, int internalformat, int buffer); /*
+		glTexBufferEXT((GLenum)target, (GLenum)internalformat, (GLuint)buffer);
+	*/
+
+	public static native void glClearColorIiEXT(int red, int green, int blue, int alpha); /*
+		glClearColorIiEXT((GLint)red, (GLint)green, (GLint)blue, (GLint)alpha);
+	*/
+
+	public static native void glClearColorIuiEXT(int red, int green, int blue, int alpha); /*
+		glClearColorIuiEXT((GLuint)red, (GLuint)green, (GLuint)blue, (GLuint)alpha);
+	*/
+
+	public static native void glGetTexParameterIivEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetTexParameterIivEXT((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetTexParameterIuivEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetTexParameterIuivEXT((GLenum)target, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glTexParameterIivEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glTexParameterIivEXT((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glTexParameterIuivEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glTexParameterIuivEXT((GLenum)target, (GLenum)pname, (const GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native boolean glAreTexturesResidentEXT(int n, Buffer textures, int texturesByteOffset, Buffer residences, int residencesByteOffset); /*
+		return (GLboolean)glAreTexturesResidentEXT((GLsizei)n, (const GLuint*)(textures + texturesByteOffset), (GLboolean*)(residences + residencesByteOffset));
+	*/
+
+	public static native void glBindTextureEXT(int target, int texture); /*
+		glBindTextureEXT((GLenum)target, (GLuint)texture);
+	*/
+
+	public static native void glDeleteTexturesEXT(int n, Buffer textures, int texturesByteOffset); /*
+		glDeleteTexturesEXT((GLsizei)n, (const GLuint*)(textures + texturesByteOffset));
+	*/
+
+	public static native void glGenTexturesEXT(int n, Buffer textures, int texturesByteOffset); /*
+		glGenTexturesEXT((GLsizei)n, (GLuint*)(textures + texturesByteOffset));
+	*/
+
+	public static native boolean glIsTextureEXT(int texture); /*
+		return (GLboolean)glIsTextureEXT((GLuint)texture);
+	*/
+
+	public static native void glPrioritizeTexturesEXT(int n, Buffer textures, int texturesByteOffset, Buffer priorities, int prioritiesByteOffset); /*
+		glPrioritizeTexturesEXT((GLsizei)n, (const GLuint*)(textures + texturesByteOffset), (const GLclampf*)(priorities + prioritiesByteOffset));
+	*/
+
+	public static native void glTextureNormalEXT(int mode); /*
+		glTextureNormalEXT((GLenum)mode);
+	*/
+
+	public static native void glGetQueryObjecti64vEXT(int id, int pname, Buffer params, int paramsByteOffset); /*
+		glGetQueryObjecti64vEXT((GLuint)id, (GLenum)pname, (GLint64EXT*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetQueryObjectui64vEXT(int id, int pname, Buffer params, int paramsByteOffset); /*
+		glGetQueryObjectui64vEXT((GLuint)id, (GLenum)pname, (GLuint64EXT*)(params + paramsByteOffset));
+	*/
+
+	public static native void glBeginTransformFeedbackEXT(int primitiveMode); /*
+		glBeginTransformFeedbackEXT((GLenum)primitiveMode);
+	*/
+
+	public static native void glBindBufferBaseEXT(int target, int index, int buffer); /*
+		glBindBufferBaseEXT((GLenum)target, (GLuint)index, (GLuint)buffer);
+	*/
+
+	public static native void glBindBufferOffsetEXT(int target, int index, int buffer, int offset); /*
+		glBindBufferOffsetEXT((GLenum)target, (GLuint)index, (GLuint)buffer, (GLintptr)offset);
+	*/
+
+	public static native void glBindBufferRangeEXT(int target, int index, int buffer, int offset, int size); /*
+		glBindBufferRangeEXT((GLenum)target, (GLuint)index, (GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size);
+	*/
+
+	public static native void glEndTransformFeedbackEXT(); /*
+		glEndTransformFeedbackEXT();
+	*/
+
+	public static native void glGetTransformFeedbackVaryingEXT(int program, int index, int bufSize, Buffer length, int lengthByteOffset, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset, Buffer name, int nameByteOffset); /*
+		glGetTransformFeedbackVaryingEXT((GLuint)program, (GLuint)index, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLsizei*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glTransformFeedbackVaryingsEXT(int program, int count, Buffer varyings, int varyingsByteOffset, int bufferMode); /*
+		glTransformFeedbackVaryingsEXT((GLuint)program, (GLsizei)count, (const GLchar**)(varyings + varyingsByteOffset), (GLenum)bufferMode);
+	*/
+
+	public static native void glArrayElementEXT(int i); /*
+		glArrayElementEXT((GLint)i);
+	*/
+
+	public static native void glColorPointerEXT(int size, int type, int stride, int count, Buffer pointer, int pointerByteOffset); /*
+		glColorPointerEXT((GLint)size, (GLenum)type, (GLsizei)stride, (GLsizei)count, (const void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glDrawArraysEXT(int mode, int first, int count); /*
+		glDrawArraysEXT((GLenum)mode, (GLint)first, (GLsizei)count);
+	*/
+
+	public static native void glEdgeFlagPointerEXT(int stride, int count, Buffer pointer, int pointerByteOffset); /*
+		glEdgeFlagPointerEXT((GLsizei)stride, (GLsizei)count, (const GLboolean*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glIndexPointerEXT(int type, int stride, int count, Buffer pointer, int pointerByteOffset); /*
+		glIndexPointerEXT((GLenum)type, (GLsizei)stride, (GLsizei)count, (const void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glNormalPointerEXT(int type, int stride, int count, Buffer pointer, int pointerByteOffset); /*
+		glNormalPointerEXT((GLenum)type, (GLsizei)stride, (GLsizei)count, (const void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glTexCoordPointerEXT(int size, int type, int stride, int count, Buffer pointer, int pointerByteOffset); /*
+		glTexCoordPointerEXT((GLint)size, (GLenum)type, (GLsizei)stride, (GLsizei)count, (const void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glVertexPointerEXT(int size, int type, int stride, int count, Buffer pointer, int pointerByteOffset); /*
+		glVertexPointerEXT((GLint)size, (GLenum)type, (GLsizei)stride, (GLsizei)count, (const void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glGetVertexAttribLdvEXT(int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVertexAttribLdvEXT((GLuint)index, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glVertexArrayVertexAttribLOffsetEXT(int vaobj, int buffer, int index, int size, int type, int stride, int offset); /*
+		glVertexArrayVertexAttribLOffsetEXT((GLuint)vaobj, (GLuint)buffer, (GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride, (GLintptr)offset);
+	*/
+
+	public static native void glVertexAttribL1dEXT(int index, double x); /*
+		glVertexAttribL1dEXT((GLuint)index, (GLdouble)x);
+	*/
+
+	public static native void glVertexAttribL1dvEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL1dvEXT((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribL2dEXT(int index, double x, double y); /*
+		glVertexAttribL2dEXT((GLuint)index, (GLdouble)x, (GLdouble)y);
+	*/
+
+	public static native void glVertexAttribL2dvEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL2dvEXT((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribL3dEXT(int index, double x, double y, double z); /*
+		glVertexAttribL3dEXT((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glVertexAttribL3dvEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL3dvEXT((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribL4dEXT(int index, double x, double y, double z, double w); /*
+		glVertexAttribL4dEXT((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
+	*/
+
+	public static native void glVertexAttribL4dvEXT(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL4dvEXT((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribLPointerEXT(int index, int size, int type, int stride, Buffer pointer, int pointerByteOffset); /*
+		glVertexAttribLPointerEXT((GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride, (const void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glBeginVertexShaderEXT(); /*
+		glBeginVertexShaderEXT();
+	*/
+
+	public static native int glBindLightParameterEXT(int light, int value); /*
+		return (GLuint)glBindLightParameterEXT((GLenum)light, (GLenum)value);
+	*/
+
+	public static native int glBindMaterialParameterEXT(int face, int value); /*
+		return (GLuint)glBindMaterialParameterEXT((GLenum)face, (GLenum)value);
+	*/
+
+	public static native int glBindParameterEXT(int value); /*
+		return (GLuint)glBindParameterEXT((GLenum)value);
+	*/
+
+	public static native int glBindTexGenParameterEXT(int unit, int coord, int value); /*
+		return (GLuint)glBindTexGenParameterEXT((GLenum)unit, (GLenum)coord, (GLenum)value);
+	*/
+
+	public static native int glBindTextureUnitParameterEXT(int unit, int value); /*
+		return (GLuint)glBindTextureUnitParameterEXT((GLenum)unit, (GLenum)value);
+	*/
+
+	public static native void glBindVertexShaderEXT(int id); /*
+		glBindVertexShaderEXT((GLuint)id);
+	*/
+
+	public static native void glDeleteVertexShaderEXT(int id); /*
+		glDeleteVertexShaderEXT((GLuint)id);
+	*/
+
+	public static native void glDisableVariantClientStateEXT(int id); /*
+		glDisableVariantClientStateEXT((GLuint)id);
+	*/
+
+	public static native void glEnableVariantClientStateEXT(int id); /*
+		glEnableVariantClientStateEXT((GLuint)id);
+	*/
+
+	public static native void glEndVertexShaderEXT(); /*
+		glEndVertexShaderEXT();
+	*/
+
+	public static native void glExtractComponentEXT(int res, int src, int num); /*
+		glExtractComponentEXT((GLuint)res, (GLuint)src, (GLuint)num);
+	*/
+
+	public static native int glGenSymbolsEXT(int dataType, int storageType, int range, int components); /*
+		return (GLuint)glGenSymbolsEXT((GLenum)dataType, (GLenum)storageType, (GLenum)range, (GLuint)components);
+	*/
+
+	public static native int glGenVertexShadersEXT(int range); /*
+		return (GLuint)glGenVertexShadersEXT((GLuint)range);
+	*/
+
+	public static native void glGetInvariantBooleanvEXT(int id, int value, Buffer data, int dataByteOffset); /*
+		glGetInvariantBooleanvEXT((GLuint)id, (GLenum)value, (GLboolean*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetInvariantFloatvEXT(int id, int value, Buffer data, int dataByteOffset); /*
+		glGetInvariantFloatvEXT((GLuint)id, (GLenum)value, (GLfloat*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetInvariantIntegervEXT(int id, int value, Buffer data, int dataByteOffset); /*
+		glGetInvariantIntegervEXT((GLuint)id, (GLenum)value, (GLint*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetLocalConstantBooleanvEXT(int id, int value, Buffer data, int dataByteOffset); /*
+		glGetLocalConstantBooleanvEXT((GLuint)id, (GLenum)value, (GLboolean*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetLocalConstantFloatvEXT(int id, int value, Buffer data, int dataByteOffset); /*
+		glGetLocalConstantFloatvEXT((GLuint)id, (GLenum)value, (GLfloat*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetLocalConstantIntegervEXT(int id, int value, Buffer data, int dataByteOffset); /*
+		glGetLocalConstantIntegervEXT((GLuint)id, (GLenum)value, (GLint*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetVariantBooleanvEXT(int id, int value, Buffer data, int dataByteOffset); /*
+		glGetVariantBooleanvEXT((GLuint)id, (GLenum)value, (GLboolean*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetVariantFloatvEXT(int id, int value, Buffer data, int dataByteOffset); /*
+		glGetVariantFloatvEXT((GLuint)id, (GLenum)value, (GLfloat*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetVariantIntegervEXT(int id, int value, Buffer data, int dataByteOffset); /*
+		glGetVariantIntegervEXT((GLuint)id, (GLenum)value, (GLint*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetVariantPointervEXT(int id, int value, Buffer data, int dataByteOffset); /*
+		glGetVariantPointervEXT((GLuint)id, (GLenum)value, (GLvoid**)(data + dataByteOffset));
+	*/
+
+	public static native void glInsertComponentEXT(int res, int src, int num); /*
+		glInsertComponentEXT((GLuint)res, (GLuint)src, (GLuint)num);
+	*/
+
+	public static native boolean glIsVariantEnabledEXT(int id, int cap); /*
+		return (GLboolean)glIsVariantEnabledEXT((GLuint)id, (GLenum)cap);
+	*/
+
+	public static native void glSetInvariantEXT(int id, int type, Buffer addr, int addrByteOffset); /*
+		glSetInvariantEXT((GLuint)id, (GLenum)type, (GLvoid*)(addr + addrByteOffset));
+	*/
+
+	public static native void glSetLocalConstantEXT(int id, int type, Buffer addr, int addrByteOffset); /*
+		glSetLocalConstantEXT((GLuint)id, (GLenum)type, (GLvoid*)(addr + addrByteOffset));
+	*/
+
+	public static native void glShaderOp1EXT(int op, int res, int arg1); /*
+		glShaderOp1EXT((GLenum)op, (GLuint)res, (GLuint)arg1);
+	*/
+
+	public static native void glShaderOp2EXT(int op, int res, int arg1, int arg2); /*
+		glShaderOp2EXT((GLenum)op, (GLuint)res, (GLuint)arg1, (GLuint)arg2);
+	*/
+
+	public static native void glShaderOp3EXT(int op, int res, int arg1, int arg2, int arg3); /*
+		glShaderOp3EXT((GLenum)op, (GLuint)res, (GLuint)arg1, (GLuint)arg2, (GLuint)arg3);
+	*/
+
+	public static native void glSwizzleEXT(int res, int in, int outX, int outY, int outZ, int outW); /*
+		glSwizzleEXT((GLuint)res, (GLuint)in, (GLenum)outX, (GLenum)outY, (GLenum)outZ, (GLenum)outW);
+	*/
+
+	public static native void glVariantPointerEXT(int id, int type, int stride, Buffer addr, int addrByteOffset); /*
+		glVariantPointerEXT((GLuint)id, (GLenum)type, (GLuint)stride, (GLvoid*)(addr + addrByteOffset));
+	*/
+
+	public static native void glVariantbvEXT(int id, Buffer addr, int addrByteOffset); /*
+		glVariantbvEXT((GLuint)id, (GLbyte*)(addr + addrByteOffset));
+	*/
+
+	public static native void glVariantdvEXT(int id, Buffer addr, int addrByteOffset); /*
+		glVariantdvEXT((GLuint)id, (GLdouble*)(addr + addrByteOffset));
+	*/
+
+	public static native void glVariantfvEXT(int id, Buffer addr, int addrByteOffset); /*
+		glVariantfvEXT((GLuint)id, (GLfloat*)(addr + addrByteOffset));
+	*/
+
+	public static native void glVariantivEXT(int id, Buffer addr, int addrByteOffset); /*
+		glVariantivEXT((GLuint)id, (GLint*)(addr + addrByteOffset));
+	*/
+
+	public static native void glVariantsvEXT(int id, Buffer addr, int addrByteOffset); /*
+		glVariantsvEXT((GLuint)id, (GLshort*)(addr + addrByteOffset));
+	*/
+
+	public static native void glVariantubvEXT(int id, Buffer addr, int addrByteOffset); /*
+		glVariantubvEXT((GLuint)id, (GLubyte*)(addr + addrByteOffset));
+	*/
+
+	public static native void glVariantuivEXT(int id, Buffer addr, int addrByteOffset); /*
+		glVariantuivEXT((GLuint)id, (GLuint*)(addr + addrByteOffset));
+	*/
+
+	public static native void glVariantusvEXT(int id, Buffer addr, int addrByteOffset); /*
+		glVariantusvEXT((GLuint)id, (GLushort*)(addr + addrByteOffset));
+	*/
+
+	public static native void glWriteMaskEXT(int res, int in, int outX, int outY, int outZ, int outW); /*
+		glWriteMaskEXT((GLuint)res, (GLuint)in, (GLenum)outX, (GLenum)outY, (GLenum)outZ, (GLenum)outW);
+	*/
+
+	public static native void glVertexWeightPointerEXT(int size, int type, int stride, Buffer pointer, int pointerByteOffset); /*
+		glVertexWeightPointerEXT((GLint)size, (GLenum)type, (GLsizei)stride, (void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glVertexWeightfEXT(float weight); /*
+		glVertexWeightfEXT((GLfloat)weight);
+	*/
+
+	public static native void glVertexWeightfvEXT(Buffer weight, int weightByteOffset); /*
+		glVertexWeightfvEXT((GLfloat*)(weight + weightByteOffset));
+	*/
+
+	public static native long glImportSyncEXT(int external_sync_type, int external_sync, int flags); /*
+		return (GLsync)glImportSyncEXT((GLenum)external_sync_type, (GLintptr)external_sync, (GLbitfield)flags);
+	*/
+
+	public static native void glFrameTerminatorGREMEDY(); /*
+		glFrameTerminatorGREMEDY();
+	*/
+
+	public static native void glStringMarkerGREMEDY(int len, Buffer string, int stringByteOffset); /*
+		glStringMarkerGREMEDY((GLsizei)len, (const void*)(string + stringByteOffset));
+	*/
+
+	public static native void glGetImageTransformParameterfvHP(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetImageTransformParameterfvHP((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetImageTransformParameterivHP(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetImageTransformParameterivHP((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glImageTransformParameterfHP(int target, int pname, float param); /*
+		glImageTransformParameterfHP((GLenum)target, (GLenum)pname, (const GLfloat)param);
+	*/
+
+	public static native void glImageTransformParameterfvHP(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glImageTransformParameterfvHP((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glImageTransformParameteriHP(int target, int pname, int param); /*
+		glImageTransformParameteriHP((GLenum)target, (GLenum)pname, (const GLint)param);
+	*/
+
+	public static native void glImageTransformParameterivHP(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glImageTransformParameterivHP((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glMultiModeDrawArraysIBM(Buffer mode, int modeByteOffset, Buffer first, int firstByteOffset, Buffer count, int countByteOffset, int primcount, int modestride); /*
+		glMultiModeDrawArraysIBM((const GLenum*)(mode + modeByteOffset), (const GLint*)(first + firstByteOffset), (const GLsizei*)(count + countByteOffset), (GLsizei)primcount, (GLint)modestride);
+	*/
+
+	public static native void glMultiModeDrawElementsIBM(Buffer mode, int modeByteOffset, Buffer count, int countByteOffset, int type, Buffer indices, int indicesByteOffset, int primcount, int modestride); /*
+		glMultiModeDrawElementsIBM((const GLenum*)(mode + modeByteOffset), (const GLsizei*)(count + countByteOffset), (GLenum)type, (const GLvoid   const**)(indices + indicesByteOffset), (GLsizei)primcount, (GLint)modestride);
+	*/
+
+	public static native void glColorPointerListIBM(int size, int type, int stride, Buffer pointer, int pointerByteOffset, int ptrstride); /*
+		glColorPointerListIBM((GLint)size, (GLenum)type, (GLint)stride, (const GLvoid**)(pointer + pointerByteOffset), (GLint)ptrstride);
+	*/
+
+	public static native void glEdgeFlagPointerListIBM(int stride, Buffer pointer, int pointerByteOffset, int ptrstride); /*
+		glEdgeFlagPointerListIBM((GLint)stride, (const GLboolean**)(pointer + pointerByteOffset), (GLint)ptrstride);
+	*/
+
+	public static native void glFogCoordPointerListIBM(int type, int stride, Buffer pointer, int pointerByteOffset, int ptrstride); /*
+		glFogCoordPointerListIBM((GLenum)type, (GLint)stride, (const GLvoid**)(pointer + pointerByteOffset), (GLint)ptrstride);
+	*/
+
+	public static native void glIndexPointerListIBM(int type, int stride, Buffer pointer, int pointerByteOffset, int ptrstride); /*
+		glIndexPointerListIBM((GLenum)type, (GLint)stride, (const GLvoid**)(pointer + pointerByteOffset), (GLint)ptrstride);
+	*/
+
+	public static native void glNormalPointerListIBM(int type, int stride, Buffer pointer, int pointerByteOffset, int ptrstride); /*
+		glNormalPointerListIBM((GLenum)type, (GLint)stride, (const GLvoid**)(pointer + pointerByteOffset), (GLint)ptrstride);
+	*/
+
+	public static native void glSecondaryColorPointerListIBM(int size, int type, int stride, Buffer pointer, int pointerByteOffset, int ptrstride); /*
+		glSecondaryColorPointerListIBM((GLint)size, (GLenum)type, (GLint)stride, (const GLvoid**)(pointer + pointerByteOffset), (GLint)ptrstride);
+	*/
+
+	public static native void glTexCoordPointerListIBM(int size, int type, int stride, Buffer pointer, int pointerByteOffset, int ptrstride); /*
+		glTexCoordPointerListIBM((GLint)size, (GLenum)type, (GLint)stride, (const GLvoid**)(pointer + pointerByteOffset), (GLint)ptrstride);
+	*/
+
+	public static native void glVertexPointerListIBM(int size, int type, int stride, Buffer pointer, int pointerByteOffset, int ptrstride); /*
+		glVertexPointerListIBM((GLint)size, (GLenum)type, (GLint)stride, (const GLvoid**)(pointer + pointerByteOffset), (GLint)ptrstride);
+	*/
+
+	public static native void glColorPointervINTEL(int size, int type, Buffer pointer, int pointerByteOffset); /*
+		glColorPointervINTEL((GLint)size, (GLenum)type, (const void**)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glNormalPointervINTEL(int type, Buffer pointer, int pointerByteOffset); /*
+		glNormalPointervINTEL((GLenum)type, (const void**)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glTexCoordPointervINTEL(int size, int type, Buffer pointer, int pointerByteOffset); /*
+		glTexCoordPointervINTEL((GLint)size, (GLenum)type, (const void**)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glVertexPointervINTEL(int size, int type, Buffer pointer, int pointerByteOffset); /*
+		glVertexPointervINTEL((GLint)size, (GLenum)type, (const void**)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glTexScissorFuncINTEL(int target, int lfunc, int hfunc); /*
+		glTexScissorFuncINTEL((GLenum)target, (GLenum)lfunc, (GLenum)hfunc);
+	*/
+
+	public static native void glTexScissorINTEL(int target, float tlow, float thigh); /*
+		glTexScissorINTEL((GLenum)target, (GLclampf)tlow, (GLclampf)thigh);
+	*/
+
+	public static native int glGetDebugMessageLog(int count, int bufsize, Buffer sources, int sourcesByteOffset, Buffer types, int typesByteOffset, Buffer ids, int idsByteOffset, Buffer severities, int severitiesByteOffset, Buffer lengths, int lengthsByteOffset, Buffer messageLog, int messageLogByteOffset); /*
+		return (GLuint)glGetDebugMessageLog((GLuint)count, (GLsizei)bufsize, (GLenum*)(sources + sourcesByteOffset), (GLenum*)(types + typesByteOffset), (GLuint*)(ids + idsByteOffset), (GLenum*)(severities + severitiesByteOffset), (GLsizei*)(lengths + lengthsByteOffset), (GLchar*)(messageLog + messageLogByteOffset));
+	*/
+
+	public static native void glGetObjectLabel(int identifier, int name, int bufSize, Buffer length, int lengthByteOffset, Buffer label, int labelByteOffset); /*
+		glGetObjectLabel((GLenum)identifier, (GLuint)name, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(label + labelByteOffset));
+	*/
+
+	public static native void glGetObjectPtrLabel(Buffer ptr, int ptrByteOffset, int bufSize, Buffer length, int lengthByteOffset, Buffer label, int labelByteOffset); /*
+		glGetObjectPtrLabel((void*)(ptr + ptrByteOffset), (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(label + labelByteOffset));
+	*/
+
+	public static native void glObjectLabel(int identifier, int name, int length, Buffer label, int labelByteOffset); /*
+		glObjectLabel((GLenum)identifier, (GLuint)name, (GLsizei)length, (const GLchar*)(label + labelByteOffset));
+	*/
+
+	public static native void glObjectPtrLabel(Buffer ptr, int ptrByteOffset, int length, Buffer label, int labelByteOffset); /*
+		glObjectPtrLabel((void*)(ptr + ptrByteOffset), (GLsizei)length, (const GLchar*)(label + labelByteOffset));
+	*/
+
+	public static native void glPushDebugGroup(int source, int id, int length, Buffer message, int messageByteOffset); /*
+		glPushDebugGroup((GLenum)source, (GLuint)id, (GLsizei)length, (const GLchar*)(message + messageByteOffset));
+	*/
+
+	public static native int glBufferRegionEnabled(); /*
+		return (GLuint)glBufferRegionEnabled();
+	*/
+
+	public static native void glDeleteBufferRegion(int region); /*
+		glDeleteBufferRegion((GLenum)region);
+	*/
+
+	public static native void glDrawBufferRegion(int region, int x, int y, int width, int height, int xDest, int yDest); /*
+		glDrawBufferRegion((GLuint)region, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height, (GLint)xDest, (GLint)yDest);
+	*/
+
+	public static native int glNewBufferRegion(int region); /*
+		return (GLuint)glNewBufferRegion((GLenum)region);
+	*/
+
+	public static native void glReadBufferRegion(int region, int x, int y, int width, int height); /*
+		glReadBufferRegion((GLuint)region, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glResizeBuffersMESA(); /*
+		glResizeBuffersMESA();
+	*/
+
+	public static native void glWindowPos2dMESA(double x, double y); /*
+		glWindowPos2dMESA((GLdouble)x, (GLdouble)y);
+	*/
+
+	public static native void glWindowPos2dvMESA(Buffer p, int pByteOffset); /*
+		glWindowPos2dvMESA((const GLdouble*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos2fMESA(float x, float y); /*
+		glWindowPos2fMESA((GLfloat)x, (GLfloat)y);
+	*/
+
+	public static native void glWindowPos2fvMESA(Buffer p, int pByteOffset); /*
+		glWindowPos2fvMESA((const GLfloat*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos2iMESA(int x, int y); /*
+		glWindowPos2iMESA((GLint)x, (GLint)y);
+	*/
+
+	public static native void glWindowPos2ivMESA(Buffer p, int pByteOffset); /*
+		glWindowPos2ivMESA((const GLint*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos2sMESA(short x, short y); /*
+		glWindowPos2sMESA((GLshort)x, (GLshort)y);
+	*/
+
+	public static native void glWindowPos2svMESA(Buffer p, int pByteOffset); /*
+		glWindowPos2svMESA((const GLshort*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos3dMESA(double x, double y, double z); /*
+		glWindowPos3dMESA((GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glWindowPos3dvMESA(Buffer p, int pByteOffset); /*
+		glWindowPos3dvMESA((const GLdouble*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos3fMESA(float x, float y, float z); /*
+		glWindowPos3fMESA((GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glWindowPos3fvMESA(Buffer p, int pByteOffset); /*
+		glWindowPos3fvMESA((const GLfloat*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos3iMESA(int x, int y, int z); /*
+		glWindowPos3iMESA((GLint)x, (GLint)y, (GLint)z);
+	*/
+
+	public static native void glWindowPos3ivMESA(Buffer p, int pByteOffset); /*
+		glWindowPos3ivMESA((const GLint*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos3sMESA(short x, short y, short z); /*
+		glWindowPos3sMESA((GLshort)x, (GLshort)y, (GLshort)z);
+	*/
+
+	public static native void glWindowPos3svMESA(Buffer p, int pByteOffset); /*
+		glWindowPos3svMESA((const GLshort*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos4dMESA(double x, double y, double z, double param3); /*
+		glWindowPos4dMESA((GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)param3);
+	*/
+
+	public static native void glWindowPos4dvMESA(Buffer p, int pByteOffset); /*
+		glWindowPos4dvMESA((const GLdouble*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos4fMESA(float x, float y, float z, float w); /*
+		glWindowPos4fMESA((GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
+	*/
+
+	public static native void glWindowPos4fvMESA(Buffer p, int pByteOffset); /*
+		glWindowPos4fvMESA((const GLfloat*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos4iMESA(int x, int y, int z, int w); /*
+		glWindowPos4iMESA((GLint)x, (GLint)y, (GLint)z, (GLint)w);
+	*/
+
+	public static native void glWindowPos4ivMESA(Buffer p, int pByteOffset); /*
+		glWindowPos4ivMESA((const GLint*)(p + pByteOffset));
+	*/
+
+	public static native void glWindowPos4sMESA(short x, short y, short z, short w); /*
+		glWindowPos4sMESA((GLshort)x, (GLshort)y, (GLshort)z, (GLshort)w);
+	*/
+
+	public static native void glWindowPos4svMESA(Buffer p, int pByteOffset); /*
+		glWindowPos4svMESA((const GLshort*)(p + pByteOffset));
+	*/
+
+	public static native long glGetImageHandleNV(int texture, int level, boolean layered, int layer, int format); /*
+		return (GLuint64)glGetImageHandleNV((GLuint)texture, (GLint)level, (GLboolean)layered, (GLint)layer, (GLenum)format);
+	*/
+
+	public static native long glGetTextureHandleNV(int texture); /*
+		return (GLuint64)glGetTextureHandleNV((GLuint)texture);
+	*/
+
+	public static native long glGetTextureSamplerHandleNV(int texture, int sampler); /*
+		return (GLuint64)glGetTextureSamplerHandleNV((GLuint)texture, (GLuint)sampler);
+	*/
+
+	public static native boolean glIsImageHandleResidentNV(long handle); /*
+		return (GLboolean)glIsImageHandleResidentNV((GLuint64)handle);
+	*/
+
+	public static native boolean glIsTextureHandleResidentNV(long handle); /*
+		return (GLboolean)glIsTextureHandleResidentNV((GLuint64)handle);
+	*/
+
+	public static native void glMakeImageHandleNonResidentNV(long handle); /*
+		glMakeImageHandleNonResidentNV((GLuint64)handle);
+	*/
+
+	public static native void glMakeImageHandleResidentNV(long handle, int access); /*
+		glMakeImageHandleResidentNV((GLuint64)handle, (GLenum)access);
+	*/
+
+	public static native void glMakeTextureHandleNonResidentNV(long handle); /*
+		glMakeTextureHandleNonResidentNV((GLuint64)handle);
+	*/
+
+	public static native void glMakeTextureHandleResidentNV(long handle); /*
+		glMakeTextureHandleResidentNV((GLuint64)handle);
+	*/
+
+	public static native void glProgramUniformHandleui64NV(int program, int location, long value); /*
+		glProgramUniformHandleui64NV((GLuint)program, (GLint)location, (GLuint64)value);
+	*/
+
+	public static native void glProgramUniformHandleui64vNV(int program, int location, int count, Buffer values, int valuesByteOffset); /*
+		glProgramUniformHandleui64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint64*)(values + valuesByteOffset));
+	*/
+
+	public static native void glUniformHandleui64NV(int location, long value); /*
+		glUniformHandleui64NV((GLint)location, (GLuint64)value);
+	*/
+
+	public static native void glUniformHandleui64vNV(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniformHandleui64vNV((GLint)location, (GLsizei)count, (const GLuint64*)(value + valueByteOffset));
+	*/
+
+	public static native void glBeginConditionalRenderNV(int id, int mode); /*
+		glBeginConditionalRenderNV((GLuint)id, (GLenum)mode);
+	*/
+
+	public static native void glEndConditionalRenderNV(); /*
+		glEndConditionalRenderNV();
+	*/
+
+	public static native void glCopyImageSubDataNV(int srcName, int srcTarget, int srcLevel, int srcX, int srcY, int srcZ, int dstName, int dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int width, int height, int depth); /*
+		glCopyImageSubDataNV((GLuint)srcName, (GLenum)srcTarget, (GLint)srcLevel, (GLint)srcX, (GLint)srcY, (GLint)srcZ, (GLuint)dstName, (GLenum)dstTarget, (GLint)dstLevel, (GLint)dstX, (GLint)dstY, (GLint)dstZ, (GLsizei)width, (GLsizei)height, (GLsizei)depth);
+	*/
+
+	public static native void glClearDepthdNV(double depth); /*
+		glClearDepthdNV((GLdouble)depth);
+	*/
+
+	public static native void glDepthBoundsdNV(double zmin, double zmax); /*
+		glDepthBoundsdNV((GLdouble)zmin, (GLdouble)zmax);
+	*/
+
+	public static native void glDepthRangedNV(double zNear, double zFar); /*
+		glDepthRangedNV((GLdouble)zNear, (GLdouble)zFar);
+	*/
+
+	public static native void glEvalMapsNV(int target, int mode); /*
+		glEvalMapsNV((GLenum)target, (GLenum)mode);
+	*/
+
+	public static native void glGetMapAttribParameterfvNV(int target, int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMapAttribParameterfvNV((GLenum)target, (GLuint)index, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMapAttribParameterivNV(int target, int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMapAttribParameterivNV((GLenum)target, (GLuint)index, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMapControlPointsNV(int target, int index, int type, int ustride, int vstride, boolean packed, Buffer points, int pointsByteOffset); /*
+		glGetMapControlPointsNV((GLenum)target, (GLuint)index, (GLenum)type, (GLsizei)ustride, (GLsizei)vstride, (GLboolean)packed, (void*)(points + pointsByteOffset));
+	*/
+
+	public static native void glGetMapParameterfvNV(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMapParameterfvNV((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMapParameterivNV(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetMapParameterivNV((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glMapControlPointsNV(int target, int index, int type, int ustride, int vstride, int uorder, int vorder, boolean packed, Buffer points, int pointsByteOffset); /*
+		glMapControlPointsNV((GLenum)target, (GLuint)index, (GLenum)type, (GLsizei)ustride, (GLsizei)vstride, (GLint)uorder, (GLint)vorder, (GLboolean)packed, (const void*)(points + pointsByteOffset));
+	*/
+
+	public static native void glMapParameterfvNV(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glMapParameterfvNV((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glMapParameterivNV(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glMapParameterivNV((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetMultisamplefvNV(int pname, int index, Buffer val, int valByteOffset); /*
+		glGetMultisamplefvNV((GLenum)pname, (GLuint)index, (GLfloat*)(val + valByteOffset));
+	*/
+
+	public static native void glSampleMaskIndexedNV(int index, int mask); /*
+		glSampleMaskIndexedNV((GLuint)index, (GLbitfield)mask);
+	*/
+
+	public static native void glTexRenderbufferNV(int target, int renderbuffer); /*
+		glTexRenderbufferNV((GLenum)target, (GLuint)renderbuffer);
+	*/
+
+	public static native void glDeleteFencesNV(int n, Buffer fences, int fencesByteOffset); /*
+		glDeleteFencesNV((GLsizei)n, (const GLuint*)(fences + fencesByteOffset));
+	*/
+
+	public static native void glFinishFenceNV(int fence); /*
+		glFinishFenceNV((GLuint)fence);
+	*/
+
+	public static native void glGenFencesNV(int n, Buffer fences, int fencesByteOffset); /*
+		glGenFencesNV((GLsizei)n, (GLuint*)(fences + fencesByteOffset));
+	*/
+
+	public static native void glGetFenceivNV(int fence, int pname, Buffer params, int paramsByteOffset); /*
+		glGetFenceivNV((GLuint)fence, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native boolean glIsFenceNV(int fence); /*
+		return (GLboolean)glIsFenceNV((GLuint)fence);
+	*/
+
+	public static native void glSetFenceNV(int fence, int condition); /*
+		glSetFenceNV((GLuint)fence, (GLenum)condition);
+	*/
+
+	public static native boolean glTestFenceNV(int fence); /*
+		return (GLboolean)glTestFenceNV((GLuint)fence);
+	*/
+
+	public static native void glGetProgramNamedParameterdvNV(int id, int len, Buffer name, int nameByteOffset, Buffer params, int paramsByteOffset); /*
+		glGetProgramNamedParameterdvNV((GLuint)id, (GLsizei)len, (const GLubyte*)(name + nameByteOffset), (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetProgramNamedParameterfvNV(int id, int len, Buffer name, int nameByteOffset, Buffer params, int paramsByteOffset); /*
+		glGetProgramNamedParameterfvNV((GLuint)id, (GLsizei)len, (const GLubyte*)(name + nameByteOffset), (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramNamedParameter4dNV(int id, int len, Buffer name, int nameByteOffset, double x, double y, double z, double w); /*
+		glProgramNamedParameter4dNV((GLuint)id, (GLsizei)len, (const GLubyte*)(name + nameByteOffset), (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
+	*/
+
+	public static native void glProgramNamedParameter4dvNV(int id, int len, Buffer name, int nameByteOffset, Buffer v, int vByteOffset); /*
+		glProgramNamedParameter4dvNV((GLuint)id, (GLsizei)len, (const GLubyte*)(name + nameByteOffset), (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glProgramNamedParameter4fNV(int id, int len, Buffer name, int nameByteOffset, float x, float y, float z, float w); /*
+		glProgramNamedParameter4fNV((GLuint)id, (GLsizei)len, (const GLubyte*)(name + nameByteOffset), (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
+	*/
+
+	public static native void glProgramNamedParameter4fvNV(int id, int len, Buffer name, int nameByteOffset, Buffer v, int vByteOffset); /*
+		glProgramNamedParameter4fvNV((GLuint)id, (GLsizei)len, (const GLubyte*)(name + nameByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glRenderbufferStorageMultisampleCoverageNV(int target, int coverageSamples, int colorSamples, int internalformat, int width, int height); /*
+		glRenderbufferStorageMultisampleCoverageNV((GLenum)target, (GLsizei)coverageSamples, (GLsizei)colorSamples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
+	*/
+
+	public static native void glProgramVertexLimitNV(int target, int limit); /*
+		glProgramVertexLimitNV((GLenum)target, (GLint)limit);
+	*/
+
+	public static native void glProgramEnvParameterI4iNV(int target, int index, int x, int y, int z, int w); /*
+		glProgramEnvParameterI4iNV((GLenum)target, (GLuint)index, (GLint)x, (GLint)y, (GLint)z, (GLint)w);
+	*/
+
+	public static native void glProgramEnvParameterI4ivNV(int target, int index, Buffer params, int paramsByteOffset); /*
+		glProgramEnvParameterI4ivNV((GLenum)target, (GLuint)index, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramEnvParameterI4uiNV(int target, int index, int x, int y, int z, int w); /*
+		glProgramEnvParameterI4uiNV((GLenum)target, (GLuint)index, (GLuint)x, (GLuint)y, (GLuint)z, (GLuint)w);
+	*/
+
+	public static native void glProgramEnvParameterI4uivNV(int target, int index, Buffer params, int paramsByteOffset); /*
+		glProgramEnvParameterI4uivNV((GLenum)target, (GLuint)index, (const GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramEnvParametersI4ivNV(int target, int index, int count, Buffer params, int paramsByteOffset); /*
+		glProgramEnvParametersI4ivNV((GLenum)target, (GLuint)index, (GLsizei)count, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramEnvParametersI4uivNV(int target, int index, int count, Buffer params, int paramsByteOffset); /*
+		glProgramEnvParametersI4uivNV((GLenum)target, (GLuint)index, (GLsizei)count, (const GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramLocalParameterI4iNV(int target, int index, int x, int y, int z, int w); /*
+		glProgramLocalParameterI4iNV((GLenum)target, (GLuint)index, (GLint)x, (GLint)y, (GLint)z, (GLint)w);
+	*/
+
+	public static native void glProgramLocalParameterI4ivNV(int target, int index, Buffer params, int paramsByteOffset); /*
+		glProgramLocalParameterI4ivNV((GLenum)target, (GLuint)index, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramLocalParameterI4uiNV(int target, int index, int x, int y, int z, int w); /*
+		glProgramLocalParameterI4uiNV((GLenum)target, (GLuint)index, (GLuint)x, (GLuint)y, (GLuint)z, (GLuint)w);
+	*/
+
+	public static native void glProgramLocalParameterI4uivNV(int target, int index, Buffer params, int paramsByteOffset); /*
+		glProgramLocalParameterI4uivNV((GLenum)target, (GLuint)index, (const GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramLocalParametersI4ivNV(int target, int index, int count, Buffer params, int paramsByteOffset); /*
+		glProgramLocalParametersI4ivNV((GLenum)target, (GLuint)index, (GLsizei)count, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramLocalParametersI4uivNV(int target, int index, int count, Buffer params, int paramsByteOffset); /*
+		glProgramLocalParametersI4uivNV((GLenum)target, (GLuint)index, (GLsizei)count, (const GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetUniformi64vNV(int program, int location, Buffer params, int paramsByteOffset); /*
+		glGetUniformi64vNV((GLuint)program, (GLint)location, (GLint64EXT*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetUniformui64vNV(int program, int location, Buffer params, int paramsByteOffset); /*
+		glGetUniformui64vNV((GLuint)program, (GLint)location, (GLuint64EXT*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramUniform1i64NV(int program, int location, long x); /*
+		glProgramUniform1i64NV((GLuint)program, (GLint)location, (GLint64EXT)x);
+	*/
+
+	public static native void glProgramUniform1i64vNV(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform1i64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform1ui64NV(int program, int location, long x); /*
+		glProgramUniform1ui64NV((GLuint)program, (GLint)location, (GLuint64EXT)x);
+	*/
+
+	public static native void glProgramUniform1ui64vNV(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform1ui64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform2i64NV(int program, int location, long x, long y); /*
+		glProgramUniform2i64NV((GLuint)program, (GLint)location, (GLint64EXT)x, (GLint64EXT)y);
+	*/
+
+	public static native void glProgramUniform2i64vNV(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform2i64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform2ui64NV(int program, int location, long x, long y); /*
+		glProgramUniform2ui64NV((GLuint)program, (GLint)location, (GLuint64EXT)x, (GLuint64EXT)y);
+	*/
+
+	public static native void glProgramUniform2ui64vNV(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform2ui64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform3i64NV(int program, int location, long x, long y, long z); /*
+		glProgramUniform3i64NV((GLuint)program, (GLint)location, (GLint64EXT)x, (GLint64EXT)y, (GLint64EXT)z);
+	*/
+
+	public static native void glProgramUniform3i64vNV(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform3i64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform3ui64NV(int program, int location, long x, long y, long z); /*
+		glProgramUniform3ui64NV((GLuint)program, (GLint)location, (GLuint64EXT)x, (GLuint64EXT)y, (GLuint64EXT)z);
+	*/
+
+	public static native void glProgramUniform3ui64vNV(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform3ui64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform4i64NV(int program, int location, long x, long y, long z, long w); /*
+		glProgramUniform4i64NV((GLuint)program, (GLint)location, (GLint64EXT)x, (GLint64EXT)y, (GLint64EXT)z, (GLint64EXT)w);
+	*/
+
+	public static native void glProgramUniform4i64vNV(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform4i64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glProgramUniform4ui64NV(int program, int location, long x, long y, long z, long w); /*
+		glProgramUniform4ui64NV((GLuint)program, (GLint)location, (GLuint64EXT)x, (GLuint64EXT)y, (GLuint64EXT)z, (GLuint64EXT)w);
+	*/
+
+	public static native void glProgramUniform4ui64vNV(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniform4ui64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform1i64NV(int location, long x); /*
+		glUniform1i64NV((GLint)location, (GLint64EXT)x);
+	*/
+
+	public static native void glUniform1i64vNV(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform1i64vNV((GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform1ui64NV(int location, long x); /*
+		glUniform1ui64NV((GLint)location, (GLuint64EXT)x);
+	*/
+
+	public static native void glUniform1ui64vNV(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform1ui64vNV((GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform2i64NV(int location, long x, long y); /*
+		glUniform2i64NV((GLint)location, (GLint64EXT)x, (GLint64EXT)y);
+	*/
+
+	public static native void glUniform2i64vNV(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform2i64vNV((GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform2ui64NV(int location, long x, long y); /*
+		glUniform2ui64NV((GLint)location, (GLuint64EXT)x, (GLuint64EXT)y);
+	*/
+
+	public static native void glUniform2ui64vNV(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform2ui64vNV((GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform3i64NV(int location, long x, long y, long z); /*
+		glUniform3i64NV((GLint)location, (GLint64EXT)x, (GLint64EXT)y, (GLint64EXT)z);
+	*/
+
+	public static native void glUniform3i64vNV(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform3i64vNV((GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform3ui64NV(int location, long x, long y, long z); /*
+		glUniform3ui64NV((GLint)location, (GLuint64EXT)x, (GLuint64EXT)y, (GLuint64EXT)z);
+	*/
+
+	public static native void glUniform3ui64vNV(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform3ui64vNV((GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform4i64NV(int location, long x, long y, long z, long w); /*
+		glUniform4i64NV((GLint)location, (GLint64EXT)x, (GLint64EXT)y, (GLint64EXT)z, (GLint64EXT)w);
+	*/
+
+	public static native void glUniform4i64vNV(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform4i64vNV((GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniform4ui64NV(int location, long x, long y, long z, long w); /*
+		glUniform4ui64NV((GLint)location, (GLuint64EXT)x, (GLuint64EXT)y, (GLuint64EXT)z, (GLuint64EXT)w);
+	*/
+
+	public static native void glUniform4ui64vNV(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniform4ui64vNV((GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glColor3hNV(short red, short green, short blue); /*
+		glColor3hNV((GLhalf)red, (GLhalf)green, (GLhalf)blue);
+	*/
+
+	public static native void glColor3hvNV(Buffer v, int vByteOffset); /*
+		glColor3hvNV((const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glColor4hNV(short red, short green, short blue, short alpha); /*
+		glColor4hNV((GLhalf)red, (GLhalf)green, (GLhalf)blue, (GLhalf)alpha);
+	*/
+
+	public static native void glColor4hvNV(Buffer v, int vByteOffset); /*
+		glColor4hvNV((const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glFogCoordhNV(short fog); /*
+		glFogCoordhNV((GLhalf)fog);
+	*/
+
+	public static native void glFogCoordhvNV(Buffer fog, int fogByteOffset); /*
+		glFogCoordhvNV((const GLhalf*)(fog + fogByteOffset));
+	*/
+
+	public static native void glMultiTexCoord1hNV(int target, short s); /*
+		glMultiTexCoord1hNV((GLenum)target, (GLhalf)s);
+	*/
+
+	public static native void glMultiTexCoord1hvNV(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord1hvNV((GLenum)target, (const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord2hNV(int target, short s, short t); /*
+		glMultiTexCoord2hNV((GLenum)target, (GLhalf)s, (GLhalf)t);
+	*/
+
+	public static native void glMultiTexCoord2hvNV(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord2hvNV((GLenum)target, (const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord3hNV(int target, short s, short t, short r); /*
+		glMultiTexCoord3hNV((GLenum)target, (GLhalf)s, (GLhalf)t, (GLhalf)r);
+	*/
+
+	public static native void glMultiTexCoord3hvNV(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord3hvNV((GLenum)target, (const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glMultiTexCoord4hNV(int target, short s, short t, short r, short q); /*
+		glMultiTexCoord4hNV((GLenum)target, (GLhalf)s, (GLhalf)t, (GLhalf)r, (GLhalf)q);
+	*/
+
+	public static native void glMultiTexCoord4hvNV(int target, Buffer v, int vByteOffset); /*
+		glMultiTexCoord4hvNV((GLenum)target, (const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glNormal3hNV(short nx, short ny, short nz); /*
+		glNormal3hNV((GLhalf)nx, (GLhalf)ny, (GLhalf)nz);
+	*/
+
+	public static native void glNormal3hvNV(Buffer v, int vByteOffset); /*
+		glNormal3hvNV((const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glSecondaryColor3hNV(short red, short green, short blue); /*
+		glSecondaryColor3hNV((GLhalf)red, (GLhalf)green, (GLhalf)blue);
+	*/
+
+	public static native void glSecondaryColor3hvNV(Buffer v, int vByteOffset); /*
+		glSecondaryColor3hvNV((const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glTexCoord1hNV(short s); /*
+		glTexCoord1hNV((GLhalf)s);
+	*/
+
+	public static native void glTexCoord1hvNV(Buffer v, int vByteOffset); /*
+		glTexCoord1hvNV((const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glTexCoord2hNV(short s, short t); /*
+		glTexCoord2hNV((GLhalf)s, (GLhalf)t);
+	*/
+
+	public static native void glTexCoord2hvNV(Buffer v, int vByteOffset); /*
+		glTexCoord2hvNV((const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glTexCoord3hNV(short s, short t, short r); /*
+		glTexCoord3hNV((GLhalf)s, (GLhalf)t, (GLhalf)r);
+	*/
+
+	public static native void glTexCoord3hvNV(Buffer v, int vByteOffset); /*
+		glTexCoord3hvNV((const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glTexCoord4hNV(short s, short t, short r, short q); /*
+		glTexCoord4hNV((GLhalf)s, (GLhalf)t, (GLhalf)r, (GLhalf)q);
+	*/
+
+	public static native void glTexCoord4hvNV(Buffer v, int vByteOffset); /*
+		glTexCoord4hvNV((const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glVertex2hNV(short x, short y); /*
+		glVertex2hNV((GLhalf)x, (GLhalf)y);
+	*/
+
+	public static native void glVertex2hvNV(Buffer v, int vByteOffset); /*
+		glVertex2hvNV((const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glVertex3hNV(short x, short y, short z); /*
+		glVertex3hNV((GLhalf)x, (GLhalf)y, (GLhalf)z);
+	*/
+
+	public static native void glVertex3hvNV(Buffer v, int vByteOffset); /*
+		glVertex3hvNV((const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glVertex4hNV(short x, short y, short z, short w); /*
+		glVertex4hNV((GLhalf)x, (GLhalf)y, (GLhalf)z, (GLhalf)w);
+	*/
+
+	public static native void glVertex4hvNV(Buffer v, int vByteOffset); /*
+		glVertex4hvNV((const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib1hNV(int index, short x); /*
+		glVertexAttrib1hNV((GLuint)index, (GLhalf)x);
+	*/
+
+	public static native void glVertexAttrib1hvNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib1hvNV((GLuint)index, (const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib2hNV(int index, short x, short y); /*
+		glVertexAttrib2hNV((GLuint)index, (GLhalf)x, (GLhalf)y);
+	*/
+
+	public static native void glVertexAttrib2hvNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib2hvNV((GLuint)index, (const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib3hNV(int index, short x, short y, short z); /*
+		glVertexAttrib3hNV((GLuint)index, (GLhalf)x, (GLhalf)y, (GLhalf)z);
+	*/
+
+	public static native void glVertexAttrib3hvNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib3hvNV((GLuint)index, (const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4hNV(int index, short x, short y, short z, short w); /*
+		glVertexAttrib4hNV((GLuint)index, (GLhalf)x, (GLhalf)y, (GLhalf)z, (GLhalf)w);
+	*/
+
+	public static native void glVertexAttrib4hvNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4hvNV((GLuint)index, (const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs1hvNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs1hvNV((GLuint)index, (GLsizei)n, (const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs2hvNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs2hvNV((GLuint)index, (GLsizei)n, (const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs3hvNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs3hvNV((GLuint)index, (GLsizei)n, (const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs4hvNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs4hvNV((GLuint)index, (GLsizei)n, (const GLhalf*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexWeighthNV(short weight); /*
+		glVertexWeighthNV((GLhalf)weight);
+	*/
+
+	public static native void glVertexWeighthvNV(Buffer weight, int weightByteOffset); /*
+		glVertexWeighthvNV((const GLhalf*)(weight + weightByteOffset));
+	*/
+
+	public static native void glBeginOcclusionQueryNV(int id); /*
+		glBeginOcclusionQueryNV((GLuint)id);
+	*/
+
+	public static native void glDeleteOcclusionQueriesNV(int n, Buffer ids, int idsByteOffset); /*
+		glDeleteOcclusionQueriesNV((GLsizei)n, (const GLuint*)(ids + idsByteOffset));
+	*/
+
+	public static native void glEndOcclusionQueryNV(); /*
+		glEndOcclusionQueryNV();
+	*/
+
+	public static native void glGenOcclusionQueriesNV(int n, Buffer ids, int idsByteOffset); /*
+		glGenOcclusionQueriesNV((GLsizei)n, (GLuint*)(ids + idsByteOffset));
+	*/
+
+	public static native void glGetOcclusionQueryivNV(int id, int pname, Buffer params, int paramsByteOffset); /*
+		glGetOcclusionQueryivNV((GLuint)id, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetOcclusionQueryuivNV(int id, int pname, Buffer params, int paramsByteOffset); /*
+		glGetOcclusionQueryuivNV((GLuint)id, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native boolean glIsOcclusionQueryNV(int id); /*
+		return (GLboolean)glIsOcclusionQueryNV((GLuint)id);
+	*/
+
+	public static native void glProgramBufferParametersIivNV(int target, int buffer, int index, int count, Buffer params, int paramsByteOffset); /*
+		glProgramBufferParametersIivNV((GLenum)target, (GLuint)buffer, (GLuint)index, (GLsizei)count, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramBufferParametersIuivNV(int target, int buffer, int index, int count, Buffer params, int paramsByteOffset); /*
+		glProgramBufferParametersIuivNV((GLenum)target, (GLuint)buffer, (GLuint)index, (GLsizei)count, (const GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramBufferParametersfvNV(int target, int buffer, int index, int count, Buffer params, int paramsByteOffset); /*
+		glProgramBufferParametersfvNV((GLenum)target, (GLuint)buffer, (GLuint)index, (GLsizei)count, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glCopyPathNV(int resultPath, int srcPath); /*
+		glCopyPathNV((GLuint)resultPath, (GLuint)srcPath);
+	*/
+
+	public static native void glCoverFillPathInstancedNV(int numPaths, int pathNameType, Buffer paths, int pathsByteOffset, int pathBase, int coverMode, int transformType, Buffer transformValues, int transformValuesByteOffset); /*
+		glCoverFillPathInstancedNV((GLsizei)numPaths, (GLenum)pathNameType, (const void*)(paths + pathsByteOffset), (GLuint)pathBase, (GLenum)coverMode, (GLenum)transformType, (const GLfloat*)(transformValues + transformValuesByteOffset));
+	*/
+
+	public static native void glCoverFillPathNV(int path, int coverMode); /*
+		glCoverFillPathNV((GLuint)path, (GLenum)coverMode);
+	*/
+
+	public static native void glCoverStrokePathInstancedNV(int numPaths, int pathNameType, Buffer paths, int pathsByteOffset, int pathBase, int coverMode, int transformType, Buffer transformValues, int transformValuesByteOffset); /*
+		glCoverStrokePathInstancedNV((GLsizei)numPaths, (GLenum)pathNameType, (const void*)(paths + pathsByteOffset), (GLuint)pathBase, (GLenum)coverMode, (GLenum)transformType, (const GLfloat*)(transformValues + transformValuesByteOffset));
+	*/
+
+	public static native void glCoverStrokePathNV(int name, int coverMode); /*
+		glCoverStrokePathNV((GLuint)name, (GLenum)coverMode);
+	*/
+
+	public static native void glDeletePathsNV(int path, int range); /*
+		glDeletePathsNV((GLuint)path, (GLsizei)range);
+	*/
+
+	public static native int glGenPathsNV(int range); /*
+		return (GLuint)glGenPathsNV((GLsizei)range);
+	*/
+
+	public static native void glGetPathColorGenfvNV(int color, int pname, Buffer value, int valueByteOffset); /*
+		glGetPathColorGenfvNV((GLenum)color, (GLenum)pname, (GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glGetPathColorGenivNV(int color, int pname, Buffer value, int valueByteOffset); /*
+		glGetPathColorGenivNV((GLenum)color, (GLenum)pname, (GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glGetPathCommandsNV(int name, Buffer commands, int commandsByteOffset); /*
+		glGetPathCommandsNV((GLuint)name, (GLubyte*)(commands + commandsByteOffset));
+	*/
+
+	public static native void glGetPathCoordsNV(int name, Buffer coords, int coordsByteOffset); /*
+		glGetPathCoordsNV((GLuint)name, (GLfloat*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glGetPathDashArrayNV(int name, Buffer dashArray, int dashArrayByteOffset); /*
+		glGetPathDashArrayNV((GLuint)name, (GLfloat*)(dashArray + dashArrayByteOffset));
+	*/
+
+	public static native float glGetPathLengthNV(int path, int startSegment, int numSegments); /*
+		return (GLfloat)glGetPathLengthNV((GLuint)path, (GLsizei)startSegment, (GLsizei)numSegments);
+	*/
+
+	public static native void glGetPathMetricRangeNV(int metricQueryMask, int fistPathName, int numPaths, int stride, Buffer metrics, int metricsByteOffset); /*
+		glGetPathMetricRangeNV((GLbitfield)metricQueryMask, (GLuint)fistPathName, (GLsizei)numPaths, (GLsizei)stride, (GLfloat*)(metrics + metricsByteOffset));
+	*/
+
+	public static native void glGetPathMetricsNV(int metricQueryMask, int numPaths, int pathNameType, Buffer paths, int pathsByteOffset, int pathBase, int stride, Buffer metrics, int metricsByteOffset); /*
+		glGetPathMetricsNV((GLbitfield)metricQueryMask, (GLsizei)numPaths, (GLenum)pathNameType, (const void*)(paths + pathsByteOffset), (GLuint)pathBase, (GLsizei)stride, (GLfloat*)(metrics + metricsByteOffset));
+	*/
+
+	public static native void glGetPathParameterfvNV(int name, int param, Buffer value, int valueByteOffset); /*
+		glGetPathParameterfvNV((GLuint)name, (GLenum)param, (GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glGetPathParameterivNV(int name, int param, Buffer value, int valueByteOffset); /*
+		glGetPathParameterivNV((GLuint)name, (GLenum)param, (GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glGetPathSpacingNV(int pathListMode, int numPaths, int pathNameType, Buffer paths, int pathsByteOffset, int pathBase, float advanceScale, float kerningScale, int transformType, Buffer returnedSpacing, int returnedSpacingByteOffset); /*
+		glGetPathSpacingNV((GLenum)pathListMode, (GLsizei)numPaths, (GLenum)pathNameType, (const void*)(paths + pathsByteOffset), (GLuint)pathBase, (GLfloat)advanceScale, (GLfloat)kerningScale, (GLenum)transformType, (GLfloat*)(returnedSpacing + returnedSpacingByteOffset));
+	*/
+
+	public static native void glGetPathTexGenfvNV(int texCoordSet, int pname, Buffer value, int valueByteOffset); /*
+		glGetPathTexGenfvNV((GLenum)texCoordSet, (GLenum)pname, (GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glGetPathTexGenivNV(int texCoordSet, int pname, Buffer value, int valueByteOffset); /*
+		glGetPathTexGenivNV((GLenum)texCoordSet, (GLenum)pname, (GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glInterpolatePathsNV(int resultPath, int pathA, int pathB, float weight); /*
+		glInterpolatePathsNV((GLuint)resultPath, (GLuint)pathA, (GLuint)pathB, (GLfloat)weight);
+	*/
+
+	public static native boolean glIsPathNV(int path); /*
+		return (GLboolean)glIsPathNV((GLuint)path);
+	*/
+
+	public static native boolean glIsPointInFillPathNV(int path, int mask, float x, float y); /*
+		return (GLboolean)glIsPointInFillPathNV((GLuint)path, (GLuint)mask, (GLfloat)x, (GLfloat)y);
+	*/
+
+	public static native boolean glIsPointInStrokePathNV(int path, float x, float y); /*
+		return (GLboolean)glIsPointInStrokePathNV((GLuint)path, (GLfloat)x, (GLfloat)y);
+	*/
+
+	public static native void glPathColorGenNV(int color, int genMode, int colorFormat, Buffer coeffs, int coeffsByteOffset); /*
+		glPathColorGenNV((GLenum)color, (GLenum)genMode, (GLenum)colorFormat, (const GLfloat*)(coeffs + coeffsByteOffset));
+	*/
+
+	public static native void glPathCommandsNV(int path, int numCommands, Buffer commands, int commandsByteOffset, int numCoords, int coordType, Buffer coords, int coordsByteOffset); /*
+		glPathCommandsNV((GLuint)path, (GLsizei)numCommands, (const GLubyte*)(commands + commandsByteOffset), (GLsizei)numCoords, (GLenum)coordType, (const GLvoid*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glPathCoordsNV(int path, int numCoords, int coordType, Buffer coords, int coordsByteOffset); /*
+		glPathCoordsNV((GLuint)path, (GLsizei)numCoords, (GLenum)coordType, (const void*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glPathCoverDepthFuncNV(int zfunc); /*
+		glPathCoverDepthFuncNV((GLenum)zfunc);
+	*/
+
+	public static native void glPathDashArrayNV(int path, int dashCount, Buffer dashArray, int dashArrayByteOffset); /*
+		glPathDashArrayNV((GLuint)path, (GLsizei)dashCount, (const GLfloat*)(dashArray + dashArrayByteOffset));
+	*/
+
+	public static native void glPathFogGenNV(int genMode); /*
+		glPathFogGenNV((GLenum)genMode);
+	*/
+
+	public static native void glPathGlyphRangeNV(int firstPathName, int fontTarget, Buffer fontName, int fontNameByteOffset, int fontStyle, int firstGlyph, int numGlyphs, int handleMissingGlyphs, int pathParameterTemplate, float emScale); /*
+		glPathGlyphRangeNV((GLuint)firstPathName, (GLenum)fontTarget, (const void*)(fontName + fontNameByteOffset), (GLbitfield)fontStyle, (GLuint)firstGlyph, (GLsizei)numGlyphs, (GLenum)handleMissingGlyphs, (GLuint)pathParameterTemplate, (GLfloat)emScale);
+	*/
+
+	public static native void glPathGlyphsNV(int firstPathName, int fontTarget, Buffer fontName, int fontNameByteOffset, int fontStyle, int numGlyphs, int type, Buffer charcodes, int charcodesByteOffset, int handleMissingGlyphs, int pathParameterTemplate, float emScale); /*
+		glPathGlyphsNV((GLuint)firstPathName, (GLenum)fontTarget, (const void*)(fontName + fontNameByteOffset), (GLbitfield)fontStyle, (GLsizei)numGlyphs, (GLenum)type, (const GLvoid*)(charcodes + charcodesByteOffset), (GLenum)handleMissingGlyphs, (GLuint)pathParameterTemplate, (GLfloat)emScale);
+	*/
+
+	public static native void glPathParameterfNV(int path, int pname, float value); /*
+		glPathParameterfNV((GLuint)path, (GLenum)pname, (GLfloat)value);
+	*/
+
+	public static native void glPathParameterfvNV(int path, int pname, Buffer value, int valueByteOffset); /*
+		glPathParameterfvNV((GLuint)path, (GLenum)pname, (const GLfloat*)(value + valueByteOffset));
+	*/
+
+	public static native void glPathParameteriNV(int path, int pname, int value); /*
+		glPathParameteriNV((GLuint)path, (GLenum)pname, (GLint)value);
+	*/
+
+	public static native void glPathParameterivNV(int path, int pname, Buffer value, int valueByteOffset); /*
+		glPathParameterivNV((GLuint)path, (GLenum)pname, (const GLint*)(value + valueByteOffset));
+	*/
+
+	public static native void glPathStencilDepthOffsetNV(float factor, float units); /*
+		glPathStencilDepthOffsetNV((GLfloat)factor, (GLfloat)units);
+	*/
+
+	public static native void glPathStencilFuncNV(int func, int ref, int mask); /*
+		glPathStencilFuncNV((GLenum)func, (GLint)ref, (GLuint)mask);
+	*/
+
+	public static native void glPathStringNV(int path, int format, int length, Buffer pathString, int pathStringByteOffset); /*
+		glPathStringNV((GLuint)path, (GLenum)format, (GLsizei)length, (const void*)(pathString + pathStringByteOffset));
+	*/
+
+	public static native void glPathSubCommandsNV(int path, int commandStart, int commandsToDelete, int numCommands, Buffer commands, int commandsByteOffset, int numCoords, int coordType, Buffer coords, int coordsByteOffset); /*
+		glPathSubCommandsNV((GLuint)path, (GLsizei)commandStart, (GLsizei)commandsToDelete, (GLsizei)numCommands, (const GLubyte*)(commands + commandsByteOffset), (GLsizei)numCoords, (GLenum)coordType, (const GLvoid*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glPathSubCoordsNV(int path, int coordStart, int numCoords, int coordType, Buffer coords, int coordsByteOffset); /*
+		glPathSubCoordsNV((GLuint)path, (GLsizei)coordStart, (GLsizei)numCoords, (GLenum)coordType, (const void*)(coords + coordsByteOffset));
+	*/
+
+	public static native void glPathTexGenNV(int texCoordSet, int genMode, int components, Buffer coeffs, int coeffsByteOffset); /*
+		glPathTexGenNV((GLenum)texCoordSet, (GLenum)genMode, (GLint)components, (const GLfloat*)(coeffs + coeffsByteOffset));
+	*/
+
+	public static native boolean glPointAlongPathNV(int path, int startSegment, int numSegments, float distance, Buffer x, int xByteOffset, Buffer y, int yByteOffset, Buffer tangentX, int tangentXByteOffset, Buffer tangentY, int tangentYByteOffset); /*
+		return (GLboolean)glPointAlongPathNV((GLuint)path, (GLsizei)startSegment, (GLsizei)numSegments, (GLfloat)distance, (GLfloat*)(x + xByteOffset), (GLfloat*)(y + yByteOffset), (GLfloat*)(tangentX + tangentXByteOffset), (GLfloat*)(tangentY + tangentYByteOffset));
+	*/
+
+	public static native void glStencilFillPathInstancedNV(int numPaths, int pathNameType, Buffer paths, int pathsByteOffset, int pathBase, int fillMode, int mask, int transformType, Buffer transformValues, int transformValuesByteOffset); /*
+		glStencilFillPathInstancedNV((GLsizei)numPaths, (GLenum)pathNameType, (const void*)(paths + pathsByteOffset), (GLuint)pathBase, (GLenum)fillMode, (GLuint)mask, (GLenum)transformType, (const GLfloat*)(transformValues + transformValuesByteOffset));
+	*/
+
+	public static native void glStencilFillPathNV(int path, int fillMode, int mask); /*
+		glStencilFillPathNV((GLuint)path, (GLenum)fillMode, (GLuint)mask);
+	*/
+
+	public static native void glStencilStrokePathInstancedNV(int numPaths, int pathNameType, Buffer paths, int pathsByteOffset, int pathBase, int reference, int mask, int transformType, Buffer transformValues, int transformValuesByteOffset); /*
+		glStencilStrokePathInstancedNV((GLsizei)numPaths, (GLenum)pathNameType, (const void*)(paths + pathsByteOffset), (GLuint)pathBase, (GLint)reference, (GLuint)mask, (GLenum)transformType, (const GLfloat*)(transformValues + transformValuesByteOffset));
+	*/
+
+	public static native void glStencilStrokePathNV(int path, int reference, int mask); /*
+		glStencilStrokePathNV((GLuint)path, (GLint)reference, (GLuint)mask);
+	*/
+
+	public static native void glTransformPathNV(int resultPath, int srcPath, int transformType, Buffer transformValues, int transformValuesByteOffset); /*
+		glTransformPathNV((GLuint)resultPath, (GLuint)srcPath, (GLenum)transformType, (const GLfloat*)(transformValues + transformValuesByteOffset));
+	*/
+
+	public static native void glWeightPathsNV(int resultPath, int numPaths, Buffer paths, int pathsByteOffset, Buffer weights, int weightsByteOffset); /*
+		glWeightPathsNV((GLuint)resultPath, (GLsizei)numPaths, (const GLuint*)(paths + pathsByteOffset), (const GLfloat*)(weights + weightsByteOffset));
+	*/
+
+	public static native void glFlushPixelDataRangeNV(int target); /*
+		glFlushPixelDataRangeNV((GLenum)target);
+	*/
+
+	public static native void glPixelDataRangeNV(int target, int length, Buffer pointer, int pointerByteOffset); /*
+		glPixelDataRangeNV((GLenum)target, (GLsizei)length, (void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glPointParameteriNV(int pname, int param); /*
+		glPointParameteriNV((GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glPointParameterivNV(int pname, Buffer params, int paramsByteOffset); /*
+		glPointParameterivNV((GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVideoi64vNV(int video_slot, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVideoi64vNV((GLuint)video_slot, (GLenum)pname, (GLint64EXT*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVideoivNV(int video_slot, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVideoivNV((GLuint)video_slot, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVideoui64vNV(int video_slot, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVideoui64vNV((GLuint)video_slot, (GLenum)pname, (GLuint64EXT*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVideouivNV(int video_slot, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVideouivNV((GLuint)video_slot, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glPresentFrameDualFillNV(int video_slot, long minPresentTime, int beginPresentTimeId, int presentDurationId, int type, int target0, int fill0, int target1, int fill1, int target2, int fill2, int target3, int fill3); /*
+		glPresentFrameDualFillNV((GLuint)video_slot, (GLuint64EXT)minPresentTime, (GLuint)beginPresentTimeId, (GLuint)presentDurationId, (GLenum)type, (GLenum)target0, (GLuint)fill0, (GLenum)target1, (GLuint)fill1, (GLenum)target2, (GLuint)fill2, (GLenum)target3, (GLuint)fill3);
+	*/
+
+	public static native void glPresentFrameKeyedNV(int video_slot, long minPresentTime, int beginPresentTimeId, int presentDurationId, int type, int target0, int fill0, int key0, int target1, int fill1, int key1); /*
+		glPresentFrameKeyedNV((GLuint)video_slot, (GLuint64EXT)minPresentTime, (GLuint)beginPresentTimeId, (GLuint)presentDurationId, (GLenum)type, (GLenum)target0, (GLuint)fill0, (GLuint)key0, (GLenum)target1, (GLuint)fill1, (GLuint)key1);
+	*/
+
+	public static native void glPrimitiveRestartIndexNV(int index); /*
+		glPrimitiveRestartIndexNV((GLuint)index);
+	*/
+
+	public static native void glPrimitiveRestartNV(); /*
+		glPrimitiveRestartNV();
+	*/
+
+	public static native void glCombinerInputNV(int stage, int portion, int variable, int input, int mapping, int componentUsage); /*
+		glCombinerInputNV((GLenum)stage, (GLenum)portion, (GLenum)variable, (GLenum)input, (GLenum)mapping, (GLenum)componentUsage);
+	*/
+
+	public static native void glCombinerOutputNV(int stage, int portion, int abOutput, int cdOutput, int sumOutput, int scale, int bias, boolean abDotProduct, boolean cdDotProduct, boolean muxSum); /*
+		glCombinerOutputNV((GLenum)stage, (GLenum)portion, (GLenum)abOutput, (GLenum)cdOutput, (GLenum)sumOutput, (GLenum)scale, (GLenum)bias, (GLboolean)abDotProduct, (GLboolean)cdDotProduct, (GLboolean)muxSum);
+	*/
+
+	public static native void glCombinerParameterfNV(int pname, float param); /*
+		glCombinerParameterfNV((GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glCombinerParameterfvNV(int pname, Buffer params, int paramsByteOffset); /*
+		glCombinerParameterfvNV((GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glCombinerParameteriNV(int pname, int param); /*
+		glCombinerParameteriNV((GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glCombinerParameterivNV(int pname, Buffer params, int paramsByteOffset); /*
+		glCombinerParameterivNV((GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glFinalCombinerInputNV(int variable, int input, int mapping, int componentUsage); /*
+		glFinalCombinerInputNV((GLenum)variable, (GLenum)input, (GLenum)mapping, (GLenum)componentUsage);
+	*/
+
+	public static native void glGetCombinerInputParameterfvNV(int stage, int portion, int variable, int pname, Buffer params, int paramsByteOffset); /*
+		glGetCombinerInputParameterfvNV((GLenum)stage, (GLenum)portion, (GLenum)variable, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetCombinerInputParameterivNV(int stage, int portion, int variable, int pname, Buffer params, int paramsByteOffset); /*
+		glGetCombinerInputParameterivNV((GLenum)stage, (GLenum)portion, (GLenum)variable, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetCombinerOutputParameterfvNV(int stage, int portion, int pname, Buffer params, int paramsByteOffset); /*
+		glGetCombinerOutputParameterfvNV((GLenum)stage, (GLenum)portion, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetCombinerOutputParameterivNV(int stage, int portion, int pname, Buffer params, int paramsByteOffset); /*
+		glGetCombinerOutputParameterivNV((GLenum)stage, (GLenum)portion, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetFinalCombinerInputParameterfvNV(int variable, int pname, Buffer params, int paramsByteOffset); /*
+		glGetFinalCombinerInputParameterfvNV((GLenum)variable, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetFinalCombinerInputParameterivNV(int variable, int pname, Buffer params, int paramsByteOffset); /*
+		glGetFinalCombinerInputParameterivNV((GLenum)variable, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glCombinerStageParameterfvNV(int stage, int pname, Buffer params, int paramsByteOffset); /*
+		glCombinerStageParameterfvNV((GLenum)stage, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetCombinerStageParameterfvNV(int stage, int pname, Buffer params, int paramsByteOffset); /*
+		glGetCombinerStageParameterfvNV((GLenum)stage, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetBufferParameterui64vNV(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetBufferParameterui64vNV((GLenum)target, (GLenum)pname, (GLuint64EXT*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetIntegerui64vNV(int value, Buffer result, int resultByteOffset); /*
+		glGetIntegerui64vNV((GLenum)value, (GLuint64EXT*)(result + resultByteOffset));
+	*/
+
+	public static native void glGetNamedBufferParameterui64vNV(int buffer, int pname, Buffer params, int paramsByteOffset); /*
+		glGetNamedBufferParameterui64vNV((GLuint)buffer, (GLenum)pname, (GLuint64EXT*)(params + paramsByteOffset));
+	*/
+
+	public static native boolean glIsBufferResidentNV(int target); /*
+		return (GLboolean)glIsBufferResidentNV((GLenum)target);
+	*/
+
+	public static native boolean glIsNamedBufferResidentNV(int buffer); /*
+		return (GLboolean)glIsNamedBufferResidentNV((GLuint)buffer);
+	*/
+
+	public static native void glMakeBufferNonResidentNV(int target); /*
+		glMakeBufferNonResidentNV((GLenum)target);
+	*/
+
+	public static native void glMakeBufferResidentNV(int target, int access); /*
+		glMakeBufferResidentNV((GLenum)target, (GLenum)access);
+	*/
+
+	public static native void glMakeNamedBufferNonResidentNV(int buffer); /*
+		glMakeNamedBufferNonResidentNV((GLuint)buffer);
+	*/
+
+	public static native void glMakeNamedBufferResidentNV(int buffer, int access); /*
+		glMakeNamedBufferResidentNV((GLuint)buffer, (GLenum)access);
+	*/
+
+	public static native void glProgramUniformui64NV(int program, int location, long value); /*
+		glProgramUniformui64NV((GLuint)program, (GLint)location, (GLuint64EXT)value);
+	*/
+
+	public static native void glProgramUniformui64vNV(int program, int location, int count, Buffer value, int valueByteOffset); /*
+		glProgramUniformui64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glUniformui64NV(int location, long value); /*
+		glUniformui64NV((GLint)location, (GLuint64EXT)value);
+	*/
+
+	public static native void glUniformui64vNV(int location, int count, Buffer value, int valueByteOffset); /*
+		glUniformui64vNV((GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
+	*/
+
+	public static native void glTextureBarrierNV(); /*
+		glTextureBarrierNV();
+	*/
+
+	public static native void glTexImage2DMultisampleCoverageNV(int target, int coverageSamples, int colorSamples, int internalFormat, int width, int height, boolean fixedSampleLocations); /*
+		glTexImage2DMultisampleCoverageNV((GLenum)target, (GLsizei)coverageSamples, (GLsizei)colorSamples, (GLint)internalFormat, (GLsizei)width, (GLsizei)height, (GLboolean)fixedSampleLocations);
+	*/
+
+	public static native void glTexImage3DMultisampleCoverageNV(int target, int coverageSamples, int colorSamples, int internalFormat, int width, int height, int depth, boolean fixedSampleLocations); /*
+		glTexImage3DMultisampleCoverageNV((GLenum)target, (GLsizei)coverageSamples, (GLsizei)colorSamples, (GLint)internalFormat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLboolean)fixedSampleLocations);
+	*/
+
+	public static native void glTextureImage2DMultisampleCoverageNV(int texture, int target, int coverageSamples, int colorSamples, int internalFormat, int width, int height, boolean fixedSampleLocations); /*
+		glTextureImage2DMultisampleCoverageNV((GLuint)texture, (GLenum)target, (GLsizei)coverageSamples, (GLsizei)colorSamples, (GLint)internalFormat, (GLsizei)width, (GLsizei)height, (GLboolean)fixedSampleLocations);
+	*/
+
+	public static native void glTextureImage2DMultisampleNV(int texture, int target, int samples, int internalFormat, int width, int height, boolean fixedSampleLocations); /*
+		glTextureImage2DMultisampleNV((GLuint)texture, (GLenum)target, (GLsizei)samples, (GLint)internalFormat, (GLsizei)width, (GLsizei)height, (GLboolean)fixedSampleLocations);
+	*/
+
+	public static native void glTextureImage3DMultisampleCoverageNV(int texture, int target, int coverageSamples, int colorSamples, int internalFormat, int width, int height, int depth, boolean fixedSampleLocations); /*
+		glTextureImage3DMultisampleCoverageNV((GLuint)texture, (GLenum)target, (GLsizei)coverageSamples, (GLsizei)colorSamples, (GLint)internalFormat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLboolean)fixedSampleLocations);
+	*/
+
+	public static native void glTextureImage3DMultisampleNV(int texture, int target, int samples, int internalFormat, int width, int height, int depth, boolean fixedSampleLocations); /*
+		glTextureImage3DMultisampleNV((GLuint)texture, (GLenum)target, (GLsizei)samples, (GLint)internalFormat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLboolean)fixedSampleLocations);
+	*/
+
+	public static native void glActiveVaryingNV(int program, Buffer name, int nameByteOffset); /*
+		glActiveVaryingNV((GLuint)program, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glBeginTransformFeedbackNV(int primitiveMode); /*
+		glBeginTransformFeedbackNV((GLenum)primitiveMode);
+	*/
+
+	public static native void glBindBufferBaseNV(int target, int index, int buffer); /*
+		glBindBufferBaseNV((GLenum)target, (GLuint)index, (GLuint)buffer);
+	*/
+
+	public static native void glBindBufferOffsetNV(int target, int index, int buffer, int offset); /*
+		glBindBufferOffsetNV((GLenum)target, (GLuint)index, (GLuint)buffer, (GLintptr)offset);
+	*/
+
+	public static native void glBindBufferRangeNV(int target, int index, int buffer, int offset, int size); /*
+		glBindBufferRangeNV((GLenum)target, (GLuint)index, (GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size);
+	*/
+
+	public static native void glEndTransformFeedbackNV(); /*
+		glEndTransformFeedbackNV();
+	*/
+
+	public static native void glGetActiveVaryingNV(int program, int index, int bufSize, Buffer length, int lengthByteOffset, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset, Buffer name, int nameByteOffset); /*
+		glGetActiveVaryingNV((GLuint)program, (GLuint)index, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLsizei*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glGetTransformFeedbackVaryingNV(int program, int index, Buffer location, int locationByteOffset); /*
+		glGetTransformFeedbackVaryingNV((GLuint)program, (GLuint)index, (GLint*)(location + locationByteOffset));
+	*/
+
+	public static native int glGetVaryingLocationNV(int program, Buffer name, int nameByteOffset); /*
+		return (GLint)glGetVaryingLocationNV((GLuint)program, (const GLchar*)(name + nameByteOffset));
+	*/
+
+	public static native void glTransformFeedbackAttribsNV(int count, Buffer attribs, int attribsByteOffset, int bufferMode); /*
+		glTransformFeedbackAttribsNV((GLuint)count, (const GLint*)(attribs + attribsByteOffset), (GLenum)bufferMode);
+	*/
+
+	public static native void glTransformFeedbackVaryingsNV(int program, int count, Buffer locations, int locationsByteOffset, int bufferMode); /*
+		glTransformFeedbackVaryingsNV((GLuint)program, (GLsizei)count, (const GLint*)(locations + locationsByteOffset), (GLenum)bufferMode);
+	*/
+
+	public static native void glBindTransformFeedbackNV(int target, int id); /*
+		glBindTransformFeedbackNV((GLenum)target, (GLuint)id);
+	*/
+
+	public static native void glDeleteTransformFeedbacksNV(int n, Buffer ids, int idsByteOffset); /*
+		glDeleteTransformFeedbacksNV((GLsizei)n, (const GLuint*)(ids + idsByteOffset));
+	*/
+
+	public static native void glDrawTransformFeedbackNV(int mode, int id); /*
+		glDrawTransformFeedbackNV((GLenum)mode, (GLuint)id);
+	*/
+
+	public static native void glGenTransformFeedbacksNV(int n, Buffer ids, int idsByteOffset); /*
+		glGenTransformFeedbacksNV((GLsizei)n, (GLuint*)(ids + idsByteOffset));
+	*/
+
+	public static native boolean glIsTransformFeedbackNV(int id); /*
+		return (GLboolean)glIsTransformFeedbackNV((GLuint)id);
+	*/
+
+	public static native void glPauseTransformFeedbackNV(); /*
+		glPauseTransformFeedbackNV();
+	*/
+
+	public static native void glResumeTransformFeedbackNV(); /*
+		glResumeTransformFeedbackNV();
+	*/
+
+	public static native void glVDPAUFiniNV(); /*
+		glVDPAUFiniNV();
+	*/
+
+	public static native void glVDPAUGetSurfaceivNV(int surface, int pname, int bufSize, Buffer length, int lengthByteOffset, Buffer values, int valuesByteOffset); /*
+		glVDPAUGetSurfaceivNV((GLvdpauSurfaceNV)surface, (GLenum)pname, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLint*)(values + valuesByteOffset));
+	*/
+
+	public static native void glVDPAUInitNV(Buffer vdpDevice, int vdpDeviceByteOffset, Buffer getProcAddress, int getProcAddressByteOffset); /*
+		glVDPAUInitNV((const void*)(vdpDevice + vdpDeviceByteOffset), (const GLvoid*)(getProcAddress + getProcAddressByteOffset));
+	*/
+
+	public static native void glVDPAUIsSurfaceNV(int surface); /*
+		glVDPAUIsSurfaceNV((GLvdpauSurfaceNV)surface);
+	*/
+
+	public static native void glVDPAUMapSurfacesNV(int numSurfaces, Buffer surfaces, int surfacesByteOffset); /*
+		glVDPAUMapSurfacesNV((GLsizei)numSurfaces, (const GLvdpauSurfaceNV*)(surfaces + surfacesByteOffset));
+	*/
+
+	public static native int glVDPAURegisterOutputSurfaceNV(Buffer vdpSurface, int vdpSurfaceByteOffset, int target, int numTextureNames, Buffer textureNames, int textureNamesByteOffset); /*
+		return (GLvdpauSurfaceNV)glVDPAURegisterOutputSurfaceNV((const void*)(vdpSurface + vdpSurfaceByteOffset), (GLenum)target, (GLsizei)numTextureNames, (const GLuint*)(textureNames + textureNamesByteOffset));
+	*/
+
+	public static native int glVDPAURegisterVideoSurfaceNV(Buffer vdpSurface, int vdpSurfaceByteOffset, int target, int numTextureNames, Buffer textureNames, int textureNamesByteOffset); /*
+		return (GLvdpauSurfaceNV)glVDPAURegisterVideoSurfaceNV((const void*)(vdpSurface + vdpSurfaceByteOffset), (GLenum)target, (GLsizei)numTextureNames, (const GLuint*)(textureNames + textureNamesByteOffset));
+	*/
+
+	public static native void glVDPAUSurfaceAccessNV(int surface, int access); /*
+		glVDPAUSurfaceAccessNV((GLvdpauSurfaceNV)surface, (GLenum)access);
+	*/
+
+	public static native void glVDPAUUnmapSurfacesNV(int numSurface, Buffer surfaces, int surfacesByteOffset); /*
+		glVDPAUUnmapSurfacesNV((GLsizei)numSurface, (const GLvdpauSurfaceNV*)(surfaces + surfacesByteOffset));
+	*/
+
+	public static native void glVDPAUUnregisterSurfaceNV(int surface); /*
+		glVDPAUUnregisterSurfaceNV((GLvdpauSurfaceNV)surface);
+	*/
+
+	public static native void glFlushVertexArrayRangeNV(); /*
+		glFlushVertexArrayRangeNV();
+	*/
+
+	public static native void glVertexArrayRangeNV(int length, Buffer pointer, int pointerByteOffset); /*
+		glVertexArrayRangeNV((GLsizei)length, (void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glGetVertexAttribLi64vNV(int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVertexAttribLi64vNV((GLuint)index, (GLenum)pname, (GLint64EXT*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVertexAttribLui64vNV(int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVertexAttribLui64vNV((GLuint)index, (GLenum)pname, (GLuint64EXT*)(params + paramsByteOffset));
+	*/
+
+	public static native void glVertexAttribL1i64NV(int index, long x); /*
+		glVertexAttribL1i64NV((GLuint)index, (GLint64EXT)x);
+	*/
+
+	public static native void glVertexAttribL1i64vNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL1i64vNV((GLuint)index, (const GLint64EXT*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribL1ui64NV(int index, long x); /*
+		glVertexAttribL1ui64NV((GLuint)index, (GLuint64EXT)x);
+	*/
+
+	public static native void glVertexAttribL1ui64vNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL1ui64vNV((GLuint)index, (const GLuint64EXT*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribL2i64NV(int index, long x, long y); /*
+		glVertexAttribL2i64NV((GLuint)index, (GLint64EXT)x, (GLint64EXT)y);
+	*/
+
+	public static native void glVertexAttribL2i64vNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL2i64vNV((GLuint)index, (const GLint64EXT*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribL2ui64NV(int index, long x, long y); /*
+		glVertexAttribL2ui64NV((GLuint)index, (GLuint64EXT)x, (GLuint64EXT)y);
+	*/
+
+	public static native void glVertexAttribL2ui64vNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL2ui64vNV((GLuint)index, (const GLuint64EXT*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribL3i64NV(int index, long x, long y, long z); /*
+		glVertexAttribL3i64NV((GLuint)index, (GLint64EXT)x, (GLint64EXT)y, (GLint64EXT)z);
+	*/
+
+	public static native void glVertexAttribL3i64vNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL3i64vNV((GLuint)index, (const GLint64EXT*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribL3ui64NV(int index, long x, long y, long z); /*
+		glVertexAttribL3ui64NV((GLuint)index, (GLuint64EXT)x, (GLuint64EXT)y, (GLuint64EXT)z);
+	*/
+
+	public static native void glVertexAttribL3ui64vNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL3ui64vNV((GLuint)index, (const GLuint64EXT*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribL4i64NV(int index, long x, long y, long z, long w); /*
+		glVertexAttribL4i64NV((GLuint)index, (GLint64EXT)x, (GLint64EXT)y, (GLint64EXT)z, (GLint64EXT)w);
+	*/
+
+	public static native void glVertexAttribL4i64vNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL4i64vNV((GLuint)index, (const GLint64EXT*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribL4ui64NV(int index, long x, long y, long z, long w); /*
+		glVertexAttribL4ui64NV((GLuint)index, (GLuint64EXT)x, (GLuint64EXT)y, (GLuint64EXT)z, (GLuint64EXT)w);
+	*/
+
+	public static native void glVertexAttribL4ui64vNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttribL4ui64vNV((GLuint)index, (const GLuint64EXT*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribLFormatNV(int index, int size, int type, int stride); /*
+		glVertexAttribLFormatNV((GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride);
+	*/
+
+	public static native void glBufferAddressRangeNV(int pname, int index, long address, int length); /*
+		glBufferAddressRangeNV((GLenum)pname, (GLuint)index, (GLuint64EXT)address, (GLsizeiptr)length);
+	*/
+
+	public static native void glColorFormatNV(int size, int type, int stride); /*
+		glColorFormatNV((GLint)size, (GLenum)type, (GLsizei)stride);
+	*/
+
+	public static native void glEdgeFlagFormatNV(int stride); /*
+		glEdgeFlagFormatNV((GLsizei)stride);
+	*/
+
+	public static native void glFogCoordFormatNV(int type, int stride); /*
+		glFogCoordFormatNV((GLenum)type, (GLsizei)stride);
+	*/
+
+	public static native void glGetIntegerui64i_vNV(int value, int index, Buffer result, int resultByteOffset); /*
+		glGetIntegerui64i_vNV((GLenum)value, (GLuint)index, (GLuint64EXT*)(result + resultByteOffset));
+	*/
+
+	public static native void glIndexFormatNV(int type, int stride); /*
+		glIndexFormatNV((GLenum)type, (GLsizei)stride);
+	*/
+
+	public static native void glNormalFormatNV(int type, int stride); /*
+		glNormalFormatNV((GLenum)type, (GLsizei)stride);
+	*/
+
+	public static native void glSecondaryColorFormatNV(int size, int type, int stride); /*
+		glSecondaryColorFormatNV((GLint)size, (GLenum)type, (GLsizei)stride);
+	*/
+
+	public static native void glTexCoordFormatNV(int size, int type, int stride); /*
+		glTexCoordFormatNV((GLint)size, (GLenum)type, (GLsizei)stride);
+	*/
+
+	public static native void glVertexAttribFormatNV(int index, int size, int type, boolean normalized, int stride); /*
+		glVertexAttribFormatNV((GLuint)index, (GLint)size, (GLenum)type, (GLboolean)normalized, (GLsizei)stride);
+	*/
+
+	public static native void glVertexAttribIFormatNV(int index, int size, int type, int stride); /*
+		glVertexAttribIFormatNV((GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride);
+	*/
+
+	public static native void glVertexFormatNV(int size, int type, int stride); /*
+		glVertexFormatNV((GLint)size, (GLenum)type, (GLsizei)stride);
+	*/
+
+	public static native boolean glAreProgramsResidentNV(int n, Buffer ids, int idsByteOffset, Buffer residences, int residencesByteOffset); /*
+		return (GLboolean)glAreProgramsResidentNV((GLsizei)n, (const GLuint*)(ids + idsByteOffset), (GLboolean*)(residences + residencesByteOffset));
+	*/
+
+	public static native void glBindProgramNV(int target, int id); /*
+		glBindProgramNV((GLenum)target, (GLuint)id);
+	*/
+
+	public static native void glDeleteProgramsNV(int n, Buffer ids, int idsByteOffset); /*
+		glDeleteProgramsNV((GLsizei)n, (const GLuint*)(ids + idsByteOffset));
+	*/
+
+	public static native void glExecuteProgramNV(int target, int id, Buffer params, int paramsByteOffset); /*
+		glExecuteProgramNV((GLenum)target, (GLuint)id, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGenProgramsNV(int n, Buffer ids, int idsByteOffset); /*
+		glGenProgramsNV((GLsizei)n, (GLuint*)(ids + idsByteOffset));
+	*/
+
+	public static native void glGetProgramParameterdvNV(int target, int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetProgramParameterdvNV((GLenum)target, (GLuint)index, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetProgramParameterfvNV(int target, int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetProgramParameterfvNV((GLenum)target, (GLuint)index, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetProgramStringNV(int id, int pname, Buffer program, int programByteOffset); /*
+		glGetProgramStringNV((GLuint)id, (GLenum)pname, (GLubyte*)(program + programByteOffset));
+	*/
+
+	public static native void glGetProgramivNV(int id, int pname, Buffer params, int paramsByteOffset); /*
+		glGetProgramivNV((GLuint)id, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetTrackMatrixivNV(int target, int address, int pname, Buffer params, int paramsByteOffset); /*
+		glGetTrackMatrixivNV((GLenum)target, (GLuint)address, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVertexAttribPointervNV(int index, int pname, Buffer pointer, int pointerByteOffset); /*
+		glGetVertexAttribPointervNV((GLuint)index, (GLenum)pname, (GLvoid**)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glGetVertexAttribdvNV(int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVertexAttribdvNV((GLuint)index, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVertexAttribfvNV(int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVertexAttribfvNV((GLuint)index, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVertexAttribivNV(int index, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVertexAttribivNV((GLuint)index, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native boolean glIsProgramNV(int id); /*
+		return (GLboolean)glIsProgramNV((GLuint)id);
+	*/
+
+	public static native void glLoadProgramNV(int target, int id, int len, Buffer program, int programByteOffset); /*
+		glLoadProgramNV((GLenum)target, (GLuint)id, (GLsizei)len, (const GLubyte*)(program + programByteOffset));
+	*/
+
+	public static native void glProgramParameter4dNV(int target, int index, double x, double y, double z, double w); /*
+		glProgramParameter4dNV((GLenum)target, (GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
+	*/
+
+	public static native void glProgramParameter4dvNV(int target, int index, Buffer params, int paramsByteOffset); /*
+		glProgramParameter4dvNV((GLenum)target, (GLuint)index, (const GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramParameter4fNV(int target, int index, float x, float y, float z, float w); /*
+		glProgramParameter4fNV((GLenum)target, (GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
+	*/
+
+	public static native void glProgramParameter4fvNV(int target, int index, Buffer params, int paramsByteOffset); /*
+		glProgramParameter4fvNV((GLenum)target, (GLuint)index, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramParameters4dvNV(int target, int index, int num, Buffer params, int paramsByteOffset); /*
+		glProgramParameters4dvNV((GLenum)target, (GLuint)index, (GLsizei)num, (const GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glProgramParameters4fvNV(int target, int index, int num, Buffer params, int paramsByteOffset); /*
+		glProgramParameters4fvNV((GLenum)target, (GLuint)index, (GLsizei)num, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glRequestResidentProgramsNV(int n, Buffer ids, int idsByteOffset); /*
+		glRequestResidentProgramsNV((GLsizei)n, (GLuint*)(ids + idsByteOffset));
+	*/
+
+	public static native void glTrackMatrixNV(int target, int address, int matrix, int transform); /*
+		glTrackMatrixNV((GLenum)target, (GLuint)address, (GLenum)matrix, (GLenum)transform);
+	*/
+
+	public static native void glVertexAttrib1dNV(int index, double x); /*
+		glVertexAttrib1dNV((GLuint)index, (GLdouble)x);
+	*/
+
+	public static native void glVertexAttrib1dvNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib1dvNV((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib1fNV(int index, float x); /*
+		glVertexAttrib1fNV((GLuint)index, (GLfloat)x);
+	*/
+
+	public static native void glVertexAttrib1fvNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib1fvNV((GLuint)index, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib1sNV(int index, short x); /*
+		glVertexAttrib1sNV((GLuint)index, (GLshort)x);
+	*/
+
+	public static native void glVertexAttrib1svNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib1svNV((GLuint)index, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib2dNV(int index, double x, double y); /*
+		glVertexAttrib2dNV((GLuint)index, (GLdouble)x, (GLdouble)y);
+	*/
+
+	public static native void glVertexAttrib2dvNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib2dvNV((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib2fNV(int index, float x, float y); /*
+		glVertexAttrib2fNV((GLuint)index, (GLfloat)x, (GLfloat)y);
+	*/
+
+	public static native void glVertexAttrib2fvNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib2fvNV((GLuint)index, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib2sNV(int index, short x, short y); /*
+		glVertexAttrib2sNV((GLuint)index, (GLshort)x, (GLshort)y);
+	*/
+
+	public static native void glVertexAttrib2svNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib2svNV((GLuint)index, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib3dNV(int index, double x, double y, double z); /*
+		glVertexAttrib3dNV((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z);
+	*/
+
+	public static native void glVertexAttrib3dvNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib3dvNV((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib3fNV(int index, float x, float y, float z); /*
+		glVertexAttrib3fNV((GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glVertexAttrib3fvNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib3fvNV((GLuint)index, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib3sNV(int index, short x, short y, short z); /*
+		glVertexAttrib3sNV((GLuint)index, (GLshort)x, (GLshort)y, (GLshort)z);
+	*/
+
+	public static native void glVertexAttrib3svNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib3svNV((GLuint)index, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4dNV(int index, double x, double y, double z, double w); /*
+		glVertexAttrib4dNV((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
+	*/
+
+	public static native void glVertexAttrib4dvNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4dvNV((GLuint)index, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4fNV(int index, float x, float y, float z, float w); /*
+		glVertexAttrib4fNV((GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
+	*/
+
+	public static native void glVertexAttrib4fvNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4fvNV((GLuint)index, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4sNV(int index, short x, short y, short z, short w); /*
+		glVertexAttrib4sNV((GLuint)index, (GLshort)x, (GLshort)y, (GLshort)z, (GLshort)w);
+	*/
+
+	public static native void glVertexAttrib4svNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4svNV((GLuint)index, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttrib4ubNV(int index, byte x, byte y, byte z, byte w); /*
+		glVertexAttrib4ubNV((GLuint)index, (GLubyte)x, (GLubyte)y, (GLubyte)z, (GLubyte)w);
+	*/
+
+	public static native void glVertexAttrib4ubvNV(int index, Buffer v, int vByteOffset); /*
+		glVertexAttrib4ubvNV((GLuint)index, (const GLubyte*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribPointerNV(int index, int size, int type, int stride, Buffer pointer, int pointerByteOffset); /*
+		glVertexAttribPointerNV((GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride, (const void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glVertexAttribs1dvNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs1dvNV((GLuint)index, (GLsizei)n, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs1fvNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs1fvNV((GLuint)index, (GLsizei)n, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs1svNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs1svNV((GLuint)index, (GLsizei)n, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs2dvNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs2dvNV((GLuint)index, (GLsizei)n, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs2fvNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs2fvNV((GLuint)index, (GLsizei)n, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs2svNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs2svNV((GLuint)index, (GLsizei)n, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs3dvNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs3dvNV((GLuint)index, (GLsizei)n, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs3fvNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs3fvNV((GLuint)index, (GLsizei)n, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs3svNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs3svNV((GLuint)index, (GLsizei)n, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs4dvNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs4dvNV((GLuint)index, (GLsizei)n, (const GLdouble*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs4fvNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs4fvNV((GLuint)index, (GLsizei)n, (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs4svNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs4svNV((GLuint)index, (GLsizei)n, (const GLshort*)(v + vByteOffset));
+	*/
+
+	public static native void glVertexAttribs4ubvNV(int index, int n, Buffer v, int vByteOffset); /*
+		glVertexAttribs4ubvNV((GLuint)index, (GLsizei)n, (const GLubyte*)(v + vByteOffset));
+	*/
+
+	public static native void glBeginVideoCaptureNV(int video_capture_slot); /*
+		glBeginVideoCaptureNV((GLuint)video_capture_slot);
+	*/
+
+	public static native void glBindVideoCaptureStreamBufferNV(int video_capture_slot, int stream, int frame_region, int offset); /*
+		glBindVideoCaptureStreamBufferNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)frame_region, (GLintptrARB)offset);
+	*/
+
+	public static native void glBindVideoCaptureStreamTextureNV(int video_capture_slot, int stream, int frame_region, int target, int texture); /*
+		glBindVideoCaptureStreamTextureNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)frame_region, (GLenum)target, (GLuint)texture);
+	*/
+
+	public static native void glEndVideoCaptureNV(int video_capture_slot); /*
+		glEndVideoCaptureNV((GLuint)video_capture_slot);
+	*/
+
+	public static native void glGetVideoCaptureStreamdvNV(int video_capture_slot, int stream, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVideoCaptureStreamdvNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVideoCaptureStreamfvNV(int video_capture_slot, int stream, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVideoCaptureStreamfvNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVideoCaptureStreamivNV(int video_capture_slot, int stream, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVideoCaptureStreamivNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetVideoCaptureivNV(int video_capture_slot, int pname, Buffer params, int paramsByteOffset); /*
+		glGetVideoCaptureivNV((GLuint)video_capture_slot, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native int glVideoCaptureNV(int video_capture_slot, Buffer sequence_num, int sequence_numByteOffset, Buffer capture_time, int capture_timeByteOffset); /*
+		return (GLenum)glVideoCaptureNV((GLuint)video_capture_slot, (GLuint*)(sequence_num + sequence_numByteOffset), (GLuint64EXT*)(capture_time + capture_timeByteOffset));
+	*/
+
+	public static native void glVideoCaptureStreamParameterdvNV(int video_capture_slot, int stream, int pname, Buffer params, int paramsByteOffset); /*
+		glVideoCaptureStreamParameterdvNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)pname, (const GLdouble*)(params + paramsByteOffset));
+	*/
+
+	public static native void glVideoCaptureStreamParameterfvNV(int video_capture_slot, int stream, int pname, Buffer params, int paramsByteOffset); /*
+		glVideoCaptureStreamParameterfvNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glVideoCaptureStreamParameterivNV(int video_capture_slot, int stream, int pname, Buffer params, int paramsByteOffset); /*
+		glVideoCaptureStreamParameterivNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glClearDepthfOES(double depth); /*
+		glClearDepthfOES((GLclampd)depth);
+	*/
+
+	public static native void glClipPlanefOES(int plane, Buffer equation, int equationByteOffset); /*
+		glClipPlanefOES((GLenum)plane, (const GLfloat*)(equation + equationByteOffset));
+	*/
+
+	public static native void glDepthRangefOES(float n, float f); /*
+		glDepthRangefOES((GLclampf)n, (GLclampf)f);
+	*/
+
+	public static native void glFrustumfOES(float l, float r, float b, float t, float n, float f); /*
+		glFrustumfOES((GLfloat)l, (GLfloat)r, (GLfloat)b, (GLfloat)t, (GLfloat)n, (GLfloat)f);
+	*/
+
+	public static native void glGetClipPlanefOES(int plane, Buffer equation, int equationByteOffset); /*
+		glGetClipPlanefOES((GLenum)plane, (GLfloat*)(equation + equationByteOffset));
+	*/
+
+	public static native void glOrthofOES(float l, float r, float b, float t, float n, float f); /*
+		glOrthofOES((GLfloat)l, (GLfloat)r, (GLfloat)b, (GLfloat)t, (GLfloat)n, (GLfloat)f);
+	*/
+
+	public static native Buffer glErrorStringREGAL(int error); /*
+		return (const GLchar*)glErrorStringREGAL((GLenum)error);
+	*/
+
+	public static native boolean glGetExtensionREGAL(Buffer ext, int extByteOffset); /*
+		return (GLboolean)glGetExtensionREGAL((const GLchar*)(ext + extByteOffset));
+	*/
+
+	public static native boolean glIsSupportedREGAL(Buffer ext, int extByteOffset); /*
+		return (GLboolean)glIsSupportedREGAL((const GLchar*)(ext + extByteOffset));
+	*/
+
+	public static native void glDetailTexFuncSGIS(int target, int n, Buffer points, int pointsByteOffset); /*
+		glDetailTexFuncSGIS((GLenum)target, (GLsizei)n, (const GLfloat*)(points + pointsByteOffset));
+	*/
+
+	public static native void glGetDetailTexFuncSGIS(int target, Buffer points, int pointsByteOffset); /*
+		glGetDetailTexFuncSGIS((GLenum)target, (GLfloat*)(points + pointsByteOffset));
+	*/
+
+	public static native void glFogFuncSGIS(int n, Buffer points, int pointsByteOffset); /*
+		glFogFuncSGIS((GLsizei)n, (const GLfloat*)(points + pointsByteOffset));
+	*/
+
+	public static native void glGetFogFuncSGIS(Buffer points, int pointsByteOffset); /*
+		glGetFogFuncSGIS((GLfloat*)(points + pointsByteOffset));
+	*/
+
+	public static native void glSampleMaskSGIS(float value, boolean invert); /*
+		glSampleMaskSGIS((GLclampf)value, (GLboolean)invert);
+	*/
+
+	public static native void glSamplePatternSGIS(int pattern); /*
+		glSamplePatternSGIS((GLenum)pattern);
+	*/
+
+	public static native void glGetSharpenTexFuncSGIS(int target, Buffer points, int pointsByteOffset); /*
+		glGetSharpenTexFuncSGIS((GLenum)target, (GLfloat*)(points + pointsByteOffset));
+	*/
+
+	public static native void glSharpenTexFuncSGIS(int target, int n, Buffer points, int pointsByteOffset); /*
+		glSharpenTexFuncSGIS((GLenum)target, (GLsizei)n, (const GLfloat*)(points + pointsByteOffset));
+	*/
+
+	public static native void glTexImage4DSGIS(int target, int level, int internalformat, int width, int height, int depth, int extent, int border, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glTexImage4DSGIS((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLsizei)extent, (GLint)border, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glTexSubImage4DSGIS(int target, int level, int xoffset, int yoffset, int zoffset, int woffset, int width, int height, int depth, int extent, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glTexSubImage4DSGIS((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLint)woffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLsizei)extent, (GLenum)format, (GLenum)type, (const void*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glGetTexFilterFuncSGIS(int target, int filter, Buffer weights, int weightsByteOffset); /*
+		glGetTexFilterFuncSGIS((GLenum)target, (GLenum)filter, (GLfloat*)(weights + weightsByteOffset));
+	*/
+
+	public static native void glTexFilterFuncSGIS(int target, int filter, int n, Buffer weights, int weightsByteOffset); /*
+		glTexFilterFuncSGIS((GLenum)target, (GLenum)filter, (GLsizei)n, (const GLfloat*)(weights + weightsByteOffset));
+	*/
+
+	public static native void glAsyncMarkerSGIX(int marker); /*
+		glAsyncMarkerSGIX((GLuint)marker);
+	*/
+
+	public static native void glDeleteAsyncMarkersSGIX(int marker, int range); /*
+		glDeleteAsyncMarkersSGIX((GLuint)marker, (GLsizei)range);
+	*/
+
+	public static native int glFinishAsyncSGIX(Buffer markerp, int markerpByteOffset); /*
+		return (GLint)glFinishAsyncSGIX((GLuint*)(markerp + markerpByteOffset));
+	*/
+
+	public static native int glGenAsyncMarkersSGIX(int range); /*
+		return (GLuint)glGenAsyncMarkersSGIX((GLsizei)range);
+	*/
+
+	public static native boolean glIsAsyncMarkerSGIX(int marker); /*
+		return (GLboolean)glIsAsyncMarkerSGIX((GLuint)marker);
+	*/
+
+	public static native int glPollAsyncSGIX(Buffer markerp, int markerpByteOffset); /*
+		return (GLint)glPollAsyncSGIX((GLuint*)(markerp + markerpByteOffset));
+	*/
+
+	public static native void glFlushRasterSGIX(); /*
+		glFlushRasterSGIX();
+	*/
+
+	public static native void glTextureFogSGIX(int pname); /*
+		glTextureFogSGIX((GLenum)pname);
+	*/
+
+	public static native void glFragmentColorMaterialSGIX(int face, int mode); /*
+		glFragmentColorMaterialSGIX((GLenum)face, (GLenum)mode);
+	*/
+
+	public static native void glFragmentLightModelfSGIX(int pname, float param); /*
+		glFragmentLightModelfSGIX((GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glFragmentLightModelfvSGIX(int pname, Buffer params, int paramsByteOffset); /*
+		glFragmentLightModelfvSGIX((GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glFragmentLightModeliSGIX(int pname, int param); /*
+		glFragmentLightModeliSGIX((GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glFragmentLightModelivSGIX(int pname, Buffer params, int paramsByteOffset); /*
+		glFragmentLightModelivSGIX((GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glFragmentLightfSGIX(int light, int pname, float param); /*
+		glFragmentLightfSGIX((GLenum)light, (GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glFragmentLightfvSGIX(int light, int pname, Buffer params, int paramsByteOffset); /*
+		glFragmentLightfvSGIX((GLenum)light, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glFragmentLightiSGIX(int light, int pname, int param); /*
+		glFragmentLightiSGIX((GLenum)light, (GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glFragmentLightivSGIX(int light, int pname, Buffer params, int paramsByteOffset); /*
+		glFragmentLightivSGIX((GLenum)light, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glFragmentMaterialfSGIX(int face, int pname, float param); /*
+		glFragmentMaterialfSGIX((GLenum)face, (GLenum)pname, (const GLfloat)param);
+	*/
+
+	public static native void glFragmentMaterialfvSGIX(int face, int pname, Buffer params, int paramsByteOffset); /*
+		glFragmentMaterialfvSGIX((GLenum)face, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glFragmentMaterialiSGIX(int face, int pname, int param); /*
+		glFragmentMaterialiSGIX((GLenum)face, (GLenum)pname, (const GLint)param);
+	*/
+
+	public static native void glFragmentMaterialivSGIX(int face, int pname, Buffer params, int paramsByteOffset); /*
+		glFragmentMaterialivSGIX((GLenum)face, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetFragmentLightfvSGIX(int light, int value, Buffer data, int dataByteOffset); /*
+		glGetFragmentLightfvSGIX((GLenum)light, (GLenum)value, (GLfloat*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetFragmentLightivSGIX(int light, int value, Buffer data, int dataByteOffset); /*
+		glGetFragmentLightivSGIX((GLenum)light, (GLenum)value, (GLint*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetFragmentMaterialfvSGIX(int face, int pname, Buffer data, int dataByteOffset); /*
+		glGetFragmentMaterialfvSGIX((GLenum)face, (GLenum)pname, (const GLfloat*)(data + dataByteOffset));
+	*/
+
+	public static native void glGetFragmentMaterialivSGIX(int face, int pname, Buffer data, int dataByteOffset); /*
+		glGetFragmentMaterialivSGIX((GLenum)face, (GLenum)pname, (const GLint*)(data + dataByteOffset));
+	*/
+
+	public static native void glFrameZoomSGIX(int factor); /*
+		glFrameZoomSGIX((GLint)factor);
+	*/
+
+	public static native void glPixelTexGenSGIX(int mode); /*
+		glPixelTexGenSGIX((GLenum)mode);
+	*/
+
+	public static native void glReferencePlaneSGIX(Buffer equation, int equationByteOffset); /*
+		glReferencePlaneSGIX((const GLdouble*)(equation + equationByteOffset));
+	*/
+
+	public static native void glSpriteParameterfSGIX(int pname, float param); /*
+		glSpriteParameterfSGIX((GLenum)pname, (GLfloat)param);
+	*/
+
+	public static native void glSpriteParameterfvSGIX(int pname, Buffer params, int paramsByteOffset); /*
+		glSpriteParameterfvSGIX((GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glSpriteParameteriSGIX(int pname, int param); /*
+		glSpriteParameteriSGIX((GLenum)pname, (GLint)param);
+	*/
+
+	public static native void glSpriteParameterivSGIX(int pname, Buffer params, int paramsByteOffset); /*
+		glSpriteParameterivSGIX((GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glTagSampleBufferSGIX(); /*
+		glTagSampleBufferSGIX();
+	*/
+
+	public static native void glColorTableParameterfvSGI(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glColorTableParameterfvSGI((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glColorTableParameterivSGI(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glColorTableParameterivSGI((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glColorTableSGI(int target, int internalformat, int width, int format, int type, Buffer table, int tableByteOffset); /*
+		glColorTableSGI((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLenum)format, (GLenum)type, (const void*)(table + tableByteOffset));
+	*/
+
+	public static native void glCopyColorTableSGI(int target, int internalformat, int x, int y, int width); /*
+		glCopyColorTableSGI((GLenum)target, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width);
+	*/
+
+	public static native void glGetColorTableParameterfvSGI(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetColorTableParameterfvSGI((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetColorTableParameterivSGI(int target, int pname, Buffer params, int paramsByteOffset); /*
+		glGetColorTableParameterivSGI((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
+	*/
+
+	public static native void glGetColorTableSGI(int target, int format, int type, Buffer table, int tableByteOffset); /*
+		glGetColorTableSGI((GLenum)target, (GLenum)format, (GLenum)type, (void*)(table + tableByteOffset));
+	*/
+
+	public static native void glFinishTextureSUNX(); /*
+		glFinishTextureSUNX();
+	*/
+
+	public static native void glGlobalAlphaFactorbSUN(byte factor); /*
+		glGlobalAlphaFactorbSUN((GLbyte)factor);
+	*/
+
+	public static native void glGlobalAlphaFactordSUN(double factor); /*
+		glGlobalAlphaFactordSUN((GLdouble)factor);
+	*/
+
+	public static native void glGlobalAlphaFactorfSUN(float factor); /*
+		glGlobalAlphaFactorfSUN((GLfloat)factor);
+	*/
+
+	public static native void glGlobalAlphaFactoriSUN(int factor); /*
+		glGlobalAlphaFactoriSUN((GLint)factor);
+	*/
+
+	public static native void glGlobalAlphaFactorsSUN(short factor); /*
+		glGlobalAlphaFactorsSUN((GLshort)factor);
+	*/
+
+	public static native void glGlobalAlphaFactorubSUN(byte factor); /*
+		glGlobalAlphaFactorubSUN((GLubyte)factor);
+	*/
+
+	public static native void glGlobalAlphaFactoruiSUN(int factor); /*
+		glGlobalAlphaFactoruiSUN((GLuint)factor);
+	*/
+
+	public static native void glGlobalAlphaFactorusSUN(short factor); /*
+		glGlobalAlphaFactorusSUN((GLushort)factor);
+	*/
+
+	public static native void glReadVideoPixelsSUN(int x, int y, int width, int height, int format, int type, Buffer pixels, int pixelsByteOffset); /*
+		glReadVideoPixelsSUN((GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (GLvoid*)(pixels + pixelsByteOffset));
+	*/
+
+	public static native void glReplacementCodePointerSUN(int type, int stride, Buffer pointer, int pointerByteOffset); /*
+		glReplacementCodePointerSUN((GLenum)type, (GLsizei)stride, (const void*)(pointer + pointerByteOffset));
+	*/
+
+	public static native void glReplacementCodeubSUN(byte code); /*
+		glReplacementCodeubSUN((GLubyte)code);
+	*/
+
+	public static native void glReplacementCodeubvSUN(Buffer code, int codeByteOffset); /*
+		glReplacementCodeubvSUN((const GLubyte*)(code + codeByteOffset));
+	*/
+
+	public static native void glReplacementCodeuiSUN(int code); /*
+		glReplacementCodeuiSUN((GLuint)code);
+	*/
+
+	public static native void glReplacementCodeuivSUN(Buffer code, int codeByteOffset); /*
+		glReplacementCodeuivSUN((const GLuint*)(code + codeByteOffset));
+	*/
+
+	public static native void glReplacementCodeusSUN(short code); /*
+		glReplacementCodeusSUN((GLushort)code);
+	*/
+
+	public static native void glReplacementCodeusvSUN(Buffer code, int codeByteOffset); /*
+		glReplacementCodeusvSUN((const GLushort*)(code + codeByteOffset));
+	*/
+
+	public static native void glColor3fVertex3fSUN(float r, float g, float b, float x, float y, float z); /*
+		glColor3fVertex3fSUN((GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glColor3fVertex3fvSUN(Buffer c, int cByteOffset, Buffer v, int vByteOffset); /*
+		glColor3fVertex3fvSUN((const GLfloat*)(c + cByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glColor4fNormal3fVertex3fSUN(float r, float g, float b, float a, float nx, float ny, float nz, float x, float y, float z); /*
+		glColor4fNormal3fVertex3fSUN((GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)a, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glColor4fNormal3fVertex3fvSUN(Buffer c, int cByteOffset, Buffer n, int nByteOffset, Buffer v, int vByteOffset); /*
+		glColor4fNormal3fVertex3fvSUN((const GLfloat*)(c + cByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glColor4ubVertex2fSUN(byte r, byte g, byte b, byte a, float x, float y); /*
+		glColor4ubVertex2fSUN((GLubyte)r, (GLubyte)g, (GLubyte)b, (GLubyte)a, (GLfloat)x, (GLfloat)y);
+	*/
+
+	public static native void glColor4ubVertex2fvSUN(Buffer c, int cByteOffset, Buffer v, int vByteOffset); /*
+		glColor4ubVertex2fvSUN((const GLubyte*)(c + cByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glColor4ubVertex3fSUN(byte r, byte g, byte b, byte a, float x, float y, float z); /*
+		glColor4ubVertex3fSUN((GLubyte)r, (GLubyte)g, (GLubyte)b, (GLubyte)a, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glColor4ubVertex3fvSUN(Buffer c, int cByteOffset, Buffer v, int vByteOffset); /*
+		glColor4ubVertex3fvSUN((const GLubyte*)(c + cByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glNormal3fVertex3fSUN(float nx, float ny, float nz, float x, float y, float z); /*
+		glNormal3fVertex3fSUN((GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glNormal3fVertex3fvSUN(Buffer n, int nByteOffset, Buffer v, int vByteOffset); /*
+		glNormal3fVertex3fvSUN((const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glReplacementCodeuiColor3fVertex3fSUN(int rc, float r, float g, float b, float x, float y, float z); /*
+		glReplacementCodeuiColor3fVertex3fSUN((GLuint)rc, (GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glReplacementCodeuiColor3fVertex3fvSUN(Buffer rc, int rcByteOffset, Buffer c, int cByteOffset, Buffer v, int vByteOffset); /*
+		glReplacementCodeuiColor3fVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLfloat*)(c + cByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glReplacementCodeuiColor4fNormal3fVertex3fSUN(int rc, float r, float g, float b, float a, float nx, float ny, float nz, float x, float y, float z); /*
+		glReplacementCodeuiColor4fNormal3fVertex3fSUN((GLuint)rc, (GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)a, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glReplacementCodeuiColor4fNormal3fVertex3fvSUN(Buffer rc, int rcByteOffset, Buffer c, int cByteOffset, Buffer n, int nByteOffset, Buffer v, int vByteOffset); /*
+		glReplacementCodeuiColor4fNormal3fVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLfloat*)(c + cByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glReplacementCodeuiColor4ubVertex3fSUN(int rc, byte r, byte g, byte b, byte a, float x, float y, float z); /*
+		glReplacementCodeuiColor4ubVertex3fSUN((GLuint)rc, (GLubyte)r, (GLubyte)g, (GLubyte)b, (GLubyte)a, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glReplacementCodeuiColor4ubVertex3fvSUN(Buffer rc, int rcByteOffset, Buffer c, int cByteOffset, Buffer v, int vByteOffset); /*
+		glReplacementCodeuiColor4ubVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLubyte*)(c + cByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glReplacementCodeuiNormal3fVertex3fSUN(int rc, float nx, float ny, float nz, float x, float y, float z); /*
+		glReplacementCodeuiNormal3fVertex3fSUN((GLuint)rc, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glReplacementCodeuiNormal3fVertex3fvSUN(Buffer rc, int rcByteOffset, Buffer n, int nByteOffset, Buffer v, int vByteOffset); /*
+		glReplacementCodeuiNormal3fVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fSUN(int rc, float s, float t, float r, float g, float b, float a, float nx, float ny, float nz, float x, float y, float z); /*
+		glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fSUN((GLuint)rc, (GLfloat)s, (GLfloat)t, (GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)a, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fvSUN(Buffer rc, int rcByteOffset, Buffer tc, int tcByteOffset, Buffer c, int cByteOffset, Buffer n, int nByteOffset, Buffer v, int vByteOffset); /*
+		glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(c + cByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glReplacementCodeuiTexCoord2fNormal3fVertex3fSUN(int rc, float s, float t, float nx, float ny, float nz, float x, float y, float z); /*
+		glReplacementCodeuiTexCoord2fNormal3fVertex3fSUN((GLuint)rc, (GLfloat)s, (GLfloat)t, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glReplacementCodeuiTexCoord2fNormal3fVertex3fvSUN(Buffer rc, int rcByteOffset, Buffer tc, int tcByteOffset, Buffer n, int nByteOffset, Buffer v, int vByteOffset); /*
+		glReplacementCodeuiTexCoord2fNormal3fVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glReplacementCodeuiTexCoord2fVertex3fSUN(int rc, float s, float t, float x, float y, float z); /*
+		glReplacementCodeuiTexCoord2fVertex3fSUN((GLuint)rc, (GLfloat)s, (GLfloat)t, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glReplacementCodeuiTexCoord2fVertex3fvSUN(Buffer rc, int rcByteOffset, Buffer tc, int tcByteOffset, Buffer v, int vByteOffset); /*
+		glReplacementCodeuiTexCoord2fVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glReplacementCodeuiVertex3fSUN(int rc, float x, float y, float z); /*
+		glReplacementCodeuiVertex3fSUN((GLuint)rc, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glReplacementCodeuiVertex3fvSUN(Buffer rc, int rcByteOffset, Buffer v, int vByteOffset); /*
+		glReplacementCodeuiVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glTexCoord2fColor3fVertex3fSUN(float s, float t, float r, float g, float b, float x, float y, float z); /*
+		glTexCoord2fColor3fVertex3fSUN((GLfloat)s, (GLfloat)t, (GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glTexCoord2fColor3fVertex3fvSUN(Buffer tc, int tcByteOffset, Buffer c, int cByteOffset, Buffer v, int vByteOffset); /*
+		glTexCoord2fColor3fVertex3fvSUN((const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(c + cByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glTexCoord2fColor4fNormal3fVertex3fSUN(float s, float t, float r, float g, float b, float a, float nx, float ny, float nz, float x, float y, float z); /*
+		glTexCoord2fColor4fNormal3fVertex3fSUN((GLfloat)s, (GLfloat)t, (GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)a, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glTexCoord2fColor4fNormal3fVertex3fvSUN(Buffer tc, int tcByteOffset, Buffer c, int cByteOffset, Buffer n, int nByteOffset, Buffer v, int vByteOffset); /*
+		glTexCoord2fColor4fNormal3fVertex3fvSUN((const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(c + cByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glTexCoord2fColor4ubVertex3fSUN(float s, float t, byte r, byte g, byte b, byte a, float x, float y, float z); /*
+		glTexCoord2fColor4ubVertex3fSUN((GLfloat)s, (GLfloat)t, (GLubyte)r, (GLubyte)g, (GLubyte)b, (GLubyte)a, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glTexCoord2fColor4ubVertex3fvSUN(Buffer tc, int tcByteOffset, Buffer c, int cByteOffset, Buffer v, int vByteOffset); /*
+		glTexCoord2fColor4ubVertex3fvSUN((const GLfloat*)(tc + tcByteOffset), (const GLubyte*)(c + cByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glTexCoord2fNormal3fVertex3fSUN(float s, float t, float nx, float ny, float nz, float x, float y, float z); /*
+		glTexCoord2fNormal3fVertex3fSUN((GLfloat)s, (GLfloat)t, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glTexCoord2fNormal3fVertex3fvSUN(Buffer tc, int tcByteOffset, Buffer n, int nByteOffset, Buffer v, int vByteOffset); /*
+		glTexCoord2fNormal3fVertex3fvSUN((const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glTexCoord2fVertex3fSUN(float s, float t, float x, float y, float z); /*
+		glTexCoord2fVertex3fSUN((GLfloat)s, (GLfloat)t, (GLfloat)x, (GLfloat)y, (GLfloat)z);
+	*/
+
+	public static native void glTexCoord2fVertex3fvSUN(Buffer tc, int tcByteOffset, Buffer v, int vByteOffset); /*
+		glTexCoord2fVertex3fvSUN((const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glTexCoord4fColor4fNormal3fVertex4fSUN(float s, float t, float p, float q, float r, float g, float b, float a, float nx, float ny, float nz, float x, float y, float z, float w); /*
+		glTexCoord4fColor4fNormal3fVertex4fSUN((GLfloat)s, (GLfloat)t, (GLfloat)p, (GLfloat)q, (GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)a, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
+	*/
+
+	public static native void glTexCoord4fColor4fNormal3fVertex4fvSUN(Buffer tc, int tcByteOffset, Buffer c, int cByteOffset, Buffer n, int nByteOffset, Buffer v, int vByteOffset); /*
+		glTexCoord4fColor4fNormal3fVertex4fvSUN((const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(c + cByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glTexCoord4fVertex4fSUN(float s, float t, float p, float q, float x, float y, float z, float w); /*
+		glTexCoord4fVertex4fSUN((GLfloat)s, (GLfloat)t, (GLfloat)p, (GLfloat)q, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
+	*/
+
+	public static native void glTexCoord4fVertex4fvSUN(Buffer tc, int tcByteOffset, Buffer v, int vByteOffset); /*
+		glTexCoord4fVertex4fvSUN((const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(v + vByteOffset));
+	*/
+
+	public static native void glAddSwapHintRectWIN(int x, int y, int width, int height); /*
+		glAddSwapHintRectWIN((GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
+	*/
+
 }

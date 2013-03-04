@@ -1,5 +1,0 @@
-glGetString
-	public static native Buffer glGetString(int name); /*
-		return env->NewStringUTF((const char*)glGetString((GLenum)name));
-	*/
------
