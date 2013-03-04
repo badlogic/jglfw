@@ -7,6 +7,7 @@ import java.nio.CharBuffer;
 import java.nio.FloatBuffer;
 
 import com.badlogic.jglfw.GlfwCallbackAdapter;
+import com.badlogic.jglfw.gl.GL;
 import com.badlogic.jglfw.utils.Memory;
 
 public class GlDrawBufferTest {

@@ -3,6 +3,7 @@ package com.badlogic.jglfw;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.badlogic.jglfw.gl.GL;
 import com.badlogic.jglfw.utils.SharedLibraryLoader;
 
 public class Glfw {
@@ -617,7 +618,13 @@ public class Glfw {
 		glfwWindowHint(target, hint);
 	*/
 	
-	public static native long glfwCreateWindow(int width, int height, String title, long monitor, long share); /*
+	public static long glfwCreateWindow(int width, int height, String title, long monitor, long share) {
+		GL.init();
+		return glfwCreateWindowJni(width, height, title, monitor, share);
+	}
+
+	
+	public static native long glfwCreateWindowJni(int width, int height, String title, long monitor, long share); /*
 		GLFWwindow* window = glfwCreateWindow(width, height, title, (GLFWmonitor*)monitor, (GLFWwindow*)share);
 		if(window) {
 			glfwSetWindowPosCallback(window, windowPos);

@@ -54,12 +54,15 @@ public class GLGenerator {
 				buffer.append("\t" + proc.extensionName + " " + EXT + proc.name + ";\n");
 			}
 		}
+		buffer.append("\tstatic int initialized = 0;");
 		buffer.append("\t*/\n");
 		
 		buffer.append("\n\tpublic static native void init(); /*\n");
+		buffer.append("\t\tif(initialized) return;\n");
+		buffer.append("\t\tinitialized = -1;\n");
 		for(GLProcedure proc: procedures) {
 			if(proc.isExtension) {
-//				buffer.append("\t\t" + proc.extensionName + " " + EXT + proc.name + ";\n");
+				buffer.append("\t\t" + EXT + proc.name + " = (" + proc.extensionName + ")glfwGetProcAddress(\"" + proc.name + "\");\n");
 			}
 		}
 		buffer.append("\t*/\n\n");
@@ -107,7 +110,7 @@ public class GLGenerator {
 		
 		buffer.append("); /*\n");
 		if(!proc.returnType.getCType().equals("void")) {
-			buffer.append("\t\treturn (" + proc.returnType.getCType() + ")");
+			buffer.append("\t\treturn (" + proc.returnType.getJniType() + ")");
 		} else {
 			buffer.append("\t\t");
 		}
@@ -147,11 +150,7 @@ public class GLGenerator {
 
 	private void generateConstants (StringBuffer buffer, List<GLConstant> constants) {
 		for(GLConstant c: constants) {
-			if(c.value.equals("0xFFFFFFFFFFFFFFFF")) {
-				buffer.append("\tpublic static final long " + c.name + " = 0xFFFFFFFFFFFFFFFFl;\n");
-			} else {
-				buffer.append("\tpublic static final int " + c.name + " = " + c.value + ";\n");
-			}
+			buffer.append("\tpublic static final " + c.type + " " + c.name + " = " + c.value + ";\n");
 		}
 	}
 
@@ -200,7 +199,7 @@ public class GLGenerator {
 	public static void main (String[] args) {
 		List<GLProcedure> procs = new ArrayList<GLProcedure>();
 		List<GLConstant> consts = new ArrayList<GLConstant>();
-		new GLParser().parse(procs, consts, "jni/gl-headers/GL/gl11.h"); //, "jni/gl-headers/GL/glext.h");
+		new GLParser().parse(procs, consts, "jni/gl-headers/GL/gl11.h", "jni/gl-headers/GL/glext.h");
 		Set<String> names = new HashSet<String>();
 		for(GLProcedure proc: procs) {
 			if(names.contains(proc.name)) {
