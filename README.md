@@ -7,6 +7,28 @@ JGLFW is a crossplatform (Windows, Linux, Mac OS X) wrapper for
 
 The GLFW bindings where created manually using [gdx-jnigen](https://code.google.com/p/libgdx/wiki/SourceBuilding#Jnigen). The bindings for OpenGL and OpenAL are automatically generated from the [GLEW](http://glew.sourceforge.net/) header and the standard [OpenAL Soft](http://kcat.strangesoft.net/openal.html) headers.
 
+Usage
+-----
+Download the latest nightly build from http://libgdx.badlogicgames.com/jglfw/nightlies/
+
+Create a Java project in your prefered way and add jglfw.jar and jglfw-natives.jar to your classpath. Check the [GLFW 3.0 documentation](https://github.com/elmindreda/glfw/blob/master/include/GL/glfw3.h). OpenGL
+and OpenAL should be straight forward to use. See the notes on GLFW, OpenGL and OpenAL below.
+
+Note: 32-bit Linux is currently not supported due to an issue with the build server. You can build the natives yourself, cd to jglfw/jni, then
+
+    ant -f build-linux32.xml
+	
+The endresult is in `jglfw/libs/linux32`, called `libjglfw.so`. Add that to the jglfw-natives.jar file with a ZIP program of your choice. 
+
+Working from Source
+-------------------
+Jglfw was developed with Eclipse, and you can find respective .classpath and .project files in the repository. Before you can work from source, it's recommended to fetch the latest nightlies from the build
+server.
+
+    ant fetch
+	
+This will download the jglfw-natives.jar into the jglfw/libs folder. You can now import the projects (jglfw, jglfw-tests) into Eclipse, or set up projects in an IDE you prefer.
+
 Building
 --------
 The build system consists of an ant script located in the root folder. The simplest way to build jglfw is to invoke ant as follows

@@ -6,6 +6,10 @@
 	    <mkdir dir="target/java"/>
 	</target>
 	
+	<target name="fetch">
+		<get src="http://libgdx.badlogicgames.com/jglfw/nightlies/dist/jglfw-natives.jar" dest="libs/"/>
+	</target>
+	
 	<target name="compile-mac-natives">
 	    <ant antfile="build-macosx32.xml" dir="jni">
 	        <target name="clean"/>
