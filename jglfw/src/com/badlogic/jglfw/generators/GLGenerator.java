@@ -18,6 +18,12 @@ import com.badlogic.jglfw.generators.GLParser.GLProcedure;
 
 public class GLGenerator {
 	private static final String EXT = "ext_";
+	
+	private static enum ProcedureType {
+		Default,
+		LongPointerParams,
+		ArrayParams
+	}
 
 	public void generate(String outputFile, String packageName, String className, List<GLProcedure> procedures, List<GLConstant> constants) {
 		StringBuffer buffer = new StringBuffer();
@@ -67,24 +73,7 @@ public class GLGenerator {
 		}
 		buffer.append("\t*/\n\n");
 	}
-
-	private void generateProcedures (StringBuffer buffer, List<GLProcedure> procedures, Map<String, String> customProcedures) {
-		for(GLProcedure proc: procedures) {
-			if(customProcedures.containsKey(proc.name)) {
-				buffer.append(customProcedures.get(proc.name));
-				buffer.append("\n");
-			} else {
-				if(hasDoublePointerParam(proc)) {
-					System.out.println("GLGenerator warning: double pointer param detected, " + proc.name + " may need custom procedure in custom.txt");
-				}
-				if(hasPointerReturnType(proc)) {
-					System.err.println("GLGenerator error: pointer return type, " + proc.name + " may need custom procedure in custom.txt");
-				}
-				generateProcedure(buffer, proc);
-			}
-		}
-	}	
-
+	
 	private boolean hasPointerReturnType(GLProcedure proc) {
 		return proc.returnType.ptrCount > 0;			
 	}
@@ -103,10 +92,30 @@ public class GLGenerator {
 		return false;
 	}
 
-	private void generateProcedure (StringBuffer buffer, GLProcedure proc) {
+	private void generateProcedures (StringBuffer buffer, List<GLProcedure> procedures, Map<String, String> customProcedures) {
+		for(GLProcedure proc: procedures) {
+			if(customProcedures.containsKey(proc.name)) {
+				buffer.append(customProcedures.get(proc.name));
+				buffer.append("\n");
+			} else {
+				if(hasDoublePointerParam(proc)) {
+					System.out.println("GLGenerator warning: double pointer param detected, " + proc.name + " may need custom procedure in custom.txt");
+				}
+				if(hasPointerReturnType(proc)) {
+					System.err.println("GLGenerator error: pointer return type, " + proc.name + " may need custom procedure in custom.txt");
+				}
+				generateProcedure(buffer, proc, ProcedureType.Default);
+				if(hasPointerParam(proc)) {
+					generateProcedure(buffer, proc, ProcedureType.LongPointerParams);
+				}
+			}
+		}
+	}	
+
+	private void generateProcedure (StringBuffer buffer, GLProcedure proc, ProcedureType type) {
 		buffer.append("\tpublic static native " + proc.returnType.getJavaType() + " " + proc.name + "(");
 		
-		generateJavaParams(buffer, proc);
+		generateJavaParams(buffer, proc, type);
 		
 		buffer.append("); /*\n");
 		if(!proc.returnType.getCType().equals("void")) {
@@ -115,16 +124,21 @@ public class GLGenerator {
 			buffer.append("\t\t");
 		}
 		buffer.append((proc.isExtension?EXT: "") + proc.name + "(");
-		generateCParams(buffer, proc);
+		generateCParams(buffer, proc, type);
 		buffer.append(");\n");
 		buffer.append("\t*/\n\n");
 	}
 
-	private void generateCParams (StringBuffer buffer, GLProcedure proc) {
+	private void generateCParams (StringBuffer buffer, GLProcedure proc, ProcedureType type) {
 		for(int i = 0; i < proc.params.size(); i++) {
 			GLParam param = proc.params.get(i);
 			if(param.type.ptrCount > 0) {
-				buffer.append("(" + param.type.getCType() + ")(" + param.name + " + " + param.name + "ByteOffset)");
+				if(type == ProcedureType.Default) {
+					buffer.append("(" + param.type.getCType() + ")(" + param.name + " + " + param.name + "ByteOffset)");
+				}
+				if(type == ProcedureType.LongPointerParams) {
+					buffer.append("(" + param.type.getCType() + ")" + param.name);
+				}
 			} else {
 				buffer.append("(" + param.type.getCType() + ")" + param.name);
 			}
@@ -134,11 +148,16 @@ public class GLGenerator {
 		}
 	}
 
-	private void generateJavaParams (StringBuffer buffer, GLProcedure proc) {
+	private void generateJavaParams (StringBuffer buffer, GLProcedure proc, ProcedureType type) {
 		for(int i = 0; i < proc.params.size(); i++) {
 			GLParam param = proc.params.get(i);
 			if(param.type.ptrCount > 0) {
-				buffer.append("Buffer " + param.name + ", int " + param.name + "ByteOffset");
+				if(type == ProcedureType.Default) {
+					buffer.append("Buffer " + param.name + ", int " + param.name + "ByteOffset");
+				}
+				if(type == ProcedureType.LongPointerParams) {
+					buffer.append("long " + param.name);
+				}
 			} else {
 				buffer.append(param.type.getJavaType() + " " + param.name);
 			}

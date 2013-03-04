@@ -94,6 +94,6 @@ TODO
  * [X] Build system
  * [X] Nightly builds, see http://libgdx.badlogicgames.com:8080, http://libgdx.badlogicgames.com/jglfw
  * [X] GLFW wrapper
- * [O] OpenGL generator
-   * [ ] Fix bug in jnigen, underscores aren't processed correctly
+ * [X] OpenGL generator
+   * [ ] Add in the last few ignored methods
  * [ ] OpenAL generator

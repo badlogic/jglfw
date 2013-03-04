@@ -11,7 +11,7 @@ public class ShaderTest {
 	public static void main (String[] args) {
 		glfwInit();
 		glfwWindowHint(GLFW_DEPTH_BITS, 16);
-		long window = glfwCreateWindow(480, 320, "GL Draw Buffer Test", 0, 0);
+		long window = glfwCreateWindow(480, 320, "Shader Test", 0, 0);
 		glfwMakeContextCurrent(window);
 		glfwSetCallback(new GlfwCallbackAdapter() {
 			@Override
