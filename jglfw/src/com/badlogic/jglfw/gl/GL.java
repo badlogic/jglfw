@@ -4877,20 +4877,6 @@ public class GL {
 	// @off
 	/*JNI
 	#include <GL/glfw3.h>
-	#undef GL_VERSION_1_2
-	#undef GL_VERSION_1_3
-	#undef GL_VERSION_1_4
-	#undef GL_VERSION_1_5
-	#undef GL_VERSION_2_0
-	#undef GL_VERSION_2_1
-	#undef GL_VERSION_3_0
-	#undef GL_VERSION_3_1
-	#undef GL_VERSION_3_2
-	#undef GL_VERSION_3_3
-	#undef GL_VERSION_4_0
-	#undef GL_VERSION_4_1
-	#undef GL_VERSION_4_2
-	#undef GL_VERSION_4_3
 	#include "GL/glext.h"
 	*/
 	// @off
@@ -11214,15 +11200,15 @@ public class GL {
 		return (jboolean)ext_glIsBuffer((GLuint)buffer);
 	*/
 
-	public static native void glBufferData(int target, int size, Buffer data, int dataByteOffset, int usage); /*
+	public static native void glBufferData(int target, long size, Buffer data, int dataByteOffset, int usage); /*
 		ext_glBufferData((GLenum)target, (GLsizeiptr)size, (const GLvoid*)(data + dataByteOffset), (GLenum)usage);
 	*/
 
-	public static native void glBufferSubData(int target, int offset, int size, Buffer data, int dataByteOffset); /*
+	public static native void glBufferSubData(int target, long offset, long size, Buffer data, int dataByteOffset); /*
 		ext_glBufferSubData((GLenum)target, (GLintptr)offset, (GLsizeiptr)size, (const GLvoid*)(data + dataByteOffset));
 	*/
 
-	public static native void glGetBufferSubData(int target, int offset, int size, Buffer data, int dataByteOffset); /*
+	public static native void glGetBufferSubData(int target, long offset, long size, Buffer data, int dataByteOffset); /*
 		ext_glGetBufferSubData((GLenum)target, (GLintptr)offset, (GLsizeiptr)size, (GLvoid*)(data + dataByteOffset));
 	*/
 
@@ -11380,8 +11366,8 @@ public class GL {
 		ext_glLinkProgram((GLuint)program);
 	*/
 
-	public static native void glShaderSource(int shader, int count, Buffer string, int stringByteOffset, Buffer length, int lengthByteOffset); /*
-		ext_glShaderSource((GLuint)shader, (GLsizei)count, (const GLchar**)(string + stringByteOffset), (const GLint*)(length + lengthByteOffset));
+	public static native void glShaderSource(int shader, String string); /*
+		ext_glShaderSource((GLuint)shader, 1, &string, 0);
 	*/
 
 	public static native void glUseProgram(int program); /*
@@ -11664,7 +11650,7 @@ public class GL {
 		ext_glEndTransformFeedback();
 	*/
 
-	public static native void glBindBufferRange(int target, int index, int buffer, int offset, int size); /*
+	public static native void glBindBufferRange(int target, int index, int buffer, long offset, long size); /*
 		ext_glBindBufferRange((GLenum)target, (GLuint)index, (GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size);
 	*/
 
@@ -12492,15 +12478,15 @@ public class GL {
 		return (jboolean)ext_glIsBufferARB((GLuint)buffer);
 	*/
 
-	public static native void glBufferDataARB(int target, int size, Buffer data, int dataByteOffset, int usage); /*
+	public static native void glBufferDataARB(int target, long size, Buffer data, int dataByteOffset, int usage); /*
 		ext_glBufferDataARB((GLenum)target, (GLsizeiptrARB)size, (const GLvoid*)(data + dataByteOffset), (GLenum)usage);
 	*/
 
-	public static native void glBufferSubDataARB(int target, int offset, int size, Buffer data, int dataByteOffset); /*
+	public static native void glBufferSubDataARB(int target, long offset, long size, Buffer data, int dataByteOffset); /*
 		ext_glBufferSubDataARB((GLenum)target, (GLintptrARB)offset, (GLsizeiptrARB)size, (const GLvoid*)(data + dataByteOffset));
 	*/
 
-	public static native void glGetBufferSubDataARB(int target, int offset, int size, Buffer data, int dataByteOffset); /*
+	public static native void glGetBufferSubDataARB(int target, long offset, long size, Buffer data, int dataByteOffset); /*
 		ext_glGetBufferSubDataARB((GLenum)target, (GLintptrARB)offset, (GLsizeiptrARB)size, (GLvoid*)(data + dataByteOffset));
 	*/
 
@@ -12570,8 +12556,8 @@ public class GL {
 		return (jint)ext_glCreateShaderObjectARB((GLenum)shaderType);
 	*/
 
-	public static native void glShaderSourceARB(int shaderObj, int count, Buffer string, int stringByteOffset, Buffer length, int lengthByteOffset); /*
-		ext_glShaderSourceARB((GLhandleARB)shaderObj, (GLsizei)count, (const GLcharARB**)(string + stringByteOffset), (const GLint*)(length + lengthByteOffset));
+	public static native void glShaderSourceARB(int shader, String string); /*
+		ext_glShaderSource((GLuint)shader, 1, &string, 0);
 	*/
 
 	public static native void glCompileShaderARB(int shaderObj); /*
@@ -12844,7 +12830,7 @@ public class GL {
 		return env->NewDirectByteBuffer(buffer, bufferSize);
 	*/
 
-	public static native void glFlushMappedBufferRange(int target, int offset, int length); /*
+	public static native void glFlushMappedBufferRange(int target, long offset, long length); /*
 		ext_glFlushMappedBufferRange((GLenum)target, (GLintptr)offset, (GLsizeiptr)length);
 	*/
 
@@ -12896,7 +12882,7 @@ public class GL {
 		ext_glUniformBlockBinding((GLuint)program, (GLuint)uniformBlockIndex, (GLuint)uniformBlockBinding);
 	*/
 
-	public static native void glCopyBufferSubData(int readTarget, int writeTarget, int readOffset, int writeOffset, int size); /*
+	public static native void glCopyBufferSubData(int readTarget, int writeTarget, long readOffset, long writeOffset, long size); /*
 		ext_glCopyBufferSubData((GLenum)readTarget, (GLenum)writeTarget, (GLintptr)readOffset, (GLintptr)writeOffset, (GLsizeiptr)size);
 	*/
 
@@ -13924,7 +13910,7 @@ public class GL {
 		ext_glClearBufferData((GLenum)target, (GLenum)internalformat, (GLenum)format, (GLenum)type, (const void*)(data + dataByteOffset));
 	*/
 
-	public static native void glClearBufferSubData(int target, int internalformat, int offset, int size, int format, int type, Buffer data, int dataByteOffset); /*
+	public static native void glClearBufferSubData(int target, int internalformat, long offset, long size, int format, int type, Buffer data, int dataByteOffset); /*
 		ext_glClearBufferSubData((GLenum)target, (GLenum)internalformat, (GLintptr)offset, (GLsizeiptr)size, (GLenum)format, (GLenum)type, (const void*)(data + dataByteOffset));
 	*/
 
@@ -13932,7 +13918,7 @@ public class GL {
 		ext_glClearNamedBufferDataEXT((GLuint)buffer, (GLenum)internalformat, (GLenum)format, (GLenum)type, (const void*)(data + dataByteOffset));
 	*/
 
-	public static native void glClearNamedBufferSubDataEXT(int buffer, int internalformat, int format, int type, int offset, int size, Buffer data, int dataByteOffset); /*
+	public static native void glClearNamedBufferSubDataEXT(int buffer, int internalformat, int format, int type, long offset, long size, Buffer data, int dataByteOffset); /*
 		ext_glClearNamedBufferSubDataEXT((GLuint)buffer, (GLenum)internalformat, (GLenum)format, (GLenum)type, (GLsizeiptr)offset, (GLsizeiptr)size, (const void*)(data + dataByteOffset));
 	*/
 
@@ -13940,7 +13926,7 @@ public class GL {
 		ext_glDispatchCompute((GLuint)num_groups_x, (GLuint)num_groups_y, (GLuint)num_groups_z);
 	*/
 
-	public static native void glDispatchComputeIndirect(int indirect); /*
+	public static native void glDispatchComputeIndirect(long indirect); /*
 		ext_glDispatchComputeIndirect((GLintptr)indirect);
 	*/
 
@@ -13952,7 +13938,7 @@ public class GL {
 		ext_glTextureView((GLuint)texture, (GLenum)target, (GLuint)origtexture, (GLenum)internalformat, (GLuint)minlevel, (GLuint)numlevels, (GLuint)minlayer, (GLuint)numlayers);
 	*/
 
-	public static native void glBindVertexBuffer(int bindingindex, int buffer, int offset, int stride); /*
+	public static native void glBindVertexBuffer(int bindingindex, int buffer, long offset, int stride); /*
 		ext_glBindVertexBuffer((GLuint)bindingindex, (GLuint)buffer, (GLintptr)offset, (GLsizei)stride);
 	*/
 
@@ -13976,7 +13962,7 @@ public class GL {
 		ext_glVertexBindingDivisor((GLuint)bindingindex, (GLuint)divisor);
 	*/
 
-	public static native void glVertexArrayBindVertexBufferEXT(int vaobj, int bindingindex, int buffer, int offset, int stride); /*
+	public static native void glVertexArrayBindVertexBufferEXT(int vaobj, int bindingindex, int buffer, long offset, int stride); /*
 		ext_glVertexArrayBindVertexBufferEXT((GLuint)vaobj, (GLuint)bindingindex, (GLuint)buffer, (GLintptr)offset, (GLsizei)stride);
 	*/
 
@@ -14028,7 +14014,7 @@ public class GL {
 		ext_glInvalidateTexImage((GLuint)texture, (GLint)level);
 	*/
 
-	public static native void glInvalidateBufferSubData(int buffer, int offset, int length); /*
+	public static native void glInvalidateBufferSubData(int buffer, long offset, long length); /*
 		ext_glInvalidateBufferSubData((GLuint)buffer, (GLintptr)offset, (GLsizeiptr)length);
 	*/
 
@@ -14080,11 +14066,11 @@ public class GL {
 		ext_glShaderStorageBlockBinding((GLuint)program, (GLuint)storageBlockIndex, (GLuint)storageBlockBinding);
 	*/
 
-	public static native void glTexBufferRange(int target, int internalformat, int buffer, int offset, int size); /*
+	public static native void glTexBufferRange(int target, int internalformat, int buffer, long offset, long size); /*
 		ext_glTexBufferRange((GLenum)target, (GLenum)internalformat, (GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size);
 	*/
 
-	public static native void glTextureBufferRangeEXT(int texture, int target, int internalformat, int buffer, int offset, int size); /*
+	public static native void glTextureBufferRangeEXT(int texture, int target, int internalformat, int buffer, long offset, long size); /*
 		ext_glTextureBufferRangeEXT((GLuint)texture, (GLenum)target, (GLenum)internalformat, (GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size);
 	*/
 
@@ -17238,7 +17224,7 @@ public class GL {
 		ext_glBufferParameteriAPPLE((GLenum)target, (GLenum)pname, (GLint)param);
 	*/
 
-	public static native void glFlushMappedBufferRangeAPPLE(int target, int offset, int size); /*
+	public static native void glFlushMappedBufferRangeAPPLE(int target, long offset, long size); /*
 		ext_glFlushMappedBufferRangeAPPLE((GLenum)target, (GLintptr)offset, (GLsizeiptr)size);
 	*/
 
@@ -17538,11 +17524,11 @@ public class GL {
 		ext_glTransformFeedbackAttribsNV((GLuint)count, (const GLint*)(attribs + attribsByteOffset), (GLenum)bufferMode);
 	*/
 
-	public static native void glBindBufferRangeNV(int target, int index, int buffer, int offset, int size); /*
+	public static native void glBindBufferRangeNV(int target, int index, int buffer, long offset, long size); /*
 		ext_glBindBufferRangeNV((GLenum)target, (GLuint)index, (GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size);
 	*/
 
-	public static native void glBindBufferOffsetNV(int target, int index, int buffer, int offset); /*
+	public static native void glBindBufferOffsetNV(int target, int index, int buffer, long offset); /*
 		ext_glBindBufferOffsetNV((GLenum)target, (GLuint)index, (GLuint)buffer, (GLintptr)offset);
 	*/
 
@@ -17582,8 +17568,8 @@ public class GL {
 		return (jint)ext_glGetUniformBufferSizeEXT((GLuint)program, (GLint)location);
 	*/
 
-	public static native int glGetUniformOffsetEXT(int program, int location); /*
-		return (jint)ext_glGetUniformOffsetEXT((GLuint)program, (GLint)location);
+	public static native long glGetUniformOffsetEXT(int program, int location); /*
+		return (jlong)ext_glGetUniformOffsetEXT((GLuint)program, (GLint)location);
 	*/
 
 	public static native void glTexParameterIivEXT(int target, int pname, Buffer params, int paramsByteOffset); /*
@@ -17654,11 +17640,11 @@ public class GL {
 		ext_glEndTransformFeedbackEXT();
 	*/
 
-	public static native void glBindBufferRangeEXT(int target, int index, int buffer, int offset, int size); /*
+	public static native void glBindBufferRangeEXT(int target, int index, int buffer, long offset, long size); /*
 		ext_glBindBufferRangeEXT((GLenum)target, (GLuint)index, (GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size);
 	*/
 
-	public static native void glBindBufferOffsetEXT(int target, int index, int buffer, int offset); /*
+	public static native void glBindBufferOffsetEXT(int target, int index, int buffer, long offset); /*
 		ext_glBindBufferOffsetEXT((GLenum)target, (GLuint)index, (GLuint)buffer, (GLintptr)offset);
 	*/
 
@@ -18298,11 +18284,11 @@ public class GL {
 		ext_glProgramUniform4uivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	*/
 
-	public static native void glNamedBufferDataEXT(int buffer, int size, Buffer data, int dataByteOffset, int usage); /*
+	public static native void glNamedBufferDataEXT(int buffer, long size, Buffer data, int dataByteOffset, int usage); /*
 		ext_glNamedBufferDataEXT((GLuint)buffer, (GLsizeiptr)size, (const GLvoid*)(data + dataByteOffset), (GLenum)usage);
 	*/
 
-	public static native void glNamedBufferSubDataEXT(int buffer, int offset, int size, Buffer data, int dataByteOffset); /*
+	public static native void glNamedBufferSubDataEXT(int buffer, long offset, long size, Buffer data, int dataByteOffset); /*
 		ext_glNamedBufferSubDataEXT((GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size, (const GLvoid*)(data + dataByteOffset));
 	*/
 
@@ -18322,11 +18308,11 @@ public class GL {
 		return env->NewDirectByteBuffer(bufferPtr, bufferSize);
 	*/
 
-	public static native void glFlushMappedNamedBufferRangeEXT(int buffer, int offset, int length); /*
+	public static native void glFlushMappedNamedBufferRangeEXT(int buffer, long offset, long length); /*
 		ext_glFlushMappedNamedBufferRangeEXT((GLuint)buffer, (GLintptr)offset, (GLsizeiptr)length);
 	*/
 
-	public static native void glNamedCopyBufferSubDataEXT(int readBuffer, int writeBuffer, int readOffset, int writeOffset, int size); /*
+	public static native void glNamedCopyBufferSubDataEXT(int readBuffer, int writeBuffer, long readOffset, long writeOffset, long size); /*
 		ext_glNamedCopyBufferSubDataEXT((GLuint)readBuffer, (GLuint)writeBuffer, (GLintptr)readOffset, (GLintptr)writeOffset, (GLsizeiptr)size);
 	*/
 
@@ -18338,7 +18324,7 @@ public class GL {
 		ext_glGetNamedBufferPointervEXT((GLuint)buffer, (GLenum)pname, (GLvoid**)(params + paramsByteOffset));
 	*/
 
-	public static native void glGetNamedBufferSubDataEXT(int buffer, int offset, int size, Buffer data, int dataByteOffset); /*
+	public static native void glGetNamedBufferSubDataEXT(int buffer, long offset, long size, Buffer data, int dataByteOffset); /*
 		ext_glGetNamedBufferSubDataEXT((GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size, (GLvoid*)(data + dataByteOffset));
 	*/
 
@@ -18666,7 +18652,7 @@ public class GL {
 		ext_glBeginVideoCaptureNV((GLuint)video_capture_slot);
 	*/
 
-	public static native void glBindVideoCaptureStreamBufferNV(int video_capture_slot, int stream, int frame_region, int offset); /*
+	public static native void glBindVideoCaptureStreamBufferNV(int video_capture_slot, int stream, int frame_region, long offset); /*
 		ext_glBindVideoCaptureStreamBufferNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)frame_region, (GLintptrARB)offset);
 	*/
 
@@ -18782,7 +18768,7 @@ public class GL {
 		ext_glProgramUniformui64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
 	*/
 
-	public static native void glBufferAddressRangeNV(int pname, int index, long address, int length); /*
+	public static native void glBufferAddressRangeNV(int pname, int index, long address, long length); /*
 		ext_glBufferAddressRangeNV((GLenum)pname, (GLuint)index, (GLuint64EXT)address, (GLsizeiptr)length);
 	*/
 
@@ -18878,7 +18864,7 @@ public class GL {
 		ext_glGetVertexAttribLdvEXT((GLuint)index, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
 	*/
 
-	public static native void glVertexArrayVertexAttribLOffsetEXT(int vaobj, int buffer, int index, int size, int type, int stride, int offset); /*
+	public static native void glVertexArrayVertexAttribLOffsetEXT(int vaobj, int buffer, int index, int size, int type, int stride, long offset); /*
 		ext_glVertexArrayVertexAttribLOffsetEXT((GLuint)vaobj, (GLuint)buffer, (GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride, (GLintptr)offset);
 	*/
 
@@ -19182,7 +19168,7 @@ public class GL {
 		ext_glSetMultisamplefvAMD((GLenum)pname, (GLuint)index, (const GLfloat*)(val + valByteOffset));
 	*/
 
-	public static native long glImportSyncEXT(int external_sync_type, int external_sync, int flags); /*
+	public static native long glImportSyncEXT(int external_sync_type, long external_sync, int flags); /*
 		return (jlong)ext_glImportSyncEXT((GLenum)external_sync_type, (GLintptr)external_sync, (GLbitfield)flags);
 	*/
 

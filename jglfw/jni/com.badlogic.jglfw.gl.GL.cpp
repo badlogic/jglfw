@@ -3,23 +3,9 @@
 //@line:4878
 
 	#include <GL/glfw3.h>
-	#undef GL_VERSION_1_2
-	#undef GL_VERSION_1_3
-	#undef GL_VERSION_1_4
-	#undef GL_VERSION_1_5
-	#undef GL_VERSION_2_0
-	#undef GL_VERSION_2_1
-	#undef GL_VERSION_3_0
-	#undef GL_VERSION_3_1
-	#undef GL_VERSION_3_2
-	#undef GL_VERSION_3_3
-	#undef GL_VERSION_4_0
-	#undef GL_VERSION_4_1
-	#undef GL_VERSION_4_2
-	#undef GL_VERSION_4_3
 	#include "GL/glext.h"
 	
-//@line:4897
+//@line:4883
 
 	PFNGLBLENDCOLORPROC ext_glBlendColor;
 	PFNGLBLENDEQUATIONPROC ext_glBlendEquation;
@@ -2228,7 +2214,7 @@
 	static int initialized = 0;	JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_init(JNIEnv* env, jclass clazz) {
 
 
-//@line:7104
+//@line:7090
 
 		if(initialized) return;
 		initialized = -1;
@@ -4443,7 +4429,7 @@
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearIndex(JNIEnv* env, jclass clazz, jfloat c) {
 
 
-//@line:9313
+//@line:9299
 
 		glClearIndex((GLfloat)c);
 	
@@ -4453,7 +4439,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearIndex(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearColor(JNIEnv* env, jclass clazz, jfloat red, jfloat green, jfloat blue, jfloat alpha) {
 
 
-//@line:9317
+//@line:9303
 
 		glClearColor((GLclampf)red, (GLclampf)green, (GLclampf)blue, (GLclampf)alpha);
 	
@@ -4463,7 +4449,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearColor(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClear(JNIEnv* env, jclass clazz, jint mask) {
 
 
-//@line:9321
+//@line:9307
 
 		glClear((GLbitfield)mask);
 	
@@ -4473,7 +4459,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClear(JNIEnv* env, jclass
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexMask(JNIEnv* env, jclass clazz, jint mask) {
 
 
-//@line:9325
+//@line:9311
 
 		glIndexMask((GLuint)mask);
 	
@@ -4483,7 +4469,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexMask(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorMask(JNIEnv* env, jclass clazz, jboolean red, jboolean green, jboolean blue, jboolean alpha) {
 
 
-//@line:9329
+//@line:9315
 
 		glColorMask((GLboolean)red, (GLboolean)green, (GLboolean)blue, (GLboolean)alpha);
 	
@@ -4493,7 +4479,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorMask(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAlphaFunc(JNIEnv* env, jclass clazz, jint func, jfloat ref) {
 
 
-//@line:9333
+//@line:9319
 
 		glAlphaFunc((GLenum)func, (GLclampf)ref);
 	
@@ -4503,7 +4489,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAlphaFunc(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFunc(JNIEnv* env, jclass clazz, jint sfactor, jint dfactor) {
 
 
-//@line:9337
+//@line:9323
 
 		glBlendFunc((GLenum)sfactor, (GLenum)dfactor);
 	
@@ -4513,7 +4499,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFunc(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLogicOp(JNIEnv* env, jclass clazz, jint opcode) {
 
 
-//@line:9341
+//@line:9327
 
 		glLogicOp((GLenum)opcode);
 	
@@ -4523,7 +4509,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLogicOp(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCullFace(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:9345
+//@line:9331
 
 		glCullFace((GLenum)mode);
 	
@@ -4533,7 +4519,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCullFace(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFrontFace(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:9349
+//@line:9335
 
 		glFrontFace((GLenum)mode);
 	
@@ -4543,7 +4529,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFrontFace(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointSize(JNIEnv* env, jclass clazz, jfloat size) {
 
 
-//@line:9353
+//@line:9339
 
 		glPointSize((GLfloat)size);
 	
@@ -4553,7 +4539,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointSize(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLineWidth(JNIEnv* env, jclass clazz, jfloat width) {
 
 
-//@line:9357
+//@line:9343
 
 		glLineWidth((GLfloat)width);
 	
@@ -4563,7 +4549,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLineWidth(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLineStipple(JNIEnv* env, jclass clazz, jint factor, jshort pattern) {
 
 
-//@line:9361
+//@line:9347
 
 		glLineStipple((GLint)factor, (GLushort)pattern);
 	
@@ -4573,7 +4559,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLineStipple(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPolygonMode(JNIEnv* env, jclass clazz, jint face, jint mode) {
 
 
-//@line:9365
+//@line:9351
 
 		glPolygonMode((GLenum)face, (GLenum)mode);
 	
@@ -4583,7 +4569,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPolygonMode(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPolygonOffset(JNIEnv* env, jclass clazz, jfloat factor, jfloat units) {
 
 
-//@line:9369
+//@line:9355
 
 		glPolygonOffset((GLfloat)factor, (GLfloat)units);
 	
@@ -4594,7 +4580,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPolygonStipple(JNIEnv* en
 	unsigned char* mask = (unsigned char*)env->GetDirectBufferAddress(obj_mask);
 
 
-//@line:9373
+//@line:9359
 
 		glPolygonStipple((const GLubyte*)(mask + maskByteOffset));
 	
@@ -4605,7 +4591,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPolygonStipple(JNIEnv*
 	unsigned char* mask = (unsigned char*)env->GetDirectBufferAddress(obj_mask);
 
 
-//@line:9377
+//@line:9363
 
 		glGetPolygonStipple((GLubyte*)(mask + maskByteOffset));
 	
@@ -4615,7 +4601,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPolygonStipple(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEdgeFlag(JNIEnv* env, jclass clazz, jboolean flag) {
 
 
-//@line:9381
+//@line:9367
 
 		glEdgeFlag((GLboolean)flag);
 	
@@ -4626,7 +4612,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEdgeFlagv(JNIEnv* env, jc
 	unsigned char* flag = (unsigned char*)env->GetDirectBufferAddress(obj_flag);
 
 
-//@line:9385
+//@line:9371
 
 		glEdgeFlagv((const GLboolean*)(flag + flagByteOffset));
 	
@@ -4636,7 +4622,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEdgeFlagv(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glScissor(JNIEnv* env, jclass clazz, jint x, jint y, jint width, jint height) {
 
 
-//@line:9389
+//@line:9375
 
 		glScissor((GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
 	
@@ -4647,7 +4633,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClipPlane(JNIEnv* env, jc
 	unsigned char* equation = (unsigned char*)env->GetDirectBufferAddress(obj_equation);
 
 
-//@line:9393
+//@line:9379
 
 		glClipPlane((GLenum)plane, (const GLdouble*)(equation + equationByteOffset));
 	
@@ -4658,7 +4644,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetClipPlane(JNIEnv* env,
 	unsigned char* equation = (unsigned char*)env->GetDirectBufferAddress(obj_equation);
 
 
-//@line:9397
+//@line:9383
 
 		glGetClipPlane((GLenum)plane, (GLdouble*)(equation + equationByteOffset));
 	
@@ -4668,7 +4654,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetClipPlane(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawBuffer(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:9401
+//@line:9387
 
 		glDrawBuffer((GLenum)mode);
 	
@@ -4678,7 +4664,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawBuffer(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReadBuffer(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:9405
+//@line:9391
 
 		glReadBuffer((GLenum)mode);
 	
@@ -4688,7 +4674,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReadBuffer(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnable(JNIEnv* env, jclass clazz, jint cap) {
 
 
-//@line:9409
+//@line:9395
 
 		glEnable((GLenum)cap);
 	
@@ -4698,7 +4684,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnable(JNIEnv* env, jclas
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDisable(JNIEnv* env, jclass clazz, jint cap) {
 
 
-//@line:9413
+//@line:9399
 
 		glDisable((GLenum)cap);
 	
@@ -4708,7 +4694,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDisable(JNIEnv* env, jcla
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsEnabled(JNIEnv* env, jclass clazz, jint cap) {
 
 
-//@line:9417
+//@line:9403
 
 		return (jboolean)glIsEnabled((GLenum)cap);
 	
@@ -4718,7 +4704,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsEnabled(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnableClientState(JNIEnv* env, jclass clazz, jint cap) {
 
 
-//@line:9421
+//@line:9407
 
 		glEnableClientState((GLenum)cap);
 	
@@ -4728,7 +4714,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnableClientState(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDisableClientState(JNIEnv* env, jclass clazz, jint cap) {
 
 
-//@line:9425
+//@line:9411
 
 		glDisableClientState((GLenum)cap);
 	
@@ -4739,7 +4725,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBooleanv(JNIEnv* env, 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:9429
+//@line:9415
 
 		glGetBooleanv((GLenum)pname, (GLboolean*)(params + paramsByteOffset));
 	
@@ -4750,7 +4736,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetDoublev(JNIEnv* env, j
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:9433
+//@line:9419
 
 		glGetDoublev((GLenum)pname, (GLdouble*)(params + paramsByteOffset));
 	
@@ -4761,7 +4747,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFloatv(JNIEnv* env, jc
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:9437
+//@line:9423
 
 		glGetFloatv((GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -4772,7 +4758,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetIntegerv(JNIEnv* env, 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:9441
+//@line:9427
 
 		glGetIntegerv((GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -4782,7 +4768,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetIntegerv(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPushAttrib(JNIEnv* env, jclass clazz, jint mask) {
 
 
-//@line:9445
+//@line:9431
 
 		glPushAttrib((GLbitfield)mask);
 	
@@ -4792,7 +4778,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPushAttrib(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPopAttrib(JNIEnv* env, jclass clazz) {
 
 
-//@line:9449
+//@line:9435
 
 		glPopAttrib();
 	
@@ -4802,7 +4788,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPopAttrib(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPushClientAttrib(JNIEnv* env, jclass clazz, jint mask) {
 
 
-//@line:9453
+//@line:9439
 
 		glPushClientAttrib((GLbitfield)mask);
 	
@@ -4812,7 +4798,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPushClientAttrib(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPopClientAttrib(JNIEnv* env, jclass clazz) {
 
 
-//@line:9457
+//@line:9443
 
 		glPopClientAttrib();
 	
@@ -4822,7 +4808,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPopClientAttrib(JNIEnv* e
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glRenderMode(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:9461
+//@line:9447
 
 		return (jint)glRenderMode((GLenum)mode);
 	
@@ -4832,7 +4818,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glRenderMode(JNIEnv* env, j
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetError(JNIEnv* env, jclass clazz) {
 
 
-//@line:9465
+//@line:9451
 
 		return (jint)glGetError();
 	
@@ -4842,7 +4828,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetError(JNIEnv* env, jcl
 JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glGetString__I(JNIEnv* env, jclass clazz, jint name) {
 
 
-//@line:9469
+//@line:9455
 
 		return env->NewStringUTF((const char*)glGetString((GLenum)name));
 	
@@ -4852,7 +4838,7 @@ JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glGetString__I(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFinish(JNIEnv* env, jclass clazz) {
 
 
-//@line:9473
+//@line:9459
 
 		glFinish();
 	
@@ -4862,7 +4848,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFinish(JNIEnv* env, jclas
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlush(JNIEnv* env, jclass clazz) {
 
 
-//@line:9477
+//@line:9463
 
 		glFlush();
 	
@@ -4872,7 +4858,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlush(JNIEnv* env, jclass
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glHint(JNIEnv* env, jclass clazz, jint target, jint mode) {
 
 
-//@line:9481
+//@line:9467
 
 		glHint((GLenum)target, (GLenum)mode);
 	
@@ -4882,7 +4868,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glHint(JNIEnv* env, jclass 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearDepth(JNIEnv* env, jclass clazz, jdouble depth) {
 
 
-//@line:9485
+//@line:9471
 
 		glClearDepth((GLclampd)depth);
 	
@@ -4892,7 +4878,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearDepth(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthFunc(JNIEnv* env, jclass clazz, jint func) {
 
 
-//@line:9489
+//@line:9475
 
 		glDepthFunc((GLenum)func);
 	
@@ -4902,7 +4888,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthFunc(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthMask(JNIEnv* env, jclass clazz, jboolean flag) {
 
 
-//@line:9493
+//@line:9479
 
 		glDepthMask((GLboolean)flag);
 	
@@ -4912,7 +4898,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthMask(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthRange(JNIEnv* env, jclass clazz, jdouble near_val, jdouble far_val) {
 
 
-//@line:9497
+//@line:9483
 
 		glDepthRange((GLclampd)near_val, (GLclampd)far_val);
 	
@@ -4922,7 +4908,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthRange(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearAccum(JNIEnv* env, jclass clazz, jfloat red, jfloat green, jfloat blue, jfloat alpha) {
 
 
-//@line:9501
+//@line:9487
 
 		glClearAccum((GLfloat)red, (GLfloat)green, (GLfloat)blue, (GLfloat)alpha);
 	
@@ -4932,7 +4918,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearAccum(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAccum(JNIEnv* env, jclass clazz, jint op, jfloat value) {
 
 
-//@line:9505
+//@line:9491
 
 		glAccum((GLenum)op, (GLfloat)value);
 	
@@ -4942,7 +4928,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAccum(JNIEnv* env, jclass
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixMode(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:9509
+//@line:9495
 
 		glMatrixMode((GLenum)mode);
 	
@@ -4952,7 +4938,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixMode(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glOrtho(JNIEnv* env, jclass clazz, jdouble left, jdouble right, jdouble bottom, jdouble top, jdouble near_val, jdouble far_val) {
 
 
-//@line:9513
+//@line:9499
 
 		glOrtho((GLdouble)left, (GLdouble)right, (GLdouble)bottom, (GLdouble)top, (GLdouble)near_val, (GLdouble)far_val);
 	
@@ -4962,7 +4948,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glOrtho(JNIEnv* env, jclass
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFrustum(JNIEnv* env, jclass clazz, jdouble left, jdouble right, jdouble bottom, jdouble top, jdouble near_val, jdouble far_val) {
 
 
-//@line:9517
+//@line:9503
 
 		glFrustum((GLdouble)left, (GLdouble)right, (GLdouble)bottom, (GLdouble)top, (GLdouble)near_val, (GLdouble)far_val);
 	
@@ -4972,7 +4958,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFrustum(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glViewport(JNIEnv* env, jclass clazz, jint x, jint y, jint width, jint height) {
 
 
-//@line:9521
+//@line:9507
 
 		glViewport((GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
 	
@@ -4982,7 +4968,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glViewport(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPushMatrix(JNIEnv* env, jclass clazz) {
 
 
-//@line:9525
+//@line:9511
 
 		glPushMatrix();
 	
@@ -4992,7 +4978,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPushMatrix(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPopMatrix(JNIEnv* env, jclass clazz) {
 
 
-//@line:9529
+//@line:9515
 
 		glPopMatrix();
 	
@@ -5002,7 +4988,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPopMatrix(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLoadIdentity(JNIEnv* env, jclass clazz) {
 
 
-//@line:9533
+//@line:9519
 
 		glLoadIdentity();
 	
@@ -5013,7 +4999,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLoadMatrixd(JNIEnv* env, 
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:9537
+//@line:9523
 
 		glLoadMatrixd((const GLdouble*)(m + mByteOffset));
 	
@@ -5024,7 +5010,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLoadMatrixf(JNIEnv* env, 
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:9541
+//@line:9527
 
 		glLoadMatrixf((const GLfloat*)(m + mByteOffset));
 	
@@ -5035,7 +5021,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultMatrixd(JNIEnv* env, 
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:9545
+//@line:9531
 
 		glMultMatrixd((const GLdouble*)(m + mByteOffset));
 	
@@ -5046,7 +5032,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultMatrixf(JNIEnv* env, 
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:9549
+//@line:9535
 
 		glMultMatrixf((const GLfloat*)(m + mByteOffset));
 	
@@ -5056,7 +5042,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultMatrixf(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRotated(JNIEnv* env, jclass clazz, jdouble angle, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:9553
+//@line:9539
 
 		glRotated((GLdouble)angle, (GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -5066,7 +5052,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRotated(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRotatef(JNIEnv* env, jclass clazz, jfloat angle, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:9557
+//@line:9543
 
 		glRotatef((GLfloat)angle, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -5076,7 +5062,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRotatef(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glScaled(JNIEnv* env, jclass clazz, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:9561
+//@line:9547
 
 		glScaled((GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -5086,7 +5072,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glScaled(JNIEnv* env, jclas
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glScalef(JNIEnv* env, jclass clazz, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:9565
+//@line:9551
 
 		glScalef((GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -5096,7 +5082,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glScalef(JNIEnv* env, jclas
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTranslated(JNIEnv* env, jclass clazz, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:9569
+//@line:9555
 
 		glTranslated((GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -5106,7 +5092,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTranslated(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTranslatef(JNIEnv* env, jclass clazz, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:9573
+//@line:9559
 
 		glTranslatef((GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -5116,7 +5102,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTranslatef(JNIEnv* env, j
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsList(JNIEnv* env, jclass clazz, jint list) {
 
 
-//@line:9577
+//@line:9563
 
 		return (jboolean)glIsList((GLuint)list);
 	
@@ -5126,7 +5112,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsList(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteLists(JNIEnv* env, jclass clazz, jint list, jint range) {
 
 
-//@line:9581
+//@line:9567
 
 		glDeleteLists((GLuint)list, (GLsizei)range);
 	
@@ -5136,7 +5122,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteLists(JNIEnv* env, 
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGenLists(JNIEnv* env, jclass clazz, jint range) {
 
 
-//@line:9585
+//@line:9571
 
 		return (jint)glGenLists((GLsizei)range);
 	
@@ -5146,7 +5132,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGenLists(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNewList(JNIEnv* env, jclass clazz, jint list, jint mode) {
 
 
-//@line:9589
+//@line:9575
 
 		glNewList((GLuint)list, (GLenum)mode);
 	
@@ -5156,7 +5142,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNewList(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndList(JNIEnv* env, jclass clazz) {
 
 
-//@line:9593
+//@line:9579
 
 		glEndList();
 	
@@ -5166,7 +5152,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndList(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCallList(JNIEnv* env, jclass clazz, jint list) {
 
 
-//@line:9597
+//@line:9583
 
 		glCallList((GLuint)list);
 	
@@ -5177,7 +5163,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCallLists(JNIEnv* env, jc
 	unsigned char* lists = (unsigned char*)env->GetDirectBufferAddress(obj_lists);
 
 
-//@line:9601
+//@line:9587
 
 		glCallLists((GLsizei)n, (GLenum)type, (const GLvoid*)(lists + listsByteOffset));
 	
@@ -5187,7 +5173,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCallLists(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glListBase(JNIEnv* env, jclass clazz, jint base) {
 
 
-//@line:9605
+//@line:9591
 
 		glListBase((GLuint)base);
 	
@@ -5197,7 +5183,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glListBase(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBegin(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:9609
+//@line:9595
 
 		glBegin((GLenum)mode);
 	
@@ -5207,7 +5193,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBegin(JNIEnv* env, jclass
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnd(JNIEnv* env, jclass clazz) {
 
 
-//@line:9613
+//@line:9599
 
 		glEnd();
 	
@@ -5217,7 +5203,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnd(JNIEnv* env, jclass c
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2d(JNIEnv* env, jclass clazz, jdouble x, jdouble y) {
 
 
-//@line:9617
+//@line:9603
 
 		glVertex2d((GLdouble)x, (GLdouble)y);
 	
@@ -5227,7 +5213,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2d(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2f(JNIEnv* env, jclass clazz, jfloat x, jfloat y) {
 
 
-//@line:9621
+//@line:9607
 
 		glVertex2f((GLfloat)x, (GLfloat)y);
 	
@@ -5237,7 +5223,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2f(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2i(JNIEnv* env, jclass clazz, jint x, jint y) {
 
 
-//@line:9625
+//@line:9611
 
 		glVertex2i((GLint)x, (GLint)y);
 	
@@ -5247,7 +5233,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2i(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2s(JNIEnv* env, jclass clazz, jshort x, jshort y) {
 
 
-//@line:9629
+//@line:9615
 
 		glVertex2s((GLshort)x, (GLshort)y);
 	
@@ -5257,7 +5243,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2s(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3d(JNIEnv* env, jclass clazz, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:9633
+//@line:9619
 
 		glVertex3d((GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -5267,7 +5253,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3d(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3f(JNIEnv* env, jclass clazz, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:9637
+//@line:9623
 
 		glVertex3f((GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -5277,7 +5263,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3f(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3i(JNIEnv* env, jclass clazz, jint x, jint y, jint z) {
 
 
-//@line:9641
+//@line:9627
 
 		glVertex3i((GLint)x, (GLint)y, (GLint)z);
 	
@@ -5287,7 +5273,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3i(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3s(JNIEnv* env, jclass clazz, jshort x, jshort y, jshort z) {
 
 
-//@line:9645
+//@line:9631
 
 		glVertex3s((GLshort)x, (GLshort)y, (GLshort)z);
 	
@@ -5297,7 +5283,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3s(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4d(JNIEnv* env, jclass clazz, jdouble x, jdouble y, jdouble z, jdouble w) {
 
 
-//@line:9649
+//@line:9635
 
 		glVertex4d((GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -5307,7 +5293,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4d(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4f(JNIEnv* env, jclass clazz, jfloat x, jfloat y, jfloat z, jfloat w) {
 
 
-//@line:9653
+//@line:9639
 
 		glVertex4f((GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
 	
@@ -5317,7 +5303,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4f(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4i(JNIEnv* env, jclass clazz, jint x, jint y, jint z, jint w) {
 
 
-//@line:9657
+//@line:9643
 
 		glVertex4i((GLint)x, (GLint)y, (GLint)z, (GLint)w);
 	
@@ -5327,7 +5313,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4i(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4s(JNIEnv* env, jclass clazz, jshort x, jshort y, jshort z, jshort w) {
 
 
-//@line:9661
+//@line:9647
 
 		glVertex4s((GLshort)x, (GLshort)y, (GLshort)z, (GLshort)w);
 	
@@ -5338,7 +5324,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2dv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9665
+//@line:9651
 
 		glVertex2dv((const GLdouble*)(v + vByteOffset));
 	
@@ -5349,7 +5335,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2fv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9669
+//@line:9655
 
 		glVertex2fv((const GLfloat*)(v + vByteOffset));
 	
@@ -5360,7 +5346,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2iv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9673
+//@line:9659
 
 		glVertex2iv((const GLint*)(v + vByteOffset));
 	
@@ -5371,7 +5357,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2sv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9677
+//@line:9663
 
 		glVertex2sv((const GLshort*)(v + vByteOffset));
 	
@@ -5382,7 +5368,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3dv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9681
+//@line:9667
 
 		glVertex3dv((const GLdouble*)(v + vByteOffset));
 	
@@ -5393,7 +5379,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3fv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9685
+//@line:9671
 
 		glVertex3fv((const GLfloat*)(v + vByteOffset));
 	
@@ -5404,7 +5390,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3iv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9689
+//@line:9675
 
 		glVertex3iv((const GLint*)(v + vByteOffset));
 	
@@ -5415,7 +5401,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3sv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9693
+//@line:9679
 
 		glVertex3sv((const GLshort*)(v + vByteOffset));
 	
@@ -5426,7 +5412,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4dv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9697
+//@line:9683
 
 		glVertex4dv((const GLdouble*)(v + vByteOffset));
 	
@@ -5437,7 +5423,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4fv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9701
+//@line:9687
 
 		glVertex4fv((const GLfloat*)(v + vByteOffset));
 	
@@ -5448,7 +5434,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4iv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9705
+//@line:9691
 
 		glVertex4iv((const GLint*)(v + vByteOffset));
 	
@@ -5459,7 +5445,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4sv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9709
+//@line:9695
 
 		glVertex4sv((const GLshort*)(v + vByteOffset));
 	
@@ -5469,7 +5455,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4sv(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3b(JNIEnv* env, jclass clazz, jbyte nx, jbyte ny, jbyte nz) {
 
 
-//@line:9713
+//@line:9699
 
 		glNormal3b((GLbyte)nx, (GLbyte)ny, (GLbyte)nz);
 	
@@ -5479,7 +5465,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3b(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3d(JNIEnv* env, jclass clazz, jdouble nx, jdouble ny, jdouble nz) {
 
 
-//@line:9717
+//@line:9703
 
 		glNormal3d((GLdouble)nx, (GLdouble)ny, (GLdouble)nz);
 	
@@ -5489,7 +5475,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3d(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3f(JNIEnv* env, jclass clazz, jfloat nx, jfloat ny, jfloat nz) {
 
 
-//@line:9721
+//@line:9707
 
 		glNormal3f((GLfloat)nx, (GLfloat)ny, (GLfloat)nz);
 	
@@ -5499,7 +5485,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3f(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3i(JNIEnv* env, jclass clazz, jint nx, jint ny, jint nz) {
 
 
-//@line:9725
+//@line:9711
 
 		glNormal3i((GLint)nx, (GLint)ny, (GLint)nz);
 	
@@ -5509,7 +5495,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3i(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3s(JNIEnv* env, jclass clazz, jshort nx, jshort ny, jshort nz) {
 
 
-//@line:9729
+//@line:9715
 
 		glNormal3s((GLshort)nx, (GLshort)ny, (GLshort)nz);
 	
@@ -5520,7 +5506,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3bv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9733
+//@line:9719
 
 		glNormal3bv((const GLbyte*)(v + vByteOffset));
 	
@@ -5531,7 +5517,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3dv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9737
+//@line:9723
 
 		glNormal3dv((const GLdouble*)(v + vByteOffset));
 	
@@ -5542,7 +5528,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3fv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9741
+//@line:9727
 
 		glNormal3fv((const GLfloat*)(v + vByteOffset));
 	
@@ -5553,7 +5539,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3iv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9745
+//@line:9731
 
 		glNormal3iv((const GLint*)(v + vByteOffset));
 	
@@ -5564,7 +5550,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3sv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9749
+//@line:9735
 
 		glNormal3sv((const GLshort*)(v + vByteOffset));
 	
@@ -5574,7 +5560,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3sv(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexd(JNIEnv* env, jclass clazz, jdouble c) {
 
 
-//@line:9753
+//@line:9739
 
 		glIndexd((GLdouble)c);
 	
@@ -5584,7 +5570,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexd(JNIEnv* env, jclas
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexf(JNIEnv* env, jclass clazz, jfloat c) {
 
 
-//@line:9757
+//@line:9743
 
 		glIndexf((GLfloat)c);
 	
@@ -5594,7 +5580,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexf(JNIEnv* env, jclas
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexi(JNIEnv* env, jclass clazz, jint c) {
 
 
-//@line:9761
+//@line:9747
 
 		glIndexi((GLint)c);
 	
@@ -5604,7 +5590,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexi(JNIEnv* env, jclas
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexs(JNIEnv* env, jclass clazz, jshort c) {
 
 
-//@line:9765
+//@line:9751
 
 		glIndexs((GLshort)c);
 	
@@ -5614,7 +5600,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexs(JNIEnv* env, jclas
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexub(JNIEnv* env, jclass clazz, jbyte c) {
 
 
-//@line:9769
+//@line:9755
 
 		glIndexub((GLubyte)c);
 	
@@ -5625,7 +5611,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexdv(JNIEnv* env, jcla
 	unsigned char* c = (unsigned char*)env->GetDirectBufferAddress(obj_c);
 
 
-//@line:9773
+//@line:9759
 
 		glIndexdv((const GLdouble*)(c + cByteOffset));
 	
@@ -5636,7 +5622,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexfv(JNIEnv* env, jcla
 	unsigned char* c = (unsigned char*)env->GetDirectBufferAddress(obj_c);
 
 
-//@line:9777
+//@line:9763
 
 		glIndexfv((const GLfloat*)(c + cByteOffset));
 	
@@ -5647,7 +5633,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexiv(JNIEnv* env, jcla
 	unsigned char* c = (unsigned char*)env->GetDirectBufferAddress(obj_c);
 
 
-//@line:9781
+//@line:9767
 
 		glIndexiv((const GLint*)(c + cByteOffset));
 	
@@ -5658,7 +5644,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexsv(JNIEnv* env, jcla
 	unsigned char* c = (unsigned char*)env->GetDirectBufferAddress(obj_c);
 
 
-//@line:9785
+//@line:9771
 
 		glIndexsv((const GLshort*)(c + cByteOffset));
 	
@@ -5669,7 +5655,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexubv(JNIEnv* env, jcl
 	unsigned char* c = (unsigned char*)env->GetDirectBufferAddress(obj_c);
 
 
-//@line:9789
+//@line:9775
 
 		glIndexubv((const GLubyte*)(c + cByteOffset));
 	
@@ -5679,7 +5665,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexubv(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3b(JNIEnv* env, jclass clazz, jbyte red, jbyte green, jbyte blue) {
 
 
-//@line:9793
+//@line:9779
 
 		glColor3b((GLbyte)red, (GLbyte)green, (GLbyte)blue);
 	
@@ -5689,7 +5675,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3b(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3d(JNIEnv* env, jclass clazz, jdouble red, jdouble green, jdouble blue) {
 
 
-//@line:9797
+//@line:9783
 
 		glColor3d((GLdouble)red, (GLdouble)green, (GLdouble)blue);
 	
@@ -5699,7 +5685,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3d(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3f(JNIEnv* env, jclass clazz, jfloat red, jfloat green, jfloat blue) {
 
 
-//@line:9801
+//@line:9787
 
 		glColor3f((GLfloat)red, (GLfloat)green, (GLfloat)blue);
 	
@@ -5709,7 +5695,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3f(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3i(JNIEnv* env, jclass clazz, jint red, jint green, jint blue) {
 
 
-//@line:9805
+//@line:9791
 
 		glColor3i((GLint)red, (GLint)green, (GLint)blue);
 	
@@ -5719,7 +5705,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3i(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3s(JNIEnv* env, jclass clazz, jshort red, jshort green, jshort blue) {
 
 
-//@line:9809
+//@line:9795
 
 		glColor3s((GLshort)red, (GLshort)green, (GLshort)blue);
 	
@@ -5729,7 +5715,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3s(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3ub(JNIEnv* env, jclass clazz, jbyte red, jbyte green, jbyte blue) {
 
 
-//@line:9813
+//@line:9799
 
 		glColor3ub((GLubyte)red, (GLubyte)green, (GLubyte)blue);
 	
@@ -5739,7 +5725,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3ub(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3ui(JNIEnv* env, jclass clazz, jint red, jint green, jint blue) {
 
 
-//@line:9817
+//@line:9803
 
 		glColor3ui((GLuint)red, (GLuint)green, (GLuint)blue);
 	
@@ -5749,7 +5735,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3ui(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3us(JNIEnv* env, jclass clazz, jshort red, jshort green, jshort blue) {
 
 
-//@line:9821
+//@line:9807
 
 		glColor3us((GLushort)red, (GLushort)green, (GLushort)blue);
 	
@@ -5759,7 +5745,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3us(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4b(JNIEnv* env, jclass clazz, jbyte red, jbyte green, jbyte blue, jbyte alpha) {
 
 
-//@line:9825
+//@line:9811
 
 		glColor4b((GLbyte)red, (GLbyte)green, (GLbyte)blue, (GLbyte)alpha);
 	
@@ -5769,7 +5755,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4b(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4d(JNIEnv* env, jclass clazz, jdouble red, jdouble green, jdouble blue, jdouble alpha) {
 
 
-//@line:9829
+//@line:9815
 
 		glColor4d((GLdouble)red, (GLdouble)green, (GLdouble)blue, (GLdouble)alpha);
 	
@@ -5779,7 +5765,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4d(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4f(JNIEnv* env, jclass clazz, jfloat red, jfloat green, jfloat blue, jfloat alpha) {
 
 
-//@line:9833
+//@line:9819
 
 		glColor4f((GLfloat)red, (GLfloat)green, (GLfloat)blue, (GLfloat)alpha);
 	
@@ -5789,7 +5775,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4f(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4i(JNIEnv* env, jclass clazz, jint red, jint green, jint blue, jint alpha) {
 
 
-//@line:9837
+//@line:9823
 
 		glColor4i((GLint)red, (GLint)green, (GLint)blue, (GLint)alpha);
 	
@@ -5799,7 +5785,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4i(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4s(JNIEnv* env, jclass clazz, jshort red, jshort green, jshort blue, jshort alpha) {
 
 
-//@line:9841
+//@line:9827
 
 		glColor4s((GLshort)red, (GLshort)green, (GLshort)blue, (GLshort)alpha);
 	
@@ -5809,7 +5795,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4s(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4ub(JNIEnv* env, jclass clazz, jbyte red, jbyte green, jbyte blue, jbyte alpha) {
 
 
-//@line:9845
+//@line:9831
 
 		glColor4ub((GLubyte)red, (GLubyte)green, (GLubyte)blue, (GLubyte)alpha);
 	
@@ -5819,7 +5805,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4ub(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4ui(JNIEnv* env, jclass clazz, jint red, jint green, jint blue, jint alpha) {
 
 
-//@line:9849
+//@line:9835
 
 		glColor4ui((GLuint)red, (GLuint)green, (GLuint)blue, (GLuint)alpha);
 	
@@ -5829,7 +5815,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4ui(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4us(JNIEnv* env, jclass clazz, jshort red, jshort green, jshort blue, jshort alpha) {
 
 
-//@line:9853
+//@line:9839
 
 		glColor4us((GLushort)red, (GLushort)green, (GLushort)blue, (GLushort)alpha);
 	
@@ -5840,7 +5826,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3bv(JNIEnv* env, jcl
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9857
+//@line:9843
 
 		glColor3bv((const GLbyte*)(v + vByteOffset));
 	
@@ -5851,7 +5837,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3dv(JNIEnv* env, jcl
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9861
+//@line:9847
 
 		glColor3dv((const GLdouble*)(v + vByteOffset));
 	
@@ -5862,7 +5848,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3fv(JNIEnv* env, jcl
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9865
+//@line:9851
 
 		glColor3fv((const GLfloat*)(v + vByteOffset));
 	
@@ -5873,7 +5859,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3iv(JNIEnv* env, jcl
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9869
+//@line:9855
 
 		glColor3iv((const GLint*)(v + vByteOffset));
 	
@@ -5884,7 +5870,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3sv(JNIEnv* env, jcl
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9873
+//@line:9859
 
 		glColor3sv((const GLshort*)(v + vByteOffset));
 	
@@ -5895,7 +5881,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3ubv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9877
+//@line:9863
 
 		glColor3ubv((const GLubyte*)(v + vByteOffset));
 	
@@ -5906,7 +5892,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3uiv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9881
+//@line:9867
 
 		glColor3uiv((const GLuint*)(v + vByteOffset));
 	
@@ -5917,7 +5903,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3usv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9885
+//@line:9871
 
 		glColor3usv((const GLushort*)(v + vByteOffset));
 	
@@ -5928,7 +5914,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4bv(JNIEnv* env, jcl
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9889
+//@line:9875
 
 		glColor4bv((const GLbyte*)(v + vByteOffset));
 	
@@ -5939,7 +5925,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4dv(JNIEnv* env, jcl
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9893
+//@line:9879
 
 		glColor4dv((const GLdouble*)(v + vByteOffset));
 	
@@ -5950,7 +5936,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4fv(JNIEnv* env, jcl
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9897
+//@line:9883
 
 		glColor4fv((const GLfloat*)(v + vByteOffset));
 	
@@ -5961,7 +5947,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4iv(JNIEnv* env, jcl
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9901
+//@line:9887
 
 		glColor4iv((const GLint*)(v + vByteOffset));
 	
@@ -5972,7 +5958,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4sv(JNIEnv* env, jcl
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9905
+//@line:9891
 
 		glColor4sv((const GLshort*)(v + vByteOffset));
 	
@@ -5983,7 +5969,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4ubv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9909
+//@line:9895
 
 		glColor4ubv((const GLubyte*)(v + vByteOffset));
 	
@@ -5994,7 +5980,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4uiv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9913
+//@line:9899
 
 		glColor4uiv((const GLuint*)(v + vByteOffset));
 	
@@ -6005,7 +5991,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4usv(JNIEnv* env, jc
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9917
+//@line:9903
 
 		glColor4usv((const GLushort*)(v + vByteOffset));
 	
@@ -6015,7 +6001,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4usv(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1d(JNIEnv* env, jclass clazz, jdouble s) {
 
 
-//@line:9921
+//@line:9907
 
 		glTexCoord1d((GLdouble)s);
 	
@@ -6025,7 +6011,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1d(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1f(JNIEnv* env, jclass clazz, jfloat s) {
 
 
-//@line:9925
+//@line:9911
 
 		glTexCoord1f((GLfloat)s);
 	
@@ -6035,7 +6021,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1f(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1i(JNIEnv* env, jclass clazz, jint s) {
 
 
-//@line:9929
+//@line:9915
 
 		glTexCoord1i((GLint)s);
 	
@@ -6045,7 +6031,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1i(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1s(JNIEnv* env, jclass clazz, jshort s) {
 
 
-//@line:9933
+//@line:9919
 
 		glTexCoord1s((GLshort)s);
 	
@@ -6055,7 +6041,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1s(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2d(JNIEnv* env, jclass clazz, jdouble s, jdouble t) {
 
 
-//@line:9937
+//@line:9923
 
 		glTexCoord2d((GLdouble)s, (GLdouble)t);
 	
@@ -6065,7 +6051,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2d(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2f(JNIEnv* env, jclass clazz, jfloat s, jfloat t) {
 
 
-//@line:9941
+//@line:9927
 
 		glTexCoord2f((GLfloat)s, (GLfloat)t);
 	
@@ -6075,7 +6061,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2f(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2i(JNIEnv* env, jclass clazz, jint s, jint t) {
 
 
-//@line:9945
+//@line:9931
 
 		glTexCoord2i((GLint)s, (GLint)t);
 	
@@ -6085,7 +6071,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2i(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2s(JNIEnv* env, jclass clazz, jshort s, jshort t) {
 
 
-//@line:9949
+//@line:9935
 
 		glTexCoord2s((GLshort)s, (GLshort)t);
 	
@@ -6095,7 +6081,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2s(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3d(JNIEnv* env, jclass clazz, jdouble s, jdouble t, jdouble r) {
 
 
-//@line:9953
+//@line:9939
 
 		glTexCoord3d((GLdouble)s, (GLdouble)t, (GLdouble)r);
 	
@@ -6105,7 +6091,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3d(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3f(JNIEnv* env, jclass clazz, jfloat s, jfloat t, jfloat r) {
 
 
-//@line:9957
+//@line:9943
 
 		glTexCoord3f((GLfloat)s, (GLfloat)t, (GLfloat)r);
 	
@@ -6115,7 +6101,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3f(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3i(JNIEnv* env, jclass clazz, jint s, jint t, jint r) {
 
 
-//@line:9961
+//@line:9947
 
 		glTexCoord3i((GLint)s, (GLint)t, (GLint)r);
 	
@@ -6125,7 +6111,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3i(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3s(JNIEnv* env, jclass clazz, jshort s, jshort t, jshort r) {
 
 
-//@line:9965
+//@line:9951
 
 		glTexCoord3s((GLshort)s, (GLshort)t, (GLshort)r);
 	
@@ -6135,7 +6121,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3s(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4d(JNIEnv* env, jclass clazz, jdouble s, jdouble t, jdouble r, jdouble q) {
 
 
-//@line:9969
+//@line:9955
 
 		glTexCoord4d((GLdouble)s, (GLdouble)t, (GLdouble)r, (GLdouble)q);
 	
@@ -6145,7 +6131,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4d(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4f(JNIEnv* env, jclass clazz, jfloat s, jfloat t, jfloat r, jfloat q) {
 
 
-//@line:9973
+//@line:9959
 
 		glTexCoord4f((GLfloat)s, (GLfloat)t, (GLfloat)r, (GLfloat)q);
 	
@@ -6155,7 +6141,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4f(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4i(JNIEnv* env, jclass clazz, jint s, jint t, jint r, jint q) {
 
 
-//@line:9977
+//@line:9963
 
 		glTexCoord4i((GLint)s, (GLint)t, (GLint)r, (GLint)q);
 	
@@ -6165,7 +6151,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4i(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4s(JNIEnv* env, jclass clazz, jshort s, jshort t, jshort r, jshort q) {
 
 
-//@line:9981
+//@line:9967
 
 		glTexCoord4s((GLshort)s, (GLshort)t, (GLshort)r, (GLshort)q);
 	
@@ -6176,7 +6162,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1dv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9985
+//@line:9971
 
 		glTexCoord1dv((const GLdouble*)(v + vByteOffset));
 	
@@ -6187,7 +6173,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1fv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9989
+//@line:9975
 
 		glTexCoord1fv((const GLfloat*)(v + vByteOffset));
 	
@@ -6198,7 +6184,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1iv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9993
+//@line:9979
 
 		glTexCoord1iv((const GLint*)(v + vByteOffset));
 	
@@ -6209,7 +6195,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1sv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:9997
+//@line:9983
 
 		glTexCoord1sv((const GLshort*)(v + vByteOffset));
 	
@@ -6220,7 +6206,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2dv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10001
+//@line:9987
 
 		glTexCoord2dv((const GLdouble*)(v + vByteOffset));
 	
@@ -6231,7 +6217,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10005
+//@line:9991
 
 		glTexCoord2fv((const GLfloat*)(v + vByteOffset));
 	
@@ -6242,7 +6228,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2iv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10009
+//@line:9995
 
 		glTexCoord2iv((const GLint*)(v + vByteOffset));
 	
@@ -6253,7 +6239,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2sv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10013
+//@line:9999
 
 		glTexCoord2sv((const GLshort*)(v + vByteOffset));
 	
@@ -6264,7 +6250,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3dv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10017
+//@line:10003
 
 		glTexCoord3dv((const GLdouble*)(v + vByteOffset));
 	
@@ -6275,7 +6261,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3fv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10021
+//@line:10007
 
 		glTexCoord3fv((const GLfloat*)(v + vByteOffset));
 	
@@ -6286,7 +6272,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3iv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10025
+//@line:10011
 
 		glTexCoord3iv((const GLint*)(v + vByteOffset));
 	
@@ -6297,7 +6283,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3sv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10029
+//@line:10015
 
 		glTexCoord3sv((const GLshort*)(v + vByteOffset));
 	
@@ -6308,7 +6294,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4dv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10033
+//@line:10019
 
 		glTexCoord4dv((const GLdouble*)(v + vByteOffset));
 	
@@ -6319,7 +6305,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4fv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10037
+//@line:10023
 
 		glTexCoord4fv((const GLfloat*)(v + vByteOffset));
 	
@@ -6330,7 +6316,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4iv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10041
+//@line:10027
 
 		glTexCoord4iv((const GLint*)(v + vByteOffset));
 	
@@ -6341,7 +6327,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4sv(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10045
+//@line:10031
 
 		glTexCoord4sv((const GLshort*)(v + vByteOffset));
 	
@@ -6351,7 +6337,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4sv(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos2d(JNIEnv* env, jclass clazz, jdouble x, jdouble y) {
 
 
-//@line:10049
+//@line:10035
 
 		glRasterPos2d((GLdouble)x, (GLdouble)y);
 	
@@ -6361,7 +6347,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos2d(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos2f(JNIEnv* env, jclass clazz, jfloat x, jfloat y) {
 
 
-//@line:10053
+//@line:10039
 
 		glRasterPos2f((GLfloat)x, (GLfloat)y);
 	
@@ -6371,7 +6357,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos2f(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos2i(JNIEnv* env, jclass clazz, jint x, jint y) {
 
 
-//@line:10057
+//@line:10043
 
 		glRasterPos2i((GLint)x, (GLint)y);
 	
@@ -6381,7 +6367,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos2i(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos2s(JNIEnv* env, jclass clazz, jshort x, jshort y) {
 
 
-//@line:10061
+//@line:10047
 
 		glRasterPos2s((GLshort)x, (GLshort)y);
 	
@@ -6391,7 +6377,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos2s(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos3d(JNIEnv* env, jclass clazz, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:10065
+//@line:10051
 
 		glRasterPos3d((GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -6401,7 +6387,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos3d(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos3f(JNIEnv* env, jclass clazz, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:10069
+//@line:10055
 
 		glRasterPos3f((GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -6411,7 +6397,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos3f(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos3i(JNIEnv* env, jclass clazz, jint x, jint y, jint z) {
 
 
-//@line:10073
+//@line:10059
 
 		glRasterPos3i((GLint)x, (GLint)y, (GLint)z);
 	
@@ -6421,7 +6407,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos3i(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos3s(JNIEnv* env, jclass clazz, jshort x, jshort y, jshort z) {
 
 
-//@line:10077
+//@line:10063
 
 		glRasterPos3s((GLshort)x, (GLshort)y, (GLshort)z);
 	
@@ -6431,7 +6417,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos3s(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos4d(JNIEnv* env, jclass clazz, jdouble x, jdouble y, jdouble z, jdouble w) {
 
 
-//@line:10081
+//@line:10067
 
 		glRasterPos4d((GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -6441,7 +6427,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos4d(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos4f(JNIEnv* env, jclass clazz, jfloat x, jfloat y, jfloat z, jfloat w) {
 
 
-//@line:10085
+//@line:10071
 
 		glRasterPos4f((GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
 	
@@ -6451,7 +6437,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos4f(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos4i(JNIEnv* env, jclass clazz, jint x, jint y, jint z, jint w) {
 
 
-//@line:10089
+//@line:10075
 
 		glRasterPos4i((GLint)x, (GLint)y, (GLint)z, (GLint)w);
 	
@@ -6461,7 +6447,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos4i(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos4s(JNIEnv* env, jclass clazz, jshort x, jshort y, jshort z, jshort w) {
 
 
-//@line:10093
+//@line:10079
 
 		glRasterPos4s((GLshort)x, (GLshort)y, (GLshort)z, (GLshort)w);
 	
@@ -6472,7 +6458,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos2dv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10097
+//@line:10083
 
 		glRasterPos2dv((const GLdouble*)(v + vByteOffset));
 	
@@ -6483,7 +6469,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos2fv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10101
+//@line:10087
 
 		glRasterPos2fv((const GLfloat*)(v + vByteOffset));
 	
@@ -6494,7 +6480,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos2iv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10105
+//@line:10091
 
 		glRasterPos2iv((const GLint*)(v + vByteOffset));
 	
@@ -6505,7 +6491,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos2sv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10109
+//@line:10095
 
 		glRasterPos2sv((const GLshort*)(v + vByteOffset));
 	
@@ -6516,7 +6502,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos3dv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10113
+//@line:10099
 
 		glRasterPos3dv((const GLdouble*)(v + vByteOffset));
 	
@@ -6527,7 +6513,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos3fv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10117
+//@line:10103
 
 		glRasterPos3fv((const GLfloat*)(v + vByteOffset));
 	
@@ -6538,7 +6524,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos3iv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10121
+//@line:10107
 
 		glRasterPos3iv((const GLint*)(v + vByteOffset));
 	
@@ -6549,7 +6535,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos3sv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10125
+//@line:10111
 
 		glRasterPos3sv((const GLshort*)(v + vByteOffset));
 	
@@ -6560,7 +6546,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos4dv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10129
+//@line:10115
 
 		glRasterPos4dv((const GLdouble*)(v + vByteOffset));
 	
@@ -6571,7 +6557,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos4fv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10133
+//@line:10119
 
 		glRasterPos4fv((const GLfloat*)(v + vByteOffset));
 	
@@ -6582,7 +6568,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos4iv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10137
+//@line:10123
 
 		glRasterPos4iv((const GLint*)(v + vByteOffset));
 	
@@ -6593,7 +6579,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos4sv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10141
+//@line:10127
 
 		glRasterPos4sv((const GLshort*)(v + vByteOffset));
 	
@@ -6603,7 +6589,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos4sv(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRectd(JNIEnv* env, jclass clazz, jdouble x1, jdouble y1, jdouble x2, jdouble y2) {
 
 
-//@line:10145
+//@line:10131
 
 		glRectd((GLdouble)x1, (GLdouble)y1, (GLdouble)x2, (GLdouble)y2);
 	
@@ -6613,7 +6599,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRectd(JNIEnv* env, jclass
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRectf(JNIEnv* env, jclass clazz, jfloat x1, jfloat y1, jfloat x2, jfloat y2) {
 
 
-//@line:10149
+//@line:10135
 
 		glRectf((GLfloat)x1, (GLfloat)y1, (GLfloat)x2, (GLfloat)y2);
 	
@@ -6623,7 +6609,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRectf(JNIEnv* env, jclass
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRecti(JNIEnv* env, jclass clazz, jint x1, jint y1, jint x2, jint y2) {
 
 
-//@line:10153
+//@line:10139
 
 		glRecti((GLint)x1, (GLint)y1, (GLint)x2, (GLint)y2);
 	
@@ -6633,7 +6619,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRecti(JNIEnv* env, jclass
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRects(JNIEnv* env, jclass clazz, jshort x1, jshort y1, jshort x2, jshort y2) {
 
 
-//@line:10157
+//@line:10143
 
 		glRects((GLshort)x1, (GLshort)y1, (GLshort)x2, (GLshort)y2);
 	
@@ -6645,7 +6631,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRectdv(JNIEnv* env, jclas
 	unsigned char* v2 = (unsigned char*)env->GetDirectBufferAddress(obj_v2);
 
 
-//@line:10161
+//@line:10147
 
 		glRectdv((const GLdouble*)(v1 + v1ByteOffset), (const GLdouble*)(v2 + v2ByteOffset));
 	
@@ -6657,7 +6643,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRectfv(JNIEnv* env, jclas
 	unsigned char* v2 = (unsigned char*)env->GetDirectBufferAddress(obj_v2);
 
 
-//@line:10165
+//@line:10151
 
 		glRectfv((const GLfloat*)(v1 + v1ByteOffset), (const GLfloat*)(v2 + v2ByteOffset));
 	
@@ -6669,7 +6655,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRectiv(JNIEnv* env, jclas
 	unsigned char* v2 = (unsigned char*)env->GetDirectBufferAddress(obj_v2);
 
 
-//@line:10169
+//@line:10155
 
 		glRectiv((const GLint*)(v1 + v1ByteOffset), (const GLint*)(v2 + v2ByteOffset));
 	
@@ -6681,7 +6667,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRectsv(JNIEnv* env, jclas
 	unsigned char* v2 = (unsigned char*)env->GetDirectBufferAddress(obj_v2);
 
 
-//@line:10173
+//@line:10159
 
 		glRectsv((const GLshort*)(v1 + v1ByteOffset), (const GLshort*)(v2 + v2ByteOffset));
 	
@@ -6691,7 +6677,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRectsv(JNIEnv* env, jclas
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShadeModel(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:10177
+//@line:10163
 
 		glShadeModel((GLenum)mode);
 	
@@ -6701,7 +6687,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShadeModel(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightf(JNIEnv* env, jclass clazz, jint light, jint pname, jfloat param) {
 
 
-//@line:10181
+//@line:10167
 
 		glLightf((GLenum)light, (GLenum)pname, (GLfloat)param);
 	
@@ -6711,7 +6697,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightf(JNIEnv* env, jclas
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLighti(JNIEnv* env, jclass clazz, jint light, jint pname, jint param) {
 
 
-//@line:10185
+//@line:10171
 
 		glLighti((GLenum)light, (GLenum)pname, (GLint)param);
 	
@@ -6722,7 +6708,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightfv(JNIEnv* env, jcla
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10189
+//@line:10175
 
 		glLightfv((GLenum)light, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -6733,7 +6719,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightiv(JNIEnv* env, jcla
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10193
+//@line:10179
 
 		glLightiv((GLenum)light, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -6744,7 +6730,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetLightfv(JNIEnv* env, j
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10197
+//@line:10183
 
 		glGetLightfv((GLenum)light, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -6755,7 +6741,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetLightiv(JNIEnv* env, j
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10201
+//@line:10187
 
 		glGetLightiv((GLenum)light, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -6765,7 +6751,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetLightiv(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightModelf(JNIEnv* env, jclass clazz, jint pname, jfloat param) {
 
 
-//@line:10205
+//@line:10191
 
 		glLightModelf((GLenum)pname, (GLfloat)param);
 	
@@ -6775,7 +6761,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightModelf(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightModeli(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:10209
+//@line:10195
 
 		glLightModeli((GLenum)pname, (GLint)param);
 	
@@ -6786,7 +6772,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightModelfv(JNIEnv* env,
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10213
+//@line:10199
 
 		glLightModelfv((GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -6797,7 +6783,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightModeliv(JNIEnv* env,
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10217
+//@line:10203
 
 		glLightModeliv((GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -6807,7 +6793,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightModeliv(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMaterialf(JNIEnv* env, jclass clazz, jint face, jint pname, jfloat param) {
 
 
-//@line:10221
+//@line:10207
 
 		glMaterialf((GLenum)face, (GLenum)pname, (GLfloat)param);
 	
@@ -6817,7 +6803,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMaterialf(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMateriali(JNIEnv* env, jclass clazz, jint face, jint pname, jint param) {
 
 
-//@line:10225
+//@line:10211
 
 		glMateriali((GLenum)face, (GLenum)pname, (GLint)param);
 	
@@ -6828,7 +6814,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMaterialfv(JNIEnv* env, j
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10229
+//@line:10215
 
 		glMaterialfv((GLenum)face, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -6839,7 +6825,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMaterialiv(JNIEnv* env, j
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10233
+//@line:10219
 
 		glMaterialiv((GLenum)face, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -6850,7 +6836,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMaterialfv(JNIEnv* env
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10237
+//@line:10223
 
 		glGetMaterialfv((GLenum)face, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -6861,7 +6847,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMaterialiv(JNIEnv* env
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10241
+//@line:10227
 
 		glGetMaterialiv((GLenum)face, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -6871,7 +6857,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMaterialiv(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorMaterial(JNIEnv* env, jclass clazz, jint face, jint mode) {
 
 
-//@line:10245
+//@line:10231
 
 		glColorMaterial((GLenum)face, (GLenum)mode);
 	
@@ -6881,7 +6867,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorMaterial(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelZoom(JNIEnv* env, jclass clazz, jfloat xfactor, jfloat yfactor) {
 
 
-//@line:10249
+//@line:10235
 
 		glPixelZoom((GLfloat)xfactor, (GLfloat)yfactor);
 	
@@ -6891,7 +6877,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelZoom(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelStoref(JNIEnv* env, jclass clazz, jint pname, jfloat param) {
 
 
-//@line:10253
+//@line:10239
 
 		glPixelStoref((GLenum)pname, (GLfloat)param);
 	
@@ -6901,7 +6887,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelStoref(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelStorei(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:10257
+//@line:10243
 
 		glPixelStorei((GLenum)pname, (GLint)param);
 	
@@ -6911,7 +6897,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelStorei(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTransferf(JNIEnv* env, jclass clazz, jint pname, jfloat param) {
 
 
-//@line:10261
+//@line:10247
 
 		glPixelTransferf((GLenum)pname, (GLfloat)param);
 	
@@ -6921,7 +6907,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTransferf(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTransferi(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:10265
+//@line:10251
 
 		glPixelTransferi((GLenum)pname, (GLint)param);
 	
@@ -6932,7 +6918,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelMapfv(JNIEnv* env, j
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:10269
+//@line:10255
 
 		glPixelMapfv((GLenum)map, (GLint)mapsize, (const GLfloat*)(values + valuesByteOffset));
 	
@@ -6943,7 +6929,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelMapuiv(JNIEnv* env, 
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:10273
+//@line:10259
 
 		glPixelMapuiv((GLenum)map, (GLint)mapsize, (const GLuint*)(values + valuesByteOffset));
 	
@@ -6954,7 +6940,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelMapusv(JNIEnv* env, 
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:10277
+//@line:10263
 
 		glPixelMapusv((GLenum)map, (GLint)mapsize, (const GLushort*)(values + valuesByteOffset));
 	
@@ -6965,7 +6951,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPixelMapfv(JNIEnv* env
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:10281
+//@line:10267
 
 		glGetPixelMapfv((GLenum)map, (GLfloat*)(values + valuesByteOffset));
 	
@@ -6976,7 +6962,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPixelMapuiv(JNIEnv* en
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:10285
+//@line:10271
 
 		glGetPixelMapuiv((GLenum)map, (GLuint*)(values + valuesByteOffset));
 	
@@ -6987,7 +6973,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPixelMapusv(JNIEnv* en
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:10289
+//@line:10275
 
 		glGetPixelMapusv((GLenum)map, (GLushort*)(values + valuesByteOffset));
 	
@@ -6998,7 +6984,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBitmap(JNIEnv* env, jclas
 	unsigned char* bitmap = (unsigned char*)env->GetDirectBufferAddress(obj_bitmap);
 
 
-//@line:10293
+//@line:10279
 
 		glBitmap((GLsizei)width, (GLsizei)height, (GLfloat)xorig, (GLfloat)yorig, (GLfloat)xmove, (GLfloat)ymove, (const GLubyte*)(bitmap + bitmapByteOffset));
 	
@@ -7009,7 +6995,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReadPixels(JNIEnv* env, j
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:10297
+//@line:10283
 
 		glReadPixels((GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -7020,7 +7006,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawPixels(JNIEnv* env, j
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:10301
+//@line:10287
 
 		glDrawPixels((GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -7030,7 +7016,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawPixels(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyPixels(JNIEnv* env, jclass clazz, jint x, jint y, jint width, jint height, jint type) {
 
 
-//@line:10305
+//@line:10291
 
 		glCopyPixels((GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height, (GLenum)type);
 	
@@ -7040,7 +7026,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyPixels(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilFunc(JNIEnv* env, jclass clazz, jint func, jint ref, jint mask) {
 
 
-//@line:10309
+//@line:10295
 
 		glStencilFunc((GLenum)func, (GLint)ref, (GLuint)mask);
 	
@@ -7050,7 +7036,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilFunc(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilMask(JNIEnv* env, jclass clazz, jint mask) {
 
 
-//@line:10313
+//@line:10299
 
 		glStencilMask((GLuint)mask);
 	
@@ -7060,7 +7046,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilMask(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilOp(JNIEnv* env, jclass clazz, jint fail, jint zfail, jint zpass) {
 
 
-//@line:10317
+//@line:10303
 
 		glStencilOp((GLenum)fail, (GLenum)zfail, (GLenum)zpass);
 	
@@ -7070,7 +7056,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilOp(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearStencil(JNIEnv* env, jclass clazz, jint s) {
 
 
-//@line:10321
+//@line:10307
 
 		glClearStencil((GLint)s);
 	
@@ -7080,7 +7066,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearStencil(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexGend(JNIEnv* env, jclass clazz, jint coord, jint pname, jdouble param) {
 
 
-//@line:10325
+//@line:10311
 
 		glTexGend((GLenum)coord, (GLenum)pname, (GLdouble)param);
 	
@@ -7090,7 +7076,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexGend(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexGenf(JNIEnv* env, jclass clazz, jint coord, jint pname, jfloat param) {
 
 
-//@line:10329
+//@line:10315
 
 		glTexGenf((GLenum)coord, (GLenum)pname, (GLfloat)param);
 	
@@ -7100,7 +7086,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexGenf(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexGeni(JNIEnv* env, jclass clazz, jint coord, jint pname, jint param) {
 
 
-//@line:10333
+//@line:10319
 
 		glTexGeni((GLenum)coord, (GLenum)pname, (GLint)param);
 	
@@ -7111,7 +7097,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexGendv(JNIEnv* env, jcl
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10337
+//@line:10323
 
 		glTexGendv((GLenum)coord, (GLenum)pname, (const GLdouble*)(params + paramsByteOffset));
 	
@@ -7122,7 +7108,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexGenfv(JNIEnv* env, jcl
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10341
+//@line:10327
 
 		glTexGenfv((GLenum)coord, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -7133,7 +7119,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexGeniv(JNIEnv* env, jcl
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10345
+//@line:10331
 
 		glTexGeniv((GLenum)coord, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -7144,7 +7130,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexGendv(JNIEnv* env, 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10349
+//@line:10335
 
 		glGetTexGendv((GLenum)coord, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
 	
@@ -7155,7 +7141,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexGenfv(JNIEnv* env, 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10353
+//@line:10339
 
 		glGetTexGenfv((GLenum)coord, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -7166,7 +7152,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexGeniv(JNIEnv* env, 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10357
+//@line:10343
 
 		glGetTexGeniv((GLenum)coord, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -7176,7 +7162,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexGeniv(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexEnvf(JNIEnv* env, jclass clazz, jint target, jint pname, jfloat param) {
 
 
-//@line:10361
+//@line:10347
 
 		glTexEnvf((GLenum)target, (GLenum)pname, (GLfloat)param);
 	
@@ -7186,7 +7172,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexEnvf(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexEnvi(JNIEnv* env, jclass clazz, jint target, jint pname, jint param) {
 
 
-//@line:10365
+//@line:10351
 
 		glTexEnvi((GLenum)target, (GLenum)pname, (GLint)param);
 	
@@ -7197,7 +7183,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexEnvfv(JNIEnv* env, jcl
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10369
+//@line:10355
 
 		glTexEnvfv((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -7208,7 +7194,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexEnviv(JNIEnv* env, jcl
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10373
+//@line:10359
 
 		glTexEnviv((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -7219,7 +7205,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexEnvfv(JNIEnv* env, 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10377
+//@line:10363
 
 		glGetTexEnvfv((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -7230,7 +7216,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexEnviv(JNIEnv* env, 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10381
+//@line:10367
 
 		glGetTexEnviv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -7240,7 +7226,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexEnviv(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexParameterf(JNIEnv* env, jclass clazz, jint target, jint pname, jfloat param) {
 
 
-//@line:10385
+//@line:10371
 
 		glTexParameterf((GLenum)target, (GLenum)pname, (GLfloat)param);
 	
@@ -7250,7 +7236,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexParameterf(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexParameteri(JNIEnv* env, jclass clazz, jint target, jint pname, jint param) {
 
 
-//@line:10389
+//@line:10375
 
 		glTexParameteri((GLenum)target, (GLenum)pname, (GLint)param);
 	
@@ -7261,7 +7247,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexParameterfv(JNIEnv* en
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10393
+//@line:10379
 
 		glTexParameterfv((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -7272,7 +7258,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexParameteriv(JNIEnv* en
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10397
+//@line:10383
 
 		glTexParameteriv((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -7283,7 +7269,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexParameterfv(JNIEnv*
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10401
+//@line:10387
 
 		glGetTexParameterfv((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -7294,7 +7280,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexParameteriv(JNIEnv*
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10405
+//@line:10391
 
 		glGetTexParameteriv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -7305,7 +7291,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexLevelParameterfv(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10409
+//@line:10395
 
 		glGetTexLevelParameterfv((GLenum)target, (GLint)level, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -7316,7 +7302,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexLevelParameteriv(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10413
+//@line:10399
 
 		glGetTexLevelParameteriv((GLenum)target, (GLint)level, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -7327,7 +7313,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexImage1D(JNIEnv* env, j
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:10417
+//@line:10403
 
 		glTexImage1D((GLenum)target, (GLint)level, (GLint)internalFormat, (GLsizei)width, (GLint)border, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -7338,7 +7324,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexImage2D(JNIEnv* env, j
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:10421
+//@line:10407
 
 		glTexImage2D((GLenum)target, (GLint)level, (GLint)internalFormat, (GLsizei)width, (GLsizei)height, (GLint)border, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -7349,7 +7335,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexImage(JNIEnv* env, 
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:10425
+//@line:10411
 
 		glGetTexImage((GLenum)target, (GLint)level, (GLenum)format, (GLenum)type, (GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -7360,7 +7346,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMap1d(JNIEnv* env, jclass
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:10429
+//@line:10415
 
 		glMap1d((GLenum)target, (GLdouble)u1, (GLdouble)u2, (GLint)stride, (GLint)order, (const GLdouble*)(points + pointsByteOffset));
 	
@@ -7371,7 +7357,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMap1f(JNIEnv* env, jclass
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:10433
+//@line:10419
 
 		glMap1f((GLenum)target, (GLfloat)u1, (GLfloat)u2, (GLint)stride, (GLint)order, (const GLfloat*)(points + pointsByteOffset));
 	
@@ -7382,7 +7368,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMap2d(JNIEnv* env, jclass
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:10437
+//@line:10423
 
 		glMap2d((GLenum)target, (GLdouble)u1, (GLdouble)u2, (GLint)ustride, (GLint)uorder, (GLdouble)v1, (GLdouble)v2, (GLint)vstride, (GLint)vorder, (const GLdouble*)(points + pointsByteOffset));
 	
@@ -7393,7 +7379,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMap2f(JNIEnv* env, jclass
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:10441
+//@line:10427
 
 		glMap2f((GLenum)target, (GLfloat)u1, (GLfloat)u2, (GLint)ustride, (GLint)uorder, (GLfloat)v1, (GLfloat)v2, (GLint)vstride, (GLint)vorder, (const GLfloat*)(points + pointsByteOffset));
 	
@@ -7404,7 +7390,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMapdv(JNIEnv* env, jcl
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10445
+//@line:10431
 
 		glGetMapdv((GLenum)target, (GLenum)query, (GLdouble*)(v + vByteOffset));
 	
@@ -7415,7 +7401,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMapfv(JNIEnv* env, jcl
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10449
+//@line:10435
 
 		glGetMapfv((GLenum)target, (GLenum)query, (GLfloat*)(v + vByteOffset));
 	
@@ -7426,7 +7412,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMapiv(JNIEnv* env, jcl
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10453
+//@line:10439
 
 		glGetMapiv((GLenum)target, (GLenum)query, (GLint*)(v + vByteOffset));
 	
@@ -7436,7 +7422,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMapiv(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord1d(JNIEnv* env, jclass clazz, jdouble u) {
 
 
-//@line:10457
+//@line:10443
 
 		glEvalCoord1d((GLdouble)u);
 	
@@ -7446,7 +7432,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord1d(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord1f(JNIEnv* env, jclass clazz, jfloat u) {
 
 
-//@line:10461
+//@line:10447
 
 		glEvalCoord1f((GLfloat)u);
 	
@@ -7457,7 +7443,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord1dv(JNIEnv* env,
 	unsigned char* u = (unsigned char*)env->GetDirectBufferAddress(obj_u);
 
 
-//@line:10465
+//@line:10451
 
 		glEvalCoord1dv((const GLdouble*)(u + uByteOffset));
 	
@@ -7468,7 +7454,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord1fv(JNIEnv* env,
 	unsigned char* u = (unsigned char*)env->GetDirectBufferAddress(obj_u);
 
 
-//@line:10469
+//@line:10455
 
 		glEvalCoord1fv((const GLfloat*)(u + uByteOffset));
 	
@@ -7478,7 +7464,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord1fv(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord2d(JNIEnv* env, jclass clazz, jdouble u, jdouble v) {
 
 
-//@line:10473
+//@line:10459
 
 		glEvalCoord2d((GLdouble)u, (GLdouble)v);
 	
@@ -7488,7 +7474,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord2d(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord2f(JNIEnv* env, jclass clazz, jfloat u, jfloat v) {
 
 
-//@line:10477
+//@line:10463
 
 		glEvalCoord2f((GLfloat)u, (GLfloat)v);
 	
@@ -7499,7 +7485,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord2dv(JNIEnv* env,
 	unsigned char* u = (unsigned char*)env->GetDirectBufferAddress(obj_u);
 
 
-//@line:10481
+//@line:10467
 
 		glEvalCoord2dv((const GLdouble*)(u + uByteOffset));
 	
@@ -7510,7 +7496,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord2fv(JNIEnv* env,
 	unsigned char* u = (unsigned char*)env->GetDirectBufferAddress(obj_u);
 
 
-//@line:10485
+//@line:10471
 
 		glEvalCoord2fv((const GLfloat*)(u + uByteOffset));
 	
@@ -7520,7 +7506,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord2fv(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapGrid1d(JNIEnv* env, jclass clazz, jint un, jdouble u1, jdouble u2) {
 
 
-//@line:10489
+//@line:10475
 
 		glMapGrid1d((GLint)un, (GLdouble)u1, (GLdouble)u2);
 	
@@ -7530,7 +7516,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapGrid1d(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapGrid1f(JNIEnv* env, jclass clazz, jint un, jfloat u1, jfloat u2) {
 
 
-//@line:10493
+//@line:10479
 
 		glMapGrid1f((GLint)un, (GLfloat)u1, (GLfloat)u2);
 	
@@ -7540,7 +7526,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapGrid1f(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapGrid2d(JNIEnv* env, jclass clazz, jint un, jdouble u1, jdouble u2, jint vn, jdouble v1, jdouble v2) {
 
 
-//@line:10497
+//@line:10483
 
 		glMapGrid2d((GLint)un, (GLdouble)u1, (GLdouble)u2, (GLint)vn, (GLdouble)v1, (GLdouble)v2);
 	
@@ -7550,7 +7536,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapGrid2d(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapGrid2f(JNIEnv* env, jclass clazz, jint un, jfloat u1, jfloat u2, jint vn, jfloat v1, jfloat v2) {
 
 
-//@line:10501
+//@line:10487
 
 		glMapGrid2f((GLint)un, (GLfloat)u1, (GLfloat)u2, (GLint)vn, (GLfloat)v1, (GLfloat)v2);
 	
@@ -7560,7 +7546,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapGrid2f(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalPoint1(JNIEnv* env, jclass clazz, jint i) {
 
 
-//@line:10505
+//@line:10491
 
 		glEvalPoint1((GLint)i);
 	
@@ -7570,7 +7556,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalPoint1(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalPoint2(JNIEnv* env, jclass clazz, jint i, jint j) {
 
 
-//@line:10509
+//@line:10495
 
 		glEvalPoint2((GLint)i, (GLint)j);
 	
@@ -7580,7 +7566,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalPoint2(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalMesh1(JNIEnv* env, jclass clazz, jint mode, jint i1, jint i2) {
 
 
-//@line:10513
+//@line:10499
 
 		glEvalMesh1((GLenum)mode, (GLint)i1, (GLint)i2);
 	
@@ -7590,7 +7576,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalMesh1(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalMesh2(JNIEnv* env, jclass clazz, jint mode, jint i1, jint i2, jint j1, jint j2) {
 
 
-//@line:10517
+//@line:10503
 
 		glEvalMesh2((GLenum)mode, (GLint)i1, (GLint)i2, (GLint)j1, (GLint)j2);
 	
@@ -7600,7 +7586,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalMesh2(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogf(JNIEnv* env, jclass clazz, jint pname, jfloat param) {
 
 
-//@line:10521
+//@line:10507
 
 		glFogf((GLenum)pname, (GLfloat)param);
 	
@@ -7610,7 +7596,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogf(JNIEnv* env, jclass 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogi(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:10525
+//@line:10511
 
 		glFogi((GLenum)pname, (GLint)param);
 	
@@ -7621,7 +7607,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogfv(JNIEnv* env, jclass
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10529
+//@line:10515
 
 		glFogfv((GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -7632,7 +7618,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogiv(JNIEnv* env, jclass
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10533
+//@line:10519
 
 		glFogiv((GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -7643,7 +7629,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFeedbackBuffer(JNIEnv* en
 	unsigned char* buffer = (unsigned char*)env->GetDirectBufferAddress(obj_buffer);
 
 
-//@line:10537
+//@line:10523
 
 		glFeedbackBuffer((GLsizei)size, (GLenum)type, (GLfloat*)(buffer + bufferByteOffset));
 	
@@ -7653,7 +7639,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFeedbackBuffer(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPassThrough(JNIEnv* env, jclass clazz, jfloat token) {
 
 
-//@line:10541
+//@line:10527
 
 		glPassThrough((GLfloat)token);
 	
@@ -7664,7 +7650,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSelectBuffer(JNIEnv* env,
 	unsigned char* buffer = (unsigned char*)env->GetDirectBufferAddress(obj_buffer);
 
 
-//@line:10545
+//@line:10531
 
 		glSelectBuffer((GLsizei)size, (GLuint*)(buffer + bufferByteOffset));
 	
@@ -7674,7 +7660,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSelectBuffer(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInitNames(JNIEnv* env, jclass clazz) {
 
 
-//@line:10549
+//@line:10535
 
 		glInitNames();
 	
@@ -7684,7 +7670,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInitNames(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLoadName(JNIEnv* env, jclass clazz, jint name) {
 
 
-//@line:10553
+//@line:10539
 
 		glLoadName((GLuint)name);
 	
@@ -7694,7 +7680,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLoadName(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPushName(JNIEnv* env, jclass clazz, jint name) {
 
 
-//@line:10557
+//@line:10543
 
 		glPushName((GLuint)name);
 	
@@ -7704,7 +7690,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPushName(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPopName(JNIEnv* env, jclass clazz) {
 
 
-//@line:10561
+//@line:10547
 
 		glPopName();
 	
@@ -7715,7 +7701,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenTextures(JNIEnv* env, 
 	unsigned char* textures = (unsigned char*)env->GetDirectBufferAddress(obj_textures);
 
 
-//@line:10565
+//@line:10551
 
 		glGenTextures((GLsizei)n, (GLuint*)(textures + texturesByteOffset));
 	
@@ -7726,7 +7712,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteTextures(JNIEnv* en
 	unsigned char* textures = (unsigned char*)env->GetDirectBufferAddress(obj_textures);
 
 
-//@line:10569
+//@line:10555
 
 		glDeleteTextures((GLsizei)n, (const GLuint*)(textures + texturesByteOffset));
 	
@@ -7736,7 +7722,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteTextures(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindTexture(JNIEnv* env, jclass clazz, jint target, jint texture) {
 
 
-//@line:10573
+//@line:10559
 
 		glBindTexture((GLenum)target, (GLuint)texture);
 	
@@ -7748,7 +7734,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPrioritizeTextures(JNIEnv
 	unsigned char* priorities = (unsigned char*)env->GetDirectBufferAddress(obj_priorities);
 
 
-//@line:10577
+//@line:10563
 
 		glPrioritizeTextures((GLsizei)n, (const GLuint*)(textures + texturesByteOffset), (const GLclampf*)(priorities + prioritiesByteOffset));
 	
@@ -7758,7 +7744,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPrioritizeTextures(JNIEnv
 static inline jboolean wrapped_Java_com_badlogic_jglfw_gl_GL_glAreTexturesResident
 (JNIEnv* env, jclass clazz, jint n, jobject obj_textures, jint texturesByteOffset, jobject obj_residences, jint residencesByteOffset, unsigned char* textures, unsigned char* residences) {
 
-//@line:10581
+//@line:10567
 
 		return (jboolean)glAreTexturesResident((GLsizei)n, (const GLuint*)(textures + texturesByteOffset), (GLboolean*)(residences + residencesByteOffset));
 	
@@ -7777,7 +7763,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glAreTexturesResident(J
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsTexture(JNIEnv* env, jclass clazz, jint texture) {
 
 
-//@line:10585
+//@line:10571
 
 		return (jboolean)glIsTexture((GLuint)texture);
 	
@@ -7788,7 +7774,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexSubImage1D(JNIEnv* env
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:10589
+//@line:10575
 
 		glTexSubImage1D((GLenum)target, (GLint)level, (GLint)xoffset, (GLsizei)width, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -7799,7 +7785,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexSubImage2D(JNIEnv* env
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:10593
+//@line:10579
 
 		glTexSubImage2D((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -7809,7 +7795,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexSubImage2D(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexImage1D(JNIEnv* env, jclass clazz, jint target, jint level, jint internalformat, jint x, jint y, jint width, jint border) {
 
 
-//@line:10597
+//@line:10583
 
 		glCopyTexImage1D((GLenum)target, (GLint)level, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLint)border);
 	
@@ -7819,7 +7805,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexImage1D(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexImage2D(JNIEnv* env, jclass clazz, jint target, jint level, jint internalformat, jint x, jint y, jint width, jint height, jint border) {
 
 
-//@line:10601
+//@line:10587
 
 		glCopyTexImage2D((GLenum)target, (GLint)level, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height, (GLint)border);
 	
@@ -7829,7 +7815,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexImage2D(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexSubImage1D(JNIEnv* env, jclass clazz, jint target, jint level, jint xoffset, jint x, jint y, jint width) {
 
 
-//@line:10605
+//@line:10591
 
 		glCopyTexSubImage1D((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)x, (GLint)y, (GLsizei)width);
 	
@@ -7839,7 +7825,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexSubImage1D(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexSubImage2D(JNIEnv* env, jclass clazz, jint target, jint level, jint xoffset, jint yoffset, jint x, jint y, jint width, jint height) {
 
 
-//@line:10609
+//@line:10595
 
 		glCopyTexSubImage2D((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
 	
@@ -7850,7 +7836,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexPointer(JNIEnv* env
 	unsigned char* ptr = (unsigned char*)env->GetDirectBufferAddress(obj_ptr);
 
 
-//@line:10613
+//@line:10599
 
 		glVertexPointer((GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(ptr + ptrByteOffset));
 	
@@ -7861,7 +7847,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalPointer(JNIEnv* env
 	unsigned char* ptr = (unsigned char*)env->GetDirectBufferAddress(obj_ptr);
 
 
-//@line:10617
+//@line:10603
 
 		glNormalPointer((GLenum)type, (GLsizei)stride, (const GLvoid*)(ptr + ptrByteOffset));
 	
@@ -7872,7 +7858,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorPointer(JNIEnv* env,
 	unsigned char* ptr = (unsigned char*)env->GetDirectBufferAddress(obj_ptr);
 
 
-//@line:10621
+//@line:10607
 
 		glColorPointer((GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(ptr + ptrByteOffset));
 	
@@ -7883,7 +7869,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexPointer(JNIEnv* env,
 	unsigned char* ptr = (unsigned char*)env->GetDirectBufferAddress(obj_ptr);
 
 
-//@line:10625
+//@line:10611
 
 		glIndexPointer((GLenum)type, (GLsizei)stride, (const GLvoid*)(ptr + ptrByteOffset));
 	
@@ -7894,7 +7880,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordPointer(JNIEnv* e
 	unsigned char* ptr = (unsigned char*)env->GetDirectBufferAddress(obj_ptr);
 
 
-//@line:10629
+//@line:10615
 
 		glTexCoordPointer((GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(ptr + ptrByteOffset));
 	
@@ -7905,7 +7891,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEdgeFlagPointer(JNIEnv* e
 	unsigned char* ptr = (unsigned char*)env->GetDirectBufferAddress(obj_ptr);
 
 
-//@line:10633
+//@line:10619
 
 		glEdgeFlagPointer((GLsizei)stride, (const GLvoid*)(ptr + ptrByteOffset));
 	
@@ -7915,7 +7901,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEdgeFlagPointer(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glArrayElement(JNIEnv* env, jclass clazz, jint i) {
 
 
-//@line:10637
+//@line:10623
 
 		glArrayElement((GLint)i);
 	
@@ -7925,7 +7911,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glArrayElement(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawArrays(JNIEnv* env, jclass clazz, jint mode, jint first, jint count) {
 
 
-//@line:10641
+//@line:10627
 
 		glDrawArrays((GLenum)mode, (GLint)first, (GLsizei)count);
 	
@@ -7936,7 +7922,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElements(JNIEnv* env,
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:10645
+//@line:10631
 
 		glDrawElements((GLenum)mode, (GLsizei)count, (GLenum)type, (const GLvoid*)(indices + indicesByteOffset));
 	
@@ -7947,7 +7933,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInterleavedArrays(JNIEnv*
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:10649
+//@line:10635
 
 		glInterleavedArrays((GLenum)format, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -7957,7 +7943,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInterleavedArrays(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendColor(JNIEnv* env, jclass clazz, jfloat red, jfloat green, jfloat blue, jfloat alpha) {
 
 
-//@line:10653
+//@line:10639
 
 		ext_glBlendColor((GLfloat)red, (GLfloat)green, (GLfloat)blue, (GLfloat)alpha);
 	
@@ -7967,7 +7953,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendColor(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquation(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:10657
+//@line:10643
 
 		ext_glBlendEquation((GLenum)mode);
 	
@@ -7978,7 +7964,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawRangeElements(JNIEnv*
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:10661
+//@line:10647
 
 		ext_glDrawRangeElements((GLenum)mode, (GLuint)start, (GLuint)end, (GLsizei)count, (GLenum)type, (const GLvoid*)(indices + indicesByteOffset));
 	
@@ -7989,7 +7975,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexImage3D(JNIEnv* env, j
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:10665
+//@line:10651
 
 		ext_glTexImage3D((GLenum)target, (GLint)level, (GLint)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -8000,7 +7986,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexSubImage3D(JNIEnv* env
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:10669
+//@line:10655
 
 		ext_glTexSubImage3D((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -8010,7 +7996,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexSubImage3D(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexSubImage3D(JNIEnv* env, jclass clazz, jint target, jint level, jint xoffset, jint yoffset, jint zoffset, jint x, jint y, jint width, jint height) {
 
 
-//@line:10673
+//@line:10659
 
 		ext_glCopyTexSubImage3D((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
 	
@@ -8021,7 +8007,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorTable(JNIEnv* env, j
 	unsigned char* table = (unsigned char*)env->GetDirectBufferAddress(obj_table);
 
 
-//@line:10677
+//@line:10663
 
 		ext_glColorTable((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLenum)format, (GLenum)type, (const GLvoid*)(table + tableByteOffset));
 	
@@ -8032,7 +8018,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorTableParameterfv(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10681
+//@line:10667
 
 		ext_glColorTableParameterfv((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -8043,7 +8029,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorTableParameteriv(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10685
+//@line:10671
 
 		ext_glColorTableParameteriv((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -8053,7 +8039,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorTableParameteriv(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyColorTable(JNIEnv* env, jclass clazz, jint target, jint internalformat, jint x, jint y, jint width) {
 
 
-//@line:10689
+//@line:10675
 
 		ext_glCopyColorTable((GLenum)target, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width);
 	
@@ -8064,7 +8050,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetColorTable(JNIEnv* env
 	unsigned char* table = (unsigned char*)env->GetDirectBufferAddress(obj_table);
 
 
-//@line:10693
+//@line:10679
 
 		ext_glGetColorTable((GLenum)target, (GLenum)format, (GLenum)type, (GLvoid*)(table + tableByteOffset));
 	
@@ -8075,7 +8061,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetColorTableParameterfv(
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10697
+//@line:10683
 
 		ext_glGetColorTableParameterfv((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -8086,7 +8072,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetColorTableParameteriv(
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10701
+//@line:10687
 
 		ext_glGetColorTableParameteriv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -8097,7 +8083,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorSubTable(JNIEnv* env
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:10705
+//@line:10691
 
 		ext_glColorSubTable((GLenum)target, (GLsizei)start, (GLsizei)count, (GLenum)format, (GLenum)type, (const GLvoid*)(data + dataByteOffset));
 	
@@ -8107,7 +8093,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorSubTable(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyColorSubTable(JNIEnv* env, jclass clazz, jint target, jint start, jint x, jint y, jint width) {
 
 
-//@line:10709
+//@line:10695
 
 		ext_glCopyColorSubTable((GLenum)target, (GLsizei)start, (GLint)x, (GLint)y, (GLsizei)width);
 	
@@ -8118,7 +8104,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionFilter1D(JNIEn
 	unsigned char* image = (unsigned char*)env->GetDirectBufferAddress(obj_image);
 
 
-//@line:10713
+//@line:10699
 
 		ext_glConvolutionFilter1D((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLenum)format, (GLenum)type, (const GLvoid*)(image + imageByteOffset));
 	
@@ -8129,7 +8115,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionFilter2D(JNIEn
 	unsigned char* image = (unsigned char*)env->GetDirectBufferAddress(obj_image);
 
 
-//@line:10717
+//@line:10703
 
 		ext_glConvolutionFilter2D((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const GLvoid*)(image + imageByteOffset));
 	
@@ -8139,7 +8125,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionFilter2D(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionParameterf(JNIEnv* env, jclass clazz, jint target, jint pname, jfloat params) {
 
 
-//@line:10721
+//@line:10707
 
 		ext_glConvolutionParameterf((GLenum)target, (GLenum)pname, (GLfloat)params);
 	
@@ -8150,7 +8136,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionParameterfv(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10725
+//@line:10711
 
 		ext_glConvolutionParameterfv((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -8160,7 +8146,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionParameterfv(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionParameteri(JNIEnv* env, jclass clazz, jint target, jint pname, jint params) {
 
 
-//@line:10729
+//@line:10715
 
 		ext_glConvolutionParameteri((GLenum)target, (GLenum)pname, (GLint)params);
 	
@@ -8171,7 +8157,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionParameteriv(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10733
+//@line:10719
 
 		ext_glConvolutionParameteriv((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -8181,7 +8167,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionParameteriv(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyConvolutionFilter1D(JNIEnv* env, jclass clazz, jint target, jint internalformat, jint x, jint y, jint width) {
 
 
-//@line:10737
+//@line:10723
 
 		ext_glCopyConvolutionFilter1D((GLenum)target, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width);
 	
@@ -8191,7 +8177,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyConvolutionFilter1D(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyConvolutionFilter2D(JNIEnv* env, jclass clazz, jint target, jint internalformat, jint x, jint y, jint width, jint height) {
 
 
-//@line:10741
+//@line:10727
 
 		ext_glCopyConvolutionFilter2D((GLenum)target, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
 	
@@ -8202,7 +8188,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetConvolutionFilter(JNIE
 	unsigned char* image = (unsigned char*)env->GetDirectBufferAddress(obj_image);
 
 
-//@line:10745
+//@line:10731
 
 		ext_glGetConvolutionFilter((GLenum)target, (GLenum)format, (GLenum)type, (GLvoid*)(image + imageByteOffset));
 	
@@ -8213,7 +8199,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetConvolutionParameterfv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10749
+//@line:10735
 
 		ext_glGetConvolutionParameterfv((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -8224,7 +8210,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetConvolutionParameteriv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10753
+//@line:10739
 
 		ext_glGetConvolutionParameteriv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -8237,7 +8223,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetSeparableFilter(JNIEnv
 	unsigned char* span = (unsigned char*)env->GetDirectBufferAddress(obj_span);
 
 
-//@line:10757
+//@line:10743
 
 		ext_glGetSeparableFilter((GLenum)target, (GLenum)format, (GLenum)type, (GLvoid*)(row + rowByteOffset), (GLvoid*)(column + columnByteOffset), (GLvoid*)(span + spanByteOffset));
 	
@@ -8249,7 +8235,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSeparableFilter2D(JNIEnv*
 	unsigned char* column = (unsigned char*)env->GetDirectBufferAddress(obj_column);
 
 
-//@line:10761
+//@line:10747
 
 		ext_glSeparableFilter2D((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const GLvoid*)(row + rowByteOffset), (const GLvoid*)(column + columnByteOffset));
 	
@@ -8260,7 +8246,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetHistogram(JNIEnv* env,
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:10765
+//@line:10751
 
 		ext_glGetHistogram((GLenum)target, (GLboolean)reset, (GLenum)format, (GLenum)type, (GLvoid*)(values + valuesByteOffset));
 	
@@ -8271,7 +8257,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetHistogramParameterfv(J
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10769
+//@line:10755
 
 		ext_glGetHistogramParameterfv((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -8282,7 +8268,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetHistogramParameteriv(J
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10773
+//@line:10759
 
 		ext_glGetHistogramParameteriv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -8293,7 +8279,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMinmax(JNIEnv* env, jc
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:10777
+//@line:10763
 
 		ext_glGetMinmax((GLenum)target, (GLboolean)reset, (GLenum)format, (GLenum)type, (GLvoid*)(values + valuesByteOffset));
 	
@@ -8304,7 +8290,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMinmaxParameterfv(JNIE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10781
+//@line:10767
 
 		ext_glGetMinmaxParameterfv((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -8315,7 +8301,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMinmaxParameteriv(JNIE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:10785
+//@line:10771
 
 		ext_glGetMinmaxParameteriv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -8325,7 +8311,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMinmaxParameteriv(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glHistogram(JNIEnv* env, jclass clazz, jint target, jint width, jint internalformat, jboolean sink) {
 
 
-//@line:10789
+//@line:10775
 
 		ext_glHistogram((GLenum)target, (GLsizei)width, (GLenum)internalformat, (GLboolean)sink);
 	
@@ -8335,7 +8321,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glHistogram(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMinmax(JNIEnv* env, jclass clazz, jint target, jint internalformat, jboolean sink) {
 
 
-//@line:10793
+//@line:10779
 
 		ext_glMinmax((GLenum)target, (GLenum)internalformat, (GLboolean)sink);
 	
@@ -8345,7 +8331,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMinmax(JNIEnv* env, jclas
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glResetHistogram(JNIEnv* env, jclass clazz, jint target) {
 
 
-//@line:10797
+//@line:10783
 
 		ext_glResetHistogram((GLenum)target);
 	
@@ -8355,7 +8341,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glResetHistogram(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glResetMinmax(JNIEnv* env, jclass clazz, jint target) {
 
 
-//@line:10801
+//@line:10787
 
 		ext_glResetMinmax((GLenum)target);
 	
@@ -8365,7 +8351,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glResetMinmax(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glActiveTexture(JNIEnv* env, jclass clazz, jint texture) {
 
 
-//@line:10805
+//@line:10791
 
 		ext_glActiveTexture((GLenum)texture);
 	
@@ -8375,7 +8361,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glActiveTexture(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSampleCoverage(JNIEnv* env, jclass clazz, jfloat value, jboolean invert) {
 
 
-//@line:10809
+//@line:10795
 
 		ext_glSampleCoverage((GLfloat)value, (GLboolean)invert);
 	
@@ -8386,7 +8372,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTexImage3D(JNIE
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:10813
+//@line:10799
 
 		ext_glCompressedTexImage3D((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
 	
@@ -8397,7 +8383,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTexImage2D(JNIE
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:10817
+//@line:10803
 
 		ext_glCompressedTexImage2D((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLint)border, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
 	
@@ -8408,7 +8394,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTexImage1D(JNIE
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:10821
+//@line:10807
 
 		ext_glCompressedTexImage1D((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLint)border, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
 	
@@ -8419,7 +8405,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTexSubImage3D(J
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:10825
+//@line:10811
 
 		ext_glCompressedTexSubImage3D((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
 	
@@ -8430,7 +8416,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTexSubImage2D(J
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:10829
+//@line:10815
 
 		ext_glCompressedTexSubImage2D((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
 	
@@ -8441,7 +8427,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTexSubImage1D(J
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:10833
+//@line:10819
 
 		ext_glCompressedTexSubImage1D((GLenum)target, (GLint)level, (GLint)xoffset, (GLsizei)width, (GLenum)format, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
 	
@@ -8452,7 +8438,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetCompressedTexImage(JNI
 	unsigned char* img = (unsigned char*)env->GetDirectBufferAddress(obj_img);
 
 
-//@line:10837
+//@line:10823
 
 		ext_glGetCompressedTexImage((GLenum)target, (GLint)level, (GLvoid*)(img + imgByteOffset));
 	
@@ -8462,7 +8448,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetCompressedTexImage(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClientActiveTexture(JNIEnv* env, jclass clazz, jint texture) {
 
 
-//@line:10841
+//@line:10827
 
 		ext_glClientActiveTexture((GLenum)texture);
 	
@@ -8472,7 +8458,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClientActiveTexture(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1d(JNIEnv* env, jclass clazz, jint target, jdouble s) {
 
 
-//@line:10845
+//@line:10831
 
 		ext_glMultiTexCoord1d((GLenum)target, (GLdouble)s);
 	
@@ -8483,7 +8469,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1dv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10849
+//@line:10835
 
 		ext_glMultiTexCoord1dv((GLenum)target, (const GLdouble*)(v + vByteOffset));
 	
@@ -8493,7 +8479,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1dv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1f(JNIEnv* env, jclass clazz, jint target, jfloat s) {
 
 
-//@line:10853
+//@line:10839
 
 		ext_glMultiTexCoord1f((GLenum)target, (GLfloat)s);
 	
@@ -8504,7 +8490,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1fv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10857
+//@line:10843
 
 		ext_glMultiTexCoord1fv((GLenum)target, (const GLfloat*)(v + vByteOffset));
 	
@@ -8514,7 +8500,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1fv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1i(JNIEnv* env, jclass clazz, jint target, jint s) {
 
 
-//@line:10861
+//@line:10847
 
 		ext_glMultiTexCoord1i((GLenum)target, (GLint)s);
 	
@@ -8525,7 +8511,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1iv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10865
+//@line:10851
 
 		ext_glMultiTexCoord1iv((GLenum)target, (const GLint*)(v + vByteOffset));
 	
@@ -8535,7 +8521,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1iv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1s(JNIEnv* env, jclass clazz, jint target, jshort s) {
 
 
-//@line:10869
+//@line:10855
 
 		ext_glMultiTexCoord1s((GLenum)target, (GLshort)s);
 	
@@ -8546,7 +8532,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1sv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10873
+//@line:10859
 
 		ext_glMultiTexCoord1sv((GLenum)target, (const GLshort*)(v + vByteOffset));
 	
@@ -8556,7 +8542,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1sv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2d(JNIEnv* env, jclass clazz, jint target, jdouble s, jdouble t) {
 
 
-//@line:10877
+//@line:10863
 
 		ext_glMultiTexCoord2d((GLenum)target, (GLdouble)s, (GLdouble)t);
 	
@@ -8567,7 +8553,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2dv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10881
+//@line:10867
 
 		ext_glMultiTexCoord2dv((GLenum)target, (const GLdouble*)(v + vByteOffset));
 	
@@ -8577,7 +8563,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2dv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2f(JNIEnv* env, jclass clazz, jint target, jfloat s, jfloat t) {
 
 
-//@line:10885
+//@line:10871
 
 		ext_glMultiTexCoord2f((GLenum)target, (GLfloat)s, (GLfloat)t);
 	
@@ -8588,7 +8574,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2fv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10889
+//@line:10875
 
 		ext_glMultiTexCoord2fv((GLenum)target, (const GLfloat*)(v + vByteOffset));
 	
@@ -8598,7 +8584,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2fv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2i(JNIEnv* env, jclass clazz, jint target, jint s, jint t) {
 
 
-//@line:10893
+//@line:10879
 
 		ext_glMultiTexCoord2i((GLenum)target, (GLint)s, (GLint)t);
 	
@@ -8609,7 +8595,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2iv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10897
+//@line:10883
 
 		ext_glMultiTexCoord2iv((GLenum)target, (const GLint*)(v + vByteOffset));
 	
@@ -8619,7 +8605,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2iv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2s(JNIEnv* env, jclass clazz, jint target, jshort s, jshort t) {
 
 
-//@line:10901
+//@line:10887
 
 		ext_glMultiTexCoord2s((GLenum)target, (GLshort)s, (GLshort)t);
 	
@@ -8630,7 +8616,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2sv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10905
+//@line:10891
 
 		ext_glMultiTexCoord2sv((GLenum)target, (const GLshort*)(v + vByteOffset));
 	
@@ -8640,7 +8626,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2sv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3d(JNIEnv* env, jclass clazz, jint target, jdouble s, jdouble t, jdouble r) {
 
 
-//@line:10909
+//@line:10895
 
 		ext_glMultiTexCoord3d((GLenum)target, (GLdouble)s, (GLdouble)t, (GLdouble)r);
 	
@@ -8651,7 +8637,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3dv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10913
+//@line:10899
 
 		ext_glMultiTexCoord3dv((GLenum)target, (const GLdouble*)(v + vByteOffset));
 	
@@ -8661,7 +8647,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3dv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3f(JNIEnv* env, jclass clazz, jint target, jfloat s, jfloat t, jfloat r) {
 
 
-//@line:10917
+//@line:10903
 
 		ext_glMultiTexCoord3f((GLenum)target, (GLfloat)s, (GLfloat)t, (GLfloat)r);
 	
@@ -8672,7 +8658,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3fv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10921
+//@line:10907
 
 		ext_glMultiTexCoord3fv((GLenum)target, (const GLfloat*)(v + vByteOffset));
 	
@@ -8682,7 +8668,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3fv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3i(JNIEnv* env, jclass clazz, jint target, jint s, jint t, jint r) {
 
 
-//@line:10925
+//@line:10911
 
 		ext_glMultiTexCoord3i((GLenum)target, (GLint)s, (GLint)t, (GLint)r);
 	
@@ -8693,7 +8679,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3iv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10929
+//@line:10915
 
 		ext_glMultiTexCoord3iv((GLenum)target, (const GLint*)(v + vByteOffset));
 	
@@ -8703,7 +8689,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3iv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3s(JNIEnv* env, jclass clazz, jint target, jshort s, jshort t, jshort r) {
 
 
-//@line:10933
+//@line:10919
 
 		ext_glMultiTexCoord3s((GLenum)target, (GLshort)s, (GLshort)t, (GLshort)r);
 	
@@ -8714,7 +8700,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3sv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10937
+//@line:10923
 
 		ext_glMultiTexCoord3sv((GLenum)target, (const GLshort*)(v + vByteOffset));
 	
@@ -8724,7 +8710,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3sv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4d(JNIEnv* env, jclass clazz, jint target, jdouble s, jdouble t, jdouble r, jdouble q) {
 
 
-//@line:10941
+//@line:10927
 
 		ext_glMultiTexCoord4d((GLenum)target, (GLdouble)s, (GLdouble)t, (GLdouble)r, (GLdouble)q);
 	
@@ -8735,7 +8721,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4dv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10945
+//@line:10931
 
 		ext_glMultiTexCoord4dv((GLenum)target, (const GLdouble*)(v + vByteOffset));
 	
@@ -8745,7 +8731,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4dv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4f(JNIEnv* env, jclass clazz, jint target, jfloat s, jfloat t, jfloat r, jfloat q) {
 
 
-//@line:10949
+//@line:10935
 
 		ext_glMultiTexCoord4f((GLenum)target, (GLfloat)s, (GLfloat)t, (GLfloat)r, (GLfloat)q);
 	
@@ -8756,7 +8742,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4fv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10953
+//@line:10939
 
 		ext_glMultiTexCoord4fv((GLenum)target, (const GLfloat*)(v + vByteOffset));
 	
@@ -8766,7 +8752,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4fv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4i(JNIEnv* env, jclass clazz, jint target, jint s, jint t, jint r, jint q) {
 
 
-//@line:10957
+//@line:10943
 
 		ext_glMultiTexCoord4i((GLenum)target, (GLint)s, (GLint)t, (GLint)r, (GLint)q);
 	
@@ -8777,7 +8763,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4iv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10961
+//@line:10947
 
 		ext_glMultiTexCoord4iv((GLenum)target, (const GLint*)(v + vByteOffset));
 	
@@ -8787,7 +8773,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4iv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4s(JNIEnv* env, jclass clazz, jint target, jshort s, jshort t, jshort r, jshort q) {
 
 
-//@line:10965
+//@line:10951
 
 		ext_glMultiTexCoord4s((GLenum)target, (GLshort)s, (GLshort)t, (GLshort)r, (GLshort)q);
 	
@@ -8798,7 +8784,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4sv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:10969
+//@line:10955
 
 		ext_glMultiTexCoord4sv((GLenum)target, (const GLshort*)(v + vByteOffset));
 	
@@ -8809,7 +8795,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLoadTransposeMatrixf(JNIE
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:10973
+//@line:10959
 
 		ext_glLoadTransposeMatrixf((const GLfloat*)(m + mByteOffset));
 	
@@ -8820,7 +8806,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLoadTransposeMatrixd(JNIE
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:10977
+//@line:10963
 
 		ext_glLoadTransposeMatrixd((const GLdouble*)(m + mByteOffset));
 	
@@ -8831,7 +8817,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultTransposeMatrixf(JNIE
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:10981
+//@line:10967
 
 		ext_glMultTransposeMatrixf((const GLfloat*)(m + mByteOffset));
 	
@@ -8842,7 +8828,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultTransposeMatrixd(JNIE
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:10985
+//@line:10971
 
 		ext_glMultTransposeMatrixd((const GLdouble*)(m + mByteOffset));
 	
@@ -8852,7 +8838,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultTransposeMatrixd(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFuncSeparate(JNIEnv* env, jclass clazz, jint sfactorRGB, jint dfactorRGB, jint sfactorAlpha, jint dfactorAlpha) {
 
 
-//@line:10989
+//@line:10975
 
 		ext_glBlendFuncSeparate((GLenum)sfactorRGB, (GLenum)dfactorRGB, (GLenum)sfactorAlpha, (GLenum)dfactorAlpha);
 	
@@ -8864,7 +8850,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiDrawArrays(JNIEnv* e
 	unsigned char* count = (unsigned char*)env->GetDirectBufferAddress(obj_count);
 
 
-//@line:10993
+//@line:10979
 
 		ext_glMultiDrawArrays((GLenum)mode, (const GLint*)(first + firstByteOffset), (const GLsizei*)(count + countByteOffset), (GLsizei)drawcount);
 	
@@ -8876,7 +8862,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiDrawElements(JNIEnv*
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:10997
+//@line:10983
 
 		ext_glMultiDrawElements((GLenum)mode, (const GLsizei*)(count + countByteOffset), (GLenum)type, (const GLvoid**)(indices + indicesByteOffset), (GLsizei)drawcount);
 	
@@ -8886,7 +8872,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiDrawElements(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameterf(JNIEnv* env, jclass clazz, jint pname, jfloat param) {
 
 
-//@line:11001
+//@line:10987
 
 		ext_glPointParameterf((GLenum)pname, (GLfloat)param);
 	
@@ -8897,7 +8883,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameterfv(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11005
+//@line:10991
 
 		ext_glPointParameterfv((GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -8907,7 +8893,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameterfv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameteri(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:11009
+//@line:10995
 
 		ext_glPointParameteri((GLenum)pname, (GLint)param);
 	
@@ -8918,7 +8904,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameteriv(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11013
+//@line:10999
 
 		ext_glPointParameteriv((GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -8928,7 +8914,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameteriv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordf(JNIEnv* env, jclass clazz, jfloat coord) {
 
 
-//@line:11017
+//@line:11003
 
 		ext_glFogCoordf((GLfloat)coord);
 	
@@ -8939,7 +8925,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordfv(JNIEnv* env, j
 	unsigned char* coord = (unsigned char*)env->GetDirectBufferAddress(obj_coord);
 
 
-//@line:11021
+//@line:11007
 
 		ext_glFogCoordfv((const GLfloat*)(coord + coordByteOffset));
 	
@@ -8949,7 +8935,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordfv(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordd(JNIEnv* env, jclass clazz, jdouble coord) {
 
 
-//@line:11025
+//@line:11011
 
 		ext_glFogCoordd((GLdouble)coord);
 	
@@ -8960,7 +8946,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoorddv(JNIEnv* env, j
 	unsigned char* coord = (unsigned char*)env->GetDirectBufferAddress(obj_coord);
 
 
-//@line:11029
+//@line:11015
 
 		ext_glFogCoorddv((const GLdouble*)(coord + coordByteOffset));
 	
@@ -8971,7 +8957,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordPointer(JNIEnv* e
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:11033
+//@line:11019
 
 		ext_glFogCoordPointer((GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -8981,7 +8967,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordPointer(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3b(JNIEnv* env, jclass clazz, jbyte red, jbyte green, jbyte blue) {
 
 
-//@line:11037
+//@line:11023
 
 		ext_glSecondaryColor3b((GLbyte)red, (GLbyte)green, (GLbyte)blue);
 	
@@ -8992,7 +8978,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3bv(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11041
+//@line:11027
 
 		ext_glSecondaryColor3bv((const GLbyte*)(v + vByteOffset));
 	
@@ -9002,7 +8988,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3bv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3d(JNIEnv* env, jclass clazz, jdouble red, jdouble green, jdouble blue) {
 
 
-//@line:11045
+//@line:11031
 
 		ext_glSecondaryColor3d((GLdouble)red, (GLdouble)green, (GLdouble)blue);
 	
@@ -9013,7 +8999,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3dv(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11049
+//@line:11035
 
 		ext_glSecondaryColor3dv((const GLdouble*)(v + vByteOffset));
 	
@@ -9023,7 +9009,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3dv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3f(JNIEnv* env, jclass clazz, jfloat red, jfloat green, jfloat blue) {
 
 
-//@line:11053
+//@line:11039
 
 		ext_glSecondaryColor3f((GLfloat)red, (GLfloat)green, (GLfloat)blue);
 	
@@ -9034,7 +9020,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3fv(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11057
+//@line:11043
 
 		ext_glSecondaryColor3fv((const GLfloat*)(v + vByteOffset));
 	
@@ -9044,7 +9030,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3fv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3i(JNIEnv* env, jclass clazz, jint red, jint green, jint blue) {
 
 
-//@line:11061
+//@line:11047
 
 		ext_glSecondaryColor3i((GLint)red, (GLint)green, (GLint)blue);
 	
@@ -9055,7 +9041,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3iv(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11065
+//@line:11051
 
 		ext_glSecondaryColor3iv((const GLint*)(v + vByteOffset));
 	
@@ -9065,7 +9051,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3iv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3s(JNIEnv* env, jclass clazz, jshort red, jshort green, jshort blue) {
 
 
-//@line:11069
+//@line:11055
 
 		ext_glSecondaryColor3s((GLshort)red, (GLshort)green, (GLshort)blue);
 	
@@ -9076,7 +9062,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3sv(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11073
+//@line:11059
 
 		ext_glSecondaryColor3sv((const GLshort*)(v + vByteOffset));
 	
@@ -9086,7 +9072,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3sv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3ub(JNIEnv* env, jclass clazz, jbyte red, jbyte green, jbyte blue) {
 
 
-//@line:11077
+//@line:11063
 
 		ext_glSecondaryColor3ub((GLubyte)red, (GLubyte)green, (GLubyte)blue);
 	
@@ -9097,7 +9083,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3ubv(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11081
+//@line:11067
 
 		ext_glSecondaryColor3ubv((const GLubyte*)(v + vByteOffset));
 	
@@ -9107,7 +9093,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3ubv(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3ui(JNIEnv* env, jclass clazz, jint red, jint green, jint blue) {
 
 
-//@line:11085
+//@line:11071
 
 		ext_glSecondaryColor3ui((GLuint)red, (GLuint)green, (GLuint)blue);
 	
@@ -9118,7 +9104,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3uiv(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11089
+//@line:11075
 
 		ext_glSecondaryColor3uiv((const GLuint*)(v + vByteOffset));
 	
@@ -9128,7 +9114,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3uiv(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3us(JNIEnv* env, jclass clazz, jshort red, jshort green, jshort blue) {
 
 
-//@line:11093
+//@line:11079
 
 		ext_glSecondaryColor3us((GLushort)red, (GLushort)green, (GLushort)blue);
 	
@@ -9139,7 +9125,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3usv(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11097
+//@line:11083
 
 		ext_glSecondaryColor3usv((const GLushort*)(v + vByteOffset));
 	
@@ -9150,7 +9136,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColorPointer(JNI
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:11101
+//@line:11087
 
 		ext_glSecondaryColorPointer((GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -9160,7 +9146,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColorPointer(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2d(JNIEnv* env, jclass clazz, jdouble x, jdouble y) {
 
 
-//@line:11105
+//@line:11091
 
 		ext_glWindowPos2d((GLdouble)x, (GLdouble)y);
 	
@@ -9171,7 +9157,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2dv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11109
+//@line:11095
 
 		ext_glWindowPos2dv((const GLdouble*)(v + vByteOffset));
 	
@@ -9181,7 +9167,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2dv(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2f(JNIEnv* env, jclass clazz, jfloat x, jfloat y) {
 
 
-//@line:11113
+//@line:11099
 
 		ext_glWindowPos2f((GLfloat)x, (GLfloat)y);
 	
@@ -9192,7 +9178,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2fv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11117
+//@line:11103
 
 		ext_glWindowPos2fv((const GLfloat*)(v + vByteOffset));
 	
@@ -9202,7 +9188,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2fv(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2i(JNIEnv* env, jclass clazz, jint x, jint y) {
 
 
-//@line:11121
+//@line:11107
 
 		ext_glWindowPos2i((GLint)x, (GLint)y);
 	
@@ -9213,7 +9199,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2iv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11125
+//@line:11111
 
 		ext_glWindowPos2iv((const GLint*)(v + vByteOffset));
 	
@@ -9223,7 +9209,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2iv(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2s(JNIEnv* env, jclass clazz, jshort x, jshort y) {
 
 
-//@line:11129
+//@line:11115
 
 		ext_glWindowPos2s((GLshort)x, (GLshort)y);
 	
@@ -9234,7 +9220,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2sv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11133
+//@line:11119
 
 		ext_glWindowPos2sv((const GLshort*)(v + vByteOffset));
 	
@@ -9244,7 +9230,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2sv(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3d(JNIEnv* env, jclass clazz, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:11137
+//@line:11123
 
 		ext_glWindowPos3d((GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -9255,7 +9241,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3dv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11141
+//@line:11127
 
 		ext_glWindowPos3dv((const GLdouble*)(v + vByteOffset));
 	
@@ -9265,7 +9251,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3dv(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3f(JNIEnv* env, jclass clazz, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:11145
+//@line:11131
 
 		ext_glWindowPos3f((GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -9276,7 +9262,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3fv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11149
+//@line:11135
 
 		ext_glWindowPos3fv((const GLfloat*)(v + vByteOffset));
 	
@@ -9286,7 +9272,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3fv(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3i(JNIEnv* env, jclass clazz, jint x, jint y, jint z) {
 
 
-//@line:11153
+//@line:11139
 
 		ext_glWindowPos3i((GLint)x, (GLint)y, (GLint)z);
 	
@@ -9297,7 +9283,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3iv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11157
+//@line:11143
 
 		ext_glWindowPos3iv((const GLint*)(v + vByteOffset));
 	
@@ -9307,7 +9293,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3iv(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3s(JNIEnv* env, jclass clazz, jshort x, jshort y, jshort z) {
 
 
-//@line:11161
+//@line:11147
 
 		ext_glWindowPos3s((GLshort)x, (GLshort)y, (GLshort)z);
 	
@@ -9318,7 +9304,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3sv(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11165
+//@line:11151
 
 		ext_glWindowPos3sv((const GLshort*)(v + vByteOffset));
 	
@@ -9329,7 +9315,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenQueries(JNIEnv* env, j
 	unsigned char* ids = (unsigned char*)env->GetDirectBufferAddress(obj_ids);
 
 
-//@line:11169
+//@line:11155
 
 		ext_glGenQueries((GLsizei)n, (GLuint*)(ids + idsByteOffset));
 	
@@ -9340,7 +9326,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteQueries(JNIEnv* env
 	unsigned char* ids = (unsigned char*)env->GetDirectBufferAddress(obj_ids);
 
 
-//@line:11173
+//@line:11159
 
 		ext_glDeleteQueries((GLsizei)n, (const GLuint*)(ids + idsByteOffset));
 	
@@ -9350,7 +9336,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteQueries(JNIEnv* env
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsQuery(JNIEnv* env, jclass clazz, jint id) {
 
 
-//@line:11177
+//@line:11163
 
 		return (jboolean)ext_glIsQuery((GLuint)id);
 	
@@ -9360,7 +9346,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsQuery(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginQuery(JNIEnv* env, jclass clazz, jint target, jint id) {
 
 
-//@line:11181
+//@line:11167
 
 		ext_glBeginQuery((GLenum)target, (GLuint)id);
 	
@@ -9370,7 +9356,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginQuery(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndQuery(JNIEnv* env, jclass clazz, jint target) {
 
 
-//@line:11185
+//@line:11171
 
 		ext_glEndQuery((GLenum)target);
 	
@@ -9381,7 +9367,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryiv(JNIEnv* env, j
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11189
+//@line:11175
 
 		ext_glGetQueryiv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -9392,7 +9378,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryObjectiv(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11193
+//@line:11179
 
 		ext_glGetQueryObjectiv((GLuint)id, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -9403,7 +9389,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryObjectuiv(JNIEnv*
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11197
+//@line:11183
 
 		ext_glGetQueryObjectuiv((GLuint)id, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
 	
@@ -9413,7 +9399,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryObjectuiv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBuffer(JNIEnv* env, jclass clazz, jint target, jint buffer) {
 
 
-//@line:11201
+//@line:11187
 
 		ext_glBindBuffer((GLenum)target, (GLuint)buffer);
 	
@@ -9424,7 +9410,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteBuffers(JNIEnv* env
 	unsigned char* buffers = (unsigned char*)env->GetDirectBufferAddress(obj_buffers);
 
 
-//@line:11205
+//@line:11191
 
 		ext_glDeleteBuffers((GLsizei)n, (const GLuint*)(buffers + buffersByteOffset));
 	
@@ -9435,7 +9421,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenBuffers(JNIEnv* env, j
 	unsigned char* buffers = (unsigned char*)env->GetDirectBufferAddress(obj_buffers);
 
 
-//@line:11209
+//@line:11195
 
 		ext_glGenBuffers((GLsizei)n, (GLuint*)(buffers + buffersByteOffset));
 	
@@ -9445,40 +9431,40 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenBuffers(JNIEnv* env, j
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsBuffer(JNIEnv* env, jclass clazz, jint buffer) {
 
 
-//@line:11213
+//@line:11199
 
 		return (jboolean)ext_glIsBuffer((GLuint)buffer);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferData(JNIEnv* env, jclass clazz, jint target, jint size, jobject obj_data, jint dataByteOffset, jint usage) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferData(JNIEnv* env, jclass clazz, jint target, jlong size, jobject obj_data, jint dataByteOffset, jint usage) {
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:11217
+//@line:11203
 
 		ext_glBufferData((GLenum)target, (GLsizeiptr)size, (const GLvoid*)(data + dataByteOffset), (GLenum)usage);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferSubData(JNIEnv* env, jclass clazz, jint target, jint offset, jint size, jobject obj_data, jint dataByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferSubData(JNIEnv* env, jclass clazz, jint target, jlong offset, jlong size, jobject obj_data, jint dataByteOffset) {
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:11221
+//@line:11207
 
 		ext_glBufferSubData((GLenum)target, (GLintptr)offset, (GLsizeiptr)size, (const GLvoid*)(data + dataByteOffset));
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferSubData(JNIEnv* env, jclass clazz, jint target, jint offset, jint size, jobject obj_data, jint dataByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferSubData(JNIEnv* env, jclass clazz, jint target, jlong offset, jlong size, jobject obj_data, jint dataByteOffset) {
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:11225
+//@line:11211
 
 		ext_glGetBufferSubData((GLenum)target, (GLintptr)offset, (GLsizeiptr)size, (GLvoid*)(data + dataByteOffset));
 	
@@ -9488,7 +9474,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferSubData(JNIEnv* 
 JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glMapBuffer(JNIEnv* env, jclass clazz, jint target, jint access, jlong bufferSize) {
 
 
-//@line:11229
+//@line:11215
 
 		GLvoid* buffer = (GLvoid*)ext_glMapBuffer((GLenum)target, (GLenum)access);
 		if(!buffer) return 0;
@@ -9500,7 +9486,7 @@ JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glMapBuffer(JNIEnv* env,
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glUnmapBuffer(JNIEnv* env, jclass clazz, jint target) {
 
 
-//@line:11235
+//@line:11221
 
 		return (jboolean)ext_glUnmapBuffer((GLenum)target);
 	
@@ -9511,7 +9497,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferParameteriv(JNIE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11239
+//@line:11225
 
 		ext_glGetBufferParameteriv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -9522,7 +9508,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferPointerv(JNIEnv*
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11243
+//@line:11229
 
 		ext_glGetBufferPointerv((GLenum)target, (GLenum)pname, (GLvoid**)(params + paramsByteOffset));
 	
@@ -9532,7 +9518,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferPointerv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationSeparate(JNIEnv* env, jclass clazz, jint modeRGB, jint modeAlpha) {
 
 
-//@line:11247
+//@line:11233
 
 		ext_glBlendEquationSeparate((GLenum)modeRGB, (GLenum)modeAlpha);
 	
@@ -9543,7 +9529,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawBuffers(JNIEnv* env, 
 	unsigned char* bufs = (unsigned char*)env->GetDirectBufferAddress(obj_bufs);
 
 
-//@line:11251
+//@line:11237
 
 		ext_glDrawBuffers((GLsizei)n, (const GLenum*)(bufs + bufsByteOffset));
 	
@@ -9553,7 +9539,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawBuffers(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilOpSeparate(JNIEnv* env, jclass clazz, jint face, jint sfail, jint dpfail, jint dppass) {
 
 
-//@line:11255
+//@line:11241
 
 		ext_glStencilOpSeparate((GLenum)face, (GLenum)sfail, (GLenum)dpfail, (GLenum)dppass);
 	
@@ -9563,7 +9549,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilOpSeparate(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilFuncSeparate(JNIEnv* env, jclass clazz, jint face, jint func, jint ref, jint mask) {
 
 
-//@line:11259
+//@line:11245
 
 		ext_glStencilFuncSeparate((GLenum)face, (GLenum)func, (GLint)ref, (GLuint)mask);
 	
@@ -9573,7 +9559,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilFuncSeparate(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilMaskSeparate(JNIEnv* env, jclass clazz, jint face, jint mask) {
 
 
-//@line:11263
+//@line:11249
 
 		ext_glStencilMaskSeparate((GLenum)face, (GLuint)mask);
 	
@@ -9583,7 +9569,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilMaskSeparate(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAttachShader(JNIEnv* env, jclass clazz, jint program, jint shader) {
 
 
-//@line:11267
+//@line:11253
 
 		ext_glAttachShader((GLuint)program, (GLuint)shader);
 	
@@ -9594,7 +9580,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindAttribLocation(JNIEnv
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:11271
+//@line:11257
 
 		ext_glBindAttribLocation((GLuint)program, (GLuint)index, (const GLchar*)(name + nameByteOffset));
 	
@@ -9604,7 +9590,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindAttribLocation(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompileShader(JNIEnv* env, jclass clazz, jint shader) {
 
 
-//@line:11275
+//@line:11261
 
 		ext_glCompileShader((GLuint)shader);
 	
@@ -9614,7 +9600,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompileShader(JNIEnv* env
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCreateProgram(JNIEnv* env, jclass clazz) {
 
 
-//@line:11279
+//@line:11265
 
 		return (jint)ext_glCreateProgram();
 	
@@ -9624,7 +9610,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCreateProgram(JNIEnv* env
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCreateShader(JNIEnv* env, jclass clazz, jint type) {
 
 
-//@line:11283
+//@line:11269
 
 		return (jint)ext_glCreateShader((GLenum)type);
 	
@@ -9634,7 +9620,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCreateShader(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteProgram(JNIEnv* env, jclass clazz, jint program) {
 
 
-//@line:11287
+//@line:11273
 
 		ext_glDeleteProgram((GLuint)program);
 	
@@ -9644,7 +9630,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteProgram(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteShader(JNIEnv* env, jclass clazz, jint shader) {
 
 
-//@line:11291
+//@line:11277
 
 		ext_glDeleteShader((GLuint)shader);
 	
@@ -9654,7 +9640,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteShader(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDetachShader(JNIEnv* env, jclass clazz, jint program, jint shader) {
 
 
-//@line:11295
+//@line:11281
 
 		ext_glDetachShader((GLuint)program, (GLuint)shader);
 	
@@ -9664,7 +9650,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDetachShader(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDisableVertexAttribArray(JNIEnv* env, jclass clazz, jint index) {
 
 
-//@line:11299
+//@line:11285
 
 		ext_glDisableVertexAttribArray((GLuint)index);
 	
@@ -9674,7 +9660,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDisableVertexAttribArray(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnableVertexAttribArray(JNIEnv* env, jclass clazz, jint index) {
 
 
-//@line:11303
+//@line:11289
 
 		ext_glEnableVertexAttribArray((GLuint)index);
 	
@@ -9688,7 +9674,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveAttrib(JNIEnv* e
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:11307
+//@line:11293
 
 		ext_glGetActiveAttrib((GLuint)program, (GLuint)index, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLchar*)(name + nameByteOffset));
 	
@@ -9702,7 +9688,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniform(JNIEnv* 
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:11311
+//@line:11297
 
 		ext_glGetActiveUniform((GLuint)program, (GLuint)index, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLchar*)(name + nameByteOffset));
 	
@@ -9714,7 +9700,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttachedShaders(JNIEnv
 	unsigned char* obj = (unsigned char*)env->GetDirectBufferAddress(obj_obj);
 
 
-//@line:11315
+//@line:11301
 
 		ext_glGetAttachedShaders((GLuint)program, (GLsizei)maxCount, (GLsizei*)(count + countByteOffset), (GLuint*)(obj + objByteOffset));
 	
@@ -9724,7 +9710,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttachedShaders(JNIEnv
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetAttribLocation
 (JNIEnv* env, jclass clazz, jint program, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
-//@line:11319
+//@line:11305
 
 		return (jint)ext_glGetAttribLocation((GLuint)program, (const GLchar*)(name + nameByteOffset));
 	
@@ -9743,7 +9729,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramiv(JNIEnv* env,
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11323
+//@line:11309
 
 		ext_glGetProgramiv((GLuint)program, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -9755,7 +9741,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramInfoLog(JNIEnv*
 	unsigned char* infoLog = (unsigned char*)env->GetDirectBufferAddress(obj_infoLog);
 
 
-//@line:11327
+//@line:11313
 
 		ext_glGetProgramInfoLog((GLuint)program, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(infoLog + infoLogByteOffset));
 	
@@ -9766,7 +9752,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderiv(JNIEnv* env, 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11331
+//@line:11317
 
 		ext_glGetShaderiv((GLuint)shader, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -9778,7 +9764,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderInfoLog(JNIEnv* 
 	unsigned char* infoLog = (unsigned char*)env->GetDirectBufferAddress(obj_infoLog);
 
 
-//@line:11335
+//@line:11321
 
 		ext_glGetShaderInfoLog((GLuint)shader, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(infoLog + infoLogByteOffset));
 	
@@ -9790,7 +9776,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderSource(JNIEnv* e
 	unsigned char* source = (unsigned char*)env->GetDirectBufferAddress(obj_source);
 
 
-//@line:11339
+//@line:11325
 
 		ext_glGetShaderSource((GLuint)shader, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(source + sourceByteOffset));
 	
@@ -9800,7 +9786,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderSource(JNIEnv* e
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetUniformLocation
 (JNIEnv* env, jclass clazz, jint program, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
-//@line:11343
+//@line:11329
 
 		return (jint)ext_glGetUniformLocation((GLuint)program, (const GLchar*)(name + nameByteOffset));
 	
@@ -9819,7 +9805,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformfv(JNIEnv* env,
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11347
+//@line:11333
 
 		ext_glGetUniformfv((GLuint)program, (GLint)location, (GLfloat*)(params + paramsByteOffset));
 	
@@ -9830,7 +9816,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformiv(JNIEnv* env,
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11351
+//@line:11337
 
 		ext_glGetUniformiv((GLuint)program, (GLint)location, (GLint*)(params + paramsByteOffset));
 	
@@ -9841,7 +9827,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribdv(JNIEnv*
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11355
+//@line:11341
 
 		ext_glGetVertexAttribdv((GLuint)index, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
 	
@@ -9852,7 +9838,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribfv(JNIEnv*
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11359
+//@line:11345
 
 		ext_glGetVertexAttribfv((GLuint)index, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -9863,7 +9849,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribiv(JNIEnv*
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11363
+//@line:11349
 
 		ext_glGetVertexAttribiv((GLuint)index, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -9874,7 +9860,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribPointerv(J
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:11367
+//@line:11353
 
 		ext_glGetVertexAttribPointerv((GLuint)index, (GLenum)pname, (GLvoid**)(pointer + pointerByteOffset));
 	
@@ -9884,7 +9870,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribPointerv(J
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsProgram(JNIEnv* env, jclass clazz, jint program) {
 
 
-//@line:11371
+//@line:11357
 
 		return (jboolean)ext_glIsProgram((GLuint)program);
 	
@@ -9894,7 +9880,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsProgram(JNIEnv* env
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsShader(JNIEnv* env, jclass clazz, jint shader) {
 
 
-//@line:11375
+//@line:11361
 
 		return (jboolean)ext_glIsShader((GLuint)shader);
 	
@@ -9904,29 +9890,29 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsShader(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLinkProgram(JNIEnv* env, jclass clazz, jint program) {
 
 
-//@line:11379
+//@line:11365
 
 		ext_glLinkProgram((GLuint)program);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderSource(JNIEnv* env, jclass clazz, jint shader, jint count, jobject obj_string, jint stringByteOffset, jobject obj_length, jint lengthByteOffset) {
-	unsigned char* string = (unsigned char*)env->GetDirectBufferAddress(obj_string);
-	unsigned char* length = (unsigned char*)env->GetDirectBufferAddress(obj_length);
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderSource(JNIEnv* env, jclass clazz, jint shader, jstring obj_string) {
+	char* string = (char*)env->GetStringUTFChars(obj_string, 0);
 
 
-//@line:11383
+//@line:11369
 
-		ext_glShaderSource((GLuint)shader, (GLsizei)count, (const GLchar**)(string + stringByteOffset), (const GLint*)(length + lengthByteOffset));
+		ext_glShaderSource((GLuint)shader, 1, &string, 0);
 	
+	env->ReleaseStringUTFChars(obj_string, string);
 
 }
 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUseProgram(JNIEnv* env, jclass clazz, jint program) {
 
 
-//@line:11387
+//@line:11373
 
 		ext_glUseProgram((GLuint)program);
 	
@@ -9936,7 +9922,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUseProgram(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1f(JNIEnv* env, jclass clazz, jint location, jfloat v0) {
 
 
-//@line:11391
+//@line:11377
 
 		ext_glUniform1f((GLint)location, (GLfloat)v0);
 	
@@ -9946,7 +9932,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1f(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2f(JNIEnv* env, jclass clazz, jint location, jfloat v0, jfloat v1) {
 
 
-//@line:11395
+//@line:11381
 
 		ext_glUniform2f((GLint)location, (GLfloat)v0, (GLfloat)v1);
 	
@@ -9956,7 +9942,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2f(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3f(JNIEnv* env, jclass clazz, jint location, jfloat v0, jfloat v1, jfloat v2) {
 
 
-//@line:11399
+//@line:11385
 
 		ext_glUniform3f((GLint)location, (GLfloat)v0, (GLfloat)v1, (GLfloat)v2);
 	
@@ -9966,7 +9952,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3f(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4f(JNIEnv* env, jclass clazz, jint location, jfloat v0, jfloat v1, jfloat v2, jfloat v3) {
 
 
-//@line:11403
+//@line:11389
 
 		ext_glUniform4f((GLint)location, (GLfloat)v0, (GLfloat)v1, (GLfloat)v2, (GLfloat)v3);
 	
@@ -9976,7 +9962,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4f(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1i(JNIEnv* env, jclass clazz, jint location, jint v0) {
 
 
-//@line:11407
+//@line:11393
 
 		ext_glUniform1i((GLint)location, (GLint)v0);
 	
@@ -9986,7 +9972,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1i(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2i(JNIEnv* env, jclass clazz, jint location, jint v0, jint v1) {
 
 
-//@line:11411
+//@line:11397
 
 		ext_glUniform2i((GLint)location, (GLint)v0, (GLint)v1);
 	
@@ -9996,7 +9982,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2i(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3i(JNIEnv* env, jclass clazz, jint location, jint v0, jint v1, jint v2) {
 
 
-//@line:11415
+//@line:11401
 
 		ext_glUniform3i((GLint)location, (GLint)v0, (GLint)v1, (GLint)v2);
 	
@@ -10006,7 +9992,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3i(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4i(JNIEnv* env, jclass clazz, jint location, jint v0, jint v1, jint v2, jint v3) {
 
 
-//@line:11419
+//@line:11405
 
 		ext_glUniform4i((GLint)location, (GLint)v0, (GLint)v1, (GLint)v2, (GLint)v3);
 	
@@ -10017,7 +10003,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1fv(JNIEnv* env, j
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11423
+//@line:11409
 
 		ext_glUniform1fv((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -10028,7 +10014,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2fv(JNIEnv* env, j
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11427
+//@line:11413
 
 		ext_glUniform2fv((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -10039,7 +10025,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3fv(JNIEnv* env, j
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11431
+//@line:11417
 
 		ext_glUniform3fv((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -10050,7 +10036,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4fv(JNIEnv* env, j
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11435
+//@line:11421
 
 		ext_glUniform4fv((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -10061,7 +10047,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1iv(JNIEnv* env, j
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11439
+//@line:11425
 
 		ext_glUniform1iv((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -10072,7 +10058,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2iv(JNIEnv* env, j
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11443
+//@line:11429
 
 		ext_glUniform2iv((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -10083,7 +10069,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3iv(JNIEnv* env, j
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11447
+//@line:11433
 
 		ext_glUniform3iv((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -10094,7 +10080,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4iv(JNIEnv* env, j
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11451
+//@line:11437
 
 		ext_glUniform4iv((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -10105,7 +10091,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix2fv(JNIEnv* 
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11455
+//@line:11441
 
 		ext_glUniformMatrix2fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -10116,7 +10102,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix3fv(JNIEnv* 
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11459
+//@line:11445
 
 		ext_glUniformMatrix3fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -10127,7 +10113,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix4fv(JNIEnv* 
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11463
+//@line:11449
 
 		ext_glUniformMatrix4fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -10137,7 +10123,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix4fv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glValidateProgram(JNIEnv* env, jclass clazz, jint program) {
 
 
-//@line:11467
+//@line:11453
 
 		ext_glValidateProgram((GLuint)program);
 	
@@ -10147,7 +10133,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glValidateProgram(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1d(JNIEnv* env, jclass clazz, jint index, jdouble x) {
 
 
-//@line:11471
+//@line:11457
 
 		ext_glVertexAttrib1d((GLuint)index, (GLdouble)x);
 	
@@ -10158,7 +10144,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1dv(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11475
+//@line:11461
 
 		ext_glVertexAttrib1dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -10168,7 +10154,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1dv(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1f(JNIEnv* env, jclass clazz, jint index, jfloat x) {
 
 
-//@line:11479
+//@line:11465
 
 		ext_glVertexAttrib1f((GLuint)index, (GLfloat)x);
 	
@@ -10179,7 +10165,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1fv(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11483
+//@line:11469
 
 		ext_glVertexAttrib1fv((GLuint)index, (const GLfloat*)(v + vByteOffset));
 	
@@ -10189,7 +10175,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1fv(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1s(JNIEnv* env, jclass clazz, jint index, jshort x) {
 
 
-//@line:11487
+//@line:11473
 
 		ext_glVertexAttrib1s((GLuint)index, (GLshort)x);
 	
@@ -10200,7 +10186,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1sv(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11491
+//@line:11477
 
 		ext_glVertexAttrib1sv((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -10210,7 +10196,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1sv(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2d(JNIEnv* env, jclass clazz, jint index, jdouble x, jdouble y) {
 
 
-//@line:11495
+//@line:11481
 
 		ext_glVertexAttrib2d((GLuint)index, (GLdouble)x, (GLdouble)y);
 	
@@ -10221,7 +10207,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2dv(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11499
+//@line:11485
 
 		ext_glVertexAttrib2dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -10231,7 +10217,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2dv(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2f(JNIEnv* env, jclass clazz, jint index, jfloat x, jfloat y) {
 
 
-//@line:11503
+//@line:11489
 
 		ext_glVertexAttrib2f((GLuint)index, (GLfloat)x, (GLfloat)y);
 	
@@ -10242,7 +10228,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2fv(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11507
+//@line:11493
 
 		ext_glVertexAttrib2fv((GLuint)index, (const GLfloat*)(v + vByteOffset));
 	
@@ -10252,7 +10238,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2fv(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2s(JNIEnv* env, jclass clazz, jint index, jshort x, jshort y) {
 
 
-//@line:11511
+//@line:11497
 
 		ext_glVertexAttrib2s((GLuint)index, (GLshort)x, (GLshort)y);
 	
@@ -10263,7 +10249,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2sv(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11515
+//@line:11501
 
 		ext_glVertexAttrib2sv((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -10273,7 +10259,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2sv(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3d(JNIEnv* env, jclass clazz, jint index, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:11519
+//@line:11505
 
 		ext_glVertexAttrib3d((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -10284,7 +10270,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3dv(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11523
+//@line:11509
 
 		ext_glVertexAttrib3dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -10294,7 +10280,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3dv(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3f(JNIEnv* env, jclass clazz, jint index, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:11527
+//@line:11513
 
 		ext_glVertexAttrib3f((GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -10305,7 +10291,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3fv(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11531
+//@line:11517
 
 		ext_glVertexAttrib3fv((GLuint)index, (const GLfloat*)(v + vByteOffset));
 	
@@ -10315,7 +10301,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3fv(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3s(JNIEnv* env, jclass clazz, jint index, jshort x, jshort y, jshort z) {
 
 
-//@line:11535
+//@line:11521
 
 		ext_glVertexAttrib3s((GLuint)index, (GLshort)x, (GLshort)y, (GLshort)z);
 	
@@ -10326,7 +10312,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3sv(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11539
+//@line:11525
 
 		ext_glVertexAttrib3sv((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -10337,7 +10323,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4Nbv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11543
+//@line:11529
 
 		ext_glVertexAttrib4Nbv((GLuint)index, (const GLbyte*)(v + vByteOffset));
 	
@@ -10348,7 +10334,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4Niv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11547
+//@line:11533
 
 		ext_glVertexAttrib4Niv((GLuint)index, (const GLint*)(v + vByteOffset));
 	
@@ -10359,7 +10345,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4Nsv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11551
+//@line:11537
 
 		ext_glVertexAttrib4Nsv((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -10369,7 +10355,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4Nsv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4Nub(JNIEnv* env, jclass clazz, jint index, jbyte x, jbyte y, jbyte z, jbyte w) {
 
 
-//@line:11555
+//@line:11541
 
 		ext_glVertexAttrib4Nub((GLuint)index, (GLubyte)x, (GLubyte)y, (GLubyte)z, (GLubyte)w);
 	
@@ -10380,7 +10366,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4Nubv(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11559
+//@line:11545
 
 		ext_glVertexAttrib4Nubv((GLuint)index, (const GLubyte*)(v + vByteOffset));
 	
@@ -10391,7 +10377,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4Nuiv(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11563
+//@line:11549
 
 		ext_glVertexAttrib4Nuiv((GLuint)index, (const GLuint*)(v + vByteOffset));
 	
@@ -10402,7 +10388,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4Nusv(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11567
+//@line:11553
 
 		ext_glVertexAttrib4Nusv((GLuint)index, (const GLushort*)(v + vByteOffset));
 	
@@ -10413,7 +10399,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4bv(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11571
+//@line:11557
 
 		ext_glVertexAttrib4bv((GLuint)index, (const GLbyte*)(v + vByteOffset));
 	
@@ -10423,7 +10409,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4bv(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4d(JNIEnv* env, jclass clazz, jint index, jdouble x, jdouble y, jdouble z, jdouble w) {
 
 
-//@line:11575
+//@line:11561
 
 		ext_glVertexAttrib4d((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -10434,7 +10420,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4dv(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11579
+//@line:11565
 
 		ext_glVertexAttrib4dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -10444,7 +10430,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4dv(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4f(JNIEnv* env, jclass clazz, jint index, jfloat x, jfloat y, jfloat z, jfloat w) {
 
 
-//@line:11583
+//@line:11569
 
 		ext_glVertexAttrib4f((GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
 	
@@ -10455,7 +10441,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4fv(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11587
+//@line:11573
 
 		ext_glVertexAttrib4fv((GLuint)index, (const GLfloat*)(v + vByteOffset));
 	
@@ -10466,7 +10452,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4iv(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11591
+//@line:11577
 
 		ext_glVertexAttrib4iv((GLuint)index, (const GLint*)(v + vByteOffset));
 	
@@ -10476,7 +10462,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4iv(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4s(JNIEnv* env, jclass clazz, jint index, jshort x, jshort y, jshort z, jshort w) {
 
 
-//@line:11595
+//@line:11581
 
 		ext_glVertexAttrib4s((GLuint)index, (GLshort)x, (GLshort)y, (GLshort)z, (GLshort)w);
 	
@@ -10487,7 +10473,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4sv(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11599
+//@line:11585
 
 		ext_glVertexAttrib4sv((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -10498,7 +10484,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4ubv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11603
+//@line:11589
 
 		ext_glVertexAttrib4ubv((GLuint)index, (const GLubyte*)(v + vByteOffset));
 	
@@ -10509,7 +10495,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4uiv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11607
+//@line:11593
 
 		ext_glVertexAttrib4uiv((GLuint)index, (const GLuint*)(v + vByteOffset));
 	
@@ -10520,7 +10506,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4usv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11611
+//@line:11597
 
 		ext_glVertexAttrib4usv((GLuint)index, (const GLushort*)(v + vByteOffset));
 	
@@ -10531,7 +10517,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribPointer(JNIEn
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:11615
+//@line:11601
 
 		ext_glVertexAttribPointer((GLuint)index, (GLint)size, (GLenum)type, (GLboolean)normalized, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -10542,7 +10528,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix2x3fv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11619
+//@line:11605
 
 		ext_glUniformMatrix2x3fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -10553,7 +10539,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix3x2fv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11623
+//@line:11609
 
 		ext_glUniformMatrix3x2fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -10564,7 +10550,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix2x4fv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11627
+//@line:11613
 
 		ext_glUniformMatrix2x4fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -10575,7 +10561,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix4x2fv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11631
+//@line:11617
 
 		ext_glUniformMatrix4x2fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -10586,7 +10572,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix3x4fv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11635
+//@line:11621
 
 		ext_glUniformMatrix3x4fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -10597,7 +10583,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix4x3fv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11639
+//@line:11625
 
 		ext_glUniformMatrix4x3fv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -10607,7 +10593,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix4x3fv(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorMaski(JNIEnv* env, jclass clazz, jint index, jboolean r, jboolean g, jboolean b, jboolean a) {
 
 
-//@line:11643
+//@line:11629
 
 		ext_glColorMaski((GLuint)index, (GLboolean)r, (GLboolean)g, (GLboolean)b, (GLboolean)a);
 	
@@ -10617,7 +10603,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorMaski(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnablei(JNIEnv* env, jclass clazz, jint target, jint index) {
 
 
-//@line:11647
+//@line:11633
 
 		ext_glEnablei((GLenum)target, (GLuint)index);
 	
@@ -10627,7 +10613,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnablei(JNIEnv* env, jcla
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDisablei(JNIEnv* env, jclass clazz, jint target, jint index) {
 
 
-//@line:11651
+//@line:11637
 
 		ext_glDisablei((GLenum)target, (GLuint)index);
 	
@@ -10637,7 +10623,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDisablei(JNIEnv* env, jcl
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsEnabledi(JNIEnv* env, jclass clazz, jint target, jint index) {
 
 
-//@line:11655
+//@line:11641
 
 		return (jboolean)ext_glIsEnabledi((GLenum)target, (GLuint)index);
 	
@@ -10647,7 +10633,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsEnabledi(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginTransformFeedback(JNIEnv* env, jclass clazz, jint primitiveMode) {
 
 
-//@line:11659
+//@line:11645
 
 		ext_glBeginTransformFeedback((GLenum)primitiveMode);
 	
@@ -10657,17 +10643,17 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginTransformFeedback(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndTransformFeedback(JNIEnv* env, jclass clazz) {
 
 
-//@line:11663
+//@line:11649
 
 		ext_glEndTransformFeedback();
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferRange(JNIEnv* env, jclass clazz, jint target, jint index, jint buffer, jint offset, jint size) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferRange(JNIEnv* env, jclass clazz, jint target, jint index, jint buffer, jlong offset, jlong size) {
 
 
-//@line:11667
+//@line:11653
 
 		ext_glBindBufferRange((GLenum)target, (GLuint)index, (GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size);
 	
@@ -10677,7 +10663,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferRange(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferBase(JNIEnv* env, jclass clazz, jint target, jint index, jint buffer) {
 
 
-//@line:11671
+//@line:11657
 
 		ext_glBindBufferBase((GLenum)target, (GLuint)index, (GLuint)buffer);
 	
@@ -10688,7 +10674,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTransformFeedbackVaryings
 	unsigned char* varyings = (unsigned char*)env->GetDirectBufferAddress(obj_varyings);
 
 
-//@line:11675
+//@line:11661
 
 		ext_glTransformFeedbackVaryings((GLuint)program, (GLsizei)count, (const GLchar**)(varyings + varyingsByteOffset), (GLenum)bufferMode);
 	
@@ -10702,7 +10688,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTransformFeedbackVaryi
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:11679
+//@line:11665
 
 		ext_glGetTransformFeedbackVarying((GLuint)program, (GLuint)index, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLsizei*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLchar*)(name + nameByteOffset));
 	
@@ -10712,7 +10698,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTransformFeedbackVaryi
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClampColor(JNIEnv* env, jclass clazz, jint target, jint clamp) {
 
 
-//@line:11683
+//@line:11669
 
 		ext_glClampColor((GLenum)target, (GLenum)clamp);
 	
@@ -10722,7 +10708,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClampColor(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginConditionalRender(JNIEnv* env, jclass clazz, jint id, jint mode) {
 
 
-//@line:11687
+//@line:11673
 
 		ext_glBeginConditionalRender((GLuint)id, (GLenum)mode);
 	
@@ -10732,7 +10718,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginConditionalRender(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndConditionalRender(JNIEnv* env, jclass clazz) {
 
 
-//@line:11691
+//@line:11677
 
 		ext_glEndConditionalRender();
 	
@@ -10743,7 +10729,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribIPointer(JNIE
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:11695
+//@line:11681
 
 		ext_glVertexAttribIPointer((GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -10754,7 +10740,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribIiv(JNIEnv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11699
+//@line:11685
 
 		ext_glGetVertexAttribIiv((GLuint)index, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -10765,7 +10751,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribIuiv(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11703
+//@line:11689
 
 		ext_glGetVertexAttribIuiv((GLuint)index, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
 	
@@ -10775,7 +10761,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribIuiv(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI1i(JNIEnv* env, jclass clazz, jint index, jint x) {
 
 
-//@line:11707
+//@line:11693
 
 		ext_glVertexAttribI1i((GLuint)index, (GLint)x);
 	
@@ -10785,7 +10771,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI1i(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI2i(JNIEnv* env, jclass clazz, jint index, jint x, jint y) {
 
 
-//@line:11711
+//@line:11697
 
 		ext_glVertexAttribI2i((GLuint)index, (GLint)x, (GLint)y);
 	
@@ -10795,7 +10781,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI2i(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI3i(JNIEnv* env, jclass clazz, jint index, jint x, jint y, jint z) {
 
 
-//@line:11715
+//@line:11701
 
 		ext_glVertexAttribI3i((GLuint)index, (GLint)x, (GLint)y, (GLint)z);
 	
@@ -10805,7 +10791,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI3i(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4i(JNIEnv* env, jclass clazz, jint index, jint x, jint y, jint z, jint w) {
 
 
-//@line:11719
+//@line:11705
 
 		ext_glVertexAttribI4i((GLuint)index, (GLint)x, (GLint)y, (GLint)z, (GLint)w);
 	
@@ -10815,7 +10801,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4i(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI1ui(JNIEnv* env, jclass clazz, jint index, jint x) {
 
 
-//@line:11723
+//@line:11709
 
 		ext_glVertexAttribI1ui((GLuint)index, (GLuint)x);
 	
@@ -10825,7 +10811,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI1ui(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI2ui(JNIEnv* env, jclass clazz, jint index, jint x, jint y) {
 
 
-//@line:11727
+//@line:11713
 
 		ext_glVertexAttribI2ui((GLuint)index, (GLuint)x, (GLuint)y);
 	
@@ -10835,7 +10821,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI2ui(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI3ui(JNIEnv* env, jclass clazz, jint index, jint x, jint y, jint z) {
 
 
-//@line:11731
+//@line:11717
 
 		ext_glVertexAttribI3ui((GLuint)index, (GLuint)x, (GLuint)y, (GLuint)z);
 	
@@ -10845,7 +10831,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI3ui(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4ui(JNIEnv* env, jclass clazz, jint index, jint x, jint y, jint z, jint w) {
 
 
-//@line:11735
+//@line:11721
 
 		ext_glVertexAttribI4ui((GLuint)index, (GLuint)x, (GLuint)y, (GLuint)z, (GLuint)w);
 	
@@ -10856,7 +10842,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI1iv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11739
+//@line:11725
 
 		ext_glVertexAttribI1iv((GLuint)index, (const GLint*)(v + vByteOffset));
 	
@@ -10867,7 +10853,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI2iv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11743
+//@line:11729
 
 		ext_glVertexAttribI2iv((GLuint)index, (const GLint*)(v + vByteOffset));
 	
@@ -10878,7 +10864,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI3iv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11747
+//@line:11733
 
 		ext_glVertexAttribI3iv((GLuint)index, (const GLint*)(v + vByteOffset));
 	
@@ -10889,7 +10875,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4iv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11751
+//@line:11737
 
 		ext_glVertexAttribI4iv((GLuint)index, (const GLint*)(v + vByteOffset));
 	
@@ -10900,7 +10886,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI1uiv(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11755
+//@line:11741
 
 		ext_glVertexAttribI1uiv((GLuint)index, (const GLuint*)(v + vByteOffset));
 	
@@ -10911,7 +10897,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI2uiv(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11759
+//@line:11745
 
 		ext_glVertexAttribI2uiv((GLuint)index, (const GLuint*)(v + vByteOffset));
 	
@@ -10922,7 +10908,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI3uiv(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11763
+//@line:11749
 
 		ext_glVertexAttribI3uiv((GLuint)index, (const GLuint*)(v + vByteOffset));
 	
@@ -10933,7 +10919,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4uiv(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11767
+//@line:11753
 
 		ext_glVertexAttribI4uiv((GLuint)index, (const GLuint*)(v + vByteOffset));
 	
@@ -10944,7 +10930,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4bv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11771
+//@line:11757
 
 		ext_glVertexAttribI4bv((GLuint)index, (const GLbyte*)(v + vByteOffset));
 	
@@ -10955,7 +10941,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4sv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11775
+//@line:11761
 
 		ext_glVertexAttribI4sv((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -10966,7 +10952,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4ubv(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11779
+//@line:11765
 
 		ext_glVertexAttribI4ubv((GLuint)index, (const GLubyte*)(v + vByteOffset));
 	
@@ -10977,7 +10963,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4usv(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11783
+//@line:11769
 
 		ext_glVertexAttribI4usv((GLuint)index, (const GLushort*)(v + vByteOffset));
 	
@@ -10988,7 +10974,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformuiv(JNIEnv* env
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11787
+//@line:11773
 
 		ext_glGetUniformuiv((GLuint)program, (GLint)location, (GLuint*)(params + paramsByteOffset));
 	
@@ -10999,7 +10985,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindFragDataLocation(JNIE
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:11791
+//@line:11777
 
 		ext_glBindFragDataLocation((GLuint)program, (GLuint)color, (const GLchar*)(name + nameByteOffset));
 	
@@ -11009,7 +10995,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindFragDataLocation(JNIE
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetFragDataLocation
 (JNIEnv* env, jclass clazz, jint program, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
-//@line:11795
+//@line:11781
 
 		return (jint)ext_glGetFragDataLocation((GLuint)program, (const GLchar*)(name + nameByteOffset));
 	
@@ -11027,7 +11013,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFragDataLocation(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1ui(JNIEnv* env, jclass clazz, jint location, jint v0) {
 
 
-//@line:11799
+//@line:11785
 
 		ext_glUniform1ui((GLint)location, (GLuint)v0);
 	
@@ -11037,7 +11023,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1ui(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2ui(JNIEnv* env, jclass clazz, jint location, jint v0, jint v1) {
 
 
-//@line:11803
+//@line:11789
 
 		ext_glUniform2ui((GLint)location, (GLuint)v0, (GLuint)v1);
 	
@@ -11047,7 +11033,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2ui(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3ui(JNIEnv* env, jclass clazz, jint location, jint v0, jint v1, jint v2) {
 
 
-//@line:11807
+//@line:11793
 
 		ext_glUniform3ui((GLint)location, (GLuint)v0, (GLuint)v1, (GLuint)v2);
 	
@@ -11057,7 +11043,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3ui(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4ui(JNIEnv* env, jclass clazz, jint location, jint v0, jint v1, jint v2, jint v3) {
 
 
-//@line:11811
+//@line:11797
 
 		ext_glUniform4ui((GLint)location, (GLuint)v0, (GLuint)v1, (GLuint)v2, (GLuint)v3);
 	
@@ -11068,7 +11054,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1uiv(JNIEnv* env, 
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11815
+//@line:11801
 
 		ext_glUniform1uiv((GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
@@ -11079,7 +11065,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2uiv(JNIEnv* env, 
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11819
+//@line:11805
 
 		ext_glUniform2uiv((GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
@@ -11090,7 +11076,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3uiv(JNIEnv* env, 
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11823
+//@line:11809
 
 		ext_glUniform3uiv((GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
@@ -11101,7 +11087,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4uiv(JNIEnv* env, 
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11827
+//@line:11813
 
 		ext_glUniform4uiv((GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
@@ -11112,7 +11098,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexParameterIiv(JNIEnv* e
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11831
+//@line:11817
 
 		ext_glTexParameterIiv((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -11123,7 +11109,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexParameterIuiv(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11835
+//@line:11821
 
 		ext_glTexParameterIuiv((GLenum)target, (GLenum)pname, (const GLuint*)(params + paramsByteOffset));
 	
@@ -11134,7 +11120,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexParameterIiv(JNIEnv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11839
+//@line:11825
 
 		ext_glGetTexParameterIiv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -11145,7 +11131,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexParameterIuiv(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11843
+//@line:11829
 
 		ext_glGetTexParameterIuiv((GLenum)target, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
 	
@@ -11156,7 +11142,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearBufferiv(JNIEnv* env
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11847
+//@line:11833
 
 		ext_glClearBufferiv((GLenum)buffer, (GLint)drawbuffer, (const GLint*)(value + valueByteOffset));
 	
@@ -11167,7 +11153,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearBufferuiv(JNIEnv* en
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11851
+//@line:11837
 
 		ext_glClearBufferuiv((GLenum)buffer, (GLint)drawbuffer, (const GLuint*)(value + valueByteOffset));
 	
@@ -11178,7 +11164,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearBufferfv(JNIEnv* env
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:11855
+//@line:11841
 
 		ext_glClearBufferfv((GLenum)buffer, (GLint)drawbuffer, (const GLfloat*)(value + valueByteOffset));
 	
@@ -11188,7 +11174,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearBufferfv(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearBufferfi(JNIEnv* env, jclass clazz, jint buffer, jint drawbuffer, jfloat depth, jint stencil) {
 
 
-//@line:11859
+//@line:11845
 
 		ext_glClearBufferfi((GLenum)buffer, (GLint)drawbuffer, (GLfloat)depth, (GLint)stencil);
 	
@@ -11198,7 +11184,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearBufferfi(JNIEnv* env
 JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glGetString__II(JNIEnv* env, jclass clazz, jint name, jint index) {
 
 
-//@line:11863
+//@line:11849
 
 		return env->NewStringUTF((const char*)ext_glGetStringi((GLenum)name, (GLuint)index));
 	
@@ -11208,7 +11194,7 @@ JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glGetString__II(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawArraysInstanced(JNIEnv* env, jclass clazz, jint mode, jint first, jint count, jint instancecount) {
 
 
-//@line:11867
+//@line:11853
 
 		ext_glDrawArraysInstanced((GLenum)mode, (GLint)first, (GLsizei)count, (GLsizei)instancecount);
 	
@@ -11219,7 +11205,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementsInstanced(JNI
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:11871
+//@line:11857
 
 		ext_glDrawElementsInstanced((GLenum)mode, (GLsizei)count, (GLenum)type, (const GLvoid*)(indices + indicesByteOffset), (GLsizei)instancecount);
 	
@@ -11229,7 +11215,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementsInstanced(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexBuffer(JNIEnv* env, jclass clazz, jint target, jint internalformat, jint buffer) {
 
 
-//@line:11875
+//@line:11861
 
 		ext_glTexBuffer((GLenum)target, (GLenum)internalformat, (GLuint)buffer);
 	
@@ -11239,7 +11225,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexBuffer(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPrimitiveRestartIndex(JNIEnv* env, jclass clazz, jint index) {
 
 
-//@line:11879
+//@line:11865
 
 		ext_glPrimitiveRestartIndex((GLuint)index);
 	
@@ -11250,7 +11236,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferParameteri64v(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:11883
+//@line:11869
 
 		ext_glGetBufferParameteri64v((GLenum)target, (GLenum)pname, (GLint64*)(params + paramsByteOffset));
 	
@@ -11260,7 +11246,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferParameteri64v(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTexture(JNIEnv* env, jclass clazz, jint target, jint attachment, jint texture, jint level) {
 
 
-//@line:11887
+//@line:11873
 
 		ext_glFramebufferTexture((GLenum)target, (GLenum)attachment, (GLuint)texture, (GLint)level);
 	
@@ -11270,7 +11256,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTexture(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribDivisor(JNIEnv* env, jclass clazz, jint index, jint divisor) {
 
 
-//@line:11891
+//@line:11877
 
 		ext_glVertexAttribDivisor((GLuint)index, (GLuint)divisor);
 	
@@ -11280,7 +11266,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribDivisor(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMinSampleShading(JNIEnv* env, jclass clazz, jfloat value) {
 
 
-//@line:11895
+//@line:11881
 
 		ext_glMinSampleShading((GLfloat)value);
 	
@@ -11290,7 +11276,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMinSampleShading(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationi(JNIEnv* env, jclass clazz, jint buf, jint mode) {
 
 
-//@line:11899
+//@line:11885
 
 		ext_glBlendEquationi((GLuint)buf, (GLenum)mode);
 	
@@ -11300,7 +11286,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationi(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationSeparatei(JNIEnv* env, jclass clazz, jint buf, jint modeRGB, jint modeAlpha) {
 
 
-//@line:11903
+//@line:11889
 
 		ext_glBlendEquationSeparatei((GLuint)buf, (GLenum)modeRGB, (GLenum)modeAlpha);
 	
@@ -11310,7 +11296,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationSeparatei(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFunci(JNIEnv* env, jclass clazz, jint buf, jint src, jint dst) {
 
 
-//@line:11907
+//@line:11893
 
 		ext_glBlendFunci((GLuint)buf, (GLenum)src, (GLenum)dst);
 	
@@ -11320,7 +11306,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFunci(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFuncSeparatei(JNIEnv* env, jclass clazz, jint buf, jint srcRGB, jint dstRGB, jint srcAlpha, jint dstAlpha) {
 
 
-//@line:11911
+//@line:11897
 
 		ext_glBlendFuncSeparatei((GLuint)buf, (GLenum)srcRGB, (GLenum)dstRGB, (GLenum)srcAlpha, (GLenum)dstAlpha);
 	
@@ -11330,7 +11316,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFuncSeparatei(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glActiveTextureARB(JNIEnv* env, jclass clazz, jint texture) {
 
 
-//@line:11915
+//@line:11901
 
 		ext_glActiveTextureARB((GLenum)texture);
 	
@@ -11340,7 +11326,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glActiveTextureARB(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClientActiveTextureARB(JNIEnv* env, jclass clazz, jint texture) {
 
 
-//@line:11919
+//@line:11905
 
 		ext_glClientActiveTextureARB((GLenum)texture);
 	
@@ -11350,7 +11336,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClientActiveTextureARB(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1dARB(JNIEnv* env, jclass clazz, jint target, jdouble s) {
 
 
-//@line:11923
+//@line:11909
 
 		ext_glMultiTexCoord1dARB((GLenum)target, (GLdouble)s);
 	
@@ -11361,7 +11347,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1dvARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11927
+//@line:11913
 
 		ext_glMultiTexCoord1dvARB((GLenum)target, (const GLdouble*)(v + vByteOffset));
 	
@@ -11371,7 +11357,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1dvARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1fARB(JNIEnv* env, jclass clazz, jint target, jfloat s) {
 
 
-//@line:11931
+//@line:11917
 
 		ext_glMultiTexCoord1fARB((GLenum)target, (GLfloat)s);
 	
@@ -11382,7 +11368,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1fvARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11935
+//@line:11921
 
 		ext_glMultiTexCoord1fvARB((GLenum)target, (const GLfloat*)(v + vByteOffset));
 	
@@ -11392,7 +11378,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1fvARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1iARB(JNIEnv* env, jclass clazz, jint target, jint s) {
 
 
-//@line:11939
+//@line:11925
 
 		ext_glMultiTexCoord1iARB((GLenum)target, (GLint)s);
 	
@@ -11403,7 +11389,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1ivARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11943
+//@line:11929
 
 		ext_glMultiTexCoord1ivARB((GLenum)target, (const GLint*)(v + vByteOffset));
 	
@@ -11413,7 +11399,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1ivARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1sARB(JNIEnv* env, jclass clazz, jint target, jshort s) {
 
 
-//@line:11947
+//@line:11933
 
 		ext_glMultiTexCoord1sARB((GLenum)target, (GLshort)s);
 	
@@ -11424,7 +11410,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1svARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11951
+//@line:11937
 
 		ext_glMultiTexCoord1svARB((GLenum)target, (const GLshort*)(v + vByteOffset));
 	
@@ -11434,7 +11420,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1svARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2dARB(JNIEnv* env, jclass clazz, jint target, jdouble s, jdouble t) {
 
 
-//@line:11955
+//@line:11941
 
 		ext_glMultiTexCoord2dARB((GLenum)target, (GLdouble)s, (GLdouble)t);
 	
@@ -11445,7 +11431,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2dvARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11959
+//@line:11945
 
 		ext_glMultiTexCoord2dvARB((GLenum)target, (const GLdouble*)(v + vByteOffset));
 	
@@ -11455,7 +11441,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2dvARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2fARB(JNIEnv* env, jclass clazz, jint target, jfloat s, jfloat t) {
 
 
-//@line:11963
+//@line:11949
 
 		ext_glMultiTexCoord2fARB((GLenum)target, (GLfloat)s, (GLfloat)t);
 	
@@ -11466,7 +11452,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2fvARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11967
+//@line:11953
 
 		ext_glMultiTexCoord2fvARB((GLenum)target, (const GLfloat*)(v + vByteOffset));
 	
@@ -11476,7 +11462,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2fvARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2iARB(JNIEnv* env, jclass clazz, jint target, jint s, jint t) {
 
 
-//@line:11971
+//@line:11957
 
 		ext_glMultiTexCoord2iARB((GLenum)target, (GLint)s, (GLint)t);
 	
@@ -11487,7 +11473,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2ivARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11975
+//@line:11961
 
 		ext_glMultiTexCoord2ivARB((GLenum)target, (const GLint*)(v + vByteOffset));
 	
@@ -11497,7 +11483,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2ivARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2sARB(JNIEnv* env, jclass clazz, jint target, jshort s, jshort t) {
 
 
-//@line:11979
+//@line:11965
 
 		ext_glMultiTexCoord2sARB((GLenum)target, (GLshort)s, (GLshort)t);
 	
@@ -11508,7 +11494,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2svARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11983
+//@line:11969
 
 		ext_glMultiTexCoord2svARB((GLenum)target, (const GLshort*)(v + vByteOffset));
 	
@@ -11518,7 +11504,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2svARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3dARB(JNIEnv* env, jclass clazz, jint target, jdouble s, jdouble t, jdouble r) {
 
 
-//@line:11987
+//@line:11973
 
 		ext_glMultiTexCoord3dARB((GLenum)target, (GLdouble)s, (GLdouble)t, (GLdouble)r);
 	
@@ -11529,7 +11515,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3dvARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11991
+//@line:11977
 
 		ext_glMultiTexCoord3dvARB((GLenum)target, (const GLdouble*)(v + vByteOffset));
 	
@@ -11539,7 +11525,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3dvARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3fARB(JNIEnv* env, jclass clazz, jint target, jfloat s, jfloat t, jfloat r) {
 
 
-//@line:11995
+//@line:11981
 
 		ext_glMultiTexCoord3fARB((GLenum)target, (GLfloat)s, (GLfloat)t, (GLfloat)r);
 	
@@ -11550,7 +11536,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3fvARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:11999
+//@line:11985
 
 		ext_glMultiTexCoord3fvARB((GLenum)target, (const GLfloat*)(v + vByteOffset));
 	
@@ -11560,7 +11546,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3fvARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3iARB(JNIEnv* env, jclass clazz, jint target, jint s, jint t, jint r) {
 
 
-//@line:12003
+//@line:11989
 
 		ext_glMultiTexCoord3iARB((GLenum)target, (GLint)s, (GLint)t, (GLint)r);
 	
@@ -11571,7 +11557,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3ivARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12007
+//@line:11993
 
 		ext_glMultiTexCoord3ivARB((GLenum)target, (const GLint*)(v + vByteOffset));
 	
@@ -11581,7 +11567,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3ivARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3sARB(JNIEnv* env, jclass clazz, jint target, jshort s, jshort t, jshort r) {
 
 
-//@line:12011
+//@line:11997
 
 		ext_glMultiTexCoord3sARB((GLenum)target, (GLshort)s, (GLshort)t, (GLshort)r);
 	
@@ -11592,7 +11578,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3svARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12015
+//@line:12001
 
 		ext_glMultiTexCoord3svARB((GLenum)target, (const GLshort*)(v + vByteOffset));
 	
@@ -11602,7 +11588,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3svARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4dARB(JNIEnv* env, jclass clazz, jint target, jdouble s, jdouble t, jdouble r, jdouble q) {
 
 
-//@line:12019
+//@line:12005
 
 		ext_glMultiTexCoord4dARB((GLenum)target, (GLdouble)s, (GLdouble)t, (GLdouble)r, (GLdouble)q);
 	
@@ -11613,7 +11599,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4dvARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12023
+//@line:12009
 
 		ext_glMultiTexCoord4dvARB((GLenum)target, (const GLdouble*)(v + vByteOffset));
 	
@@ -11623,7 +11609,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4dvARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4fARB(JNIEnv* env, jclass clazz, jint target, jfloat s, jfloat t, jfloat r, jfloat q) {
 
 
-//@line:12027
+//@line:12013
 
 		ext_glMultiTexCoord4fARB((GLenum)target, (GLfloat)s, (GLfloat)t, (GLfloat)r, (GLfloat)q);
 	
@@ -11634,7 +11620,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4fvARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12031
+//@line:12017
 
 		ext_glMultiTexCoord4fvARB((GLenum)target, (const GLfloat*)(v + vByteOffset));
 	
@@ -11644,7 +11630,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4fvARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4iARB(JNIEnv* env, jclass clazz, jint target, jint s, jint t, jint r, jint q) {
 
 
-//@line:12035
+//@line:12021
 
 		ext_glMultiTexCoord4iARB((GLenum)target, (GLint)s, (GLint)t, (GLint)r, (GLint)q);
 	
@@ -11655,7 +11641,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4ivARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12039
+//@line:12025
 
 		ext_glMultiTexCoord4ivARB((GLenum)target, (const GLint*)(v + vByteOffset));
 	
@@ -11665,7 +11651,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4ivARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4sARB(JNIEnv* env, jclass clazz, jint target, jshort s, jshort t, jshort r, jshort q) {
 
 
-//@line:12043
+//@line:12029
 
 		ext_glMultiTexCoord4sARB((GLenum)target, (GLshort)s, (GLshort)t, (GLshort)r, (GLshort)q);
 	
@@ -11676,7 +11662,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4svARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12047
+//@line:12033
 
 		ext_glMultiTexCoord4svARB((GLenum)target, (const GLshort*)(v + vByteOffset));
 	
@@ -11687,7 +11673,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLoadTransposeMatrixfARB(J
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:12051
+//@line:12037
 
 		ext_glLoadTransposeMatrixfARB((const GLfloat*)(m + mByteOffset));
 	
@@ -11698,7 +11684,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLoadTransposeMatrixdARB(J
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:12055
+//@line:12041
 
 		ext_glLoadTransposeMatrixdARB((const GLdouble*)(m + mByteOffset));
 	
@@ -11709,7 +11695,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultTransposeMatrixfARB(J
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:12059
+//@line:12045
 
 		ext_glMultTransposeMatrixfARB((const GLfloat*)(m + mByteOffset));
 	
@@ -11720,7 +11706,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultTransposeMatrixdARB(J
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:12063
+//@line:12049
 
 		ext_glMultTransposeMatrixdARB((const GLdouble*)(m + mByteOffset));
 	
@@ -11730,7 +11716,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultTransposeMatrixdARB(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSampleCoverageARB(JNIEnv* env, jclass clazz, jfloat value, jboolean invert) {
 
 
-//@line:12067
+//@line:12053
 
 		ext_glSampleCoverageARB((GLfloat)value, (GLboolean)invert);
 	
@@ -11741,7 +11727,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTexImage3DARB(J
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:12071
+//@line:12057
 
 		ext_glCompressedTexImage3DARB((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
 	
@@ -11752,7 +11738,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTexImage2DARB(J
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:12075
+//@line:12061
 
 		ext_glCompressedTexImage2DARB((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLint)border, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
 	
@@ -11763,7 +11749,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTexImage1DARB(J
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:12079
+//@line:12065
 
 		ext_glCompressedTexImage1DARB((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLint)border, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
 	
@@ -11774,7 +11760,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTexSubImage3DAR
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:12083
+//@line:12069
 
 		ext_glCompressedTexSubImage3DARB((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
 	
@@ -11785,7 +11771,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTexSubImage2DAR
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:12087
+//@line:12073
 
 		ext_glCompressedTexSubImage2DARB((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
 	
@@ -11796,7 +11782,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTexSubImage1DAR
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:12091
+//@line:12077
 
 		ext_glCompressedTexSubImage1DARB((GLenum)target, (GLint)level, (GLint)xoffset, (GLsizei)width, (GLenum)format, (GLsizei)imageSize, (const GLvoid*)(data + dataByteOffset));
 	
@@ -11807,7 +11793,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetCompressedTexImageARB(
 	unsigned char* img = (unsigned char*)env->GetDirectBufferAddress(obj_img);
 
 
-//@line:12095
+//@line:12081
 
 		ext_glGetCompressedTexImageARB((GLenum)target, (GLint)level, (GLvoid*)(img + imgByteOffset));
 	
@@ -11817,7 +11803,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetCompressedTexImageARB(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameterfARB(JNIEnv* env, jclass clazz, jint pname, jfloat param) {
 
 
-//@line:12099
+//@line:12085
 
 		ext_glPointParameterfARB((GLenum)pname, (GLfloat)param);
 	
@@ -11828,7 +11814,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameterfvARB(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12103
+//@line:12089
 
 		ext_glPointParameterfvARB((GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -11839,7 +11825,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWeightbvARB(JNIEnv* env, 
 	unsigned char* weights = (unsigned char*)env->GetDirectBufferAddress(obj_weights);
 
 
-//@line:12107
+//@line:12093
 
 		ext_glWeightbvARB((GLint)size, (const GLbyte*)(weights + weightsByteOffset));
 	
@@ -11850,7 +11836,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWeightsvARB(JNIEnv* env, 
 	unsigned char* weights = (unsigned char*)env->GetDirectBufferAddress(obj_weights);
 
 
-//@line:12111
+//@line:12097
 
 		ext_glWeightsvARB((GLint)size, (const GLshort*)(weights + weightsByteOffset));
 	
@@ -11861,7 +11847,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWeightivARB(JNIEnv* env, 
 	unsigned char* weights = (unsigned char*)env->GetDirectBufferAddress(obj_weights);
 
 
-//@line:12115
+//@line:12101
 
 		ext_glWeightivARB((GLint)size, (const GLint*)(weights + weightsByteOffset));
 	
@@ -11872,7 +11858,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWeightfvARB(JNIEnv* env, 
 	unsigned char* weights = (unsigned char*)env->GetDirectBufferAddress(obj_weights);
 
 
-//@line:12119
+//@line:12105
 
 		ext_glWeightfvARB((GLint)size, (const GLfloat*)(weights + weightsByteOffset));
 	
@@ -11883,7 +11869,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWeightdvARB(JNIEnv* env, 
 	unsigned char* weights = (unsigned char*)env->GetDirectBufferAddress(obj_weights);
 
 
-//@line:12123
+//@line:12109
 
 		ext_glWeightdvARB((GLint)size, (const GLdouble*)(weights + weightsByteOffset));
 	
@@ -11894,7 +11880,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWeightubvARB(JNIEnv* env,
 	unsigned char* weights = (unsigned char*)env->GetDirectBufferAddress(obj_weights);
 
 
-//@line:12127
+//@line:12113
 
 		ext_glWeightubvARB((GLint)size, (const GLubyte*)(weights + weightsByteOffset));
 	
@@ -11905,7 +11891,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWeightusvARB(JNIEnv* env,
 	unsigned char* weights = (unsigned char*)env->GetDirectBufferAddress(obj_weights);
 
 
-//@line:12131
+//@line:12117
 
 		ext_glWeightusvARB((GLint)size, (const GLushort*)(weights + weightsByteOffset));
 	
@@ -11916,7 +11902,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWeightuivARB(JNIEnv* env,
 	unsigned char* weights = (unsigned char*)env->GetDirectBufferAddress(obj_weights);
 
 
-//@line:12135
+//@line:12121
 
 		ext_glWeightuivARB((GLint)size, (const GLuint*)(weights + weightsByteOffset));
 	
@@ -11927,7 +11913,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWeightPointerARB(JNIEnv* 
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:12139
+//@line:12125
 
 		ext_glWeightPointerARB((GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -11937,7 +11923,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWeightPointerARB(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexBlendARB(JNIEnv* env, jclass clazz, jint count) {
 
 
-//@line:12143
+//@line:12129
 
 		ext_glVertexBlendARB((GLint)count);
 	
@@ -11947,7 +11933,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexBlendARB(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCurrentPaletteMatrixARB(JNIEnv* env, jclass clazz, jint index) {
 
 
-//@line:12147
+//@line:12133
 
 		ext_glCurrentPaletteMatrixARB((GLint)index);
 	
@@ -11958,7 +11944,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixIndexubvARB(JNIEnv*
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:12151
+//@line:12137
 
 		ext_glMatrixIndexubvARB((GLint)size, (const GLubyte*)(indices + indicesByteOffset));
 	
@@ -11969,7 +11955,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixIndexusvARB(JNIEnv*
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:12155
+//@line:12141
 
 		ext_glMatrixIndexusvARB((GLint)size, (const GLushort*)(indices + indicesByteOffset));
 	
@@ -11980,7 +11966,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixIndexuivARB(JNIEnv*
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:12159
+//@line:12145
 
 		ext_glMatrixIndexuivARB((GLint)size, (const GLuint*)(indices + indicesByteOffset));
 	
@@ -11991,7 +11977,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixIndexPointerARB(JNI
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:12163
+//@line:12149
 
 		ext_glMatrixIndexPointerARB((GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -12001,7 +11987,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixIndexPointerARB(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2dARB(JNIEnv* env, jclass clazz, jdouble x, jdouble y) {
 
 
-//@line:12167
+//@line:12153
 
 		ext_glWindowPos2dARB((GLdouble)x, (GLdouble)y);
 	
@@ -12012,7 +11998,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2dvARB(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12171
+//@line:12157
 
 		ext_glWindowPos2dvARB((const GLdouble*)(v + vByteOffset));
 	
@@ -12022,7 +12008,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2dvARB(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2fARB(JNIEnv* env, jclass clazz, jfloat x, jfloat y) {
 
 
-//@line:12175
+//@line:12161
 
 		ext_glWindowPos2fARB((GLfloat)x, (GLfloat)y);
 	
@@ -12033,7 +12019,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2fvARB(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12179
+//@line:12165
 
 		ext_glWindowPos2fvARB((const GLfloat*)(v + vByteOffset));
 	
@@ -12043,7 +12029,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2fvARB(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2iARB(JNIEnv* env, jclass clazz, jint x, jint y) {
 
 
-//@line:12183
+//@line:12169
 
 		ext_glWindowPos2iARB((GLint)x, (GLint)y);
 	
@@ -12054,7 +12040,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2ivARB(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12187
+//@line:12173
 
 		ext_glWindowPos2ivARB((const GLint*)(v + vByteOffset));
 	
@@ -12064,7 +12050,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2ivARB(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2sARB(JNIEnv* env, jclass clazz, jshort x, jshort y) {
 
 
-//@line:12191
+//@line:12177
 
 		ext_glWindowPos2sARB((GLshort)x, (GLshort)y);
 	
@@ -12075,7 +12061,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2svARB(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12195
+//@line:12181
 
 		ext_glWindowPos2svARB((const GLshort*)(v + vByteOffset));
 	
@@ -12085,7 +12071,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2svARB(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3dARB(JNIEnv* env, jclass clazz, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:12199
+//@line:12185
 
 		ext_glWindowPos3dARB((GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -12096,7 +12082,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3dvARB(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12203
+//@line:12189
 
 		ext_glWindowPos3dvARB((const GLdouble*)(v + vByteOffset));
 	
@@ -12106,7 +12092,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3dvARB(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3fARB(JNIEnv* env, jclass clazz, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:12207
+//@line:12193
 
 		ext_glWindowPos3fARB((GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -12117,7 +12103,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3fvARB(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12211
+//@line:12197
 
 		ext_glWindowPos3fvARB((const GLfloat*)(v + vByteOffset));
 	
@@ -12127,7 +12113,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3fvARB(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3iARB(JNIEnv* env, jclass clazz, jint x, jint y, jint z) {
 
 
-//@line:12215
+//@line:12201
 
 		ext_glWindowPos3iARB((GLint)x, (GLint)y, (GLint)z);
 	
@@ -12138,7 +12124,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3ivARB(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12219
+//@line:12205
 
 		ext_glWindowPos3ivARB((const GLint*)(v + vByteOffset));
 	
@@ -12148,7 +12134,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3ivARB(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3sARB(JNIEnv* env, jclass clazz, jshort x, jshort y, jshort z) {
 
 
-//@line:12223
+//@line:12209
 
 		ext_glWindowPos3sARB((GLshort)x, (GLshort)y, (GLshort)z);
 	
@@ -12159,7 +12145,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3svARB(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12227
+//@line:12213
 
 		ext_glWindowPos3svARB((const GLshort*)(v + vByteOffset));
 	
@@ -12169,7 +12155,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3svARB(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1dARB(JNIEnv* env, jclass clazz, jint index, jdouble x) {
 
 
-//@line:12231
+//@line:12217
 
 		ext_glVertexAttrib1dARB((GLuint)index, (GLdouble)x);
 	
@@ -12180,7 +12166,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1dvARB(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12235
+//@line:12221
 
 		ext_glVertexAttrib1dvARB((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -12190,7 +12176,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1dvARB(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1fARB(JNIEnv* env, jclass clazz, jint index, jfloat x) {
 
 
-//@line:12239
+//@line:12225
 
 		ext_glVertexAttrib1fARB((GLuint)index, (GLfloat)x);
 	
@@ -12201,7 +12187,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1fvARB(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12243
+//@line:12229
 
 		ext_glVertexAttrib1fvARB((GLuint)index, (const GLfloat*)(v + vByteOffset));
 	
@@ -12211,7 +12197,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1fvARB(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1sARB(JNIEnv* env, jclass clazz, jint index, jshort x) {
 
 
-//@line:12247
+//@line:12233
 
 		ext_glVertexAttrib1sARB((GLuint)index, (GLshort)x);
 	
@@ -12222,7 +12208,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1svARB(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12251
+//@line:12237
 
 		ext_glVertexAttrib1svARB((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -12232,7 +12218,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1svARB(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2dARB(JNIEnv* env, jclass clazz, jint index, jdouble x, jdouble y) {
 
 
-//@line:12255
+//@line:12241
 
 		ext_glVertexAttrib2dARB((GLuint)index, (GLdouble)x, (GLdouble)y);
 	
@@ -12243,7 +12229,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2dvARB(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12259
+//@line:12245
 
 		ext_glVertexAttrib2dvARB((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -12253,7 +12239,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2dvARB(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2fARB(JNIEnv* env, jclass clazz, jint index, jfloat x, jfloat y) {
 
 
-//@line:12263
+//@line:12249
 
 		ext_glVertexAttrib2fARB((GLuint)index, (GLfloat)x, (GLfloat)y);
 	
@@ -12264,7 +12250,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2fvARB(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12267
+//@line:12253
 
 		ext_glVertexAttrib2fvARB((GLuint)index, (const GLfloat*)(v + vByteOffset));
 	
@@ -12274,7 +12260,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2fvARB(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2sARB(JNIEnv* env, jclass clazz, jint index, jshort x, jshort y) {
 
 
-//@line:12271
+//@line:12257
 
 		ext_glVertexAttrib2sARB((GLuint)index, (GLshort)x, (GLshort)y);
 	
@@ -12285,7 +12271,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2svARB(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12275
+//@line:12261
 
 		ext_glVertexAttrib2svARB((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -12295,7 +12281,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2svARB(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3dARB(JNIEnv* env, jclass clazz, jint index, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:12279
+//@line:12265
 
 		ext_glVertexAttrib3dARB((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -12306,7 +12292,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3dvARB(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12283
+//@line:12269
 
 		ext_glVertexAttrib3dvARB((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -12316,7 +12302,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3dvARB(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3fARB(JNIEnv* env, jclass clazz, jint index, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:12287
+//@line:12273
 
 		ext_glVertexAttrib3fARB((GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -12327,7 +12313,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3fvARB(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12291
+//@line:12277
 
 		ext_glVertexAttrib3fvARB((GLuint)index, (const GLfloat*)(v + vByteOffset));
 	
@@ -12337,7 +12323,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3fvARB(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3sARB(JNIEnv* env, jclass clazz, jint index, jshort x, jshort y, jshort z) {
 
 
-//@line:12295
+//@line:12281
 
 		ext_glVertexAttrib3sARB((GLuint)index, (GLshort)x, (GLshort)y, (GLshort)z);
 	
@@ -12348,7 +12334,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3svARB(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12299
+//@line:12285
 
 		ext_glVertexAttrib3svARB((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -12359,7 +12345,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4NbvARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12303
+//@line:12289
 
 		ext_glVertexAttrib4NbvARB((GLuint)index, (const GLbyte*)(v + vByteOffset));
 	
@@ -12370,7 +12356,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4NivARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12307
+//@line:12293
 
 		ext_glVertexAttrib4NivARB((GLuint)index, (const GLint*)(v + vByteOffset));
 	
@@ -12381,7 +12367,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4NsvARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12311
+//@line:12297
 
 		ext_glVertexAttrib4NsvARB((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -12391,7 +12377,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4NsvARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4NubARB(JNIEnv* env, jclass clazz, jint index, jbyte x, jbyte y, jbyte z, jbyte w) {
 
 
-//@line:12315
+//@line:12301
 
 		ext_glVertexAttrib4NubARB((GLuint)index, (GLubyte)x, (GLubyte)y, (GLubyte)z, (GLubyte)w);
 	
@@ -12402,7 +12388,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4NubvARB(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12319
+//@line:12305
 
 		ext_glVertexAttrib4NubvARB((GLuint)index, (const GLubyte*)(v + vByteOffset));
 	
@@ -12413,7 +12399,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4NuivARB(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12323
+//@line:12309
 
 		ext_glVertexAttrib4NuivARB((GLuint)index, (const GLuint*)(v + vByteOffset));
 	
@@ -12424,7 +12410,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4NusvARB(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12327
+//@line:12313
 
 		ext_glVertexAttrib4NusvARB((GLuint)index, (const GLushort*)(v + vByteOffset));
 	
@@ -12435,7 +12421,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4bvARB(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12331
+//@line:12317
 
 		ext_glVertexAttrib4bvARB((GLuint)index, (const GLbyte*)(v + vByteOffset));
 	
@@ -12445,7 +12431,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4bvARB(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4dARB(JNIEnv* env, jclass clazz, jint index, jdouble x, jdouble y, jdouble z, jdouble w) {
 
 
-//@line:12335
+//@line:12321
 
 		ext_glVertexAttrib4dARB((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -12456,7 +12442,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4dvARB(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12339
+//@line:12325
 
 		ext_glVertexAttrib4dvARB((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -12466,7 +12452,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4dvARB(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4fARB(JNIEnv* env, jclass clazz, jint index, jfloat x, jfloat y, jfloat z, jfloat w) {
 
 
-//@line:12343
+//@line:12329
 
 		ext_glVertexAttrib4fARB((GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
 	
@@ -12477,7 +12463,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4fvARB(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12347
+//@line:12333
 
 		ext_glVertexAttrib4fvARB((GLuint)index, (const GLfloat*)(v + vByteOffset));
 	
@@ -12488,7 +12474,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4ivARB(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12351
+//@line:12337
 
 		ext_glVertexAttrib4ivARB((GLuint)index, (const GLint*)(v + vByteOffset));
 	
@@ -12498,7 +12484,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4ivARB(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4sARB(JNIEnv* env, jclass clazz, jint index, jshort x, jshort y, jshort z, jshort w) {
 
 
-//@line:12355
+//@line:12341
 
 		ext_glVertexAttrib4sARB((GLuint)index, (GLshort)x, (GLshort)y, (GLshort)z, (GLshort)w);
 	
@@ -12509,7 +12495,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4svARB(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12359
+//@line:12345
 
 		ext_glVertexAttrib4svARB((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -12520,7 +12506,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4ubvARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12363
+//@line:12349
 
 		ext_glVertexAttrib4ubvARB((GLuint)index, (const GLubyte*)(v + vByteOffset));
 	
@@ -12531,7 +12517,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4uivARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12367
+//@line:12353
 
 		ext_glVertexAttrib4uivARB((GLuint)index, (const GLuint*)(v + vByteOffset));
 	
@@ -12542,7 +12528,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4usvARB(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:12371
+//@line:12357
 
 		ext_glVertexAttrib4usvARB((GLuint)index, (const GLushort*)(v + vByteOffset));
 	
@@ -12553,7 +12539,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribPointerARB(JN
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:12375
+//@line:12361
 
 		ext_glVertexAttribPointerARB((GLuint)index, (GLint)size, (GLenum)type, (GLboolean)normalized, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -12563,7 +12549,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribPointerARB(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnableVertexAttribArrayARB(JNIEnv* env, jclass clazz, jint index) {
 
 
-//@line:12379
+//@line:12365
 
 		ext_glEnableVertexAttribArrayARB((GLuint)index);
 	
@@ -12573,7 +12559,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnableVertexAttribArrayAR
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDisableVertexAttribArrayARB(JNIEnv* env, jclass clazz, jint index) {
 
 
-//@line:12383
+//@line:12369
 
 		ext_glDisableVertexAttribArrayARB((GLuint)index);
 	
@@ -12584,7 +12570,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramStringARB(JNIEnv* 
 	unsigned char* string = (unsigned char*)env->GetDirectBufferAddress(obj_string);
 
 
-//@line:12387
+//@line:12373
 
 		ext_glProgramStringARB((GLenum)target, (GLenum)format, (GLsizei)len, (const GLvoid*)(string + stringByteOffset));
 	
@@ -12594,7 +12580,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramStringARB(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindProgramARB(JNIEnv* env, jclass clazz, jint target, jint program) {
 
 
-//@line:12391
+//@line:12377
 
 		ext_glBindProgramARB((GLenum)target, (GLuint)program);
 	
@@ -12605,7 +12591,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteProgramsARB(JNIEnv*
 	unsigned char* programs = (unsigned char*)env->GetDirectBufferAddress(obj_programs);
 
 
-//@line:12395
+//@line:12381
 
 		ext_glDeleteProgramsARB((GLsizei)n, (const GLuint*)(programs + programsByteOffset));
 	
@@ -12616,7 +12602,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenProgramsARB(JNIEnv* en
 	unsigned char* programs = (unsigned char*)env->GetDirectBufferAddress(obj_programs);
 
 
-//@line:12399
+//@line:12385
 
 		ext_glGenProgramsARB((GLsizei)n, (GLuint*)(programs + programsByteOffset));
 	
@@ -12626,7 +12612,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenProgramsARB(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramEnvParameter4dARB(JNIEnv* env, jclass clazz, jint target, jint index, jdouble x, jdouble y, jdouble z, jdouble w) {
 
 
-//@line:12403
+//@line:12389
 
 		ext_glProgramEnvParameter4dARB((GLenum)target, (GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -12637,7 +12623,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramEnvParameter4dvARB
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12407
+//@line:12393
 
 		ext_glProgramEnvParameter4dvARB((GLenum)target, (GLuint)index, (const GLdouble*)(params + paramsByteOffset));
 	
@@ -12647,7 +12633,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramEnvParameter4dvARB
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramEnvParameter4fARB(JNIEnv* env, jclass clazz, jint target, jint index, jfloat x, jfloat y, jfloat z, jfloat w) {
 
 
-//@line:12411
+//@line:12397
 
 		ext_glProgramEnvParameter4fARB((GLenum)target, (GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
 	
@@ -12658,7 +12644,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramEnvParameter4fvARB
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12415
+//@line:12401
 
 		ext_glProgramEnvParameter4fvARB((GLenum)target, (GLuint)index, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -12668,7 +12654,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramEnvParameter4fvARB
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramLocalParameter4dARB(JNIEnv* env, jclass clazz, jint target, jint index, jdouble x, jdouble y, jdouble z, jdouble w) {
 
 
-//@line:12419
+//@line:12405
 
 		ext_glProgramLocalParameter4dARB((GLenum)target, (GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -12679,7 +12665,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramLocalParameter4dvA
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12423
+//@line:12409
 
 		ext_glProgramLocalParameter4dvARB((GLenum)target, (GLuint)index, (const GLdouble*)(params + paramsByteOffset));
 	
@@ -12689,7 +12675,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramLocalParameter4dvA
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramLocalParameter4fARB(JNIEnv* env, jclass clazz, jint target, jint index, jfloat x, jfloat y, jfloat z, jfloat w) {
 
 
-//@line:12427
+//@line:12413
 
 		ext_glProgramLocalParameter4fARB((GLenum)target, (GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
 	
@@ -12700,7 +12686,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramLocalParameter4fvA
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12431
+//@line:12417
 
 		ext_glProgramLocalParameter4fvARB((GLenum)target, (GLuint)index, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -12711,7 +12697,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramEnvParameterdvA
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12435
+//@line:12421
 
 		ext_glGetProgramEnvParameterdvARB((GLenum)target, (GLuint)index, (GLdouble*)(params + paramsByteOffset));
 	
@@ -12722,7 +12708,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramEnvParameterfvA
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12439
+//@line:12425
 
 		ext_glGetProgramEnvParameterfvARB((GLenum)target, (GLuint)index, (GLfloat*)(params + paramsByteOffset));
 	
@@ -12733,7 +12719,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramLocalParameterd
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12443
+//@line:12429
 
 		ext_glGetProgramLocalParameterdvARB((GLenum)target, (GLuint)index, (GLdouble*)(params + paramsByteOffset));
 	
@@ -12744,7 +12730,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramLocalParameterf
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12447
+//@line:12433
 
 		ext_glGetProgramLocalParameterfvARB((GLenum)target, (GLuint)index, (GLfloat*)(params + paramsByteOffset));
 	
@@ -12755,7 +12741,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramivARB(JNIEnv* e
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12451
+//@line:12437
 
 		ext_glGetProgramivARB((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -12766,7 +12752,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramStringARB(JNIEn
 	unsigned char* string = (unsigned char*)env->GetDirectBufferAddress(obj_string);
 
 
-//@line:12455
+//@line:12441
 
 		ext_glGetProgramStringARB((GLenum)target, (GLenum)pname, (GLvoid*)(string + stringByteOffset));
 	
@@ -12777,7 +12763,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribdvARB(JNIE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12459
+//@line:12445
 
 		ext_glGetVertexAttribdvARB((GLuint)index, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
 	
@@ -12788,7 +12774,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribfvARB(JNIE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12463
+//@line:12449
 
 		ext_glGetVertexAttribfvARB((GLuint)index, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -12799,7 +12785,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribivARB(JNIE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12467
+//@line:12453
 
 		ext_glGetVertexAttribivARB((GLuint)index, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -12810,7 +12796,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribPointervAR
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:12471
+//@line:12457
 
 		ext_glGetVertexAttribPointervARB((GLuint)index, (GLenum)pname, (GLvoid**)(pointer + pointerByteOffset));
 	
@@ -12820,7 +12806,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribPointervAR
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsProgramARB(JNIEnv* env, jclass clazz, jint program) {
 
 
-//@line:12475
+//@line:12461
 
 		return (jboolean)ext_glIsProgramARB((GLuint)program);
 	
@@ -12830,7 +12816,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsProgramARB(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferARB(JNIEnv* env, jclass clazz, jint target, jint buffer) {
 
 
-//@line:12479
+//@line:12465
 
 		ext_glBindBufferARB((GLenum)target, (GLuint)buffer);
 	
@@ -12841,7 +12827,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteBuffersARB(JNIEnv* 
 	unsigned char* buffers = (unsigned char*)env->GetDirectBufferAddress(obj_buffers);
 
 
-//@line:12483
+//@line:12469
 
 		ext_glDeleteBuffersARB((GLsizei)n, (const GLuint*)(buffers + buffersByteOffset));
 	
@@ -12852,7 +12838,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenBuffersARB(JNIEnv* env
 	unsigned char* buffers = (unsigned char*)env->GetDirectBufferAddress(obj_buffers);
 
 
-//@line:12487
+//@line:12473
 
 		ext_glGenBuffersARB((GLsizei)n, (GLuint*)(buffers + buffersByteOffset));
 	
@@ -12862,40 +12848,40 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenBuffersARB(JNIEnv* env
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsBufferARB(JNIEnv* env, jclass clazz, jint buffer) {
 
 
-//@line:12491
+//@line:12477
 
 		return (jboolean)ext_glIsBufferARB((GLuint)buffer);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferDataARB(JNIEnv* env, jclass clazz, jint target, jint size, jobject obj_data, jint dataByteOffset, jint usage) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferDataARB(JNIEnv* env, jclass clazz, jint target, jlong size, jobject obj_data, jint dataByteOffset, jint usage) {
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:12495
+//@line:12481
 
 		ext_glBufferDataARB((GLenum)target, (GLsizeiptrARB)size, (const GLvoid*)(data + dataByteOffset), (GLenum)usage);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferSubDataARB(JNIEnv* env, jclass clazz, jint target, jint offset, jint size, jobject obj_data, jint dataByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferSubDataARB(JNIEnv* env, jclass clazz, jint target, jlong offset, jlong size, jobject obj_data, jint dataByteOffset) {
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:12499
+//@line:12485
 
 		ext_glBufferSubDataARB((GLenum)target, (GLintptrARB)offset, (GLsizeiptrARB)size, (const GLvoid*)(data + dataByteOffset));
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferSubDataARB(JNIEnv* env, jclass clazz, jint target, jint offset, jint size, jobject obj_data, jint dataByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferSubDataARB(JNIEnv* env, jclass clazz, jint target, jlong offset, jlong size, jobject obj_data, jint dataByteOffset) {
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:12503
+//@line:12489
 
 		ext_glGetBufferSubDataARB((GLenum)target, (GLintptrARB)offset, (GLsizeiptrARB)size, (GLvoid*)(data + dataByteOffset));
 	
@@ -12905,7 +12891,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferSubDataARB(JNIEn
 JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glMapBufferARB(JNIEnv* env, jclass clazz, jint target, jint access, jlong bufferSize) {
 
 
-//@line:12507
+//@line:12493
 
 		GLvoid* buffer = (GLvoid*)ext_glMapBufferARB((GLenum)target, (GLenum)access);
 		if(!buffer) return 0;
@@ -12917,7 +12903,7 @@ JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glMapBufferARB(JNIEnv* e
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glUnmapBufferARB(JNIEnv* env, jclass clazz, jint target) {
 
 
-//@line:12513
+//@line:12499
 
 		return (jboolean)ext_glUnmapBufferARB((GLenum)target);
 	
@@ -12928,7 +12914,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferParameterivARB(J
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12517
+//@line:12503
 
 		ext_glGetBufferParameterivARB((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -12939,7 +12925,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferPointervARB(JNIE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12521
+//@line:12507
 
 		ext_glGetBufferPointervARB((GLenum)target, (GLenum)pname, (GLvoid**)(params + paramsByteOffset));
 	
@@ -12950,7 +12936,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenQueriesARB(JNIEnv* env
 	unsigned char* ids = (unsigned char*)env->GetDirectBufferAddress(obj_ids);
 
 
-//@line:12525
+//@line:12511
 
 		ext_glGenQueriesARB((GLsizei)n, (GLuint*)(ids + idsByteOffset));
 	
@@ -12961,7 +12947,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteQueriesARB(JNIEnv* 
 	unsigned char* ids = (unsigned char*)env->GetDirectBufferAddress(obj_ids);
 
 
-//@line:12529
+//@line:12515
 
 		ext_glDeleteQueriesARB((GLsizei)n, (const GLuint*)(ids + idsByteOffset));
 	
@@ -12971,7 +12957,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteQueriesARB(JNIEnv* 
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsQueryARB(JNIEnv* env, jclass clazz, jint id) {
 
 
-//@line:12533
+//@line:12519
 
 		return (jboolean)ext_glIsQueryARB((GLuint)id);
 	
@@ -12981,7 +12967,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsQueryARB(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginQueryARB(JNIEnv* env, jclass clazz, jint target, jint id) {
 
 
-//@line:12537
+//@line:12523
 
 		ext_glBeginQueryARB((GLenum)target, (GLuint)id);
 	
@@ -12991,7 +12977,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginQueryARB(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndQueryARB(JNIEnv* env, jclass clazz, jint target) {
 
 
-//@line:12541
+//@line:12527
 
 		ext_glEndQueryARB((GLenum)target);
 	
@@ -13002,7 +12988,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryivARB(JNIEnv* env
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12545
+//@line:12531
 
 		ext_glGetQueryivARB((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -13013,7 +12999,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryObjectivARB(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12549
+//@line:12535
 
 		ext_glGetQueryObjectivARB((GLuint)id, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -13024,7 +13010,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryObjectuivARB(JNIE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12553
+//@line:12539
 
 		ext_glGetQueryObjectuivARB((GLuint)id, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
 	
@@ -13034,7 +13020,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryObjectuivARB(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteObjectARB(JNIEnv* env, jclass clazz, jint obj) {
 
 
-//@line:12557
+//@line:12543
 
 		ext_glDeleteObjectARB((GLhandleARB)obj);
 	
@@ -13044,7 +13030,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteObjectARB(JNIEnv* e
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetHandleARB(JNIEnv* env, jclass clazz, jint pname) {
 
 
-//@line:12561
+//@line:12547
 
 		return (jint)ext_glGetHandleARB((GLenum)pname);
 	
@@ -13054,7 +13040,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetHandleARB(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDetachObjectARB(JNIEnv* env, jclass clazz, jint containerObj, jint attachedObj) {
 
 
-//@line:12565
+//@line:12551
 
 		ext_glDetachObjectARB((GLhandleARB)containerObj, (GLhandleARB)attachedObj);
 	
@@ -13064,29 +13050,29 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDetachObjectARB(JNIEnv* e
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCreateShaderObjectARB(JNIEnv* env, jclass clazz, jint shaderType) {
 
 
-//@line:12569
+//@line:12555
 
 		return (jint)ext_glCreateShaderObjectARB((GLenum)shaderType);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderSourceARB(JNIEnv* env, jclass clazz, jint shaderObj, jint count, jobject obj_string, jint stringByteOffset, jobject obj_length, jint lengthByteOffset) {
-	unsigned char* string = (unsigned char*)env->GetDirectBufferAddress(obj_string);
-	unsigned char* length = (unsigned char*)env->GetDirectBufferAddress(obj_length);
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderSourceARB(JNIEnv* env, jclass clazz, jint shader, jstring obj_string) {
+	char* string = (char*)env->GetStringUTFChars(obj_string, 0);
 
 
-//@line:12573
+//@line:12559
 
-		ext_glShaderSourceARB((GLhandleARB)shaderObj, (GLsizei)count, (const GLcharARB**)(string + stringByteOffset), (const GLint*)(length + lengthByteOffset));
+		ext_glShaderSource((GLuint)shader, 1, &string, 0);
 	
+	env->ReleaseStringUTFChars(obj_string, string);
 
 }
 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompileShaderARB(JNIEnv* env, jclass clazz, jint shaderObj) {
 
 
-//@line:12577
+//@line:12563
 
 		ext_glCompileShaderARB((GLhandleARB)shaderObj);
 	
@@ -13096,7 +13082,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompileShaderARB(JNIEnv* 
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCreateProgramObjectARB(JNIEnv* env, jclass clazz) {
 
 
-//@line:12581
+//@line:12567
 
 		return (jint)ext_glCreateProgramObjectARB();
 	
@@ -13106,7 +13092,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCreateProgramObjectARB(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAttachObjectARB(JNIEnv* env, jclass clazz, jint containerObj, jint obj) {
 
 
-//@line:12585
+//@line:12571
 
 		ext_glAttachObjectARB((GLhandleARB)containerObj, (GLhandleARB)obj);
 	
@@ -13116,7 +13102,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAttachObjectARB(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLinkProgramARB(JNIEnv* env, jclass clazz, jint programObj) {
 
 
-//@line:12589
+//@line:12575
 
 		ext_glLinkProgramARB((GLhandleARB)programObj);
 	
@@ -13126,7 +13112,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLinkProgramARB(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUseProgramObjectARB(JNIEnv* env, jclass clazz, jint programObj) {
 
 
-//@line:12593
+//@line:12579
 
 		ext_glUseProgramObjectARB((GLhandleARB)programObj);
 	
@@ -13136,7 +13122,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUseProgramObjectARB(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glValidateProgramARB(JNIEnv* env, jclass clazz, jint programObj) {
 
 
-//@line:12597
+//@line:12583
 
 		ext_glValidateProgramARB((GLhandleARB)programObj);
 	
@@ -13146,7 +13132,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glValidateProgramARB(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1fARB(JNIEnv* env, jclass clazz, jint location, jfloat v0) {
 
 
-//@line:12601
+//@line:12587
 
 		ext_glUniform1fARB((GLint)location, (GLfloat)v0);
 	
@@ -13156,7 +13142,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1fARB(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2fARB(JNIEnv* env, jclass clazz, jint location, jfloat v0, jfloat v1) {
 
 
-//@line:12605
+//@line:12591
 
 		ext_glUniform2fARB((GLint)location, (GLfloat)v0, (GLfloat)v1);
 	
@@ -13166,7 +13152,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2fARB(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3fARB(JNIEnv* env, jclass clazz, jint location, jfloat v0, jfloat v1, jfloat v2) {
 
 
-//@line:12609
+//@line:12595
 
 		ext_glUniform3fARB((GLint)location, (GLfloat)v0, (GLfloat)v1, (GLfloat)v2);
 	
@@ -13176,7 +13162,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3fARB(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4fARB(JNIEnv* env, jclass clazz, jint location, jfloat v0, jfloat v1, jfloat v2, jfloat v3) {
 
 
-//@line:12613
+//@line:12599
 
 		ext_glUniform4fARB((GLint)location, (GLfloat)v0, (GLfloat)v1, (GLfloat)v2, (GLfloat)v3);
 	
@@ -13186,7 +13172,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4fARB(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1iARB(JNIEnv* env, jclass clazz, jint location, jint v0) {
 
 
-//@line:12617
+//@line:12603
 
 		ext_glUniform1iARB((GLint)location, (GLint)v0);
 	
@@ -13196,7 +13182,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1iARB(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2iARB(JNIEnv* env, jclass clazz, jint location, jint v0, jint v1) {
 
 
-//@line:12621
+//@line:12607
 
 		ext_glUniform2iARB((GLint)location, (GLint)v0, (GLint)v1);
 	
@@ -13206,7 +13192,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2iARB(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3iARB(JNIEnv* env, jclass clazz, jint location, jint v0, jint v1, jint v2) {
 
 
-//@line:12625
+//@line:12611
 
 		ext_glUniform3iARB((GLint)location, (GLint)v0, (GLint)v1, (GLint)v2);
 	
@@ -13216,7 +13202,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3iARB(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4iARB(JNIEnv* env, jclass clazz, jint location, jint v0, jint v1, jint v2, jint v3) {
 
 
-//@line:12629
+//@line:12615
 
 		ext_glUniform4iARB((GLint)location, (GLint)v0, (GLint)v1, (GLint)v2, (GLint)v3);
 	
@@ -13227,7 +13213,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1fvARB(JNIEnv* env
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:12633
+//@line:12619
 
 		ext_glUniform1fvARB((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -13238,7 +13224,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2fvARB(JNIEnv* env
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:12637
+//@line:12623
 
 		ext_glUniform2fvARB((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -13249,7 +13235,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3fvARB(JNIEnv* env
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:12641
+//@line:12627
 
 		ext_glUniform3fvARB((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -13260,7 +13246,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4fvARB(JNIEnv* env
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:12645
+//@line:12631
 
 		ext_glUniform4fvARB((GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -13271,7 +13257,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1ivARB(JNIEnv* env
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:12649
+//@line:12635
 
 		ext_glUniform1ivARB((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -13282,7 +13268,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2ivARB(JNIEnv* env
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:12653
+//@line:12639
 
 		ext_glUniform2ivARB((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -13293,7 +13279,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3ivARB(JNIEnv* env
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:12657
+//@line:12643
 
 		ext_glUniform3ivARB((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -13304,7 +13290,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4ivARB(JNIEnv* env
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:12661
+//@line:12647
 
 		ext_glUniform4ivARB((GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -13315,7 +13301,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix2fvARB(JNIEn
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:12665
+//@line:12651
 
 		ext_glUniformMatrix2fvARB((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -13326,7 +13312,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix3fvARB(JNIEn
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:12669
+//@line:12655
 
 		ext_glUniformMatrix3fvARB((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -13337,7 +13323,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix4fvARB(JNIEn
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:12673
+//@line:12659
 
 		ext_glUniformMatrix4fvARB((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -13348,7 +13334,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterfvARB(J
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12677
+//@line:12663
 
 		ext_glGetObjectParameterfvARB((GLhandleARB)obj, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -13359,7 +13345,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterivARB(J
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12681
+//@line:12667
 
 		ext_glGetObjectParameterivARB((GLhandleARB)obj, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -13371,7 +13357,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetInfoLogARB(JNIEnv* env
 	unsigned char* infoLog = (unsigned char*)env->GetDirectBufferAddress(obj_infoLog);
 
 
-//@line:12685
+//@line:12671
 
 		ext_glGetInfoLogARB((GLhandleARB)obj, (GLsizei)maxLength, (GLsizei*)(length + lengthByteOffset), (GLcharARB*)(infoLog + infoLogByteOffset));
 	
@@ -13383,7 +13369,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttachedObjectsARB(JNI
 	unsigned char* obj = (unsigned char*)env->GetDirectBufferAddress(obj_obj);
 
 
-//@line:12689
+//@line:12675
 
 		ext_glGetAttachedObjectsARB((GLhandleARB)containerObj, (GLsizei)maxCount, (GLsizei*)(count + countByteOffset), (GLhandleARB*)(obj + objByteOffset));
 	
@@ -13393,7 +13379,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttachedObjectsARB(JNI
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetUniformLocationARB
 (JNIEnv* env, jclass clazz, jint programObj, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
-//@line:12693
+//@line:12679
 
 		return (jint)ext_glGetUniformLocationARB((GLhandleARB)programObj, (const GLcharARB*)(name + nameByteOffset));
 	
@@ -13415,7 +13401,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniformARB(JNIEn
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:12697
+//@line:12683
 
 		ext_glGetActiveUniformARB((GLhandleARB)programObj, (GLuint)index, (GLsizei)maxLength, (GLsizei*)(length + lengthByteOffset), (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLcharARB*)(name + nameByteOffset));
 	
@@ -13426,7 +13412,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformfvARB(JNIEnv* e
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12701
+//@line:12687
 
 		ext_glGetUniformfvARB((GLhandleARB)programObj, (GLint)location, (GLfloat*)(params + paramsByteOffset));
 	
@@ -13437,7 +13423,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformivARB(JNIEnv* e
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12705
+//@line:12691
 
 		ext_glGetUniformivARB((GLhandleARB)programObj, (GLint)location, (GLint*)(params + paramsByteOffset));
 	
@@ -13449,7 +13435,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderSourceARB(JNIEnv
 	unsigned char* source = (unsigned char*)env->GetDirectBufferAddress(obj_source);
 
 
-//@line:12709
+//@line:12695
 
 		ext_glGetShaderSourceARB((GLhandleARB)obj, (GLsizei)maxLength, (GLsizei*)(length + lengthByteOffset), (GLcharARB*)(source + sourceByteOffset));
 	
@@ -13460,7 +13446,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindAttribLocationARB(JNI
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:12713
+//@line:12699
 
 		ext_glBindAttribLocationARB((GLhandleARB)programObj, (GLuint)index, (const GLcharARB*)(name + nameByteOffset));
 	
@@ -13474,7 +13460,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveAttribARB(JNIEnv
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:12717
+//@line:12703
 
 		ext_glGetActiveAttribARB((GLhandleARB)programObj, (GLuint)index, (GLsizei)maxLength, (GLsizei*)(length + lengthByteOffset), (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLcharARB*)(name + nameByteOffset));
 	
@@ -13484,7 +13470,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveAttribARB(JNIEnv
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetAttribLocationARB
 (JNIEnv* env, jclass clazz, jint programObj, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
-//@line:12721
+//@line:12707
 
 		return (jint)ext_glGetAttribLocationARB((GLhandleARB)programObj, (const GLcharARB*)(name + nameByteOffset));
 	
@@ -13503,7 +13489,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawBuffersARB(JNIEnv* en
 	unsigned char* bufs = (unsigned char*)env->GetDirectBufferAddress(obj_bufs);
 
 
-//@line:12725
+//@line:12711
 
 		ext_glDrawBuffersARB((GLsizei)n, (const GLenum*)(bufs + bufsByteOffset));
 	
@@ -13513,7 +13499,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawBuffersARB(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClampColorARB(JNIEnv* env, jclass clazz, jint target, jint clamp) {
 
 
-//@line:12729
+//@line:12715
 
 		ext_glClampColorARB((GLenum)target, (GLenum)clamp);
 	
@@ -13523,7 +13509,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClampColorARB(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawArraysInstancedARB(JNIEnv* env, jclass clazz, jint mode, jint first, jint count, jint primcount) {
 
 
-//@line:12733
+//@line:12719
 
 		ext_glDrawArraysInstancedARB((GLenum)mode, (GLint)first, (GLsizei)count, (GLsizei)primcount);
 	
@@ -13534,7 +13520,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementsInstancedARB(
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:12737
+//@line:12723
 
 		ext_glDrawElementsInstancedARB((GLenum)mode, (GLsizei)count, (GLenum)type, (const GLvoid*)(indices + indicesByteOffset), (GLsizei)primcount);
 	
@@ -13544,7 +13530,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementsInstancedARB(
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsRenderbuffer(JNIEnv* env, jclass clazz, jint renderbuffer) {
 
 
-//@line:12741
+//@line:12727
 
 		return (jboolean)ext_glIsRenderbuffer((GLuint)renderbuffer);
 	
@@ -13554,7 +13540,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsRenderbuffer(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindRenderbuffer(JNIEnv* env, jclass clazz, jint target, jint renderbuffer) {
 
 
-//@line:12745
+//@line:12731
 
 		ext_glBindRenderbuffer((GLenum)target, (GLuint)renderbuffer);
 	
@@ -13565,7 +13551,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteRenderbuffers(JNIEn
 	unsigned char* renderbuffers = (unsigned char*)env->GetDirectBufferAddress(obj_renderbuffers);
 
 
-//@line:12749
+//@line:12735
 
 		ext_glDeleteRenderbuffers((GLsizei)n, (const GLuint*)(renderbuffers + renderbuffersByteOffset));
 	
@@ -13576,7 +13562,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenRenderbuffers(JNIEnv* 
 	unsigned char* renderbuffers = (unsigned char*)env->GetDirectBufferAddress(obj_renderbuffers);
 
 
-//@line:12753
+//@line:12739
 
 		ext_glGenRenderbuffers((GLsizei)n, (GLuint*)(renderbuffers + renderbuffersByteOffset));
 	
@@ -13586,7 +13572,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenRenderbuffers(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRenderbufferStorage(JNIEnv* env, jclass clazz, jint target, jint internalformat, jint width, jint height) {
 
 
-//@line:12757
+//@line:12743
 
 		ext_glRenderbufferStorage((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
 	
@@ -13597,7 +13583,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetRenderbufferParameteri
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12761
+//@line:12747
 
 		ext_glGetRenderbufferParameteriv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -13607,7 +13593,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetRenderbufferParameteri
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsFramebuffer(JNIEnv* env, jclass clazz, jint framebuffer) {
 
 
-//@line:12765
+//@line:12751
 
 		return (jboolean)ext_glIsFramebuffer((GLuint)framebuffer);
 	
@@ -13617,7 +13603,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsFramebuffer(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindFramebuffer(JNIEnv* env, jclass clazz, jint target, jint framebuffer) {
 
 
-//@line:12769
+//@line:12755
 
 		ext_glBindFramebuffer((GLenum)target, (GLuint)framebuffer);
 	
@@ -13628,7 +13614,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteFramebuffers(JNIEnv
 	unsigned char* framebuffers = (unsigned char*)env->GetDirectBufferAddress(obj_framebuffers);
 
 
-//@line:12773
+//@line:12759
 
 		ext_glDeleteFramebuffers((GLsizei)n, (const GLuint*)(framebuffers + framebuffersByteOffset));
 	
@@ -13639,7 +13625,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenFramebuffers(JNIEnv* e
 	unsigned char* framebuffers = (unsigned char*)env->GetDirectBufferAddress(obj_framebuffers);
 
 
-//@line:12777
+//@line:12763
 
 		ext_glGenFramebuffers((GLsizei)n, (GLuint*)(framebuffers + framebuffersByteOffset));
 	
@@ -13649,7 +13635,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenFramebuffers(JNIEnv* e
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCheckFramebufferStatus(JNIEnv* env, jclass clazz, jint target) {
 
 
-//@line:12781
+//@line:12767
 
 		return (jint)ext_glCheckFramebufferStatus((GLenum)target);
 	
@@ -13659,7 +13645,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCheckFramebufferStatus(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTexture1D(JNIEnv* env, jclass clazz, jint target, jint attachment, jint textarget, jint texture, jint level) {
 
 
-//@line:12785
+//@line:12771
 
 		ext_glFramebufferTexture1D((GLenum)target, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level);
 	
@@ -13669,7 +13655,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTexture1D(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTexture2D(JNIEnv* env, jclass clazz, jint target, jint attachment, jint textarget, jint texture, jint level) {
 
 
-//@line:12789
+//@line:12775
 
 		ext_glFramebufferTexture2D((GLenum)target, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level);
 	
@@ -13679,7 +13665,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTexture2D(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTexture3D(JNIEnv* env, jclass clazz, jint target, jint attachment, jint textarget, jint texture, jint level, jint zoffset) {
 
 
-//@line:12793
+//@line:12779
 
 		ext_glFramebufferTexture3D((GLenum)target, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level, (GLint)zoffset);
 	
@@ -13689,7 +13675,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTexture3D(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferRenderbuffer(JNIEnv* env, jclass clazz, jint target, jint attachment, jint renderbuffertarget, jint renderbuffer) {
 
 
-//@line:12797
+//@line:12783
 
 		ext_glFramebufferRenderbuffer((GLenum)target, (GLenum)attachment, (GLenum)renderbuffertarget, (GLuint)renderbuffer);
 	
@@ -13700,7 +13686,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFramebufferAttachmentP
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12801
+//@line:12787
 
 		ext_glGetFramebufferAttachmentParameteriv((GLenum)target, (GLenum)attachment, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -13710,7 +13696,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFramebufferAttachmentP
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenerateMipmap(JNIEnv* env, jclass clazz, jint target) {
 
 
-//@line:12805
+//@line:12791
 
 		ext_glGenerateMipmap((GLenum)target);
 	
@@ -13720,7 +13706,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenerateMipmap(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlitFramebuffer(JNIEnv* env, jclass clazz, jint srcX0, jint srcY0, jint srcX1, jint srcY1, jint dstX0, jint dstY0, jint dstX1, jint dstY1, jint mask, jint filter) {
 
 
-//@line:12809
+//@line:12795
 
 		ext_glBlitFramebuffer((GLint)srcX0, (GLint)srcY0, (GLint)srcX1, (GLint)srcY1, (GLint)dstX0, (GLint)dstY0, (GLint)dstX1, (GLint)dstY1, (GLbitfield)mask, (GLenum)filter);
 	
@@ -13730,7 +13716,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlitFramebuffer(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRenderbufferStorageMultisample(JNIEnv* env, jclass clazz, jint target, jint samples, jint internalformat, jint width, jint height) {
 
 
-//@line:12813
+//@line:12799
 
 		ext_glRenderbufferStorageMultisample((GLenum)target, (GLsizei)samples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
 	
@@ -13740,7 +13726,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRenderbufferStorageMultis
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTextureLayer(JNIEnv* env, jclass clazz, jint target, jint attachment, jint texture, jint level, jint layer) {
 
 
-//@line:12817
+//@line:12803
 
 		ext_glFramebufferTextureLayer((GLenum)target, (GLenum)attachment, (GLuint)texture, (GLint)level, (GLint)layer);
 	
@@ -13750,7 +13736,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTextureLayer(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramParameteriARB(JNIEnv* env, jclass clazz, jint program, jint pname, jint value) {
 
 
-//@line:12821
+//@line:12807
 
 		ext_glProgramParameteriARB((GLuint)program, (GLenum)pname, (GLint)value);
 	
@@ -13760,7 +13746,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramParameteriARB(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTextureARB(JNIEnv* env, jclass clazz, jint target, jint attachment, jint texture, jint level) {
 
 
-//@line:12825
+//@line:12811
 
 		ext_glFramebufferTextureARB((GLenum)target, (GLenum)attachment, (GLuint)texture, (GLint)level);
 	
@@ -13770,7 +13756,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTextureARB(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTextureLayerARB(JNIEnv* env, jclass clazz, jint target, jint attachment, jint texture, jint level, jint layer) {
 
 
-//@line:12829
+//@line:12815
 
 		ext_glFramebufferTextureLayerARB((GLenum)target, (GLenum)attachment, (GLuint)texture, (GLint)level, (GLint)layer);
 	
@@ -13780,7 +13766,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTextureLayerAR
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTextureFaceARB(JNIEnv* env, jclass clazz, jint target, jint attachment, jint texture, jint level, jint face) {
 
 
-//@line:12833
+//@line:12819
 
 		ext_glFramebufferTextureFaceARB((GLenum)target, (GLenum)attachment, (GLuint)texture, (GLint)level, (GLenum)face);
 	
@@ -13790,7 +13776,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTextureFaceARB
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribDivisorARB(JNIEnv* env, jclass clazz, jint index, jint divisor) {
 
 
-//@line:12837
+//@line:12823
 
 		ext_glVertexAttribDivisorARB((GLuint)index, (GLuint)divisor);
 	
@@ -13800,7 +13786,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribDivisorARB(JN
 JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glMapBufferRange(JNIEnv* env, jclass clazz, jint target, jint offset, jint length, jint access, jlong bufferSize) {
 
 
-//@line:12841
+//@line:12827
 
 		GLvoid* buffer = (GLvoid*)ext_glMapBufferRange((GLenum)target, (GLintptr)offset, (GLsizeiptr)length, (GLbitfield)access);
 		if(!buffer) return 0;
@@ -13809,10 +13795,10 @@ JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glMapBufferRange(JNIEnv*
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushMappedBufferRange(JNIEnv* env, jclass clazz, jint target, jint offset, jint length) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushMappedBufferRange(JNIEnv* env, jclass clazz, jint target, jlong offset, jlong length) {
 
 
-//@line:12847
+//@line:12833
 
 		ext_glFlushMappedBufferRange((GLenum)target, (GLintptr)offset, (GLsizeiptr)length);
 	
@@ -13822,7 +13808,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushMappedBufferRange(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexBufferARB(JNIEnv* env, jclass clazz, jint target, jint internalformat, jint buffer) {
 
 
-//@line:12851
+//@line:12837
 
 		ext_glTexBufferARB((GLenum)target, (GLenum)internalformat, (GLuint)buffer);
 	
@@ -13832,7 +13818,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexBufferARB(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindVertexArray(JNIEnv* env, jclass clazz, jint array) {
 
 
-//@line:12855
+//@line:12841
 
 		ext_glBindVertexArray((GLuint)array);
 	
@@ -13843,7 +13829,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteVertexArrays(JNIEnv
 	unsigned char* arrays = (unsigned char*)env->GetDirectBufferAddress(obj_arrays);
 
 
-//@line:12859
+//@line:12845
 
 		ext_glDeleteVertexArrays((GLsizei)n, (const GLuint*)(arrays + arraysByteOffset));
 	
@@ -13854,7 +13840,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenVertexArrays(JNIEnv* e
 	unsigned char* arrays = (unsigned char*)env->GetDirectBufferAddress(obj_arrays);
 
 
-//@line:12863
+//@line:12849
 
 		ext_glGenVertexArrays((GLsizei)n, (GLuint*)(arrays + arraysByteOffset));
 	
@@ -13864,7 +13850,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenVertexArrays(JNIEnv* e
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsVertexArray(JNIEnv* env, jclass clazz, jint array) {
 
 
-//@line:12867
+//@line:12853
 
 		return (jboolean)ext_glIsVertexArray((GLuint)array);
 	
@@ -13876,7 +13862,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformIndices(JNIEnv*
 	unsigned char* uniformIndices = (unsigned char*)env->GetDirectBufferAddress(obj_uniformIndices);
 
 
-//@line:12871
+//@line:12857
 
 		ext_glGetUniformIndices((GLuint)program, (GLsizei)uniformCount, (const GLchar**)(uniformNames + uniformNamesByteOffset), (GLuint*)(uniformIndices + uniformIndicesByteOffset));
 	
@@ -13888,7 +13874,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniformsiv(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12875
+//@line:12861
 
 		ext_glGetActiveUniformsiv((GLuint)program, (GLsizei)uniformCount, (const GLuint*)(uniformIndices + uniformIndicesByteOffset), (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -13900,7 +13886,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniformName(JNIE
 	unsigned char* uniformName = (unsigned char*)env->GetDirectBufferAddress(obj_uniformName);
 
 
-//@line:12879
+//@line:12865
 
 		ext_glGetActiveUniformName((GLuint)program, (GLuint)uniformIndex, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(uniformName + uniformNameByteOffset));
 	
@@ -13910,7 +13896,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniformName(JNIE
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetUniformBlockIndex
 (JNIEnv* env, jclass clazz, jint program, jobject obj_uniformBlockName, jint uniformBlockNameByteOffset, unsigned char* uniformBlockName) {
 
-//@line:12883
+//@line:12869
 
 		return (jint)ext_glGetUniformBlockIndex((GLuint)program, (const GLchar*)(uniformBlockName + uniformBlockNameByteOffset));
 	
@@ -13929,7 +13915,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniformBlockiv(J
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12887
+//@line:12873
 
 		ext_glGetActiveUniformBlockiv((GLuint)program, (GLuint)uniformBlockIndex, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -13941,7 +13927,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniformBlockName
 	unsigned char* uniformBlockName = (unsigned char*)env->GetDirectBufferAddress(obj_uniformBlockName);
 
 
-//@line:12891
+//@line:12877
 
 		ext_glGetActiveUniformBlockName((GLuint)program, (GLuint)uniformBlockIndex, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(uniformBlockName + uniformBlockNameByteOffset));
 	
@@ -13951,17 +13937,17 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniformBlockName
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformBlockBinding(JNIEnv* env, jclass clazz, jint program, jint uniformBlockIndex, jint uniformBlockBinding) {
 
 
-//@line:12895
+//@line:12881
 
 		ext_glUniformBlockBinding((GLuint)program, (GLuint)uniformBlockIndex, (GLuint)uniformBlockBinding);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyBufferSubData(JNIEnv* env, jclass clazz, jint readTarget, jint writeTarget, jint readOffset, jint writeOffset, jint size) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyBufferSubData(JNIEnv* env, jclass clazz, jint readTarget, jint writeTarget, jlong readOffset, jlong writeOffset, jlong size) {
 
 
-//@line:12899
+//@line:12885
 
 		ext_glCopyBufferSubData((GLenum)readTarget, (GLenum)writeTarget, (GLintptr)readOffset, (GLintptr)writeOffset, (GLsizeiptr)size);
 	
@@ -13972,7 +13958,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementsBaseVertex(JN
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:12903
+//@line:12889
 
 		ext_glDrawElementsBaseVertex((GLenum)mode, (GLsizei)count, (GLenum)type, (const GLvoid*)(indices + indicesByteOffset), (GLint)basevertex);
 	
@@ -13983,7 +13969,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawRangeElementsBaseVert
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:12907
+//@line:12893
 
 		ext_glDrawRangeElementsBaseVertex((GLenum)mode, (GLuint)start, (GLuint)end, (GLsizei)count, (GLenum)type, (const GLvoid*)(indices + indicesByteOffset), (GLint)basevertex);
 	
@@ -13994,7 +13980,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementsInstancedBase
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:12911
+//@line:12897
 
 		ext_glDrawElementsInstancedBaseVertex((GLenum)mode, (GLsizei)count, (GLenum)type, (const GLvoid*)(indices + indicesByteOffset), (GLsizei)instancecount, (GLint)basevertex);
 	
@@ -14007,7 +13993,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiDrawElementsBaseVert
 	unsigned char* basevertex = (unsigned char*)env->GetDirectBufferAddress(obj_basevertex);
 
 
-//@line:12915
+//@line:12901
 
 		ext_glMultiDrawElementsBaseVertex((GLenum)mode, (const GLsizei*)(count + countByteOffset), (GLenum)type, (const GLvoid**)(indices + indicesByteOffset), (GLsizei)drawcount, (const GLint*)(basevertex + basevertexByteOffset));
 	
@@ -14017,7 +14003,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiDrawElementsBaseVert
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProvokingVertex(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:12919
+//@line:12905
 
 		ext_glProvokingVertex((GLenum)mode);
 	
@@ -14027,7 +14013,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProvokingVertex(JNIEnv* e
 JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glFenceSync(JNIEnv* env, jclass clazz, jint condition, jint flags) {
 
 
-//@line:12923
+//@line:12909
 
 		return (jlong)ext_glFenceSync((GLenum)condition, (GLbitfield)flags);
 	
@@ -14037,7 +14023,7 @@ JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glFenceSync(JNIEnv* env, j
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsSync(JNIEnv* env, jclass clazz, jlong sync) {
 
 
-//@line:12927
+//@line:12913
 
 		return (jboolean)ext_glIsSync((GLsync)sync);
 	
@@ -14047,7 +14033,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsSync(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteSync(JNIEnv* env, jclass clazz, jlong sync) {
 
 
-//@line:12931
+//@line:12917
 
 		ext_glDeleteSync((GLsync)sync);
 	
@@ -14057,7 +14043,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteSync(JNIEnv* env, j
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glClientWaitSync(JNIEnv* env, jclass clazz, jlong sync, jint flags, jlong timeout) {
 
 
-//@line:12935
+//@line:12921
 
 		return (jint)ext_glClientWaitSync((GLsync)sync, (GLbitfield)flags, (GLuint64)timeout);
 	
@@ -14067,7 +14053,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glClientWaitSync(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWaitSync(JNIEnv* env, jclass clazz, jlong sync, jint flags, jlong timeout) {
 
 
-//@line:12939
+//@line:12925
 
 		ext_glWaitSync((GLsync)sync, (GLbitfield)flags, (GLuint64)timeout);
 	
@@ -14078,7 +14064,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetInteger64v(JNIEnv* env
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:12943
+//@line:12929
 
 		ext_glGetInteger64v((GLenum)pname, (GLint64*)(params + paramsByteOffset));
 	
@@ -14090,7 +14076,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetSynciv(JNIEnv* env, jc
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:12947
+//@line:12933
 
 		ext_glGetSynciv((GLsync)sync, (GLenum)pname, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLint*)(values + valuesByteOffset));
 	
@@ -14100,7 +14086,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetSynciv(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexImage2DMultisample(JNIEnv* env, jclass clazz, jint target, jint samples, jint internalformat, jint width, jint height, jboolean fixedsamplelocations) {
 
 
-//@line:12951
+//@line:12937
 
 		ext_glTexImage2DMultisample((GLenum)target, (GLsizei)samples, (GLint)internalformat, (GLsizei)width, (GLsizei)height, (GLboolean)fixedsamplelocations);
 	
@@ -14110,7 +14096,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexImage2DMultisample(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexImage3DMultisample(JNIEnv* env, jclass clazz, jint target, jint samples, jint internalformat, jint width, jint height, jint depth, jboolean fixedsamplelocations) {
 
 
-//@line:12955
+//@line:12941
 
 		ext_glTexImage3DMultisample((GLenum)target, (GLsizei)samples, (GLint)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLboolean)fixedsamplelocations);
 	
@@ -14121,7 +14107,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultisamplefv(JNIEnv* 
 	unsigned char* val = (unsigned char*)env->GetDirectBufferAddress(obj_val);
 
 
-//@line:12959
+//@line:12945
 
 		ext_glGetMultisamplefv((GLenum)pname, (GLuint)index, (GLfloat*)(val + valByteOffset));
 	
@@ -14131,7 +14117,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultisamplefv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSampleMaski(JNIEnv* env, jclass clazz, jint index, jint mask) {
 
 
-//@line:12963
+//@line:12949
 
 		ext_glSampleMaski((GLuint)index, (GLbitfield)mask);
 	
@@ -14141,7 +14127,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSampleMaski(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationiARB(JNIEnv* env, jclass clazz, jint buf, jint mode) {
 
 
-//@line:12967
+//@line:12953
 
 		ext_glBlendEquationiARB((GLuint)buf, (GLenum)mode);
 	
@@ -14151,7 +14137,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationiARB(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationSeparateiARB(JNIEnv* env, jclass clazz, jint buf, jint modeRGB, jint modeAlpha) {
 
 
-//@line:12971
+//@line:12957
 
 		ext_glBlendEquationSeparateiARB((GLuint)buf, (GLenum)modeRGB, (GLenum)modeAlpha);
 	
@@ -14161,7 +14147,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationSeparateiARB
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFunciARB(JNIEnv* env, jclass clazz, jint buf, jint src, jint dst) {
 
 
-//@line:12975
+//@line:12961
 
 		ext_glBlendFunciARB((GLuint)buf, (GLenum)src, (GLenum)dst);
 	
@@ -14171,7 +14157,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFunciARB(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFuncSeparateiARB(JNIEnv* env, jclass clazz, jint buf, jint srcRGB, jint dstRGB, jint srcAlpha, jint dstAlpha) {
 
 
-//@line:12979
+//@line:12965
 
 		ext_glBlendFuncSeparateiARB((GLuint)buf, (GLenum)srcRGB, (GLenum)dstRGB, (GLenum)srcAlpha, (GLenum)dstAlpha);
 	
@@ -14181,7 +14167,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFuncSeparateiARB(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMinSampleShadingARB(JNIEnv* env, jclass clazz, jfloat value) {
 
 
-//@line:12983
+//@line:12969
 
 		ext_glMinSampleShadingARB((GLfloat)value);
 	
@@ -14193,7 +14179,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedStringARB(JNIEnv* en
 	unsigned char* string = (unsigned char*)env->GetDirectBufferAddress(obj_string);
 
 
-//@line:12987
+//@line:12973
 
 		ext_glNamedStringARB((GLenum)type, (GLint)namelen, (const GLchar*)(name + nameByteOffset), (GLint)stringlen, (const GLchar*)(string + stringByteOffset));
 	
@@ -14204,7 +14190,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteNamedStringARB(JNIE
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:12991
+//@line:12977
 
 		ext_glDeleteNamedStringARB((GLint)namelen, (const GLchar*)(name + nameByteOffset));
 	
@@ -14216,7 +14202,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompileShaderIncludeARB(J
 	unsigned char* length = (unsigned char*)env->GetDirectBufferAddress(obj_length);
 
 
-//@line:12995
+//@line:12981
 
 		ext_glCompileShaderIncludeARB((GLuint)shader, (GLsizei)count, (const GLchar**)(path + pathByteOffset), (const GLint*)(length + lengthByteOffset));
 	
@@ -14226,7 +14212,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompileShaderIncludeARB(J
 static inline jboolean wrapped_Java_com_badlogic_jglfw_gl_GL_glIsNamedStringARB
 (JNIEnv* env, jclass clazz, jint namelen, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
-//@line:12999
+//@line:12985
 
 		return (jboolean)ext_glIsNamedStringARB((GLint)namelen, (const GLchar*)(name + nameByteOffset));
 	
@@ -14247,7 +14233,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedStringARB(JNIEnv*
 	unsigned char* string = (unsigned char*)env->GetDirectBufferAddress(obj_string);
 
 
-//@line:13003
+//@line:12989
 
 		ext_glGetNamedStringARB((GLint)namelen, (const GLchar*)(name + nameByteOffset), (GLsizei)bufSize, (GLint*)(stringlen + stringlenByteOffset), (GLchar*)(string + stringByteOffset));
 	
@@ -14259,7 +14245,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedStringivARB(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13007
+//@line:12993
 
 		ext_glGetNamedStringivARB((GLint)namelen, (const GLchar*)(name + nameByteOffset), (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -14270,7 +14256,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindFragDataLocationIndex
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:13011
+//@line:12997
 
 		ext_glBindFragDataLocationIndexed((GLuint)program, (GLuint)colorNumber, (GLuint)index, (const GLchar*)(name + nameByteOffset));
 	
@@ -14280,7 +14266,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindFragDataLocationIndex
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetFragDataIndex
 (JNIEnv* env, jclass clazz, jint program, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
-//@line:13015
+//@line:13001
 
 		return (jint)ext_glGetFragDataIndex((GLuint)program, (const GLchar*)(name + nameByteOffset));
 	
@@ -14299,7 +14285,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenSamplers(JNIEnv* env, 
 	unsigned char* samplers = (unsigned char*)env->GetDirectBufferAddress(obj_samplers);
 
 
-//@line:13019
+//@line:13005
 
 		ext_glGenSamplers((GLsizei)count, (GLuint*)(samplers + samplersByteOffset));
 	
@@ -14310,7 +14296,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteSamplers(JNIEnv* en
 	unsigned char* samplers = (unsigned char*)env->GetDirectBufferAddress(obj_samplers);
 
 
-//@line:13023
+//@line:13009
 
 		ext_glDeleteSamplers((GLsizei)count, (const GLuint*)(samplers + samplersByteOffset));
 	
@@ -14320,7 +14306,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteSamplers(JNIEnv* en
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsSampler(JNIEnv* env, jclass clazz, jint sampler) {
 
 
-//@line:13027
+//@line:13013
 
 		return (jboolean)ext_glIsSampler((GLuint)sampler);
 	
@@ -14330,7 +14316,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsSampler(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindSampler(JNIEnv* env, jclass clazz, jint unit, jint sampler) {
 
 
-//@line:13031
+//@line:13017
 
 		ext_glBindSampler((GLuint)unit, (GLuint)sampler);
 	
@@ -14340,7 +14326,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindSampler(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSamplerParameteri(JNIEnv* env, jclass clazz, jint sampler, jint pname, jint param) {
 
 
-//@line:13035
+//@line:13021
 
 		ext_glSamplerParameteri((GLuint)sampler, (GLenum)pname, (GLint)param);
 	
@@ -14351,7 +14337,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSamplerParameteriv(JNIEnv
 	unsigned char* param = (unsigned char*)env->GetDirectBufferAddress(obj_param);
 
 
-//@line:13039
+//@line:13025
 
 		ext_glSamplerParameteriv((GLuint)sampler, (GLenum)pname, (const GLint*)(param + paramByteOffset));
 	
@@ -14361,7 +14347,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSamplerParameteriv(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSamplerParameterf(JNIEnv* env, jclass clazz, jint sampler, jint pname, jfloat param) {
 
 
-//@line:13043
+//@line:13029
 
 		ext_glSamplerParameterf((GLuint)sampler, (GLenum)pname, (GLfloat)param);
 	
@@ -14372,7 +14358,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSamplerParameterfv(JNIEnv
 	unsigned char* param = (unsigned char*)env->GetDirectBufferAddress(obj_param);
 
 
-//@line:13047
+//@line:13033
 
 		ext_glSamplerParameterfv((GLuint)sampler, (GLenum)pname, (const GLfloat*)(param + paramByteOffset));
 	
@@ -14383,7 +14369,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSamplerParameterIiv(JNIEn
 	unsigned char* param = (unsigned char*)env->GetDirectBufferAddress(obj_param);
 
 
-//@line:13051
+//@line:13037
 
 		ext_glSamplerParameterIiv((GLuint)sampler, (GLenum)pname, (const GLint*)(param + paramByteOffset));
 	
@@ -14394,7 +14380,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSamplerParameterIuiv(JNIE
 	unsigned char* param = (unsigned char*)env->GetDirectBufferAddress(obj_param);
 
 
-//@line:13055
+//@line:13041
 
 		ext_glSamplerParameterIuiv((GLuint)sampler, (GLenum)pname, (const GLuint*)(param + paramByteOffset));
 	
@@ -14405,7 +14391,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetSamplerParameteriv(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13059
+//@line:13045
 
 		ext_glGetSamplerParameteriv((GLuint)sampler, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -14416,7 +14402,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetSamplerParameterIiv(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13063
+//@line:13049
 
 		ext_glGetSamplerParameterIiv((GLuint)sampler, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -14427,7 +14413,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetSamplerParameterfv(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13067
+//@line:13053
 
 		ext_glGetSamplerParameterfv((GLuint)sampler, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -14438,7 +14424,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetSamplerParameterIuiv(J
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13071
+//@line:13057
 
 		ext_glGetSamplerParameterIuiv((GLuint)sampler, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
 	
@@ -14448,7 +14434,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetSamplerParameterIuiv(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glQueryCounter(JNIEnv* env, jclass clazz, jint id, jint target) {
 
 
-//@line:13075
+//@line:13061
 
 		ext_glQueryCounter((GLuint)id, (GLenum)target);
 	
@@ -14459,7 +14445,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryObjecti64v(JNIEnv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13079
+//@line:13065
 
 		ext_glGetQueryObjecti64v((GLuint)id, (GLenum)pname, (GLint64*)(params + paramsByteOffset));
 	
@@ -14470,7 +14456,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryObjectui64v(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13083
+//@line:13069
 
 		ext_glGetQueryObjectui64v((GLuint)id, (GLenum)pname, (GLuint64*)(params + paramsByteOffset));
 	
@@ -14480,7 +14466,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryObjectui64v(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexP2ui(JNIEnv* env, jclass clazz, jint type, jint value) {
 
 
-//@line:13087
+//@line:13073
 
 		ext_glVertexP2ui((GLenum)type, (GLuint)value);
 	
@@ -14491,7 +14477,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexP2uiv(JNIEnv* env, 
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13091
+//@line:13077
 
 		ext_glVertexP2uiv((GLenum)type, (const GLuint*)(value + valueByteOffset));
 	
@@ -14501,7 +14487,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexP2uiv(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexP3ui(JNIEnv* env, jclass clazz, jint type, jint value) {
 
 
-//@line:13095
+//@line:13081
 
 		ext_glVertexP3ui((GLenum)type, (GLuint)value);
 	
@@ -14512,7 +14498,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexP3uiv(JNIEnv* env, 
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13099
+//@line:13085
 
 		ext_glVertexP3uiv((GLenum)type, (const GLuint*)(value + valueByteOffset));
 	
@@ -14522,7 +14508,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexP3uiv(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexP4ui(JNIEnv* env, jclass clazz, jint type, jint value) {
 
 
-//@line:13103
+//@line:13089
 
 		ext_glVertexP4ui((GLenum)type, (GLuint)value);
 	
@@ -14533,7 +14519,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexP4uiv(JNIEnv* env, 
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13107
+//@line:13093
 
 		ext_glVertexP4uiv((GLenum)type, (const GLuint*)(value + valueByteOffset));
 	
@@ -14543,7 +14529,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexP4uiv(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordP1ui(JNIEnv* env, jclass clazz, jint type, jint coords) {
 
 
-//@line:13111
+//@line:13097
 
 		ext_glTexCoordP1ui((GLenum)type, (GLuint)coords);
 	
@@ -14554,7 +14540,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordP1uiv(JNIEnv* env
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:13115
+//@line:13101
 
 		ext_glTexCoordP1uiv((GLenum)type, (const GLuint*)(coords + coordsByteOffset));
 	
@@ -14564,7 +14550,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordP1uiv(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordP2ui(JNIEnv* env, jclass clazz, jint type, jint coords) {
 
 
-//@line:13119
+//@line:13105
 
 		ext_glTexCoordP2ui((GLenum)type, (GLuint)coords);
 	
@@ -14575,7 +14561,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordP2uiv(JNIEnv* env
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:13123
+//@line:13109
 
 		ext_glTexCoordP2uiv((GLenum)type, (const GLuint*)(coords + coordsByteOffset));
 	
@@ -14585,7 +14571,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordP2uiv(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordP3ui(JNIEnv* env, jclass clazz, jint type, jint coords) {
 
 
-//@line:13127
+//@line:13113
 
 		ext_glTexCoordP3ui((GLenum)type, (GLuint)coords);
 	
@@ -14596,7 +14582,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordP3uiv(JNIEnv* env
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:13131
+//@line:13117
 
 		ext_glTexCoordP3uiv((GLenum)type, (const GLuint*)(coords + coordsByteOffset));
 	
@@ -14606,7 +14592,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordP3uiv(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordP4ui(JNIEnv* env, jclass clazz, jint type, jint coords) {
 
 
-//@line:13135
+//@line:13121
 
 		ext_glTexCoordP4ui((GLenum)type, (GLuint)coords);
 	
@@ -14617,7 +14603,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordP4uiv(JNIEnv* env
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:13139
+//@line:13125
 
 		ext_glTexCoordP4uiv((GLenum)type, (const GLuint*)(coords + coordsByteOffset));
 	
@@ -14627,7 +14613,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordP4uiv(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoordP1ui(JNIEnv* env, jclass clazz, jint texture, jint type, jint coords) {
 
 
-//@line:13143
+//@line:13129
 
 		ext_glMultiTexCoordP1ui((GLenum)texture, (GLenum)type, (GLuint)coords);
 	
@@ -14638,7 +14624,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoordP1uiv(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:13147
+//@line:13133
 
 		ext_glMultiTexCoordP1uiv((GLenum)texture, (GLenum)type, (const GLuint*)(coords + coordsByteOffset));
 	
@@ -14648,7 +14634,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoordP1uiv(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoordP2ui(JNIEnv* env, jclass clazz, jint texture, jint type, jint coords) {
 
 
-//@line:13151
+//@line:13137
 
 		ext_glMultiTexCoordP2ui((GLenum)texture, (GLenum)type, (GLuint)coords);
 	
@@ -14659,7 +14645,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoordP2uiv(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:13155
+//@line:13141
 
 		ext_glMultiTexCoordP2uiv((GLenum)texture, (GLenum)type, (const GLuint*)(coords + coordsByteOffset));
 	
@@ -14669,7 +14655,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoordP2uiv(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoordP3ui(JNIEnv* env, jclass clazz, jint texture, jint type, jint coords) {
 
 
-//@line:13159
+//@line:13145
 
 		ext_glMultiTexCoordP3ui((GLenum)texture, (GLenum)type, (GLuint)coords);
 	
@@ -14680,7 +14666,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoordP3uiv(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:13163
+//@line:13149
 
 		ext_glMultiTexCoordP3uiv((GLenum)texture, (GLenum)type, (const GLuint*)(coords + coordsByteOffset));
 	
@@ -14690,7 +14676,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoordP3uiv(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoordP4ui(JNIEnv* env, jclass clazz, jint texture, jint type, jint coords) {
 
 
-//@line:13167
+//@line:13153
 
 		ext_glMultiTexCoordP4ui((GLenum)texture, (GLenum)type, (GLuint)coords);
 	
@@ -14701,7 +14687,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoordP4uiv(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:13171
+//@line:13157
 
 		ext_glMultiTexCoordP4uiv((GLenum)texture, (GLenum)type, (const GLuint*)(coords + coordsByteOffset));
 	
@@ -14711,7 +14697,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoordP4uiv(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalP3ui(JNIEnv* env, jclass clazz, jint type, jint coords) {
 
 
-//@line:13175
+//@line:13161
 
 		ext_glNormalP3ui((GLenum)type, (GLuint)coords);
 	
@@ -14722,7 +14708,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalP3uiv(JNIEnv* env, 
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:13179
+//@line:13165
 
 		ext_glNormalP3uiv((GLenum)type, (const GLuint*)(coords + coordsByteOffset));
 	
@@ -14732,7 +14718,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalP3uiv(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorP3ui(JNIEnv* env, jclass clazz, jint type, jint color) {
 
 
-//@line:13183
+//@line:13169
 
 		ext_glColorP3ui((GLenum)type, (GLuint)color);
 	
@@ -14743,7 +14729,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorP3uiv(JNIEnv* env, j
 	unsigned char* color = (unsigned char*)env->GetDirectBufferAddress(obj_color);
 
 
-//@line:13187
+//@line:13173
 
 		ext_glColorP3uiv((GLenum)type, (const GLuint*)(color + colorByteOffset));
 	
@@ -14753,7 +14739,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorP3uiv(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorP4ui(JNIEnv* env, jclass clazz, jint type, jint color) {
 
 
-//@line:13191
+//@line:13177
 
 		ext_glColorP4ui((GLenum)type, (GLuint)color);
 	
@@ -14764,7 +14750,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorP4uiv(JNIEnv* env, j
 	unsigned char* color = (unsigned char*)env->GetDirectBufferAddress(obj_color);
 
 
-//@line:13195
+//@line:13181
 
 		ext_glColorP4uiv((GLenum)type, (const GLuint*)(color + colorByteOffset));
 	
@@ -14774,7 +14760,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorP4uiv(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColorP3ui(JNIEnv* env, jclass clazz, jint type, jint color) {
 
 
-//@line:13199
+//@line:13185
 
 		ext_glSecondaryColorP3ui((GLenum)type, (GLuint)color);
 	
@@ -14785,7 +14771,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColorP3uiv(JNIEn
 	unsigned char* color = (unsigned char*)env->GetDirectBufferAddress(obj_color);
 
 
-//@line:13203
+//@line:13189
 
 		ext_glSecondaryColorP3uiv((GLenum)type, (const GLuint*)(color + colorByteOffset));
 	
@@ -14795,7 +14781,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColorP3uiv(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribP1ui(JNIEnv* env, jclass clazz, jint index, jint type, jboolean normalized, jint value) {
 
 
-//@line:13207
+//@line:13193
 
 		ext_glVertexAttribP1ui((GLuint)index, (GLenum)type, (GLboolean)normalized, (GLuint)value);
 	
@@ -14806,7 +14792,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribP1uiv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13211
+//@line:13197
 
 		ext_glVertexAttribP1uiv((GLuint)index, (GLenum)type, (GLboolean)normalized, (const GLuint*)(value + valueByteOffset));
 	
@@ -14816,7 +14802,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribP1uiv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribP2ui(JNIEnv* env, jclass clazz, jint index, jint type, jboolean normalized, jint value) {
 
 
-//@line:13215
+//@line:13201
 
 		ext_glVertexAttribP2ui((GLuint)index, (GLenum)type, (GLboolean)normalized, (GLuint)value);
 	
@@ -14827,7 +14813,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribP2uiv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13219
+//@line:13205
 
 		ext_glVertexAttribP2uiv((GLuint)index, (GLenum)type, (GLboolean)normalized, (const GLuint*)(value + valueByteOffset));
 	
@@ -14837,7 +14823,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribP2uiv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribP3ui(JNIEnv* env, jclass clazz, jint index, jint type, jboolean normalized, jint value) {
 
 
-//@line:13223
+//@line:13209
 
 		ext_glVertexAttribP3ui((GLuint)index, (GLenum)type, (GLboolean)normalized, (GLuint)value);
 	
@@ -14848,7 +14834,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribP3uiv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13227
+//@line:13213
 
 		ext_glVertexAttribP3uiv((GLuint)index, (GLenum)type, (GLboolean)normalized, (const GLuint*)(value + valueByteOffset));
 	
@@ -14858,7 +14844,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribP3uiv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribP4ui(JNIEnv* env, jclass clazz, jint index, jint type, jboolean normalized, jint value) {
 
 
-//@line:13231
+//@line:13217
 
 		ext_glVertexAttribP4ui((GLuint)index, (GLenum)type, (GLboolean)normalized, (GLuint)value);
 	
@@ -14869,7 +14855,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribP4uiv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13235
+//@line:13221
 
 		ext_glVertexAttribP4uiv((GLuint)index, (GLenum)type, (GLboolean)normalized, (const GLuint*)(value + valueByteOffset));
 	
@@ -14880,7 +14866,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawArraysIndirect(JNIEnv
 	unsigned char* indirect = (unsigned char*)env->GetDirectBufferAddress(obj_indirect);
 
 
-//@line:13239
+//@line:13225
 
 		ext_glDrawArraysIndirect((GLenum)mode, (const GLvoid*)(indirect + indirectByteOffset));
 	
@@ -14891,7 +14877,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementsIndirect(JNIE
 	unsigned char* indirect = (unsigned char*)env->GetDirectBufferAddress(obj_indirect);
 
 
-//@line:13243
+//@line:13229
 
 		ext_glDrawElementsIndirect((GLenum)mode, (GLenum)type, (const GLvoid*)(indirect + indirectByteOffset));
 	
@@ -14901,7 +14887,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementsIndirect(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1d(JNIEnv* env, jclass clazz, jint location, jdouble x) {
 
 
-//@line:13247
+//@line:13233
 
 		ext_glUniform1d((GLint)location, (GLdouble)x);
 	
@@ -14911,7 +14897,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1d(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2d(JNIEnv* env, jclass clazz, jint location, jdouble x, jdouble y) {
 
 
-//@line:13251
+//@line:13237
 
 		ext_glUniform2d((GLint)location, (GLdouble)x, (GLdouble)y);
 	
@@ -14921,7 +14907,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2d(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3d(JNIEnv* env, jclass clazz, jint location, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:13255
+//@line:13241
 
 		ext_glUniform3d((GLint)location, (GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -14931,7 +14917,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3d(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4d(JNIEnv* env, jclass clazz, jint location, jdouble x, jdouble y, jdouble z, jdouble w) {
 
 
-//@line:13259
+//@line:13245
 
 		ext_glUniform4d((GLint)location, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -14942,7 +14928,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1dv(JNIEnv* env, j
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13263
+//@line:13249
 
 		ext_glUniform1dv((GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
 	
@@ -14953,7 +14939,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2dv(JNIEnv* env, j
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13267
+//@line:13253
 
 		ext_glUniform2dv((GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
 	
@@ -14964,7 +14950,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3dv(JNIEnv* env, j
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13271
+//@line:13257
 
 		ext_glUniform3dv((GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
 	
@@ -14975,7 +14961,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4dv(JNIEnv* env, j
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13275
+//@line:13261
 
 		ext_glUniform4dv((GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
 	
@@ -14986,7 +14972,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix2dv(JNIEnv* 
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13279
+//@line:13265
 
 		ext_glUniformMatrix2dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -14997,7 +14983,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix3dv(JNIEnv* 
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13283
+//@line:13269
 
 		ext_glUniformMatrix3dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15008,7 +14994,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix4dv(JNIEnv* 
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13287
+//@line:13273
 
 		ext_glUniformMatrix4dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15019,7 +15005,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix2x3dv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13291
+//@line:13277
 
 		ext_glUniformMatrix2x3dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15030,7 +15016,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix2x4dv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13295
+//@line:13281
 
 		ext_glUniformMatrix2x4dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15041,7 +15027,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix3x2dv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13299
+//@line:13285
 
 		ext_glUniformMatrix3x2dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15052,7 +15038,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix3x4dv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13303
+//@line:13289
 
 		ext_glUniformMatrix3x4dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15063,7 +15049,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix4x2dv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13307
+//@line:13293
 
 		ext_glUniformMatrix4x2dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15074,7 +15060,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix4x3dv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13311
+//@line:13297
 
 		ext_glUniformMatrix4x3dv((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15085,7 +15071,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformdv(JNIEnv* env,
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13315
+//@line:13301
 
 		ext_glGetUniformdv((GLuint)program, (GLint)location, (GLdouble*)(params + paramsByteOffset));
 	
@@ -15095,7 +15081,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformdv(JNIEnv* env,
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetSubroutineUniformLocation
 (JNIEnv* env, jclass clazz, jint program, jint shadertype, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
-//@line:13319
+//@line:13305
 
 		return (jint)ext_glGetSubroutineUniformLocation((GLuint)program, (GLenum)shadertype, (const GLchar*)(name + nameByteOffset));
 	
@@ -15113,7 +15099,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetSubroutineUniformLocat
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetSubroutineIndex
 (JNIEnv* env, jclass clazz, jint program, jint shadertype, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
-//@line:13323
+//@line:13309
 
 		return (jint)ext_glGetSubroutineIndex((GLuint)program, (GLenum)shadertype, (const GLchar*)(name + nameByteOffset));
 	
@@ -15132,7 +15118,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveSubroutineUnifor
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:13327
+//@line:13313
 
 		ext_glGetActiveSubroutineUniformiv((GLuint)program, (GLenum)shadertype, (GLuint)index, (GLenum)pname, (GLint*)(values + valuesByteOffset));
 	
@@ -15144,7 +15130,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveSubroutineUnifor
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:13331
+//@line:13317
 
 		ext_glGetActiveSubroutineUniformName((GLuint)program, (GLenum)shadertype, (GLuint)index, (GLsizei)bufsize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(name + nameByteOffset));
 	
@@ -15156,7 +15142,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveSubroutineName(J
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:13335
+//@line:13321
 
 		ext_glGetActiveSubroutineName((GLuint)program, (GLenum)shadertype, (GLuint)index, (GLsizei)bufsize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(name + nameByteOffset));
 	
@@ -15167,7 +15153,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformSubroutinesuiv(JNI
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:13339
+//@line:13325
 
 		ext_glUniformSubroutinesuiv((GLenum)shadertype, (GLsizei)count, (const GLuint*)(indices + indicesByteOffset));
 	
@@ -15178,7 +15164,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformSubroutineuiv(J
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13343
+//@line:13329
 
 		ext_glGetUniformSubroutineuiv((GLenum)shadertype, (GLint)location, (GLuint*)(params + paramsByteOffset));
 	
@@ -15189,7 +15175,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramStageiv(JNIEnv*
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:13347
+//@line:13333
 
 		ext_glGetProgramStageiv((GLuint)program, (GLenum)shadertype, (GLenum)pname, (GLint*)(values + valuesByteOffset));
 	
@@ -15199,7 +15185,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramStageiv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPatchParameteri(JNIEnv* env, jclass clazz, jint pname, jint value) {
 
 
-//@line:13351
+//@line:13337
 
 		ext_glPatchParameteri((GLenum)pname, (GLint)value);
 	
@@ -15210,7 +15196,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPatchParameterfv(JNIEnv* 
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:13355
+//@line:13341
 
 		ext_glPatchParameterfv((GLenum)pname, (const GLfloat*)(values + valuesByteOffset));
 	
@@ -15220,7 +15206,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPatchParameterfv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindTransformFeedback(JNIEnv* env, jclass clazz, jint target, jint id) {
 
 
-//@line:13359
+//@line:13345
 
 		ext_glBindTransformFeedback((GLenum)target, (GLuint)id);
 	
@@ -15231,7 +15217,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteTransformFeedbacks(
 	unsigned char* ids = (unsigned char*)env->GetDirectBufferAddress(obj_ids);
 
 
-//@line:13363
+//@line:13349
 
 		ext_glDeleteTransformFeedbacks((GLsizei)n, (const GLuint*)(ids + idsByteOffset));
 	
@@ -15242,7 +15228,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenTransformFeedbacks(JNI
 	unsigned char* ids = (unsigned char*)env->GetDirectBufferAddress(obj_ids);
 
 
-//@line:13367
+//@line:13353
 
 		ext_glGenTransformFeedbacks((GLsizei)n, (GLuint*)(ids + idsByteOffset));
 	
@@ -15252,7 +15238,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenTransformFeedbacks(JNI
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsTransformFeedback(JNIEnv* env, jclass clazz, jint id) {
 
 
-//@line:13371
+//@line:13357
 
 		return (jboolean)ext_glIsTransformFeedback((GLuint)id);
 	
@@ -15262,7 +15248,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsTransformFeedback(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPauseTransformFeedback(JNIEnv* env, jclass clazz) {
 
 
-//@line:13375
+//@line:13361
 
 		ext_glPauseTransformFeedback();
 	
@@ -15272,7 +15258,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPauseTransformFeedback(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glResumeTransformFeedback(JNIEnv* env, jclass clazz) {
 
 
-//@line:13379
+//@line:13365
 
 		ext_glResumeTransformFeedback();
 	
@@ -15282,7 +15268,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glResumeTransformFeedback(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawTransformFeedback(JNIEnv* env, jclass clazz, jint mode, jint id) {
 
 
-//@line:13383
+//@line:13369
 
 		ext_glDrawTransformFeedback((GLenum)mode, (GLuint)id);
 	
@@ -15292,7 +15278,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawTransformFeedback(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawTransformFeedbackStream(JNIEnv* env, jclass clazz, jint mode, jint id, jint stream) {
 
 
-//@line:13387
+//@line:13373
 
 		ext_glDrawTransformFeedbackStream((GLenum)mode, (GLuint)id, (GLuint)stream);
 	
@@ -15302,7 +15288,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawTransformFeedbackStre
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginQueryIndexed(JNIEnv* env, jclass clazz, jint target, jint index, jint id) {
 
 
-//@line:13391
+//@line:13377
 
 		ext_glBeginQueryIndexed((GLenum)target, (GLuint)index, (GLuint)id);
 	
@@ -15312,7 +15298,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginQueryIndexed(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndQueryIndexed(JNIEnv* env, jclass clazz, jint target, jint index) {
 
 
-//@line:13395
+//@line:13381
 
 		ext_glEndQueryIndexed((GLenum)target, (GLuint)index);
 	
@@ -15323,7 +15309,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryIndexediv(JNIEnv*
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13399
+//@line:13385
 
 		ext_glGetQueryIndexediv((GLenum)target, (GLuint)index, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -15333,7 +15319,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryIndexediv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReleaseShaderCompiler(JNIEnv* env, jclass clazz) {
 
 
-//@line:13403
+//@line:13389
 
 		ext_glReleaseShaderCompiler();
 	
@@ -15345,7 +15331,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderBinary(JNIEnv* env,
 	unsigned char* binary = (unsigned char*)env->GetDirectBufferAddress(obj_binary);
 
 
-//@line:13407
+//@line:13393
 
 		ext_glShaderBinary((GLsizei)count, (const GLuint*)(shaders + shadersByteOffset), (GLenum)binaryformat, (const GLvoid*)(binary + binaryByteOffset), (GLsizei)length);
 	
@@ -15357,7 +15343,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderPrecisionFormat(
 	unsigned char* precision = (unsigned char*)env->GetDirectBufferAddress(obj_precision);
 
 
-//@line:13411
+//@line:13397
 
 		ext_glGetShaderPrecisionFormat((GLenum)shadertype, (GLenum)precisiontype, (GLint*)(range + rangeByteOffset), (GLint*)(precision + precisionByteOffset));
 	
@@ -15367,7 +15353,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderPrecisionFormat(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthRangef(JNIEnv* env, jclass clazz, jfloat n, jfloat f) {
 
 
-//@line:13415
+//@line:13401
 
 		ext_glDepthRangef((GLfloat)n, (GLfloat)f);
 	
@@ -15377,7 +15363,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthRangef(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearDepthf(JNIEnv* env, jclass clazz, jfloat d) {
 
 
-//@line:13419
+//@line:13405
 
 		ext_glClearDepthf((GLfloat)d);
 	
@@ -15390,7 +15376,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramBinary(JNIEnv* 
 	unsigned char* binary = (unsigned char*)env->GetDirectBufferAddress(obj_binary);
 
 
-//@line:13423
+//@line:13409
 
 		ext_glGetProgramBinary((GLuint)program, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLenum*)(binaryFormat + binaryFormatByteOffset), (GLvoid*)(binary + binaryByteOffset));
 	
@@ -15401,7 +15387,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramBinary(JNIEnv* env
 	unsigned char* binary = (unsigned char*)env->GetDirectBufferAddress(obj_binary);
 
 
-//@line:13427
+//@line:13413
 
 		ext_glProgramBinary((GLuint)program, (GLenum)binaryFormat, (const GLvoid*)(binary + binaryByteOffset), (GLsizei)length);
 	
@@ -15411,7 +15397,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramBinary(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramParameteri(JNIEnv* env, jclass clazz, jint program, jint pname, jint value) {
 
 
-//@line:13431
+//@line:13417
 
 		ext_glProgramParameteri((GLuint)program, (GLenum)pname, (GLint)value);
 	
@@ -15421,7 +15407,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramParameteri(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUseProgramStages(JNIEnv* env, jclass clazz, jint pipeline, jint stages, jint program) {
 
 
-//@line:13435
+//@line:13421
 
 		ext_glUseProgramStages((GLuint)pipeline, (GLbitfield)stages, (GLuint)program);
 	
@@ -15431,7 +15417,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUseProgramStages(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glActiveShaderProgram(JNIEnv* env, jclass clazz, jint pipeline, jint program) {
 
 
-//@line:13439
+//@line:13425
 
 		ext_glActiveShaderProgram((GLuint)pipeline, (GLuint)program);
 	
@@ -15441,7 +15427,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glActiveShaderProgram(JNIEn
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glCreateShaderProgramv
 (JNIEnv* env, jclass clazz, jint type, jint count, jobject obj_strings, jint stringsByteOffset, unsigned char* strings) {
 
-//@line:13443
+//@line:13429
 
 		return (jint)ext_glCreateShaderProgramv((GLenum)type, (GLsizei)count, (const GLchar**)(strings + stringsByteOffset));
 	
@@ -15459,7 +15445,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCreateShaderProgramv(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindProgramPipeline(JNIEnv* env, jclass clazz, jint pipeline) {
 
 
-//@line:13447
+//@line:13433
 
 		ext_glBindProgramPipeline((GLuint)pipeline);
 	
@@ -15470,7 +15456,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteProgramPipelines(JN
 	unsigned char* pipelines = (unsigned char*)env->GetDirectBufferAddress(obj_pipelines);
 
 
-//@line:13451
+//@line:13437
 
 		ext_glDeleteProgramPipelines((GLsizei)n, (const GLuint*)(pipelines + pipelinesByteOffset));
 	
@@ -15481,7 +15467,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenProgramPipelines(JNIEn
 	unsigned char* pipelines = (unsigned char*)env->GetDirectBufferAddress(obj_pipelines);
 
 
-//@line:13455
+//@line:13441
 
 		ext_glGenProgramPipelines((GLsizei)n, (GLuint*)(pipelines + pipelinesByteOffset));
 	
@@ -15491,7 +15477,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenProgramPipelines(JNIEn
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsProgramPipeline(JNIEnv* env, jclass clazz, jint pipeline) {
 
 
-//@line:13459
+//@line:13445
 
 		return (jboolean)ext_glIsProgramPipeline((GLuint)pipeline);
 	
@@ -15502,7 +15488,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramPipelineiv(JNIE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13463
+//@line:13449
 
 		ext_glGetProgramPipelineiv((GLuint)pipeline, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -15512,7 +15498,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramPipelineiv(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1i(JNIEnv* env, jclass clazz, jint program, jint location, jint v0) {
 
 
-//@line:13467
+//@line:13453
 
 		ext_glProgramUniform1i((GLuint)program, (GLint)location, (GLint)v0);
 	
@@ -15523,7 +15509,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1iv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13471
+//@line:13457
 
 		ext_glProgramUniform1iv((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -15533,7 +15519,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1iv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1f(JNIEnv* env, jclass clazz, jint program, jint location, jfloat v0) {
 
 
-//@line:13475
+//@line:13461
 
 		ext_glProgramUniform1f((GLuint)program, (GLint)location, (GLfloat)v0);
 	
@@ -15544,7 +15530,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1fv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13479
+//@line:13465
 
 		ext_glProgramUniform1fv((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -15554,7 +15540,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1fv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1d(JNIEnv* env, jclass clazz, jint program, jint location, jdouble v0) {
 
 
-//@line:13483
+//@line:13469
 
 		ext_glProgramUniform1d((GLuint)program, (GLint)location, (GLdouble)v0);
 	
@@ -15565,7 +15551,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1dv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13487
+//@line:13473
 
 		ext_glProgramUniform1dv((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15575,7 +15561,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1dv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1ui(JNIEnv* env, jclass clazz, jint program, jint location, jint v0) {
 
 
-//@line:13491
+//@line:13477
 
 		ext_glProgramUniform1ui((GLuint)program, (GLint)location, (GLuint)v0);
 	
@@ -15586,7 +15572,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1uiv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13495
+//@line:13481
 
 		ext_glProgramUniform1uiv((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
@@ -15596,7 +15582,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1uiv(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2i(JNIEnv* env, jclass clazz, jint program, jint location, jint v0, jint v1) {
 
 
-//@line:13499
+//@line:13485
 
 		ext_glProgramUniform2i((GLuint)program, (GLint)location, (GLint)v0, (GLint)v1);
 	
@@ -15607,7 +15593,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2iv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13503
+//@line:13489
 
 		ext_glProgramUniform2iv((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -15617,7 +15603,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2iv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2f(JNIEnv* env, jclass clazz, jint program, jint location, jfloat v0, jfloat v1) {
 
 
-//@line:13507
+//@line:13493
 
 		ext_glProgramUniform2f((GLuint)program, (GLint)location, (GLfloat)v0, (GLfloat)v1);
 	
@@ -15628,7 +15614,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2fv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13511
+//@line:13497
 
 		ext_glProgramUniform2fv((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -15638,7 +15624,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2fv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2d(JNIEnv* env, jclass clazz, jint program, jint location, jdouble v0, jdouble v1) {
 
 
-//@line:13515
+//@line:13501
 
 		ext_glProgramUniform2d((GLuint)program, (GLint)location, (GLdouble)v0, (GLdouble)v1);
 	
@@ -15649,7 +15635,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2dv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13519
+//@line:13505
 
 		ext_glProgramUniform2dv((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15659,7 +15645,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2dv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2ui(JNIEnv* env, jclass clazz, jint program, jint location, jint v0, jint v1) {
 
 
-//@line:13523
+//@line:13509
 
 		ext_glProgramUniform2ui((GLuint)program, (GLint)location, (GLuint)v0, (GLuint)v1);
 	
@@ -15670,7 +15656,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2uiv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13527
+//@line:13513
 
 		ext_glProgramUniform2uiv((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
@@ -15680,7 +15666,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2uiv(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3i(JNIEnv* env, jclass clazz, jint program, jint location, jint v0, jint v1, jint v2) {
 
 
-//@line:13531
+//@line:13517
 
 		ext_glProgramUniform3i((GLuint)program, (GLint)location, (GLint)v0, (GLint)v1, (GLint)v2);
 	
@@ -15691,7 +15677,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3iv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13535
+//@line:13521
 
 		ext_glProgramUniform3iv((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -15701,7 +15687,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3iv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3f(JNIEnv* env, jclass clazz, jint program, jint location, jfloat v0, jfloat v1, jfloat v2) {
 
 
-//@line:13539
+//@line:13525
 
 		ext_glProgramUniform3f((GLuint)program, (GLint)location, (GLfloat)v0, (GLfloat)v1, (GLfloat)v2);
 	
@@ -15712,7 +15698,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3fv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13543
+//@line:13529
 
 		ext_glProgramUniform3fv((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -15722,7 +15708,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3fv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3d(JNIEnv* env, jclass clazz, jint program, jint location, jdouble v0, jdouble v1, jdouble v2) {
 
 
-//@line:13547
+//@line:13533
 
 		ext_glProgramUniform3d((GLuint)program, (GLint)location, (GLdouble)v0, (GLdouble)v1, (GLdouble)v2);
 	
@@ -15733,7 +15719,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3dv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13551
+//@line:13537
 
 		ext_glProgramUniform3dv((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15743,7 +15729,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3dv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3ui(JNIEnv* env, jclass clazz, jint program, jint location, jint v0, jint v1, jint v2) {
 
 
-//@line:13555
+//@line:13541
 
 		ext_glProgramUniform3ui((GLuint)program, (GLint)location, (GLuint)v0, (GLuint)v1, (GLuint)v2);
 	
@@ -15754,7 +15740,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3uiv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13559
+//@line:13545
 
 		ext_glProgramUniform3uiv((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
@@ -15764,7 +15750,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3uiv(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4i(JNIEnv* env, jclass clazz, jint program, jint location, jint v0, jint v1, jint v2, jint v3) {
 
 
-//@line:13563
+//@line:13549
 
 		ext_glProgramUniform4i((GLuint)program, (GLint)location, (GLint)v0, (GLint)v1, (GLint)v2, (GLint)v3);
 	
@@ -15775,7 +15761,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4iv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13567
+//@line:13553
 
 		ext_glProgramUniform4iv((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -15785,7 +15771,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4iv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4f(JNIEnv* env, jclass clazz, jint program, jint location, jfloat v0, jfloat v1, jfloat v2, jfloat v3) {
 
 
-//@line:13571
+//@line:13557
 
 		ext_glProgramUniform4f((GLuint)program, (GLint)location, (GLfloat)v0, (GLfloat)v1, (GLfloat)v2, (GLfloat)v3);
 	
@@ -15796,7 +15782,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4fv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13575
+//@line:13561
 
 		ext_glProgramUniform4fv((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -15806,7 +15792,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4fv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4d(JNIEnv* env, jclass clazz, jint program, jint location, jdouble v0, jdouble v1, jdouble v2, jdouble v3) {
 
 
-//@line:13579
+//@line:13565
 
 		ext_glProgramUniform4d((GLuint)program, (GLint)location, (GLdouble)v0, (GLdouble)v1, (GLdouble)v2, (GLdouble)v3);
 	
@@ -15817,7 +15803,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4dv(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13583
+//@line:13569
 
 		ext_glProgramUniform4dv((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15827,7 +15813,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4dv(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4ui(JNIEnv* env, jclass clazz, jint program, jint location, jint v0, jint v1, jint v2, jint v3) {
 
 
-//@line:13587
+//@line:13573
 
 		ext_glProgramUniform4ui((GLuint)program, (GLint)location, (GLuint)v0, (GLuint)v1, (GLuint)v2, (GLuint)v3);
 	
@@ -15838,7 +15824,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4uiv(JNIEnv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13591
+//@line:13577
 
 		ext_glProgramUniform4uiv((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
@@ -15849,7 +15835,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix2fv(J
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13595
+//@line:13581
 
 		ext_glProgramUniformMatrix2fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -15860,7 +15846,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix3fv(J
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13599
+//@line:13585
 
 		ext_glProgramUniformMatrix3fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -15871,7 +15857,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix4fv(J
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13603
+//@line:13589
 
 		ext_glProgramUniformMatrix4fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -15882,7 +15868,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix2dv(J
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13607
+//@line:13593
 
 		ext_glProgramUniformMatrix2dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15893,7 +15879,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix3dv(J
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13611
+//@line:13597
 
 		ext_glProgramUniformMatrix3dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15904,7 +15890,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix4dv(J
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13615
+//@line:13601
 
 		ext_glProgramUniformMatrix4dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15915,7 +15901,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix2x3fv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13619
+//@line:13605
 
 		ext_glProgramUniformMatrix2x3fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -15926,7 +15912,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix3x2fv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13623
+//@line:13609
 
 		ext_glProgramUniformMatrix3x2fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -15937,7 +15923,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix2x4fv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13627
+//@line:13613
 
 		ext_glProgramUniformMatrix2x4fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -15948,7 +15934,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix4x2fv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13631
+//@line:13617
 
 		ext_glProgramUniformMatrix4x2fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -15959,7 +15945,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix3x4fv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13635
+//@line:13621
 
 		ext_glProgramUniformMatrix3x4fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -15970,7 +15956,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix4x3fv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13639
+//@line:13625
 
 		ext_glProgramUniformMatrix4x3fv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -15981,7 +15967,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix2x3dv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13643
+//@line:13629
 
 		ext_glProgramUniformMatrix2x3dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -15992,7 +15978,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix3x2dv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13647
+//@line:13633
 
 		ext_glProgramUniformMatrix3x2dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -16003,7 +15989,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix2x4dv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13651
+//@line:13637
 
 		ext_glProgramUniformMatrix2x4dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -16014,7 +16000,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix4x2dv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13655
+//@line:13641
 
 		ext_glProgramUniformMatrix4x2dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -16025,7 +16011,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix3x4dv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13659
+//@line:13645
 
 		ext_glProgramUniformMatrix3x4dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -16036,7 +16022,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix4x3dv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:13663
+//@line:13649
 
 		ext_glProgramUniformMatrix4x3dv((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -16046,7 +16032,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix4x3dv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glValidateProgramPipeline(JNIEnv* env, jclass clazz, jint pipeline) {
 
 
-//@line:13667
+//@line:13653
 
 		ext_glValidateProgramPipeline((GLuint)pipeline);
 	
@@ -16058,7 +16044,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramPipelineInfoLog
 	unsigned char* infoLog = (unsigned char*)env->GetDirectBufferAddress(obj_infoLog);
 
 
-//@line:13671
+//@line:13657
 
 		ext_glGetProgramPipelineInfoLog((GLuint)pipeline, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(infoLog + infoLogByteOffset));
 	
@@ -16068,7 +16054,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramPipelineInfoLog
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL1d(JNIEnv* env, jclass clazz, jint index, jdouble x) {
 
 
-//@line:13675
+//@line:13661
 
 		ext_glVertexAttribL1d((GLuint)index, (GLdouble)x);
 	
@@ -16078,7 +16064,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL1d(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL2d(JNIEnv* env, jclass clazz, jint index, jdouble x, jdouble y) {
 
 
-//@line:13679
+//@line:13665
 
 		ext_glVertexAttribL2d((GLuint)index, (GLdouble)x, (GLdouble)y);
 	
@@ -16088,7 +16074,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL2d(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL3d(JNIEnv* env, jclass clazz, jint index, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:13683
+//@line:13669
 
 		ext_glVertexAttribL3d((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -16098,7 +16084,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL3d(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL4d(JNIEnv* env, jclass clazz, jint index, jdouble x, jdouble y, jdouble z, jdouble w) {
 
 
-//@line:13687
+//@line:13673
 
 		ext_glVertexAttribL4d((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -16109,7 +16095,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL1dv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:13691
+//@line:13677
 
 		ext_glVertexAttribL1dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -16120,7 +16106,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL2dv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:13695
+//@line:13681
 
 		ext_glVertexAttribL2dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -16131,7 +16117,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL3dv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:13699
+//@line:13685
 
 		ext_glVertexAttribL3dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -16142,7 +16128,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL4dv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:13703
+//@line:13689
 
 		ext_glVertexAttribL4dv((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -16153,7 +16139,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribLPointer(JNIE
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:13707
+//@line:13693
 
 		ext_glVertexAttribLPointer((GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -16164,7 +16150,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribLdv(JNIEnv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13711
+//@line:13697
 
 		ext_glGetVertexAttribLdv((GLuint)index, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
 	
@@ -16175,7 +16161,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glViewportArrayv(JNIEnv* en
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:13715
+//@line:13701
 
 		ext_glViewportArrayv((GLuint)first, (GLsizei)count, (const GLfloat*)(v + vByteOffset));
 	
@@ -16185,7 +16171,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glViewportArrayv(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glViewportIndexedf(JNIEnv* env, jclass clazz, jint index, jfloat x, jfloat y, jfloat w, jfloat h) {
 
 
-//@line:13719
+//@line:13705
 
 		ext_glViewportIndexedf((GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)w, (GLfloat)h);
 	
@@ -16196,7 +16182,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glViewportIndexedfv(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:13723
+//@line:13709
 
 		ext_glViewportIndexedfv((GLuint)index, (const GLfloat*)(v + vByteOffset));
 	
@@ -16207,7 +16193,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glScissorArrayv(JNIEnv* env
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:13727
+//@line:13713
 
 		ext_glScissorArrayv((GLuint)first, (GLsizei)count, (const GLint*)(v + vByteOffset));
 	
@@ -16217,7 +16203,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glScissorArrayv(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glScissorIndexed(JNIEnv* env, jclass clazz, jint index, jint left, jint bottom, jint width, jint height) {
 
 
-//@line:13731
+//@line:13717
 
 		ext_glScissorIndexed((GLuint)index, (GLint)left, (GLint)bottom, (GLsizei)width, (GLsizei)height);
 	
@@ -16228,7 +16214,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glScissorIndexedv(JNIEnv* e
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:13735
+//@line:13721
 
 		ext_glScissorIndexedv((GLuint)index, (const GLint*)(v + vByteOffset));
 	
@@ -16239,7 +16225,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthRangeArrayv(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:13739
+//@line:13725
 
 		ext_glDepthRangeArrayv((GLuint)first, (GLsizei)count, (const GLdouble*)(v + vByteOffset));
 	
@@ -16249,7 +16235,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthRangeArrayv(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthRangeIndexed(JNIEnv* env, jclass clazz, jint index, jdouble n, jdouble f) {
 
 
-//@line:13743
+//@line:13729
 
 		ext_glDepthRangeIndexed((GLuint)index, (GLdouble)n, (GLdouble)f);
 	
@@ -16259,7 +16245,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthRangeIndexed(JNIEnv*
 static inline jlong wrapped_Java_com_badlogic_jglfw_gl_GL_glCreateSyncFromCLeventARB
 (JNIEnv* env, jclass clazz, jobject obj_context, jint contextByteOffset, jobject obj_event, jint eventByteOffset, jint flags, unsigned char* context, unsigned char* event) {
 
-//@line:13747
+//@line:13733
 
 		return (jlong)ext_glCreateSyncFromCLeventARB((struct _cl_context*)(context + contextByteOffset), (struct _cl_event*)(event + eventByteOffset), (GLbitfield)flags);
 	
@@ -16278,7 +16264,7 @@ JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glCreateSyncFromCLeventARB
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetDebugMessageLogARB
 (JNIEnv* env, jclass clazz, jint count, jint bufsize, jobject obj_sources, jint sourcesByteOffset, jobject obj_types, jint typesByteOffset, jobject obj_ids, jint idsByteOffset, jobject obj_severities, jint severitiesByteOffset, jobject obj_lengths, jint lengthsByteOffset, jobject obj_messageLog, jint messageLogByteOffset, unsigned char* sources, unsigned char* types, unsigned char* ids, unsigned char* severities, unsigned char* lengths, unsigned char* messageLog) {
 
-//@line:13751
+//@line:13737
 
 		return (jint)ext_glGetDebugMessageLogARB((GLuint)count, (GLsizei)bufsize, (GLenum*)(sources + sourcesByteOffset), (GLenum*)(types + typesByteOffset), (GLuint*)(ids + idsByteOffset), (GLenum*)(severities + severitiesByteOffset), (GLsizei*)(lengths + lengthsByteOffset), (GLchar*)(messageLog + messageLogByteOffset));
 	
@@ -16301,7 +16287,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetDebugMessageLogARB(JNI
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetGraphicsResetStatusARB(JNIEnv* env, jclass clazz) {
 
 
-//@line:13755
+//@line:13741
 
 		return (jint)ext_glGetGraphicsResetStatusARB();
 	
@@ -16312,7 +16298,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnMapdvARB(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:13759
+//@line:13745
 
 		ext_glGetnMapdvARB((GLenum)target, (GLenum)query, (GLsizei)bufSize, (GLdouble*)(v + vByteOffset));
 	
@@ -16323,7 +16309,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnMapfvARB(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:13763
+//@line:13749
 
 		ext_glGetnMapfvARB((GLenum)target, (GLenum)query, (GLsizei)bufSize, (GLfloat*)(v + vByteOffset));
 	
@@ -16334,7 +16320,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnMapivARB(JNIEnv* env,
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:13767
+//@line:13753
 
 		ext_glGetnMapivARB((GLenum)target, (GLenum)query, (GLsizei)bufSize, (GLint*)(v + vByteOffset));
 	
@@ -16345,7 +16331,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnPixelMapfvARB(JNIEnv*
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:13771
+//@line:13757
 
 		ext_glGetnPixelMapfvARB((GLenum)map, (GLsizei)bufSize, (GLfloat*)(values + valuesByteOffset));
 	
@@ -16356,7 +16342,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnPixelMapuivARB(JNIEnv
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:13775
+//@line:13761
 
 		ext_glGetnPixelMapuivARB((GLenum)map, (GLsizei)bufSize, (GLuint*)(values + valuesByteOffset));
 	
@@ -16367,7 +16353,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnPixelMapusvARB(JNIEnv
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:13779
+//@line:13765
 
 		ext_glGetnPixelMapusvARB((GLenum)map, (GLsizei)bufSize, (GLushort*)(values + valuesByteOffset));
 	
@@ -16378,7 +16364,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnPolygonStippleARB(JNI
 	unsigned char* pattern = (unsigned char*)env->GetDirectBufferAddress(obj_pattern);
 
 
-//@line:13783
+//@line:13769
 
 		ext_glGetnPolygonStippleARB((GLsizei)bufSize, (GLubyte*)(pattern + patternByteOffset));
 	
@@ -16389,7 +16375,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnColorTableARB(JNIEnv*
 	unsigned char* table = (unsigned char*)env->GetDirectBufferAddress(obj_table);
 
 
-//@line:13787
+//@line:13773
 
 		ext_glGetnColorTableARB((GLenum)target, (GLenum)format, (GLenum)type, (GLsizei)bufSize, (GLvoid*)(table + tableByteOffset));
 	
@@ -16400,7 +16386,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnConvolutionFilterARB(
 	unsigned char* image = (unsigned char*)env->GetDirectBufferAddress(obj_image);
 
 
-//@line:13791
+//@line:13777
 
 		ext_glGetnConvolutionFilterARB((GLenum)target, (GLenum)format, (GLenum)type, (GLsizei)bufSize, (GLvoid*)(image + imageByteOffset));
 	
@@ -16413,7 +16399,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnSeparableFilterARB(JN
 	unsigned char* span = (unsigned char*)env->GetDirectBufferAddress(obj_span);
 
 
-//@line:13795
+//@line:13781
 
 		ext_glGetnSeparableFilterARB((GLenum)target, (GLenum)format, (GLenum)type, (GLsizei)rowBufSize, (GLvoid*)(row + rowByteOffset), (GLsizei)columnBufSize, (GLvoid*)(column + columnByteOffset), (GLvoid*)(span + spanByteOffset));
 	
@@ -16424,7 +16410,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnHistogramARB(JNIEnv* 
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:13799
+//@line:13785
 
 		ext_glGetnHistogramARB((GLenum)target, (GLboolean)reset, (GLenum)format, (GLenum)type, (GLsizei)bufSize, (GLvoid*)(values + valuesByteOffset));
 	
@@ -16435,7 +16421,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnMinmaxARB(JNIEnv* env
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:13803
+//@line:13789
 
 		ext_glGetnMinmaxARB((GLenum)target, (GLboolean)reset, (GLenum)format, (GLenum)type, (GLsizei)bufSize, (GLvoid*)(values + valuesByteOffset));
 	
@@ -16446,7 +16432,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnTexImageARB(JNIEnv* e
 	unsigned char* img = (unsigned char*)env->GetDirectBufferAddress(obj_img);
 
 
-//@line:13807
+//@line:13793
 
 		ext_glGetnTexImageARB((GLenum)target, (GLint)level, (GLenum)format, (GLenum)type, (GLsizei)bufSize, (GLvoid*)(img + imgByteOffset));
 	
@@ -16457,7 +16443,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReadnPixelsARB(JNIEnv* en
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:13811
+//@line:13797
 
 		ext_glReadnPixelsARB((GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (GLsizei)bufSize, (GLvoid*)(data + dataByteOffset));
 	
@@ -16468,7 +16454,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnCompressedTexImageARB
 	unsigned char* img = (unsigned char*)env->GetDirectBufferAddress(obj_img);
 
 
-//@line:13815
+//@line:13801
 
 		ext_glGetnCompressedTexImageARB((GLenum)target, (GLint)lod, (GLsizei)bufSize, (GLvoid*)(img + imgByteOffset));
 	
@@ -16479,7 +16465,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnUniformfvARB(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13819
+//@line:13805
 
 		ext_glGetnUniformfvARB((GLuint)program, (GLint)location, (GLsizei)bufSize, (GLfloat*)(params + paramsByteOffset));
 	
@@ -16490,7 +16476,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnUniformivARB(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13823
+//@line:13809
 
 		ext_glGetnUniformivARB((GLuint)program, (GLint)location, (GLsizei)bufSize, (GLint*)(params + paramsByteOffset));
 	
@@ -16501,7 +16487,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnUniformuivARB(JNIEnv*
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13827
+//@line:13813
 
 		ext_glGetnUniformuivARB((GLuint)program, (GLint)location, (GLsizei)bufSize, (GLuint*)(params + paramsByteOffset));
 	
@@ -16512,7 +16498,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnUniformdvARB(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13831
+//@line:13817
 
 		ext_glGetnUniformdvARB((GLuint)program, (GLint)location, (GLsizei)bufSize, (GLdouble*)(params + paramsByteOffset));
 	
@@ -16522,7 +16508,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetnUniformdvARB(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawArraysInstancedBaseInstance(JNIEnv* env, jclass clazz, jint mode, jint first, jint count, jint instancecount, jint baseinstance) {
 
 
-//@line:13835
+//@line:13821
 
 		ext_glDrawArraysInstancedBaseInstance((GLenum)mode, (GLint)first, (GLsizei)count, (GLsizei)instancecount, (GLuint)baseinstance);
 	
@@ -16533,7 +16519,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementsInstancedBase
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:13839
+//@line:13825
 
 		ext_glDrawElementsInstancedBaseInstance((GLenum)mode, (GLsizei)count, (GLenum)type, (const void*)(indices + indicesByteOffset), (GLsizei)instancecount, (GLuint)baseinstance);
 	
@@ -16544,7 +16530,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementsInstancedBase
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:13843
+//@line:13829
 
 		ext_glDrawElementsInstancedBaseVertexBaseInstance((GLenum)mode, (GLsizei)count, (GLenum)type, (const void*)(indices + indicesByteOffset), (GLsizei)instancecount, (GLint)basevertex, (GLuint)baseinstance);
 	
@@ -16554,7 +16540,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementsInstancedBase
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawTransformFeedbackInstanced(JNIEnv* env, jclass clazz, jint mode, jint id, jint instancecount) {
 
 
-//@line:13847
+//@line:13833
 
 		ext_glDrawTransformFeedbackInstanced((GLenum)mode, (GLuint)id, (GLsizei)instancecount);
 	
@@ -16564,7 +16550,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawTransformFeedbackInst
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawTransformFeedbackStreamInstanced(JNIEnv* env, jclass clazz, jint mode, jint id, jint stream, jint instancecount) {
 
 
-//@line:13851
+//@line:13837
 
 		ext_glDrawTransformFeedbackStreamInstanced((GLenum)mode, (GLuint)id, (GLuint)stream, (GLsizei)instancecount);
 	
@@ -16575,7 +16561,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetInternalformativ(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13855
+//@line:13841
 
 		ext_glGetInternalformativ((GLenum)target, (GLenum)internalformat, (GLenum)pname, (GLsizei)bufSize, (GLint*)(params + paramsByteOffset));
 	
@@ -16586,7 +16572,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveAtomicCounterBuf
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:13859
+//@line:13845
 
 		ext_glGetActiveAtomicCounterBufferiv((GLuint)program, (GLuint)bufferIndex, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -16596,7 +16582,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveAtomicCounterBuf
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindImageTexture(JNIEnv* env, jclass clazz, jint unit, jint texture, jint level, jboolean layered, jint layer, jint access, jint format) {
 
 
-//@line:13863
+//@line:13849
 
 		ext_glBindImageTexture((GLuint)unit, (GLuint)texture, (GLint)level, (GLboolean)layered, (GLint)layer, (GLenum)access, (GLenum)format);
 	
@@ -16606,7 +16592,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindImageTexture(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMemoryBarrier(JNIEnv* env, jclass clazz, jint barriers) {
 
 
-//@line:13867
+//@line:13853
 
 		ext_glMemoryBarrier((GLbitfield)barriers);
 	
@@ -16616,7 +16602,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMemoryBarrier(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexStorage1D(JNIEnv* env, jclass clazz, jint target, jint levels, jint internalformat, jint width) {
 
 
-//@line:13871
+//@line:13857
 
 		ext_glTexStorage1D((GLenum)target, (GLsizei)levels, (GLenum)internalformat, (GLsizei)width);
 	
@@ -16626,7 +16612,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexStorage1D(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexStorage2D(JNIEnv* env, jclass clazz, jint target, jint levels, jint internalformat, jint width, jint height) {
 
 
-//@line:13875
+//@line:13861
 
 		ext_glTexStorage2D((GLenum)target, (GLsizei)levels, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
 	
@@ -16636,7 +16622,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexStorage2D(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexStorage3D(JNIEnv* env, jclass clazz, jint target, jint levels, jint internalformat, jint width, jint height, jint depth) {
 
 
-//@line:13879
+//@line:13865
 
 		ext_glTexStorage3D((GLenum)target, (GLsizei)levels, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth);
 	
@@ -16646,7 +16632,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexStorage3D(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureStorage1DEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint levels, jint internalformat, jint width) {
 
 
-//@line:13883
+//@line:13869
 
 		ext_glTextureStorage1DEXT((GLuint)texture, (GLenum)target, (GLsizei)levels, (GLenum)internalformat, (GLsizei)width);
 	
@@ -16656,7 +16642,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureStorage1DEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureStorage2DEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint levels, jint internalformat, jint width, jint height) {
 
 
-//@line:13887
+//@line:13873
 
 		ext_glTextureStorage2DEXT((GLuint)texture, (GLenum)target, (GLsizei)levels, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
 	
@@ -16666,7 +16652,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureStorage2DEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureStorage3DEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint levels, jint internalformat, jint width, jint height, jint depth) {
 
 
-//@line:13891
+//@line:13877
 
 		ext_glTextureStorage3DEXT((GLuint)texture, (GLenum)target, (GLsizei)levels, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth);
 	
@@ -16676,7 +16662,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureStorage3DEXT(JNIEn
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetDebugMessageLog
 (JNIEnv* env, jclass clazz, jint count, jint bufsize, jobject obj_sources, jint sourcesByteOffset, jobject obj_types, jint typesByteOffset, jobject obj_ids, jint idsByteOffset, jobject obj_severities, jint severitiesByteOffset, jobject obj_lengths, jint lengthsByteOffset, jobject obj_messageLog, jint messageLogByteOffset, unsigned char* sources, unsigned char* types, unsigned char* ids, unsigned char* severities, unsigned char* lengths, unsigned char* messageLog) {
 
-//@line:13895
+//@line:13881
 
 		return (jint)ext_glGetDebugMessageLog((GLuint)count, (GLsizei)bufsize, (GLenum*)(sources + sourcesByteOffset), (GLenum*)(types + typesByteOffset), (GLuint*)(ids + idsByteOffset), (GLenum*)(severities + severitiesByteOffset), (GLsizei*)(lengths + lengthsByteOffset), (GLchar*)(messageLog + messageLogByteOffset));
 	
@@ -16700,7 +16686,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPushDebugGroup(JNIEnv* en
 	unsigned char* message = (unsigned char*)env->GetDirectBufferAddress(obj_message);
 
 
-//@line:13899
+//@line:13885
 
 		ext_glPushDebugGroup((GLenum)source, (GLuint)id, (GLsizei)length, (const GLchar*)(message + messageByteOffset));
 	
@@ -16710,7 +16696,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPushDebugGroup(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPopDebugGroup(JNIEnv* env, jclass clazz) {
 
 
-//@line:13903
+//@line:13889
 
 		ext_glPopDebugGroup();
 	
@@ -16721,7 +16707,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glObjectLabel(JNIEnv* env, 
 	unsigned char* label = (unsigned char*)env->GetDirectBufferAddress(obj_label);
 
 
-//@line:13907
+//@line:13893
 
 		ext_glObjectLabel((GLenum)identifier, (GLuint)name, (GLsizei)length, (const GLchar*)(label + labelByteOffset));
 	
@@ -16733,7 +16719,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectLabel(JNIEnv* en
 	unsigned char* label = (unsigned char*)env->GetDirectBufferAddress(obj_label);
 
 
-//@line:13911
+//@line:13897
 
 		ext_glGetObjectLabel((GLenum)identifier, (GLuint)name, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(label + labelByteOffset));
 	
@@ -16745,7 +16731,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glObjectPtrLabel(JNIEnv* en
 	unsigned char* label = (unsigned char*)env->GetDirectBufferAddress(obj_label);
 
 
-//@line:13915
+//@line:13901
 
 		ext_glObjectPtrLabel((const void*)(ptr + ptrByteOffset), (GLsizei)length, (const GLchar*)(label + labelByteOffset));
 	
@@ -16758,7 +16744,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectPtrLabel(JNIEnv*
 	unsigned char* label = (unsigned char*)env->GetDirectBufferAddress(obj_label);
 
 
-//@line:13919
+//@line:13905
 
 		ext_glGetObjectPtrLabel((const void*)(ptr + ptrByteOffset), (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(label + labelByteOffset));
 	
@@ -16769,18 +16755,18 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearBufferData(JNIEnv* e
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:13923
+//@line:13909
 
 		ext_glClearBufferData((GLenum)target, (GLenum)internalformat, (GLenum)format, (GLenum)type, (const void*)(data + dataByteOffset));
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearBufferSubData(JNIEnv* env, jclass clazz, jint target, jint internalformat, jint offset, jint size, jint format, jint type, jobject obj_data, jint dataByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearBufferSubData(JNIEnv* env, jclass clazz, jint target, jint internalformat, jlong offset, jlong size, jint format, jint type, jobject obj_data, jint dataByteOffset) {
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:13927
+//@line:13913
 
 		ext_glClearBufferSubData((GLenum)target, (GLenum)internalformat, (GLintptr)offset, (GLsizeiptr)size, (GLenum)format, (GLenum)type, (const void*)(data + dataByteOffset));
 	
@@ -16791,18 +16777,18 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearNamedBufferDataEXT(J
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:13931
+//@line:13917
 
 		ext_glClearNamedBufferDataEXT((GLuint)buffer, (GLenum)internalformat, (GLenum)format, (GLenum)type, (const void*)(data + dataByteOffset));
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearNamedBufferSubDataEXT(JNIEnv* env, jclass clazz, jint buffer, jint internalformat, jint format, jint type, jint offset, jint size, jobject obj_data, jint dataByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearNamedBufferSubDataEXT(JNIEnv* env, jclass clazz, jint buffer, jint internalformat, jint format, jint type, jlong offset, jlong size, jobject obj_data, jint dataByteOffset) {
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:13935
+//@line:13921
 
 		ext_glClearNamedBufferSubDataEXT((GLuint)buffer, (GLenum)internalformat, (GLenum)format, (GLenum)type, (GLsizeiptr)offset, (GLsizeiptr)size, (const void*)(data + dataByteOffset));
 	
@@ -16812,17 +16798,17 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearNamedBufferSubDataEX
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDispatchCompute(JNIEnv* env, jclass clazz, jint num_groups_x, jint num_groups_y, jint num_groups_z) {
 
 
-//@line:13939
+//@line:13925
 
 		ext_glDispatchCompute((GLuint)num_groups_x, (GLuint)num_groups_y, (GLuint)num_groups_z);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDispatchComputeIndirect(JNIEnv* env, jclass clazz, jint indirect) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDispatchComputeIndirect(JNIEnv* env, jclass clazz, jlong indirect) {
 
 
-//@line:13943
+//@line:13929
 
 		ext_glDispatchComputeIndirect((GLintptr)indirect);
 	
@@ -16832,7 +16818,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDispatchComputeIndirect(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyImageSubData(JNIEnv* env, jclass clazz, jint srcName, jint srcTarget, jint srcLevel, jint srcX, jint srcY, jint srcZ, jint dstName, jint dstTarget, jint dstLevel, jint dstX, jint dstY, jint dstZ, jint srcWidth, jint srcHeight, jint srcDepth) {
 
 
-//@line:13947
+//@line:13933
 
 		ext_glCopyImageSubData((GLuint)srcName, (GLenum)srcTarget, (GLint)srcLevel, (GLint)srcX, (GLint)srcY, (GLint)srcZ, (GLuint)dstName, (GLenum)dstTarget, (GLint)dstLevel, (GLint)dstX, (GLint)dstY, (GLint)dstZ, (GLsizei)srcWidth, (GLsizei)srcHeight, (GLsizei)srcDepth);
 	
@@ -16842,17 +16828,17 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyImageSubData(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureView(JNIEnv* env, jclass clazz, jint texture, jint target, jint origtexture, jint internalformat, jint minlevel, jint numlevels, jint minlayer, jint numlayers) {
 
 
-//@line:13951
+//@line:13937
 
 		ext_glTextureView((GLuint)texture, (GLenum)target, (GLuint)origtexture, (GLenum)internalformat, (GLuint)minlevel, (GLuint)numlevels, (GLuint)minlayer, (GLuint)numlayers);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindVertexBuffer(JNIEnv* env, jclass clazz, jint bindingindex, jint buffer, jint offset, jint stride) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindVertexBuffer(JNIEnv* env, jclass clazz, jint bindingindex, jint buffer, jlong offset, jint stride) {
 
 
-//@line:13955
+//@line:13941
 
 		ext_glBindVertexBuffer((GLuint)bindingindex, (GLuint)buffer, (GLintptr)offset, (GLsizei)stride);
 	
@@ -16862,7 +16848,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindVertexBuffer(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribFormat(JNIEnv* env, jclass clazz, jint attribindex, jint size, jint type, jboolean normalized, jint relativeoffset) {
 
 
-//@line:13959
+//@line:13945
 
 		ext_glVertexAttribFormat((GLuint)attribindex, (GLint)size, (GLenum)type, (GLboolean)normalized, (GLuint)relativeoffset);
 	
@@ -16872,7 +16858,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribFormat(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribIFormat(JNIEnv* env, jclass clazz, jint attribindex, jint size, jint type, jint relativeoffset) {
 
 
-//@line:13963
+//@line:13949
 
 		ext_glVertexAttribIFormat((GLuint)attribindex, (GLint)size, (GLenum)type, (GLuint)relativeoffset);
 	
@@ -16882,7 +16868,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribIFormat(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribLFormat(JNIEnv* env, jclass clazz, jint attribindex, jint size, jint type, jint relativeoffset) {
 
 
-//@line:13967
+//@line:13953
 
 		ext_glVertexAttribLFormat((GLuint)attribindex, (GLint)size, (GLenum)type, (GLuint)relativeoffset);
 	
@@ -16892,7 +16878,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribLFormat(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribBinding(JNIEnv* env, jclass clazz, jint attribindex, jint bindingindex) {
 
 
-//@line:13971
+//@line:13957
 
 		ext_glVertexAttribBinding((GLuint)attribindex, (GLuint)bindingindex);
 	
@@ -16902,17 +16888,17 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribBinding(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexBindingDivisor(JNIEnv* env, jclass clazz, jint bindingindex, jint divisor) {
 
 
-//@line:13975
+//@line:13961
 
 		ext_glVertexBindingDivisor((GLuint)bindingindex, (GLuint)divisor);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayBindVertexBufferEXT(JNIEnv* env, jclass clazz, jint vaobj, jint bindingindex, jint buffer, jint offset, jint stride) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayBindVertexBufferEXT(JNIEnv* env, jclass clazz, jint vaobj, jint bindingindex, jint buffer, jlong offset, jint stride) {
 
 
-//@line:13979
+//@line:13965
 
 		ext_glVertexArrayBindVertexBufferEXT((GLuint)vaobj, (GLuint)bindingindex, (GLuint)buffer, (GLintptr)offset, (GLsizei)stride);
 	
@@ -16922,7 +16908,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayBindVertexBuff
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayVertexAttribFormatEXT(JNIEnv* env, jclass clazz, jint vaobj, jint attribindex, jint size, jint type, jboolean normalized, jint relativeoffset) {
 
 
-//@line:13983
+//@line:13969
 
 		ext_glVertexArrayVertexAttribFormatEXT((GLuint)vaobj, (GLuint)attribindex, (GLint)size, (GLenum)type, (GLboolean)normalized, (GLuint)relativeoffset);
 	
@@ -16932,7 +16918,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayVertexAttribFo
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayVertexAttribIFormatEXT(JNIEnv* env, jclass clazz, jint vaobj, jint attribindex, jint size, jint type, jint relativeoffset) {
 
 
-//@line:13987
+//@line:13973
 
 		ext_glVertexArrayVertexAttribIFormatEXT((GLuint)vaobj, (GLuint)attribindex, (GLint)size, (GLenum)type, (GLuint)relativeoffset);
 	
@@ -16942,7 +16928,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayVertexAttribIF
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayVertexAttribLFormatEXT(JNIEnv* env, jclass clazz, jint vaobj, jint attribindex, jint size, jint type, jint relativeoffset) {
 
 
-//@line:13991
+//@line:13977
 
 		ext_glVertexArrayVertexAttribLFormatEXT((GLuint)vaobj, (GLuint)attribindex, (GLint)size, (GLenum)type, (GLuint)relativeoffset);
 	
@@ -16952,7 +16938,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayVertexAttribLF
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayVertexAttribBindingEXT(JNIEnv* env, jclass clazz, jint vaobj, jint attribindex, jint bindingindex) {
 
 
-//@line:13995
+//@line:13981
 
 		ext_glVertexArrayVertexAttribBindingEXT((GLuint)vaobj, (GLuint)attribindex, (GLuint)bindingindex);
 	
@@ -16962,7 +16948,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayVertexAttribBi
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayVertexBindingDivisorEXT(JNIEnv* env, jclass clazz, jint vaobj, jint bindingindex, jint divisor) {
 
 
-//@line:13999
+//@line:13985
 
 		ext_glVertexArrayVertexBindingDivisorEXT((GLuint)vaobj, (GLuint)bindingindex, (GLuint)divisor);
 	
@@ -16972,7 +16958,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayVertexBindingD
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferParameteri(JNIEnv* env, jclass clazz, jint target, jint pname, jint param) {
 
 
-//@line:14003
+//@line:13989
 
 		ext_glFramebufferParameteri((GLenum)target, (GLenum)pname, (GLint)param);
 	
@@ -16983,7 +16969,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFramebufferParameteriv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14007
+//@line:13993
 
 		ext_glGetFramebufferParameteriv((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -16993,7 +16979,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFramebufferParameteriv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedFramebufferParameteriEXT(JNIEnv* env, jclass clazz, jint framebuffer, jint pname, jint param) {
 
 
-//@line:14011
+//@line:13997
 
 		ext_glNamedFramebufferParameteriEXT((GLuint)framebuffer, (GLenum)pname, (GLint)param);
 	
@@ -17004,7 +16990,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedFramebufferParame
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14015
+//@line:14001
 
 		ext_glGetNamedFramebufferParameterivEXT((GLuint)framebuffer, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -17015,7 +17001,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetInternalformati64v(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14019
+//@line:14005
 
 		ext_glGetInternalformati64v((GLenum)target, (GLenum)internalformat, (GLenum)pname, (GLsizei)bufSize, (GLint64*)(params + paramsByteOffset));
 	
@@ -17025,7 +17011,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetInternalformati64v(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInvalidateTexSubImage(JNIEnv* env, jclass clazz, jint texture, jint level, jint xoffset, jint yoffset, jint zoffset, jint width, jint height, jint depth) {
 
 
-//@line:14023
+//@line:14009
 
 		ext_glInvalidateTexSubImage((GLuint)texture, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth);
 	
@@ -17035,17 +17021,17 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInvalidateTexSubImage(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInvalidateTexImage(JNIEnv* env, jclass clazz, jint texture, jint level) {
 
 
-//@line:14027
+//@line:14013
 
 		ext_glInvalidateTexImage((GLuint)texture, (GLint)level);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInvalidateBufferSubData(JNIEnv* env, jclass clazz, jint buffer, jint offset, jint length) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInvalidateBufferSubData(JNIEnv* env, jclass clazz, jint buffer, jlong offset, jlong length) {
 
 
-//@line:14031
+//@line:14017
 
 		ext_glInvalidateBufferSubData((GLuint)buffer, (GLintptr)offset, (GLsizeiptr)length);
 	
@@ -17055,7 +17041,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInvalidateBufferSubData(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInvalidateBufferData(JNIEnv* env, jclass clazz, jint buffer) {
 
 
-//@line:14035
+//@line:14021
 
 		ext_glInvalidateBufferData((GLuint)buffer);
 	
@@ -17066,7 +17052,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInvalidateFramebuffer(JNI
 	unsigned char* attachments = (unsigned char*)env->GetDirectBufferAddress(obj_attachments);
 
 
-//@line:14039
+//@line:14025
 
 		ext_glInvalidateFramebuffer((GLenum)target, (GLsizei)numAttachments, (const GLenum*)(attachments + attachmentsByteOffset));
 	
@@ -17077,7 +17063,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInvalidateSubFramebuffer(
 	unsigned char* attachments = (unsigned char*)env->GetDirectBufferAddress(obj_attachments);
 
 
-//@line:14043
+//@line:14029
 
 		ext_glInvalidateSubFramebuffer((GLenum)target, (GLsizei)numAttachments, (const GLenum*)(attachments + attachmentsByteOffset), (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
 	
@@ -17088,7 +17074,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiDrawArraysIndirect(J
 	unsigned char* indirect = (unsigned char*)env->GetDirectBufferAddress(obj_indirect);
 
 
-//@line:14047
+//@line:14033
 
 		ext_glMultiDrawArraysIndirect((GLenum)mode, (const void*)(indirect + indirectByteOffset), (GLsizei)drawcount, (GLsizei)stride);
 	
@@ -17099,7 +17085,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiDrawElementsIndirect
 	unsigned char* indirect = (unsigned char*)env->GetDirectBufferAddress(obj_indirect);
 
 
-//@line:14051
+//@line:14037
 
 		ext_glMultiDrawElementsIndirect((GLenum)mode, (GLenum)type, (const void*)(indirect + indirectByteOffset), (GLsizei)drawcount, (GLsizei)stride);
 	
@@ -17110,7 +17096,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramInterfaceiv(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14055
+//@line:14041
 
 		ext_glGetProgramInterfaceiv((GLuint)program, (GLenum)programInterface, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -17120,7 +17106,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramInterfaceiv(JNI
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetProgramResourceIndex
 (JNIEnv* env, jclass clazz, jint program, jint programInterface, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
-//@line:14059
+//@line:14045
 
 		return (jint)ext_glGetProgramResourceIndex((GLuint)program, (GLenum)programInterface, (const GLchar*)(name + nameByteOffset));
 	
@@ -17140,7 +17126,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramResourceName(JN
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:14063
+//@line:14049
 
 		ext_glGetProgramResourceName((GLuint)program, (GLenum)programInterface, (GLuint)index, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(name + nameByteOffset));
 	
@@ -17153,7 +17139,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramResourceiv(JNIE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14067
+//@line:14053
 
 		ext_glGetProgramResourceiv((GLuint)program, (GLenum)programInterface, (GLuint)index, (GLsizei)propCount, (const GLenum*)(props + propsByteOffset), (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLint*)(params + paramsByteOffset));
 	
@@ -17163,7 +17149,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramResourceiv(JNIE
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetProgramResourceLocation
 (JNIEnv* env, jclass clazz, jint program, jint programInterface, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
-//@line:14071
+//@line:14057
 
 		return (jint)ext_glGetProgramResourceLocation((GLuint)program, (GLenum)programInterface, (const GLchar*)(name + nameByteOffset));
 	
@@ -17181,7 +17167,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramResourceLocatio
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetProgramResourceLocationIndex
 (JNIEnv* env, jclass clazz, jint program, jint programInterface, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
-//@line:14075
+//@line:14061
 
 		return (jint)ext_glGetProgramResourceLocationIndex((GLuint)program, (GLenum)programInterface, (const GLchar*)(name + nameByteOffset));
 	
@@ -17199,27 +17185,27 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramResourceLocatio
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderStorageBlockBinding(JNIEnv* env, jclass clazz, jint program, jint storageBlockIndex, jint storageBlockBinding) {
 
 
-//@line:14079
+//@line:14065
 
 		ext_glShaderStorageBlockBinding((GLuint)program, (GLuint)storageBlockIndex, (GLuint)storageBlockBinding);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexBufferRange(JNIEnv* env, jclass clazz, jint target, jint internalformat, jint buffer, jint offset, jint size) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexBufferRange(JNIEnv* env, jclass clazz, jint target, jint internalformat, jint buffer, jlong offset, jlong size) {
 
 
-//@line:14083
+//@line:14069
 
 		ext_glTexBufferRange((GLenum)target, (GLenum)internalformat, (GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureBufferRangeEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint internalformat, jint buffer, jint offset, jint size) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureBufferRangeEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint internalformat, jint buffer, jlong offset, jlong size) {
 
 
-//@line:14087
+//@line:14073
 
 		ext_glTextureBufferRangeEXT((GLuint)texture, (GLenum)target, (GLenum)internalformat, (GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size);
 	
@@ -17229,7 +17215,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureBufferRangeEXT(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexStorage2DMultisample(JNIEnv* env, jclass clazz, jint target, jint samples, jint internalformat, jint width, jint height, jboolean fixedsamplelocations) {
 
 
-//@line:14091
+//@line:14077
 
 		ext_glTexStorage2DMultisample((GLenum)target, (GLsizei)samples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLboolean)fixedsamplelocations);
 	
@@ -17239,7 +17225,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexStorage2DMultisample(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexStorage3DMultisample(JNIEnv* env, jclass clazz, jint target, jint samples, jint internalformat, jint width, jint height, jint depth, jboolean fixedsamplelocations) {
 
 
-//@line:14095
+//@line:14081
 
 		ext_glTexStorage3DMultisample((GLenum)target, (GLsizei)samples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLboolean)fixedsamplelocations);
 	
@@ -17249,7 +17235,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexStorage3DMultisample(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureStorage2DMultisampleEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint samples, jint internalformat, jint width, jint height, jboolean fixedsamplelocations) {
 
 
-//@line:14099
+//@line:14085
 
 		ext_glTextureStorage2DMultisampleEXT((GLuint)texture, (GLenum)target, (GLsizei)samples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLboolean)fixedsamplelocations);
 	
@@ -17259,7 +17245,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureStorage2DMultisamp
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureStorage3DMultisampleEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint samples, jint internalformat, jint width, jint height, jint depth, jboolean fixedsamplelocations) {
 
 
-//@line:14103
+//@line:14089
 
 		ext_glTextureStorage3DMultisampleEXT((GLuint)texture, (GLenum)target, (GLsizei)samples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLboolean)fixedsamplelocations);
 	
@@ -17269,7 +17255,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureStorage3DMultisamp
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendColorEXT(JNIEnv* env, jclass clazz, jfloat red, jfloat green, jfloat blue, jfloat alpha) {
 
 
-//@line:14107
+//@line:14093
 
 		ext_glBlendColorEXT((GLfloat)red, (GLfloat)green, (GLfloat)blue, (GLfloat)alpha);
 	
@@ -17279,7 +17265,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendColorEXT(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPolygonOffsetEXT(JNIEnv* env, jclass clazz, jfloat factor, jfloat bias) {
 
 
-//@line:14111
+//@line:14097
 
 		ext_glPolygonOffsetEXT((GLfloat)factor, (GLfloat)bias);
 	
@@ -17290,7 +17276,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexImage3DEXT(JNIEnv* env
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:14115
+//@line:14101
 
 		ext_glTexImage3DEXT((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -17301,7 +17287,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexSubImage3DEXT(JNIEnv* 
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:14119
+//@line:14105
 
 		ext_glTexSubImage3DEXT((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -17312,7 +17298,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexFilterFuncSGIS(JNIE
 	unsigned char* weights = (unsigned char*)env->GetDirectBufferAddress(obj_weights);
 
 
-//@line:14123
+//@line:14109
 
 		ext_glGetTexFilterFuncSGIS((GLenum)target, (GLenum)filter, (GLfloat*)(weights + weightsByteOffset));
 	
@@ -17323,7 +17309,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexFilterFuncSGIS(JNIEnv*
 	unsigned char* weights = (unsigned char*)env->GetDirectBufferAddress(obj_weights);
 
 
-//@line:14127
+//@line:14113
 
 		ext_glTexFilterFuncSGIS((GLenum)target, (GLenum)filter, (GLsizei)n, (const GLfloat*)(weights + weightsByteOffset));
 	
@@ -17334,7 +17320,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexSubImage1DEXT(JNIEnv* 
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:14131
+//@line:14117
 
 		ext_glTexSubImage1DEXT((GLenum)target, (GLint)level, (GLint)xoffset, (GLsizei)width, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -17345,7 +17331,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexSubImage2DEXT(JNIEnv* 
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:14135
+//@line:14121
 
 		ext_glTexSubImage2DEXT((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -17355,7 +17341,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexSubImage2DEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexImage1DEXT(JNIEnv* env, jclass clazz, jint target, jint level, jint internalformat, jint x, jint y, jint width, jint border) {
 
 
-//@line:14139
+//@line:14125
 
 		ext_glCopyTexImage1DEXT((GLenum)target, (GLint)level, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLint)border);
 	
@@ -17365,7 +17351,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexImage1DEXT(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexImage2DEXT(JNIEnv* env, jclass clazz, jint target, jint level, jint internalformat, jint x, jint y, jint width, jint height, jint border) {
 
 
-//@line:14143
+//@line:14129
 
 		ext_glCopyTexImage2DEXT((GLenum)target, (GLint)level, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height, (GLint)border);
 	
@@ -17375,7 +17361,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexImage2DEXT(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexSubImage1DEXT(JNIEnv* env, jclass clazz, jint target, jint level, jint xoffset, jint x, jint y, jint width) {
 
 
-//@line:14147
+//@line:14133
 
 		ext_glCopyTexSubImage1DEXT((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)x, (GLint)y, (GLsizei)width);
 	
@@ -17385,7 +17371,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexSubImage1DEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexSubImage2DEXT(JNIEnv* env, jclass clazz, jint target, jint level, jint xoffset, jint yoffset, jint x, jint y, jint width, jint height) {
 
 
-//@line:14151
+//@line:14137
 
 		ext_glCopyTexSubImage2DEXT((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
 	
@@ -17395,7 +17381,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexSubImage2DEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTexSubImage3DEXT(JNIEnv* env, jclass clazz, jint target, jint level, jint xoffset, jint yoffset, jint zoffset, jint x, jint y, jint width, jint height) {
 
 
-//@line:14155
+//@line:14141
 
 		ext_glCopyTexSubImage3DEXT((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
 	
@@ -17406,7 +17392,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetHistogramEXT(JNIEnv* e
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:14159
+//@line:14145
 
 		ext_glGetHistogramEXT((GLenum)target, (GLboolean)reset, (GLenum)format, (GLenum)type, (GLvoid*)(values + valuesByteOffset));
 	
@@ -17417,7 +17403,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetHistogramParameterfvEX
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14163
+//@line:14149
 
 		ext_glGetHistogramParameterfvEXT((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -17428,7 +17414,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetHistogramParameterivEX
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14167
+//@line:14153
 
 		ext_glGetHistogramParameterivEXT((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -17439,7 +17425,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMinmaxEXT(JNIEnv* env,
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:14171
+//@line:14157
 
 		ext_glGetMinmaxEXT((GLenum)target, (GLboolean)reset, (GLenum)format, (GLenum)type, (GLvoid*)(values + valuesByteOffset));
 	
@@ -17450,7 +17436,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMinmaxParameterfvEXT(J
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14175
+//@line:14161
 
 		ext_glGetMinmaxParameterfvEXT((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -17461,7 +17447,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMinmaxParameterivEXT(J
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14179
+//@line:14165
 
 		ext_glGetMinmaxParameterivEXT((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -17471,7 +17457,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMinmaxParameterivEXT(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glHistogramEXT(JNIEnv* env, jclass clazz, jint target, jint width, jint internalformat, jboolean sink) {
 
 
-//@line:14183
+//@line:14169
 
 		ext_glHistogramEXT((GLenum)target, (GLsizei)width, (GLenum)internalformat, (GLboolean)sink);
 	
@@ -17481,7 +17467,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glHistogramEXT(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMinmaxEXT(JNIEnv* env, jclass clazz, jint target, jint internalformat, jboolean sink) {
 
 
-//@line:14187
+//@line:14173
 
 		ext_glMinmaxEXT((GLenum)target, (GLenum)internalformat, (GLboolean)sink);
 	
@@ -17491,7 +17477,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMinmaxEXT(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glResetHistogramEXT(JNIEnv* env, jclass clazz, jint target) {
 
 
-//@line:14191
+//@line:14177
 
 		ext_glResetHistogramEXT((GLenum)target);
 	
@@ -17501,7 +17487,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glResetHistogramEXT(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glResetMinmaxEXT(JNIEnv* env, jclass clazz, jint target) {
 
 
-//@line:14195
+//@line:14181
 
 		ext_glResetMinmaxEXT((GLenum)target);
 	
@@ -17512,7 +17498,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionFilter1DEXT(JN
 	unsigned char* image = (unsigned char*)env->GetDirectBufferAddress(obj_image);
 
 
-//@line:14199
+//@line:14185
 
 		ext_glConvolutionFilter1DEXT((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLenum)format, (GLenum)type, (const GLvoid*)(image + imageByteOffset));
 	
@@ -17523,7 +17509,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionFilter2DEXT(JN
 	unsigned char* image = (unsigned char*)env->GetDirectBufferAddress(obj_image);
 
 
-//@line:14203
+//@line:14189
 
 		ext_glConvolutionFilter2DEXT((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const GLvoid*)(image + imageByteOffset));
 	
@@ -17533,7 +17519,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionFilter2DEXT(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionParameterfEXT(JNIEnv* env, jclass clazz, jint target, jint pname, jfloat params) {
 
 
-//@line:14207
+//@line:14193
 
 		ext_glConvolutionParameterfEXT((GLenum)target, (GLenum)pname, (GLfloat)params);
 	
@@ -17544,7 +17530,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionParameterfvEXT
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14211
+//@line:14197
 
 		ext_glConvolutionParameterfvEXT((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -17554,7 +17540,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionParameterfvEXT
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionParameteriEXT(JNIEnv* env, jclass clazz, jint target, jint pname, jint params) {
 
 
-//@line:14215
+//@line:14201
 
 		ext_glConvolutionParameteriEXT((GLenum)target, (GLenum)pname, (GLint)params);
 	
@@ -17565,7 +17551,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionParameterivEXT
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14219
+//@line:14205
 
 		ext_glConvolutionParameterivEXT((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -17575,7 +17561,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionParameterivEXT
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyConvolutionFilter1DEXT(JNIEnv* env, jclass clazz, jint target, jint internalformat, jint x, jint y, jint width) {
 
 
-//@line:14223
+//@line:14209
 
 		ext_glCopyConvolutionFilter1DEXT((GLenum)target, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width);
 	
@@ -17585,7 +17571,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyConvolutionFilter1DEX
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyConvolutionFilter2DEXT(JNIEnv* env, jclass clazz, jint target, jint internalformat, jint x, jint y, jint width, jint height) {
 
 
-//@line:14227
+//@line:14213
 
 		ext_glCopyConvolutionFilter2DEXT((GLenum)target, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
 	
@@ -17596,7 +17582,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetConvolutionFilterEXT(J
 	unsigned char* image = (unsigned char*)env->GetDirectBufferAddress(obj_image);
 
 
-//@line:14231
+//@line:14217
 
 		ext_glGetConvolutionFilterEXT((GLenum)target, (GLenum)format, (GLenum)type, (GLvoid*)(image + imageByteOffset));
 	
@@ -17607,7 +17593,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetConvolutionParameterfv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14235
+//@line:14221
 
 		ext_glGetConvolutionParameterfvEXT((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -17618,7 +17604,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetConvolutionParameteriv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14239
+//@line:14225
 
 		ext_glGetConvolutionParameterivEXT((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -17631,7 +17617,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetSeparableFilterEXT(JNI
 	unsigned char* span = (unsigned char*)env->GetDirectBufferAddress(obj_span);
 
 
-//@line:14243
+//@line:14229
 
 		ext_glGetSeparableFilterEXT((GLenum)target, (GLenum)format, (GLenum)type, (GLvoid*)(row + rowByteOffset), (GLvoid*)(column + columnByteOffset), (GLvoid*)(span + spanByteOffset));
 	
@@ -17643,7 +17629,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSeparableFilter2DEXT(JNIE
 	unsigned char* column = (unsigned char*)env->GetDirectBufferAddress(obj_column);
 
 
-//@line:14247
+//@line:14233
 
 		ext_glSeparableFilter2DEXT((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const GLvoid*)(row + rowByteOffset), (const GLvoid*)(column + columnByteOffset));
 	
@@ -17654,7 +17640,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorTableSGI(JNIEnv* env
 	unsigned char* table = (unsigned char*)env->GetDirectBufferAddress(obj_table);
 
 
-//@line:14251
+//@line:14237
 
 		ext_glColorTableSGI((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLenum)format, (GLenum)type, (const GLvoid*)(table + tableByteOffset));
 	
@@ -17665,7 +17651,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorTableParameterfvSGI(
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14255
+//@line:14241
 
 		ext_glColorTableParameterfvSGI((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -17676,7 +17662,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorTableParameterivSGI(
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14259
+//@line:14245
 
 		ext_glColorTableParameterivSGI((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -17686,7 +17672,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorTableParameterivSGI(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyColorTableSGI(JNIEnv* env, jclass clazz, jint target, jint internalformat, jint x, jint y, jint width) {
 
 
-//@line:14263
+//@line:14249
 
 		ext_glCopyColorTableSGI((GLenum)target, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width);
 	
@@ -17697,7 +17683,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetColorTableSGI(JNIEnv* 
 	unsigned char* table = (unsigned char*)env->GetDirectBufferAddress(obj_table);
 
 
-//@line:14267
+//@line:14253
 
 		ext_glGetColorTableSGI((GLenum)target, (GLenum)format, (GLenum)type, (GLvoid*)(table + tableByteOffset));
 	
@@ -17708,7 +17694,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetColorTableParameterfvS
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14271
+//@line:14257
 
 		ext_glGetColorTableParameterfvSGI((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -17719,7 +17705,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetColorTableParameterivS
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14275
+//@line:14261
 
 		ext_glGetColorTableParameterivSGI((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -17729,7 +17715,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetColorTableParameterivS
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTexGenSGIX(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:14279
+//@line:14265
 
 		ext_glPixelTexGenSGIX((GLenum)mode);
 	
@@ -17739,7 +17725,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTexGenSGIX(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTexGenParameteriSGIS(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:14283
+//@line:14269
 
 		ext_glPixelTexGenParameteriSGIS((GLenum)pname, (GLint)param);
 	
@@ -17750,7 +17736,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTexGenParameterivSGI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14287
+//@line:14273
 
 		ext_glPixelTexGenParameterivSGIS((GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -17760,7 +17746,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTexGenParameterivSGI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTexGenParameterfSGIS(JNIEnv* env, jclass clazz, jint pname, jfloat param) {
 
 
-//@line:14291
+//@line:14277
 
 		ext_glPixelTexGenParameterfSGIS((GLenum)pname, (GLfloat)param);
 	
@@ -17771,7 +17757,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTexGenParameterfvSGI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14295
+//@line:14281
 
 		ext_glPixelTexGenParameterfvSGIS((GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -17782,7 +17768,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPixelTexGenParameteriv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14299
+//@line:14285
 
 		ext_glGetPixelTexGenParameterivSGIS((GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -17793,7 +17779,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPixelTexGenParameterfv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14303
+//@line:14289
 
 		ext_glGetPixelTexGenParameterfvSGIS((GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -17804,7 +17790,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexImage4DSGIS(JNIEnv* en
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:14307
+//@line:14293
 
 		ext_glTexImage4DSGIS((GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLsizei)size4d, (GLint)border, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -17815,7 +17801,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexSubImage4DSGIS(JNIEnv*
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:14311
+//@line:14297
 
 		ext_glTexSubImage4DSGIS((GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLint)woffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLsizei)size4d, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -17825,7 +17811,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexSubImage4DSGIS(JNIEnv*
 static inline jboolean wrapped_Java_com_badlogic_jglfw_gl_GL_glAreTexturesResidentEXT
 (JNIEnv* env, jclass clazz, jint n, jobject obj_textures, jint texturesByteOffset, jobject obj_residences, jint residencesByteOffset, unsigned char* textures, unsigned char* residences) {
 
-//@line:14315
+//@line:14301
 
 		return (jboolean)ext_glAreTexturesResidentEXT((GLsizei)n, (const GLuint*)(textures + texturesByteOffset), (GLboolean*)(residences + residencesByteOffset));
 	
@@ -17844,7 +17830,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glAreTexturesResidentEX
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindTextureEXT(JNIEnv* env, jclass clazz, jint target, jint texture) {
 
 
-//@line:14319
+//@line:14305
 
 		ext_glBindTextureEXT((GLenum)target, (GLuint)texture);
 	
@@ -17855,7 +17841,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteTexturesEXT(JNIEnv*
 	unsigned char* textures = (unsigned char*)env->GetDirectBufferAddress(obj_textures);
 
 
-//@line:14323
+//@line:14309
 
 		ext_glDeleteTexturesEXT((GLsizei)n, (const GLuint*)(textures + texturesByteOffset));
 	
@@ -17866,7 +17852,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenTexturesEXT(JNIEnv* en
 	unsigned char* textures = (unsigned char*)env->GetDirectBufferAddress(obj_textures);
 
 
-//@line:14327
+//@line:14313
 
 		ext_glGenTexturesEXT((GLsizei)n, (GLuint*)(textures + texturesByteOffset));
 	
@@ -17876,7 +17862,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenTexturesEXT(JNIEnv* en
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsTextureEXT(JNIEnv* env, jclass clazz, jint texture) {
 
 
-//@line:14331
+//@line:14317
 
 		return (jboolean)ext_glIsTextureEXT((GLuint)texture);
 	
@@ -17888,7 +17874,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPrioritizeTexturesEXT(JNI
 	unsigned char* priorities = (unsigned char*)env->GetDirectBufferAddress(obj_priorities);
 
 
-//@line:14335
+//@line:14321
 
 		ext_glPrioritizeTexturesEXT((GLsizei)n, (const GLuint*)(textures + texturesByteOffset), (const GLclampf*)(priorities + prioritiesByteOffset));
 	
@@ -17899,7 +17885,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDetailTexFuncSGIS(JNIEnv*
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:14339
+//@line:14325
 
 		ext_glDetailTexFuncSGIS((GLenum)target, (GLsizei)n, (const GLfloat*)(points + pointsByteOffset));
 	
@@ -17910,7 +17896,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetDetailTexFuncSGIS(JNIE
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:14343
+//@line:14329
 
 		ext_glGetDetailTexFuncSGIS((GLenum)target, (GLfloat*)(points + pointsByteOffset));
 	
@@ -17921,7 +17907,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSharpenTexFuncSGIS(JNIEnv
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:14347
+//@line:14333
 
 		ext_glSharpenTexFuncSGIS((GLenum)target, (GLsizei)n, (const GLfloat*)(points + pointsByteOffset));
 	
@@ -17932,7 +17918,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetSharpenTexFuncSGIS(JNI
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:14351
+//@line:14337
 
 		ext_glGetSharpenTexFuncSGIS((GLenum)target, (GLfloat*)(points + pointsByteOffset));
 	
@@ -17942,7 +17928,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetSharpenTexFuncSGIS(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSampleMaskSGIS(JNIEnv* env, jclass clazz, jfloat value, jboolean invert) {
 
 
-//@line:14355
+//@line:14341
 
 		ext_glSampleMaskSGIS((GLclampf)value, (GLboolean)invert);
 	
@@ -17952,7 +17938,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSampleMaskSGIS(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSamplePatternSGIS(JNIEnv* env, jclass clazz, jint pattern) {
 
 
-//@line:14359
+//@line:14345
 
 		ext_glSamplePatternSGIS((GLenum)pattern);
 	
@@ -17962,7 +17948,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSamplePatternSGIS(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glArrayElementEXT(JNIEnv* env, jclass clazz, jint i) {
 
 
-//@line:14363
+//@line:14349
 
 		ext_glArrayElementEXT((GLint)i);
 	
@@ -17973,7 +17959,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorPointerEXT(JNIEnv* e
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:14367
+//@line:14353
 
 		ext_glColorPointerEXT((GLint)size, (GLenum)type, (GLsizei)stride, (GLsizei)count, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -17983,7 +17969,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorPointerEXT(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawArraysEXT(JNIEnv* env, jclass clazz, jint mode, jint first, jint count) {
 
 
-//@line:14371
+//@line:14357
 
 		ext_glDrawArraysEXT((GLenum)mode, (GLint)first, (GLsizei)count);
 	
@@ -17994,7 +17980,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEdgeFlagPointerEXT(JNIEnv
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:14375
+//@line:14361
 
 		ext_glEdgeFlagPointerEXT((GLsizei)stride, (GLsizei)count, (const GLboolean*)(pointer + pointerByteOffset));
 	
@@ -18005,7 +17991,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexPointerEXT(JNIEnv* e
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:14379
+//@line:14365
 
 		ext_glIndexPointerEXT((GLenum)type, (GLsizei)stride, (GLsizei)count, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -18016,7 +18002,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalPointerEXT(JNIEnv* 
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:14383
+//@line:14369
 
 		ext_glNormalPointerEXT((GLenum)type, (GLsizei)stride, (GLsizei)count, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -18027,7 +18013,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordPointerEXT(JNIEnv
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:14387
+//@line:14373
 
 		ext_glTexCoordPointerEXT((GLint)size, (GLenum)type, (GLsizei)stride, (GLsizei)count, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -18038,7 +18024,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexPointerEXT(JNIEnv* 
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:14391
+//@line:14377
 
 		ext_glVertexPointerEXT((GLint)size, (GLenum)type, (GLsizei)stride, (GLsizei)count, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -18048,7 +18034,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexPointerEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationEXT(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:14395
+//@line:14381
 
 		ext_glBlendEquationEXT((GLenum)mode);
 	
@@ -18058,7 +18044,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSpriteParameterfSGIX(JNIEnv* env, jclass clazz, jint pname, jfloat param) {
 
 
-//@line:14399
+//@line:14385
 
 		ext_glSpriteParameterfSGIX((GLenum)pname, (GLfloat)param);
 	
@@ -18069,7 +18055,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSpriteParameterfvSGIX(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14403
+//@line:14389
 
 		ext_glSpriteParameterfvSGIX((GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -18079,7 +18065,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSpriteParameterfvSGIX(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSpriteParameteriSGIX(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:14407
+//@line:14393
 
 		ext_glSpriteParameteriSGIX((GLenum)pname, (GLint)param);
 	
@@ -18090,7 +18076,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSpriteParameterivSGIX(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14411
+//@line:14397
 
 		ext_glSpriteParameterivSGIX((GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -18100,7 +18086,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSpriteParameterivSGIX(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameterfEXT(JNIEnv* env, jclass clazz, jint pname, jfloat param) {
 
 
-//@line:14415
+//@line:14401
 
 		ext_glPointParameterfEXT((GLenum)pname, (GLfloat)param);
 	
@@ -18111,7 +18097,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameterfvEXT(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14419
+//@line:14405
 
 		ext_glPointParameterfvEXT((GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -18121,7 +18107,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameterfvEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameterfSGIS(JNIEnv* env, jclass clazz, jint pname, jfloat param) {
 
 
-//@line:14423
+//@line:14409
 
 		ext_glPointParameterfSGIS((GLenum)pname, (GLfloat)param);
 	
@@ -18132,7 +18118,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameterfvSGIS(JNIE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14427
+//@line:14413
 
 		ext_glPointParameterfvSGIS((GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -18142,7 +18128,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameterfvSGIS(JNIE
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetInstrumentsSGIX(JNIEnv* env, jclass clazz) {
 
 
-//@line:14431
+//@line:14417
 
 		return (jint)ext_glGetInstrumentsSGIX();
 	
@@ -18153,7 +18139,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInstrumentsBufferSGIX(JNI
 	unsigned char* buffer = (unsigned char*)env->GetDirectBufferAddress(obj_buffer);
 
 
-//@line:14435
+//@line:14421
 
 		ext_glInstrumentsBufferSGIX((GLsizei)size, (GLint*)(buffer + bufferByteOffset));
 	
@@ -18163,7 +18149,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInstrumentsBufferSGIX(JNI
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glPollInstrumentsSGIX
 (JNIEnv* env, jclass clazz, jobject obj_marker_p, jint marker_pByteOffset, unsigned char* marker_p) {
 
-//@line:14439
+//@line:14425
 
 		return (jint)ext_glPollInstrumentsSGIX((GLint*)(marker_p + marker_pByteOffset));
 	
@@ -18181,7 +18167,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glPollInstrumentsSGIX(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReadInstrumentsSGIX(JNIEnv* env, jclass clazz, jint marker) {
 
 
-//@line:14443
+//@line:14429
 
 		ext_glReadInstrumentsSGIX((GLint)marker);
 	
@@ -18191,7 +18177,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReadInstrumentsSGIX(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStartInstrumentsSGIX(JNIEnv* env, jclass clazz) {
 
 
-//@line:14447
+//@line:14433
 
 		ext_glStartInstrumentsSGIX();
 	
@@ -18201,7 +18187,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStartInstrumentsSGIX(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStopInstrumentsSGIX(JNIEnv* env, jclass clazz, jint marker) {
 
 
-//@line:14451
+//@line:14437
 
 		ext_glStopInstrumentsSGIX((GLint)marker);
 	
@@ -18211,7 +18197,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStopInstrumentsSGIX(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFrameZoomSGIX(JNIEnv* env, jclass clazz, jint factor) {
 
 
-//@line:14455
+//@line:14441
 
 		ext_glFrameZoomSGIX((GLint)factor);
 	
@@ -18221,7 +18207,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFrameZoomSGIX(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTagSampleBufferSGIX(JNIEnv* env, jclass clazz) {
 
 
-//@line:14459
+//@line:14445
 
 		ext_glTagSampleBufferSGIX();
 	
@@ -18232,7 +18218,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeformationMap3dSGIX(JNIE
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:14463
+//@line:14449
 
 		ext_glDeformationMap3dSGIX((GLenum)target, (GLdouble)u1, (GLdouble)u2, (GLint)ustride, (GLint)uorder, (GLdouble)v1, (GLdouble)v2, (GLint)vstride, (GLint)vorder, (GLdouble)w1, (GLdouble)w2, (GLint)wstride, (GLint)worder, (const GLdouble*)(points + pointsByteOffset));
 	
@@ -18243,7 +18229,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeformationMap3fSGIX(JNIE
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:14467
+//@line:14453
 
 		ext_glDeformationMap3fSGIX((GLenum)target, (GLfloat)u1, (GLfloat)u2, (GLint)ustride, (GLint)uorder, (GLfloat)v1, (GLfloat)v2, (GLint)vstride, (GLint)vorder, (GLfloat)w1, (GLfloat)w2, (GLint)wstride, (GLint)worder, (const GLfloat*)(points + pointsByteOffset));
 	
@@ -18253,7 +18239,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeformationMap3fSGIX(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeformSGIX(JNIEnv* env, jclass clazz, jint mask) {
 
 
-//@line:14471
+//@line:14457
 
 		ext_glDeformSGIX((GLbitfield)mask);
 	
@@ -18263,7 +18249,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeformSGIX(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLoadIdentityDeformationMapSGIX(JNIEnv* env, jclass clazz, jint mask) {
 
 
-//@line:14475
+//@line:14461
 
 		ext_glLoadIdentityDeformationMapSGIX((GLbitfield)mask);
 	
@@ -18274,7 +18260,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReferencePlaneSGIX(JNIEnv
 	unsigned char* equation = (unsigned char*)env->GetDirectBufferAddress(obj_equation);
 
 
-//@line:14479
+//@line:14465
 
 		ext_glReferencePlaneSGIX((const GLdouble*)(equation + equationByteOffset));
 	
@@ -18284,7 +18270,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReferencePlaneSGIX(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushRasterSGIX(JNIEnv* env, jclass clazz) {
 
 
-//@line:14483
+//@line:14469
 
 		ext_glFlushRasterSGIX();
 	
@@ -18295,7 +18281,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogFuncSGIS(JNIEnv* env, 
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:14487
+//@line:14473
 
 		ext_glFogFuncSGIS((GLsizei)n, (const GLfloat*)(points + pointsByteOffset));
 	
@@ -18306,7 +18292,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFogFuncSGIS(JNIEnv* en
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:14491
+//@line:14477
 
 		ext_glGetFogFuncSGIS((GLfloat*)(points + pointsByteOffset));
 	
@@ -18316,7 +18302,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFogFuncSGIS(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glImageTransformParameteriHP(JNIEnv* env, jclass clazz, jint target, jint pname, jint param) {
 
 
-//@line:14495
+//@line:14481
 
 		ext_glImageTransformParameteriHP((GLenum)target, (GLenum)pname, (GLint)param);
 	
@@ -18326,7 +18312,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glImageTransformParameteriH
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glImageTransformParameterfHP(JNIEnv* env, jclass clazz, jint target, jint pname, jfloat param) {
 
 
-//@line:14499
+//@line:14485
 
 		ext_glImageTransformParameterfHP((GLenum)target, (GLenum)pname, (GLfloat)param);
 	
@@ -18337,7 +18323,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glImageTransformParameteriv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14503
+//@line:14489
 
 		ext_glImageTransformParameterivHP((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -18348,7 +18334,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glImageTransformParameterfv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14507
+//@line:14493
 
 		ext_glImageTransformParameterfvHP((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -18359,7 +18345,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetImageTransformParamete
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14511
+//@line:14497
 
 		ext_glGetImageTransformParameterivHP((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -18370,7 +18356,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetImageTransformParamete
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14515
+//@line:14501
 
 		ext_glGetImageTransformParameterfvHP((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -18381,7 +18367,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorSubTableEXT(JNIEnv* 
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:14519
+//@line:14505
 
 		ext_glColorSubTableEXT((GLenum)target, (GLsizei)start, (GLsizei)count, (GLenum)format, (GLenum)type, (const GLvoid*)(data + dataByteOffset));
 	
@@ -18391,7 +18377,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorSubTableEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyColorSubTableEXT(JNIEnv* env, jclass clazz, jint target, jint start, jint x, jint y, jint width) {
 
 
-//@line:14523
+//@line:14509
 
 		ext_glCopyColorSubTableEXT((GLenum)target, (GLsizei)start, (GLint)x, (GLint)y, (GLsizei)width);
 	
@@ -18401,7 +18387,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyColorSubTableEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glHintPGI(JNIEnv* env, jclass clazz, jint target, jint mode) {
 
 
-//@line:14527
+//@line:14513
 
 		ext_glHintPGI((GLenum)target, (GLint)mode);
 	
@@ -18412,7 +18398,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorTableEXT(JNIEnv* env
 	unsigned char* table = (unsigned char*)env->GetDirectBufferAddress(obj_table);
 
 
-//@line:14531
+//@line:14517
 
 		ext_glColorTableEXT((GLenum)target, (GLenum)internalFormat, (GLsizei)width, (GLenum)format, (GLenum)type, (const GLvoid*)(table + tableByteOffset));
 	
@@ -18423,7 +18409,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetColorTableEXT(JNIEnv* 
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:14535
+//@line:14521
 
 		ext_glGetColorTableEXT((GLenum)target, (GLenum)format, (GLenum)type, (GLvoid*)(data + dataByteOffset));
 	
@@ -18434,7 +18420,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetColorTableParameterivE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14539
+//@line:14525
 
 		ext_glGetColorTableParameterivEXT((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -18445,7 +18431,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetColorTableParameterfvE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14543
+//@line:14529
 
 		ext_glGetColorTableParameterfvEXT((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -18456,7 +18442,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetListParameterfvSGIX(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14547
+//@line:14533
 
 		ext_glGetListParameterfvSGIX((GLuint)list, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -18467,7 +18453,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetListParameterivSGIX(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14551
+//@line:14537
 
 		ext_glGetListParameterivSGIX((GLuint)list, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -18477,7 +18463,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetListParameterivSGIX(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glListParameterfSGIX(JNIEnv* env, jclass clazz, jint list, jint pname, jfloat param) {
 
 
-//@line:14555
+//@line:14541
 
 		ext_glListParameterfSGIX((GLuint)list, (GLenum)pname, (GLfloat)param);
 	
@@ -18488,7 +18474,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glListParameterfvSGIX(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14559
+//@line:14545
 
 		ext_glListParameterfvSGIX((GLuint)list, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -18498,7 +18484,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glListParameterfvSGIX(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glListParameteriSGIX(JNIEnv* env, jclass clazz, jint list, jint pname, jint param) {
 
 
-//@line:14563
+//@line:14549
 
 		ext_glListParameteriSGIX((GLuint)list, (GLenum)pname, (GLint)param);
 	
@@ -18509,7 +18495,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glListParameterivSGIX(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14567
+//@line:14553
 
 		ext_glListParameterivSGIX((GLuint)list, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -18519,7 +18505,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glListParameterivSGIX(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexMaterialEXT(JNIEnv* env, jclass clazz, jint face, jint mode) {
 
 
-//@line:14571
+//@line:14557
 
 		ext_glIndexMaterialEXT((GLenum)face, (GLenum)mode);
 	
@@ -18529,7 +18515,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexMaterialEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexFuncEXT(JNIEnv* env, jclass clazz, jint func, jfloat ref) {
 
 
-//@line:14575
+//@line:14561
 
 		ext_glIndexFuncEXT((GLenum)func, (GLclampf)ref);
 	
@@ -18539,7 +18525,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexFuncEXT(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLockArraysEXT(JNIEnv* env, jclass clazz, jint first, jint count) {
 
 
-//@line:14579
+//@line:14565
 
 		ext_glLockArraysEXT((GLint)first, (GLsizei)count);
 	
@@ -18549,7 +18535,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLockArraysEXT(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUnlockArraysEXT(JNIEnv* env, jclass clazz) {
 
 
-//@line:14583
+//@line:14569
 
 		ext_glUnlockArraysEXT();
 	
@@ -18560,7 +18546,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCullParameterdvEXT(JNIEnv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14587
+//@line:14573
 
 		ext_glCullParameterdvEXT((GLenum)pname, (GLdouble*)(params + paramsByteOffset));
 	
@@ -18571,7 +18557,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCullParameterfvEXT(JNIEnv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14591
+//@line:14577
 
 		ext_glCullParameterfvEXT((GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -18581,7 +18567,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCullParameterfvEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentColorMaterialSGIX(JNIEnv* env, jclass clazz, jint face, jint mode) {
 
 
-//@line:14595
+//@line:14581
 
 		ext_glFragmentColorMaterialSGIX((GLenum)face, (GLenum)mode);
 	
@@ -18591,7 +18577,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentColorMaterialSGIX
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentLightfSGIX(JNIEnv* env, jclass clazz, jint light, jint pname, jfloat param) {
 
 
-//@line:14599
+//@line:14585
 
 		ext_glFragmentLightfSGIX((GLenum)light, (GLenum)pname, (GLfloat)param);
 	
@@ -18602,7 +18588,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentLightfvSGIX(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14603
+//@line:14589
 
 		ext_glFragmentLightfvSGIX((GLenum)light, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -18612,7 +18598,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentLightfvSGIX(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentLightiSGIX(JNIEnv* env, jclass clazz, jint light, jint pname, jint param) {
 
 
-//@line:14607
+//@line:14593
 
 		ext_glFragmentLightiSGIX((GLenum)light, (GLenum)pname, (GLint)param);
 	
@@ -18623,7 +18609,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentLightivSGIX(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14611
+//@line:14597
 
 		ext_glFragmentLightivSGIX((GLenum)light, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -18633,7 +18619,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentLightivSGIX(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentLightModelfSGIX(JNIEnv* env, jclass clazz, jint pname, jfloat param) {
 
 
-//@line:14615
+//@line:14601
 
 		ext_glFragmentLightModelfSGIX((GLenum)pname, (GLfloat)param);
 	
@@ -18644,7 +18630,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentLightModelfvSGIX(
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14619
+//@line:14605
 
 		ext_glFragmentLightModelfvSGIX((GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -18654,7 +18640,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentLightModelfvSGIX(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentLightModeliSGIX(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:14623
+//@line:14609
 
 		ext_glFragmentLightModeliSGIX((GLenum)pname, (GLint)param);
 	
@@ -18665,7 +18651,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentLightModelivSGIX(
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14627
+//@line:14613
 
 		ext_glFragmentLightModelivSGIX((GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -18675,7 +18661,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentLightModelivSGIX(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentMaterialfSGIX(JNIEnv* env, jclass clazz, jint face, jint pname, jfloat param) {
 
 
-//@line:14631
+//@line:14617
 
 		ext_glFragmentMaterialfSGIX((GLenum)face, (GLenum)pname, (GLfloat)param);
 	
@@ -18686,7 +18672,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentMaterialfvSGIX(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14635
+//@line:14621
 
 		ext_glFragmentMaterialfvSGIX((GLenum)face, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -18696,7 +18682,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentMaterialfvSGIX(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentMaterialiSGIX(JNIEnv* env, jclass clazz, jint face, jint pname, jint param) {
 
 
-//@line:14639
+//@line:14625
 
 		ext_glFragmentMaterialiSGIX((GLenum)face, (GLenum)pname, (GLint)param);
 	
@@ -18707,7 +18693,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFragmentMaterialivSGIX(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14643
+//@line:14629
 
 		ext_glFragmentMaterialivSGIX((GLenum)face, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -18718,7 +18704,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFragmentLightfvSGIX(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14647
+//@line:14633
 
 		ext_glGetFragmentLightfvSGIX((GLenum)light, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -18729,7 +18715,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFragmentLightivSGIX(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14651
+//@line:14637
 
 		ext_glGetFragmentLightivSGIX((GLenum)light, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -18740,7 +18726,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFragmentMaterialfvSGIX
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14655
+//@line:14641
 
 		ext_glGetFragmentMaterialfvSGIX((GLenum)face, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -18751,7 +18737,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFragmentMaterialivSGIX
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14659
+//@line:14645
 
 		ext_glGetFragmentMaterialivSGIX((GLenum)face, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -18761,7 +18747,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFragmentMaterialivSGIX
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightEnviSGIX(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:14663
+//@line:14649
 
 		ext_glLightEnviSGIX((GLenum)pname, (GLint)param);
 	
@@ -18772,7 +18758,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawRangeElementsEXT(JNIE
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:14667
+//@line:14653
 
 		ext_glDrawRangeElementsEXT((GLenum)mode, (GLuint)start, (GLuint)end, (GLsizei)count, (GLenum)type, (const GLvoid*)(indices + indicesByteOffset));
 	
@@ -18782,7 +18768,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawRangeElementsEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glApplyTextureEXT(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:14671
+//@line:14657
 
 		ext_glApplyTextureEXT((GLenum)mode);
 	
@@ -18792,7 +18778,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glApplyTextureEXT(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureLightEXT(JNIEnv* env, jclass clazz, jint pname) {
 
 
-//@line:14675
+//@line:14661
 
 		ext_glTextureLightEXT((GLenum)pname);
 	
@@ -18802,7 +18788,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureLightEXT(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureMaterialEXT(JNIEnv* env, jclass clazz, jint face, jint mode) {
 
 
-//@line:14679
+//@line:14665
 
 		ext_glTextureMaterialEXT((GLenum)face, (GLenum)mode);
 	
@@ -18812,7 +18798,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureMaterialEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAsyncMarkerSGIX(JNIEnv* env, jclass clazz, jint marker) {
 
 
-//@line:14683
+//@line:14669
 
 		ext_glAsyncMarkerSGIX((GLuint)marker);
 	
@@ -18822,7 +18808,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAsyncMarkerSGIX(JNIEnv* e
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glFinishAsyncSGIX
 (JNIEnv* env, jclass clazz, jobject obj_markerp, jint markerpByteOffset, unsigned char* markerp) {
 
-//@line:14687
+//@line:14673
 
 		return (jint)ext_glFinishAsyncSGIX((GLuint*)(markerp + markerpByteOffset));
 	
@@ -18840,7 +18826,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glFinishAsyncSGIX(JNIEnv* e
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glPollAsyncSGIX
 (JNIEnv* env, jclass clazz, jobject obj_markerp, jint markerpByteOffset, unsigned char* markerp) {
 
-//@line:14691
+//@line:14677
 
 		return (jint)ext_glPollAsyncSGIX((GLuint*)(markerp + markerpByteOffset));
 	
@@ -18858,7 +18844,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glPollAsyncSGIX(JNIEnv* env
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGenAsyncMarkersSGIX(JNIEnv* env, jclass clazz, jint range) {
 
 
-//@line:14695
+//@line:14681
 
 		return (jint)ext_glGenAsyncMarkersSGIX((GLsizei)range);
 	
@@ -18868,7 +18854,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGenAsyncMarkersSGIX(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteAsyncMarkersSGIX(JNIEnv* env, jclass clazz, jint marker, jint range) {
 
 
-//@line:14699
+//@line:14685
 
 		ext_glDeleteAsyncMarkersSGIX((GLuint)marker, (GLsizei)range);
 	
@@ -18878,7 +18864,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteAsyncMarkersSGIX(JN
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsAsyncMarkerSGIX(JNIEnv* env, jclass clazz, jint marker) {
 
 
-//@line:14703
+//@line:14689
 
 		return (jboolean)ext_glIsAsyncMarkerSGIX((GLuint)marker);
 	
@@ -18889,7 +18875,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexPointervINTEL(JNIEn
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:14707
+//@line:14693
 
 		ext_glVertexPointervINTEL((GLint)size, (GLenum)type, (const GLvoid**)(pointer + pointerByteOffset));
 	
@@ -18900,7 +18886,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalPointervINTEL(JNIEn
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:14711
+//@line:14697
 
 		ext_glNormalPointervINTEL((GLenum)type, (const GLvoid**)(pointer + pointerByteOffset));
 	
@@ -18911,7 +18897,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorPointervINTEL(JNIEnv
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:14715
+//@line:14701
 
 		ext_glColorPointervINTEL((GLint)size, (GLenum)type, (const GLvoid**)(pointer + pointerByteOffset));
 	
@@ -18922,7 +18908,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordPointervINTEL(JNI
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:14719
+//@line:14705
 
 		ext_glTexCoordPointervINTEL((GLint)size, (GLenum)type, (const GLvoid**)(pointer + pointerByteOffset));
 	
@@ -18932,7 +18918,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordPointervINTEL(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTransformParameteriEXT(JNIEnv* env, jclass clazz, jint target, jint pname, jint param) {
 
 
-//@line:14723
+//@line:14709
 
 		ext_glPixelTransformParameteriEXT((GLenum)target, (GLenum)pname, (GLint)param);
 	
@@ -18942,7 +18928,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTransformParameteriE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTransformParameterfEXT(JNIEnv* env, jclass clazz, jint target, jint pname, jfloat param) {
 
 
-//@line:14727
+//@line:14713
 
 		ext_glPixelTransformParameterfEXT((GLenum)target, (GLenum)pname, (GLfloat)param);
 	
@@ -18953,7 +18939,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTransformParameteriv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14731
+//@line:14717
 
 		ext_glPixelTransformParameterivEXT((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -18964,7 +18950,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTransformParameterfv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14735
+//@line:14721
 
 		ext_glPixelTransformParameterfvEXT((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -18975,7 +18961,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPixelTransformParamete
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14739
+//@line:14725
 
 		ext_glGetPixelTransformParameterivEXT((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -18986,7 +18972,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPixelTransformParamete
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:14743
+//@line:14729
 
 		ext_glGetPixelTransformParameterfvEXT((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -18996,7 +18982,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPixelTransformParamete
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3bEXT(JNIEnv* env, jclass clazz, jbyte red, jbyte green, jbyte blue) {
 
 
-//@line:14747
+//@line:14733
 
 		ext_glSecondaryColor3bEXT((GLbyte)red, (GLbyte)green, (GLbyte)blue);
 	
@@ -19007,7 +18993,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3bvEXT(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14751
+//@line:14737
 
 		ext_glSecondaryColor3bvEXT((const GLbyte*)(v + vByteOffset));
 	
@@ -19017,7 +19003,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3bvEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3dEXT(JNIEnv* env, jclass clazz, jdouble red, jdouble green, jdouble blue) {
 
 
-//@line:14755
+//@line:14741
 
 		ext_glSecondaryColor3dEXT((GLdouble)red, (GLdouble)green, (GLdouble)blue);
 	
@@ -19028,7 +19014,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3dvEXT(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14759
+//@line:14745
 
 		ext_glSecondaryColor3dvEXT((const GLdouble*)(v + vByteOffset));
 	
@@ -19038,7 +19024,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3dvEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3fEXT(JNIEnv* env, jclass clazz, jfloat red, jfloat green, jfloat blue) {
 
 
-//@line:14763
+//@line:14749
 
 		ext_glSecondaryColor3fEXT((GLfloat)red, (GLfloat)green, (GLfloat)blue);
 	
@@ -19049,7 +19035,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3fvEXT(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14767
+//@line:14753
 
 		ext_glSecondaryColor3fvEXT((const GLfloat*)(v + vByteOffset));
 	
@@ -19059,7 +19045,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3fvEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3iEXT(JNIEnv* env, jclass clazz, jint red, jint green, jint blue) {
 
 
-//@line:14771
+//@line:14757
 
 		ext_glSecondaryColor3iEXT((GLint)red, (GLint)green, (GLint)blue);
 	
@@ -19070,7 +19056,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3ivEXT(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14775
+//@line:14761
 
 		ext_glSecondaryColor3ivEXT((const GLint*)(v + vByteOffset));
 	
@@ -19080,7 +19066,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3ivEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3sEXT(JNIEnv* env, jclass clazz, jshort red, jshort green, jshort blue) {
 
 
-//@line:14779
+//@line:14765
 
 		ext_glSecondaryColor3sEXT((GLshort)red, (GLshort)green, (GLshort)blue);
 	
@@ -19091,7 +19077,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3svEXT(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14783
+//@line:14769
 
 		ext_glSecondaryColor3svEXT((const GLshort*)(v + vByteOffset));
 	
@@ -19101,7 +19087,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3svEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3ubEXT(JNIEnv* env, jclass clazz, jbyte red, jbyte green, jbyte blue) {
 
 
-//@line:14787
+//@line:14773
 
 		ext_glSecondaryColor3ubEXT((GLubyte)red, (GLubyte)green, (GLubyte)blue);
 	
@@ -19112,7 +19098,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3ubvEXT(JNI
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14791
+//@line:14777
 
 		ext_glSecondaryColor3ubvEXT((const GLubyte*)(v + vByteOffset));
 	
@@ -19122,7 +19108,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3ubvEXT(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3uiEXT(JNIEnv* env, jclass clazz, jint red, jint green, jint blue) {
 
 
-//@line:14795
+//@line:14781
 
 		ext_glSecondaryColor3uiEXT((GLuint)red, (GLuint)green, (GLuint)blue);
 	
@@ -19133,7 +19119,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3uivEXT(JNI
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14799
+//@line:14785
 
 		ext_glSecondaryColor3uivEXT((const GLuint*)(v + vByteOffset));
 	
@@ -19143,7 +19129,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3uivEXT(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3usEXT(JNIEnv* env, jclass clazz, jshort red, jshort green, jshort blue) {
 
 
-//@line:14803
+//@line:14789
 
 		ext_glSecondaryColor3usEXT((GLushort)red, (GLushort)green, (GLushort)blue);
 	
@@ -19154,7 +19140,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3usvEXT(JNI
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14807
+//@line:14793
 
 		ext_glSecondaryColor3usvEXT((const GLushort*)(v + vByteOffset));
 	
@@ -19165,7 +19151,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColorPointerEXT(
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:14811
+//@line:14797
 
 		ext_glSecondaryColorPointerEXT((GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -19175,7 +19161,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColorPointerEXT(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureNormalEXT(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:14815
+//@line:14801
 
 		ext_glTextureNormalEXT((GLenum)mode);
 	
@@ -19187,7 +19173,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiDrawArraysEXT(JNIEnv
 	unsigned char* count = (unsigned char*)env->GetDirectBufferAddress(obj_count);
 
 
-//@line:14819
+//@line:14805
 
 		ext_glMultiDrawArraysEXT((GLenum)mode, (const GLint*)(first + firstByteOffset), (const GLsizei*)(count + countByteOffset), (GLsizei)primcount);
 	
@@ -19199,7 +19185,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiDrawElementsEXT(JNIE
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:14823
+//@line:14809
 
 		ext_glMultiDrawElementsEXT((GLenum)mode, (const GLsizei*)(count + countByteOffset), (GLenum)type, (const GLvoid**)(indices + indicesByteOffset), (GLsizei)primcount);
 	
@@ -19209,7 +19195,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiDrawElementsEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordfEXT(JNIEnv* env, jclass clazz, jfloat coord) {
 
 
-//@line:14827
+//@line:14813
 
 		ext_glFogCoordfEXT((GLfloat)coord);
 	
@@ -19220,7 +19206,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordfvEXT(JNIEnv* env
 	unsigned char* coord = (unsigned char*)env->GetDirectBufferAddress(obj_coord);
 
 
-//@line:14831
+//@line:14817
 
 		ext_glFogCoordfvEXT((const GLfloat*)(coord + coordByteOffset));
 	
@@ -19230,7 +19216,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordfvEXT(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoorddEXT(JNIEnv* env, jclass clazz, jdouble coord) {
 
 
-//@line:14835
+//@line:14821
 
 		ext_glFogCoorddEXT((GLdouble)coord);
 	
@@ -19241,7 +19227,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoorddvEXT(JNIEnv* env
 	unsigned char* coord = (unsigned char*)env->GetDirectBufferAddress(obj_coord);
 
 
-//@line:14839
+//@line:14825
 
 		ext_glFogCoorddvEXT((const GLdouble*)(coord + coordByteOffset));
 	
@@ -19252,7 +19238,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordPointerEXT(JNIEnv
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:14843
+//@line:14829
 
 		ext_glFogCoordPointerEXT((GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -19262,7 +19248,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordPointerEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangent3bEXT(JNIEnv* env, jclass clazz, jbyte tx, jbyte ty, jbyte tz) {
 
 
-//@line:14847
+//@line:14833
 
 		ext_glTangent3bEXT((GLbyte)tx, (GLbyte)ty, (GLbyte)tz);
 	
@@ -19273,7 +19259,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangent3bvEXT(JNIEnv* env
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14851
+//@line:14837
 
 		ext_glTangent3bvEXT((const GLbyte*)(v + vByteOffset));
 	
@@ -19283,7 +19269,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangent3bvEXT(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangent3dEXT(JNIEnv* env, jclass clazz, jdouble tx, jdouble ty, jdouble tz) {
 
 
-//@line:14855
+//@line:14841
 
 		ext_glTangent3dEXT((GLdouble)tx, (GLdouble)ty, (GLdouble)tz);
 	
@@ -19294,7 +19280,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangent3dvEXT(JNIEnv* env
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14859
+//@line:14845
 
 		ext_glTangent3dvEXT((const GLdouble*)(v + vByteOffset));
 	
@@ -19304,7 +19290,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangent3dvEXT(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangent3fEXT(JNIEnv* env, jclass clazz, jfloat tx, jfloat ty, jfloat tz) {
 
 
-//@line:14863
+//@line:14849
 
 		ext_glTangent3fEXT((GLfloat)tx, (GLfloat)ty, (GLfloat)tz);
 	
@@ -19315,7 +19301,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangent3fvEXT(JNIEnv* env
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14867
+//@line:14853
 
 		ext_glTangent3fvEXT((const GLfloat*)(v + vByteOffset));
 	
@@ -19325,7 +19311,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangent3fvEXT(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangent3iEXT(JNIEnv* env, jclass clazz, jint tx, jint ty, jint tz) {
 
 
-//@line:14871
+//@line:14857
 
 		ext_glTangent3iEXT((GLint)tx, (GLint)ty, (GLint)tz);
 	
@@ -19336,7 +19322,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangent3ivEXT(JNIEnv* env
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14875
+//@line:14861
 
 		ext_glTangent3ivEXT((const GLint*)(v + vByteOffset));
 	
@@ -19346,7 +19332,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangent3ivEXT(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangent3sEXT(JNIEnv* env, jclass clazz, jshort tx, jshort ty, jshort tz) {
 
 
-//@line:14879
+//@line:14865
 
 		ext_glTangent3sEXT((GLshort)tx, (GLshort)ty, (GLshort)tz);
 	
@@ -19357,7 +19343,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangent3svEXT(JNIEnv* env
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14883
+//@line:14869
 
 		ext_glTangent3svEXT((const GLshort*)(v + vByteOffset));
 	
@@ -19367,7 +19353,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangent3svEXT(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormal3bEXT(JNIEnv* env, jclass clazz, jbyte bx, jbyte by, jbyte bz) {
 
 
-//@line:14887
+//@line:14873
 
 		ext_glBinormal3bEXT((GLbyte)bx, (GLbyte)by, (GLbyte)bz);
 	
@@ -19378,7 +19364,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormal3bvEXT(JNIEnv* en
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14891
+//@line:14877
 
 		ext_glBinormal3bvEXT((const GLbyte*)(v + vByteOffset));
 	
@@ -19388,7 +19374,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormal3bvEXT(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormal3dEXT(JNIEnv* env, jclass clazz, jdouble bx, jdouble by, jdouble bz) {
 
 
-//@line:14895
+//@line:14881
 
 		ext_glBinormal3dEXT((GLdouble)bx, (GLdouble)by, (GLdouble)bz);
 	
@@ -19399,7 +19385,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormal3dvEXT(JNIEnv* en
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14899
+//@line:14885
 
 		ext_glBinormal3dvEXT((const GLdouble*)(v + vByteOffset));
 	
@@ -19409,7 +19395,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormal3dvEXT(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormal3fEXT(JNIEnv* env, jclass clazz, jfloat bx, jfloat by, jfloat bz) {
 
 
-//@line:14903
+//@line:14889
 
 		ext_glBinormal3fEXT((GLfloat)bx, (GLfloat)by, (GLfloat)bz);
 	
@@ -19420,7 +19406,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormal3fvEXT(JNIEnv* en
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14907
+//@line:14893
 
 		ext_glBinormal3fvEXT((const GLfloat*)(v + vByteOffset));
 	
@@ -19430,7 +19416,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormal3fvEXT(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormal3iEXT(JNIEnv* env, jclass clazz, jint bx, jint by, jint bz) {
 
 
-//@line:14911
+//@line:14897
 
 		ext_glBinormal3iEXT((GLint)bx, (GLint)by, (GLint)bz);
 	
@@ -19441,7 +19427,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormal3ivEXT(JNIEnv* en
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14915
+//@line:14901
 
 		ext_glBinormal3ivEXT((const GLint*)(v + vByteOffset));
 	
@@ -19451,7 +19437,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormal3ivEXT(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormal3sEXT(JNIEnv* env, jclass clazz, jshort bx, jshort by, jshort bz) {
 
 
-//@line:14919
+//@line:14905
 
 		ext_glBinormal3sEXT((GLshort)bx, (GLshort)by, (GLshort)bz);
 	
@@ -19462,7 +19448,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormal3svEXT(JNIEnv* en
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:14923
+//@line:14909
 
 		ext_glBinormal3svEXT((const GLshort*)(v + vByteOffset));
 	
@@ -19473,7 +19459,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTangentPointerEXT(JNIEnv*
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:14927
+//@line:14913
 
 		ext_glTangentPointerEXT((GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -19484,7 +19470,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormalPointerEXT(JNIEnv
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:14931
+//@line:14917
 
 		ext_glBinormalPointerEXT((GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -19494,7 +19480,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBinormalPointerEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFinishTextureSUNX(JNIEnv* env, jclass clazz) {
 
 
-//@line:14935
+//@line:14921
 
 		ext_glFinishTextureSUNX();
 	
@@ -19504,7 +19490,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFinishTextureSUNX(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactorbSUN(JNIEnv* env, jclass clazz, jbyte factor) {
 
 
-//@line:14939
+//@line:14925
 
 		ext_glGlobalAlphaFactorbSUN((GLbyte)factor);
 	
@@ -19514,7 +19500,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactorbSUN(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactorsSUN(JNIEnv* env, jclass clazz, jshort factor) {
 
 
-//@line:14943
+//@line:14929
 
 		ext_glGlobalAlphaFactorsSUN((GLshort)factor);
 	
@@ -19524,7 +19510,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactorsSUN(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactoriSUN(JNIEnv* env, jclass clazz, jint factor) {
 
 
-//@line:14947
+//@line:14933
 
 		ext_glGlobalAlphaFactoriSUN((GLint)factor);
 	
@@ -19534,7 +19520,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactoriSUN(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactorfSUN(JNIEnv* env, jclass clazz, jfloat factor) {
 
 
-//@line:14951
+//@line:14937
 
 		ext_glGlobalAlphaFactorfSUN((GLfloat)factor);
 	
@@ -19544,7 +19530,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactorfSUN(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactordSUN(JNIEnv* env, jclass clazz, jdouble factor) {
 
 
-//@line:14955
+//@line:14941
 
 		ext_glGlobalAlphaFactordSUN((GLdouble)factor);
 	
@@ -19554,7 +19540,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactordSUN(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactorubSUN(JNIEnv* env, jclass clazz, jbyte factor) {
 
 
-//@line:14959
+//@line:14945
 
 		ext_glGlobalAlphaFactorubSUN((GLubyte)factor);
 	
@@ -19564,7 +19550,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactorubSUN(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactorusSUN(JNIEnv* env, jclass clazz, jshort factor) {
 
 
-//@line:14963
+//@line:14949
 
 		ext_glGlobalAlphaFactorusSUN((GLushort)factor);
 	
@@ -19574,7 +19560,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactorusSUN(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactoruiSUN(JNIEnv* env, jclass clazz, jint factor) {
 
 
-//@line:14967
+//@line:14953
 
 		ext_glGlobalAlphaFactoruiSUN((GLuint)factor);
 	
@@ -19584,7 +19570,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGlobalAlphaFactoruiSUN(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiSUN(JNIEnv* env, jclass clazz, jint code) {
 
 
-//@line:14971
+//@line:14957
 
 		ext_glReplacementCodeuiSUN((GLuint)code);
 	
@@ -19594,7 +19580,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiSUN(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeusSUN(JNIEnv* env, jclass clazz, jshort code) {
 
 
-//@line:14975
+//@line:14961
 
 		ext_glReplacementCodeusSUN((GLushort)code);
 	
@@ -19604,7 +19590,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeusSUN(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeubSUN(JNIEnv* env, jclass clazz, jbyte code) {
 
 
-//@line:14979
+//@line:14965
 
 		ext_glReplacementCodeubSUN((GLubyte)code);
 	
@@ -19615,7 +19601,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuivSUN(JNI
 	unsigned char* code = (unsigned char*)env->GetDirectBufferAddress(obj_code);
 
 
-//@line:14983
+//@line:14969
 
 		ext_glReplacementCodeuivSUN((const GLuint*)(code + codeByteOffset));
 	
@@ -19626,7 +19612,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeusvSUN(JNI
 	unsigned char* code = (unsigned char*)env->GetDirectBufferAddress(obj_code);
 
 
-//@line:14987
+//@line:14973
 
 		ext_glReplacementCodeusvSUN((const GLushort*)(code + codeByteOffset));
 	
@@ -19637,7 +19623,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeubvSUN(JNI
 	unsigned char* code = (unsigned char*)env->GetDirectBufferAddress(obj_code);
 
 
-//@line:14991
+//@line:14977
 
 		ext_glReplacementCodeubvSUN((const GLubyte*)(code + codeByteOffset));
 	
@@ -19648,7 +19634,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodePointerSUN
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:14995
+//@line:14981
 
 		ext_glReplacementCodePointerSUN((GLenum)type, (GLsizei)stride, (const GLvoid**)(pointer + pointerByteOffset));
 	
@@ -19658,7 +19644,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodePointerSUN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4ubVertex2fSUN(JNIEnv* env, jclass clazz, jbyte r, jbyte g, jbyte b, jbyte a, jfloat x, jfloat y) {
 
 
-//@line:14999
+//@line:14985
 
 		ext_glColor4ubVertex2fSUN((GLubyte)r, (GLubyte)g, (GLubyte)b, (GLubyte)a, (GLfloat)x, (GLfloat)y);
 	
@@ -19670,7 +19656,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4ubVertex2fvSUN(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15003
+//@line:14989
 
 		ext_glColor4ubVertex2fvSUN((const GLubyte*)(c + cByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -19680,7 +19666,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4ubVertex2fvSUN(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4ubVertex3fSUN(JNIEnv* env, jclass clazz, jbyte r, jbyte g, jbyte b, jbyte a, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15007
+//@line:14993
 
 		ext_glColor4ubVertex3fSUN((GLubyte)r, (GLubyte)g, (GLubyte)b, (GLubyte)a, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -19692,7 +19678,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4ubVertex3fvSUN(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15011
+//@line:14997
 
 		ext_glColor4ubVertex3fvSUN((const GLubyte*)(c + cByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -19702,7 +19688,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4ubVertex3fvSUN(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3fVertex3fSUN(JNIEnv* env, jclass clazz, jfloat r, jfloat g, jfloat b, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15015
+//@line:15001
 
 		ext_glColor3fVertex3fSUN((GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -19714,7 +19700,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3fVertex3fvSUN(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15019
+//@line:15005
 
 		ext_glColor3fVertex3fvSUN((const GLfloat*)(c + cByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -19724,7 +19710,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3fVertex3fvSUN(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3fVertex3fSUN(JNIEnv* env, jclass clazz, jfloat nx, jfloat ny, jfloat nz, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15023
+//@line:15009
 
 		ext_glNormal3fVertex3fSUN((GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -19736,7 +19722,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3fVertex3fvSUN(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15027
+//@line:15013
 
 		ext_glNormal3fVertex3fvSUN((const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -19746,7 +19732,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3fVertex3fvSUN(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4fNormal3fVertex3fSUN(JNIEnv* env, jclass clazz, jfloat r, jfloat g, jfloat b, jfloat a, jfloat nx, jfloat ny, jfloat nz, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15031
+//@line:15017
 
 		ext_glColor4fNormal3fVertex3fSUN((GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)a, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -19759,7 +19745,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4fNormal3fVertex3fvS
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15035
+//@line:15021
 
 		ext_glColor4fNormal3fVertex3fvSUN((const GLfloat*)(c + cByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -19769,7 +19755,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4fNormal3fVertex3fvS
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fVertex3fSUN(JNIEnv* env, jclass clazz, jfloat s, jfloat t, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15039
+//@line:15025
 
 		ext_glTexCoord2fVertex3fSUN((GLfloat)s, (GLfloat)t, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -19781,7 +19767,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fVertex3fvSUN(JN
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15043
+//@line:15029
 
 		ext_glTexCoord2fVertex3fvSUN((const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -19791,7 +19777,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fVertex3fvSUN(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4fVertex4fSUN(JNIEnv* env, jclass clazz, jfloat s, jfloat t, jfloat p, jfloat q, jfloat x, jfloat y, jfloat z, jfloat w) {
 
 
-//@line:15047
+//@line:15033
 
 		ext_glTexCoord4fVertex4fSUN((GLfloat)s, (GLfloat)t, (GLfloat)p, (GLfloat)q, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
 	
@@ -19803,7 +19789,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4fVertex4fvSUN(JN
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15051
+//@line:15037
 
 		ext_glTexCoord4fVertex4fvSUN((const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -19813,7 +19799,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4fVertex4fvSUN(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fColor4ubVertex3fSUN(JNIEnv* env, jclass clazz, jfloat s, jfloat t, jbyte r, jbyte g, jbyte b, jbyte a, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15055
+//@line:15041
 
 		ext_glTexCoord2fColor4ubVertex3fSUN((GLfloat)s, (GLfloat)t, (GLubyte)r, (GLubyte)g, (GLubyte)b, (GLubyte)a, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -19826,7 +19812,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fColor4ubVertex3
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15059
+//@line:15045
 
 		ext_glTexCoord2fColor4ubVertex3fvSUN((const GLfloat*)(tc + tcByteOffset), (const GLubyte*)(c + cByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -19836,7 +19822,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fColor4ubVertex3
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fColor3fVertex3fSUN(JNIEnv* env, jclass clazz, jfloat s, jfloat t, jfloat r, jfloat g, jfloat b, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15063
+//@line:15049
 
 		ext_glTexCoord2fColor3fVertex3fSUN((GLfloat)s, (GLfloat)t, (GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -19849,7 +19835,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fColor3fVertex3f
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15067
+//@line:15053
 
 		ext_glTexCoord2fColor3fVertex3fvSUN((const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(c + cByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -19859,7 +19845,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fColor3fVertex3f
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fNormal3fVertex3fSUN(JNIEnv* env, jclass clazz, jfloat s, jfloat t, jfloat nx, jfloat ny, jfloat nz, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15071
+//@line:15057
 
 		ext_glTexCoord2fNormal3fVertex3fSUN((GLfloat)s, (GLfloat)t, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -19872,7 +19858,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fNormal3fVertex3
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15075
+//@line:15061
 
 		ext_glTexCoord2fNormal3fVertex3fvSUN((const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -19882,7 +19868,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fNormal3fVertex3
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fColor4fNormal3fVertex3fSUN(JNIEnv* env, jclass clazz, jfloat s, jfloat t, jfloat r, jfloat g, jfloat b, jfloat a, jfloat nx, jfloat ny, jfloat nz, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15079
+//@line:15065
 
 		ext_glTexCoord2fColor4fNormal3fVertex3fSUN((GLfloat)s, (GLfloat)t, (GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)a, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -19896,7 +19882,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fColor4fNormal3f
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15083
+//@line:15069
 
 		ext_glTexCoord2fColor4fNormal3fVertex3fvSUN((const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(c + cByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -19906,7 +19892,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2fColor4fNormal3f
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4fColor4fNormal3fVertex4fSUN(JNIEnv* env, jclass clazz, jfloat s, jfloat t, jfloat p, jfloat q, jfloat r, jfloat g, jfloat b, jfloat a, jfloat nx, jfloat ny, jfloat nz, jfloat x, jfloat y, jfloat z, jfloat w) {
 
 
-//@line:15087
+//@line:15073
 
 		ext_glTexCoord4fColor4fNormal3fVertex4fSUN((GLfloat)s, (GLfloat)t, (GLfloat)p, (GLfloat)q, (GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)a, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
 	
@@ -19920,7 +19906,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4fColor4fNormal3f
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15091
+//@line:15077
 
 		ext_glTexCoord4fColor4fNormal3fVertex4fvSUN((const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(c + cByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -19930,7 +19916,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4fColor4fNormal3f
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiVertex3fSUN(JNIEnv* env, jclass clazz, jint rc, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15095
+//@line:15081
 
 		ext_glReplacementCodeuiVertex3fSUN((GLuint)rc, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -19942,7 +19928,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiVertex3f
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15099
+//@line:15085
 
 		ext_glReplacementCodeuiVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -19952,7 +19938,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiVertex3f
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiColor4ubVertex3fSUN(JNIEnv* env, jclass clazz, jint rc, jbyte r, jbyte g, jbyte b, jbyte a, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15103
+//@line:15089
 
 		ext_glReplacementCodeuiColor4ubVertex3fSUN((GLuint)rc, (GLubyte)r, (GLubyte)g, (GLubyte)b, (GLubyte)a, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -19965,7 +19951,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiColor4ub
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15107
+//@line:15093
 
 		ext_glReplacementCodeuiColor4ubVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLubyte*)(c + cByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -19975,7 +19961,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiColor4ub
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiColor3fVertex3fSUN(JNIEnv* env, jclass clazz, jint rc, jfloat r, jfloat g, jfloat b, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15111
+//@line:15097
 
 		ext_glReplacementCodeuiColor3fVertex3fSUN((GLuint)rc, (GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -19988,7 +19974,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiColor3fV
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15115
+//@line:15101
 
 		ext_glReplacementCodeuiColor3fVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLfloat*)(c + cByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -19998,7 +19984,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiColor3fV
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiNormal3fVertex3fSUN(JNIEnv* env, jclass clazz, jint rc, jfloat nx, jfloat ny, jfloat nz, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15119
+//@line:15105
 
 		ext_glReplacementCodeuiNormal3fVertex3fSUN((GLuint)rc, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -20011,7 +19997,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiNormal3f
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15123
+//@line:15109
 
 		ext_glReplacementCodeuiNormal3fVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -20021,7 +20007,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiNormal3f
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiColor4fNormal3fVertex3fSUN(JNIEnv* env, jclass clazz, jint rc, jfloat r, jfloat g, jfloat b, jfloat a, jfloat nx, jfloat ny, jfloat nz, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15127
+//@line:15113
 
 		ext_glReplacementCodeuiColor4fNormal3fVertex3fSUN((GLuint)rc, (GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)a, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -20035,7 +20021,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiColor4fN
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15131
+//@line:15117
 
 		ext_glReplacementCodeuiColor4fNormal3fVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLfloat*)(c + cByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -20045,7 +20031,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiColor4fN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiTexCoord2fVertex3fSUN(JNIEnv* env, jclass clazz, jint rc, jfloat s, jfloat t, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15135
+//@line:15121
 
 		ext_glReplacementCodeuiTexCoord2fVertex3fSUN((GLuint)rc, (GLfloat)s, (GLfloat)t, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -20058,7 +20044,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiTexCoord
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15139
+//@line:15125
 
 		ext_glReplacementCodeuiTexCoord2fVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -20068,7 +20054,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiTexCoord
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiTexCoord2fNormal3fVertex3fSUN(JNIEnv* env, jclass clazz, jint rc, jfloat s, jfloat t, jfloat nx, jfloat ny, jfloat nz, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15143
+//@line:15129
 
 		ext_glReplacementCodeuiTexCoord2fNormal3fVertex3fSUN((GLuint)rc, (GLfloat)s, (GLfloat)t, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -20082,7 +20068,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiTexCoord
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15147
+//@line:15133
 
 		ext_glReplacementCodeuiTexCoord2fNormal3fVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -20092,7 +20078,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiTexCoord
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fSUN(JNIEnv* env, jclass clazz, jint rc, jfloat s, jfloat t, jfloat r, jfloat g, jfloat b, jfloat a, jfloat nx, jfloat ny, jfloat nz, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15151
+//@line:15137
 
 		ext_glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fSUN((GLuint)rc, (GLfloat)s, (GLfloat)t, (GLfloat)r, (GLfloat)g, (GLfloat)b, (GLfloat)a, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -20107,7 +20093,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiTexCoord
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15155
+//@line:15141
 
 		ext_glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fvSUN((const GLuint*)(rc + rcByteOffset), (const GLfloat*)(tc + tcByteOffset), (const GLfloat*)(c + cByteOffset), (const GLfloat*)(n + nByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -20117,7 +20103,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glReplacementCodeuiTexCoord
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFuncSeparateEXT(JNIEnv* env, jclass clazz, jint sfactorRGB, jint dfactorRGB, jint sfactorAlpha, jint dfactorAlpha) {
 
 
-//@line:15159
+//@line:15145
 
 		ext_glBlendFuncSeparateEXT((GLenum)sfactorRGB, (GLenum)dfactorRGB, (GLenum)sfactorAlpha, (GLenum)dfactorAlpha);
 	
@@ -20127,7 +20113,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFuncSeparateEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFuncSeparateINGR(JNIEnv* env, jclass clazz, jint sfactorRGB, jint dfactorRGB, jint sfactorAlpha, jint dfactorAlpha) {
 
 
-//@line:15163
+//@line:15149
 
 		ext_glBlendFuncSeparateINGR((GLenum)sfactorRGB, (GLenum)dfactorRGB, (GLenum)sfactorAlpha, (GLenum)dfactorAlpha);
 	
@@ -20137,7 +20123,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFuncSeparateINGR(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexWeightfEXT(JNIEnv* env, jclass clazz, jfloat weight) {
 
 
-//@line:15167
+//@line:15153
 
 		ext_glVertexWeightfEXT((GLfloat)weight);
 	
@@ -20148,7 +20134,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexWeightfvEXT(JNIEnv*
 	unsigned char* weight = (unsigned char*)env->GetDirectBufferAddress(obj_weight);
 
 
-//@line:15171
+//@line:15157
 
 		ext_glVertexWeightfvEXT((const GLfloat*)(weight + weightByteOffset));
 	
@@ -20159,7 +20145,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexWeightPointerEXT(JN
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:15175
+//@line:15161
 
 		ext_glVertexWeightPointerEXT((GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -20169,7 +20155,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexWeightPointerEXT(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushVertexArrayRangeNV(JNIEnv* env, jclass clazz) {
 
 
-//@line:15179
+//@line:15165
 
 		ext_glFlushVertexArrayRangeNV();
 	
@@ -20180,7 +20166,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayRangeNV(JNIEnv
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:15183
+//@line:15169
 
 		ext_glVertexArrayRangeNV((GLsizei)length, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -20191,7 +20177,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCombinerParameterfvNV(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15187
+//@line:15173
 
 		ext_glCombinerParameterfvNV((GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -20201,7 +20187,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCombinerParameterfvNV(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCombinerParameterfNV(JNIEnv* env, jclass clazz, jint pname, jfloat param) {
 
 
-//@line:15191
+//@line:15177
 
 		ext_glCombinerParameterfNV((GLenum)pname, (GLfloat)param);
 	
@@ -20212,7 +20198,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCombinerParameterivNV(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15195
+//@line:15181
 
 		ext_glCombinerParameterivNV((GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -20222,7 +20208,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCombinerParameterivNV(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCombinerParameteriNV(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:15199
+//@line:15185
 
 		ext_glCombinerParameteriNV((GLenum)pname, (GLint)param);
 	
@@ -20232,7 +20218,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCombinerParameteriNV(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCombinerInputNV(JNIEnv* env, jclass clazz, jint stage, jint portion, jint variable, jint input, jint mapping, jint componentUsage) {
 
 
-//@line:15203
+//@line:15189
 
 		ext_glCombinerInputNV((GLenum)stage, (GLenum)portion, (GLenum)variable, (GLenum)input, (GLenum)mapping, (GLenum)componentUsage);
 	
@@ -20242,7 +20228,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCombinerInputNV(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCombinerOutputNV(JNIEnv* env, jclass clazz, jint stage, jint portion, jint abOutput, jint cdOutput, jint sumOutput, jint scale, jint bias, jboolean abDotProduct, jboolean cdDotProduct, jboolean muxSum) {
 
 
-//@line:15207
+//@line:15193
 
 		ext_glCombinerOutputNV((GLenum)stage, (GLenum)portion, (GLenum)abOutput, (GLenum)cdOutput, (GLenum)sumOutput, (GLenum)scale, (GLenum)bias, (GLboolean)abDotProduct, (GLboolean)cdDotProduct, (GLboolean)muxSum);
 	
@@ -20252,7 +20238,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCombinerOutputNV(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFinalCombinerInputNV(JNIEnv* env, jclass clazz, jint variable, jint input, jint mapping, jint componentUsage) {
 
 
-//@line:15211
+//@line:15197
 
 		ext_glFinalCombinerInputNV((GLenum)variable, (GLenum)input, (GLenum)mapping, (GLenum)componentUsage);
 	
@@ -20263,7 +20249,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetCombinerInputParameter
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15215
+//@line:15201
 
 		ext_glGetCombinerInputParameterfvNV((GLenum)stage, (GLenum)portion, (GLenum)variable, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -20274,7 +20260,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetCombinerInputParameter
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15219
+//@line:15205
 
 		ext_glGetCombinerInputParameterivNV((GLenum)stage, (GLenum)portion, (GLenum)variable, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -20285,7 +20271,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetCombinerOutputParamete
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15223
+//@line:15209
 
 		ext_glGetCombinerOutputParameterfvNV((GLenum)stage, (GLenum)portion, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -20296,7 +20282,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetCombinerOutputParamete
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15227
+//@line:15213
 
 		ext_glGetCombinerOutputParameterivNV((GLenum)stage, (GLenum)portion, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -20307,7 +20293,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFinalCombinerInputPara
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15231
+//@line:15217
 
 		ext_glGetFinalCombinerInputParameterfvNV((GLenum)variable, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -20318,7 +20304,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFinalCombinerInputPara
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15235
+//@line:15221
 
 		ext_glGetFinalCombinerInputParameterivNV((GLenum)variable, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -20328,7 +20314,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFinalCombinerInputPara
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glResizeBuffersMESA(JNIEnv* env, jclass clazz) {
 
 
-//@line:15239
+//@line:15225
 
 		ext_glResizeBuffersMESA();
 	
@@ -20338,7 +20324,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glResizeBuffersMESA(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2dMESA(JNIEnv* env, jclass clazz, jdouble x, jdouble y) {
 
 
-//@line:15243
+//@line:15229
 
 		ext_glWindowPos2dMESA((GLdouble)x, (GLdouble)y);
 	
@@ -20349,7 +20335,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2dvMESA(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15247
+//@line:15233
 
 		ext_glWindowPos2dvMESA((const GLdouble*)(v + vByteOffset));
 	
@@ -20359,7 +20345,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2dvMESA(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2fMESA(JNIEnv* env, jclass clazz, jfloat x, jfloat y) {
 
 
-//@line:15251
+//@line:15237
 
 		ext_glWindowPos2fMESA((GLfloat)x, (GLfloat)y);
 	
@@ -20370,7 +20356,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2fvMESA(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15255
+//@line:15241
 
 		ext_glWindowPos2fvMESA((const GLfloat*)(v + vByteOffset));
 	
@@ -20380,7 +20366,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2fvMESA(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2iMESA(JNIEnv* env, jclass clazz, jint x, jint y) {
 
 
-//@line:15259
+//@line:15245
 
 		ext_glWindowPos2iMESA((GLint)x, (GLint)y);
 	
@@ -20391,7 +20377,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2ivMESA(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15263
+//@line:15249
 
 		ext_glWindowPos2ivMESA((const GLint*)(v + vByteOffset));
 	
@@ -20401,7 +20387,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2ivMESA(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2sMESA(JNIEnv* env, jclass clazz, jshort x, jshort y) {
 
 
-//@line:15267
+//@line:15253
 
 		ext_glWindowPos2sMESA((GLshort)x, (GLshort)y);
 	
@@ -20412,7 +20398,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2svMESA(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15271
+//@line:15257
 
 		ext_glWindowPos2svMESA((const GLshort*)(v + vByteOffset));
 	
@@ -20422,7 +20408,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos2svMESA(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3dMESA(JNIEnv* env, jclass clazz, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:15275
+//@line:15261
 
 		ext_glWindowPos3dMESA((GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -20433,7 +20419,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3dvMESA(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15279
+//@line:15265
 
 		ext_glWindowPos3dvMESA((const GLdouble*)(v + vByteOffset));
 	
@@ -20443,7 +20429,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3dvMESA(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3fMESA(JNIEnv* env, jclass clazz, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15283
+//@line:15269
 
 		ext_glWindowPos3fMESA((GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -20454,7 +20440,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3fvMESA(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15287
+//@line:15273
 
 		ext_glWindowPos3fvMESA((const GLfloat*)(v + vByteOffset));
 	
@@ -20464,7 +20450,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3fvMESA(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3iMESA(JNIEnv* env, jclass clazz, jint x, jint y, jint z) {
 
 
-//@line:15291
+//@line:15277
 
 		ext_glWindowPos3iMESA((GLint)x, (GLint)y, (GLint)z);
 	
@@ -20475,7 +20461,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3ivMESA(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15295
+//@line:15281
 
 		ext_glWindowPos3ivMESA((const GLint*)(v + vByteOffset));
 	
@@ -20485,7 +20471,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3ivMESA(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3sMESA(JNIEnv* env, jclass clazz, jshort x, jshort y, jshort z) {
 
 
-//@line:15299
+//@line:15285
 
 		ext_glWindowPos3sMESA((GLshort)x, (GLshort)y, (GLshort)z);
 	
@@ -20496,7 +20482,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3svMESA(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15303
+//@line:15289
 
 		ext_glWindowPos3svMESA((const GLshort*)(v + vByteOffset));
 	
@@ -20506,7 +20492,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos3svMESA(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos4dMESA(JNIEnv* env, jclass clazz, jdouble x, jdouble y, jdouble z, jdouble w) {
 
 
-//@line:15307
+//@line:15293
 
 		ext_glWindowPos4dMESA((GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -20517,7 +20503,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos4dvMESA(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15311
+//@line:15297
 
 		ext_glWindowPos4dvMESA((const GLdouble*)(v + vByteOffset));
 	
@@ -20527,7 +20513,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos4dvMESA(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos4fMESA(JNIEnv* env, jclass clazz, jfloat x, jfloat y, jfloat z, jfloat w) {
 
 
-//@line:15315
+//@line:15301
 
 		ext_glWindowPos4fMESA((GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
 	
@@ -20538,7 +20524,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos4fvMESA(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15319
+//@line:15305
 
 		ext_glWindowPos4fvMESA((const GLfloat*)(v + vByteOffset));
 	
@@ -20548,7 +20534,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos4fvMESA(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos4iMESA(JNIEnv* env, jclass clazz, jint x, jint y, jint z, jint w) {
 
 
-//@line:15323
+//@line:15309
 
 		ext_glWindowPos4iMESA((GLint)x, (GLint)y, (GLint)z, (GLint)w);
 	
@@ -20559,7 +20545,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos4ivMESA(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15327
+//@line:15313
 
 		ext_glWindowPos4ivMESA((const GLint*)(v + vByteOffset));
 	
@@ -20569,7 +20555,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos4ivMESA(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos4sMESA(JNIEnv* env, jclass clazz, jshort x, jshort y, jshort z, jshort w) {
 
 
-//@line:15331
+//@line:15317
 
 		ext_glWindowPos4sMESA((GLshort)x, (GLshort)y, (GLshort)z, (GLshort)w);
 	
@@ -20580,7 +20566,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWindowPos4svMESA(JNIEnv* 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15335
+//@line:15321
 
 		ext_glWindowPos4svMESA((const GLshort*)(v + vByteOffset));
 	
@@ -20593,7 +20579,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiModeDrawArraysIBM(JN
 	unsigned char* count = (unsigned char*)env->GetDirectBufferAddress(obj_count);
 
 
-//@line:15339
+//@line:15325
 
 		ext_glMultiModeDrawArraysIBM((const GLenum*)(mode + modeByteOffset), (const GLint*)(first + firstByteOffset), (const GLsizei*)(count + countByteOffset), (GLsizei)primcount, (GLint)modestride);
 	
@@ -20606,7 +20592,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiModeDrawElementsIBM(
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:15343
+//@line:15329
 
 		ext_glMultiModeDrawElementsIBM((const GLenum*)(mode + modeByteOffset), (const GLsizei*)(count + countByteOffset), (GLenum)type, (const GLvoid**)(indices + indicesByteOffset), (GLsizei)primcount, (GLint)modestride);
 	
@@ -20617,7 +20603,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorPointerListIBM(JNIEn
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:15347
+//@line:15333
 
 		ext_glColorPointerListIBM((GLint)size, (GLenum)type, (GLint)stride, (const GLvoid**)(pointer + pointerByteOffset), (GLint)ptrstride);
 	
@@ -20628,7 +20614,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColorPointerList
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:15351
+//@line:15337
 
 		ext_glSecondaryColorPointerListIBM((GLint)size, (GLenum)type, (GLint)stride, (const GLvoid**)(pointer + pointerByteOffset), (GLint)ptrstride);
 	
@@ -20639,7 +20625,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEdgeFlagPointerListIBM(JN
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:15355
+//@line:15341
 
 		ext_glEdgeFlagPointerListIBM((GLint)stride, (const GLboolean**)(pointer + pointerByteOffset), (GLint)ptrstride);
 	
@@ -20650,7 +20636,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordPointerListIBM(JN
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:15359
+//@line:15345
 
 		ext_glFogCoordPointerListIBM((GLenum)type, (GLint)stride, (const GLvoid**)(pointer + pointerByteOffset), (GLint)ptrstride);
 	
@@ -20661,7 +20647,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexPointerListIBM(JNIEn
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:15363
+//@line:15349
 
 		ext_glIndexPointerListIBM((GLenum)type, (GLint)stride, (const GLvoid**)(pointer + pointerByteOffset), (GLint)ptrstride);
 	
@@ -20672,7 +20658,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalPointerListIBM(JNIE
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:15367
+//@line:15353
 
 		ext_glNormalPointerListIBM((GLenum)type, (GLint)stride, (const GLvoid**)(pointer + pointerByteOffset), (GLint)ptrstride);
 	
@@ -20683,7 +20669,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordPointerListIBM(JN
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:15371
+//@line:15357
 
 		ext_glTexCoordPointerListIBM((GLint)size, (GLenum)type, (GLint)stride, (const GLvoid**)(pointer + pointerByteOffset), (GLint)ptrstride);
 	
@@ -20694,7 +20680,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexPointerListIBM(JNIE
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:15375
+//@line:15361
 
 		ext_glVertexPointerListIBM((GLint)size, (GLenum)type, (GLint)stride, (const GLvoid**)(pointer + pointerByteOffset), (GLint)ptrstride);
 	
@@ -20704,7 +20690,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexPointerListIBM(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTbufferMask3DFX(JNIEnv* env, jclass clazz, jint mask) {
 
 
-//@line:15379
+//@line:15365
 
 		ext_glTbufferMask3DFX((GLuint)mask);
 	
@@ -20714,7 +20700,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTbufferMask3DFX(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSampleMaskEXT(JNIEnv* env, jclass clazz, jfloat value, jboolean invert) {
 
 
-//@line:15383
+//@line:15369
 
 		ext_glSampleMaskEXT((GLclampf)value, (GLboolean)invert);
 	
@@ -20724,7 +20710,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSampleMaskEXT(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSamplePatternEXT(JNIEnv* env, jclass clazz, jint pattern) {
 
 
-//@line:15387
+//@line:15373
 
 		ext_glSamplePatternEXT((GLenum)pattern);
 	
@@ -20734,7 +20720,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSamplePatternEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureColorMaskSGIS(JNIEnv* env, jclass clazz, jboolean red, jboolean green, jboolean blue, jboolean alpha) {
 
 
-//@line:15391
+//@line:15377
 
 		ext_glTextureColorMaskSGIS((GLboolean)red, (GLboolean)green, (GLboolean)blue, (GLboolean)alpha);
 	
@@ -20745,7 +20731,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIglooInterfaceSGIX(JNIEnv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15395
+//@line:15381
 
 		ext_glIglooInterfaceSGIX((GLenum)pname, (const GLvoid*)(params + paramsByteOffset));
 	
@@ -20756,7 +20742,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteFencesNV(JNIEnv* en
 	unsigned char* fences = (unsigned char*)env->GetDirectBufferAddress(obj_fences);
 
 
-//@line:15399
+//@line:15385
 
 		ext_glDeleteFencesNV((GLsizei)n, (const GLuint*)(fences + fencesByteOffset));
 	
@@ -20767,7 +20753,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenFencesNV(JNIEnv* env, 
 	unsigned char* fences = (unsigned char*)env->GetDirectBufferAddress(obj_fences);
 
 
-//@line:15403
+//@line:15389
 
 		ext_glGenFencesNV((GLsizei)n, (GLuint*)(fences + fencesByteOffset));
 	
@@ -20777,7 +20763,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenFencesNV(JNIEnv* env, 
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsFenceNV(JNIEnv* env, jclass clazz, jint fence) {
 
 
-//@line:15407
+//@line:15393
 
 		return (jboolean)ext_glIsFenceNV((GLuint)fence);
 	
@@ -20787,7 +20773,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsFenceNV(JNIEnv* env
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glTestFenceNV(JNIEnv* env, jclass clazz, jint fence) {
 
 
-//@line:15411
+//@line:15397
 
 		return (jboolean)ext_glTestFenceNV((GLuint)fence);
 	
@@ -20798,7 +20784,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFenceivNV(JNIEnv* env,
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15415
+//@line:15401
 
 		ext_glGetFenceivNV((GLuint)fence, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -20808,7 +20794,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFenceivNV(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFinishFenceNV(JNIEnv* env, jclass clazz, jint fence) {
 
 
-//@line:15419
+//@line:15405
 
 		ext_glFinishFenceNV((GLuint)fence);
 	
@@ -20818,7 +20804,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFinishFenceNV(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSetFenceNV(JNIEnv* env, jclass clazz, jint fence, jint condition) {
 
 
-//@line:15423
+//@line:15409
 
 		ext_glSetFenceNV((GLuint)fence, (GLenum)condition);
 	
@@ -20829,7 +20815,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapControlPointsNV(JNIEnv
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:15427
+//@line:15413
 
 		ext_glMapControlPointsNV((GLenum)target, (GLuint)index, (GLenum)type, (GLsizei)ustride, (GLsizei)vstride, (GLint)uorder, (GLint)vorder, (GLboolean)packed, (const GLvoid*)(points + pointsByteOffset));
 	
@@ -20840,7 +20826,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapParameterivNV(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15431
+//@line:15417
 
 		ext_glMapParameterivNV((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -20851,7 +20837,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapParameterfvNV(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15435
+//@line:15421
 
 		ext_glMapParameterfvNV((GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -20862,7 +20848,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMapControlPointsNV(JNI
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:15439
+//@line:15425
 
 		ext_glGetMapControlPointsNV((GLenum)target, (GLuint)index, (GLenum)type, (GLsizei)ustride, (GLsizei)vstride, (GLboolean)packed, (GLvoid*)(points + pointsByteOffset));
 	
@@ -20873,7 +20859,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMapParameterivNV(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15443
+//@line:15429
 
 		ext_glGetMapParameterivNV((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -20884,7 +20870,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMapParameterfvNV(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15447
+//@line:15433
 
 		ext_glGetMapParameterfvNV((GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -20895,7 +20881,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMapAttribParameterivNV
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15451
+//@line:15437
 
 		ext_glGetMapAttribParameterivNV((GLenum)target, (GLuint)index, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -20906,7 +20892,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMapAttribParameterfvNV
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15455
+//@line:15441
 
 		ext_glGetMapAttribParameterfvNV((GLenum)target, (GLuint)index, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -20916,7 +20902,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMapAttribParameterfvNV
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalMapsNV(JNIEnv* env, jclass clazz, jint target, jint mode) {
 
 
-//@line:15459
+//@line:15445
 
 		ext_glEvalMapsNV((GLenum)target, (GLenum)mode);
 	
@@ -20927,7 +20913,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCombinerStageParameterfvN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15463
+//@line:15449
 
 		ext_glCombinerStageParameterfvNV((GLenum)stage, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -20938,7 +20924,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetCombinerStageParameter
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15467
+//@line:15453
 
 		ext_glGetCombinerStageParameterfvNV((GLenum)stage, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -20948,7 +20934,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetCombinerStageParameter
 static inline jboolean wrapped_Java_com_badlogic_jglfw_gl_GL_glAreProgramsResidentNV
 (JNIEnv* env, jclass clazz, jint n, jobject obj_programs, jint programsByteOffset, jobject obj_residences, jint residencesByteOffset, unsigned char* programs, unsigned char* residences) {
 
-//@line:15471
+//@line:15457
 
 		return (jboolean)ext_glAreProgramsResidentNV((GLsizei)n, (const GLuint*)(programs + programsByteOffset), (GLboolean*)(residences + residencesByteOffset));
 	
@@ -20967,7 +20953,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glAreProgramsResidentNV
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindProgramNV(JNIEnv* env, jclass clazz, jint target, jint id) {
 
 
-//@line:15475
+//@line:15461
 
 		ext_glBindProgramNV((GLenum)target, (GLuint)id);
 	
@@ -20978,7 +20964,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteProgramsNV(JNIEnv* 
 	unsigned char* programs = (unsigned char*)env->GetDirectBufferAddress(obj_programs);
 
 
-//@line:15479
+//@line:15465
 
 		ext_glDeleteProgramsNV((GLsizei)n, (const GLuint*)(programs + programsByteOffset));
 	
@@ -20989,7 +20975,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glExecuteProgramNV(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15483
+//@line:15469
 
 		ext_glExecuteProgramNV((GLenum)target, (GLuint)id, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -21000,7 +20986,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenProgramsNV(JNIEnv* env
 	unsigned char* programs = (unsigned char*)env->GetDirectBufferAddress(obj_programs);
 
 
-//@line:15487
+//@line:15473
 
 		ext_glGenProgramsNV((GLsizei)n, (GLuint*)(programs + programsByteOffset));
 	
@@ -21011,7 +20997,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramParameterdvNV(J
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15491
+//@line:15477
 
 		ext_glGetProgramParameterdvNV((GLenum)target, (GLuint)index, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
 	
@@ -21022,7 +21008,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramParameterfvNV(J
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15495
+//@line:15481
 
 		ext_glGetProgramParameterfvNV((GLenum)target, (GLuint)index, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -21033,7 +21019,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramivNV(JNIEnv* en
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15499
+//@line:15485
 
 		ext_glGetProgramivNV((GLuint)id, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -21044,7 +21030,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramStringNV(JNIEnv
 	unsigned char* program = (unsigned char*)env->GetDirectBufferAddress(obj_program);
 
 
-//@line:15503
+//@line:15489
 
 		ext_glGetProgramStringNV((GLuint)id, (GLenum)pname, (GLubyte*)(program + programByteOffset));
 	
@@ -21055,7 +21041,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTrackMatrixivNV(JNIEnv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15507
+//@line:15493
 
 		ext_glGetTrackMatrixivNV((GLenum)target, (GLuint)address, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -21066,7 +21052,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribdvNV(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15511
+//@line:15497
 
 		ext_glGetVertexAttribdvNV((GLuint)index, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
 	
@@ -21077,7 +21063,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribfvNV(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15515
+//@line:15501
 
 		ext_glGetVertexAttribfvNV((GLuint)index, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -21088,7 +21074,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribivNV(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15519
+//@line:15505
 
 		ext_glGetVertexAttribivNV((GLuint)index, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -21099,7 +21085,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribPointervNV
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:15523
+//@line:15509
 
 		ext_glGetVertexAttribPointervNV((GLuint)index, (GLenum)pname, (GLvoid**)(pointer + pointerByteOffset));
 	
@@ -21109,7 +21095,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribPointervNV
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsProgramNV(JNIEnv* env, jclass clazz, jint id) {
 
 
-//@line:15527
+//@line:15513
 
 		return (jboolean)ext_glIsProgramNV((GLuint)id);
 	
@@ -21120,7 +21106,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLoadProgramNV(JNIEnv* env
 	unsigned char* program = (unsigned char*)env->GetDirectBufferAddress(obj_program);
 
 
-//@line:15531
+//@line:15517
 
 		ext_glLoadProgramNV((GLenum)target, (GLuint)id, (GLsizei)len, (const GLubyte*)(program + programByteOffset));
 	
@@ -21130,7 +21116,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLoadProgramNV(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramParameter4dNV(JNIEnv* env, jclass clazz, jint target, jint index, jdouble x, jdouble y, jdouble z, jdouble w) {
 
 
-//@line:15535
+//@line:15521
 
 		ext_glProgramParameter4dNV((GLenum)target, (GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -21141,7 +21127,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramParameter4dvNV(JNI
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15539
+//@line:15525
 
 		ext_glProgramParameter4dvNV((GLenum)target, (GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -21151,7 +21137,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramParameter4dvNV(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramParameter4fNV(JNIEnv* env, jclass clazz, jint target, jint index, jfloat x, jfloat y, jfloat z, jfloat w) {
 
 
-//@line:15543
+//@line:15529
 
 		ext_glProgramParameter4fNV((GLenum)target, (GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
 	
@@ -21162,7 +21148,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramParameter4fvNV(JNI
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15547
+//@line:15533
 
 		ext_glProgramParameter4fvNV((GLenum)target, (GLuint)index, (const GLfloat*)(v + vByteOffset));
 	
@@ -21173,7 +21159,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramParameters4dvNV(JN
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15551
+//@line:15537
 
 		ext_glProgramParameters4dvNV((GLenum)target, (GLuint)index, (GLsizei)count, (const GLdouble*)(v + vByteOffset));
 	
@@ -21184,7 +21170,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramParameters4fvNV(JN
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15555
+//@line:15541
 
 		ext_glProgramParameters4fvNV((GLenum)target, (GLuint)index, (GLsizei)count, (const GLfloat*)(v + vByteOffset));
 	
@@ -21195,7 +21181,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRequestResidentProgramsNV
 	unsigned char* programs = (unsigned char*)env->GetDirectBufferAddress(obj_programs);
 
 
-//@line:15559
+//@line:15545
 
 		ext_glRequestResidentProgramsNV((GLsizei)n, (const GLuint*)(programs + programsByteOffset));
 	
@@ -21205,7 +21191,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRequestResidentProgramsNV
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTrackMatrixNV(JNIEnv* env, jclass clazz, jint target, jint address, jint matrix, jint transform) {
 
 
-//@line:15563
+//@line:15549
 
 		ext_glTrackMatrixNV((GLenum)target, (GLuint)address, (GLenum)matrix, (GLenum)transform);
 	
@@ -21216,7 +21202,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribPointerNV(JNI
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:15567
+//@line:15553
 
 		ext_glVertexAttribPointerNV((GLuint)index, (GLint)fsize, (GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -21226,7 +21212,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribPointerNV(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1dNV(JNIEnv* env, jclass clazz, jint index, jdouble x) {
 
 
-//@line:15571
+//@line:15557
 
 		ext_glVertexAttrib1dNV((GLuint)index, (GLdouble)x);
 	
@@ -21237,7 +21223,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1dvNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15575
+//@line:15561
 
 		ext_glVertexAttrib1dvNV((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -21247,7 +21233,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1dvNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1fNV(JNIEnv* env, jclass clazz, jint index, jfloat x) {
 
 
-//@line:15579
+//@line:15565
 
 		ext_glVertexAttrib1fNV((GLuint)index, (GLfloat)x);
 	
@@ -21258,7 +21244,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1fvNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15583
+//@line:15569
 
 		ext_glVertexAttrib1fvNV((GLuint)index, (const GLfloat*)(v + vByteOffset));
 	
@@ -21268,7 +21254,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1fvNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1sNV(JNIEnv* env, jclass clazz, jint index, jshort x) {
 
 
-//@line:15587
+//@line:15573
 
 		ext_glVertexAttrib1sNV((GLuint)index, (GLshort)x);
 	
@@ -21279,7 +21265,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1svNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15591
+//@line:15577
 
 		ext_glVertexAttrib1svNV((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -21289,7 +21275,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1svNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2dNV(JNIEnv* env, jclass clazz, jint index, jdouble x, jdouble y) {
 
 
-//@line:15595
+//@line:15581
 
 		ext_glVertexAttrib2dNV((GLuint)index, (GLdouble)x, (GLdouble)y);
 	
@@ -21300,7 +21286,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2dvNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15599
+//@line:15585
 
 		ext_glVertexAttrib2dvNV((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -21310,7 +21296,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2dvNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2fNV(JNIEnv* env, jclass clazz, jint index, jfloat x, jfloat y) {
 
 
-//@line:15603
+//@line:15589
 
 		ext_glVertexAttrib2fNV((GLuint)index, (GLfloat)x, (GLfloat)y);
 	
@@ -21321,7 +21307,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2fvNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15607
+//@line:15593
 
 		ext_glVertexAttrib2fvNV((GLuint)index, (const GLfloat*)(v + vByteOffset));
 	
@@ -21331,7 +21317,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2fvNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2sNV(JNIEnv* env, jclass clazz, jint index, jshort x, jshort y) {
 
 
-//@line:15611
+//@line:15597
 
 		ext_glVertexAttrib2sNV((GLuint)index, (GLshort)x, (GLshort)y);
 	
@@ -21342,7 +21328,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2svNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15615
+//@line:15601
 
 		ext_glVertexAttrib2svNV((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -21352,7 +21338,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2svNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3dNV(JNIEnv* env, jclass clazz, jint index, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:15619
+//@line:15605
 
 		ext_glVertexAttrib3dNV((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -21363,7 +21349,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3dvNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15623
+//@line:15609
 
 		ext_glVertexAttrib3dvNV((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -21373,7 +21359,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3dvNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3fNV(JNIEnv* env, jclass clazz, jint index, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:15627
+//@line:15613
 
 		ext_glVertexAttrib3fNV((GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -21384,7 +21370,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3fvNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15631
+//@line:15617
 
 		ext_glVertexAttrib3fvNV((GLuint)index, (const GLfloat*)(v + vByteOffset));
 	
@@ -21394,7 +21380,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3fvNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3sNV(JNIEnv* env, jclass clazz, jint index, jshort x, jshort y, jshort z) {
 
 
-//@line:15635
+//@line:15621
 
 		ext_glVertexAttrib3sNV((GLuint)index, (GLshort)x, (GLshort)y, (GLshort)z);
 	
@@ -21405,7 +21391,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3svNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15639
+//@line:15625
 
 		ext_glVertexAttrib3svNV((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -21415,7 +21401,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3svNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4dNV(JNIEnv* env, jclass clazz, jint index, jdouble x, jdouble y, jdouble z, jdouble w) {
 
 
-//@line:15643
+//@line:15629
 
 		ext_glVertexAttrib4dNV((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -21426,7 +21412,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4dvNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15647
+//@line:15633
 
 		ext_glVertexAttrib4dvNV((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -21436,7 +21422,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4dvNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4fNV(JNIEnv* env, jclass clazz, jint index, jfloat x, jfloat y, jfloat z, jfloat w) {
 
 
-//@line:15651
+//@line:15637
 
 		ext_glVertexAttrib4fNV((GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
 	
@@ -21447,7 +21433,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4fvNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15655
+//@line:15641
 
 		ext_glVertexAttrib4fvNV((GLuint)index, (const GLfloat*)(v + vByteOffset));
 	
@@ -21457,7 +21443,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4fvNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4sNV(JNIEnv* env, jclass clazz, jint index, jshort x, jshort y, jshort z, jshort w) {
 
 
-//@line:15659
+//@line:15645
 
 		ext_glVertexAttrib4sNV((GLuint)index, (GLshort)x, (GLshort)y, (GLshort)z, (GLshort)w);
 	
@@ -21468,7 +21454,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4svNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15663
+//@line:15649
 
 		ext_glVertexAttrib4svNV((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -21478,7 +21464,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4svNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4ubNV(JNIEnv* env, jclass clazz, jint index, jbyte x, jbyte y, jbyte z, jbyte w) {
 
 
-//@line:15667
+//@line:15653
 
 		ext_glVertexAttrib4ubNV((GLuint)index, (GLubyte)x, (GLubyte)y, (GLubyte)z, (GLubyte)w);
 	
@@ -21489,7 +21475,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4ubvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15671
+//@line:15657
 
 		ext_glVertexAttrib4ubvNV((GLuint)index, (const GLubyte*)(v + vByteOffset));
 	
@@ -21500,7 +21486,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs1dvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15675
+//@line:15661
 
 		ext_glVertexAttribs1dvNV((GLuint)index, (GLsizei)count, (const GLdouble*)(v + vByteOffset));
 	
@@ -21511,7 +21497,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs1fvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15679
+//@line:15665
 
 		ext_glVertexAttribs1fvNV((GLuint)index, (GLsizei)count, (const GLfloat*)(v + vByteOffset));
 	
@@ -21522,7 +21508,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs1svNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15683
+//@line:15669
 
 		ext_glVertexAttribs1svNV((GLuint)index, (GLsizei)count, (const GLshort*)(v + vByteOffset));
 	
@@ -21533,7 +21519,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs2dvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15687
+//@line:15673
 
 		ext_glVertexAttribs2dvNV((GLuint)index, (GLsizei)count, (const GLdouble*)(v + vByteOffset));
 	
@@ -21544,7 +21530,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs2fvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15691
+//@line:15677
 
 		ext_glVertexAttribs2fvNV((GLuint)index, (GLsizei)count, (const GLfloat*)(v + vByteOffset));
 	
@@ -21555,7 +21541,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs2svNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15695
+//@line:15681
 
 		ext_glVertexAttribs2svNV((GLuint)index, (GLsizei)count, (const GLshort*)(v + vByteOffset));
 	
@@ -21566,7 +21552,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs3dvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15699
+//@line:15685
 
 		ext_glVertexAttribs3dvNV((GLuint)index, (GLsizei)count, (const GLdouble*)(v + vByteOffset));
 	
@@ -21577,7 +21563,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs3fvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15703
+//@line:15689
 
 		ext_glVertexAttribs3fvNV((GLuint)index, (GLsizei)count, (const GLfloat*)(v + vByteOffset));
 	
@@ -21588,7 +21574,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs3svNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15707
+//@line:15693
 
 		ext_glVertexAttribs3svNV((GLuint)index, (GLsizei)count, (const GLshort*)(v + vByteOffset));
 	
@@ -21599,7 +21585,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs4dvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15711
+//@line:15697
 
 		ext_glVertexAttribs4dvNV((GLuint)index, (GLsizei)count, (const GLdouble*)(v + vByteOffset));
 	
@@ -21610,7 +21596,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs4fvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15715
+//@line:15701
 
 		ext_glVertexAttribs4fvNV((GLuint)index, (GLsizei)count, (const GLfloat*)(v + vByteOffset));
 	
@@ -21621,7 +21607,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs4svNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15719
+//@line:15705
 
 		ext_glVertexAttribs4svNV((GLuint)index, (GLsizei)count, (const GLshort*)(v + vByteOffset));
 	
@@ -21632,7 +21618,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs4ubvNV(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:15723
+//@line:15709
 
 		ext_glVertexAttribs4ubvNV((GLuint)index, (GLsizei)count, (const GLubyte*)(v + vByteOffset));
 	
@@ -21643,7 +21629,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexBumpParameterivATI(JNI
 	unsigned char* param = (unsigned char*)env->GetDirectBufferAddress(obj_param);
 
 
-//@line:15727
+//@line:15713
 
 		ext_glTexBumpParameterivATI((GLenum)pname, (const GLint*)(param + paramByteOffset));
 	
@@ -21654,7 +21640,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexBumpParameterfvATI(JNI
 	unsigned char* param = (unsigned char*)env->GetDirectBufferAddress(obj_param);
 
 
-//@line:15731
+//@line:15717
 
 		ext_glTexBumpParameterfvATI((GLenum)pname, (const GLfloat*)(param + paramByteOffset));
 	
@@ -21665,7 +21651,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexBumpParameterivATI(
 	unsigned char* param = (unsigned char*)env->GetDirectBufferAddress(obj_param);
 
 
-//@line:15735
+//@line:15721
 
 		ext_glGetTexBumpParameterivATI((GLenum)pname, (GLint*)(param + paramByteOffset));
 	
@@ -21676,7 +21662,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexBumpParameterfvATI(
 	unsigned char* param = (unsigned char*)env->GetDirectBufferAddress(obj_param);
 
 
-//@line:15739
+//@line:15725
 
 		ext_glGetTexBumpParameterfvATI((GLenum)pname, (GLfloat*)(param + paramByteOffset));
 	
@@ -21686,7 +21672,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexBumpParameterfvATI(
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGenFragmentShadersATI(JNIEnv* env, jclass clazz, jint range) {
 
 
-//@line:15743
+//@line:15729
 
 		return (jint)ext_glGenFragmentShadersATI((GLuint)range);
 	
@@ -21696,7 +21682,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGenFragmentShadersATI(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindFragmentShaderATI(JNIEnv* env, jclass clazz, jint id) {
 
 
-//@line:15747
+//@line:15733
 
 		ext_glBindFragmentShaderATI((GLuint)id);
 	
@@ -21706,7 +21692,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindFragmentShaderATI(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteFragmentShaderATI(JNIEnv* env, jclass clazz, jint id) {
 
 
-//@line:15751
+//@line:15737
 
 		ext_glDeleteFragmentShaderATI((GLuint)id);
 	
@@ -21716,7 +21702,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteFragmentShaderATI(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginFragmentShaderATI(JNIEnv* env, jclass clazz) {
 
 
-//@line:15755
+//@line:15741
 
 		ext_glBeginFragmentShaderATI();
 	
@@ -21726,7 +21712,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginFragmentShaderATI(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndFragmentShaderATI(JNIEnv* env, jclass clazz) {
 
 
-//@line:15759
+//@line:15745
 
 		ext_glEndFragmentShaderATI();
 	
@@ -21736,7 +21722,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndFragmentShaderATI(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPassTexCoordATI(JNIEnv* env, jclass clazz, jint dst, jint coord, jint swizzle) {
 
 
-//@line:15763
+//@line:15749
 
 		ext_glPassTexCoordATI((GLuint)dst, (GLuint)coord, (GLenum)swizzle);
 	
@@ -21746,7 +21732,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPassTexCoordATI(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSampleMapATI(JNIEnv* env, jclass clazz, jint dst, jint interp, jint swizzle) {
 
 
-//@line:15767
+//@line:15753
 
 		ext_glSampleMapATI((GLuint)dst, (GLuint)interp, (GLenum)swizzle);
 	
@@ -21756,7 +21742,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSampleMapATI(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorFragmentOp1ATI(JNIEnv* env, jclass clazz, jint op, jint dst, jint dstMask, jint dstMod, jint arg1, jint arg1Rep, jint arg1Mod) {
 
 
-//@line:15771
+//@line:15757
 
 		ext_glColorFragmentOp1ATI((GLenum)op, (GLuint)dst, (GLuint)dstMask, (GLuint)dstMod, (GLuint)arg1, (GLuint)arg1Rep, (GLuint)arg1Mod);
 	
@@ -21766,7 +21752,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorFragmentOp1ATI(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorFragmentOp2ATI(JNIEnv* env, jclass clazz, jint op, jint dst, jint dstMask, jint dstMod, jint arg1, jint arg1Rep, jint arg1Mod, jint arg2, jint arg2Rep, jint arg2Mod) {
 
 
-//@line:15775
+//@line:15761
 
 		ext_glColorFragmentOp2ATI((GLenum)op, (GLuint)dst, (GLuint)dstMask, (GLuint)dstMod, (GLuint)arg1, (GLuint)arg1Rep, (GLuint)arg1Mod, (GLuint)arg2, (GLuint)arg2Rep, (GLuint)arg2Mod);
 	
@@ -21776,7 +21762,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorFragmentOp2ATI(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorFragmentOp3ATI(JNIEnv* env, jclass clazz, jint op, jint dst, jint dstMask, jint dstMod, jint arg1, jint arg1Rep, jint arg1Mod, jint arg2, jint arg2Rep, jint arg2Mod, jint arg3, jint arg3Rep, jint arg3Mod) {
 
 
-//@line:15779
+//@line:15765
 
 		ext_glColorFragmentOp3ATI((GLenum)op, (GLuint)dst, (GLuint)dstMask, (GLuint)dstMod, (GLuint)arg1, (GLuint)arg1Rep, (GLuint)arg1Mod, (GLuint)arg2, (GLuint)arg2Rep, (GLuint)arg2Mod, (GLuint)arg3, (GLuint)arg3Rep, (GLuint)arg3Mod);
 	
@@ -21786,7 +21772,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorFragmentOp3ATI(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAlphaFragmentOp1ATI(JNIEnv* env, jclass clazz, jint op, jint dst, jint dstMod, jint arg1, jint arg1Rep, jint arg1Mod) {
 
 
-//@line:15783
+//@line:15769
 
 		ext_glAlphaFragmentOp1ATI((GLenum)op, (GLuint)dst, (GLuint)dstMod, (GLuint)arg1, (GLuint)arg1Rep, (GLuint)arg1Mod);
 	
@@ -21796,7 +21782,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAlphaFragmentOp1ATI(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAlphaFragmentOp2ATI(JNIEnv* env, jclass clazz, jint op, jint dst, jint dstMod, jint arg1, jint arg1Rep, jint arg1Mod, jint arg2, jint arg2Rep, jint arg2Mod) {
 
 
-//@line:15787
+//@line:15773
 
 		ext_glAlphaFragmentOp2ATI((GLenum)op, (GLuint)dst, (GLuint)dstMod, (GLuint)arg1, (GLuint)arg1Rep, (GLuint)arg1Mod, (GLuint)arg2, (GLuint)arg2Rep, (GLuint)arg2Mod);
 	
@@ -21806,7 +21792,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAlphaFragmentOp2ATI(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAlphaFragmentOp3ATI(JNIEnv* env, jclass clazz, jint op, jint dst, jint dstMod, jint arg1, jint arg1Rep, jint arg1Mod, jint arg2, jint arg2Rep, jint arg2Mod, jint arg3, jint arg3Rep, jint arg3Mod) {
 
 
-//@line:15791
+//@line:15777
 
 		ext_glAlphaFragmentOp3ATI((GLenum)op, (GLuint)dst, (GLuint)dstMod, (GLuint)arg1, (GLuint)arg1Rep, (GLuint)arg1Mod, (GLuint)arg2, (GLuint)arg2Rep, (GLuint)arg2Mod, (GLuint)arg3, (GLuint)arg3Rep, (GLuint)arg3Mod);
 	
@@ -21817,7 +21803,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSetFragmentShaderConstant
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:15795
+//@line:15781
 
 		ext_glSetFragmentShaderConstantATI((GLuint)dst, (const GLfloat*)(value + valueByteOffset));
 	
@@ -21827,7 +21813,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSetFragmentShaderConstant
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPNTrianglesiATI(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:15799
+//@line:15785
 
 		ext_glPNTrianglesiATI((GLenum)pname, (GLint)param);
 	
@@ -21837,7 +21823,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPNTrianglesiATI(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPNTrianglesfATI(JNIEnv* env, jclass clazz, jint pname, jfloat param) {
 
 
-//@line:15803
+//@line:15789
 
 		ext_glPNTrianglesfATI((GLenum)pname, (GLfloat)param);
 	
@@ -21847,7 +21833,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPNTrianglesfATI(JNIEnv* e
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glNewObjectBufferATI
 (JNIEnv* env, jclass clazz, jint size, jobject obj_pointer, jint pointerByteOffset, jint usage, unsigned char* pointer) {
 
-//@line:15807
+//@line:15793
 
 		return (jint)ext_glNewObjectBufferATI((GLsizei)size, (const GLvoid*)(pointer + pointerByteOffset), (GLenum)usage);
 	
@@ -21865,7 +21851,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glNewObjectBufferATI(JNIEnv
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsObjectBufferATI(JNIEnv* env, jclass clazz, jint buffer) {
 
 
-//@line:15811
+//@line:15797
 
 		return (jboolean)ext_glIsObjectBufferATI((GLuint)buffer);
 	
@@ -21876,7 +21862,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUpdateObjectBufferATI(JNI
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:15815
+//@line:15801
 
 		ext_glUpdateObjectBufferATI((GLuint)buffer, (GLuint)offset, (GLsizei)size, (const GLvoid*)(pointer + pointerByteOffset), (GLenum)preserve);
 	
@@ -21887,7 +21873,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectBufferfvATI(JNIE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15819
+//@line:15805
 
 		ext_glGetObjectBufferfvATI((GLuint)buffer, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -21898,7 +21884,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectBufferivATI(JNIE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15823
+//@line:15809
 
 		ext_glGetObjectBufferivATI((GLuint)buffer, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -21908,7 +21894,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectBufferivATI(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFreeObjectBufferATI(JNIEnv* env, jclass clazz, jint buffer) {
 
 
-//@line:15827
+//@line:15813
 
 		ext_glFreeObjectBufferATI((GLuint)buffer);
 	
@@ -21918,7 +21904,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFreeObjectBufferATI(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glArrayObjectATI(JNIEnv* env, jclass clazz, jint array, jint size, jint type, jint stride, jint buffer, jint offset) {
 
 
-//@line:15831
+//@line:15817
 
 		ext_glArrayObjectATI((GLenum)array, (GLint)size, (GLenum)type, (GLsizei)stride, (GLuint)buffer, (GLuint)offset);
 	
@@ -21929,7 +21915,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetArrayObjectfvATI(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15835
+//@line:15821
 
 		ext_glGetArrayObjectfvATI((GLenum)array, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -21940,7 +21926,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetArrayObjectivATI(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15839
+//@line:15825
 
 		ext_glGetArrayObjectivATI((GLenum)array, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -21950,7 +21936,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetArrayObjectivATI(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVariantArrayObjectATI(JNIEnv* env, jclass clazz, jint id, jint type, jint stride, jint buffer, jint offset) {
 
 
-//@line:15843
+//@line:15829
 
 		ext_glVariantArrayObjectATI((GLuint)id, (GLenum)type, (GLsizei)stride, (GLuint)buffer, (GLuint)offset);
 	
@@ -21961,7 +21947,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVariantArrayObjectfvAT
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15847
+//@line:15833
 
 		ext_glGetVariantArrayObjectfvATI((GLuint)id, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -21972,7 +21958,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVariantArrayObjectivAT
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:15851
+//@line:15837
 
 		ext_glGetVariantArrayObjectivATI((GLuint)id, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -21982,7 +21968,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVariantArrayObjectivAT
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginVertexShaderEXT(JNIEnv* env, jclass clazz) {
 
 
-//@line:15855
+//@line:15841
 
 		ext_glBeginVertexShaderEXT();
 	
@@ -21992,7 +21978,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginVertexShaderEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndVertexShaderEXT(JNIEnv* env, jclass clazz) {
 
 
-//@line:15859
+//@line:15845
 
 		ext_glEndVertexShaderEXT();
 	
@@ -22002,7 +21988,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndVertexShaderEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindVertexShaderEXT(JNIEnv* env, jclass clazz, jint id) {
 
 
-//@line:15863
+//@line:15849
 
 		ext_glBindVertexShaderEXT((GLuint)id);
 	
@@ -22012,7 +21998,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindVertexShaderEXT(JNIEn
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGenVertexShadersEXT(JNIEnv* env, jclass clazz, jint range) {
 
 
-//@line:15867
+//@line:15853
 
 		return (jint)ext_glGenVertexShadersEXT((GLuint)range);
 	
@@ -22022,7 +22008,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGenVertexShadersEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteVertexShaderEXT(JNIEnv* env, jclass clazz, jint id) {
 
 
-//@line:15871
+//@line:15857
 
 		ext_glDeleteVertexShaderEXT((GLuint)id);
 	
@@ -22032,7 +22018,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteVertexShaderEXT(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderOp1EXT(JNIEnv* env, jclass clazz, jint op, jint res, jint arg1) {
 
 
-//@line:15875
+//@line:15861
 
 		ext_glShaderOp1EXT((GLenum)op, (GLuint)res, (GLuint)arg1);
 	
@@ -22042,7 +22028,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderOp1EXT(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderOp2EXT(JNIEnv* env, jclass clazz, jint op, jint res, jint arg1, jint arg2) {
 
 
-//@line:15879
+//@line:15865
 
 		ext_glShaderOp2EXT((GLenum)op, (GLuint)res, (GLuint)arg1, (GLuint)arg2);
 	
@@ -22052,7 +22038,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderOp2EXT(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderOp3EXT(JNIEnv* env, jclass clazz, jint op, jint res, jint arg1, jint arg2, jint arg3) {
 
 
-//@line:15883
+//@line:15869
 
 		ext_glShaderOp3EXT((GLenum)op, (GLuint)res, (GLuint)arg1, (GLuint)arg2, (GLuint)arg3);
 	
@@ -22062,7 +22048,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderOp3EXT(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSwizzleEXT(JNIEnv* env, jclass clazz, jint res, jint in, jint outX, jint outY, jint outZ, jint outW) {
 
 
-//@line:15887
+//@line:15873
 
 		ext_glSwizzleEXT((GLuint)res, (GLuint)in, (GLenum)outX, (GLenum)outY, (GLenum)outZ, (GLenum)outW);
 	
@@ -22072,7 +22058,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSwizzleEXT(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWriteMaskEXT(JNIEnv* env, jclass clazz, jint res, jint in, jint outX, jint outY, jint outZ, jint outW) {
 
 
-//@line:15891
+//@line:15877
 
 		ext_glWriteMaskEXT((GLuint)res, (GLuint)in, (GLenum)outX, (GLenum)outY, (GLenum)outZ, (GLenum)outW);
 	
@@ -22082,7 +22068,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWriteMaskEXT(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInsertComponentEXT(JNIEnv* env, jclass clazz, jint res, jint src, jint num) {
 
 
-//@line:15895
+//@line:15881
 
 		ext_glInsertComponentEXT((GLuint)res, (GLuint)src, (GLuint)num);
 	
@@ -22092,7 +22078,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInsertComponentEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glExtractComponentEXT(JNIEnv* env, jclass clazz, jint res, jint src, jint num) {
 
 
-//@line:15899
+//@line:15885
 
 		ext_glExtractComponentEXT((GLuint)res, (GLuint)src, (GLuint)num);
 	
@@ -22102,7 +22088,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glExtractComponentEXT(JNIEn
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGenSymbolsEXT(JNIEnv* env, jclass clazz, jint datatype, jint storagetype, jint range, jint components) {
 
 
-//@line:15903
+//@line:15889
 
 		return (jint)ext_glGenSymbolsEXT((GLenum)datatype, (GLenum)storagetype, (GLenum)range, (GLuint)components);
 	
@@ -22113,7 +22099,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSetInvariantEXT(JNIEnv* e
 	unsigned char* addr = (unsigned char*)env->GetDirectBufferAddress(obj_addr);
 
 
-//@line:15907
+//@line:15893
 
 		ext_glSetInvariantEXT((GLuint)id, (GLenum)type, (const GLvoid*)(addr + addrByteOffset));
 	
@@ -22124,7 +22110,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSetLocalConstantEXT(JNIEn
 	unsigned char* addr = (unsigned char*)env->GetDirectBufferAddress(obj_addr);
 
 
-//@line:15911
+//@line:15897
 
 		ext_glSetLocalConstantEXT((GLuint)id, (GLenum)type, (const GLvoid*)(addr + addrByteOffset));
 	
@@ -22135,7 +22121,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVariantbvEXT(JNIEnv* env,
 	unsigned char* addr = (unsigned char*)env->GetDirectBufferAddress(obj_addr);
 
 
-//@line:15915
+//@line:15901
 
 		ext_glVariantbvEXT((GLuint)id, (const GLbyte*)(addr + addrByteOffset));
 	
@@ -22146,7 +22132,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVariantsvEXT(JNIEnv* env,
 	unsigned char* addr = (unsigned char*)env->GetDirectBufferAddress(obj_addr);
 
 
-//@line:15919
+//@line:15905
 
 		ext_glVariantsvEXT((GLuint)id, (const GLshort*)(addr + addrByteOffset));
 	
@@ -22157,7 +22143,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVariantivEXT(JNIEnv* env,
 	unsigned char* addr = (unsigned char*)env->GetDirectBufferAddress(obj_addr);
 
 
-//@line:15923
+//@line:15909
 
 		ext_glVariantivEXT((GLuint)id, (const GLint*)(addr + addrByteOffset));
 	
@@ -22168,7 +22154,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVariantfvEXT(JNIEnv* env,
 	unsigned char* addr = (unsigned char*)env->GetDirectBufferAddress(obj_addr);
 
 
-//@line:15927
+//@line:15913
 
 		ext_glVariantfvEXT((GLuint)id, (const GLfloat*)(addr + addrByteOffset));
 	
@@ -22179,7 +22165,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVariantdvEXT(JNIEnv* env,
 	unsigned char* addr = (unsigned char*)env->GetDirectBufferAddress(obj_addr);
 
 
-//@line:15931
+//@line:15917
 
 		ext_glVariantdvEXT((GLuint)id, (const GLdouble*)(addr + addrByteOffset));
 	
@@ -22190,7 +22176,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVariantubvEXT(JNIEnv* env
 	unsigned char* addr = (unsigned char*)env->GetDirectBufferAddress(obj_addr);
 
 
-//@line:15935
+//@line:15921
 
 		ext_glVariantubvEXT((GLuint)id, (const GLubyte*)(addr + addrByteOffset));
 	
@@ -22201,7 +22187,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVariantusvEXT(JNIEnv* env
 	unsigned char* addr = (unsigned char*)env->GetDirectBufferAddress(obj_addr);
 
 
-//@line:15939
+//@line:15925
 
 		ext_glVariantusvEXT((GLuint)id, (const GLushort*)(addr + addrByteOffset));
 	
@@ -22212,7 +22198,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVariantuivEXT(JNIEnv* env
 	unsigned char* addr = (unsigned char*)env->GetDirectBufferAddress(obj_addr);
 
 
-//@line:15943
+//@line:15929
 
 		ext_glVariantuivEXT((GLuint)id, (const GLuint*)(addr + addrByteOffset));
 	
@@ -22223,7 +22209,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVariantPointerEXT(JNIEnv*
 	unsigned char* addr = (unsigned char*)env->GetDirectBufferAddress(obj_addr);
 
 
-//@line:15947
+//@line:15933
 
 		ext_glVariantPointerEXT((GLuint)id, (GLenum)type, (GLuint)stride, (const GLvoid*)(addr + addrByteOffset));
 	
@@ -22233,7 +22219,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVariantPointerEXT(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnableVariantClientStateEXT(JNIEnv* env, jclass clazz, jint id) {
 
 
-//@line:15951
+//@line:15937
 
 		ext_glEnableVariantClientStateEXT((GLuint)id);
 	
@@ -22243,7 +22229,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnableVariantClientStateE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDisableVariantClientStateEXT(JNIEnv* env, jclass clazz, jint id) {
 
 
-//@line:15955
+//@line:15941
 
 		ext_glDisableVariantClientStateEXT((GLuint)id);
 	
@@ -22253,7 +22239,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDisableVariantClientState
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glBindLightParameterEXT(JNIEnv* env, jclass clazz, jint light, jint value) {
 
 
-//@line:15959
+//@line:15945
 
 		return (jint)ext_glBindLightParameterEXT((GLenum)light, (GLenum)value);
 	
@@ -22263,7 +22249,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glBindLightParameterEXT(JNI
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glBindMaterialParameterEXT(JNIEnv* env, jclass clazz, jint face, jint value) {
 
 
-//@line:15963
+//@line:15949
 
 		return (jint)ext_glBindMaterialParameterEXT((GLenum)face, (GLenum)value);
 	
@@ -22273,7 +22259,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glBindMaterialParameterEXT(
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glBindTexGenParameterEXT(JNIEnv* env, jclass clazz, jint unit, jint coord, jint value) {
 
 
-//@line:15967
+//@line:15953
 
 		return (jint)ext_glBindTexGenParameterEXT((GLenum)unit, (GLenum)coord, (GLenum)value);
 	
@@ -22283,7 +22269,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glBindTexGenParameterEXT(JN
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glBindTextureUnitParameterEXT(JNIEnv* env, jclass clazz, jint unit, jint value) {
 
 
-//@line:15971
+//@line:15957
 
 		return (jint)ext_glBindTextureUnitParameterEXT((GLenum)unit, (GLenum)value);
 	
@@ -22293,7 +22279,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glBindTextureUnitParameterE
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glBindParameterEXT(JNIEnv* env, jclass clazz, jint value) {
 
 
-//@line:15975
+//@line:15961
 
 		return (jint)ext_glBindParameterEXT((GLenum)value);
 	
@@ -22303,7 +22289,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glBindParameterEXT(JNIEnv* 
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsVariantEnabledEXT(JNIEnv* env, jclass clazz, jint id, jint cap) {
 
 
-//@line:15979
+//@line:15965
 
 		return (jboolean)ext_glIsVariantEnabledEXT((GLuint)id, (GLenum)cap);
 	
@@ -22314,7 +22300,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVariantBooleanvEXT(JNI
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:15983
+//@line:15969
 
 		ext_glGetVariantBooleanvEXT((GLuint)id, (GLenum)value, (GLboolean*)(data + dataByteOffset));
 	
@@ -22325,7 +22311,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVariantIntegervEXT(JNI
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:15987
+//@line:15973
 
 		ext_glGetVariantIntegervEXT((GLuint)id, (GLenum)value, (GLint*)(data + dataByteOffset));
 	
@@ -22336,7 +22322,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVariantFloatvEXT(JNIEn
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:15991
+//@line:15977
 
 		ext_glGetVariantFloatvEXT((GLuint)id, (GLenum)value, (GLfloat*)(data + dataByteOffset));
 	
@@ -22347,7 +22333,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVariantPointervEXT(JNI
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:15995
+//@line:15981
 
 		ext_glGetVariantPointervEXT((GLuint)id, (GLenum)value, (GLvoid**)(data + dataByteOffset));
 	
@@ -22358,7 +22344,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetInvariantBooleanvEXT(J
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:15999
+//@line:15985
 
 		ext_glGetInvariantBooleanvEXT((GLuint)id, (GLenum)value, (GLboolean*)(data + dataByteOffset));
 	
@@ -22369,7 +22355,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetInvariantIntegervEXT(J
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:16003
+//@line:15989
 
 		ext_glGetInvariantIntegervEXT((GLuint)id, (GLenum)value, (GLint*)(data + dataByteOffset));
 	
@@ -22380,7 +22366,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetInvariantFloatvEXT(JNI
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:16007
+//@line:15993
 
 		ext_glGetInvariantFloatvEXT((GLuint)id, (GLenum)value, (GLfloat*)(data + dataByteOffset));
 	
@@ -22391,7 +22377,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetLocalConstantBooleanvE
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:16011
+//@line:15997
 
 		ext_glGetLocalConstantBooleanvEXT((GLuint)id, (GLenum)value, (GLboolean*)(data + dataByteOffset));
 	
@@ -22402,7 +22388,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetLocalConstantIntegervE
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:16015
+//@line:16001
 
 		ext_glGetLocalConstantIntegervEXT((GLuint)id, (GLenum)value, (GLint*)(data + dataByteOffset));
 	
@@ -22413,7 +22399,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetLocalConstantFloatvEXT
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:16019
+//@line:16005
 
 		ext_glGetLocalConstantFloatvEXT((GLuint)id, (GLenum)value, (GLfloat*)(data + dataByteOffset));
 	
@@ -22423,7 +22409,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetLocalConstantFloatvEXT
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream1sATI(JNIEnv* env, jclass clazz, jint stream, jshort x) {
 
 
-//@line:16023
+//@line:16009
 
 		ext_glVertexStream1sATI((GLenum)stream, (GLshort)x);
 	
@@ -22434,7 +22420,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream1svATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16027
+//@line:16013
 
 		ext_glVertexStream1svATI((GLenum)stream, (const GLshort*)(coords + coordsByteOffset));
 	
@@ -22444,7 +22430,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream1svATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream1iATI(JNIEnv* env, jclass clazz, jint stream, jint x) {
 
 
-//@line:16031
+//@line:16017
 
 		ext_glVertexStream1iATI((GLenum)stream, (GLint)x);
 	
@@ -22455,7 +22441,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream1ivATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16035
+//@line:16021
 
 		ext_glVertexStream1ivATI((GLenum)stream, (const GLint*)(coords + coordsByteOffset));
 	
@@ -22465,7 +22451,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream1ivATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream1fATI(JNIEnv* env, jclass clazz, jint stream, jfloat x) {
 
 
-//@line:16039
+//@line:16025
 
 		ext_glVertexStream1fATI((GLenum)stream, (GLfloat)x);
 	
@@ -22476,7 +22462,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream1fvATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16043
+//@line:16029
 
 		ext_glVertexStream1fvATI((GLenum)stream, (const GLfloat*)(coords + coordsByteOffset));
 	
@@ -22486,7 +22472,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream1fvATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream1dATI(JNIEnv* env, jclass clazz, jint stream, jdouble x) {
 
 
-//@line:16047
+//@line:16033
 
 		ext_glVertexStream1dATI((GLenum)stream, (GLdouble)x);
 	
@@ -22497,7 +22483,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream1dvATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16051
+//@line:16037
 
 		ext_glVertexStream1dvATI((GLenum)stream, (const GLdouble*)(coords + coordsByteOffset));
 	
@@ -22507,7 +22493,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream1dvATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream2sATI(JNIEnv* env, jclass clazz, jint stream, jshort x, jshort y) {
 
 
-//@line:16055
+//@line:16041
 
 		ext_glVertexStream2sATI((GLenum)stream, (GLshort)x, (GLshort)y);
 	
@@ -22518,7 +22504,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream2svATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16059
+//@line:16045
 
 		ext_glVertexStream2svATI((GLenum)stream, (const GLshort*)(coords + coordsByteOffset));
 	
@@ -22528,7 +22514,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream2svATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream2iATI(JNIEnv* env, jclass clazz, jint stream, jint x, jint y) {
 
 
-//@line:16063
+//@line:16049
 
 		ext_glVertexStream2iATI((GLenum)stream, (GLint)x, (GLint)y);
 	
@@ -22539,7 +22525,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream2ivATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16067
+//@line:16053
 
 		ext_glVertexStream2ivATI((GLenum)stream, (const GLint*)(coords + coordsByteOffset));
 	
@@ -22549,7 +22535,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream2ivATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream2fATI(JNIEnv* env, jclass clazz, jint stream, jfloat x, jfloat y) {
 
 
-//@line:16071
+//@line:16057
 
 		ext_glVertexStream2fATI((GLenum)stream, (GLfloat)x, (GLfloat)y);
 	
@@ -22560,7 +22546,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream2fvATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16075
+//@line:16061
 
 		ext_glVertexStream2fvATI((GLenum)stream, (const GLfloat*)(coords + coordsByteOffset));
 	
@@ -22570,7 +22556,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream2fvATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream2dATI(JNIEnv* env, jclass clazz, jint stream, jdouble x, jdouble y) {
 
 
-//@line:16079
+//@line:16065
 
 		ext_glVertexStream2dATI((GLenum)stream, (GLdouble)x, (GLdouble)y);
 	
@@ -22581,7 +22567,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream2dvATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16083
+//@line:16069
 
 		ext_glVertexStream2dvATI((GLenum)stream, (const GLdouble*)(coords + coordsByteOffset));
 	
@@ -22591,7 +22577,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream2dvATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream3sATI(JNIEnv* env, jclass clazz, jint stream, jshort x, jshort y, jshort z) {
 
 
-//@line:16087
+//@line:16073
 
 		ext_glVertexStream3sATI((GLenum)stream, (GLshort)x, (GLshort)y, (GLshort)z);
 	
@@ -22602,7 +22588,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream3svATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16091
+//@line:16077
 
 		ext_glVertexStream3svATI((GLenum)stream, (const GLshort*)(coords + coordsByteOffset));
 	
@@ -22612,7 +22598,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream3svATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream3iATI(JNIEnv* env, jclass clazz, jint stream, jint x, jint y, jint z) {
 
 
-//@line:16095
+//@line:16081
 
 		ext_glVertexStream3iATI((GLenum)stream, (GLint)x, (GLint)y, (GLint)z);
 	
@@ -22623,7 +22609,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream3ivATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16099
+//@line:16085
 
 		ext_glVertexStream3ivATI((GLenum)stream, (const GLint*)(coords + coordsByteOffset));
 	
@@ -22633,7 +22619,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream3ivATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream3fATI(JNIEnv* env, jclass clazz, jint stream, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:16103
+//@line:16089
 
 		ext_glVertexStream3fATI((GLenum)stream, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -22644,7 +22630,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream3fvATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16107
+//@line:16093
 
 		ext_glVertexStream3fvATI((GLenum)stream, (const GLfloat*)(coords + coordsByteOffset));
 	
@@ -22654,7 +22640,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream3fvATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream3dATI(JNIEnv* env, jclass clazz, jint stream, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:16111
+//@line:16097
 
 		ext_glVertexStream3dATI((GLenum)stream, (GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -22665,7 +22651,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream3dvATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16115
+//@line:16101
 
 		ext_glVertexStream3dvATI((GLenum)stream, (const GLdouble*)(coords + coordsByteOffset));
 	
@@ -22675,7 +22661,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream3dvATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream4sATI(JNIEnv* env, jclass clazz, jint stream, jshort x, jshort y, jshort z, jshort w) {
 
 
-//@line:16119
+//@line:16105
 
 		ext_glVertexStream4sATI((GLenum)stream, (GLshort)x, (GLshort)y, (GLshort)z, (GLshort)w);
 	
@@ -22686,7 +22672,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream4svATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16123
+//@line:16109
 
 		ext_glVertexStream4svATI((GLenum)stream, (const GLshort*)(coords + coordsByteOffset));
 	
@@ -22696,7 +22682,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream4svATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream4iATI(JNIEnv* env, jclass clazz, jint stream, jint x, jint y, jint z, jint w) {
 
 
-//@line:16127
+//@line:16113
 
 		ext_glVertexStream4iATI((GLenum)stream, (GLint)x, (GLint)y, (GLint)z, (GLint)w);
 	
@@ -22707,7 +22693,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream4ivATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16131
+//@line:16117
 
 		ext_glVertexStream4ivATI((GLenum)stream, (const GLint*)(coords + coordsByteOffset));
 	
@@ -22717,7 +22703,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream4ivATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream4fATI(JNIEnv* env, jclass clazz, jint stream, jfloat x, jfloat y, jfloat z, jfloat w) {
 
 
-//@line:16135
+//@line:16121
 
 		ext_glVertexStream4fATI((GLenum)stream, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
 	
@@ -22728,7 +22714,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream4fvATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16139
+//@line:16125
 
 		ext_glVertexStream4fvATI((GLenum)stream, (const GLfloat*)(coords + coordsByteOffset));
 	
@@ -22738,7 +22724,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream4fvATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream4dATI(JNIEnv* env, jclass clazz, jint stream, jdouble x, jdouble y, jdouble z, jdouble w) {
 
 
-//@line:16143
+//@line:16129
 
 		ext_glVertexStream4dATI((GLenum)stream, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -22749,7 +22735,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream4dvATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16147
+//@line:16133
 
 		ext_glVertexStream4dvATI((GLenum)stream, (const GLdouble*)(coords + coordsByteOffset));
 	
@@ -22759,7 +22745,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexStream4dvATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalStream3bATI(JNIEnv* env, jclass clazz, jint stream, jbyte nx, jbyte ny, jbyte nz) {
 
 
-//@line:16151
+//@line:16137
 
 		ext_glNormalStream3bATI((GLenum)stream, (GLbyte)nx, (GLbyte)ny, (GLbyte)nz);
 	
@@ -22770,7 +22756,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalStream3bvATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16155
+//@line:16141
 
 		ext_glNormalStream3bvATI((GLenum)stream, (const GLbyte*)(coords + coordsByteOffset));
 	
@@ -22780,7 +22766,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalStream3bvATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalStream3sATI(JNIEnv* env, jclass clazz, jint stream, jshort nx, jshort ny, jshort nz) {
 
 
-//@line:16159
+//@line:16145
 
 		ext_glNormalStream3sATI((GLenum)stream, (GLshort)nx, (GLshort)ny, (GLshort)nz);
 	
@@ -22791,7 +22777,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalStream3svATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16163
+//@line:16149
 
 		ext_glNormalStream3svATI((GLenum)stream, (const GLshort*)(coords + coordsByteOffset));
 	
@@ -22801,7 +22787,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalStream3svATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalStream3iATI(JNIEnv* env, jclass clazz, jint stream, jint nx, jint ny, jint nz) {
 
 
-//@line:16167
+//@line:16153
 
 		ext_glNormalStream3iATI((GLenum)stream, (GLint)nx, (GLint)ny, (GLint)nz);
 	
@@ -22812,7 +22798,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalStream3ivATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16171
+//@line:16157
 
 		ext_glNormalStream3ivATI((GLenum)stream, (const GLint*)(coords + coordsByteOffset));
 	
@@ -22822,7 +22808,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalStream3ivATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalStream3fATI(JNIEnv* env, jclass clazz, jint stream, jfloat nx, jfloat ny, jfloat nz) {
 
 
-//@line:16175
+//@line:16161
 
 		ext_glNormalStream3fATI((GLenum)stream, (GLfloat)nx, (GLfloat)ny, (GLfloat)nz);
 	
@@ -22833,7 +22819,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalStream3fvATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16179
+//@line:16165
 
 		ext_glNormalStream3fvATI((GLenum)stream, (const GLfloat*)(coords + coordsByteOffset));
 	
@@ -22843,7 +22829,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalStream3fvATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalStream3dATI(JNIEnv* env, jclass clazz, jint stream, jdouble nx, jdouble ny, jdouble nz) {
 
 
-//@line:16183
+//@line:16169
 
 		ext_glNormalStream3dATI((GLenum)stream, (GLdouble)nx, (GLdouble)ny, (GLdouble)nz);
 	
@@ -22854,7 +22840,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalStream3dvATI(JNIEnv
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16187
+//@line:16173
 
 		ext_glNormalStream3dvATI((GLenum)stream, (const GLdouble*)(coords + coordsByteOffset));
 	
@@ -22864,7 +22850,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalStream3dvATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClientActiveVertexStreamATI(JNIEnv* env, jclass clazz, jint stream) {
 
 
-//@line:16191
+//@line:16177
 
 		ext_glClientActiveVertexStreamATI((GLenum)stream);
 	
@@ -22874,7 +22860,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClientActiveVertexStreamA
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexBlendEnviATI(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:16195
+//@line:16181
 
 		ext_glVertexBlendEnviATI((GLenum)pname, (GLint)param);
 	
@@ -22884,7 +22870,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexBlendEnviATI(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexBlendEnvfATI(JNIEnv* env, jclass clazz, jint pname, jfloat param) {
 
 
-//@line:16199
+//@line:16185
 
 		ext_glVertexBlendEnvfATI((GLenum)pname, (GLfloat)param);
 	
@@ -22895,7 +22881,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glElementPointerATI(JNIEnv*
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:16203
+//@line:16189
 
 		ext_glElementPointerATI((GLenum)type, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -22905,7 +22891,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glElementPointerATI(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementArrayATI(JNIEnv* env, jclass clazz, jint mode, jint count) {
 
 
-//@line:16207
+//@line:16193
 
 		ext_glDrawElementArrayATI((GLenum)mode, (GLsizei)count);
 	
@@ -22915,7 +22901,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementArrayATI(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawRangeElementArrayATI(JNIEnv* env, jclass clazz, jint mode, jint start, jint end, jint count) {
 
 
-//@line:16211
+//@line:16197
 
 		ext_glDrawRangeElementArrayATI((GLenum)mode, (GLuint)start, (GLuint)end, (GLsizei)count);
 	
@@ -22925,7 +22911,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawRangeElementArrayATI(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawMeshArraysSUN(JNIEnv* env, jclass clazz, jint mode, jint first, jint count, jint width) {
 
 
-//@line:16215
+//@line:16201
 
 		ext_glDrawMeshArraysSUN((GLenum)mode, (GLint)first, (GLsizei)count, (GLsizei)width);
 	
@@ -22936,7 +22922,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenOcclusionQueriesNV(JNI
 	unsigned char* ids = (unsigned char*)env->GetDirectBufferAddress(obj_ids);
 
 
-//@line:16219
+//@line:16205
 
 		ext_glGenOcclusionQueriesNV((GLsizei)n, (GLuint*)(ids + idsByteOffset));
 	
@@ -22947,7 +22933,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteOcclusionQueriesNV(
 	unsigned char* ids = (unsigned char*)env->GetDirectBufferAddress(obj_ids);
 
 
-//@line:16223
+//@line:16209
 
 		ext_glDeleteOcclusionQueriesNV((GLsizei)n, (const GLuint*)(ids + idsByteOffset));
 	
@@ -22957,7 +22943,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteOcclusionQueriesNV(
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsOcclusionQueryNV(JNIEnv* env, jclass clazz, jint id) {
 
 
-//@line:16227
+//@line:16213
 
 		return (jboolean)ext_glIsOcclusionQueryNV((GLuint)id);
 	
@@ -22967,7 +22953,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsOcclusionQueryNV(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginOcclusionQueryNV(JNIEnv* env, jclass clazz, jint id) {
 
 
-//@line:16231
+//@line:16217
 
 		ext_glBeginOcclusionQueryNV((GLuint)id);
 	
@@ -22977,7 +22963,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginOcclusionQueryNV(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndOcclusionQueryNV(JNIEnv* env, jclass clazz) {
 
 
-//@line:16235
+//@line:16221
 
 		ext_glEndOcclusionQueryNV();
 	
@@ -22988,7 +22974,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetOcclusionQueryivNV(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16239
+//@line:16225
 
 		ext_glGetOcclusionQueryivNV((GLuint)id, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -22999,7 +22985,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetOcclusionQueryuivNV(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16243
+//@line:16229
 
 		ext_glGetOcclusionQueryuivNV((GLuint)id, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
 	
@@ -23009,7 +22995,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetOcclusionQueryuivNV(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameteriNV(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:16247
+//@line:16233
 
 		ext_glPointParameteriNV((GLenum)pname, (GLint)param);
 	
@@ -23020,7 +23006,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameterivNV(JNIEnv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16251
+//@line:16237
 
 		ext_glPointParameterivNV((GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -23030,7 +23016,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameterivNV(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glActiveStencilFaceEXT(JNIEnv* env, jclass clazz, jint face) {
 
 
-//@line:16255
+//@line:16241
 
 		ext_glActiveStencilFaceEXT((GLenum)face);
 	
@@ -23041,7 +23027,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glElementPointerAPPLE(JNIEn
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:16259
+//@line:16245
 
 		ext_glElementPointerAPPLE((GLenum)type, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -23051,7 +23037,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glElementPointerAPPLE(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementArrayAPPLE(JNIEnv* env, jclass clazz, jint mode, jint first, jint count) {
 
 
-//@line:16263
+//@line:16249
 
 		ext_glDrawElementArrayAPPLE((GLenum)mode, (GLint)first, (GLsizei)count);
 	
@@ -23061,7 +23047,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementArrayAPPLE(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawRangeElementArrayAPPLE(JNIEnv* env, jclass clazz, jint mode, jint start, jint end, jint first, jint count) {
 
 
-//@line:16267
+//@line:16253
 
 		ext_glDrawRangeElementArrayAPPLE((GLenum)mode, (GLuint)start, (GLuint)end, (GLint)first, (GLsizei)count);
 	
@@ -23073,7 +23059,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiDrawElementArrayAPPL
 	unsigned char* count = (unsigned char*)env->GetDirectBufferAddress(obj_count);
 
 
-//@line:16271
+//@line:16257
 
 		ext_glMultiDrawElementArrayAPPLE((GLenum)mode, (const GLint*)(first + firstByteOffset), (const GLsizei*)(count + countByteOffset), (GLsizei)primcount);
 	
@@ -23085,7 +23071,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiDrawRangeElementArra
 	unsigned char* count = (unsigned char*)env->GetDirectBufferAddress(obj_count);
 
 
-//@line:16275
+//@line:16261
 
 		ext_glMultiDrawRangeElementArrayAPPLE((GLenum)mode, (GLuint)start, (GLuint)end, (const GLint*)(first + firstByteOffset), (const GLsizei*)(count + countByteOffset), (GLsizei)primcount);
 	
@@ -23096,7 +23082,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenFencesAPPLE(JNIEnv* en
 	unsigned char* fences = (unsigned char*)env->GetDirectBufferAddress(obj_fences);
 
 
-//@line:16279
+//@line:16265
 
 		ext_glGenFencesAPPLE((GLsizei)n, (GLuint*)(fences + fencesByteOffset));
 	
@@ -23107,7 +23093,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteFencesAPPLE(JNIEnv*
 	unsigned char* fences = (unsigned char*)env->GetDirectBufferAddress(obj_fences);
 
 
-//@line:16283
+//@line:16269
 
 		ext_glDeleteFencesAPPLE((GLsizei)n, (const GLuint*)(fences + fencesByteOffset));
 	
@@ -23117,7 +23103,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteFencesAPPLE(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSetFenceAPPLE(JNIEnv* env, jclass clazz, jint fence) {
 
 
-//@line:16287
+//@line:16273
 
 		ext_glSetFenceAPPLE((GLuint)fence);
 	
@@ -23127,7 +23113,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSetFenceAPPLE(JNIEnv* env
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsFenceAPPLE(JNIEnv* env, jclass clazz, jint fence) {
 
 
-//@line:16291
+//@line:16277
 
 		return (jboolean)ext_glIsFenceAPPLE((GLuint)fence);
 	
@@ -23137,7 +23123,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsFenceAPPLE(JNIEnv* 
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glTestFenceAPPLE(JNIEnv* env, jclass clazz, jint fence) {
 
 
-//@line:16295
+//@line:16281
 
 		return (jboolean)ext_glTestFenceAPPLE((GLuint)fence);
 	
@@ -23147,7 +23133,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glTestFenceAPPLE(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFinishFenceAPPLE(JNIEnv* env, jclass clazz, jint fence) {
 
 
-//@line:16299
+//@line:16285
 
 		ext_glFinishFenceAPPLE((GLuint)fence);
 	
@@ -23157,7 +23143,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFinishFenceAPPLE(JNIEnv* 
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glTestObjectAPPLE(JNIEnv* env, jclass clazz, jint object, jint name) {
 
 
-//@line:16303
+//@line:16289
 
 		return (jboolean)ext_glTestObjectAPPLE((GLenum)object, (GLuint)name);
 	
@@ -23167,7 +23153,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glTestObjectAPPLE(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFinishObjectAPPLE(JNIEnv* env, jclass clazz, jint object, jint name) {
 
 
-//@line:16307
+//@line:16293
 
 		ext_glFinishObjectAPPLE((GLenum)object, (GLint)name);
 	
@@ -23177,7 +23163,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFinishObjectAPPLE(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindVertexArrayAPPLE(JNIEnv* env, jclass clazz, jint array) {
 
 
-//@line:16311
+//@line:16297
 
 		ext_glBindVertexArrayAPPLE((GLuint)array);
 	
@@ -23188,7 +23174,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteVertexArraysAPPLE(J
 	unsigned char* arrays = (unsigned char*)env->GetDirectBufferAddress(obj_arrays);
 
 
-//@line:16315
+//@line:16301
 
 		ext_glDeleteVertexArraysAPPLE((GLsizei)n, (const GLuint*)(arrays + arraysByteOffset));
 	
@@ -23199,7 +23185,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenVertexArraysAPPLE(JNIE
 	unsigned char* arrays = (unsigned char*)env->GetDirectBufferAddress(obj_arrays);
 
 
-//@line:16319
+//@line:16305
 
 		ext_glGenVertexArraysAPPLE((GLsizei)n, (GLuint*)(arrays + arraysByteOffset));
 	
@@ -23209,7 +23195,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenVertexArraysAPPLE(JNIE
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsVertexArrayAPPLE(JNIEnv* env, jclass clazz, jint array) {
 
 
-//@line:16323
+//@line:16309
 
 		return (jboolean)ext_glIsVertexArrayAPPLE((GLuint)array);
 	
@@ -23220,7 +23206,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayRangeAPPLE(JNI
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:16327
+//@line:16313
 
 		ext_glVertexArrayRangeAPPLE((GLsizei)length, (GLvoid*)(pointer + pointerByteOffset));
 	
@@ -23231,7 +23217,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushVertexArrayRangeAPPL
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:16331
+//@line:16317
 
 		ext_glFlushVertexArrayRangeAPPLE((GLsizei)length, (GLvoid*)(pointer + pointerByteOffset));
 	
@@ -23241,7 +23227,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushVertexArrayRangeAPPL
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayParameteriAPPLE(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:16335
+//@line:16321
 
 		ext_glVertexArrayParameteriAPPLE((GLenum)pname, (GLint)param);
 	
@@ -23252,7 +23238,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawBuffersATI(JNIEnv* en
 	unsigned char* bufs = (unsigned char*)env->GetDirectBufferAddress(obj_bufs);
 
 
-//@line:16339
+//@line:16325
 
 		ext_glDrawBuffersATI((GLsizei)n, (const GLenum*)(bufs + bufsByteOffset));
 	
@@ -23263,7 +23249,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramNamedParameter4fNV
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:16343
+//@line:16329
 
 		ext_glProgramNamedParameter4fNV((GLuint)id, (GLsizei)len, (const GLubyte*)(name + nameByteOffset), (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
 	
@@ -23275,7 +23261,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramNamedParameter4fvN
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16347
+//@line:16333
 
 		ext_glProgramNamedParameter4fvNV((GLuint)id, (GLsizei)len, (const GLubyte*)(name + nameByteOffset), (const GLfloat*)(v + vByteOffset));
 	
@@ -23286,7 +23272,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramNamedParameter4dNV
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:16351
+//@line:16337
 
 		ext_glProgramNamedParameter4dNV((GLuint)id, (GLsizei)len, (const GLubyte*)(name + nameByteOffset), (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -23298,7 +23284,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramNamedParameter4dvN
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16355
+//@line:16341
 
 		ext_glProgramNamedParameter4dvNV((GLuint)id, (GLsizei)len, (const GLubyte*)(name + nameByteOffset), (const GLdouble*)(v + vByteOffset));
 	
@@ -23310,7 +23296,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramNamedParameterf
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16359
+//@line:16345
 
 		ext_glGetProgramNamedParameterfvNV((GLuint)id, (GLsizei)len, (const GLubyte*)(name + nameByteOffset), (GLfloat*)(params + paramsByteOffset));
 	
@@ -23322,7 +23308,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramNamedParameterd
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16363
+//@line:16349
 
 		ext_glGetProgramNamedParameterdvNV((GLuint)id, (GLsizei)len, (const GLubyte*)(name + nameByteOffset), (GLdouble*)(params + paramsByteOffset));
 	
@@ -23332,7 +23318,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramNamedParameterd
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2hNV(JNIEnv* env, jclass clazz, jshort x, jshort y) {
 
 
-//@line:16367
+//@line:16353
 
 		ext_glVertex2hNV((GLhalfNV)x, (GLhalfNV)y);
 	
@@ -23343,7 +23329,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2hvNV(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16371
+//@line:16357
 
 		ext_glVertex2hvNV((const GLhalfNV*)(v + vByteOffset));
 	
@@ -23353,7 +23339,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2hvNV(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3hNV(JNIEnv* env, jclass clazz, jshort x, jshort y, jshort z) {
 
 
-//@line:16375
+//@line:16361
 
 		ext_glVertex3hNV((GLhalfNV)x, (GLhalfNV)y, (GLhalfNV)z);
 	
@@ -23364,7 +23350,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3hvNV(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16379
+//@line:16365
 
 		ext_glVertex3hvNV((const GLhalfNV*)(v + vByteOffset));
 	
@@ -23374,7 +23360,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3hvNV(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4hNV(JNIEnv* env, jclass clazz, jshort x, jshort y, jshort z, jshort w) {
 
 
-//@line:16383
+//@line:16369
 
 		ext_glVertex4hNV((GLhalfNV)x, (GLhalfNV)y, (GLhalfNV)z, (GLhalfNV)w);
 	
@@ -23385,7 +23371,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4hvNV(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16387
+//@line:16373
 
 		ext_glVertex4hvNV((const GLhalfNV*)(v + vByteOffset));
 	
@@ -23395,7 +23381,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4hvNV(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3hNV(JNIEnv* env, jclass clazz, jshort nx, jshort ny, jshort nz) {
 
 
-//@line:16391
+//@line:16377
 
 		ext_glNormal3hNV((GLhalfNV)nx, (GLhalfNV)ny, (GLhalfNV)nz);
 	
@@ -23406,7 +23392,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3hvNV(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16395
+//@line:16381
 
 		ext_glNormal3hvNV((const GLhalfNV*)(v + vByteOffset));
 	
@@ -23416,7 +23402,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3hvNV(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3hNV(JNIEnv* env, jclass clazz, jshort red, jshort green, jshort blue) {
 
 
-//@line:16399
+//@line:16385
 
 		ext_glColor3hNV((GLhalfNV)red, (GLhalfNV)green, (GLhalfNV)blue);
 	
@@ -23427,7 +23413,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3hvNV(JNIEnv* env, j
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16403
+//@line:16389
 
 		ext_glColor3hvNV((const GLhalfNV*)(v + vByteOffset));
 	
@@ -23437,7 +23423,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3hvNV(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4hNV(JNIEnv* env, jclass clazz, jshort red, jshort green, jshort blue, jshort alpha) {
 
 
-//@line:16407
+//@line:16393
 
 		ext_glColor4hNV((GLhalfNV)red, (GLhalfNV)green, (GLhalfNV)blue, (GLhalfNV)alpha);
 	
@@ -23448,7 +23434,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4hvNV(JNIEnv* env, j
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16411
+//@line:16397
 
 		ext_glColor4hvNV((const GLhalfNV*)(v + vByteOffset));
 	
@@ -23458,7 +23444,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4hvNV(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1hNV(JNIEnv* env, jclass clazz, jshort s) {
 
 
-//@line:16415
+//@line:16401
 
 		ext_glTexCoord1hNV((GLhalfNV)s);
 	
@@ -23469,7 +23455,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1hvNV(JNIEnv* env
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16419
+//@line:16405
 
 		ext_glTexCoord1hvNV((const GLhalfNV*)(v + vByteOffset));
 	
@@ -23479,7 +23465,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1hvNV(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2hNV(JNIEnv* env, jclass clazz, jshort s, jshort t) {
 
 
-//@line:16423
+//@line:16409
 
 		ext_glTexCoord2hNV((GLhalfNV)s, (GLhalfNV)t);
 	
@@ -23490,7 +23476,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2hvNV(JNIEnv* env
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16427
+//@line:16413
 
 		ext_glTexCoord2hvNV((const GLhalfNV*)(v + vByteOffset));
 	
@@ -23500,7 +23486,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2hvNV(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3hNV(JNIEnv* env, jclass clazz, jshort s, jshort t, jshort r) {
 
 
-//@line:16431
+//@line:16417
 
 		ext_glTexCoord3hNV((GLhalfNV)s, (GLhalfNV)t, (GLhalfNV)r);
 	
@@ -23511,7 +23497,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3hvNV(JNIEnv* env
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16435
+//@line:16421
 
 		ext_glTexCoord3hvNV((const GLhalfNV*)(v + vByteOffset));
 	
@@ -23521,7 +23507,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3hvNV(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4hNV(JNIEnv* env, jclass clazz, jshort s, jshort t, jshort r, jshort q) {
 
 
-//@line:16439
+//@line:16425
 
 		ext_glTexCoord4hNV((GLhalfNV)s, (GLhalfNV)t, (GLhalfNV)r, (GLhalfNV)q);
 	
@@ -23532,7 +23518,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4hvNV(JNIEnv* env
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16443
+//@line:16429
 
 		ext_glTexCoord4hvNV((const GLhalfNV*)(v + vByteOffset));
 	
@@ -23542,7 +23528,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4hvNV(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1hNV(JNIEnv* env, jclass clazz, jint target, jshort s) {
 
 
-//@line:16447
+//@line:16433
 
 		ext_glMultiTexCoord1hNV((GLenum)target, (GLhalfNV)s);
 	
@@ -23553,7 +23539,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1hvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16451
+//@line:16437
 
 		ext_glMultiTexCoord1hvNV((GLenum)target, (const GLhalfNV*)(v + vByteOffset));
 	
@@ -23563,7 +23549,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1hvNV(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2hNV(JNIEnv* env, jclass clazz, jint target, jshort s, jshort t) {
 
 
-//@line:16455
+//@line:16441
 
 		ext_glMultiTexCoord2hNV((GLenum)target, (GLhalfNV)s, (GLhalfNV)t);
 	
@@ -23574,7 +23560,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2hvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16459
+//@line:16445
 
 		ext_glMultiTexCoord2hvNV((GLenum)target, (const GLhalfNV*)(v + vByteOffset));
 	
@@ -23584,7 +23570,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2hvNV(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3hNV(JNIEnv* env, jclass clazz, jint target, jshort s, jshort t, jshort r) {
 
 
-//@line:16463
+//@line:16449
 
 		ext_glMultiTexCoord3hNV((GLenum)target, (GLhalfNV)s, (GLhalfNV)t, (GLhalfNV)r);
 	
@@ -23595,7 +23581,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3hvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16467
+//@line:16453
 
 		ext_glMultiTexCoord3hvNV((GLenum)target, (const GLhalfNV*)(v + vByteOffset));
 	
@@ -23605,7 +23591,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3hvNV(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4hNV(JNIEnv* env, jclass clazz, jint target, jshort s, jshort t, jshort r, jshort q) {
 
 
-//@line:16471
+//@line:16457
 
 		ext_glMultiTexCoord4hNV((GLenum)target, (GLhalfNV)s, (GLhalfNV)t, (GLhalfNV)r, (GLhalfNV)q);
 	
@@ -23616,7 +23602,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4hvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16475
+//@line:16461
 
 		ext_glMultiTexCoord4hvNV((GLenum)target, (const GLhalfNV*)(v + vByteOffset));
 	
@@ -23626,7 +23612,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4hvNV(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordhNV(JNIEnv* env, jclass clazz, jshort fog) {
 
 
-//@line:16479
+//@line:16465
 
 		ext_glFogCoordhNV((GLhalfNV)fog);
 	
@@ -23637,7 +23623,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordhvNV(JNIEnv* env,
 	unsigned char* fog = (unsigned char*)env->GetDirectBufferAddress(obj_fog);
 
 
-//@line:16483
+//@line:16469
 
 		ext_glFogCoordhvNV((const GLhalfNV*)(fog + fogByteOffset));
 	
@@ -23647,7 +23633,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordhvNV(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3hNV(JNIEnv* env, jclass clazz, jshort red, jshort green, jshort blue) {
 
 
-//@line:16487
+//@line:16473
 
 		ext_glSecondaryColor3hNV((GLhalfNV)red, (GLhalfNV)green, (GLhalfNV)blue);
 	
@@ -23658,7 +23644,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3hvNV(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16491
+//@line:16477
 
 		ext_glSecondaryColor3hvNV((const GLhalfNV*)(v + vByteOffset));
 	
@@ -23668,7 +23654,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColor3hvNV(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexWeighthNV(JNIEnv* env, jclass clazz, jshort weight) {
 
 
-//@line:16495
+//@line:16481
 
 		ext_glVertexWeighthNV((GLhalfNV)weight);
 	
@@ -23679,7 +23665,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexWeighthvNV(JNIEnv* 
 	unsigned char* weight = (unsigned char*)env->GetDirectBufferAddress(obj_weight);
 
 
-//@line:16499
+//@line:16485
 
 		ext_glVertexWeighthvNV((const GLhalfNV*)(weight + weightByteOffset));
 	
@@ -23689,7 +23675,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexWeighthvNV(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1hNV(JNIEnv* env, jclass clazz, jint index, jshort x) {
 
 
-//@line:16503
+//@line:16489
 
 		ext_glVertexAttrib1hNV((GLuint)index, (GLhalfNV)x);
 	
@@ -23700,7 +23686,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1hvNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16507
+//@line:16493
 
 		ext_glVertexAttrib1hvNV((GLuint)index, (const GLhalfNV*)(v + vByteOffset));
 	
@@ -23710,7 +23696,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib1hvNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2hNV(JNIEnv* env, jclass clazz, jint index, jshort x, jshort y) {
 
 
-//@line:16511
+//@line:16497
 
 		ext_glVertexAttrib2hNV((GLuint)index, (GLhalfNV)x, (GLhalfNV)y);
 	
@@ -23721,7 +23707,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2hvNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16515
+//@line:16501
 
 		ext_glVertexAttrib2hvNV((GLuint)index, (const GLhalfNV*)(v + vByteOffset));
 	
@@ -23731,7 +23717,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib2hvNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3hNV(JNIEnv* env, jclass clazz, jint index, jshort x, jshort y, jshort z) {
 
 
-//@line:16519
+//@line:16505
 
 		ext_glVertexAttrib3hNV((GLuint)index, (GLhalfNV)x, (GLhalfNV)y, (GLhalfNV)z);
 	
@@ -23742,7 +23728,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3hvNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16523
+//@line:16509
 
 		ext_glVertexAttrib3hvNV((GLuint)index, (const GLhalfNV*)(v + vByteOffset));
 	
@@ -23752,7 +23738,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib3hvNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4hNV(JNIEnv* env, jclass clazz, jint index, jshort x, jshort y, jshort z, jshort w) {
 
 
-//@line:16527
+//@line:16513
 
 		ext_glVertexAttrib4hNV((GLuint)index, (GLhalfNV)x, (GLhalfNV)y, (GLhalfNV)z, (GLhalfNV)w);
 	
@@ -23763,7 +23749,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttrib4hvNV(JNIEnv*
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16531
+//@line:16517
 
 		ext_glVertexAttrib4hvNV((GLuint)index, (const GLhalfNV*)(v + vByteOffset));
 	
@@ -23774,7 +23760,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs1hvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16535
+//@line:16521
 
 		ext_glVertexAttribs1hvNV((GLuint)index, (GLsizei)n, (const GLhalfNV*)(v + vByteOffset));
 	
@@ -23785,7 +23771,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs2hvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16539
+//@line:16525
 
 		ext_glVertexAttribs2hvNV((GLuint)index, (GLsizei)n, (const GLhalfNV*)(v + vByteOffset));
 	
@@ -23796,7 +23782,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs3hvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16543
+//@line:16529
 
 		ext_glVertexAttribs3hvNV((GLuint)index, (GLsizei)n, (const GLhalfNV*)(v + vByteOffset));
 	
@@ -23807,7 +23793,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribs4hvNV(JNIEnv
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16547
+//@line:16533
 
 		ext_glVertexAttribs4hvNV((GLuint)index, (GLsizei)n, (const GLhalfNV*)(v + vByteOffset));
 	
@@ -23818,7 +23804,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelDataRangeNV(JNIEnv* 
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:16551
+//@line:16537
 
 		ext_glPixelDataRangeNV((GLenum)target, (GLsizei)length, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -23828,7 +23814,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelDataRangeNV(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushPixelDataRangeNV(JNIEnv* env, jclass clazz, jint target) {
 
 
-//@line:16555
+//@line:16541
 
 		ext_glFlushPixelDataRangeNV((GLenum)target);
 	
@@ -23838,7 +23824,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushPixelDataRangeNV(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPrimitiveRestartNV(JNIEnv* env, jclass clazz) {
 
 
-//@line:16559
+//@line:16545
 
 		ext_glPrimitiveRestartNV();
 	
@@ -23848,7 +23834,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPrimitiveRestartNV(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPrimitiveRestartIndexNV(JNIEnv* env, jclass clazz, jint index) {
 
 
-//@line:16563
+//@line:16549
 
 		ext_glPrimitiveRestartIndexNV((GLuint)index);
 	
@@ -23858,7 +23844,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPrimitiveRestartIndexNV(J
 JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glMapObjectBufferATI(JNIEnv* env, jclass clazz, jint buffer, jlong bufferSize) {
 
 
-//@line:16567
+//@line:16553
 
 		GLvoid* bufferPtr = (GLvoid*)ext_glMapObjectBufferATI((GLuint)buffer);
 		if(!bufferPtr) return 0;
@@ -23870,7 +23856,7 @@ JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glMapObjectBufferATI(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUnmapObjectBufferATI(JNIEnv* env, jclass clazz, jint buffer) {
 
 
-//@line:16573
+//@line:16559
 
 		ext_glUnmapObjectBufferATI((GLuint)buffer);
 	
@@ -23880,7 +23866,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUnmapObjectBufferATI(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilOpSeparateATI(JNIEnv* env, jclass clazz, jint face, jint sfail, jint dpfail, jint dppass) {
 
 
-//@line:16577
+//@line:16563
 
 		ext_glStencilOpSeparateATI((GLenum)face, (GLenum)sfail, (GLenum)dpfail, (GLenum)dppass);
 	
@@ -23890,7 +23876,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilOpSeparateATI(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilFuncSeparateATI(JNIEnv* env, jclass clazz, jint frontfunc, jint backfunc, jint ref, jint mask) {
 
 
-//@line:16581
+//@line:16567
 
 		ext_glStencilFuncSeparateATI((GLenum)frontfunc, (GLenum)backfunc, (GLint)ref, (GLuint)mask);
 	
@@ -23900,7 +23886,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilFuncSeparateATI(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribArrayObjectATI(JNIEnv* env, jclass clazz, jint index, jint size, jint type, jboolean normalized, jint stride, jint buffer, jint offset) {
 
 
-//@line:16585
+//@line:16571
 
 		ext_glVertexAttribArrayObjectATI((GLuint)index, (GLint)size, (GLenum)type, (GLboolean)normalized, (GLsizei)stride, (GLuint)buffer, (GLuint)offset);
 	
@@ -23911,7 +23897,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribArrayObjec
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16589
+//@line:16575
 
 		ext_glGetVertexAttribArrayObjectfvATI((GLuint)index, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -23922,7 +23908,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribArrayObjec
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16593
+//@line:16579
 
 		ext_glGetVertexAttribArrayObjectivATI((GLuint)index, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -23932,7 +23918,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribArrayObjec
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1bOES(JNIEnv* env, jclass clazz, jint texture, jbyte s) {
 
 
-//@line:16597
+//@line:16583
 
 		ext_glMultiTexCoord1bOES((GLenum)texture, (GLbyte)s);
 	
@@ -23943,7 +23929,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1bvOES(JNIEn
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16601
+//@line:16587
 
 		ext_glMultiTexCoord1bvOES((GLenum)texture, (const GLbyte*)(coords + coordsByteOffset));
 	
@@ -23953,7 +23939,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1bvOES(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2bOES(JNIEnv* env, jclass clazz, jint texture, jbyte s, jbyte t) {
 
 
-//@line:16605
+//@line:16591
 
 		ext_glMultiTexCoord2bOES((GLenum)texture, (GLbyte)s, (GLbyte)t);
 	
@@ -23964,7 +23950,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2bvOES(JNIEn
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16609
+//@line:16595
 
 		ext_glMultiTexCoord2bvOES((GLenum)texture, (const GLbyte*)(coords + coordsByteOffset));
 	
@@ -23974,7 +23960,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2bvOES(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3bOES(JNIEnv* env, jclass clazz, jint texture, jbyte s, jbyte t, jbyte r) {
 
 
-//@line:16613
+//@line:16599
 
 		ext_glMultiTexCoord3bOES((GLenum)texture, (GLbyte)s, (GLbyte)t, (GLbyte)r);
 	
@@ -23985,7 +23971,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3bvOES(JNIEn
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16617
+//@line:16603
 
 		ext_glMultiTexCoord3bvOES((GLenum)texture, (const GLbyte*)(coords + coordsByteOffset));
 	
@@ -23995,7 +23981,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3bvOES(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4bOES(JNIEnv* env, jclass clazz, jint texture, jbyte s, jbyte t, jbyte r, jbyte q) {
 
 
-//@line:16621
+//@line:16607
 
 		ext_glMultiTexCoord4bOES((GLenum)texture, (GLbyte)s, (GLbyte)t, (GLbyte)r, (GLbyte)q);
 	
@@ -24006,7 +23992,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4bvOES(JNIEn
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16625
+//@line:16611
 
 		ext_glMultiTexCoord4bvOES((GLenum)texture, (const GLbyte*)(coords + coordsByteOffset));
 	
@@ -24016,7 +24002,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4bvOES(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1bOES(JNIEnv* env, jclass clazz, jbyte s) {
 
 
-//@line:16629
+//@line:16615
 
 		ext_glTexCoord1bOES((GLbyte)s);
 	
@@ -24027,7 +24013,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1bvOES(JNIEnv* en
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16633
+//@line:16619
 
 		ext_glTexCoord1bvOES((const GLbyte*)(coords + coordsByteOffset));
 	
@@ -24037,7 +24023,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1bvOES(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2bOES(JNIEnv* env, jclass clazz, jbyte s, jbyte t) {
 
 
-//@line:16637
+//@line:16623
 
 		ext_glTexCoord2bOES((GLbyte)s, (GLbyte)t);
 	
@@ -24048,7 +24034,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2bvOES(JNIEnv* en
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16641
+//@line:16627
 
 		ext_glTexCoord2bvOES((const GLbyte*)(coords + coordsByteOffset));
 	
@@ -24058,7 +24044,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2bvOES(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3bOES(JNIEnv* env, jclass clazz, jbyte s, jbyte t, jbyte r) {
 
 
-//@line:16645
+//@line:16631
 
 		ext_glTexCoord3bOES((GLbyte)s, (GLbyte)t, (GLbyte)r);
 	
@@ -24069,7 +24055,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3bvOES(JNIEnv* en
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16649
+//@line:16635
 
 		ext_glTexCoord3bvOES((const GLbyte*)(coords + coordsByteOffset));
 	
@@ -24079,7 +24065,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3bvOES(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4bOES(JNIEnv* env, jclass clazz, jbyte s, jbyte t, jbyte r, jbyte q) {
 
 
-//@line:16653
+//@line:16639
 
 		ext_glTexCoord4bOES((GLbyte)s, (GLbyte)t, (GLbyte)r, (GLbyte)q);
 	
@@ -24090,7 +24076,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4bvOES(JNIEnv* en
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16657
+//@line:16643
 
 		ext_glTexCoord4bvOES((const GLbyte*)(coords + coordsByteOffset));
 	
@@ -24100,7 +24086,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4bvOES(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2bOES(JNIEnv* env, jclass clazz, jbyte x) {
 
 
-//@line:16661
+//@line:16647
 
 		ext_glVertex2bOES((GLbyte)x);
 	
@@ -24111,7 +24097,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2bvOES(JNIEnv* env,
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16665
+//@line:16651
 
 		ext_glVertex2bvOES((const GLbyte*)(coords + coordsByteOffset));
 	
@@ -24121,7 +24107,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2bvOES(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3bOES(JNIEnv* env, jclass clazz, jbyte x, jbyte y) {
 
 
-//@line:16669
+//@line:16655
 
 		ext_glVertex3bOES((GLbyte)x, (GLbyte)y);
 	
@@ -24132,7 +24118,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3bvOES(JNIEnv* env,
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16673
+//@line:16659
 
 		ext_glVertex3bvOES((const GLbyte*)(coords + coordsByteOffset));
 	
@@ -24142,7 +24128,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3bvOES(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4bOES(JNIEnv* env, jclass clazz, jbyte x, jbyte y, jbyte z) {
 
 
-//@line:16677
+//@line:16663
 
 		ext_glVertex4bOES((GLbyte)x, (GLbyte)y, (GLbyte)z);
 	
@@ -24153,7 +24139,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4bvOES(JNIEnv* env,
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16681
+//@line:16667
 
 		ext_glVertex4bvOES((const GLbyte*)(coords + coordsByteOffset));
 	
@@ -24163,7 +24149,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4bvOES(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAccumxOES(JNIEnv* env, jclass clazz, jint op, jint value) {
 
 
-//@line:16685
+//@line:16671
 
 		ext_glAccumxOES((GLenum)op, (GLfixed)value);
 	
@@ -24173,7 +24159,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAccumxOES(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAlphaFuncxOES(JNIEnv* env, jclass clazz, jint func, jint ref) {
 
 
-//@line:16689
+//@line:16675
 
 		ext_glAlphaFuncxOES((GLenum)func, (GLfixed)ref);
 	
@@ -24184,7 +24170,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBitmapxOES(JNIEnv* env, j
 	unsigned char* bitmap = (unsigned char*)env->GetDirectBufferAddress(obj_bitmap);
 
 
-//@line:16693
+//@line:16679
 
 		ext_glBitmapxOES((GLsizei)width, (GLsizei)height, (GLfixed)xorig, (GLfixed)yorig, (GLfixed)xmove, (GLfixed)ymove, (const GLubyte*)(bitmap + bitmapByteOffset));
 	
@@ -24194,7 +24180,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBitmapxOES(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendColorxOES(JNIEnv* env, jclass clazz, jint red, jint green, jint blue, jint alpha) {
 
 
-//@line:16697
+//@line:16683
 
 		ext_glBlendColorxOES((GLfixed)red, (GLfixed)green, (GLfixed)blue, (GLfixed)alpha);
 	
@@ -24204,7 +24190,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendColorxOES(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearAccumxOES(JNIEnv* env, jclass clazz, jint red, jint green, jint blue, jint alpha) {
 
 
-//@line:16701
+//@line:16687
 
 		ext_glClearAccumxOES((GLfixed)red, (GLfixed)green, (GLfixed)blue, (GLfixed)alpha);
 	
@@ -24214,7 +24200,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearAccumxOES(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearColorxOES(JNIEnv* env, jclass clazz, jint red, jint green, jint blue, jint alpha) {
 
 
-//@line:16705
+//@line:16691
 
 		ext_glClearColorxOES((GLfixed)red, (GLfixed)green, (GLfixed)blue, (GLfixed)alpha);
 	
@@ -24224,7 +24210,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearColorxOES(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearDepthxOES(JNIEnv* env, jclass clazz, jint depth) {
 
 
-//@line:16709
+//@line:16695
 
 		ext_glClearDepthxOES((GLfixed)depth);
 	
@@ -24235,7 +24221,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClipPlanexOES(JNIEnv* env
 	unsigned char* equation = (unsigned char*)env->GetDirectBufferAddress(obj_equation);
 
 
-//@line:16713
+//@line:16699
 
 		ext_glClipPlanexOES((GLenum)plane, (const GLfixed*)(equation + equationByteOffset));
 	
@@ -24245,7 +24231,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClipPlanexOES(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3xOES(JNIEnv* env, jclass clazz, jint red, jint green, jint blue) {
 
 
-//@line:16717
+//@line:16703
 
 		ext_glColor3xOES((GLfixed)red, (GLfixed)green, (GLfixed)blue);
 	
@@ -24255,7 +24241,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3xOES(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4xOES(JNIEnv* env, jclass clazz, jint red, jint green, jint blue, jint alpha) {
 
 
-//@line:16721
+//@line:16707
 
 		ext_glColor4xOES((GLfixed)red, (GLfixed)green, (GLfixed)blue, (GLfixed)alpha);
 	
@@ -24266,7 +24252,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor3xvOES(JNIEnv* env, 
 	unsigned char* components = (unsigned char*)env->GetDirectBufferAddress(obj_components);
 
 
-//@line:16725
+//@line:16711
 
 		ext_glColor3xvOES((const GLfixed*)(components + componentsByteOffset));
 	
@@ -24277,7 +24263,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4xvOES(JNIEnv* env, 
 	unsigned char* components = (unsigned char*)env->GetDirectBufferAddress(obj_components);
 
 
-//@line:16729
+//@line:16715
 
 		ext_glColor4xvOES((const GLfixed*)(components + componentsByteOffset));
 	
@@ -24287,7 +24273,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColor4xvOES(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionParameterxOES(JNIEnv* env, jclass clazz, jint target, jint pname, jint param) {
 
 
-//@line:16733
+//@line:16719
 
 		ext_glConvolutionParameterxOES((GLenum)target, (GLenum)pname, (GLfixed)param);
 	
@@ -24298,7 +24284,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionParameterxvOES
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16737
+//@line:16723
 
 		ext_glConvolutionParameterxvOES((GLenum)target, (GLenum)pname, (const GLfixed*)(params + paramsByteOffset));
 	
@@ -24308,7 +24294,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glConvolutionParameterxvOES
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthRangexOES(JNIEnv* env, jclass clazz, jint n, jint f) {
 
 
-//@line:16741
+//@line:16727
 
 		ext_glDepthRangexOES((GLfixed)n, (GLfixed)f);
 	
@@ -24318,7 +24304,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthRangexOES(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord1xOES(JNIEnv* env, jclass clazz, jint u) {
 
 
-//@line:16745
+//@line:16731
 
 		ext_glEvalCoord1xOES((GLfixed)u);
 	
@@ -24328,7 +24314,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord1xOES(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord2xOES(JNIEnv* env, jclass clazz, jint u, jint v) {
 
 
-//@line:16749
+//@line:16735
 
 		ext_glEvalCoord2xOES((GLfixed)u, (GLfixed)v);
 	
@@ -24339,7 +24325,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord1xvOES(JNIEnv* e
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16753
+//@line:16739
 
 		ext_glEvalCoord1xvOES((const GLfixed*)(coords + coordsByteOffset));
 	
@@ -24350,7 +24336,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEvalCoord2xvOES(JNIEnv* e
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16757
+//@line:16743
 
 		ext_glEvalCoord2xvOES((const GLfixed*)(coords + coordsByteOffset));
 	
@@ -24361,7 +24347,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFeedbackBufferxOES(JNIEnv
 	unsigned char* buffer = (unsigned char*)env->GetDirectBufferAddress(obj_buffer);
 
 
-//@line:16761
+//@line:16747
 
 		ext_glFeedbackBufferxOES((GLsizei)n, (GLenum)type, (const GLfixed*)(buffer + bufferByteOffset));
 	
@@ -24371,7 +24357,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFeedbackBufferxOES(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogxOES(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:16765
+//@line:16751
 
 		ext_glFogxOES((GLenum)pname, (GLfixed)param);
 	
@@ -24382,7 +24368,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogxvOES(JNIEnv* env, jcl
 	unsigned char* param = (unsigned char*)env->GetDirectBufferAddress(obj_param);
 
 
-//@line:16769
+//@line:16755
 
 		ext_glFogxvOES((GLenum)pname, (const GLfixed*)(param + paramByteOffset));
 	
@@ -24392,7 +24378,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogxvOES(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFrustumxOES(JNIEnv* env, jclass clazz, jint l, jint r, jint b, jint t, jint n, jint f) {
 
 
-//@line:16773
+//@line:16759
 
 		ext_glFrustumxOES((GLfixed)l, (GLfixed)r, (GLfixed)b, (GLfixed)t, (GLfixed)n, (GLfixed)f);
 	
@@ -24403,7 +24389,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetClipPlanexOES(JNIEnv* 
 	unsigned char* equation = (unsigned char*)env->GetDirectBufferAddress(obj_equation);
 
 
-//@line:16777
+//@line:16763
 
 		ext_glGetClipPlanexOES((GLenum)plane, (GLfixed*)(equation + equationByteOffset));
 	
@@ -24414,7 +24400,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetConvolutionParameterxv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16781
+//@line:16767
 
 		ext_glGetConvolutionParameterxvOES((GLenum)target, (GLenum)pname, (GLfixed*)(params + paramsByteOffset));
 	
@@ -24425,7 +24411,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFixedvOES(JNIEnv* env,
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16785
+//@line:16771
 
 		ext_glGetFixedvOES((GLenum)pname, (GLfixed*)(params + paramsByteOffset));
 	
@@ -24436,7 +24422,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetHistogramParameterxvOE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16789
+//@line:16775
 
 		ext_glGetHistogramParameterxvOES((GLenum)target, (GLenum)pname, (GLfixed*)(params + paramsByteOffset));
 	
@@ -24447,7 +24433,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetLightxOES(JNIEnv* env,
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16793
+//@line:16779
 
 		ext_glGetLightxOES((GLenum)light, (GLenum)pname, (GLfixed*)(params + paramsByteOffset));
 	
@@ -24458,7 +24444,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMapxvOES(JNIEnv* env, 
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:16797
+//@line:16783
 
 		ext_glGetMapxvOES((GLenum)target, (GLenum)query, (GLfixed*)(v + vByteOffset));
 	
@@ -24468,7 +24454,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMapxvOES(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMaterialxOES(JNIEnv* env, jclass clazz, jint face, jint pname, jint param) {
 
 
-//@line:16801
+//@line:16787
 
 		ext_glGetMaterialxOES((GLenum)face, (GLenum)pname, (GLfixed)param);
 	
@@ -24479,7 +24465,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPixelMapxv(JNIEnv* env
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:16805
+//@line:16791
 
 		ext_glGetPixelMapxv((GLenum)map, (GLint)size, (GLfixed*)(values + valuesByteOffset));
 	
@@ -24490,7 +24476,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexEnvxvOES(JNIEnv* en
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16809
+//@line:16795
 
 		ext_glGetTexEnvxvOES((GLenum)target, (GLenum)pname, (GLfixed*)(params + paramsByteOffset));
 	
@@ -24501,7 +24487,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexGenxvOES(JNIEnv* en
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16813
+//@line:16799
 
 		ext_glGetTexGenxvOES((GLenum)coord, (GLenum)pname, (GLfixed*)(params + paramsByteOffset));
 	
@@ -24512,7 +24498,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexLevelParameterxvOES
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16817
+//@line:16803
 
 		ext_glGetTexLevelParameterxvOES((GLenum)target, (GLint)level, (GLenum)pname, (GLfixed*)(params + paramsByteOffset));
 	
@@ -24523,7 +24509,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexParameterxvOES(JNIE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16821
+//@line:16807
 
 		ext_glGetTexParameterxvOES((GLenum)target, (GLenum)pname, (GLfixed*)(params + paramsByteOffset));
 	
@@ -24533,7 +24519,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexParameterxvOES(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexxOES(JNIEnv* env, jclass clazz, jint component) {
 
 
-//@line:16825
+//@line:16811
 
 		ext_glIndexxOES((GLfixed)component);
 	
@@ -24544,7 +24530,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexxvOES(JNIEnv* env, j
 	unsigned char* component = (unsigned char*)env->GetDirectBufferAddress(obj_component);
 
 
-//@line:16829
+//@line:16815
 
 		ext_glIndexxvOES((const GLfixed*)(component + componentByteOffset));
 	
@@ -24554,7 +24540,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexxvOES(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightModelxOES(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:16833
+//@line:16819
 
 		ext_glLightModelxOES((GLenum)pname, (GLfixed)param);
 	
@@ -24565,7 +24551,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightModelxvOES(JNIEnv* e
 	unsigned char* param = (unsigned char*)env->GetDirectBufferAddress(obj_param);
 
 
-//@line:16837
+//@line:16823
 
 		ext_glLightModelxvOES((GLenum)pname, (const GLfixed*)(param + paramByteOffset));
 	
@@ -24575,7 +24561,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightModelxvOES(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightxOES(JNIEnv* env, jclass clazz, jint light, jint pname, jint param) {
 
 
-//@line:16841
+//@line:16827
 
 		ext_glLightxOES((GLenum)light, (GLenum)pname, (GLfixed)param);
 	
@@ -24586,7 +24572,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightxvOES(JNIEnv* env, j
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16845
+//@line:16831
 
 		ext_glLightxvOES((GLenum)light, (GLenum)pname, (const GLfixed*)(params + paramsByteOffset));
 	
@@ -24596,7 +24582,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLightxvOES(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLineWidthxOES(JNIEnv* env, jclass clazz, jint width) {
 
 
-//@line:16849
+//@line:16835
 
 		ext_glLineWidthxOES((GLfixed)width);
 	
@@ -24607,7 +24593,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLoadMatrixxOES(JNIEnv* en
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:16853
+//@line:16839
 
 		ext_glLoadMatrixxOES((const GLfixed*)(m + mByteOffset));
 	
@@ -24618,7 +24604,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLoadTransposeMatrixxOES(J
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:16857
+//@line:16843
 
 		ext_glLoadTransposeMatrixxOES((const GLfixed*)(m + mByteOffset));
 	
@@ -24628,7 +24614,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLoadTransposeMatrixxOES(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMap1xOES(JNIEnv* env, jclass clazz, jint target, jint u1, jint u2, jint stride, jint order, jint points) {
 
 
-//@line:16861
+//@line:16847
 
 		ext_glMap1xOES((GLenum)target, (GLfixed)u1, (GLfixed)u2, (GLint)stride, (GLint)order, (GLfixed)points);
 	
@@ -24638,7 +24624,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMap1xOES(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMap2xOES(JNIEnv* env, jclass clazz, jint target, jint u1, jint u2, jint ustride, jint uorder, jint v1, jint v2, jint vstride, jint vorder, jint points) {
 
 
-//@line:16865
+//@line:16851
 
 		ext_glMap2xOES((GLenum)target, (GLfixed)u1, (GLfixed)u2, (GLint)ustride, (GLint)uorder, (GLfixed)v1, (GLfixed)v2, (GLint)vstride, (GLint)vorder, (GLfixed)points);
 	
@@ -24648,7 +24634,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMap2xOES(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapGrid1xOES(JNIEnv* env, jclass clazz, jint n, jint u1, jint u2) {
 
 
-//@line:16869
+//@line:16855
 
 		ext_glMapGrid1xOES((GLint)n, (GLfixed)u1, (GLfixed)u2);
 	
@@ -24658,7 +24644,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapGrid1xOES(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapGrid2xOES(JNIEnv* env, jclass clazz, jint n, jint u1, jint u2, jint v1, jint v2) {
 
 
-//@line:16873
+//@line:16859
 
 		ext_glMapGrid2xOES((GLint)n, (GLfixed)u1, (GLfixed)u2, (GLfixed)v1, (GLfixed)v2);
 	
@@ -24668,7 +24654,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapGrid2xOES(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMaterialxOES(JNIEnv* env, jclass clazz, jint face, jint pname, jint param) {
 
 
-//@line:16877
+//@line:16863
 
 		ext_glMaterialxOES((GLenum)face, (GLenum)pname, (GLfixed)param);
 	
@@ -24679,7 +24665,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMaterialxvOES(JNIEnv* env
 	unsigned char* param = (unsigned char*)env->GetDirectBufferAddress(obj_param);
 
 
-//@line:16881
+//@line:16867
 
 		ext_glMaterialxvOES((GLenum)face, (GLenum)pname, (const GLfixed*)(param + paramByteOffset));
 	
@@ -24690,7 +24676,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultMatrixxOES(JNIEnv* en
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:16885
+//@line:16871
 
 		ext_glMultMatrixxOES((const GLfixed*)(m + mByteOffset));
 	
@@ -24701,7 +24687,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultTransposeMatrixxOES(J
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:16889
+//@line:16875
 
 		ext_glMultTransposeMatrixxOES((const GLfixed*)(m + mByteOffset));
 	
@@ -24711,7 +24697,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultTransposeMatrixxOES(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1xOES(JNIEnv* env, jclass clazz, jint texture, jint s) {
 
 
-//@line:16893
+//@line:16879
 
 		ext_glMultiTexCoord1xOES((GLenum)texture, (GLfixed)s);
 	
@@ -24721,7 +24707,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1xOES(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2xOES(JNIEnv* env, jclass clazz, jint texture, jint s, jint t) {
 
 
-//@line:16897
+//@line:16883
 
 		ext_glMultiTexCoord2xOES((GLenum)texture, (GLfixed)s, (GLfixed)t);
 	
@@ -24731,7 +24717,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2xOES(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3xOES(JNIEnv* env, jclass clazz, jint texture, jint s, jint t, jint r) {
 
 
-//@line:16901
+//@line:16887
 
 		ext_glMultiTexCoord3xOES((GLenum)texture, (GLfixed)s, (GLfixed)t, (GLfixed)r);
 	
@@ -24741,7 +24727,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3xOES(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4xOES(JNIEnv* env, jclass clazz, jint texture, jint s, jint t, jint r, jint q) {
 
 
-//@line:16905
+//@line:16891
 
 		ext_glMultiTexCoord4xOES((GLenum)texture, (GLfixed)s, (GLfixed)t, (GLfixed)r, (GLfixed)q);
 	
@@ -24752,7 +24738,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord1xvOES(JNIEn
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16909
+//@line:16895
 
 		ext_glMultiTexCoord1xvOES((GLenum)texture, (const GLfixed*)(coords + coordsByteOffset));
 	
@@ -24763,7 +24749,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord2xvOES(JNIEn
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16913
+//@line:16899
 
 		ext_glMultiTexCoord2xvOES((GLenum)texture, (const GLfixed*)(coords + coordsByteOffset));
 	
@@ -24774,7 +24760,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord3xvOES(JNIEn
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16917
+//@line:16903
 
 		ext_glMultiTexCoord3xvOES((GLenum)texture, (const GLfixed*)(coords + coordsByteOffset));
 	
@@ -24785,7 +24771,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4xvOES(JNIEn
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16921
+//@line:16907
 
 		ext_glMultiTexCoord4xvOES((GLenum)texture, (const GLfixed*)(coords + coordsByteOffset));
 	
@@ -24795,7 +24781,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoord4xvOES(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3xOES(JNIEnv* env, jclass clazz, jint nx, jint ny, jint nz) {
 
 
-//@line:16925
+//@line:16911
 
 		ext_glNormal3xOES((GLfixed)nx, (GLfixed)ny, (GLfixed)nz);
 	
@@ -24806,7 +24792,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3xvOES(JNIEnv* env,
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16929
+//@line:16915
 
 		ext_glNormal3xvOES((const GLfixed*)(coords + coordsByteOffset));
 	
@@ -24816,7 +24802,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormal3xvOES(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glOrthoxOES(JNIEnv* env, jclass clazz, jint l, jint r, jint b, jint t, jint n, jint f) {
 
 
-//@line:16933
+//@line:16919
 
 		ext_glOrthoxOES((GLfixed)l, (GLfixed)r, (GLfixed)b, (GLfixed)t, (GLfixed)n, (GLfixed)f);
 	
@@ -24826,7 +24812,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glOrthoxOES(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPassThroughxOES(JNIEnv* env, jclass clazz, jint token) {
 
 
-//@line:16937
+//@line:16923
 
 		ext_glPassThroughxOES((GLfixed)token);
 	
@@ -24837,7 +24823,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelMapx(JNIEnv* env, jc
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:16941
+//@line:16927
 
 		ext_glPixelMapx((GLenum)map, (GLint)size, (const GLfixed*)(values + valuesByteOffset));
 	
@@ -24847,7 +24833,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelMapx(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelStorex(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:16945
+//@line:16931
 
 		ext_glPixelStorex((GLenum)pname, (GLfixed)param);
 	
@@ -24857,7 +24843,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelStorex(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTransferxOES(JNIEnv* env, jclass clazz, jint pname, jint param) {
 
 
-//@line:16949
+//@line:16935
 
 		ext_glPixelTransferxOES((GLenum)pname, (GLfixed)param);
 	
@@ -24867,7 +24853,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelTransferxOES(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPixelZoomxOES(JNIEnv* env, jclass clazz, jint xfactor, jint yfactor) {
 
 
-//@line:16953
+//@line:16939
 
 		ext_glPixelZoomxOES((GLfixed)xfactor, (GLfixed)yfactor);
 	
@@ -24878,7 +24864,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameterxvOES(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:16957
+//@line:16943
 
 		ext_glPointParameterxvOES((GLenum)pname, (const GLfixed*)(params + paramsByteOffset));
 	
@@ -24888,7 +24874,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointParameterxvOES(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointSizexOES(JNIEnv* env, jclass clazz, jint size) {
 
 
-//@line:16961
+//@line:16947
 
 		ext_glPointSizexOES((GLfixed)size);
 	
@@ -24898,7 +24884,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPointSizexOES(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPolygonOffsetxOES(JNIEnv* env, jclass clazz, jint factor, jint units) {
 
 
-//@line:16965
+//@line:16951
 
 		ext_glPolygonOffsetxOES((GLfixed)factor, (GLfixed)units);
 	
@@ -24910,7 +24896,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPrioritizeTexturesxOES(JN
 	unsigned char* priorities = (unsigned char*)env->GetDirectBufferAddress(obj_priorities);
 
 
-//@line:16969
+//@line:16955
 
 		ext_glPrioritizeTexturesxOES((GLsizei)n, (const GLuint*)(textures + texturesByteOffset), (const GLfixed*)(priorities + prioritiesByteOffset));
 	
@@ -24920,7 +24906,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPrioritizeTexturesxOES(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos2xOES(JNIEnv* env, jclass clazz, jint x, jint y) {
 
 
-//@line:16973
+//@line:16959
 
 		ext_glRasterPos2xOES((GLfixed)x, (GLfixed)y);
 	
@@ -24930,7 +24916,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos2xOES(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos3xOES(JNIEnv* env, jclass clazz, jint x, jint y, jint z) {
 
 
-//@line:16977
+//@line:16963
 
 		ext_glRasterPos3xOES((GLfixed)x, (GLfixed)y, (GLfixed)z);
 	
@@ -24940,7 +24926,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos3xOES(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos4xOES(JNIEnv* env, jclass clazz, jint x, jint y, jint z, jint w) {
 
 
-//@line:16981
+//@line:16967
 
 		ext_glRasterPos4xOES((GLfixed)x, (GLfixed)y, (GLfixed)z, (GLfixed)w);
 	
@@ -24951,7 +24937,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos2xvOES(JNIEnv* e
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16985
+//@line:16971
 
 		ext_glRasterPos2xvOES((const GLfixed*)(coords + coordsByteOffset));
 	
@@ -24962,7 +24948,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos3xvOES(JNIEnv* e
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16989
+//@line:16975
 
 		ext_glRasterPos3xvOES((const GLfixed*)(coords + coordsByteOffset));
 	
@@ -24973,7 +24959,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos4xvOES(JNIEnv* e
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:16993
+//@line:16979
 
 		ext_glRasterPos4xvOES((const GLfixed*)(coords + coordsByteOffset));
 	
@@ -24983,7 +24969,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRasterPos4xvOES(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRectxOES(JNIEnv* env, jclass clazz, jint x1, jint y1, jint x2, jint y2) {
 
 
-//@line:16997
+//@line:16983
 
 		ext_glRectxOES((GLfixed)x1, (GLfixed)y1, (GLfixed)x2, (GLfixed)y2);
 	
@@ -24995,7 +24981,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRectxvOES(JNIEnv* env, jc
 	unsigned char* v2 = (unsigned char*)env->GetDirectBufferAddress(obj_v2);
 
 
-//@line:17001
+//@line:16987
 
 		ext_glRectxvOES((const GLfixed*)(v1 + v1ByteOffset), (const GLfixed*)(v2 + v2ByteOffset));
 	
@@ -25005,7 +24991,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRectxvOES(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRotatexOES(JNIEnv* env, jclass clazz, jint angle, jint x, jint y, jint z) {
 
 
-//@line:17005
+//@line:16991
 
 		ext_glRotatexOES((GLfixed)angle, (GLfixed)x, (GLfixed)y, (GLfixed)z);
 	
@@ -25015,7 +25001,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRotatexOES(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSampleCoverageOES(JNIEnv* env, jclass clazz, jint value, jboolean invert) {
 
 
-//@line:17009
+//@line:16995
 
 		ext_glSampleCoverageOES((GLfixed)value, (GLboolean)invert);
 	
@@ -25025,7 +25011,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSampleCoverageOES(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glScalexOES(JNIEnv* env, jclass clazz, jint x, jint y, jint z) {
 
 
-//@line:17013
+//@line:16999
 
 		ext_glScalexOES((GLfixed)x, (GLfixed)y, (GLfixed)z);
 	
@@ -25035,7 +25021,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glScalexOES(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1xOES(JNIEnv* env, jclass clazz, jint s) {
 
 
-//@line:17017
+//@line:17003
 
 		ext_glTexCoord1xOES((GLfixed)s);
 	
@@ -25045,7 +25031,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1xOES(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2xOES(JNIEnv* env, jclass clazz, jint s, jint t) {
 
 
-//@line:17021
+//@line:17007
 
 		ext_glTexCoord2xOES((GLfixed)s, (GLfixed)t);
 	
@@ -25055,7 +25041,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2xOES(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3xOES(JNIEnv* env, jclass clazz, jint s, jint t, jint r) {
 
 
-//@line:17025
+//@line:17011
 
 		ext_glTexCoord3xOES((GLfixed)s, (GLfixed)t, (GLfixed)r);
 	
@@ -25065,7 +25051,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3xOES(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4xOES(JNIEnv* env, jclass clazz, jint s, jint t, jint r, jint q) {
 
 
-//@line:17029
+//@line:17015
 
 		ext_glTexCoord4xOES((GLfixed)s, (GLfixed)t, (GLfixed)r, (GLfixed)q);
 	
@@ -25076,7 +25062,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord1xvOES(JNIEnv* en
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:17033
+//@line:17019
 
 		ext_glTexCoord1xvOES((const GLfixed*)(coords + coordsByteOffset));
 	
@@ -25087,7 +25073,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord2xvOES(JNIEnv* en
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:17037
+//@line:17023
 
 		ext_glTexCoord2xvOES((const GLfixed*)(coords + coordsByteOffset));
 	
@@ -25098,7 +25084,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord3xvOES(JNIEnv* en
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:17041
+//@line:17027
 
 		ext_glTexCoord3xvOES((const GLfixed*)(coords + coordsByteOffset));
 	
@@ -25109,7 +25095,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4xvOES(JNIEnv* en
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:17045
+//@line:17031
 
 		ext_glTexCoord4xvOES((const GLfixed*)(coords + coordsByteOffset));
 	
@@ -25119,7 +25105,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoord4xvOES(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexEnvxOES(JNIEnv* env, jclass clazz, jint target, jint pname, jint param) {
 
 
-//@line:17049
+//@line:17035
 
 		ext_glTexEnvxOES((GLenum)target, (GLenum)pname, (GLfixed)param);
 	
@@ -25130,7 +25116,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexEnvxvOES(JNIEnv* env, 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17053
+//@line:17039
 
 		ext_glTexEnvxvOES((GLenum)target, (GLenum)pname, (const GLfixed*)(params + paramsByteOffset));
 	
@@ -25140,7 +25126,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexEnvxvOES(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexGenxOES(JNIEnv* env, jclass clazz, jint coord, jint pname, jint param) {
 
 
-//@line:17057
+//@line:17043
 
 		ext_glTexGenxOES((GLenum)coord, (GLenum)pname, (GLfixed)param);
 	
@@ -25151,7 +25137,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexGenxvOES(JNIEnv* env, 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17061
+//@line:17047
 
 		ext_glTexGenxvOES((GLenum)coord, (GLenum)pname, (const GLfixed*)(params + paramsByteOffset));
 	
@@ -25161,7 +25147,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexGenxvOES(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexParameterxOES(JNIEnv* env, jclass clazz, jint target, jint pname, jint param) {
 
 
-//@line:17065
+//@line:17051
 
 		ext_glTexParameterxOES((GLenum)target, (GLenum)pname, (GLfixed)param);
 	
@@ -25172,7 +25158,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexParameterxvOES(JNIEnv*
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17069
+//@line:17055
 
 		ext_glTexParameterxvOES((GLenum)target, (GLenum)pname, (const GLfixed*)(params + paramsByteOffset));
 	
@@ -25182,7 +25168,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexParameterxvOES(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTranslatexOES(JNIEnv* env, jclass clazz, jint x, jint y, jint z) {
 
 
-//@line:17073
+//@line:17059
 
 		ext_glTranslatexOES((GLfixed)x, (GLfixed)y, (GLfixed)z);
 	
@@ -25192,7 +25178,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTranslatexOES(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2xOES(JNIEnv* env, jclass clazz, jint x) {
 
 
-//@line:17077
+//@line:17063
 
 		ext_glVertex2xOES((GLfixed)x);
 	
@@ -25202,7 +25188,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2xOES(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3xOES(JNIEnv* env, jclass clazz, jint x, jint y) {
 
 
-//@line:17081
+//@line:17067
 
 		ext_glVertex3xOES((GLfixed)x, (GLfixed)y);
 	
@@ -25212,7 +25198,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3xOES(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4xOES(JNIEnv* env, jclass clazz, jint x, jint y, jint z) {
 
 
-//@line:17085
+//@line:17071
 
 		ext_glVertex4xOES((GLfixed)x, (GLfixed)y, (GLfixed)z);
 	
@@ -25223,7 +25209,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex2xvOES(JNIEnv* env,
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:17089
+//@line:17075
 
 		ext_glVertex2xvOES((const GLfixed*)(coords + coordsByteOffset));
 	
@@ -25234,7 +25220,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex3xvOES(JNIEnv* env,
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:17093
+//@line:17079
 
 		ext_glVertex3xvOES((const GLfixed*)(coords + coordsByteOffset));
 	
@@ -25245,7 +25231,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4xvOES(JNIEnv* env,
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:17097
+//@line:17083
 
 		ext_glVertex4xvOES((const GLfixed*)(coords + coordsByteOffset));
 	
@@ -25255,7 +25241,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertex4xvOES(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthRangefOES(JNIEnv* env, jclass clazz, jfloat n, jfloat f) {
 
 
-//@line:17101
+//@line:17087
 
 		ext_glDepthRangefOES((GLclampf)n, (GLclampf)f);
 	
@@ -25265,7 +25251,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthRangefOES(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFrustumfOES(JNIEnv* env, jclass clazz, jfloat l, jfloat r, jfloat b, jfloat t, jfloat n, jfloat f) {
 
 
-//@line:17105
+//@line:17091
 
 		ext_glFrustumfOES((GLfloat)l, (GLfloat)r, (GLfloat)b, (GLfloat)t, (GLfloat)n, (GLfloat)f);
 	
@@ -25275,7 +25261,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFrustumfOES(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glOrthofOES(JNIEnv* env, jclass clazz, jfloat l, jfloat r, jfloat b, jfloat t, jfloat n, jfloat f) {
 
 
-//@line:17109
+//@line:17095
 
 		ext_glOrthofOES((GLfloat)l, (GLfloat)r, (GLfloat)b, (GLfloat)t, (GLfloat)n, (GLfloat)f);
 	
@@ -25286,7 +25272,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClipPlanefOES(JNIEnv* env
 	unsigned char* equation = (unsigned char*)env->GetDirectBufferAddress(obj_equation);
 
 
-//@line:17113
+//@line:17099
 
 		ext_glClipPlanefOES((GLenum)plane, (const GLfloat*)(equation + equationByteOffset));
 	
@@ -25296,7 +25282,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClipPlanefOES(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearDepthfOES(JNIEnv* env, jclass clazz, jdouble depth) {
 
 
-//@line:17117
+//@line:17103
 
 		ext_glClearDepthfOES((GLclampd)depth);
 	
@@ -25307,7 +25293,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetClipPlanefOES(JNIEnv* 
 	unsigned char* equation = (unsigned char*)env->GetDirectBufferAddress(obj_equation);
 
 
-//@line:17121
+//@line:17107
 
 		ext_glGetClipPlanefOES((GLenum)plane, (GLfloat*)(equation + equationByteOffset));
 	
@@ -25317,7 +25303,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetClipPlanefOES(JNIEnv* 
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glQueryMatrixxOES
 (JNIEnv* env, jclass clazz, jobject obj_mantissa, jint mantissaByteOffset, jobject obj_exponent, jint exponentByteOffset, unsigned char* mantissa, unsigned char* exponent) {
 
-//@line:17125
+//@line:17111
 
 		return (jint)ext_glQueryMatrixxOES((const GLfixed*)(mantissa + mantissaByteOffset), (const GLint*)(exponent + exponentByteOffset));
 	
@@ -25336,7 +25322,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glQueryMatrixxOES(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthBoundsEXT(JNIEnv* env, jclass clazz, jdouble zmin, jdouble zmax) {
 
 
-//@line:17129
+//@line:17115
 
 		ext_glDepthBoundsEXT((GLclampd)zmin, (GLclampd)zmax);
 	
@@ -25346,7 +25332,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthBoundsEXT(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationSeparateEXT(JNIEnv* env, jclass clazz, jint modeRGB, jint modeAlpha) {
 
 
-//@line:17133
+//@line:17119
 
 		ext_glBlendEquationSeparateEXT((GLenum)modeRGB, (GLenum)modeAlpha);
 	
@@ -25356,7 +25342,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationSeparateEXT(
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsRenderbufferEXT(JNIEnv* env, jclass clazz, jint renderbuffer) {
 
 
-//@line:17137
+//@line:17123
 
 		return (jboolean)ext_glIsRenderbufferEXT((GLuint)renderbuffer);
 	
@@ -25366,7 +25352,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsRenderbufferEXT(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindRenderbufferEXT(JNIEnv* env, jclass clazz, jint target, jint renderbuffer) {
 
 
-//@line:17141
+//@line:17127
 
 		ext_glBindRenderbufferEXT((GLenum)target, (GLuint)renderbuffer);
 	
@@ -25377,7 +25363,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteRenderbuffersEXT(JN
 	unsigned char* renderbuffers = (unsigned char*)env->GetDirectBufferAddress(obj_renderbuffers);
 
 
-//@line:17145
+//@line:17131
 
 		ext_glDeleteRenderbuffersEXT((GLsizei)n, (const GLuint*)(renderbuffers + renderbuffersByteOffset));
 	
@@ -25388,7 +25374,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenRenderbuffersEXT(JNIEn
 	unsigned char* renderbuffers = (unsigned char*)env->GetDirectBufferAddress(obj_renderbuffers);
 
 
-//@line:17149
+//@line:17135
 
 		ext_glGenRenderbuffersEXT((GLsizei)n, (GLuint*)(renderbuffers + renderbuffersByteOffset));
 	
@@ -25398,7 +25384,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenRenderbuffersEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRenderbufferStorageEXT(JNIEnv* env, jclass clazz, jint target, jint internalformat, jint width, jint height) {
 
 
-//@line:17153
+//@line:17139
 
 		ext_glRenderbufferStorageEXT((GLenum)target, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
 	
@@ -25409,7 +25395,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetRenderbufferParameteri
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17157
+//@line:17143
 
 		ext_glGetRenderbufferParameterivEXT((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -25419,7 +25405,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetRenderbufferParameteri
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsFramebufferEXT(JNIEnv* env, jclass clazz, jint framebuffer) {
 
 
-//@line:17161
+//@line:17147
 
 		return (jboolean)ext_glIsFramebufferEXT((GLuint)framebuffer);
 	
@@ -25429,7 +25415,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsFramebufferEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindFramebufferEXT(JNIEnv* env, jclass clazz, jint target, jint framebuffer) {
 
 
-//@line:17165
+//@line:17151
 
 		ext_glBindFramebufferEXT((GLenum)target, (GLuint)framebuffer);
 	
@@ -25440,7 +25426,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteFramebuffersEXT(JNI
 	unsigned char* framebuffers = (unsigned char*)env->GetDirectBufferAddress(obj_framebuffers);
 
 
-//@line:17169
+//@line:17155
 
 		ext_glDeleteFramebuffersEXT((GLsizei)n, (const GLuint*)(framebuffers + framebuffersByteOffset));
 	
@@ -25451,7 +25437,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenFramebuffersEXT(JNIEnv
 	unsigned char* framebuffers = (unsigned char*)env->GetDirectBufferAddress(obj_framebuffers);
 
 
-//@line:17173
+//@line:17159
 
 		ext_glGenFramebuffersEXT((GLsizei)n, (GLuint*)(framebuffers + framebuffersByteOffset));
 	
@@ -25461,7 +25447,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenFramebuffersEXT(JNIEnv
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCheckFramebufferStatusEXT(JNIEnv* env, jclass clazz, jint target) {
 
 
-//@line:17177
+//@line:17163
 
 		return (jint)ext_glCheckFramebufferStatusEXT((GLenum)target);
 	
@@ -25471,7 +25457,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCheckFramebufferStatusEXT
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTexture1DEXT(JNIEnv* env, jclass clazz, jint target, jint attachment, jint textarget, jint texture, jint level) {
 
 
-//@line:17181
+//@line:17167
 
 		ext_glFramebufferTexture1DEXT((GLenum)target, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level);
 	
@@ -25481,7 +25467,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTexture1DEXT(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTexture2DEXT(JNIEnv* env, jclass clazz, jint target, jint attachment, jint textarget, jint texture, jint level) {
 
 
-//@line:17185
+//@line:17171
 
 		ext_glFramebufferTexture2DEXT((GLenum)target, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level);
 	
@@ -25491,7 +25477,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTexture2DEXT(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTexture3DEXT(JNIEnv* env, jclass clazz, jint target, jint attachment, jint textarget, jint texture, jint level, jint zoffset) {
 
 
-//@line:17189
+//@line:17175
 
 		ext_glFramebufferTexture3DEXT((GLenum)target, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level, (GLint)zoffset);
 	
@@ -25501,7 +25487,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTexture3DEXT(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferRenderbufferEXT(JNIEnv* env, jclass clazz, jint target, jint attachment, jint renderbuffertarget, jint renderbuffer) {
 
 
-//@line:17193
+//@line:17179
 
 		ext_glFramebufferRenderbufferEXT((GLenum)target, (GLenum)attachment, (GLenum)renderbuffertarget, (GLuint)renderbuffer);
 	
@@ -25512,7 +25498,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFramebufferAttachmentP
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17197
+//@line:17183
 
 		ext_glGetFramebufferAttachmentParameterivEXT((GLenum)target, (GLenum)attachment, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -25522,7 +25508,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFramebufferAttachmentP
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenerateMipmapEXT(JNIEnv* env, jclass clazz, jint target) {
 
 
-//@line:17201
+//@line:17187
 
 		ext_glGenerateMipmapEXT((GLenum)target);
 	
@@ -25533,7 +25519,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStringMarkerGREMEDY(JNIEn
 	unsigned char* string = (unsigned char*)env->GetDirectBufferAddress(obj_string);
 
 
-//@line:17205
+//@line:17191
 
 		ext_glStringMarkerGREMEDY((GLsizei)len, (const GLvoid*)(string + stringByteOffset));
 	
@@ -25543,7 +25529,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStringMarkerGREMEDY(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilClearTagEXT(JNIEnv* env, jclass clazz, jint stencilTagBits, jint stencilClearTag) {
 
 
-//@line:17209
+//@line:17195
 
 		ext_glStencilClearTagEXT((GLsizei)stencilTagBits, (GLuint)stencilClearTag);
 	
@@ -25553,7 +25539,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilClearTagEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlitFramebufferEXT(JNIEnv* env, jclass clazz, jint srcX0, jint srcY0, jint srcX1, jint srcY1, jint dstX0, jint dstY0, jint dstX1, jint dstY1, jint mask, jint filter) {
 
 
-//@line:17213
+//@line:17199
 
 		ext_glBlitFramebufferEXT((GLint)srcX0, (GLint)srcY0, (GLint)srcX1, (GLint)srcY1, (GLint)dstX0, (GLint)dstY0, (GLint)dstX1, (GLint)dstY1, (GLbitfield)mask, (GLenum)filter);
 	
@@ -25563,7 +25549,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlitFramebufferEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRenderbufferStorageMultisampleEXT(JNIEnv* env, jclass clazz, jint target, jint samples, jint internalformat, jint width, jint height) {
 
 
-//@line:17217
+//@line:17203
 
 		ext_glRenderbufferStorageMultisampleEXT((GLenum)target, (GLsizei)samples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
 	
@@ -25574,7 +25560,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryObjecti64vEXT(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17221
+//@line:17207
 
 		ext_glGetQueryObjecti64vEXT((GLuint)id, (GLenum)pname, (GLint64EXT*)(params + paramsByteOffset));
 	
@@ -25585,7 +25571,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryObjectui64vEXT(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17225
+//@line:17211
 
 		ext_glGetQueryObjectui64vEXT((GLuint)id, (GLenum)pname, (GLuint64EXT*)(params + paramsByteOffset));
 	
@@ -25596,7 +25582,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramEnvParameters4fvEX
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17229
+//@line:17215
 
 		ext_glProgramEnvParameters4fvEXT((GLenum)target, (GLuint)index, (GLsizei)count, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -25607,7 +25593,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramLocalParameters4fv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17233
+//@line:17219
 
 		ext_glProgramLocalParameters4fvEXT((GLenum)target, (GLuint)index, (GLsizei)count, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -25617,17 +25603,17 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramLocalParameters4fv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferParameteriAPPLE(JNIEnv* env, jclass clazz, jint target, jint pname, jint param) {
 
 
-//@line:17237
+//@line:17223
 
 		ext_glBufferParameteriAPPLE((GLenum)target, (GLenum)pname, (GLint)param);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushMappedBufferRangeAPPLE(JNIEnv* env, jclass clazz, jint target, jint offset, jint size) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushMappedBufferRangeAPPLE(JNIEnv* env, jclass clazz, jint target, jlong offset, jlong size) {
 
 
-//@line:17241
+//@line:17227
 
 		ext_glFlushMappedBufferRangeAPPLE((GLenum)target, (GLintptr)offset, (GLsizeiptr)size);
 	
@@ -25637,7 +25623,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushMappedBufferRangeAPP
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramLocalParameterI4iNV(JNIEnv* env, jclass clazz, jint target, jint index, jint x, jint y, jint z, jint w) {
 
 
-//@line:17245
+//@line:17231
 
 		ext_glProgramLocalParameterI4iNV((GLenum)target, (GLuint)index, (GLint)x, (GLint)y, (GLint)z, (GLint)w);
 	
@@ -25648,7 +25634,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramLocalParameterI4iv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17249
+//@line:17235
 
 		ext_glProgramLocalParameterI4ivNV((GLenum)target, (GLuint)index, (const GLint*)(params + paramsByteOffset));
 	
@@ -25659,7 +25645,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramLocalParametersI4i
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17253
+//@line:17239
 
 		ext_glProgramLocalParametersI4ivNV((GLenum)target, (GLuint)index, (GLsizei)count, (const GLint*)(params + paramsByteOffset));
 	
@@ -25669,7 +25655,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramLocalParametersI4i
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramLocalParameterI4uiNV(JNIEnv* env, jclass clazz, jint target, jint index, jint x, jint y, jint z, jint w) {
 
 
-//@line:17257
+//@line:17243
 
 		ext_glProgramLocalParameterI4uiNV((GLenum)target, (GLuint)index, (GLuint)x, (GLuint)y, (GLuint)z, (GLuint)w);
 	
@@ -25680,7 +25666,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramLocalParameterI4ui
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17261
+//@line:17247
 
 		ext_glProgramLocalParameterI4uivNV((GLenum)target, (GLuint)index, (const GLuint*)(params + paramsByteOffset));
 	
@@ -25691,7 +25677,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramLocalParametersI4u
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17265
+//@line:17251
 
 		ext_glProgramLocalParametersI4uivNV((GLenum)target, (GLuint)index, (GLsizei)count, (const GLuint*)(params + paramsByteOffset));
 	
@@ -25701,7 +25687,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramLocalParametersI4u
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramEnvParameterI4iNV(JNIEnv* env, jclass clazz, jint target, jint index, jint x, jint y, jint z, jint w) {
 
 
-//@line:17269
+//@line:17255
 
 		ext_glProgramEnvParameterI4iNV((GLenum)target, (GLuint)index, (GLint)x, (GLint)y, (GLint)z, (GLint)w);
 	
@@ -25712,7 +25698,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramEnvParameterI4ivNV
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17273
+//@line:17259
 
 		ext_glProgramEnvParameterI4ivNV((GLenum)target, (GLuint)index, (const GLint*)(params + paramsByteOffset));
 	
@@ -25723,7 +25709,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramEnvParametersI4ivN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17277
+//@line:17263
 
 		ext_glProgramEnvParametersI4ivNV((GLenum)target, (GLuint)index, (GLsizei)count, (const GLint*)(params + paramsByteOffset));
 	
@@ -25733,7 +25719,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramEnvParametersI4ivN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramEnvParameterI4uiNV(JNIEnv* env, jclass clazz, jint target, jint index, jint x, jint y, jint z, jint w) {
 
 
-//@line:17281
+//@line:17267
 
 		ext_glProgramEnvParameterI4uiNV((GLenum)target, (GLuint)index, (GLuint)x, (GLuint)y, (GLuint)z, (GLuint)w);
 	
@@ -25744,7 +25730,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramEnvParameterI4uivN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17285
+//@line:17271
 
 		ext_glProgramEnvParameterI4uivNV((GLenum)target, (GLuint)index, (const GLuint*)(params + paramsByteOffset));
 	
@@ -25755,7 +25741,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramEnvParametersI4uiv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17289
+//@line:17275
 
 		ext_glProgramEnvParametersI4uivNV((GLenum)target, (GLuint)index, (GLsizei)count, (const GLuint*)(params + paramsByteOffset));
 	
@@ -25766,7 +25752,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramLocalParameterI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17293
+//@line:17279
 
 		ext_glGetProgramLocalParameterIivNV((GLenum)target, (GLuint)index, (GLint*)(params + paramsByteOffset));
 	
@@ -25777,7 +25763,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramLocalParameterI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17297
+//@line:17283
 
 		ext_glGetProgramLocalParameterIuivNV((GLenum)target, (GLuint)index, (GLuint*)(params + paramsByteOffset));
 	
@@ -25788,7 +25774,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramEnvParameterIiv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17301
+//@line:17287
 
 		ext_glGetProgramEnvParameterIivNV((GLenum)target, (GLuint)index, (GLint*)(params + paramsByteOffset));
 	
@@ -25799,7 +25785,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramEnvParameterIui
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17305
+//@line:17291
 
 		ext_glGetProgramEnvParameterIuivNV((GLenum)target, (GLuint)index, (GLuint*)(params + paramsByteOffset));
 	
@@ -25809,7 +25795,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramEnvParameterIui
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramVertexLimitNV(JNIEnv* env, jclass clazz, jint target, jint limit) {
 
 
-//@line:17309
+//@line:17295
 
 		ext_glProgramVertexLimitNV((GLenum)target, (GLint)limit);
 	
@@ -25819,7 +25805,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramVertexLimitNV(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTextureEXT(JNIEnv* env, jclass clazz, jint target, jint attachment, jint texture, jint level) {
 
 
-//@line:17313
+//@line:17299
 
 		ext_glFramebufferTextureEXT((GLenum)target, (GLenum)attachment, (GLuint)texture, (GLint)level);
 	
@@ -25829,7 +25815,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTextureEXT(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTextureLayerEXT(JNIEnv* env, jclass clazz, jint target, jint attachment, jint texture, jint level, jint layer) {
 
 
-//@line:17317
+//@line:17303
 
 		ext_glFramebufferTextureLayerEXT((GLenum)target, (GLenum)attachment, (GLuint)texture, (GLint)level, (GLint)layer);
 	
@@ -25839,7 +25825,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTextureLayerEX
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTextureFaceEXT(JNIEnv* env, jclass clazz, jint target, jint attachment, jint texture, jint level, jint face) {
 
 
-//@line:17321
+//@line:17307
 
 		ext_glFramebufferTextureFaceEXT((GLenum)target, (GLenum)attachment, (GLuint)texture, (GLint)level, (GLenum)face);
 	
@@ -25849,7 +25835,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferTextureFaceEXT
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramParameteriEXT(JNIEnv* env, jclass clazz, jint program, jint pname, jint value) {
 
 
-//@line:17325
+//@line:17311
 
 		ext_glProgramParameteriEXT((GLuint)program, (GLenum)pname, (GLint)value);
 	
@@ -25859,7 +25845,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramParameteriEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI1iEXT(JNIEnv* env, jclass clazz, jint index, jint x) {
 
 
-//@line:17329
+//@line:17315
 
 		ext_glVertexAttribI1iEXT((GLuint)index, (GLint)x);
 	
@@ -25869,7 +25855,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI1iEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI2iEXT(JNIEnv* env, jclass clazz, jint index, jint x, jint y) {
 
 
-//@line:17333
+//@line:17319
 
 		ext_glVertexAttribI2iEXT((GLuint)index, (GLint)x, (GLint)y);
 	
@@ -25879,7 +25865,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI2iEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI3iEXT(JNIEnv* env, jclass clazz, jint index, jint x, jint y, jint z) {
 
 
-//@line:17337
+//@line:17323
 
 		ext_glVertexAttribI3iEXT((GLuint)index, (GLint)x, (GLint)y, (GLint)z);
 	
@@ -25889,7 +25875,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI3iEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4iEXT(JNIEnv* env, jclass clazz, jint index, jint x, jint y, jint z, jint w) {
 
 
-//@line:17341
+//@line:17327
 
 		ext_glVertexAttribI4iEXT((GLuint)index, (GLint)x, (GLint)y, (GLint)z, (GLint)w);
 	
@@ -25899,7 +25885,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4iEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI1uiEXT(JNIEnv* env, jclass clazz, jint index, jint x) {
 
 
-//@line:17345
+//@line:17331
 
 		ext_glVertexAttribI1uiEXT((GLuint)index, (GLuint)x);
 	
@@ -25909,7 +25895,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI1uiEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI2uiEXT(JNIEnv* env, jclass clazz, jint index, jint x, jint y) {
 
 
-//@line:17349
+//@line:17335
 
 		ext_glVertexAttribI2uiEXT((GLuint)index, (GLuint)x, (GLuint)y);
 	
@@ -25919,7 +25905,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI2uiEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI3uiEXT(JNIEnv* env, jclass clazz, jint index, jint x, jint y, jint z) {
 
 
-//@line:17353
+//@line:17339
 
 		ext_glVertexAttribI3uiEXT((GLuint)index, (GLuint)x, (GLuint)y, (GLuint)z);
 	
@@ -25929,7 +25915,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI3uiEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4uiEXT(JNIEnv* env, jclass clazz, jint index, jint x, jint y, jint z, jint w) {
 
 
-//@line:17357
+//@line:17343
 
 		ext_glVertexAttribI4uiEXT((GLuint)index, (GLuint)x, (GLuint)y, (GLuint)z, (GLuint)w);
 	
@@ -25940,7 +25926,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI1ivEXT(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:17361
+//@line:17347
 
 		ext_glVertexAttribI1ivEXT((GLuint)index, (const GLint*)(v + vByteOffset));
 	
@@ -25951,7 +25937,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI2ivEXT(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:17365
+//@line:17351
 
 		ext_glVertexAttribI2ivEXT((GLuint)index, (const GLint*)(v + vByteOffset));
 	
@@ -25962,7 +25948,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI3ivEXT(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:17369
+//@line:17355
 
 		ext_glVertexAttribI3ivEXT((GLuint)index, (const GLint*)(v + vByteOffset));
 	
@@ -25973,7 +25959,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4ivEXT(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:17373
+//@line:17359
 
 		ext_glVertexAttribI4ivEXT((GLuint)index, (const GLint*)(v + vByteOffset));
 	
@@ -25984,7 +25970,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI1uivEXT(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:17377
+//@line:17363
 
 		ext_glVertexAttribI1uivEXT((GLuint)index, (const GLuint*)(v + vByteOffset));
 	
@@ -25995,7 +25981,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI2uivEXT(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:17381
+//@line:17367
 
 		ext_glVertexAttribI2uivEXT((GLuint)index, (const GLuint*)(v + vByteOffset));
 	
@@ -26006,7 +25992,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI3uivEXT(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:17385
+//@line:17371
 
 		ext_glVertexAttribI3uivEXT((GLuint)index, (const GLuint*)(v + vByteOffset));
 	
@@ -26017,7 +26003,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4uivEXT(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:17389
+//@line:17375
 
 		ext_glVertexAttribI4uivEXT((GLuint)index, (const GLuint*)(v + vByteOffset));
 	
@@ -26028,7 +26014,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4bvEXT(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:17393
+//@line:17379
 
 		ext_glVertexAttribI4bvEXT((GLuint)index, (const GLbyte*)(v + vByteOffset));
 	
@@ -26039,7 +26025,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4svEXT(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:17397
+//@line:17383
 
 		ext_glVertexAttribI4svEXT((GLuint)index, (const GLshort*)(v + vByteOffset));
 	
@@ -26050,7 +26036,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4ubvEXT(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:17401
+//@line:17387
 
 		ext_glVertexAttribI4ubvEXT((GLuint)index, (const GLubyte*)(v + vByteOffset));
 	
@@ -26061,7 +26047,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribI4usvEXT(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:17405
+//@line:17391
 
 		ext_glVertexAttribI4usvEXT((GLuint)index, (const GLushort*)(v + vByteOffset));
 	
@@ -26072,7 +26058,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribIPointerEXT(J
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:17409
+//@line:17395
 
 		ext_glVertexAttribIPointerEXT((GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -26083,7 +26069,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribIivEXT(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17413
+//@line:17399
 
 		ext_glGetVertexAttribIivEXT((GLuint)index, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -26094,7 +26080,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribIuivEXT(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17417
+//@line:17403
 
 		ext_glGetVertexAttribIuivEXT((GLuint)index, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
 	
@@ -26105,7 +26091,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformuivEXT(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17421
+//@line:17407
 
 		ext_glGetUniformuivEXT((GLuint)program, (GLint)location, (GLuint*)(params + paramsByteOffset));
 	
@@ -26116,7 +26102,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindFragDataLocationEXT(J
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:17425
+//@line:17411
 
 		ext_glBindFragDataLocationEXT((GLuint)program, (GLuint)color, (const GLchar*)(name + nameByteOffset));
 	
@@ -26126,7 +26112,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindFragDataLocationEXT(J
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetFragDataLocationEXT
 (JNIEnv* env, jclass clazz, jint program, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
-//@line:17429
+//@line:17415
 
 		return (jint)ext_glGetFragDataLocationEXT((GLuint)program, (const GLchar*)(name + nameByteOffset));
 	
@@ -26144,7 +26130,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFragDataLocationEXT(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1uiEXT(JNIEnv* env, jclass clazz, jint location, jint v0) {
 
 
-//@line:17433
+//@line:17419
 
 		ext_glUniform1uiEXT((GLint)location, (GLuint)v0);
 	
@@ -26154,7 +26140,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1uiEXT(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2uiEXT(JNIEnv* env, jclass clazz, jint location, jint v0, jint v1) {
 
 
-//@line:17437
+//@line:17423
 
 		ext_glUniform2uiEXT((GLint)location, (GLuint)v0, (GLuint)v1);
 	
@@ -26164,7 +26150,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2uiEXT(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3uiEXT(JNIEnv* env, jclass clazz, jint location, jint v0, jint v1, jint v2) {
 
 
-//@line:17441
+//@line:17427
 
 		ext_glUniform3uiEXT((GLint)location, (GLuint)v0, (GLuint)v1, (GLuint)v2);
 	
@@ -26174,7 +26160,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3uiEXT(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4uiEXT(JNIEnv* env, jclass clazz, jint location, jint v0, jint v1, jint v2, jint v3) {
 
 
-//@line:17445
+//@line:17431
 
 		ext_glUniform4uiEXT((GLint)location, (GLuint)v0, (GLuint)v1, (GLuint)v2, (GLuint)v3);
 	
@@ -26185,7 +26171,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1uivEXT(JNIEnv* en
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:17449
+//@line:17435
 
 		ext_glUniform1uivEXT((GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
@@ -26196,7 +26182,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2uivEXT(JNIEnv* en
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:17453
+//@line:17439
 
 		ext_glUniform2uivEXT((GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
@@ -26207,7 +26193,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3uivEXT(JNIEnv* en
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:17457
+//@line:17443
 
 		ext_glUniform3uivEXT((GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
@@ -26218,7 +26204,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4uivEXT(JNIEnv* en
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:17461
+//@line:17447
 
 		ext_glUniform4uivEXT((GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
@@ -26228,7 +26214,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4uivEXT(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawArraysInstancedEXT(JNIEnv* env, jclass clazz, jint mode, jint start, jint count, jint primcount) {
 
 
-//@line:17465
+//@line:17451
 
 		ext_glDrawArraysInstancedEXT((GLenum)mode, (GLint)start, (GLsizei)count, (GLsizei)primcount);
 	
@@ -26239,7 +26225,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementsInstancedEXT(
 	unsigned char* indices = (unsigned char*)env->GetDirectBufferAddress(obj_indices);
 
 
-//@line:17469
+//@line:17455
 
 		ext_glDrawElementsInstancedEXT((GLenum)mode, (GLsizei)count, (GLenum)type, (const GLvoid*)(indices + indicesByteOffset), (GLsizei)primcount);
 	
@@ -26249,7 +26235,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawElementsInstancedEXT(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexBufferEXT(JNIEnv* env, jclass clazz, jint target, jint internalformat, jint buffer) {
 
 
-//@line:17473
+//@line:17459
 
 		ext_glTexBufferEXT((GLenum)target, (GLenum)internalformat, (GLuint)buffer);
 	
@@ -26259,7 +26245,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexBufferEXT(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthRangedNV(JNIEnv* env, jclass clazz, jdouble zNear, jdouble zFar) {
 
 
-//@line:17477
+//@line:17463
 
 		ext_glDepthRangedNV((GLdouble)zNear, (GLdouble)zFar);
 	
@@ -26269,7 +26255,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthRangedNV(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearDepthdNV(JNIEnv* env, jclass clazz, jdouble depth) {
 
 
-//@line:17481
+//@line:17467
 
 		ext_glClearDepthdNV((GLdouble)depth);
 	
@@ -26279,7 +26265,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearDepthdNV(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthBoundsdNV(JNIEnv* env, jclass clazz, jdouble zmin, jdouble zmax) {
 
 
-//@line:17485
+//@line:17471
 
 		ext_glDepthBoundsdNV((GLdouble)zmin, (GLdouble)zmax);
 	
@@ -26289,7 +26275,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDepthBoundsdNV(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glRenderbufferStorageMultisampleCoverageNV(JNIEnv* env, jclass clazz, jint target, jint coverageSamples, jint colorSamples, jint internalformat, jint width, jint height) {
 
 
-//@line:17489
+//@line:17475
 
 		ext_glRenderbufferStorageMultisampleCoverageNV((GLenum)target, (GLsizei)coverageSamples, (GLsizei)colorSamples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
 	
@@ -26300,7 +26286,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramBufferParametersfv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17493
+//@line:17479
 
 		ext_glProgramBufferParametersfvNV((GLenum)target, (GLuint)bindingIndex, (GLuint)wordIndex, (GLsizei)count, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -26311,7 +26297,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramBufferParametersIi
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17497
+//@line:17483
 
 		ext_glProgramBufferParametersIivNV((GLenum)target, (GLuint)bindingIndex, (GLuint)wordIndex, (GLsizei)count, (const GLint*)(params + paramsByteOffset));
 	
@@ -26322,7 +26308,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramBufferParametersIu
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17501
+//@line:17487
 
 		ext_glProgramBufferParametersIuivNV((GLenum)target, (GLuint)bindingIndex, (GLuint)wordIndex, (GLsizei)count, (const GLuint*)(params + paramsByteOffset));
 	
@@ -26332,7 +26318,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramBufferParametersIu
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorMaskIndexedEXT(JNIEnv* env, jclass clazz, jint index, jboolean r, jboolean g, jboolean b, jboolean a) {
 
 
-//@line:17505
+//@line:17491
 
 		ext_glColorMaskIndexedEXT((GLuint)index, (GLboolean)r, (GLboolean)g, (GLboolean)b, (GLboolean)a);
 	
@@ -26343,7 +26329,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBooleanIndexedvEXT(JNI
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:17509
+//@line:17495
 
 		ext_glGetBooleanIndexedvEXT((GLenum)target, (GLuint)index, (GLboolean*)(data + dataByteOffset));
 	
@@ -26354,7 +26340,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetIntegerIndexedvEXT(JNI
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:17513
+//@line:17499
 
 		ext_glGetIntegerIndexedvEXT((GLenum)target, (GLuint)index, (GLint*)(data + dataByteOffset));
 	
@@ -26364,7 +26350,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetIntegerIndexedvEXT(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnableIndexedEXT(JNIEnv* env, jclass clazz, jint target, jint index) {
 
 
-//@line:17517
+//@line:17503
 
 		ext_glEnableIndexedEXT((GLenum)target, (GLuint)index);
 	
@@ -26374,7 +26360,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnableIndexedEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDisableIndexedEXT(JNIEnv* env, jclass clazz, jint target, jint index) {
 
 
-//@line:17521
+//@line:17507
 
 		ext_glDisableIndexedEXT((GLenum)target, (GLuint)index);
 	
@@ -26384,7 +26370,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDisableIndexedEXT(JNIEnv*
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsEnabledIndexedEXT(JNIEnv* env, jclass clazz, jint target, jint index) {
 
 
-//@line:17525
+//@line:17511
 
 		return (jboolean)ext_glIsEnabledIndexedEXT((GLenum)target, (GLuint)index);
 	
@@ -26394,7 +26380,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsEnabledIndexedEXT(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginTransformFeedbackNV(JNIEnv* env, jclass clazz, jint primitiveMode) {
 
 
-//@line:17529
+//@line:17515
 
 		ext_glBeginTransformFeedbackNV((GLenum)primitiveMode);
 	
@@ -26404,7 +26390,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginTransformFeedbackNV(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndTransformFeedbackNV(JNIEnv* env, jclass clazz) {
 
 
-//@line:17533
+//@line:17519
 
 		ext_glEndTransformFeedbackNV();
 	
@@ -26415,27 +26401,27 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTransformFeedbackAttribsN
 	unsigned char* attribs = (unsigned char*)env->GetDirectBufferAddress(obj_attribs);
 
 
-//@line:17537
+//@line:17523
 
 		ext_glTransformFeedbackAttribsNV((GLuint)count, (const GLint*)(attribs + attribsByteOffset), (GLenum)bufferMode);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferRangeNV(JNIEnv* env, jclass clazz, jint target, jint index, jint buffer, jint offset, jint size) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferRangeNV(JNIEnv* env, jclass clazz, jint target, jint index, jint buffer, jlong offset, jlong size) {
 
 
-//@line:17541
+//@line:17527
 
 		ext_glBindBufferRangeNV((GLenum)target, (GLuint)index, (GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferOffsetNV(JNIEnv* env, jclass clazz, jint target, jint index, jint buffer, jint offset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferOffsetNV(JNIEnv* env, jclass clazz, jint target, jint index, jint buffer, jlong offset) {
 
 
-//@line:17545
+//@line:17531
 
 		ext_glBindBufferOffsetNV((GLenum)target, (GLuint)index, (GLuint)buffer, (GLintptr)offset);
 	
@@ -26445,7 +26431,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferOffsetNV(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferBaseNV(JNIEnv* env, jclass clazz, jint target, jint index, jint buffer) {
 
 
-//@line:17549
+//@line:17535
 
 		ext_glBindBufferBaseNV((GLenum)target, (GLuint)index, (GLuint)buffer);
 	
@@ -26456,7 +26442,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTransformFeedbackVaryings
 	unsigned char* locations = (unsigned char*)env->GetDirectBufferAddress(obj_locations);
 
 
-//@line:17553
+//@line:17539
 
 		ext_glTransformFeedbackVaryingsNV((GLuint)program, (GLsizei)count, (const GLint*)(locations + locationsByteOffset), (GLenum)bufferMode);
 	
@@ -26467,7 +26453,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glActiveVaryingNV(JNIEnv* e
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:17557
+//@line:17543
 
 		ext_glActiveVaryingNV((GLuint)program, (const GLchar*)(name + nameByteOffset));
 	
@@ -26477,7 +26463,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glActiveVaryingNV(JNIEnv* e
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetVaryingLocationNV
 (JNIEnv* env, jclass clazz, jint program, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
-//@line:17561
+//@line:17547
 
 		return (jint)ext_glGetVaryingLocationNV((GLuint)program, (const GLchar*)(name + nameByteOffset));
 	
@@ -26499,7 +26485,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveVaryingNV(JNIEnv
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:17565
+//@line:17551
 
 		ext_glGetActiveVaryingNV((GLuint)program, (GLuint)index, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLsizei*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLchar*)(name + nameByteOffset));
 	
@@ -26510,7 +26496,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTransformFeedbackVaryi
 	unsigned char* location = (unsigned char*)env->GetDirectBufferAddress(obj_location);
 
 
-//@line:17569
+//@line:17555
 
 		ext_glGetTransformFeedbackVaryingNV((GLuint)program, (GLuint)index, (GLint*)(location + locationByteOffset));
 	
@@ -26522,7 +26508,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTransformFeedbackStreamAt
 	unsigned char* bufstreams = (unsigned char*)env->GetDirectBufferAddress(obj_bufstreams);
 
 
-//@line:17573
+//@line:17559
 
 		ext_glTransformFeedbackStreamAttribsNV((GLsizei)count, (const GLint*)(attribs + attribsByteOffset), (GLsizei)nbuffers, (const GLint*)(bufstreams + bufstreamsByteOffset), (GLenum)bufferMode);
 	
@@ -26532,7 +26518,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTransformFeedbackStreamAt
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformBufferEXT(JNIEnv* env, jclass clazz, jint program, jint location, jint buffer) {
 
 
-//@line:17577
+//@line:17563
 
 		ext_glUniformBufferEXT((GLuint)program, (GLint)location, (GLuint)buffer);
 	
@@ -26542,19 +26528,19 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformBufferEXT(JNIEnv* 
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformBufferSizeEXT(JNIEnv* env, jclass clazz, jint program, jint location) {
 
 
-//@line:17581
+//@line:17567
 
 		return (jint)ext_glGetUniformBufferSizeEXT((GLuint)program, (GLint)location);
 	
 
 }
 
-JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformOffsetEXT(JNIEnv* env, jclass clazz, jint program, jint location) {
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformOffsetEXT(JNIEnv* env, jclass clazz, jint program, jint location) {
 
 
-//@line:17585
+//@line:17571
 
-		return (jint)ext_glGetUniformOffsetEXT((GLuint)program, (GLint)location);
+		return (jlong)ext_glGetUniformOffsetEXT((GLuint)program, (GLint)location);
 	
 
 }
@@ -26563,7 +26549,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexParameterIivEXT(JNIEnv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17589
+//@line:17575
 
 		ext_glTexParameterIivEXT((GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -26574,7 +26560,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexParameterIuivEXT(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17593
+//@line:17579
 
 		ext_glTexParameterIuivEXT((GLenum)target, (GLenum)pname, (const GLuint*)(params + paramsByteOffset));
 	
@@ -26585,7 +26571,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexParameterIivEXT(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17597
+//@line:17583
 
 		ext_glGetTexParameterIivEXT((GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -26596,7 +26582,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexParameterIuivEXT(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17601
+//@line:17587
 
 		ext_glGetTexParameterIuivEXT((GLenum)target, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
 	
@@ -26606,7 +26592,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexParameterIuivEXT(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearColorIiEXT(JNIEnv* env, jclass clazz, jint red, jint green, jint blue, jint alpha) {
 
 
-//@line:17605
+//@line:17591
 
 		ext_glClearColorIiEXT((GLint)red, (GLint)green, (GLint)blue, (GLint)alpha);
 	
@@ -26616,7 +26602,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearColorIiEXT(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearColorIuiEXT(JNIEnv* env, jclass clazz, jint red, jint green, jint blue, jint alpha) {
 
 
-//@line:17609
+//@line:17595
 
 		ext_glClearColorIuiEXT((GLuint)red, (GLuint)green, (GLuint)blue, (GLuint)alpha);
 	
@@ -26626,7 +26612,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearColorIuiEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFrameTerminatorGREMEDY(JNIEnv* env, jclass clazz) {
 
 
-//@line:17613
+//@line:17599
 
 		ext_glFrameTerminatorGREMEDY();
 	
@@ -26636,7 +26622,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFrameTerminatorGREMEDY(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginConditionalRenderNV(JNIEnv* env, jclass clazz, jint id, jint mode) {
 
 
-//@line:17617
+//@line:17603
 
 		ext_glBeginConditionalRenderNV((GLuint)id, (GLenum)mode);
 	
@@ -26646,7 +26632,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginConditionalRenderNV(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndConditionalRenderNV(JNIEnv* env, jclass clazz) {
 
 
-//@line:17621
+//@line:17607
 
 		ext_glEndConditionalRenderNV();
 	
@@ -26656,7 +26642,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndConditionalRenderNV(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPresentFrameKeyedNV(JNIEnv* env, jclass clazz, jint video_slot, jlong minPresentTime, jint beginPresentTimeId, jint presentDurationId, jint type, jint target0, jint fill0, jint key0, jint target1, jint fill1, jint key1) {
 
 
-//@line:17625
+//@line:17611
 
 		ext_glPresentFrameKeyedNV((GLuint)video_slot, (GLuint64EXT)minPresentTime, (GLuint)beginPresentTimeId, (GLuint)presentDurationId, (GLenum)type, (GLenum)target0, (GLuint)fill0, (GLuint)key0, (GLenum)target1, (GLuint)fill1, (GLuint)key1);
 	
@@ -26666,7 +26652,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPresentFrameKeyedNV(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPresentFrameDualFillNV(JNIEnv* env, jclass clazz, jint video_slot, jlong minPresentTime, jint beginPresentTimeId, jint presentDurationId, jint type, jint target0, jint fill0, jint target1, jint fill1, jint target2, jint fill2, jint target3, jint fill3) {
 
 
-//@line:17629
+//@line:17615
 
 		ext_glPresentFrameDualFillNV((GLuint)video_slot, (GLuint64EXT)minPresentTime, (GLuint)beginPresentTimeId, (GLuint)presentDurationId, (GLenum)type, (GLenum)target0, (GLuint)fill0, (GLenum)target1, (GLuint)fill1, (GLenum)target2, (GLuint)fill2, (GLenum)target3, (GLuint)fill3);
 	
@@ -26677,7 +26663,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVideoivNV(JNIEnv* env,
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17633
+//@line:17619
 
 		ext_glGetVideoivNV((GLuint)video_slot, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -26688,7 +26674,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVideouivNV(JNIEnv* env
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17637
+//@line:17623
 
 		ext_glGetVideouivNV((GLuint)video_slot, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
 	
@@ -26699,7 +26685,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVideoi64vNV(JNIEnv* en
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17641
+//@line:17627
 
 		ext_glGetVideoi64vNV((GLuint)video_slot, (GLenum)pname, (GLint64EXT*)(params + paramsByteOffset));
 	
@@ -26710,7 +26696,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVideoui64vNV(JNIEnv* e
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17645
+//@line:17631
 
 		ext_glGetVideoui64vNV((GLuint)video_slot, (GLenum)pname, (GLuint64EXT*)(params + paramsByteOffset));
 	
@@ -26720,7 +26706,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVideoui64vNV(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginTransformFeedbackEXT(JNIEnv* env, jclass clazz, jint primitiveMode) {
 
 
-//@line:17649
+//@line:17635
 
 		ext_glBeginTransformFeedbackEXT((GLenum)primitiveMode);
 	
@@ -26730,27 +26716,27 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginTransformFeedbackEXT
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndTransformFeedbackEXT(JNIEnv* env, jclass clazz) {
 
 
-//@line:17653
+//@line:17639
 
 		ext_glEndTransformFeedbackEXT();
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferRangeEXT(JNIEnv* env, jclass clazz, jint target, jint index, jint buffer, jint offset, jint size) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferRangeEXT(JNIEnv* env, jclass clazz, jint target, jint index, jint buffer, jlong offset, jlong size) {
 
 
-//@line:17657
+//@line:17643
 
 		ext_glBindBufferRangeEXT((GLenum)target, (GLuint)index, (GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferOffsetEXT(JNIEnv* env, jclass clazz, jint target, jint index, jint buffer, jint offset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferOffsetEXT(JNIEnv* env, jclass clazz, jint target, jint index, jint buffer, jlong offset) {
 
 
-//@line:17661
+//@line:17647
 
 		ext_glBindBufferOffsetEXT((GLenum)target, (GLuint)index, (GLuint)buffer, (GLintptr)offset);
 	
@@ -26760,7 +26746,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferOffsetEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferBaseEXT(JNIEnv* env, jclass clazz, jint target, jint index, jint buffer) {
 
 
-//@line:17665
+//@line:17651
 
 		ext_glBindBufferBaseEXT((GLenum)target, (GLuint)index, (GLuint)buffer);
 	
@@ -26771,7 +26757,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTransformFeedbackVaryings
 	unsigned char* varyings = (unsigned char*)env->GetDirectBufferAddress(obj_varyings);
 
 
-//@line:17669
+//@line:17655
 
 		ext_glTransformFeedbackVaryingsEXT((GLuint)program, (GLsizei)count, (const GLchar**)(varyings + varyingsByteOffset), (GLenum)bufferMode);
 	
@@ -26785,7 +26771,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTransformFeedbackVaryi
 	unsigned char* name = (unsigned char*)env->GetDirectBufferAddress(obj_name);
 
 
-//@line:17673
+//@line:17659
 
 		ext_glGetTransformFeedbackVaryingEXT((GLuint)program, (GLuint)index, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLsizei*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLchar*)(name + nameByteOffset));
 	
@@ -26795,7 +26781,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTransformFeedbackVaryi
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClientAttribDefaultEXT(JNIEnv* env, jclass clazz, jint mask) {
 
 
-//@line:17677
+//@line:17663
 
 		ext_glClientAttribDefaultEXT((GLbitfield)mask);
 	
@@ -26805,7 +26791,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClientAttribDefaultEXT(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPushClientAttribDefaultEXT(JNIEnv* env, jclass clazz, jint mask) {
 
 
-//@line:17681
+//@line:17667
 
 		ext_glPushClientAttribDefaultEXT((GLbitfield)mask);
 	
@@ -26816,7 +26802,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixLoadfEXT(JNIEnv* en
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:17685
+//@line:17671
 
 		ext_glMatrixLoadfEXT((GLenum)mode, (const GLfloat*)(m + mByteOffset));
 	
@@ -26827,7 +26813,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixLoaddEXT(JNIEnv* en
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:17689
+//@line:17675
 
 		ext_glMatrixLoaddEXT((GLenum)mode, (const GLdouble*)(m + mByteOffset));
 	
@@ -26838,7 +26824,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixMultfEXT(JNIEnv* en
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:17693
+//@line:17679
 
 		ext_glMatrixMultfEXT((GLenum)mode, (const GLfloat*)(m + mByteOffset));
 	
@@ -26849,7 +26835,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixMultdEXT(JNIEnv* en
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:17697
+//@line:17683
 
 		ext_glMatrixMultdEXT((GLenum)mode, (const GLdouble*)(m + mByteOffset));
 	
@@ -26859,7 +26845,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixMultdEXT(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixLoadIdentityEXT(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:17701
+//@line:17687
 
 		ext_glMatrixLoadIdentityEXT((GLenum)mode);
 	
@@ -26869,7 +26855,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixLoadIdentityEXT(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixRotatefEXT(JNIEnv* env, jclass clazz, jint mode, jfloat angle, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:17705
+//@line:17691
 
 		ext_glMatrixRotatefEXT((GLenum)mode, (GLfloat)angle, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -26879,7 +26865,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixRotatefEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixRotatedEXT(JNIEnv* env, jclass clazz, jint mode, jdouble angle, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:17709
+//@line:17695
 
 		ext_glMatrixRotatedEXT((GLenum)mode, (GLdouble)angle, (GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -26889,7 +26875,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixRotatedEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixScalefEXT(JNIEnv* env, jclass clazz, jint mode, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:17713
+//@line:17699
 
 		ext_glMatrixScalefEXT((GLenum)mode, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -26899,7 +26885,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixScalefEXT(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixScaledEXT(JNIEnv* env, jclass clazz, jint mode, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:17717
+//@line:17703
 
 		ext_glMatrixScaledEXT((GLenum)mode, (GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -26909,7 +26895,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixScaledEXT(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixTranslatefEXT(JNIEnv* env, jclass clazz, jint mode, jfloat x, jfloat y, jfloat z) {
 
 
-//@line:17721
+//@line:17707
 
 		ext_glMatrixTranslatefEXT((GLenum)mode, (GLfloat)x, (GLfloat)y, (GLfloat)z);
 	
@@ -26919,7 +26905,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixTranslatefEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixTranslatedEXT(JNIEnv* env, jclass clazz, jint mode, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:17725
+//@line:17711
 
 		ext_glMatrixTranslatedEXT((GLenum)mode, (GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -26929,7 +26915,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixTranslatedEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixFrustumEXT(JNIEnv* env, jclass clazz, jint mode, jdouble left, jdouble right, jdouble bottom, jdouble top, jdouble zNear, jdouble zFar) {
 
 
-//@line:17729
+//@line:17715
 
 		ext_glMatrixFrustumEXT((GLenum)mode, (GLdouble)left, (GLdouble)right, (GLdouble)bottom, (GLdouble)top, (GLdouble)zNear, (GLdouble)zFar);
 	
@@ -26939,7 +26925,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixFrustumEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixOrthoEXT(JNIEnv* env, jclass clazz, jint mode, jdouble left, jdouble right, jdouble bottom, jdouble top, jdouble zNear, jdouble zFar) {
 
 
-//@line:17733
+//@line:17719
 
 		ext_glMatrixOrthoEXT((GLenum)mode, (GLdouble)left, (GLdouble)right, (GLdouble)bottom, (GLdouble)top, (GLdouble)zNear, (GLdouble)zFar);
 	
@@ -26949,7 +26935,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixOrthoEXT(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixPopEXT(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:17737
+//@line:17723
 
 		ext_glMatrixPopEXT((GLenum)mode);
 	
@@ -26959,7 +26945,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixPopEXT(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixPushEXT(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:17741
+//@line:17727
 
 		ext_glMatrixPushEXT((GLenum)mode);
 	
@@ -26970,7 +26956,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixLoadTransposefEXT(J
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:17745
+//@line:17731
 
 		ext_glMatrixLoadTransposefEXT((GLenum)mode, (const GLfloat*)(m + mByteOffset));
 	
@@ -26981,7 +26967,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixLoadTransposedEXT(J
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:17749
+//@line:17735
 
 		ext_glMatrixLoadTransposedEXT((GLenum)mode, (const GLdouble*)(m + mByteOffset));
 	
@@ -26992,7 +26978,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixMultTransposefEXT(J
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:17753
+//@line:17739
 
 		ext_glMatrixMultTransposefEXT((GLenum)mode, (const GLfloat*)(m + mByteOffset));
 	
@@ -27003,7 +26989,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixMultTransposedEXT(J
 	unsigned char* m = (unsigned char*)env->GetDirectBufferAddress(obj_m);
 
 
-//@line:17757
+//@line:17743
 
 		ext_glMatrixMultTransposedEXT((GLenum)mode, (const GLdouble*)(m + mByteOffset));
 	
@@ -27013,7 +26999,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMatrixMultTransposedEXT(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureParameterfEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint pname, jfloat param) {
 
 
-//@line:17761
+//@line:17747
 
 		ext_glTextureParameterfEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (GLfloat)param);
 	
@@ -27024,7 +27010,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureParameterfvEXT(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17765
+//@line:17751
 
 		ext_glTextureParameterfvEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -27034,7 +27020,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureParameterfvEXT(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureParameteriEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint pname, jint param) {
 
 
-//@line:17769
+//@line:17755
 
 		ext_glTextureParameteriEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (GLint)param);
 	
@@ -27045,7 +27031,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureParameterivEXT(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17773
+//@line:17759
 
 		ext_glTextureParameterivEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -27056,7 +27042,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureImage1DEXT(JNIEnv*
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:17777
+//@line:17763
 
 		ext_glTextureImage1DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLint)border, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -27067,7 +27053,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureImage2DEXT(JNIEnv*
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:17781
+//@line:17767
 
 		ext_glTextureImage2DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLint)border, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -27078,7 +27064,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureSubImage1DEXT(JNIE
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:17785
+//@line:17771
 
 		ext_glTextureSubImage1DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLsizei)width, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -27089,7 +27075,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureSubImage2DEXT(JNIE
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:17789
+//@line:17775
 
 		ext_glTextureSubImage2DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -27099,7 +27085,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureSubImage2DEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTextureImage1DEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint level, jint internalformat, jint x, jint y, jint width, jint border) {
 
 
-//@line:17793
+//@line:17779
 
 		ext_glCopyTextureImage1DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLint)border);
 	
@@ -27109,7 +27095,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTextureImage1DEXT(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTextureImage2DEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint level, jint internalformat, jint x, jint y, jint width, jint height, jint border) {
 
 
-//@line:17797
+//@line:17783
 
 		ext_glCopyTextureImage2DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height, (GLint)border);
 	
@@ -27119,7 +27105,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTextureImage2DEXT(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTextureSubImage1DEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint level, jint xoffset, jint x, jint y, jint width) {
 
 
-//@line:17801
+//@line:17787
 
 		ext_glCopyTextureSubImage1DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)x, (GLint)y, (GLsizei)width);
 	
@@ -27129,7 +27115,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTextureSubImage1DEXT(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTextureSubImage2DEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint level, jint xoffset, jint yoffset, jint x, jint y, jint width, jint height) {
 
 
-//@line:17805
+//@line:17791
 
 		ext_glCopyTextureSubImage2DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
 	
@@ -27140,7 +27126,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTextureImageEXT(JNIEnv
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:17809
+//@line:17795
 
 		ext_glGetTextureImageEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)format, (GLenum)type, (GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -27151,7 +27137,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTextureParameterfvEXT(
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17813
+//@line:17799
 
 		ext_glGetTextureParameterfvEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -27162,7 +27148,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTextureParameterivEXT(
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17817
+//@line:17803
 
 		ext_glGetTextureParameterivEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -27173,7 +27159,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTextureLevelParameterf
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17821
+//@line:17807
 
 		ext_glGetTextureLevelParameterfvEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -27184,7 +27170,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTextureLevelParameteri
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17825
+//@line:17811
 
 		ext_glGetTextureLevelParameterivEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -27195,7 +27181,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureImage3DEXT(JNIEnv*
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:17829
+//@line:17815
 
 		ext_glTextureImage3DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -27206,7 +27192,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureSubImage3DEXT(JNIE
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:17833
+//@line:17819
 
 		ext_glTextureSubImage3DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -27216,7 +27202,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureSubImage3DEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTextureSubImage3DEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint level, jint xoffset, jint yoffset, jint zoffset, jint x, jint y, jint width, jint height) {
 
 
-//@line:17837
+//@line:17823
 
 		ext_glCopyTextureSubImage3DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
 	
@@ -27226,7 +27212,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyTextureSubImage3DEXT(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexParameterfEXT(JNIEnv* env, jclass clazz, jint texunit, jint target, jint pname, jfloat param) {
 
 
-//@line:17841
+//@line:17827
 
 		ext_glMultiTexParameterfEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLfloat)param);
 	
@@ -27237,7 +27223,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexParameterfvEXT(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17845
+//@line:17831
 
 		ext_glMultiTexParameterfvEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -27247,7 +27233,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexParameterfvEXT(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexParameteriEXT(JNIEnv* env, jclass clazz, jint texunit, jint target, jint pname, jint param) {
 
 
-//@line:17849
+//@line:17835
 
 		ext_glMultiTexParameteriEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLint)param);
 	
@@ -27258,7 +27244,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexParameterivEXT(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17853
+//@line:17839
 
 		ext_glMultiTexParameterivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -27269,7 +27255,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexImage1DEXT(JNIEnv
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:17857
+//@line:17843
 
 		ext_glMultiTexImage1DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLint)border, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -27280,7 +27266,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexImage2DEXT(JNIEnv
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:17861
+//@line:17847
 
 		ext_glMultiTexImage2DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLint)border, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -27291,7 +27277,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexSubImage1DEXT(JNI
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:17865
+//@line:17851
 
 		ext_glMultiTexSubImage1DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLsizei)width, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -27302,7 +27288,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexSubImage2DEXT(JNI
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:17869
+//@line:17855
 
 		ext_glMultiTexSubImage2DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -27312,7 +27298,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexSubImage2DEXT(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyMultiTexImage1DEXT(JNIEnv* env, jclass clazz, jint texunit, jint target, jint level, jint internalformat, jint x, jint y, jint width, jint border) {
 
 
-//@line:17873
+//@line:17859
 
 		ext_glCopyMultiTexImage1DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLint)border);
 	
@@ -27322,7 +27308,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyMultiTexImage1DEXT(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyMultiTexImage2DEXT(JNIEnv* env, jclass clazz, jint texunit, jint target, jint level, jint internalformat, jint x, jint y, jint width, jint height, jint border) {
 
 
-//@line:17877
+//@line:17863
 
 		ext_glCopyMultiTexImage2DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height, (GLint)border);
 	
@@ -27332,7 +27318,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyMultiTexImage2DEXT(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyMultiTexSubImage1DEXT(JNIEnv* env, jclass clazz, jint texunit, jint target, jint level, jint xoffset, jint x, jint y, jint width) {
 
 
-//@line:17881
+//@line:17867
 
 		ext_glCopyMultiTexSubImage1DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)x, (GLint)y, (GLsizei)width);
 	
@@ -27342,7 +27328,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyMultiTexSubImage1DEXT
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyMultiTexSubImage2DEXT(JNIEnv* env, jclass clazz, jint texunit, jint target, jint level, jint xoffset, jint yoffset, jint x, jint y, jint width, jint height) {
 
 
-//@line:17885
+//@line:17871
 
 		ext_glCopyMultiTexSubImage2DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
 	
@@ -27353,7 +27339,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultiTexImageEXT(JNIEn
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:17889
+//@line:17875
 
 		ext_glGetMultiTexImageEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)format, (GLenum)type, (GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -27364,7 +27350,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultiTexParameterfvEXT
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17893
+//@line:17879
 
 		ext_glGetMultiTexParameterfvEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -27375,7 +27361,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultiTexParameterivEXT
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17897
+//@line:17883
 
 		ext_glGetMultiTexParameterivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -27386,7 +27372,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultiTexLevelParameter
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17901
+//@line:17887
 
 		ext_glGetMultiTexLevelParameterfvEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -27397,7 +27383,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultiTexLevelParameter
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17905
+//@line:17891
 
 		ext_glGetMultiTexLevelParameterivEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -27408,7 +27394,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexImage3DEXT(JNIEnv
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:17909
+//@line:17895
 
 		ext_glMultiTexImage3DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -27419,7 +27405,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexSubImage3DEXT(JNI
 	unsigned char* pixels = (unsigned char*)env->GetDirectBufferAddress(obj_pixels);
 
 
-//@line:17913
+//@line:17899
 
 		ext_glMultiTexSubImage3DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLenum)type, (const GLvoid*)(pixels + pixelsByteOffset));
 	
@@ -27429,7 +27415,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexSubImage3DEXT(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyMultiTexSubImage3DEXT(JNIEnv* env, jclass clazz, jint texunit, jint target, jint level, jint xoffset, jint yoffset, jint zoffset, jint x, jint y, jint width, jint height) {
 
 
-//@line:17917
+//@line:17903
 
 		ext_glCopyMultiTexSubImage3DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLint)x, (GLint)y, (GLsizei)width, (GLsizei)height);
 	
@@ -27439,7 +27425,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyMultiTexSubImage3DEXT
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindMultiTextureEXT(JNIEnv* env, jclass clazz, jint texunit, jint target, jint texture) {
 
 
-//@line:17921
+//@line:17907
 
 		ext_glBindMultiTextureEXT((GLenum)texunit, (GLenum)target, (GLuint)texture);
 	
@@ -27449,7 +27435,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindMultiTextureEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnableClientStateIndexedEXT(JNIEnv* env, jclass clazz, jint array, jint index) {
 
 
-//@line:17925
+//@line:17911
 
 		ext_glEnableClientStateIndexedEXT((GLenum)array, (GLuint)index);
 	
@@ -27459,7 +27445,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnableClientStateIndexedE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDisableClientStateIndexedEXT(JNIEnv* env, jclass clazz, jint array, jint index) {
 
 
-//@line:17929
+//@line:17915
 
 		ext_glDisableClientStateIndexedEXT((GLenum)array, (GLuint)index);
 	
@@ -27470,7 +27456,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoordPointerEXT(J
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:17933
+//@line:17919
 
 		ext_glMultiTexCoordPointerEXT((GLenum)texunit, (GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -27480,7 +27466,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexCoordPointerEXT(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexEnvfEXT(JNIEnv* env, jclass clazz, jint texunit, jint target, jint pname, jfloat param) {
 
 
-//@line:17937
+//@line:17923
 
 		ext_glMultiTexEnvfEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLfloat)param);
 	
@@ -27491,7 +27477,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexEnvfvEXT(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17941
+//@line:17927
 
 		ext_glMultiTexEnvfvEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -27501,7 +27487,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexEnvfvEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexEnviEXT(JNIEnv* env, jclass clazz, jint texunit, jint target, jint pname, jint param) {
 
 
-//@line:17945
+//@line:17931
 
 		ext_glMultiTexEnviEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLint)param);
 	
@@ -27512,7 +27498,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexEnvivEXT(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17949
+//@line:17935
 
 		ext_glMultiTexEnvivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -27522,7 +27508,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexEnvivEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexGendEXT(JNIEnv* env, jclass clazz, jint texunit, jint coord, jint pname, jdouble param) {
 
 
-//@line:17953
+//@line:17939
 
 		ext_glMultiTexGendEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (GLdouble)param);
 	
@@ -27533,7 +27519,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexGendvEXT(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17957
+//@line:17943
 
 		ext_glMultiTexGendvEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (const GLdouble*)(params + paramsByteOffset));
 	
@@ -27543,7 +27529,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexGendvEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexGenfEXT(JNIEnv* env, jclass clazz, jint texunit, jint coord, jint pname, jfloat param) {
 
 
-//@line:17961
+//@line:17947
 
 		ext_glMultiTexGenfEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (GLfloat)param);
 	
@@ -27554,7 +27540,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexGenfvEXT(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17965
+//@line:17951
 
 		ext_glMultiTexGenfvEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -27564,7 +27550,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexGenfvEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexGeniEXT(JNIEnv* env, jclass clazz, jint texunit, jint coord, jint pname, jint param) {
 
 
-//@line:17969
+//@line:17955
 
 		ext_glMultiTexGeniEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (GLint)param);
 	
@@ -27575,7 +27561,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexGenivEXT(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17973
+//@line:17959
 
 		ext_glMultiTexGenivEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -27586,7 +27572,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultiTexEnvfvEXT(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17977
+//@line:17963
 
 		ext_glGetMultiTexEnvfvEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -27597,7 +27583,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultiTexEnvivEXT(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17981
+//@line:17967
 
 		ext_glGetMultiTexEnvivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -27608,7 +27594,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultiTexGendvEXT(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17985
+//@line:17971
 
 		ext_glGetMultiTexGendvEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
 	
@@ -27619,7 +27605,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultiTexGenfvEXT(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17989
+//@line:17975
 
 		ext_glGetMultiTexGenfvEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -27630,7 +27616,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultiTexGenivEXT(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:17993
+//@line:17979
 
 		ext_glGetMultiTexGenivEXT((GLenum)texunit, (GLenum)coord, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -27641,7 +27627,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFloatIndexedvEXT(JNIEn
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:17997
+//@line:17983
 
 		ext_glGetFloatIndexedvEXT((GLenum)target, (GLuint)index, (GLfloat*)(data + dataByteOffset));
 	
@@ -27652,7 +27638,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetDoubleIndexedvEXT(JNIE
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:18001
+//@line:17987
 
 		ext_glGetDoubleIndexedvEXT((GLenum)target, (GLuint)index, (GLdouble*)(data + dataByteOffset));
 	
@@ -27663,7 +27649,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPointerIndexedvEXT(JNI
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:18005
+//@line:17991
 
 		ext_glGetPointerIndexedvEXT((GLenum)target, (GLuint)index, (GLvoid**)(data + dataByteOffset));
 	
@@ -27674,7 +27660,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTextureImage3DE
 	unsigned char* bits = (unsigned char*)env->GetDirectBufferAddress(obj_bits);
 
 
-//@line:18009
+//@line:17995
 
 		ext_glCompressedTextureImage3DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLsizei)imageSize, (const GLvoid*)(bits + bitsByteOffset));
 	
@@ -27685,7 +27671,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTextureImage2DE
 	unsigned char* bits = (unsigned char*)env->GetDirectBufferAddress(obj_bits);
 
 
-//@line:18013
+//@line:17999
 
 		ext_glCompressedTextureImage2DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLint)border, (GLsizei)imageSize, (const GLvoid*)(bits + bitsByteOffset));
 	
@@ -27696,7 +27682,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTextureImage1DE
 	unsigned char* bits = (unsigned char*)env->GetDirectBufferAddress(obj_bits);
 
 
-//@line:18017
+//@line:18003
 
 		ext_glCompressedTextureImage1DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLint)border, (GLsizei)imageSize, (const GLvoid*)(bits + bitsByteOffset));
 	
@@ -27707,7 +27693,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTextureSubImage
 	unsigned char* bits = (unsigned char*)env->GetDirectBufferAddress(obj_bits);
 
 
-//@line:18021
+//@line:18007
 
 		ext_glCompressedTextureSubImage3DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLsizei)imageSize, (const GLvoid*)(bits + bitsByteOffset));
 	
@@ -27718,7 +27704,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTextureSubImage
 	unsigned char* bits = (unsigned char*)env->GetDirectBufferAddress(obj_bits);
 
 
-//@line:18025
+//@line:18011
 
 		ext_glCompressedTextureSubImage2DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLsizei)imageSize, (const GLvoid*)(bits + bitsByteOffset));
 	
@@ -27729,7 +27715,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedTextureSubImage
 	unsigned char* bits = (unsigned char*)env->GetDirectBufferAddress(obj_bits);
 
 
-//@line:18029
+//@line:18015
 
 		ext_glCompressedTextureSubImage1DEXT((GLuint)texture, (GLenum)target, (GLint)level, (GLint)xoffset, (GLsizei)width, (GLenum)format, (GLsizei)imageSize, (const GLvoid*)(bits + bitsByteOffset));
 	
@@ -27740,7 +27726,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetCompressedTextureImage
 	unsigned char* img = (unsigned char*)env->GetDirectBufferAddress(obj_img);
 
 
-//@line:18033
+//@line:18019
 
 		ext_glGetCompressedTextureImageEXT((GLuint)texture, (GLenum)target, (GLint)lod, (GLvoid*)(img + imgByteOffset));
 	
@@ -27751,7 +27737,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedMultiTexImage3D
 	unsigned char* bits = (unsigned char*)env->GetDirectBufferAddress(obj_bits);
 
 
-//@line:18037
+//@line:18023
 
 		ext_glCompressedMultiTexImage3DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLint)border, (GLsizei)imageSize, (const GLvoid*)(bits + bitsByteOffset));
 	
@@ -27762,7 +27748,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedMultiTexImage2D
 	unsigned char* bits = (unsigned char*)env->GetDirectBufferAddress(obj_bits);
 
 
-//@line:18041
+//@line:18027
 
 		ext_glCompressedMultiTexImage2DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLsizei)height, (GLint)border, (GLsizei)imageSize, (const GLvoid*)(bits + bitsByteOffset));
 	
@@ -27773,7 +27759,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedMultiTexImage1D
 	unsigned char* bits = (unsigned char*)env->GetDirectBufferAddress(obj_bits);
 
 
-//@line:18045
+//@line:18031
 
 		ext_glCompressedMultiTexImage1DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLenum)internalformat, (GLsizei)width, (GLint)border, (GLsizei)imageSize, (const GLvoid*)(bits + bitsByteOffset));
 	
@@ -27784,7 +27770,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedMultiTexSubImag
 	unsigned char* bits = (unsigned char*)env->GetDirectBufferAddress(obj_bits);
 
 
-//@line:18049
+//@line:18035
 
 		ext_glCompressedMultiTexSubImage3DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLint)zoffset, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLenum)format, (GLsizei)imageSize, (const GLvoid*)(bits + bitsByteOffset));
 	
@@ -27795,7 +27781,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedMultiTexSubImag
 	unsigned char* bits = (unsigned char*)env->GetDirectBufferAddress(obj_bits);
 
 
-//@line:18053
+//@line:18039
 
 		ext_glCompressedMultiTexSubImage2DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLint)yoffset, (GLsizei)width, (GLsizei)height, (GLenum)format, (GLsizei)imageSize, (const GLvoid*)(bits + bitsByteOffset));
 	
@@ -27806,7 +27792,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompressedMultiTexSubImag
 	unsigned char* bits = (unsigned char*)env->GetDirectBufferAddress(obj_bits);
 
 
-//@line:18057
+//@line:18043
 
 		ext_glCompressedMultiTexSubImage1DEXT((GLenum)texunit, (GLenum)target, (GLint)level, (GLint)xoffset, (GLsizei)width, (GLenum)format, (GLsizei)imageSize, (const GLvoid*)(bits + bitsByteOffset));
 	
@@ -27817,7 +27803,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetCompressedMultiTexImag
 	unsigned char* img = (unsigned char*)env->GetDirectBufferAddress(obj_img);
 
 
-//@line:18061
+//@line:18047
 
 		ext_glGetCompressedMultiTexImageEXT((GLenum)texunit, (GLenum)target, (GLint)lod, (GLvoid*)(img + imgByteOffset));
 	
@@ -27828,7 +27814,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramStringEXT(JNI
 	unsigned char* string = (unsigned char*)env->GetDirectBufferAddress(obj_string);
 
 
-//@line:18065
+//@line:18051
 
 		ext_glNamedProgramStringEXT((GLuint)program, (GLenum)target, (GLenum)format, (GLsizei)len, (const GLvoid*)(string + stringByteOffset));
 	
@@ -27838,7 +27824,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramStringEXT(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramLocalParameter4dEXT(JNIEnv* env, jclass clazz, jint program, jint target, jint index, jdouble x, jdouble y, jdouble z, jdouble w) {
 
 
-//@line:18069
+//@line:18055
 
 		ext_glNamedProgramLocalParameter4dEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -27849,7 +27835,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramLocalParamete
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18073
+//@line:18059
 
 		ext_glNamedProgramLocalParameter4dvEXT((GLuint)program, (GLenum)target, (GLuint)index, (const GLdouble*)(params + paramsByteOffset));
 	
@@ -27859,7 +27845,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramLocalParamete
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramLocalParameter4fEXT(JNIEnv* env, jclass clazz, jint program, jint target, jint index, jfloat x, jfloat y, jfloat z, jfloat w) {
 
 
-//@line:18077
+//@line:18063
 
 		ext_glNamedProgramLocalParameter4fEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLfloat)x, (GLfloat)y, (GLfloat)z, (GLfloat)w);
 	
@@ -27870,7 +27856,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramLocalParamete
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18081
+//@line:18067
 
 		ext_glNamedProgramLocalParameter4fvEXT((GLuint)program, (GLenum)target, (GLuint)index, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -27881,7 +27867,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedProgramLocalParam
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18085
+//@line:18071
 
 		ext_glGetNamedProgramLocalParameterdvEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLdouble*)(params + paramsByteOffset));
 	
@@ -27892,7 +27878,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedProgramLocalParam
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18089
+//@line:18075
 
 		ext_glGetNamedProgramLocalParameterfvEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLfloat*)(params + paramsByteOffset));
 	
@@ -27903,7 +27889,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedProgramivEXT(JNIE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18093
+//@line:18079
 
 		ext_glGetNamedProgramivEXT((GLuint)program, (GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -27914,7 +27900,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedProgramStringEXT(
 	unsigned char* string = (unsigned char*)env->GetDirectBufferAddress(obj_string);
 
 
-//@line:18097
+//@line:18083
 
 		ext_glGetNamedProgramStringEXT((GLuint)program, (GLenum)target, (GLenum)pname, (GLvoid*)(string + stringByteOffset));
 	
@@ -27925,7 +27911,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramLocalParamete
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18101
+//@line:18087
 
 		ext_glNamedProgramLocalParameters4fvEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLsizei)count, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -27935,7 +27921,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramLocalParamete
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramLocalParameterI4iEXT(JNIEnv* env, jclass clazz, jint program, jint target, jint index, jint x, jint y, jint z, jint w) {
 
 
-//@line:18105
+//@line:18091
 
 		ext_glNamedProgramLocalParameterI4iEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLint)x, (GLint)y, (GLint)z, (GLint)w);
 	
@@ -27946,7 +27932,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramLocalParamete
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18109
+//@line:18095
 
 		ext_glNamedProgramLocalParameterI4ivEXT((GLuint)program, (GLenum)target, (GLuint)index, (const GLint*)(params + paramsByteOffset));
 	
@@ -27957,7 +27943,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramLocalParamete
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18113
+//@line:18099
 
 		ext_glNamedProgramLocalParametersI4ivEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLsizei)count, (const GLint*)(params + paramsByteOffset));
 	
@@ -27967,7 +27953,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramLocalParamete
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramLocalParameterI4uiEXT(JNIEnv* env, jclass clazz, jint program, jint target, jint index, jint x, jint y, jint z, jint w) {
 
 
-//@line:18117
+//@line:18103
 
 		ext_glNamedProgramLocalParameterI4uiEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLuint)x, (GLuint)y, (GLuint)z, (GLuint)w);
 	
@@ -27978,7 +27964,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramLocalParamete
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18121
+//@line:18107
 
 		ext_glNamedProgramLocalParameterI4uivEXT((GLuint)program, (GLenum)target, (GLuint)index, (const GLuint*)(params + paramsByteOffset));
 	
@@ -27989,7 +27975,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedProgramLocalParamete
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18125
+//@line:18111
 
 		ext_glNamedProgramLocalParametersI4uivEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLsizei)count, (const GLuint*)(params + paramsByteOffset));
 	
@@ -28000,7 +27986,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedProgramLocalParam
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18129
+//@line:18115
 
 		ext_glGetNamedProgramLocalParameterIivEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLint*)(params + paramsByteOffset));
 	
@@ -28011,7 +27997,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedProgramLocalParam
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18133
+//@line:18119
 
 		ext_glGetNamedProgramLocalParameterIuivEXT((GLuint)program, (GLenum)target, (GLuint)index, (GLuint*)(params + paramsByteOffset));
 	
@@ -28022,7 +28008,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureParameterIivEXT(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18137
+//@line:18123
 
 		ext_glTextureParameterIivEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -28033,7 +28019,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureParameterIuivEXT(J
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18141
+//@line:18127
 
 		ext_glTextureParameterIuivEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (const GLuint*)(params + paramsByteOffset));
 	
@@ -28044,7 +28030,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTextureParameterIivEXT
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18145
+//@line:18131
 
 		ext_glGetTextureParameterIivEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -28055,7 +28041,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTextureParameterIuivEX
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18149
+//@line:18135
 
 		ext_glGetTextureParameterIuivEXT((GLuint)texture, (GLenum)target, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
 	
@@ -28066,7 +28052,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexParameterIivEXT(J
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18153
+//@line:18139
 
 		ext_glMultiTexParameterIivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -28077,7 +28063,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexParameterIuivEXT(
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18157
+//@line:18143
 
 		ext_glMultiTexParameterIuivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (const GLuint*)(params + paramsByteOffset));
 	
@@ -28088,7 +28074,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultiTexParameterIivEX
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18161
+//@line:18147
 
 		ext_glGetMultiTexParameterIivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -28099,7 +28085,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultiTexParameterIuivE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18165
+//@line:18151
 
 		ext_glGetMultiTexParameterIuivEXT((GLenum)texunit, (GLenum)target, (GLenum)pname, (GLuint*)(params + paramsByteOffset));
 	
@@ -28109,7 +28095,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultiTexParameterIuivE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1fEXT(JNIEnv* env, jclass clazz, jint program, jint location, jfloat v0) {
 
 
-//@line:18169
+//@line:18155
 
 		ext_glProgramUniform1fEXT((GLuint)program, (GLint)location, (GLfloat)v0);
 	
@@ -28119,7 +28105,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1fEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2fEXT(JNIEnv* env, jclass clazz, jint program, jint location, jfloat v0, jfloat v1) {
 
 
-//@line:18173
+//@line:18159
 
 		ext_glProgramUniform2fEXT((GLuint)program, (GLint)location, (GLfloat)v0, (GLfloat)v1);
 	
@@ -28129,7 +28115,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2fEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3fEXT(JNIEnv* env, jclass clazz, jint program, jint location, jfloat v0, jfloat v1, jfloat v2) {
 
 
-//@line:18177
+//@line:18163
 
 		ext_glProgramUniform3fEXT((GLuint)program, (GLint)location, (GLfloat)v0, (GLfloat)v1, (GLfloat)v2);
 	
@@ -28139,7 +28125,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3fEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4fEXT(JNIEnv* env, jclass clazz, jint program, jint location, jfloat v0, jfloat v1, jfloat v2, jfloat v3) {
 
 
-//@line:18181
+//@line:18167
 
 		ext_glProgramUniform4fEXT((GLuint)program, (GLint)location, (GLfloat)v0, (GLfloat)v1, (GLfloat)v2, (GLfloat)v3);
 	
@@ -28149,7 +28135,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4fEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1iEXT(JNIEnv* env, jclass clazz, jint program, jint location, jint v0) {
 
 
-//@line:18185
+//@line:18171
 
 		ext_glProgramUniform1iEXT((GLuint)program, (GLint)location, (GLint)v0);
 	
@@ -28159,7 +28145,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1iEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2iEXT(JNIEnv* env, jclass clazz, jint program, jint location, jint v0, jint v1) {
 
 
-//@line:18189
+//@line:18175
 
 		ext_glProgramUniform2iEXT((GLuint)program, (GLint)location, (GLint)v0, (GLint)v1);
 	
@@ -28169,7 +28155,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2iEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3iEXT(JNIEnv* env, jclass clazz, jint program, jint location, jint v0, jint v1, jint v2) {
 
 
-//@line:18193
+//@line:18179
 
 		ext_glProgramUniform3iEXT((GLuint)program, (GLint)location, (GLint)v0, (GLint)v1, (GLint)v2);
 	
@@ -28179,7 +28165,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3iEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4iEXT(JNIEnv* env, jclass clazz, jint program, jint location, jint v0, jint v1, jint v2, jint v3) {
 
 
-//@line:18197
+//@line:18183
 
 		ext_glProgramUniform4iEXT((GLuint)program, (GLint)location, (GLint)v0, (GLint)v1, (GLint)v2, (GLint)v3);
 	
@@ -28190,7 +28176,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1fvEXT(JNIE
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18201
+//@line:18187
 
 		ext_glProgramUniform1fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -28201,7 +28187,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2fvEXT(JNIE
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18205
+//@line:18191
 
 		ext_glProgramUniform2fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -28212,7 +28198,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3fvEXT(JNIE
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18209
+//@line:18195
 
 		ext_glProgramUniform3fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -28223,7 +28209,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4fvEXT(JNIE
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18213
+//@line:18199
 
 		ext_glProgramUniform4fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLfloat*)(value + valueByteOffset));
 	
@@ -28234,7 +28220,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1ivEXT(JNIE
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18217
+//@line:18203
 
 		ext_glProgramUniform1ivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -28245,7 +28231,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2ivEXT(JNIE
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18221
+//@line:18207
 
 		ext_glProgramUniform2ivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -28256,7 +28242,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3ivEXT(JNIE
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18225
+//@line:18211
 
 		ext_glProgramUniform3ivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -28267,7 +28253,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4ivEXT(JNIE
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18229
+//@line:18215
 
 		ext_glProgramUniform4ivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLint*)(value + valueByteOffset));
 	
@@ -28278,7 +28264,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix2fvEX
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18233
+//@line:18219
 
 		ext_glProgramUniformMatrix2fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -28289,7 +28275,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix3fvEX
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18237
+//@line:18223
 
 		ext_glProgramUniformMatrix3fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -28300,7 +28286,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix4fvEX
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18241
+//@line:18227
 
 		ext_glProgramUniformMatrix4fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -28311,7 +28297,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix2x3fv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18245
+//@line:18231
 
 		ext_glProgramUniformMatrix2x3fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -28322,7 +28308,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix3x2fv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18249
+//@line:18235
 
 		ext_glProgramUniformMatrix3x2fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -28333,7 +28319,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix2x4fv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18253
+//@line:18239
 
 		ext_glProgramUniformMatrix2x4fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -28344,7 +28330,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix4x2fv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18257
+//@line:18243
 
 		ext_glProgramUniformMatrix4x2fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -28355,7 +28341,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix3x4fv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18261
+//@line:18247
 
 		ext_glProgramUniformMatrix3x4fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -28366,7 +28352,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix4x3fv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18265
+//@line:18251
 
 		ext_glProgramUniformMatrix4x3fvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)(value + valueByteOffset));
 	
@@ -28376,7 +28362,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix4x3fv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1uiEXT(JNIEnv* env, jclass clazz, jint program, jint location, jint v0) {
 
 
-//@line:18269
+//@line:18255
 
 		ext_glProgramUniform1uiEXT((GLuint)program, (GLint)location, (GLuint)v0);
 	
@@ -28386,7 +28372,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1uiEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2uiEXT(JNIEnv* env, jclass clazz, jint program, jint location, jint v0, jint v1) {
 
 
-//@line:18273
+//@line:18259
 
 		ext_glProgramUniform2uiEXT((GLuint)program, (GLint)location, (GLuint)v0, (GLuint)v1);
 	
@@ -28396,7 +28382,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2uiEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3uiEXT(JNIEnv* env, jclass clazz, jint program, jint location, jint v0, jint v1, jint v2) {
 
 
-//@line:18277
+//@line:18263
 
 		ext_glProgramUniform3uiEXT((GLuint)program, (GLint)location, (GLuint)v0, (GLuint)v1, (GLuint)v2);
 	
@@ -28406,7 +28392,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3uiEXT(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4uiEXT(JNIEnv* env, jclass clazz, jint program, jint location, jint v0, jint v1, jint v2, jint v3) {
 
 
-//@line:18281
+//@line:18267
 
 		ext_glProgramUniform4uiEXT((GLuint)program, (GLint)location, (GLuint)v0, (GLuint)v1, (GLuint)v2, (GLuint)v3);
 	
@@ -28417,7 +28403,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1uivEXT(JNI
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18285
+//@line:18271
 
 		ext_glProgramUniform1uivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
@@ -28428,7 +28414,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2uivEXT(JNI
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18289
+//@line:18275
 
 		ext_glProgramUniform2uivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
@@ -28439,7 +28425,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3uivEXT(JNI
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18293
+//@line:18279
 
 		ext_glProgramUniform3uivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
@@ -28450,29 +28436,29 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4uivEXT(JNI
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18297
+//@line:18283
 
 		ext_glProgramUniform4uivEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint*)(value + valueByteOffset));
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedBufferDataEXT(JNIEnv* env, jclass clazz, jint buffer, jint size, jobject obj_data, jint dataByteOffset, jint usage) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedBufferDataEXT(JNIEnv* env, jclass clazz, jint buffer, jlong size, jobject obj_data, jint dataByteOffset, jint usage) {
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:18301
+//@line:18287
 
 		ext_glNamedBufferDataEXT((GLuint)buffer, (GLsizeiptr)size, (const GLvoid*)(data + dataByteOffset), (GLenum)usage);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedBufferSubDataEXT(JNIEnv* env, jclass clazz, jint buffer, jint offset, jint size, jobject obj_data, jint dataByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedBufferSubDataEXT(JNIEnv* env, jclass clazz, jint buffer, jlong offset, jlong size, jobject obj_data, jint dataByteOffset) {
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:18305
+//@line:18291
 
 		ext_glNamedBufferSubDataEXT((GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size, (const GLvoid*)(data + dataByteOffset));
 	
@@ -28482,7 +28468,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedBufferSubDataEXT(JNI
 JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glMapNamedBufferEXT(JNIEnv* env, jclass clazz, jint buffer, jint access, jlong bufferSize) {
 
 
-//@line:18309
+//@line:18295
 
 		GLvoid* bufferPtr = (GLvoid*)ext_glMapNamedBufferEXT((GLuint)buffer, (GLenum)access);
 		if(!bufferPtr) return 0;
@@ -28494,7 +28480,7 @@ JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glMapNamedBufferEXT(JNIE
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glUnmapNamedBufferEXT(JNIEnv* env, jclass clazz, jint buffer) {
 
 
-//@line:18315
+//@line:18301
 
 		return (jboolean)ext_glUnmapNamedBufferEXT((GLuint)buffer);
 	
@@ -28504,7 +28490,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glUnmapNamedBufferEXT(J
 JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glMapNamedBufferRangeEXT(JNIEnv* env, jclass clazz, jint buffer, jint offset, jint length, jint access, jint bufferSize) {
 
 
-//@line:18319
+//@line:18305
 
 		GLvoid* bufferPtr = (GLvoid*)ext_glMapNamedBufferRangeEXT((GLuint)buffer, (GLintptr)offset, (GLsizeiptr)length, (GLbitfield)access);
 		if(!bufferPtr) return 0;
@@ -28513,20 +28499,20 @@ JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glMapNamedBufferRangeEXT
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushMappedNamedBufferRangeEXT(JNIEnv* env, jclass clazz, jint buffer, jint offset, jint length) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushMappedNamedBufferRangeEXT(JNIEnv* env, jclass clazz, jint buffer, jlong offset, jlong length) {
 
 
-//@line:18325
+//@line:18311
 
 		ext_glFlushMappedNamedBufferRangeEXT((GLuint)buffer, (GLintptr)offset, (GLsizeiptr)length);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedCopyBufferSubDataEXT(JNIEnv* env, jclass clazz, jint readBuffer, jint writeBuffer, jint readOffset, jint writeOffset, jint size) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedCopyBufferSubDataEXT(JNIEnv* env, jclass clazz, jint readBuffer, jint writeBuffer, jlong readOffset, jlong writeOffset, jlong size) {
 
 
-//@line:18329
+//@line:18315
 
 		ext_glNamedCopyBufferSubDataEXT((GLuint)readBuffer, (GLuint)writeBuffer, (GLintptr)readOffset, (GLintptr)writeOffset, (GLsizeiptr)size);
 	
@@ -28537,7 +28523,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedBufferParameteriv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18333
+//@line:18319
 
 		ext_glGetNamedBufferParameterivEXT((GLuint)buffer, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -28548,18 +28534,18 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedBufferPointervEXT
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18337
+//@line:18323
 
 		ext_glGetNamedBufferPointervEXT((GLuint)buffer, (GLenum)pname, (GLvoid**)(params + paramsByteOffset));
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedBufferSubDataEXT(JNIEnv* env, jclass clazz, jint buffer, jint offset, jint size, jobject obj_data, jint dataByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedBufferSubDataEXT(JNIEnv* env, jclass clazz, jint buffer, jlong offset, jlong size, jobject obj_data, jint dataByteOffset) {
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:18341
+//@line:18327
 
 		ext_glGetNamedBufferSubDataEXT((GLuint)buffer, (GLintptr)offset, (GLsizeiptr)size, (GLvoid*)(data + dataByteOffset));
 	
@@ -28569,7 +28555,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedBufferSubDataEXT(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureBufferEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint internalformat, jint buffer) {
 
 
-//@line:18345
+//@line:18331
 
 		ext_glTextureBufferEXT((GLuint)texture, (GLenum)target, (GLenum)internalformat, (GLuint)buffer);
 	
@@ -28579,7 +28565,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureBufferEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexBufferEXT(JNIEnv* env, jclass clazz, jint texunit, jint target, jint internalformat, jint buffer) {
 
 
-//@line:18349
+//@line:18335
 
 		ext_glMultiTexBufferEXT((GLenum)texunit, (GLenum)target, (GLenum)internalformat, (GLuint)buffer);
 	
@@ -28589,7 +28575,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexBufferEXT(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedRenderbufferStorageEXT(JNIEnv* env, jclass clazz, jint renderbuffer, jint internalformat, jint width, jint height) {
 
 
-//@line:18353
+//@line:18339
 
 		ext_glNamedRenderbufferStorageEXT((GLuint)renderbuffer, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
 	
@@ -28600,7 +28586,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedRenderbufferParam
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18357
+//@line:18343
 
 		ext_glGetNamedRenderbufferParameterivEXT((GLuint)renderbuffer, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -28610,7 +28596,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedRenderbufferParam
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCheckNamedFramebufferStatusEXT(JNIEnv* env, jclass clazz, jint framebuffer, jint target) {
 
 
-//@line:18361
+//@line:18347
 
 		return (jint)ext_glCheckNamedFramebufferStatusEXT((GLuint)framebuffer, (GLenum)target);
 	
@@ -28620,7 +28606,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCheckNamedFramebufferStat
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedFramebufferTexture1DEXT(JNIEnv* env, jclass clazz, jint framebuffer, jint attachment, jint textarget, jint texture, jint level) {
 
 
-//@line:18365
+//@line:18351
 
 		ext_glNamedFramebufferTexture1DEXT((GLuint)framebuffer, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level);
 	
@@ -28630,7 +28616,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedFramebufferTexture1D
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedFramebufferTexture2DEXT(JNIEnv* env, jclass clazz, jint framebuffer, jint attachment, jint textarget, jint texture, jint level) {
 
 
-//@line:18369
+//@line:18355
 
 		ext_glNamedFramebufferTexture2DEXT((GLuint)framebuffer, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level);
 	
@@ -28640,7 +28626,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedFramebufferTexture2D
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedFramebufferTexture3DEXT(JNIEnv* env, jclass clazz, jint framebuffer, jint attachment, jint textarget, jint texture, jint level, jint zoffset) {
 
 
-//@line:18373
+//@line:18359
 
 		ext_glNamedFramebufferTexture3DEXT((GLuint)framebuffer, (GLenum)attachment, (GLenum)textarget, (GLuint)texture, (GLint)level, (GLint)zoffset);
 	
@@ -28650,7 +28636,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedFramebufferTexture3D
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedFramebufferRenderbufferEXT(JNIEnv* env, jclass clazz, jint framebuffer, jint attachment, jint renderbuffertarget, jint renderbuffer) {
 
 
-//@line:18377
+//@line:18363
 
 		ext_glNamedFramebufferRenderbufferEXT((GLuint)framebuffer, (GLenum)attachment, (GLenum)renderbuffertarget, (GLuint)renderbuffer);
 	
@@ -28661,7 +28647,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedFramebufferAttach
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18381
+//@line:18367
 
 		ext_glGetNamedFramebufferAttachmentParameterivEXT((GLuint)framebuffer, (GLenum)attachment, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -28671,7 +28657,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedFramebufferAttach
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenerateTextureMipmapEXT(JNIEnv* env, jclass clazz, jint texture, jint target) {
 
 
-//@line:18385
+//@line:18371
 
 		ext_glGenerateTextureMipmapEXT((GLuint)texture, (GLenum)target);
 	
@@ -28681,7 +28667,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenerateTextureMipmapEXT(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenerateMultiTexMipmapEXT(JNIEnv* env, jclass clazz, jint texunit, jint target) {
 
 
-//@line:18389
+//@line:18375
 
 		ext_glGenerateMultiTexMipmapEXT((GLenum)texunit, (GLenum)target);
 	
@@ -28691,7 +28677,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenerateMultiTexMipmapEXT
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferDrawBufferEXT(JNIEnv* env, jclass clazz, jint framebuffer, jint mode) {
 
 
-//@line:18393
+//@line:18379
 
 		ext_glFramebufferDrawBufferEXT((GLuint)framebuffer, (GLenum)mode);
 	
@@ -28702,7 +28688,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferDrawBuffersEXT
 	unsigned char* bufs = (unsigned char*)env->GetDirectBufferAddress(obj_bufs);
 
 
-//@line:18397
+//@line:18383
 
 		ext_glFramebufferDrawBuffersEXT((GLuint)framebuffer, (GLsizei)n, (const GLenum*)(bufs + bufsByteOffset));
 	
@@ -28712,7 +28698,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferDrawBuffersEXT
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFramebufferReadBufferEXT(JNIEnv* env, jclass clazz, jint framebuffer, jint mode) {
 
 
-//@line:18401
+//@line:18387
 
 		ext_glFramebufferReadBufferEXT((GLuint)framebuffer, (GLenum)mode);
 	
@@ -28723,7 +28709,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFramebufferParameteriv
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18405
+//@line:18391
 
 		ext_glGetFramebufferParameterivEXT((GLuint)framebuffer, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -28733,7 +28719,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetFramebufferParameteriv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedRenderbufferStorageMultisampleEXT(JNIEnv* env, jclass clazz, jint renderbuffer, jint samples, jint internalformat, jint width, jint height) {
 
 
-//@line:18409
+//@line:18395
 
 		ext_glNamedRenderbufferStorageMultisampleEXT((GLuint)renderbuffer, (GLsizei)samples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
 	
@@ -28743,7 +28729,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedRenderbufferStorageM
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedRenderbufferStorageMultisampleCoverageEXT(JNIEnv* env, jclass clazz, jint renderbuffer, jint coverageSamples, jint colorSamples, jint internalformat, jint width, jint height) {
 
 
-//@line:18413
+//@line:18399
 
 		ext_glNamedRenderbufferStorageMultisampleCoverageEXT((GLuint)renderbuffer, (GLsizei)coverageSamples, (GLsizei)colorSamples, (GLenum)internalformat, (GLsizei)width, (GLsizei)height);
 	
@@ -28753,7 +28739,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedRenderbufferStorageM
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedFramebufferTextureEXT(JNIEnv* env, jclass clazz, jint framebuffer, jint attachment, jint texture, jint level) {
 
 
-//@line:18417
+//@line:18403
 
 		ext_glNamedFramebufferTextureEXT((GLuint)framebuffer, (GLenum)attachment, (GLuint)texture, (GLint)level);
 	
@@ -28763,7 +28749,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedFramebufferTextureEX
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedFramebufferTextureLayerEXT(JNIEnv* env, jclass clazz, jint framebuffer, jint attachment, jint texture, jint level, jint layer) {
 
 
-//@line:18421
+//@line:18407
 
 		ext_glNamedFramebufferTextureLayerEXT((GLuint)framebuffer, (GLenum)attachment, (GLuint)texture, (GLint)level, (GLint)layer);
 	
@@ -28773,7 +28759,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedFramebufferTextureLa
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedFramebufferTextureFaceEXT(JNIEnv* env, jclass clazz, jint framebuffer, jint attachment, jint texture, jint level, jint face) {
 
 
-//@line:18425
+//@line:18411
 
 		ext_glNamedFramebufferTextureFaceEXT((GLuint)framebuffer, (GLenum)attachment, (GLuint)texture, (GLint)level, (GLenum)face);
 	
@@ -28783,7 +28769,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedFramebufferTextureFa
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureRenderbufferEXT(JNIEnv* env, jclass clazz, jint texture, jint target, jint renderbuffer) {
 
 
-//@line:18429
+//@line:18415
 
 		ext_glTextureRenderbufferEXT((GLuint)texture, (GLenum)target, (GLuint)renderbuffer);
 	
@@ -28793,7 +28779,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureRenderbufferEXT(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexRenderbufferEXT(JNIEnv* env, jclass clazz, jint texunit, jint target, jint renderbuffer) {
 
 
-//@line:18433
+//@line:18419
 
 		ext_glMultiTexRenderbufferEXT((GLenum)texunit, (GLenum)target, (GLuint)renderbuffer);
 	
@@ -28803,7 +28789,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiTexRenderbufferEXT(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1dEXT(JNIEnv* env, jclass clazz, jint program, jint location, jdouble x) {
 
 
-//@line:18437
+//@line:18423
 
 		ext_glProgramUniform1dEXT((GLuint)program, (GLint)location, (GLdouble)x);
 	
@@ -28813,7 +28799,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1dEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2dEXT(JNIEnv* env, jclass clazz, jint program, jint location, jdouble x, jdouble y) {
 
 
-//@line:18441
+//@line:18427
 
 		ext_glProgramUniform2dEXT((GLuint)program, (GLint)location, (GLdouble)x, (GLdouble)y);
 	
@@ -28823,7 +28809,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2dEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3dEXT(JNIEnv* env, jclass clazz, jint program, jint location, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:18445
+//@line:18431
 
 		ext_glProgramUniform3dEXT((GLuint)program, (GLint)location, (GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -28833,7 +28819,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3dEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4dEXT(JNIEnv* env, jclass clazz, jint program, jint location, jdouble x, jdouble y, jdouble z, jdouble w) {
 
 
-//@line:18449
+//@line:18435
 
 		ext_glProgramUniform4dEXT((GLuint)program, (GLint)location, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -28844,7 +28830,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1dvEXT(JNIE
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18453
+//@line:18439
 
 		ext_glProgramUniform1dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
 	
@@ -28855,7 +28841,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2dvEXT(JNIE
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18457
+//@line:18443
 
 		ext_glProgramUniform2dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
 	
@@ -28866,7 +28852,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3dvEXT(JNIE
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18461
+//@line:18447
 
 		ext_glProgramUniform3dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
 	
@@ -28877,7 +28863,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4dvEXT(JNIE
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18465
+//@line:18451
 
 		ext_glProgramUniform4dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (const GLdouble*)(value + valueByteOffset));
 	
@@ -28888,7 +28874,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix2dvEX
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18469
+//@line:18455
 
 		ext_glProgramUniformMatrix2dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -28899,7 +28885,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix3dvEX
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18473
+//@line:18459
 
 		ext_glProgramUniformMatrix3dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -28910,7 +28896,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix4dvEX
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18477
+//@line:18463
 
 		ext_glProgramUniformMatrix4dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -28921,7 +28907,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix2x3dv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18481
+//@line:18467
 
 		ext_glProgramUniformMatrix2x3dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -28932,7 +28918,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix2x4dv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18485
+//@line:18471
 
 		ext_glProgramUniformMatrix2x4dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -28943,7 +28929,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix3x2dv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18489
+//@line:18475
 
 		ext_glProgramUniformMatrix3x2dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -28954,7 +28940,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix3x4dv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18493
+//@line:18479
 
 		ext_glProgramUniformMatrix3x4dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -28965,7 +28951,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix4x2dv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18497
+//@line:18483
 
 		ext_glProgramUniformMatrix4x2dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -28976,7 +28962,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformMatrix4x3dv
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18501
+//@line:18487
 
 		ext_glProgramUniformMatrix4x3dvEXT((GLuint)program, (GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLdouble*)(value + valueByteOffset));
 	
@@ -28987,7 +28973,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultisamplefvNV(JNIEnv
 	unsigned char* val = (unsigned char*)env->GetDirectBufferAddress(obj_val);
 
 
-//@line:18505
+//@line:18491
 
 		ext_glGetMultisamplefvNV((GLenum)pname, (GLuint)index, (GLfloat*)(val + valByteOffset));
 	
@@ -28997,7 +28983,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetMultisamplefvNV(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSampleMaskIndexedNV(JNIEnv* env, jclass clazz, jint index, jint mask) {
 
 
-//@line:18509
+//@line:18495
 
 		ext_glSampleMaskIndexedNV((GLuint)index, (GLbitfield)mask);
 	
@@ -29007,7 +28993,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSampleMaskIndexedNV(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexRenderbufferNV(JNIEnv* env, jclass clazz, jint target, jint renderbuffer) {
 
 
-//@line:18513
+//@line:18499
 
 		ext_glTexRenderbufferNV((GLenum)target, (GLuint)renderbuffer);
 	
@@ -29017,7 +29003,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexRenderbufferNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindTransformFeedbackNV(JNIEnv* env, jclass clazz, jint target, jint id) {
 
 
-//@line:18517
+//@line:18503
 
 		ext_glBindTransformFeedbackNV((GLenum)target, (GLuint)id);
 	
@@ -29028,7 +29014,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteTransformFeedbacksN
 	unsigned char* ids = (unsigned char*)env->GetDirectBufferAddress(obj_ids);
 
 
-//@line:18521
+//@line:18507
 
 		ext_glDeleteTransformFeedbacksNV((GLsizei)n, (const GLuint*)(ids + idsByteOffset));
 	
@@ -29039,7 +29025,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenTransformFeedbacksNV(J
 	unsigned char* ids = (unsigned char*)env->GetDirectBufferAddress(obj_ids);
 
 
-//@line:18525
+//@line:18511
 
 		ext_glGenTransformFeedbacksNV((GLsizei)n, (GLuint*)(ids + idsByteOffset));
 	
@@ -29049,7 +29035,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenTransformFeedbacksNV(J
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsTransformFeedbackNV(JNIEnv* env, jclass clazz, jint id) {
 
 
-//@line:18529
+//@line:18515
 
 		return (jboolean)ext_glIsTransformFeedbackNV((GLuint)id);
 	
@@ -29059,7 +29045,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsTransformFeedbackNV
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPauseTransformFeedbackNV(JNIEnv* env, jclass clazz) {
 
 
-//@line:18533
+//@line:18519
 
 		ext_glPauseTransformFeedbackNV();
 	
@@ -29069,7 +29055,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPauseTransformFeedbackNV(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glResumeTransformFeedbackNV(JNIEnv* env, jclass clazz) {
 
 
-//@line:18537
+//@line:18523
 
 		ext_glResumeTransformFeedbackNV();
 	
@@ -29079,7 +29065,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glResumeTransformFeedbackNV
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawTransformFeedbackNV(JNIEnv* env, jclass clazz, jint mode, jint id) {
 
 
-//@line:18541
+//@line:18527
 
 		ext_glDrawTransformFeedbackNV((GLenum)mode, (GLuint)id);
 	
@@ -29091,7 +29077,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPerfMonitorGroupsAMD(J
 	unsigned char* groups = (unsigned char*)env->GetDirectBufferAddress(obj_groups);
 
 
-//@line:18545
+//@line:18531
 
 		ext_glGetPerfMonitorGroupsAMD((GLint*)(numGroups + numGroupsByteOffset), (GLsizei)groupsSize, (GLuint*)(groups + groupsByteOffset));
 	
@@ -29104,7 +29090,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPerfMonitorCountersAMD
 	unsigned char* counters = (unsigned char*)env->GetDirectBufferAddress(obj_counters);
 
 
-//@line:18549
+//@line:18535
 
 		ext_glGetPerfMonitorCountersAMD((GLuint)group, (GLint*)(numCounters + numCountersByteOffset), (GLint*)(maxActiveCounters + maxActiveCountersByteOffset), (GLsizei)counterSize, (GLuint*)(counters + countersByteOffset));
 	
@@ -29116,7 +29102,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPerfMonitorGroupString
 	unsigned char* groupString = (unsigned char*)env->GetDirectBufferAddress(obj_groupString);
 
 
-//@line:18553
+//@line:18539
 
 		ext_glGetPerfMonitorGroupStringAMD((GLuint)group, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(groupString + groupStringByteOffset));
 	
@@ -29128,7 +29114,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPerfMonitorCounterStri
 	unsigned char* counterString = (unsigned char*)env->GetDirectBufferAddress(obj_counterString);
 
 
-//@line:18557
+//@line:18543
 
 		ext_glGetPerfMonitorCounterStringAMD((GLuint)group, (GLuint)counter, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(counterString + counterStringByteOffset));
 	
@@ -29139,7 +29125,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPerfMonitorCounterInfo
 	unsigned char* data = (unsigned char*)env->GetDirectBufferAddress(obj_data);
 
 
-//@line:18561
+//@line:18547
 
 		ext_glGetPerfMonitorCounterInfoAMD((GLuint)group, (GLuint)counter, (GLenum)pname, (GLvoid*)(data + dataByteOffset));
 	
@@ -29150,7 +29136,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenPerfMonitorsAMD(JNIEnv
 	unsigned char* monitors = (unsigned char*)env->GetDirectBufferAddress(obj_monitors);
 
 
-//@line:18565
+//@line:18551
 
 		ext_glGenPerfMonitorsAMD((GLsizei)n, (GLuint*)(monitors + monitorsByteOffset));
 	
@@ -29161,7 +29147,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeletePerfMonitorsAMD(JNI
 	unsigned char* monitors = (unsigned char*)env->GetDirectBufferAddress(obj_monitors);
 
 
-//@line:18569
+//@line:18555
 
 		ext_glDeletePerfMonitorsAMD((GLsizei)n, (GLuint*)(monitors + monitorsByteOffset));
 	
@@ -29172,7 +29158,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSelectPerfMonitorCounters
 	unsigned char* counterList = (unsigned char*)env->GetDirectBufferAddress(obj_counterList);
 
 
-//@line:18573
+//@line:18559
 
 		ext_glSelectPerfMonitorCountersAMD((GLuint)monitor, (GLboolean)enable, (GLuint)group, (GLint)numCounters, (GLuint*)(counterList + counterListByteOffset));
 	
@@ -29182,7 +29168,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSelectPerfMonitorCounters
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginPerfMonitorAMD(JNIEnv* env, jclass clazz, jint monitor) {
 
 
-//@line:18577
+//@line:18563
 
 		ext_glBeginPerfMonitorAMD((GLuint)monitor);
 	
@@ -29192,7 +29178,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginPerfMonitorAMD(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndPerfMonitorAMD(JNIEnv* env, jclass clazz, jint monitor) {
 
 
-//@line:18581
+//@line:18567
 
 		ext_glEndPerfMonitorAMD((GLuint)monitor);
 	
@@ -29204,7 +29190,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPerfMonitorCounterData
 	unsigned char* bytesWritten = (unsigned char*)env->GetDirectBufferAddress(obj_bytesWritten);
 
 
-//@line:18585
+//@line:18571
 
 		ext_glGetPerfMonitorCounterDataAMD((GLuint)monitor, (GLenum)pname, (GLsizei)dataSize, (GLuint*)(data + dataByteOffset), (GLint*)(bytesWritten + bytesWrittenByteOffset));
 	
@@ -29214,7 +29200,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPerfMonitorCounterData
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTessellationFactorAMD(JNIEnv* env, jclass clazz, jfloat factor) {
 
 
-//@line:18589
+//@line:18575
 
 		ext_glTessellationFactorAMD((GLfloat)factor);
 	
@@ -29224,7 +29210,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTessellationFactorAMD(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTessellationModeAMD(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:18593
+//@line:18579
 
 		ext_glTessellationModeAMD((GLenum)mode);
 	
@@ -29234,7 +29220,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTessellationModeAMD(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProvokingVertexEXT(JNIEnv* env, jclass clazz, jint mode) {
 
 
-//@line:18597
+//@line:18583
 
 		ext_glProvokingVertexEXT((GLenum)mode);
 	
@@ -29244,7 +29230,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProvokingVertexEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFuncIndexedAMD(JNIEnv* env, jclass clazz, jint buf, jint src, jint dst) {
 
 
-//@line:18601
+//@line:18587
 
 		ext_glBlendFuncIndexedAMD((GLuint)buf, (GLenum)src, (GLenum)dst);
 	
@@ -29254,7 +29240,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFuncIndexedAMD(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFuncSeparateIndexedAMD(JNIEnv* env, jclass clazz, jint buf, jint srcRGB, jint dstRGB, jint srcAlpha, jint dstAlpha) {
 
 
-//@line:18605
+//@line:18591
 
 		ext_glBlendFuncSeparateIndexedAMD((GLuint)buf, (GLenum)srcRGB, (GLenum)dstRGB, (GLenum)srcAlpha, (GLenum)dstAlpha);
 	
@@ -29264,7 +29250,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendFuncSeparateIndexedA
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationIndexedAMD(JNIEnv* env, jclass clazz, jint buf, jint mode) {
 
 
-//@line:18609
+//@line:18595
 
 		ext_glBlendEquationIndexedAMD((GLuint)buf, (GLenum)mode);
 	
@@ -29274,7 +29260,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationIndexedAMD(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBlendEquationSeparateIndexedAMD(JNIEnv* env, jclass clazz, jint buf, jint modeRGB, jint modeAlpha) {
 
 
-//@line:18613
+//@line:18599
 
 		ext_glBlendEquationSeparateIndexedAMD((GLuint)buf, (GLenum)modeRGB, (GLenum)modeAlpha);
 	
@@ -29285,7 +29271,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureRangeAPPLE(JNIEnv*
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:18617
+//@line:18603
 
 		ext_glTextureRangeAPPLE((GLenum)target, (GLsizei)length, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -29296,7 +29282,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexParameterPointervAP
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18621
+//@line:18607
 
 		ext_glGetTexParameterPointervAPPLE((GLenum)target, (GLenum)pname, (GLvoid**)(params + paramsByteOffset));
 	
@@ -29306,7 +29292,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTexParameterPointervAP
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnableVertexAttribAPPLE(JNIEnv* env, jclass clazz, jint index, jint pname) {
 
 
-//@line:18625
+//@line:18611
 
 		ext_glEnableVertexAttribAPPLE((GLuint)index, (GLenum)pname);
 	
@@ -29316,7 +29302,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnableVertexAttribAPPLE(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDisableVertexAttribAPPLE(JNIEnv* env, jclass clazz, jint index, jint pname) {
 
 
-//@line:18629
+//@line:18615
 
 		ext_glDisableVertexAttribAPPLE((GLuint)index, (GLenum)pname);
 	
@@ -29326,7 +29312,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDisableVertexAttribAPPLE(
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsVertexAttribEnabledAPPLE(JNIEnv* env, jclass clazz, jint index, jint pname) {
 
 
-//@line:18633
+//@line:18619
 
 		return (jboolean)ext_glIsVertexAttribEnabledAPPLE((GLuint)index, (GLenum)pname);
 	
@@ -29337,7 +29323,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapVertexAttrib1dAPPLE(JN
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:18637
+//@line:18623
 
 		ext_glMapVertexAttrib1dAPPLE((GLuint)index, (GLuint)size, (GLdouble)u1, (GLdouble)u2, (GLint)stride, (GLint)order, (const GLdouble*)(points + pointsByteOffset));
 	
@@ -29348,7 +29334,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapVertexAttrib1fAPPLE(JN
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:18641
+//@line:18627
 
 		ext_glMapVertexAttrib1fAPPLE((GLuint)index, (GLuint)size, (GLfloat)u1, (GLfloat)u2, (GLint)stride, (GLint)order, (const GLfloat*)(points + pointsByteOffset));
 	
@@ -29359,7 +29345,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapVertexAttrib2dAPPLE(JN
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:18645
+//@line:18631
 
 		ext_glMapVertexAttrib2dAPPLE((GLuint)index, (GLuint)size, (GLdouble)u1, (GLdouble)u2, (GLint)ustride, (GLint)uorder, (GLdouble)v1, (GLdouble)v2, (GLint)vstride, (GLint)vorder, (const GLdouble*)(points + pointsByteOffset));
 	
@@ -29370,7 +29356,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapVertexAttrib2fAPPLE(JN
 	unsigned char* points = (unsigned char*)env->GetDirectBufferAddress(obj_points);
 
 
-//@line:18649
+//@line:18635
 
 		ext_glMapVertexAttrib2fAPPLE((GLuint)index, (GLuint)size, (GLfloat)u1, (GLfloat)u2, (GLint)ustride, (GLint)uorder, (GLfloat)v1, (GLfloat)v2, (GLint)vstride, (GLint)vorder, (const GLfloat*)(points + pointsByteOffset));
 	
@@ -29380,7 +29366,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMapVertexAttrib2fAPPLE(JN
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glObjectPurgeableAPPLE(JNIEnv* env, jclass clazz, jint objectType, jint name, jint option) {
 
 
-//@line:18653
+//@line:18639
 
 		return (jint)ext_glObjectPurgeableAPPLE((GLenum)objectType, (GLuint)name, (GLenum)option);
 	
@@ -29390,7 +29376,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glObjectPurgeableAPPLE(JNIE
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glObjectUnpurgeableAPPLE(JNIEnv* env, jclass clazz, jint objectType, jint name, jint option) {
 
 
-//@line:18657
+//@line:18643
 
 		return (jint)ext_glObjectUnpurgeableAPPLE((GLenum)objectType, (GLuint)name, (GLenum)option);
 	
@@ -29401,7 +29387,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterivAPPLE
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18661
+//@line:18647
 
 		ext_glGetObjectParameterivAPPLE((GLenum)objectType, (GLuint)name, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -29411,17 +29397,17 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterivAPPLE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginVideoCaptureNV(JNIEnv* env, jclass clazz, jint video_capture_slot) {
 
 
-//@line:18665
+//@line:18651
 
 		ext_glBeginVideoCaptureNV((GLuint)video_capture_slot);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindVideoCaptureStreamBufferNV(JNIEnv* env, jclass clazz, jint video_capture_slot, jint stream, jint frame_region, jint offset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindVideoCaptureStreamBufferNV(JNIEnv* env, jclass clazz, jint video_capture_slot, jint stream, jint frame_region, jlong offset) {
 
 
-//@line:18669
+//@line:18655
 
 		ext_glBindVideoCaptureStreamBufferNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)frame_region, (GLintptrARB)offset);
 	
@@ -29431,7 +29417,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindVideoCaptureStreamBuf
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindVideoCaptureStreamTextureNV(JNIEnv* env, jclass clazz, jint video_capture_slot, jint stream, jint frame_region, jint target, jint texture) {
 
 
-//@line:18673
+//@line:18659
 
 		ext_glBindVideoCaptureStreamTextureNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)frame_region, (GLenum)target, (GLuint)texture);
 	
@@ -29441,7 +29427,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindVideoCaptureStreamTex
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndVideoCaptureNV(JNIEnv* env, jclass clazz, jint video_capture_slot) {
 
 
-//@line:18677
+//@line:18663
 
 		ext_glEndVideoCaptureNV((GLuint)video_capture_slot);
 	
@@ -29452,7 +29438,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVideoCaptureivNV(JNIEn
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18681
+//@line:18667
 
 		ext_glGetVideoCaptureivNV((GLuint)video_capture_slot, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -29463,7 +29449,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVideoCaptureStreamivNV
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18685
+//@line:18671
 
 		ext_glGetVideoCaptureStreamivNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	
@@ -29474,7 +29460,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVideoCaptureStreamfvNV
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18689
+//@line:18675
 
 		ext_glGetVideoCaptureStreamfvNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	
@@ -29485,7 +29471,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVideoCaptureStreamdvNV
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18693
+//@line:18679
 
 		ext_glGetVideoCaptureStreamdvNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
 	
@@ -29495,7 +29481,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVideoCaptureStreamdvNV
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glVideoCaptureNV
 (JNIEnv* env, jclass clazz, jint video_capture_slot, jobject obj_sequence_num, jint sequence_numByteOffset, jobject obj_capture_time, jint capture_timeByteOffset, unsigned char* sequence_num, unsigned char* capture_time) {
 
-//@line:18697
+//@line:18683
 
 		return (jint)ext_glVideoCaptureNV((GLuint)video_capture_slot, (GLuint*)(sequence_num + sequence_numByteOffset), (GLuint64EXT*)(capture_time + capture_timeByteOffset));
 	
@@ -29515,7 +29501,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVideoCaptureStreamParamet
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18701
+//@line:18687
 
 		ext_glVideoCaptureStreamParameterivNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)pname, (const GLint*)(params + paramsByteOffset));
 	
@@ -29526,7 +29512,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVideoCaptureStreamParamet
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18705
+//@line:18691
 
 		ext_glVideoCaptureStreamParameterfvNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)pname, (const GLfloat*)(params + paramsByteOffset));
 	
@@ -29537,7 +29523,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVideoCaptureStreamParamet
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18709
+//@line:18695
 
 		ext_glVideoCaptureStreamParameterdvNV((GLuint)video_capture_slot, (GLuint)stream, (GLenum)pname, (const GLdouble*)(params + paramsByteOffset));
 	
@@ -29547,7 +29533,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVideoCaptureStreamParamet
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyImageSubDataNV(JNIEnv* env, jclass clazz, jint srcName, jint srcTarget, jint srcLevel, jint srcX, jint srcY, jint srcZ, jint dstName, jint dstTarget, jint dstLevel, jint dstX, jint dstY, jint dstZ, jint width, jint height, jint depth) {
 
 
-//@line:18713
+//@line:18699
 
 		ext_glCopyImageSubDataNV((GLuint)srcName, (GLenum)srcTarget, (GLint)srcLevel, (GLint)srcX, (GLint)srcY, (GLint)srcZ, (GLuint)dstName, (GLenum)dstTarget, (GLint)dstLevel, (GLint)dstX, (GLint)dstY, (GLint)dstZ, (GLsizei)width, (GLsizei)height, (GLsizei)depth);
 	
@@ -29557,7 +29543,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyImageSubDataNV(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUseShaderProgramEXT(JNIEnv* env, jclass clazz, jint type, jint program) {
 
 
-//@line:18717
+//@line:18703
 
 		ext_glUseShaderProgramEXT((GLenum)type, (GLuint)program);
 	
@@ -29567,7 +29553,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUseShaderProgramEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glActiveProgramEXT(JNIEnv* env, jclass clazz, jint program) {
 
 
-//@line:18721
+//@line:18707
 
 		ext_glActiveProgramEXT((GLuint)program);
 	
@@ -29577,7 +29563,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glActiveProgramEXT(JNIEnv* 
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glCreateShaderProgramEXT
 (JNIEnv* env, jclass clazz, jint type, jobject obj_string, jint stringByteOffset, unsigned char* string) {
 
-//@line:18725
+//@line:18711
 
 		return (jint)ext_glCreateShaderProgramEXT((GLenum)type, (const GLchar*)(string + stringByteOffset));
 	
@@ -29595,7 +29581,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCreateShaderProgramEXT(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeBufferResidentNV(JNIEnv* env, jclass clazz, jint target, jint access) {
 
 
-//@line:18729
+//@line:18715
 
 		ext_glMakeBufferResidentNV((GLenum)target, (GLenum)access);
 	
@@ -29605,7 +29591,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeBufferResidentNV(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeBufferNonResidentNV(JNIEnv* env, jclass clazz, jint target) {
 
 
-//@line:18733
+//@line:18719
 
 		ext_glMakeBufferNonResidentNV((GLenum)target);
 	
@@ -29615,7 +29601,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeBufferNonResidentNV(J
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsBufferResidentNV(JNIEnv* env, jclass clazz, jint target) {
 
 
-//@line:18737
+//@line:18723
 
 		return (jboolean)ext_glIsBufferResidentNV((GLenum)target);
 	
@@ -29625,7 +29611,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsBufferResidentNV(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeNamedBufferResidentNV(JNIEnv* env, jclass clazz, jint buffer, jint access) {
 
 
-//@line:18741
+//@line:18727
 
 		ext_glMakeNamedBufferResidentNV((GLuint)buffer, (GLenum)access);
 	
@@ -29635,7 +29621,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeNamedBufferResidentNV
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeNamedBufferNonResidentNV(JNIEnv* env, jclass clazz, jint buffer) {
 
 
-//@line:18745
+//@line:18731
 
 		ext_glMakeNamedBufferNonResidentNV((GLuint)buffer);
 	
@@ -29645,7 +29631,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeNamedBufferNonResiden
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsNamedBufferResidentNV(JNIEnv* env, jclass clazz, jint buffer) {
 
 
-//@line:18749
+//@line:18735
 
 		return (jboolean)ext_glIsNamedBufferResidentNV((GLuint)buffer);
 	
@@ -29656,7 +29642,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferParameterui64vNV
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18753
+//@line:18739
 
 		ext_glGetBufferParameterui64vNV((GLenum)target, (GLenum)pname, (GLuint64EXT*)(params + paramsByteOffset));
 	
@@ -29667,7 +29653,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedBufferParameterui
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18757
+//@line:18743
 
 		ext_glGetNamedBufferParameterui64vNV((GLuint)buffer, (GLenum)pname, (GLuint64EXT*)(params + paramsByteOffset));
 	
@@ -29678,7 +29664,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetIntegerui64vNV(JNIEnv*
 	unsigned char* result = (unsigned char*)env->GetDirectBufferAddress(obj_result);
 
 
-//@line:18761
+//@line:18747
 
 		ext_glGetIntegerui64vNV((GLenum)value, (GLuint64EXT*)(result + resultByteOffset));
 	
@@ -29688,7 +29674,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetIntegerui64vNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformui64NV(JNIEnv* env, jclass clazz, jint location, jlong value) {
 
 
-//@line:18765
+//@line:18751
 
 		ext_glUniformui64NV((GLint)location, (GLuint64EXT)value);
 	
@@ -29699,7 +29685,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformui64vNV(JNIEnv* en
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18769
+//@line:18755
 
 		ext_glUniformui64vNV((GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
 	
@@ -29710,7 +29696,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformui64vNV(JNIEnv*
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18773
+//@line:18759
 
 		ext_glGetUniformui64vNV((GLuint)program, (GLint)location, (GLuint64EXT*)(params + paramsByteOffset));
 	
@@ -29720,7 +29706,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformui64vNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformui64NV(JNIEnv* env, jclass clazz, jint program, jint location, jlong value) {
 
 
-//@line:18777
+//@line:18763
 
 		ext_glProgramUniformui64NV((GLuint)program, (GLint)location, (GLuint64EXT)value);
 	
@@ -29731,17 +29717,17 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformui64vNV(JNI
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18781
+//@line:18767
 
 		ext_glProgramUniformui64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferAddressRangeNV(JNIEnv* env, jclass clazz, jint pname, jint index, jlong address, jint length) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferAddressRangeNV(JNIEnv* env, jclass clazz, jint pname, jint index, jlong address, jlong length) {
 
 
-//@line:18785
+//@line:18771
 
 		ext_glBufferAddressRangeNV((GLenum)pname, (GLuint)index, (GLuint64EXT)address, (GLsizeiptr)length);
 	
@@ -29751,7 +29737,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferAddressRangeNV(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexFormatNV(JNIEnv* env, jclass clazz, jint size, jint type, jint stride) {
 
 
-//@line:18789
+//@line:18775
 
 		ext_glVertexFormatNV((GLint)size, (GLenum)type, (GLsizei)stride);
 	
@@ -29761,7 +29747,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexFormatNV(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalFormatNV(JNIEnv* env, jclass clazz, jint type, jint stride) {
 
 
-//@line:18793
+//@line:18779
 
 		ext_glNormalFormatNV((GLenum)type, (GLsizei)stride);
 	
@@ -29771,7 +29757,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNormalFormatNV(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorFormatNV(JNIEnv* env, jclass clazz, jint size, jint type, jint stride) {
 
 
-//@line:18797
+//@line:18783
 
 		ext_glColorFormatNV((GLint)size, (GLenum)type, (GLsizei)stride);
 	
@@ -29781,7 +29767,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glColorFormatNV(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexFormatNV(JNIEnv* env, jclass clazz, jint type, jint stride) {
 
 
-//@line:18801
+//@line:18787
 
 		ext_glIndexFormatNV((GLenum)type, (GLsizei)stride);
 	
@@ -29791,7 +29777,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glIndexFormatNV(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordFormatNV(JNIEnv* env, jclass clazz, jint size, jint type, jint stride) {
 
 
-//@line:18805
+//@line:18791
 
 		ext_glTexCoordFormatNV((GLint)size, (GLenum)type, (GLsizei)stride);
 	
@@ -29801,7 +29787,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexCoordFormatNV(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEdgeFlagFormatNV(JNIEnv* env, jclass clazz, jint stride) {
 
 
-//@line:18809
+//@line:18795
 
 		ext_glEdgeFlagFormatNV((GLsizei)stride);
 	
@@ -29811,7 +29797,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEdgeFlagFormatNV(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColorFormatNV(JNIEnv* env, jclass clazz, jint size, jint type, jint stride) {
 
 
-//@line:18813
+//@line:18799
 
 		ext_glSecondaryColorFormatNV((GLint)size, (GLenum)type, (GLsizei)stride);
 	
@@ -29821,7 +29807,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSecondaryColorFormatNV(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordFormatNV(JNIEnv* env, jclass clazz, jint type, jint stride) {
 
 
-//@line:18817
+//@line:18803
 
 		ext_glFogCoordFormatNV((GLenum)type, (GLsizei)stride);
 	
@@ -29831,7 +29817,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFogCoordFormatNV(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribFormatNV(JNIEnv* env, jclass clazz, jint index, jint size, jint type, jboolean normalized, jint stride) {
 
 
-//@line:18821
+//@line:18807
 
 		ext_glVertexAttribFormatNV((GLuint)index, (GLint)size, (GLenum)type, (GLboolean)normalized, (GLsizei)stride);
 	
@@ -29841,7 +29827,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribFormatNV(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribIFormatNV(JNIEnv* env, jclass clazz, jint index, jint size, jint type, jint stride) {
 
 
-//@line:18825
+//@line:18811
 
 		ext_glVertexAttribIFormatNV((GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride);
 	
@@ -29851,7 +29837,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribIFormatNV(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureBarrierNV(JNIEnv* env, jclass clazz) {
 
 
-//@line:18829
+//@line:18815
 
 		ext_glTextureBarrierNV();
 	
@@ -29861,7 +29847,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureBarrierNV(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindImageTextureEXT(JNIEnv* env, jclass clazz, jint index, jint texture, jint level, jboolean layered, jint layer, jint access, jint format) {
 
 
-//@line:18833
+//@line:18819
 
 		ext_glBindImageTextureEXT((GLuint)index, (GLuint)texture, (GLint)level, (GLboolean)layered, (GLint)layer, (GLenum)access, (GLint)format);
 	
@@ -29871,7 +29857,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindImageTextureEXT(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMemoryBarrierEXT(JNIEnv* env, jclass clazz, jint barriers) {
 
 
-//@line:18837
+//@line:18823
 
 		ext_glMemoryBarrierEXT((GLbitfield)barriers);
 	
@@ -29881,7 +29867,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMemoryBarrierEXT(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL1dEXT(JNIEnv* env, jclass clazz, jint index, jdouble x) {
 
 
-//@line:18841
+//@line:18827
 
 		ext_glVertexAttribL1dEXT((GLuint)index, (GLdouble)x);
 	
@@ -29891,7 +29877,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL1dEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL2dEXT(JNIEnv* env, jclass clazz, jint index, jdouble x, jdouble y) {
 
 
-//@line:18845
+//@line:18831
 
 		ext_glVertexAttribL2dEXT((GLuint)index, (GLdouble)x, (GLdouble)y);
 	
@@ -29901,7 +29887,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL2dEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL3dEXT(JNIEnv* env, jclass clazz, jint index, jdouble x, jdouble y, jdouble z) {
 
 
-//@line:18849
+//@line:18835
 
 		ext_glVertexAttribL3dEXT((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z);
 	
@@ -29911,7 +29897,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL3dEXT(JNIEnv
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL4dEXT(JNIEnv* env, jclass clazz, jint index, jdouble x, jdouble y, jdouble z, jdouble w) {
 
 
-//@line:18853
+//@line:18839
 
 		ext_glVertexAttribL4dEXT((GLuint)index, (GLdouble)x, (GLdouble)y, (GLdouble)z, (GLdouble)w);
 	
@@ -29922,7 +29908,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL1dvEXT(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:18857
+//@line:18843
 
 		ext_glVertexAttribL1dvEXT((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -29933,7 +29919,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL2dvEXT(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:18861
+//@line:18847
 
 		ext_glVertexAttribL2dvEXT((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -29944,7 +29930,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL3dvEXT(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:18865
+//@line:18851
 
 		ext_glVertexAttribL3dvEXT((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -29955,7 +29941,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL4dvEXT(JNIEn
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:18869
+//@line:18855
 
 		ext_glVertexAttribL4dvEXT((GLuint)index, (const GLdouble*)(v + vByteOffset));
 	
@@ -29966,7 +29952,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribLPointerEXT(J
 	unsigned char* pointer = (unsigned char*)env->GetDirectBufferAddress(obj_pointer);
 
 
-//@line:18873
+//@line:18859
 
 		ext_glVertexAttribLPointerEXT((GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride, (const GLvoid*)(pointer + pointerByteOffset));
 	
@@ -29977,17 +29963,17 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribLdvEXT(JNI
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18877
+//@line:18863
 
 		ext_glGetVertexAttribLdvEXT((GLuint)index, (GLenum)pname, (GLdouble*)(params + paramsByteOffset));
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayVertexAttribLOffsetEXT(JNIEnv* env, jclass clazz, jint vaobj, jint buffer, jint index, jint size, jint type, jint stride, jint offset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayVertexAttribLOffsetEXT(JNIEnv* env, jclass clazz, jint vaobj, jint buffer, jint index, jint size, jint type, jint stride, jlong offset) {
 
 
-//@line:18881
+//@line:18867
 
 		ext_glVertexArrayVertexAttribLOffsetEXT((GLuint)vaobj, (GLuint)buffer, (GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride, (GLintptr)offset);
 	
@@ -29998,7 +29984,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramSubroutineParamete
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18885
+//@line:18871
 
 		ext_glProgramSubroutineParametersuivNV((GLenum)target, (GLsizei)count, (const GLuint*)(params + paramsByteOffset));
 	
@@ -30009,7 +29995,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramSubroutineParam
 	unsigned char* param = (unsigned char*)env->GetDirectBufferAddress(obj_param);
 
 
-//@line:18889
+//@line:18875
 
 		ext_glGetProgramSubroutineParameteruivNV((GLenum)target, (GLuint)index, (GLuint*)(param + paramByteOffset));
 	
@@ -30019,7 +30005,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramSubroutineParam
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1i64NV(JNIEnv* env, jclass clazz, jint location, jlong x) {
 
 
-//@line:18893
+//@line:18879
 
 		ext_glUniform1i64NV((GLint)location, (GLint64EXT)x);
 	
@@ -30029,7 +30015,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1i64NV(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2i64NV(JNIEnv* env, jclass clazz, jint location, jlong x, jlong y) {
 
 
-//@line:18897
+//@line:18883
 
 		ext_glUniform2i64NV((GLint)location, (GLint64EXT)x, (GLint64EXT)y);
 	
@@ -30039,7 +30025,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2i64NV(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3i64NV(JNIEnv* env, jclass clazz, jint location, jlong x, jlong y, jlong z) {
 
 
-//@line:18901
+//@line:18887
 
 		ext_glUniform3i64NV((GLint)location, (GLint64EXT)x, (GLint64EXT)y, (GLint64EXT)z);
 	
@@ -30049,7 +30035,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3i64NV(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4i64NV(JNIEnv* env, jclass clazz, jint location, jlong x, jlong y, jlong z, jlong w) {
 
 
-//@line:18905
+//@line:18891
 
 		ext_glUniform4i64NV((GLint)location, (GLint64EXT)x, (GLint64EXT)y, (GLint64EXT)z, (GLint64EXT)w);
 	
@@ -30060,7 +30046,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1i64vNV(JNIEnv* en
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18909
+//@line:18895
 
 		ext_glUniform1i64vNV((GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
 	
@@ -30071,7 +30057,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2i64vNV(JNIEnv* en
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18913
+//@line:18899
 
 		ext_glUniform2i64vNV((GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
 	
@@ -30082,7 +30068,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3i64vNV(JNIEnv* en
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18917
+//@line:18903
 
 		ext_glUniform3i64vNV((GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
 	
@@ -30093,7 +30079,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4i64vNV(JNIEnv* en
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18921
+//@line:18907
 
 		ext_glUniform4i64vNV((GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
 	
@@ -30103,7 +30089,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4i64vNV(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1ui64NV(JNIEnv* env, jclass clazz, jint location, jlong x) {
 
 
-//@line:18925
+//@line:18911
 
 		ext_glUniform1ui64NV((GLint)location, (GLuint64EXT)x);
 	
@@ -30113,7 +30099,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1ui64NV(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2ui64NV(JNIEnv* env, jclass clazz, jint location, jlong x, jlong y) {
 
 
-//@line:18929
+//@line:18915
 
 		ext_glUniform2ui64NV((GLint)location, (GLuint64EXT)x, (GLuint64EXT)y);
 	
@@ -30123,7 +30109,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2ui64NV(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3ui64NV(JNIEnv* env, jclass clazz, jint location, jlong x, jlong y, jlong z) {
 
 
-//@line:18933
+//@line:18919
 
 		ext_glUniform3ui64NV((GLint)location, (GLuint64EXT)x, (GLuint64EXT)y, (GLuint64EXT)z);
 	
@@ -30133,7 +30119,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3ui64NV(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4ui64NV(JNIEnv* env, jclass clazz, jint location, jlong x, jlong y, jlong z, jlong w) {
 
 
-//@line:18937
+//@line:18923
 
 		ext_glUniform4ui64NV((GLint)location, (GLuint64EXT)x, (GLuint64EXT)y, (GLuint64EXT)z, (GLuint64EXT)w);
 	
@@ -30144,7 +30130,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform1ui64vNV(JNIEnv* e
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18941
+//@line:18927
 
 		ext_glUniform1ui64vNV((GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
 	
@@ -30155,7 +30141,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform2ui64vNV(JNIEnv* e
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18945
+//@line:18931
 
 		ext_glUniform2ui64vNV((GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
 	
@@ -30166,7 +30152,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform3ui64vNV(JNIEnv* e
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18949
+//@line:18935
 
 		ext_glUniform3ui64vNV((GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
 	
@@ -30177,7 +30163,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniform4ui64vNV(JNIEnv* e
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18953
+//@line:18939
 
 		ext_glUniform4ui64vNV((GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
 	
@@ -30188,7 +30174,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformi64vNV(JNIEnv* 
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:18957
+//@line:18943
 
 		ext_glGetUniformi64vNV((GLuint)program, (GLint)location, (GLint64EXT*)(params + paramsByteOffset));
 	
@@ -30198,7 +30184,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformi64vNV(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1i64NV(JNIEnv* env, jclass clazz, jint program, jint location, jlong x) {
 
 
-//@line:18961
+//@line:18947
 
 		ext_glProgramUniform1i64NV((GLuint)program, (GLint)location, (GLint64EXT)x);
 	
@@ -30208,7 +30194,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1i64NV(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2i64NV(JNIEnv* env, jclass clazz, jint program, jint location, jlong x, jlong y) {
 
 
-//@line:18965
+//@line:18951
 
 		ext_glProgramUniform2i64NV((GLuint)program, (GLint)location, (GLint64EXT)x, (GLint64EXT)y);
 	
@@ -30218,7 +30204,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2i64NV(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3i64NV(JNIEnv* env, jclass clazz, jint program, jint location, jlong x, jlong y, jlong z) {
 
 
-//@line:18969
+//@line:18955
 
 		ext_glProgramUniform3i64NV((GLuint)program, (GLint)location, (GLint64EXT)x, (GLint64EXT)y, (GLint64EXT)z);
 	
@@ -30228,7 +30214,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3i64NV(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4i64NV(JNIEnv* env, jclass clazz, jint program, jint location, jlong x, jlong y, jlong z, jlong w) {
 
 
-//@line:18973
+//@line:18959
 
 		ext_glProgramUniform4i64NV((GLuint)program, (GLint)location, (GLint64EXT)x, (GLint64EXT)y, (GLint64EXT)z, (GLint64EXT)w);
 	
@@ -30239,7 +30225,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1i64vNV(JNI
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18977
+//@line:18963
 
 		ext_glProgramUniform1i64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
 	
@@ -30250,7 +30236,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2i64vNV(JNI
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18981
+//@line:18967
 
 		ext_glProgramUniform2i64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
 	
@@ -30261,7 +30247,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3i64vNV(JNI
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18985
+//@line:18971
 
 		ext_glProgramUniform3i64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
 	
@@ -30272,7 +30258,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4i64vNV(JNI
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:18989
+//@line:18975
 
 		ext_glProgramUniform4i64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLint64EXT*)(value + valueByteOffset));
 	
@@ -30282,7 +30268,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4i64vNV(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1ui64NV(JNIEnv* env, jclass clazz, jint program, jint location, jlong x) {
 
 
-//@line:18993
+//@line:18979
 
 		ext_glProgramUniform1ui64NV((GLuint)program, (GLint)location, (GLuint64EXT)x);
 	
@@ -30292,7 +30278,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1ui64NV(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2ui64NV(JNIEnv* env, jclass clazz, jint program, jint location, jlong x, jlong y) {
 
 
-//@line:18997
+//@line:18983
 
 		ext_glProgramUniform2ui64NV((GLuint)program, (GLint)location, (GLuint64EXT)x, (GLuint64EXT)y);
 	
@@ -30302,7 +30288,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2ui64NV(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3ui64NV(JNIEnv* env, jclass clazz, jint program, jint location, jlong x, jlong y, jlong z) {
 
 
-//@line:19001
+//@line:18987
 
 		ext_glProgramUniform3ui64NV((GLuint)program, (GLint)location, (GLuint64EXT)x, (GLuint64EXT)y, (GLuint64EXT)z);
 	
@@ -30312,7 +30298,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3ui64NV(JNI
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4ui64NV(JNIEnv* env, jclass clazz, jint program, jint location, jlong x, jlong y, jlong z, jlong w) {
 
 
-//@line:19005
+//@line:18991
 
 		ext_glProgramUniform4ui64NV((GLuint)program, (GLint)location, (GLuint64EXT)x, (GLuint64EXT)y, (GLuint64EXT)z, (GLuint64EXT)w);
 	
@@ -30323,7 +30309,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform1ui64vNV(JN
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:19009
+//@line:18995
 
 		ext_glProgramUniform1ui64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
 	
@@ -30334,7 +30320,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform2ui64vNV(JN
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:19013
+//@line:18999
 
 		ext_glProgramUniform2ui64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
 	
@@ -30345,7 +30331,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform3ui64vNV(JN
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:19017
+//@line:19003
 
 		ext_glProgramUniform3ui64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
 	
@@ -30356,7 +30342,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4ui64vNV(JN
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:19021
+//@line:19007
 
 		ext_glProgramUniform4ui64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint64EXT*)(value + valueByteOffset));
 	
@@ -30366,7 +30352,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4ui64vNV(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL1i64NV(JNIEnv* env, jclass clazz, jint index, jlong x) {
 
 
-//@line:19025
+//@line:19011
 
 		ext_glVertexAttribL1i64NV((GLuint)index, (GLint64EXT)x);
 	
@@ -30376,7 +30362,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL1i64NV(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL2i64NV(JNIEnv* env, jclass clazz, jint index, jlong x, jlong y) {
 
 
-//@line:19029
+//@line:19015
 
 		ext_glVertexAttribL2i64NV((GLuint)index, (GLint64EXT)x, (GLint64EXT)y);
 	
@@ -30386,7 +30372,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL2i64NV(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL3i64NV(JNIEnv* env, jclass clazz, jint index, jlong x, jlong y, jlong z) {
 
 
-//@line:19033
+//@line:19019
 
 		ext_glVertexAttribL3i64NV((GLuint)index, (GLint64EXT)x, (GLint64EXT)y, (GLint64EXT)z);
 	
@@ -30396,7 +30382,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL3i64NV(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL4i64NV(JNIEnv* env, jclass clazz, jint index, jlong x, jlong y, jlong z, jlong w) {
 
 
-//@line:19037
+//@line:19023
 
 		ext_glVertexAttribL4i64NV((GLuint)index, (GLint64EXT)x, (GLint64EXT)y, (GLint64EXT)z, (GLint64EXT)w);
 	
@@ -30407,7 +30393,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL1i64vNV(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:19041
+//@line:19027
 
 		ext_glVertexAttribL1i64vNV((GLuint)index, (const GLint64EXT*)(v + vByteOffset));
 	
@@ -30418,7 +30404,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL2i64vNV(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:19045
+//@line:19031
 
 		ext_glVertexAttribL2i64vNV((GLuint)index, (const GLint64EXT*)(v + vByteOffset));
 	
@@ -30429,7 +30415,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL3i64vNV(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:19049
+//@line:19035
 
 		ext_glVertexAttribL3i64vNV((GLuint)index, (const GLint64EXT*)(v + vByteOffset));
 	
@@ -30440,7 +30426,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL4i64vNV(JNIE
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:19053
+//@line:19039
 
 		ext_glVertexAttribL4i64vNV((GLuint)index, (const GLint64EXT*)(v + vByteOffset));
 	
@@ -30450,7 +30436,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL4i64vNV(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL1ui64NV(JNIEnv* env, jclass clazz, jint index, jlong x) {
 
 
-//@line:19057
+//@line:19043
 
 		ext_glVertexAttribL1ui64NV((GLuint)index, (GLuint64EXT)x);
 	
@@ -30460,7 +30446,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL1ui64NV(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL2ui64NV(JNIEnv* env, jclass clazz, jint index, jlong x, jlong y) {
 
 
-//@line:19061
+//@line:19047
 
 		ext_glVertexAttribL2ui64NV((GLuint)index, (GLuint64EXT)x, (GLuint64EXT)y);
 	
@@ -30470,7 +30456,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL2ui64NV(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL3ui64NV(JNIEnv* env, jclass clazz, jint index, jlong x, jlong y, jlong z) {
 
 
-//@line:19065
+//@line:19051
 
 		ext_glVertexAttribL3ui64NV((GLuint)index, (GLuint64EXT)x, (GLuint64EXT)y, (GLuint64EXT)z);
 	
@@ -30480,7 +30466,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL3ui64NV(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL4ui64NV(JNIEnv* env, jclass clazz, jint index, jlong x, jlong y, jlong z, jlong w) {
 
 
-//@line:19069
+//@line:19055
 
 		ext_glVertexAttribL4ui64NV((GLuint)index, (GLuint64EXT)x, (GLuint64EXT)y, (GLuint64EXT)z, (GLuint64EXT)w);
 	
@@ -30491,7 +30477,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL1ui64vNV(JNI
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:19073
+//@line:19059
 
 		ext_glVertexAttribL1ui64vNV((GLuint)index, (const GLuint64EXT*)(v + vByteOffset));
 	
@@ -30502,7 +30488,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL2ui64vNV(JNI
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:19077
+//@line:19063
 
 		ext_glVertexAttribL2ui64vNV((GLuint)index, (const GLuint64EXT*)(v + vByteOffset));
 	
@@ -30513,7 +30499,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL3ui64vNV(JNI
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:19081
+//@line:19067
 
 		ext_glVertexAttribL3ui64vNV((GLuint)index, (const GLuint64EXT*)(v + vByteOffset));
 	
@@ -30524,7 +30510,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribL4ui64vNV(JNI
 	unsigned char* v = (unsigned char*)env->GetDirectBufferAddress(obj_v);
 
 
-//@line:19085
+//@line:19071
 
 		ext_glVertexAttribL4ui64vNV((GLuint)index, (const GLuint64EXT*)(v + vByteOffset));
 	
@@ -30535,7 +30521,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribLi64vNV(JN
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:19089
+//@line:19075
 
 		ext_glGetVertexAttribLi64vNV((GLuint)index, (GLenum)pname, (GLint64EXT*)(params + paramsByteOffset));
 	
@@ -30546,7 +30532,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribLui64vNV(J
 	unsigned char* params = (unsigned char*)env->GetDirectBufferAddress(obj_params);
 
 
-//@line:19093
+//@line:19079
 
 		ext_glGetVertexAttribLui64vNV((GLuint)index, (GLenum)pname, (GLuint64EXT*)(params + paramsByteOffset));
 	
@@ -30556,7 +30542,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribLui64vNV(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexAttribLFormatNV(JNIEnv* env, jclass clazz, jint index, jint size, jint type, jint stride) {
 
 
-//@line:19097
+//@line:19083
 
 		ext_glVertexAttribLFormatNV((GLuint)index, (GLint)size, (GLenum)type, (GLsizei)stride);
 	
@@ -30567,7 +30553,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGenNamesAMD(JNIEnv* env, 
 	unsigned char* names = (unsigned char*)env->GetDirectBufferAddress(obj_names);
 
 
-//@line:19101
+//@line:19087
 
 		ext_glGenNamesAMD((GLenum)identifier, (GLuint)num, (GLuint*)(names + namesByteOffset));
 	
@@ -30578,7 +30564,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteNamesAMD(JNIEnv* en
 	unsigned char* names = (unsigned char*)env->GetDirectBufferAddress(obj_names);
 
 
-//@line:19105
+//@line:19091
 
 		ext_glDeleteNamesAMD((GLenum)identifier, (GLuint)num, (const GLuint*)(names + namesByteOffset));
 	
@@ -30588,7 +30574,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteNamesAMD(JNIEnv* en
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsNameAMD(JNIEnv* env, jclass clazz, jint identifier, jint name) {
 
 
-//@line:19109
+//@line:19095
 
 		return (jboolean)ext_glIsNameAMD((GLenum)identifier, (GLuint)name);
 	
@@ -30598,7 +30584,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsNameAMD(JNIEnv* env
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetDebugMessageLogAMD
 (JNIEnv* env, jclass clazz, jint count, jint bufsize, jobject obj_categories, jint categoriesByteOffset, jobject obj_severities, jint severitiesByteOffset, jobject obj_ids, jint idsByteOffset, jobject obj_lengths, jint lengthsByteOffset, jobject obj_message, jint messageByteOffset, unsigned char* categories, unsigned char* severities, unsigned char* ids, unsigned char* lengths, unsigned char* message) {
 
-//@line:19113
+//@line:19099
 
 		return (jint)ext_glGetDebugMessageLogAMD((GLuint)count, (GLsizei)bufsize, (GLenum*)(categories + categoriesByteOffset), (GLuint*)(severities + severitiesByteOffset), (GLuint*)(ids + idsByteOffset), (GLsizei*)(lengths + lengthsByteOffset), (GLchar*)(message + messageByteOffset));
 	
@@ -30622,7 +30608,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVDPAUInitNV(JNIEnv* env, 
 	unsigned char* getProcAddress = (unsigned char*)env->GetDirectBufferAddress(obj_getProcAddress);
 
 
-//@line:19117
+//@line:19103
 
 		ext_glVDPAUInitNV((const GLvoid*)(vdpDevice + vdpDeviceByteOffset), (const GLvoid*)(getProcAddress + getProcAddressByteOffset));
 	
@@ -30632,7 +30618,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVDPAUInitNV(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVDPAUFiniNV(JNIEnv* env, jclass clazz) {
 
 
-//@line:19121
+//@line:19107
 
 		ext_glVDPAUFiniNV();
 	
@@ -30642,7 +30628,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVDPAUFiniNV(JNIEnv* env, 
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glVDPAURegisterVideoSurfaceNV
 (JNIEnv* env, jclass clazz, jobject obj_vdpSurface, jint vdpSurfaceByteOffset, jint target, jint numTextureNames, jobject obj_textureNames, jint textureNamesByteOffset, unsigned char* vdpSurface, unsigned char* textureNames) {
 
-//@line:19125
+//@line:19111
 
 		return (jint)ext_glVDPAURegisterVideoSurfaceNV((const GLvoid*)(vdpSurface + vdpSurfaceByteOffset), (GLenum)target, (GLsizei)numTextureNames, (const GLuint*)(textureNames + textureNamesByteOffset));
 	
@@ -30661,7 +30647,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glVDPAURegisterVideoSurface
 static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glVDPAURegisterOutputSurfaceNV
 (JNIEnv* env, jclass clazz, jobject obj_vdpSurface, jint vdpSurfaceByteOffset, jint target, jint numTextureNames, jobject obj_textureNames, jint textureNamesByteOffset, unsigned char* vdpSurface, unsigned char* textureNames) {
 
-//@line:19129
+//@line:19115
 
 		return (jint)ext_glVDPAURegisterOutputSurfaceNV((GLvoid*)(vdpSurface + vdpSurfaceByteOffset), (GLenum)target, (GLsizei)numTextureNames, (const GLuint*)(textureNames + textureNamesByteOffset));
 	
@@ -30680,7 +30666,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glVDPAURegisterOutputSurfac
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVDPAUIsSurfaceNV(JNIEnv* env, jclass clazz, jint surface) {
 
 
-//@line:19133
+//@line:19119
 
 		ext_glVDPAUIsSurfaceNV((GLvdpauSurfaceNV)surface);
 	
@@ -30690,7 +30676,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVDPAUIsSurfaceNV(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVDPAUUnregisterSurfaceNV(JNIEnv* env, jclass clazz, jint surface) {
 
 
-//@line:19137
+//@line:19123
 
 		ext_glVDPAUUnregisterSurfaceNV((GLvdpauSurfaceNV)surface);
 	
@@ -30702,7 +30688,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVDPAUGetSurfaceivNV(JNIEn
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:19141
+//@line:19127
 
 		ext_glVDPAUGetSurfaceivNV((GLvdpauSurfaceNV)surface, (GLenum)pname, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLint*)(values + valuesByteOffset));
 	
@@ -30712,7 +30698,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVDPAUGetSurfaceivNV(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVDPAUSurfaceAccessNV(JNIEnv* env, jclass clazz, jint surface, jint access) {
 
 
-//@line:19145
+//@line:19131
 
 		ext_glVDPAUSurfaceAccessNV((GLvdpauSurfaceNV)surface, (GLenum)access);
 	
@@ -30723,7 +30709,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVDPAUMapSurfacesNV(JNIEnv
 	unsigned char* surfaces = (unsigned char*)env->GetDirectBufferAddress(obj_surfaces);
 
 
-//@line:19149
+//@line:19135
 
 		ext_glVDPAUMapSurfacesNV((GLsizei)numSurfaces, (const GLvdpauSurfaceNV*)(surfaces + surfacesByteOffset));
 	
@@ -30734,7 +30720,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVDPAUUnmapSurfacesNV(JNIE
 	unsigned char* surfaces = (unsigned char*)env->GetDirectBufferAddress(obj_surfaces);
 
 
-//@line:19153
+//@line:19139
 
 		ext_glVDPAUUnmapSurfacesNV((GLsizei)numSurface, (const GLvdpauSurfaceNV*)(surfaces + surfacesByteOffset));
 	
@@ -30744,7 +30730,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVDPAUUnmapSurfacesNV(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexImage2DMultisampleCoverageNV(JNIEnv* env, jclass clazz, jint target, jint coverageSamples, jint colorSamples, jint internalFormat, jint width, jint height, jboolean fixedSampleLocations) {
 
 
-//@line:19157
+//@line:19143
 
 		ext_glTexImage2DMultisampleCoverageNV((GLenum)target, (GLsizei)coverageSamples, (GLsizei)colorSamples, (GLint)internalFormat, (GLsizei)width, (GLsizei)height, (GLboolean)fixedSampleLocations);
 	
@@ -30754,7 +30740,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexImage2DMultisampleCove
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexImage3DMultisampleCoverageNV(JNIEnv* env, jclass clazz, jint target, jint coverageSamples, jint colorSamples, jint internalFormat, jint width, jint height, jint depth, jboolean fixedSampleLocations) {
 
 
-//@line:19161
+//@line:19147
 
 		ext_glTexImage3DMultisampleCoverageNV((GLenum)target, (GLsizei)coverageSamples, (GLsizei)colorSamples, (GLint)internalFormat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLboolean)fixedSampleLocations);
 	
@@ -30764,7 +30750,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexImage3DMultisampleCove
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureImage2DMultisampleNV(JNIEnv* env, jclass clazz, jint texture, jint target, jint samples, jint internalFormat, jint width, jint height, jboolean fixedSampleLocations) {
 
 
-//@line:19165
+//@line:19151
 
 		ext_glTextureImage2DMultisampleNV((GLuint)texture, (GLenum)target, (GLsizei)samples, (GLint)internalFormat, (GLsizei)width, (GLsizei)height, (GLboolean)fixedSampleLocations);
 	
@@ -30774,7 +30760,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureImage2DMultisample
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureImage3DMultisampleNV(JNIEnv* env, jclass clazz, jint texture, jint target, jint samples, jint internalFormat, jint width, jint height, jint depth, jboolean fixedSampleLocations) {
 
 
-//@line:19169
+//@line:19155
 
 		ext_glTextureImage3DMultisampleNV((GLuint)texture, (GLenum)target, (GLsizei)samples, (GLint)internalFormat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLboolean)fixedSampleLocations);
 	
@@ -30784,7 +30770,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureImage3DMultisample
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureImage2DMultisampleCoverageNV(JNIEnv* env, jclass clazz, jint texture, jint target, jint coverageSamples, jint colorSamples, jint internalFormat, jint width, jint height, jboolean fixedSampleLocations) {
 
 
-//@line:19173
+//@line:19159
 
 		ext_glTextureImage2DMultisampleCoverageNV((GLuint)texture, (GLenum)target, (GLsizei)coverageSamples, (GLsizei)colorSamples, (GLint)internalFormat, (GLsizei)width, (GLsizei)height, (GLboolean)fixedSampleLocations);
 	
@@ -30794,7 +30780,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureImage2DMultisample
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureImage3DMultisampleCoverageNV(JNIEnv* env, jclass clazz, jint texture, jint target, jint coverageSamples, jint colorSamples, jint internalFormat, jint width, jint height, jint depth, jboolean fixedSampleLocations) {
 
 
-//@line:19177
+//@line:19163
 
 		ext_glTextureImage3DMultisampleCoverageNV((GLuint)texture, (GLenum)target, (GLsizei)coverageSamples, (GLsizei)colorSamples, (GLint)internalFormat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLboolean)fixedSampleLocations);
 	
@@ -30805,17 +30791,17 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSetMultisamplefvAMD(JNIEn
 	unsigned char* val = (unsigned char*)env->GetDirectBufferAddress(obj_val);
 
 
-//@line:19181
+//@line:19167
 
 		ext_glSetMultisamplefvAMD((GLenum)pname, (GLuint)index, (const GLfloat*)(val + valByteOffset));
 	
 
 }
 
-JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glImportSyncEXT(JNIEnv* env, jclass clazz, jint external_sync_type, jint external_sync, jint flags) {
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glImportSyncEXT(JNIEnv* env, jclass clazz, jint external_sync_type, jlong external_sync, jint flags) {
 
 
-//@line:19185
+//@line:19171
 
 		return (jlong)ext_glImportSyncEXT((GLenum)external_sync_type, (GLintptr)external_sync, (GLbitfield)flags);
 	
@@ -30826,7 +30812,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiDrawArraysIndirectAM
 	unsigned char* indirect = (unsigned char*)env->GetDirectBufferAddress(obj_indirect);
 
 
-//@line:19189
+//@line:19175
 
 		ext_glMultiDrawArraysIndirectAMD((GLenum)mode, (const GLvoid*)(indirect + indirectByteOffset), (GLsizei)primcount, (GLsizei)stride);
 	
@@ -30837,7 +30823,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiDrawElementsIndirect
 	unsigned char* indirect = (unsigned char*)env->GetDirectBufferAddress(obj_indirect);
 
 
-//@line:19193
+//@line:19179
 
 		ext_glMultiDrawElementsIndirectAMD((GLenum)mode, (GLenum)type, (const GLvoid*)(indirect + indirectByteOffset), (GLsizei)primcount, (GLsizei)stride);
 	
@@ -30847,7 +30833,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMultiDrawElementsIndirect
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGenPathsNV(JNIEnv* env, jclass clazz, jint range) {
 
 
-//@line:19197
+//@line:19183
 
 		return (jint)ext_glGenPathsNV((GLsizei)range);
 	
@@ -30857,7 +30843,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGenPathsNV(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeletePathsNV(JNIEnv* env, jclass clazz, jint path, jint range) {
 
 
-//@line:19201
+//@line:19187
 
 		ext_glDeletePathsNV((GLuint)path, (GLsizei)range);
 	
@@ -30867,7 +30853,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeletePathsNV(JNIEnv* env
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsPathNV(JNIEnv* env, jclass clazz, jint path) {
 
 
-//@line:19205
+//@line:19191
 
 		return (jboolean)ext_glIsPathNV((GLuint)path);
 	
@@ -30879,7 +30865,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathCommandsNV(JNIEnv* en
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:19209
+//@line:19195
 
 		ext_glPathCommandsNV((GLuint)path, (GLsizei)numCommands, (const GLubyte*)(commands + commandsByteOffset), (GLsizei)numCoords, (GLenum)coordType, (const GLvoid*)(coords + coordsByteOffset));
 	
@@ -30890,7 +30876,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathCoordsNV(JNIEnv* env,
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:19213
+//@line:19199
 
 		ext_glPathCoordsNV((GLuint)path, (GLsizei)numCoords, (GLenum)coordType, (const GLvoid*)(coords + coordsByteOffset));
 	
@@ -30902,7 +30888,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathSubCommandsNV(JNIEnv*
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:19217
+//@line:19203
 
 		ext_glPathSubCommandsNV((GLuint)path, (GLsizei)commandStart, (GLsizei)commandsToDelete, (GLsizei)numCommands, (const GLubyte*)(commands + commandsByteOffset), (GLsizei)numCoords, (GLenum)coordType, (const GLvoid*)(coords + coordsByteOffset));
 	
@@ -30913,7 +30899,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathSubCoordsNV(JNIEnv* e
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:19221
+//@line:19207
 
 		ext_glPathSubCoordsNV((GLuint)path, (GLsizei)coordStart, (GLsizei)numCoords, (GLenum)coordType, (const GLvoid*)(coords + coordsByteOffset));
 	
@@ -30924,7 +30910,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathStringNV(JNIEnv* env,
 	unsigned char* pathString = (unsigned char*)env->GetDirectBufferAddress(obj_pathString);
 
 
-//@line:19225
+//@line:19211
 
 		ext_glPathStringNV((GLuint)path, (GLenum)format, (GLsizei)length, (const GLvoid*)(pathString + pathStringByteOffset));
 	
@@ -30936,7 +30922,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathGlyphsNV(JNIEnv* env,
 	unsigned char* charcodes = (unsigned char*)env->GetDirectBufferAddress(obj_charcodes);
 
 
-//@line:19229
+//@line:19215
 
 		ext_glPathGlyphsNV((GLuint)firstPathName, (GLenum)fontTarget, (const GLvoid*)(fontName + fontNameByteOffset), (GLbitfield)fontStyle, (GLsizei)numGlyphs, (GLenum)type, (const GLvoid*)(charcodes + charcodesByteOffset), (GLenum)handleMissingGlyphs, (GLuint)pathParameterTemplate, (GLfloat)emScale);
 	
@@ -30947,7 +30933,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathGlyphRangeNV(JNIEnv* 
 	unsigned char* fontName = (unsigned char*)env->GetDirectBufferAddress(obj_fontName);
 
 
-//@line:19233
+//@line:19219
 
 		ext_glPathGlyphRangeNV((GLuint)firstPathName, (GLenum)fontTarget, (const GLvoid*)(fontName + fontNameByteOffset), (GLbitfield)fontStyle, (GLuint)firstGlyph, (GLsizei)numGlyphs, (GLenum)handleMissingGlyphs, (GLuint)pathParameterTemplate, (GLfloat)emScale);
 	
@@ -30959,7 +30945,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWeightPathsNV(JNIEnv* env
 	unsigned char* weights = (unsigned char*)env->GetDirectBufferAddress(obj_weights);
 
 
-//@line:19237
+//@line:19223
 
 		ext_glWeightPathsNV((GLuint)resultPath, (GLsizei)numPaths, (const GLuint*)(paths + pathsByteOffset), (const GLfloat*)(weights + weightsByteOffset));
 	
@@ -30969,7 +30955,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glWeightPathsNV(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyPathNV(JNIEnv* env, jclass clazz, jint resultPath, jint srcPath) {
 
 
-//@line:19241
+//@line:19227
 
 		ext_glCopyPathNV((GLuint)resultPath, (GLuint)srcPath);
 	
@@ -30979,7 +30965,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyPathNV(JNIEnv* env, j
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInterpolatePathsNV(JNIEnv* env, jclass clazz, jint resultPath, jint pathA, jint pathB, jfloat weight) {
 
 
-//@line:19245
+//@line:19231
 
 		ext_glInterpolatePathsNV((GLuint)resultPath, (GLuint)pathA, (GLuint)pathB, (GLfloat)weight);
 	
@@ -30990,7 +30976,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTransformPathNV(JNIEnv* e
 	unsigned char* transformValues = (unsigned char*)env->GetDirectBufferAddress(obj_transformValues);
 
 
-//@line:19249
+//@line:19235
 
 		ext_glTransformPathNV((GLuint)resultPath, (GLuint)srcPath, (GLenum)transformType, (const GLfloat*)(transformValues + transformValuesByteOffset));
 	
@@ -31001,7 +30987,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathParameterivNV(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:19253
+//@line:19239
 
 		ext_glPathParameterivNV((GLuint)path, (GLenum)pname, (const GLint*)(value + valueByteOffset));
 	
@@ -31011,7 +30997,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathParameterivNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathParameteriNV(JNIEnv* env, jclass clazz, jint path, jint pname, jint value) {
 
 
-//@line:19257
+//@line:19243
 
 		ext_glPathParameteriNV((GLuint)path, (GLenum)pname, (GLint)value);
 	
@@ -31022,7 +31008,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathParameterfvNV(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:19261
+//@line:19247
 
 		ext_glPathParameterfvNV((GLuint)path, (GLenum)pname, (const GLfloat*)(value + valueByteOffset));
 	
@@ -31032,7 +31018,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathParameterfvNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathParameterfNV(JNIEnv* env, jclass clazz, jint path, jint pname, jfloat value) {
 
 
-//@line:19265
+//@line:19251
 
 		ext_glPathParameterfNV((GLuint)path, (GLenum)pname, (GLfloat)value);
 	
@@ -31043,7 +31029,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathDashArrayNV(JNIEnv* e
 	unsigned char* dashArray = (unsigned char*)env->GetDirectBufferAddress(obj_dashArray);
 
 
-//@line:19269
+//@line:19255
 
 		ext_glPathDashArrayNV((GLuint)path, (GLsizei)dashCount, (const GLfloat*)(dashArray + dashArrayByteOffset));
 	
@@ -31053,7 +31039,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathDashArrayNV(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathStencilFuncNV(JNIEnv* env, jclass clazz, jint func, jint ref, jint mask) {
 
 
-//@line:19273
+//@line:19259
 
 		ext_glPathStencilFuncNV((GLenum)func, (GLint)ref, (GLuint)mask);
 	
@@ -31063,7 +31049,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathStencilFuncNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathStencilDepthOffsetNV(JNIEnv* env, jclass clazz, jfloat factor, jfloat units) {
 
 
-//@line:19277
+//@line:19263
 
 		ext_glPathStencilDepthOffsetNV((GLfloat)factor, (GLfloat)units);
 	
@@ -31073,7 +31059,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathStencilDepthOffsetNV(
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilFillPathNV(JNIEnv* env, jclass clazz, jint path, jint fillMode, jint mask) {
 
 
-//@line:19281
+//@line:19267
 
 		ext_glStencilFillPathNV((GLuint)path, (GLenum)fillMode, (GLuint)mask);
 	
@@ -31083,7 +31069,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilFillPathNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilStrokePathNV(JNIEnv* env, jclass clazz, jint path, jint reference, jint mask) {
 
 
-//@line:19285
+//@line:19271
 
 		ext_glStencilStrokePathNV((GLuint)path, (GLint)reference, (GLuint)mask);
 	
@@ -31095,7 +31081,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilFillPathInstancedN
 	unsigned char* transformValues = (unsigned char*)env->GetDirectBufferAddress(obj_transformValues);
 
 
-//@line:19289
+//@line:19275
 
 		ext_glStencilFillPathInstancedNV((GLsizei)numPaths, (GLenum)pathNameType, (const GLvoid*)(paths + pathsByteOffset), (GLuint)pathBase, (GLenum)fillMode, (GLuint)mask, (GLenum)transformType, (const GLfloat*)(transformValues + transformValuesByteOffset));
 	
@@ -31107,7 +31093,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilStrokePathInstance
 	unsigned char* transformValues = (unsigned char*)env->GetDirectBufferAddress(obj_transformValues);
 
 
-//@line:19293
+//@line:19279
 
 		ext_glStencilStrokePathInstancedNV((GLsizei)numPaths, (GLenum)pathNameType, (const GLvoid*)(paths + pathsByteOffset), (GLuint)pathBase, (GLint)reference, (GLuint)mask, (GLenum)transformType, (const GLfloat*)(transformValues + transformValuesByteOffset));
 	
@@ -31117,7 +31103,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilStrokePathInstance
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathCoverDepthFuncNV(JNIEnv* env, jclass clazz, jint func) {
 
 
-//@line:19297
+//@line:19283
 
 		ext_glPathCoverDepthFuncNV((GLenum)func);
 	
@@ -31128,7 +31114,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathColorGenNV(JNIEnv* en
 	unsigned char* coeffs = (unsigned char*)env->GetDirectBufferAddress(obj_coeffs);
 
 
-//@line:19301
+//@line:19287
 
 		ext_glPathColorGenNV((GLenum)color, (GLenum)genMode, (GLenum)colorFormat, (const GLfloat*)(coeffs + coeffsByteOffset));
 	
@@ -31139,7 +31125,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathTexGenNV(JNIEnv* env,
 	unsigned char* coeffs = (unsigned char*)env->GetDirectBufferAddress(obj_coeffs);
 
 
-//@line:19305
+//@line:19291
 
 		ext_glPathTexGenNV((GLenum)texCoordSet, (GLenum)genMode, (GLint)components, (const GLfloat*)(coeffs + coeffsByteOffset));
 	
@@ -31149,7 +31135,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathTexGenNV(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathFogGenNV(JNIEnv* env, jclass clazz, jint genMode) {
 
 
-//@line:19309
+//@line:19295
 
 		ext_glPathFogGenNV((GLenum)genMode);
 	
@@ -31159,7 +31145,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glPathFogGenNV(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCoverFillPathNV(JNIEnv* env, jclass clazz, jint path, jint coverMode) {
 
 
-//@line:19313
+//@line:19299
 
 		ext_glCoverFillPathNV((GLuint)path, (GLenum)coverMode);
 	
@@ -31169,7 +31155,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCoverFillPathNV(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCoverStrokePathNV(JNIEnv* env, jclass clazz, jint path, jint coverMode) {
 
 
-//@line:19317
+//@line:19303
 
 		ext_glCoverStrokePathNV((GLuint)path, (GLenum)coverMode);
 	
@@ -31181,7 +31167,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCoverFillPathInstancedNV(
 	unsigned char* transformValues = (unsigned char*)env->GetDirectBufferAddress(obj_transformValues);
 
 
-//@line:19321
+//@line:19307
 
 		ext_glCoverFillPathInstancedNV((GLsizei)numPaths, (GLenum)pathNameType, (const GLvoid*)(paths + pathsByteOffset), (GLuint)pathBase, (GLenum)coverMode, (GLenum)transformType, (const GLfloat*)(transformValues + transformValuesByteOffset));
 	
@@ -31193,7 +31179,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCoverStrokePathInstancedN
 	unsigned char* transformValues = (unsigned char*)env->GetDirectBufferAddress(obj_transformValues);
 
 
-//@line:19325
+//@line:19311
 
 		ext_glCoverStrokePathInstancedNV((GLsizei)numPaths, (GLenum)pathNameType, (const GLvoid*)(paths + pathsByteOffset), (GLuint)pathBase, (GLenum)coverMode, (GLenum)transformType, (const GLfloat*)(transformValues + transformValuesByteOffset));
 	
@@ -31204,7 +31190,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPathParameterivNV(JNIE
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:19329
+//@line:19315
 
 		ext_glGetPathParameterivNV((GLuint)path, (GLenum)pname, (GLint*)(value + valueByteOffset));
 	
@@ -31215,7 +31201,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPathParameterfvNV(JNIE
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:19333
+//@line:19319
 
 		ext_glGetPathParameterfvNV((GLuint)path, (GLenum)pname, (GLfloat*)(value + valueByteOffset));
 	
@@ -31226,7 +31212,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPathCommandsNV(JNIEnv*
 	unsigned char* commands = (unsigned char*)env->GetDirectBufferAddress(obj_commands);
 
 
-//@line:19337
+//@line:19323
 
 		ext_glGetPathCommandsNV((GLuint)path, (GLubyte*)(commands + commandsByteOffset));
 	
@@ -31237,7 +31223,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPathCoordsNV(JNIEnv* e
 	unsigned char* coords = (unsigned char*)env->GetDirectBufferAddress(obj_coords);
 
 
-//@line:19341
+//@line:19327
 
 		ext_glGetPathCoordsNV((GLuint)path, (GLfloat*)(coords + coordsByteOffset));
 	
@@ -31248,7 +31234,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPathDashArrayNV(JNIEnv
 	unsigned char* dashArray = (unsigned char*)env->GetDirectBufferAddress(obj_dashArray);
 
 
-//@line:19345
+//@line:19331
 
 		ext_glGetPathDashArrayNV((GLuint)path, (GLfloat*)(dashArray + dashArrayByteOffset));
 	
@@ -31260,7 +31246,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPathMetricsNV(JNIEnv* 
 	unsigned char* metrics = (unsigned char*)env->GetDirectBufferAddress(obj_metrics);
 
 
-//@line:19349
+//@line:19335
 
 		ext_glGetPathMetricsNV((GLbitfield)metricQueryMask, (GLsizei)numPaths, (GLenum)pathNameType, (const GLvoid*)(paths + pathsByteOffset), (GLuint)pathBase, (GLsizei)stride, (GLfloat*)(metrics + metricsByteOffset));
 	
@@ -31271,7 +31257,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPathMetricRangeNV(JNIE
 	unsigned char* metrics = (unsigned char*)env->GetDirectBufferAddress(obj_metrics);
 
 
-//@line:19353
+//@line:19339
 
 		ext_glGetPathMetricRangeNV((GLbitfield)metricQueryMask, (GLuint)firstPathName, (GLsizei)numPaths, (GLsizei)stride, (GLfloat*)(metrics + metricsByteOffset));
 	
@@ -31281,7 +31267,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPathMetricRangeNV(JNIE
 static inline void wrapped_Java_com_badlogic_jglfw_gl_GL_glGetPathSpacingNV
 (JNIEnv* env, jclass clazz, jint pathListMode, jint numPaths, jint pathNameType, jobject obj_paths, jint pathsByteOffset, jint pathBase, jfloat advanceScale, jfloat kerningScale, jint transformType, jobject obj_returnedSpacing, jint returnedSpacingByteOffset, unsigned char* paths, unsigned char* returnedSpacing) {
 
-//@line:19357
+//@line:19343
 
 		ext_glGetPathSpacingNV((GLenum)pathListMode, (GLsizei)numPaths, (GLenum)pathNameType, (const GLvoid*)(paths + pathsByteOffset), (GLuint)pathBase, (GLfloat)advanceScale, (GLfloat)kerningScale, (GLenum)transformType, (GLfloat*)(returnedSpacing + returnedSpacingByteOffset));
 	
@@ -31301,7 +31287,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPathColorGenivNV(JNIEn
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:19361
+//@line:19347
 
 		ext_glGetPathColorGenivNV((GLenum)color, (GLenum)pname, (GLint*)(value + valueByteOffset));
 	
@@ -31312,7 +31298,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPathColorGenfvNV(JNIEn
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:19365
+//@line:19351
 
 		ext_glGetPathColorGenfvNV((GLenum)color, (GLenum)pname, (GLfloat*)(value + valueByteOffset));
 	
@@ -31323,7 +31309,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPathTexGenivNV(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:19369
+//@line:19355
 
 		ext_glGetPathTexGenivNV((GLenum)texCoordSet, (GLenum)pname, (GLint*)(value + valueByteOffset));
 	
@@ -31334,7 +31320,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPathTexGenfvNV(JNIEnv*
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:19373
+//@line:19359
 
 		ext_glGetPathTexGenfvNV((GLenum)texCoordSet, (GLenum)pname, (GLfloat*)(value + valueByteOffset));
 	
@@ -31344,7 +31330,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPathTexGenfvNV(JNIEnv*
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsPointInFillPathNV(JNIEnv* env, jclass clazz, jint path, jint mask, jfloat x, jfloat y) {
 
 
-//@line:19377
+//@line:19363
 
 		return (jboolean)ext_glIsPointInFillPathNV((GLuint)path, (GLuint)mask, (GLfloat)x, (GLfloat)y);
 	
@@ -31354,7 +31340,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsPointInFillPathNV(J
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsPointInStrokePathNV(JNIEnv* env, jclass clazz, jint path, jfloat x, jfloat y) {
 
 
-//@line:19381
+//@line:19367
 
 		return (jboolean)ext_glIsPointInStrokePathNV((GLuint)path, (GLfloat)x, (GLfloat)y);
 	
@@ -31364,7 +31350,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsPointInStrokePathNV
 JNIEXPORT jfloat JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPathLengthNV(JNIEnv* env, jclass clazz, jint path, jint startSegment, jint numSegments) {
 
 
-//@line:19385
+//@line:19371
 
 		return (jfloat)ext_glGetPathLengthNV((GLuint)path, (GLsizei)startSegment, (GLsizei)numSegments);
 	
@@ -31374,7 +31360,7 @@ JNIEXPORT jfloat JNICALL Java_com_badlogic_jglfw_gl_GL_glGetPathLengthNV(JNIEnv*
 static inline jboolean wrapped_Java_com_badlogic_jglfw_gl_GL_glPointAlongPathNV
 (JNIEnv* env, jclass clazz, jint path, jint startSegment, jint numSegments, jfloat distance, jobject obj_x, jint xByteOffset, jobject obj_y, jint yByteOffset, jobject obj_tangentX, jint tangentXByteOffset, jobject obj_tangentY, jint tangentYByteOffset, unsigned char* x, unsigned char* y, unsigned char* tangentX, unsigned char* tangentY) {
 
-//@line:19389
+//@line:19375
 
 		return (jboolean)ext_glPointAlongPathNV((GLuint)path, (GLsizei)startSegment, (GLsizei)numSegments, (GLfloat)distance, (GLfloat*)(x + xByteOffset), (GLfloat*)(y + yByteOffset), (GLfloat*)(tangentX + tangentXByteOffset), (GLfloat*)(tangentY + tangentYByteOffset));
 	
@@ -31395,7 +31381,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glPointAlongPathNV(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilOpValueAMD(JNIEnv* env, jclass clazz, jint face, jint value) {
 
 
-//@line:19393
+//@line:19379
 
 		ext_glStencilOpValueAMD((GLenum)face, (GLuint)value);
 	
@@ -31405,7 +31391,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glStencilOpValueAMD(JNIEnv*
 JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTextureHandleNV(JNIEnv* env, jclass clazz, jint texture) {
 
 
-//@line:19397
+//@line:19383
 
 		return (jlong)ext_glGetTextureHandleNV((GLuint)texture);
 	
@@ -31415,7 +31401,7 @@ JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTextureHandleNV(JNIEn
 JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTextureSamplerHandleNV(JNIEnv* env, jclass clazz, jint texture, jint sampler) {
 
 
-//@line:19401
+//@line:19387
 
 		return (jlong)ext_glGetTextureSamplerHandleNV((GLuint)texture, (GLuint)sampler);
 	
@@ -31425,7 +31411,7 @@ JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glGetTextureSamplerHandleN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeTextureHandleResidentNV(JNIEnv* env, jclass clazz, jlong handle) {
 
 
-//@line:19405
+//@line:19391
 
 		ext_glMakeTextureHandleResidentNV((GLuint64)handle);
 	
@@ -31435,7 +31421,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeTextureHandleResident
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeTextureHandleNonResidentNV(JNIEnv* env, jclass clazz, jlong handle) {
 
 
-//@line:19409
+//@line:19395
 
 		ext_glMakeTextureHandleNonResidentNV((GLuint64)handle);
 	
@@ -31445,7 +31431,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeTextureHandleNonResid
 JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glGetImageHandleNV(JNIEnv* env, jclass clazz, jint texture, jint level, jboolean layered, jint layer, jint format) {
 
 
-//@line:19413
+//@line:19399
 
 		return (jlong)ext_glGetImageHandleNV((GLuint)texture, (GLint)level, (GLboolean)layered, (GLint)layer, (GLenum)format);
 	
@@ -31455,7 +31441,7 @@ JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glGetImageHandleNV(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeImageHandleResidentNV(JNIEnv* env, jclass clazz, jlong handle, jint access) {
 
 
-//@line:19417
+//@line:19403
 
 		ext_glMakeImageHandleResidentNV((GLuint64)handle, (GLenum)access);
 	
@@ -31465,7 +31451,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeImageHandleResidentNV
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeImageHandleNonResidentNV(JNIEnv* env, jclass clazz, jlong handle) {
 
 
-//@line:19421
+//@line:19407
 
 		ext_glMakeImageHandleNonResidentNV((GLuint64)handle);
 	
@@ -31475,7 +31461,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glMakeImageHandleNonResiden
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformHandleui64NV(JNIEnv* env, jclass clazz, jint location, jlong value) {
 
 
-//@line:19425
+//@line:19411
 
 		ext_glUniformHandleui64NV((GLint)location, (GLuint64)value);
 	
@@ -31486,7 +31472,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformHandleui64vNV(JNIE
 	unsigned char* value = (unsigned char*)env->GetDirectBufferAddress(obj_value);
 
 
-//@line:19429
+//@line:19415
 
 		ext_glUniformHandleui64vNV((GLint)location, (GLsizei)count, (const GLuint64*)(value + valueByteOffset));
 	
@@ -31496,7 +31482,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformHandleui64vNV(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformHandleui64NV(JNIEnv* env, jclass clazz, jint program, jint location, jlong value) {
 
 
-//@line:19433
+//@line:19419
 
 		ext_glProgramUniformHandleui64NV((GLuint)program, (GLint)location, (GLuint64)value);
 	
@@ -31507,7 +31493,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformHandleui64v
 	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
 
 
-//@line:19437
+//@line:19423
 
 		ext_glProgramUniformHandleui64vNV((GLuint)program, (GLint)location, (GLsizei)count, (const GLuint64*)(values + valuesByteOffset));
 	
@@ -31517,7 +31503,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformHandleui64v
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsTextureHandleResidentNV(JNIEnv* env, jclass clazz, jlong handle) {
 
 
-//@line:19441
+//@line:19427
 
 		return (jboolean)ext_glIsTextureHandleResidentNV((GLuint64)handle);
 	
@@ -31527,7 +31513,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsTextureHandleReside
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsImageHandleResidentNV(JNIEnv* env, jclass clazz, jlong handle) {
 
 
-//@line:19445
+//@line:19431
 
 		return (jboolean)ext_glIsImageHandleResidentNV((GLuint64)handle);
 	
@@ -31537,7 +31523,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsImageHandleResident
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginConditionalRenderNVX(JNIEnv* env, jclass clazz, jint id) {
 
 
-//@line:19449
+//@line:19435
 
 		ext_glBeginConditionalRenderNVX((GLuint)id);
 	
@@ -31547,7 +31533,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginConditionalRenderNVX
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndConditionalRenderNVX(JNIEnv* env, jclass clazz) {
 
 
-//@line:19453
+//@line:19439
 
 		ext_glEndConditionalRenderNVX();
 	
@@ -31557,7 +31543,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndConditionalRenderNVX(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexStorageSparseAMD(JNIEnv* env, jclass clazz, jint target, jint internalFormat, jint width, jint height, jint depth, jint layers, jint flags) {
 
 
-//@line:19457
+//@line:19443
 
 		ext_glTexStorageSparseAMD((GLenum)target, (GLenum)internalFormat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLsizei)layers, (GLbitfield)flags);
 	
@@ -31567,7 +31553,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexStorageSparseAMD(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureStorageSparseAMD(JNIEnv* env, jclass clazz, jint texture, jint target, jint internalFormat, jint width, jint height, jint depth, jint layers, jint flags) {
 
 
-//@line:19461
+//@line:19447
 
 		ext_glTextureStorageSparseAMD((GLuint)texture, (GLenum)target, (GLenum)internalFormat, (GLsizei)width, (GLsizei)height, (GLsizei)depth, (GLsizei)layers, (GLbitfield)flags);
 	
@@ -31577,7 +31563,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureStorageSparseAMD(J
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSyncTextureINTEL(JNIEnv* env, jclass clazz, jint texture) {
 
 
-//@line:19465
+//@line:19451
 
 		ext_glSyncTextureINTEL((GLuint)texture);
 	
@@ -31587,7 +31573,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSyncTextureINTEL(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUnmapTexture2DINTEL(JNIEnv* env, jclass clazz, jint texture, jint level) {
 
 
-//@line:19469
+//@line:19455
 
 		ext_glUnmapTexture2DINTEL((GLuint)texture, (GLint)level);
 	
@@ -31597,7 +31583,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUnmapTexture2DINTEL(JNIEn
 static inline jobject wrapped_Java_com_badlogic_jglfw_gl_GL_glMapTexture2DINTEL
 (JNIEnv* env, jclass clazz, jint texture, jint level, jint access, jobject obj_stride, jint strideByteOffset, jobject obj_layout, jint layoutByteOffset, jlong bufferSize, unsigned char* stride, unsigned char* layout) {
 
-//@line:19473
+//@line:19459
 
 		GLvoid* bufferPtr = (GLvoid*)ext_glMapTexture2DINTEL((GLuint)texture, (GLint)level, (GLbitfield)access, (const GLint*)(stride + strideByteOffset), (const GLenum*)(layout + layoutByteOffset));
 		if(!bufferPtr) return 0;
@@ -31618,7 +31604,7 @@ JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glMapTexture2DINTEL(JNIE
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDrawTextureNV(JNIEnv* env, jclass clazz, jint texture, jint sampler, jfloat x0, jfloat y0, jfloat x1, jfloat y1, jfloat z, jfloat s0, jfloat t0, jfloat s1, jfloat t1) {
 
 
-//@line:19479
+//@line:19465
 
 		ext_glDrawTextureNV((GLuint)texture, (GLuint)sampler, (GLfloat)x0, (GLfloat)y0, (GLfloat)x1, (GLfloat)y1, (GLfloat)z, (GLfloat)s0, (GLfloat)t0, (GLfloat)s1, (GLfloat)t1);
 	

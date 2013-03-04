@@ -57,3 +57,13 @@ glMapTexture2DINTEL
 		return env->NewDirectByteBuffer(bufferPtr, bufferSize);
 	*/
 -----
+glShaderSource
+	public static native void glShaderSource(int shader, String string); /*
+		ext_glShaderSource((GLuint)shader, 1, &string, 0);
+	*/
+-----
+glShaderSourceARB
+	public static native void glShaderSourceARB(int shader, String string); /*
+		ext_glShaderSource((GLuint)shader, 1, &string, 0);
+	*/
+-----

@@ -13566,26 +13566,26 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsBuffer
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glBufferData
- * Signature: (IILjava/nio/Buffer;II)V
+ * Signature: (IJLjava/nio/Buffer;II)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferData
-  (JNIEnv *, jclass, jint, jint, jobject, jint, jint);
+  (JNIEnv *, jclass, jint, jlong, jobject, jint, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glBufferSubData
- * Signature: (IIILjava/nio/Buffer;I)V
+ * Signature: (IJJLjava/nio/Buffer;I)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferSubData
-  (JNIEnv *, jclass, jint, jint, jint, jobject, jint);
+  (JNIEnv *, jclass, jint, jlong, jlong, jobject, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glGetBufferSubData
- * Signature: (IIILjava/nio/Buffer;I)V
+ * Signature: (IJJLjava/nio/Buffer;I)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferSubData
-  (JNIEnv *, jclass, jint, jint, jint, jobject, jint);
+  (JNIEnv *, jclass, jint, jlong, jlong, jobject, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -13894,10 +13894,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLinkProgram
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glShaderSource
- * Signature: (IILjava/nio/Buffer;ILjava/nio/Buffer;I)V
+ * Signature: (ILjava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderSource
-  (JNIEnv *, jclass, jint, jint, jobject, jint, jobject, jint);
+  (JNIEnv *, jclass, jint, jstring);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -14462,10 +14462,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndTransformFeedback
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glBindBufferRange
- * Signature: (IIIII)V
+ * Signature: (IIIJJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferRange
-  (JNIEnv *, jclass, jint, jint, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jint, jint, jlong, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -16118,26 +16118,26 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_gl_GL_glIsBufferARB
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glBufferDataARB
- * Signature: (IILjava/nio/Buffer;II)V
+ * Signature: (IJLjava/nio/Buffer;II)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferDataARB
-  (JNIEnv *, jclass, jint, jint, jobject, jint, jint);
+  (JNIEnv *, jclass, jint, jlong, jobject, jint, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glBufferSubDataARB
- * Signature: (IIILjava/nio/Buffer;I)V
+ * Signature: (IJJLjava/nio/Buffer;I)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferSubDataARB
-  (JNIEnv *, jclass, jint, jint, jint, jobject, jint);
+  (JNIEnv *, jclass, jint, jlong, jlong, jobject, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glGetBufferSubDataARB
- * Signature: (IIILjava/nio/Buffer;I)V
+ * Signature: (IJJLjava/nio/Buffer;I)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetBufferSubDataARB
-  (JNIEnv *, jclass, jint, jint, jint, jobject, jint);
+  (JNIEnv *, jclass, jint, jlong, jlong, jobject, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -16270,10 +16270,10 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCreateShaderObjectARB
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glShaderSourceARB
- * Signature: (IILjava/nio/Buffer;ILjava/nio/Buffer;I)V
+ * Signature: (ILjava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderSourceARB
-  (JNIEnv *, jclass, jint, jint, jobject, jint, jobject, jint);
+  (JNIEnv *, jclass, jint, jstring);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -16814,10 +16814,10 @@ JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glMapBufferRange
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glFlushMappedBufferRange
- * Signature: (III)V
+ * Signature: (IJJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushMappedBufferRange
-  (JNIEnv *, jclass, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jlong, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -16918,10 +16918,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformBlockBinding
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glCopyBufferSubData
- * Signature: (IIIII)V
+ * Signature: (IIJJJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCopyBufferSubData
-  (JNIEnv *, jclass, jint, jint, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jint, jlong, jlong, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -18974,10 +18974,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearBufferData
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glClearBufferSubData
- * Signature: (IIIIIILjava/nio/Buffer;I)V
+ * Signature: (IIJJIILjava/nio/Buffer;I)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearBufferSubData
-  (JNIEnv *, jclass, jint, jint, jint, jint, jint, jint, jobject, jint);
+  (JNIEnv *, jclass, jint, jint, jlong, jlong, jint, jint, jobject, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -18990,10 +18990,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearNamedBufferDataEXT
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glClearNamedBufferSubDataEXT
- * Signature: (IIIIIILjava/nio/Buffer;I)V
+ * Signature: (IIIIJJLjava/nio/Buffer;I)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearNamedBufferSubDataEXT
-  (JNIEnv *, jclass, jint, jint, jint, jint, jint, jint, jobject, jint);
+  (JNIEnv *, jclass, jint, jint, jint, jint, jlong, jlong, jobject, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -19006,10 +19006,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDispatchCompute
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glDispatchComputeIndirect
- * Signature: (I)V
+ * Signature: (J)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDispatchComputeIndirect
-  (JNIEnv *, jclass, jint);
+  (JNIEnv *, jclass, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -19030,10 +19030,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureView
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glBindVertexBuffer
- * Signature: (IIII)V
+ * Signature: (IIJI)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindVertexBuffer
-  (JNIEnv *, jclass, jint, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jint, jlong, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -19078,10 +19078,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexBindingDivisor
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glVertexArrayBindVertexBufferEXT
- * Signature: (IIIII)V
+ * Signature: (IIIJI)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayBindVertexBufferEXT
-  (JNIEnv *, jclass, jint, jint, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jint, jint, jlong, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -19182,10 +19182,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInvalidateTexImage
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glInvalidateBufferSubData
- * Signature: (III)V
+ * Signature: (IJJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glInvalidateBufferSubData
-  (JNIEnv *, jclass, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jlong, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -19286,18 +19286,18 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderStorageBlockBinding
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glTexBufferRange
- * Signature: (IIIII)V
+ * Signature: (IIIJJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTexBufferRange
-  (JNIEnv *, jclass, jint, jint, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jint, jint, jlong, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glTextureBufferRangeEXT
- * Signature: (IIIIII)V
+ * Signature: (IIIIJJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTextureBufferRangeEXT
-  (JNIEnv *, jclass, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jint, jint, jint, jlong, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -25598,10 +25598,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferParameteriAPPLE
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glFlushMappedBufferRangeAPPLE
- * Signature: (III)V
+ * Signature: (IJJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushMappedBufferRangeAPPLE
-  (JNIEnv *, jclass, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jlong, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -26198,18 +26198,18 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glTransformFeedbackAttribsN
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glBindBufferRangeNV
- * Signature: (IIIII)V
+ * Signature: (IIIJJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferRangeNV
-  (JNIEnv *, jclass, jint, jint, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jint, jint, jlong, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glBindBufferOffsetNV
- * Signature: (IIII)V
+ * Signature: (IIIJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferOffsetNV
-  (JNIEnv *, jclass, jint, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jint, jint, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -26286,9 +26286,9 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformBufferSizeEXT
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glGetUniformOffsetEXT
- * Signature: (II)I
+ * Signature: (II)J
  */
-JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformOffsetEXT
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformOffsetEXT
   (JNIEnv *, jclass, jint, jint);
 
 /*
@@ -26430,18 +26430,18 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEndTransformFeedbackEXT
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glBindBufferRangeEXT
- * Signature: (IIIII)V
+ * Signature: (IIIJJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferRangeEXT
-  (JNIEnv *, jclass, jint, jint, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jint, jint, jlong, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glBindBufferOffsetEXT
- * Signature: (IIII)V
+ * Signature: (IIIJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindBufferOffsetEXT
-  (JNIEnv *, jclass, jint, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jint, jint, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -27718,18 +27718,18 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniform4uivEXT
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glNamedBufferDataEXT
- * Signature: (IILjava/nio/Buffer;II)V
+ * Signature: (IJLjava/nio/Buffer;II)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedBufferDataEXT
-  (JNIEnv *, jclass, jint, jint, jobject, jint, jint);
+  (JNIEnv *, jclass, jint, jlong, jobject, jint, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glNamedBufferSubDataEXT
- * Signature: (IIILjava/nio/Buffer;I)V
+ * Signature: (IJJLjava/nio/Buffer;I)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedBufferSubDataEXT
-  (JNIEnv *, jclass, jint, jint, jint, jobject, jint);
+  (JNIEnv *, jclass, jint, jlong, jlong, jobject, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -27758,18 +27758,18 @@ JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glMapNamedBufferRangeEXT
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glFlushMappedNamedBufferRangeEXT
- * Signature: (III)V
+ * Signature: (IJJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glFlushMappedNamedBufferRangeEXT
-  (JNIEnv *, jclass, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jlong, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glNamedCopyBufferSubDataEXT
- * Signature: (IIIII)V
+ * Signature: (IIJJJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glNamedCopyBufferSubDataEXT
-  (JNIEnv *, jclass, jint, jint, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jint, jlong, jlong, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -27790,10 +27790,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedBufferPointervEXT
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glGetNamedBufferSubDataEXT
- * Signature: (IIILjava/nio/Buffer;I)V
+ * Signature: (IJJLjava/nio/Buffer;I)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetNamedBufferSubDataEXT
-  (JNIEnv *, jclass, jint, jint, jint, jobject, jint);
+  (JNIEnv *, jclass, jint, jlong, jlong, jobject, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -28446,10 +28446,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBeginVideoCaptureNV
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glBindVideoCaptureStreamBufferNV
- * Signature: (IIII)V
+ * Signature: (IIIJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindVideoCaptureStreamBufferNV
-  (JNIEnv *, jclass, jint, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jint, jint, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -28678,10 +28678,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glProgramUniformui64vNV
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glBufferAddressRangeNV
- * Signature: (IIJI)V
+ * Signature: (IIJJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBufferAddressRangeNV
-  (JNIEnv *, jclass, jint, jint, jlong, jint);
+  (JNIEnv *, jclass, jint, jint, jlong, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -28870,10 +28870,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetVertexAttribLdvEXT
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glVertexArrayVertexAttribLOffsetEXT
- * Signature: (IIIIIII)V
+ * Signature: (IIIIIIJ)V
  */
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glVertexArrayVertexAttribLOffsetEXT
-  (JNIEnv *, jclass, jint, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jint, jint, jint, jint, jint, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -29478,10 +29478,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glSetMultisamplefvAMD
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glImportSyncEXT
- * Signature: (III)J
+ * Signature: (IJI)J
  */
 JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glImportSyncEXT
-  (JNIEnv *, jclass, jint, jint, jint);
+  (JNIEnv *, jclass, jint, jlong, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
