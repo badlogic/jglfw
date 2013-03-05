@@ -51,7 +51,8 @@ public class GlfwBuild {
 		win32home.compilerPrefix = "";
 		win32home.excludeFromMasterBuildFile = true;
 		win32home.cIncludes = win32.cIncludes;
-		win32home.cFlags += " -D_GLFW_WIN32 -D_GLFW_WGL -D_GLFW_USE_OPENGL";
+		win32home.cFlags += " -D_GLFW_WIN32 -D_GLFW_WGL -D_GLFW_USE_OPENGL -g";
+		win32home.cppFlags += " -g";
 		win32home.headerDirs = win32.headerDirs;
 		win32home.buildFileName = "build-windows32home.xml";
 		win32home.libraries = win32.libraries;

@@ -619,7 +619,7 @@ public class Glfw {
 	*/
 	
 	public static long glfwCreateWindow(int width, int height, String title, long monitor, long share) {
-		long window = glfwCreateWindowJni(width, height, title, monitor, share);
+		long window = glfwCreateWindowJni(width, height, title==null?"GLFW":title, monitor, share);
 		if(window != 0) {
 			glfwMakeContextCurrent(window);
 			GL.init();

@@ -16,7 +16,7 @@
 	
 	<!-- define gcc compiler, options and files to compile -->
 	<property name="gcc" value="${compilerPrefix}gcc${compilerSuffix}"/>	
-	<property name="gcc-opts" value="-c -Wall -O2 -mfpmath=sse -msse2 -fmessage-length=0 -m32 -D_GLFW_WIN32 -D_GLFW_WGL -D_GLFW_USE_OPENGL"/>
+	<property name="gcc-opts" value="-c -Wall -O2 -mfpmath=sse -msse2 -fmessage-length=0 -m32 -D_GLFW_WIN32 -D_GLFW_WGL -D_GLFW_USE_OPENGL -g"/>
 	<fileset id="gcc-files" dir="./">
 		<exclude name="target/"/>		
 				<include name="memcpy_wrap.c"/>
@@ -43,7 +43,7 @@
 	
 	<!-- define g++ compiler, options and files to compile -->
 	<property name="g++" value="${compilerPrefix}g++${compilerSuffix}"/>
-	<property name="g++-opts" value="-c -Wall -O2 -mfpmath=sse -msse2 -fmessage-length=0 -m32"/>
+	<property name="g++-opts" value="-c -Wall -O2 -mfpmath=sse -msse2 -fmessage-length=0 -m32 -g"/>
 	<fileset id="g++-files" dir="./">
 		<exclude name="target/"/>
 				<include name="**/*.cpp"/>
