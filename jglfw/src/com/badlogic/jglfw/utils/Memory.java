@@ -64,13 +64,8 @@ public class Memory {
 	public static native long getBufferAddress (Buffer buffer); /*
 	   return (jlong) buffer;
 	*/
-	
-	/**
-	 * 
-	 * @param buffer
-	 * @return
-	 */
-	public static long getPosition(Buffer buffer) {
+
+	public static int getPosition(Buffer buffer) {
 		if(buffer instanceof ByteBuffer) return buffer.position();				
 		if(buffer instanceof CharBuffer) return buffer.position() << 1;
 		if(buffer instanceof DoubleBuffer) return buffer.position() << 3;
