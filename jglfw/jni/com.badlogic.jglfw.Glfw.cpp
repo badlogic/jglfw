@@ -92,7 +92,7 @@
 	
 	void key(GLFWwindow* window, int key, int action) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, keyId, (jlong)window, (jint)key, (jint)key);
+			staticEnv->CallVoidMethod(callback, keyId, (jlong)window, (jint)key, (jint)action);
 		}
 	}
 	
