@@ -9488,7 +9488,7 @@ public class GL {
 		return (jint)glGetError();
 	*/
 
-	public static native Buffer glGetString(int name); /*
+	public static native String glGetString(int name); /*
 		return env->NewStringUTF((const char*)glGetString((GLenum)name));
 	*/
 
@@ -13162,7 +13162,7 @@ public class GL {
 		ext_glClearBufferfi((GLenum)buffer, (GLint)drawbuffer, (GLfloat)depth, (GLint)stencil);
 	*/
 
-	public static native Buffer glGetString(int name, int index); /*
+	public static native String glGetString(int name, int index); /*
 		return env->NewStringUTF((const char*)ext_glGetStringi((GLenum)name, (GLuint)index));
 	*/
 

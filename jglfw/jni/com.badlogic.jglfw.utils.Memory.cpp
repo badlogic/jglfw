@@ -1,6 +1,6 @@
 #include <com.badlogic.jglfw.utils.Memory.h>
 
-//@line:18
+//@line:24
  
 	#include <stdio.h>
 	#include <stdlib.h>
@@ -8,7 +8,7 @@
 	JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_utils_Memory_mallocJni(JNIEnv* env, jclass clazz, jint numBytes) {
 
 
-//@line:38
+//@line:44
 
 		char* ptr = (char*)malloc(numBytes);
 		if(ptr == 0) return 0;
@@ -21,7 +21,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_utils_Memory_free(JNIEnv* env, jc
 	unsigned char* buffer = (unsigned char*)env->GetDirectBufferAddress(obj_buffer);
 
 
-//@line:47
+//@line:53
 
 		free(buffer);
 	
@@ -31,7 +31,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_utils_Memory_free(JNIEnv* env, jc
 static inline jlong wrapped_Java_com_badlogic_jglfw_utils_Memory_getBufferAddress
 (JNIEnv* env, jclass clazz, jobject obj_buffer, unsigned char* buffer) {
 
-//@line:58
+//@line:64
 
 	   return (jlong) buffer;
 	

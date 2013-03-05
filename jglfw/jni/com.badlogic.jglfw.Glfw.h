@@ -635,6 +635,14 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowTitle
 
 /*
  * Class:     com_badlogic_jglfw_Glfw
+ * Method:    glfwSetWindowPos
+ * Signature: (JII)V
+ */
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowPos
+  (JNIEnv *, jclass, jlong, jint, jint);
+
+/*
+ * Class:     com_badlogic_jglfw_Glfw
  * Method:    glfwGetWindowX
  * Signature: (J)I
  */

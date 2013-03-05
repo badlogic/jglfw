@@ -663,8 +663,8 @@ public class Glfw {
 		glfwSetWindowTitle((GLFWwindow*)window, title);
 	*/
 
-	public static native int glfwSetWindowPos(long window,  int x, int y); /*
-		glfwSetWindowPos(window, x, y);
+	public static native void glfwSetWindowPos(long window,  int x, int y); /*
+		glfwSetWindowPos((GLFWwindow*)window, x, y);
 	*/
 
 	public static native int glfwGetWindowX(long window); /*
