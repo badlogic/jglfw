@@ -1,8 +1,5 @@
 package com.badlogic.jglfw.utils;
 
-import com.badlogic.gdx.jnigen.AntScriptGenerator;
-import com.badlogic.gdx.jnigen.test.MyJniClass;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -18,7 +15,7 @@ import java.util.zip.ZipFile;
 /** Loads shared libraries from a natives jar file (desktop) or arm folders (Android). For desktop projects, have the natives jar
  * in the classpath, for Android projects put the shared libraries in the libs/armeabi and libs/armeabi-v7a folders.
  * 
- * See {@link AntScriptGenerator}.
+ * See AntScriptGenerator.
  * 
  * @author mzechner */
 public class SharedLibraryLoader {
@@ -28,7 +25,7 @@ public class SharedLibraryLoader {
 	public SharedLibraryLoader () {
 	}
 
-	/** Fetches the natives from the given natives jar file. Used for testing a shared lib on the fly, see {@link MyJniClass}.
+	/** Fetches the natives from the given natives jar file. Used for testing a shared lib on the fly, see MyJniClass.
 	 * @param nativesJar */
 	public SharedLibraryLoader (String nativesJar) {
 		this.nativesJar = nativesJar;
