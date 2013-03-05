@@ -10142,9 +10142,9 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetError
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glGetString
- * Signature: (I)Ljava/nio/Buffer;
+ * Signature: (I)Ljava/lang/String;
  */
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glGetString__I
+JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_gl_GL_glGetString__I
   (JNIEnv *, jclass, jint);
 
 /*
@@ -15590,18 +15590,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAttachShader
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glBindAttribLocation
- * Signature: (IILjava/nio/Buffer;I)V
+ * Signature: (IILjava/lang/String;)V
  */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindAttribLocation__IILjava_nio_Buffer_2I
-  (JNIEnv *, jclass, jint, jint, jobject, jint);
-
-/*
- * Class:     com_badlogic_jglfw_gl_GL
- * Method:    glBindAttribLocation
- * Signature: (IIJ)V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindAttribLocation__IIJ
-  (JNIEnv *, jclass, jint, jint, jlong);
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindAttribLocation
+  (JNIEnv *, jclass, jint, jint, jstring);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -15670,34 +15662,18 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glEnableVertexAttribArray
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glGetActiveAttrib
- * Signature: (IIILjava/nio/Buffer;ILjava/nio/Buffer;ILjava/nio/Buffer;ILjava/nio/Buffer;I)V
+ * Signature: (IILjava/nio/Buffer;ILjava/nio/Buffer;I)Ljava/lang/String;
  */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveAttrib__IIILjava_nio_Buffer_2ILjava_nio_Buffer_2ILjava_nio_Buffer_2ILjava_nio_Buffer_2I
-  (JNIEnv *, jclass, jint, jint, jint, jobject, jint, jobject, jint, jobject, jint, jobject, jint);
-
-/*
- * Class:     com_badlogic_jglfw_gl_GL
- * Method:    glGetActiveAttrib
- * Signature: (IIIJJJJ)V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveAttrib__IIIJJJJ
-  (JNIEnv *, jclass, jint, jint, jint, jlong, jlong, jlong, jlong);
+JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveAttrib
+  (JNIEnv *, jclass, jint, jint, jobject, jint, jobject, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glGetActiveUniform
- * Signature: (IIILjava/nio/Buffer;ILjava/nio/Buffer;ILjava/nio/Buffer;ILjava/nio/Buffer;I)V
+ * Signature: (IILjava/nio/Buffer;ILjava/nio/Buffer;I)Ljava/lang/String;
  */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniform__IIILjava_nio_Buffer_2ILjava_nio_Buffer_2ILjava_nio_Buffer_2ILjava_nio_Buffer_2I
-  (JNIEnv *, jclass, jint, jint, jint, jobject, jint, jobject, jint, jobject, jint, jobject, jint);
-
-/*
- * Class:     com_badlogic_jglfw_gl_GL
- * Method:    glGetActiveUniform
- * Signature: (IIIJJJJ)V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniform__IIIJJJJ
-  (JNIEnv *, jclass, jint, jint, jint, jlong, jlong, jlong, jlong);
+JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniform
+  (JNIEnv *, jclass, jint, jint, jobject, jint, jobject, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -15718,18 +15694,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttachedShaders__IIJJ
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glGetAttribLocation
- * Signature: (ILjava/nio/Buffer;I)I
+ * Signature: (ILjava/lang/String;)I
  */
-JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttribLocation__ILjava_nio_Buffer_2I
-  (JNIEnv *, jclass, jint, jobject, jint);
-
-/*
- * Class:     com_badlogic_jglfw_gl_GL
- * Method:    glGetAttribLocation
- * Signature: (IJ)I
- */
-JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttribLocation__IJ
-  (JNIEnv *, jclass, jint, jlong);
+JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttribLocation
+  (JNIEnv *, jclass, jint, jstring);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -15750,18 +15718,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramiv__IIJ
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glGetProgramInfoLog
- * Signature: (IILjava/nio/Buffer;ILjava/nio/Buffer;I)V
+ * Signature: (I)Ljava/lang/String;
  */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramInfoLog__IILjava_nio_Buffer_2ILjava_nio_Buffer_2I
-  (JNIEnv *, jclass, jint, jint, jobject, jint, jobject, jint);
-
-/*
- * Class:     com_badlogic_jglfw_gl_GL
- * Method:    glGetProgramInfoLog
- * Signature: (IIJJ)V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramInfoLog__IIJJ
-  (JNIEnv *, jclass, jint, jint, jlong, jlong);
+JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_gl_GL_glGetProgramInfoLog
+  (JNIEnv *, jclass, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -15782,18 +15742,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderiv__IIJ
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glGetShaderInfoLog
- * Signature: (IILjava/nio/Buffer;ILjava/nio/Buffer;I)V
+ * Signature: (I)Ljava/lang/String;
  */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderInfoLog__IILjava_nio_Buffer_2ILjava_nio_Buffer_2I
-  (JNIEnv *, jclass, jint, jint, jobject, jint, jobject, jint);
-
-/*
- * Class:     com_badlogic_jglfw_gl_GL
- * Method:    glGetShaderInfoLog
- * Signature: (IIJJ)V
- */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderInfoLog__IIJJ
-  (JNIEnv *, jclass, jint, jint, jlong, jlong);
+JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderInfoLog
+  (JNIEnv *, jclass, jint);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -15814,18 +15766,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderSource__IIJJ
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glGetUniformLocation
- * Signature: (ILjava/nio/Buffer;I)I
+ * Signature: (ILjava/lang/String;)I
  */
-JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformLocation__ILjava_nio_Buffer_2I
-  (JNIEnv *, jclass, jint, jobject, jint);
-
-/*
- * Class:     com_badlogic_jglfw_gl_GL
- * Method:    glGetUniformLocation
- * Signature: (IJ)I
- */
-JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformLocation__IJ
-  (JNIEnv *, jclass, jint, jlong);
+JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformLocation
+  (JNIEnv *, jclass, jint, jstring);
 
 /*
  * Class:     com_badlogic_jglfw_gl_GL
@@ -17486,9 +17430,9 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glClearBufferfi
 /*
  * Class:     com_badlogic_jglfw_gl_GL
  * Method:    glGetString
- * Signature: (II)Ljava/nio/Buffer;
+ * Signature: (II)Ljava/lang/String;
  */
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_gl_GL_glGetString__II
+JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_gl_GL_glGetString__II
   (JNIEnv *, jclass, jint, jint);
 
 /*

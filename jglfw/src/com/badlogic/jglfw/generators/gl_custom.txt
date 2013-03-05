@@ -67,3 +67,52 @@ glShaderSourceARB
 		ext_glShaderSource((GLuint)shader, 1, &string, 0);
 	*/
 -----
+glBindAttribLocation
+	public static native void glBindAttribLocation(int program, int index, String name); /*
+		ext_glBindAttribLocation((GLuint)program, (GLuint)index, (const GLchar*)(name));
+	*/
+-----	
+glGetAttribLocation
+	public static native int glGetAttribLocation(int program, String name); /*
+		return (jint)ext_glGetAttribLocation((GLuint)program, (const GLchar*)(name));
+	*/
+-----
+glGetUniformLocation
+	public static native int glGetUniformLocation(int program, String name); /*
+		return (jint)ext_glGetUniformLocation((GLuint)program, (const GLchar*)(name));
+	*/
+-----
+glGetActiveAttrib
+	public static native String glGetActiveAttrib(int program, int index, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset); /*
+        // FIXME 2K limit for attrib names
+        char cname[2048];
+		ext_glGetActiveAttrib((GLuint)program, (GLuint)index, (GLsizei)2048, 0, (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), cname);
+        return env->NewStringUTF( cname );
+	*/
+-----
+glGetActiveUniform
+	public static native String glGetActiveUniform(int program, int index, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset); /*
+        // FIXME 2K limit for uniform names
+        char cname[2048];
+		ext_glGetActiveUniform((GLuint)program, (GLuint)index, (GLsizei)2048, 0, (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), cname);
+        return env->NewStringUTF(cname);
+	*/
+-----
+glGetProgramInfoLog
+	public static native String glGetProgramInfoLog(int program); /*
+		// FIXME 10K limit
+		char info[1024*10];
+		int length = 0;
+        ext_glGetProgramInfoLog(program, 1024*10, &length, info);
+		return env->NewStringUTF(info);
+	*/
+-----
+glGetShaderInfoLog
+	public static native String glGetShaderInfoLog(int shader); /*
+		// FIXME 10K limit
+		char info[1024*10];
+		int length = 0;
+        ext_glGetShaderInfoLog(shader, 1024*10, &length, info);
+		return env->NewStringUTF(info);
+	*/
+-----

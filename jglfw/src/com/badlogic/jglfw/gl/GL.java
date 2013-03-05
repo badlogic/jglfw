@@ -12214,12 +12214,8 @@ public class GL {
 		ext_glAttachShader((GLuint)program, (GLuint)shader);
 	*/
 
-	public static native void glBindAttribLocation(int program, int index, Buffer name, int nameByteOffset); /*
-		ext_glBindAttribLocation((GLuint)program, (GLuint)index, (const GLchar*)(name + nameByteOffset));
-	*/
-
-	public static native void glBindAttribLocation(int program, int index, long name); /*
-		ext_glBindAttribLocation((GLuint)program, (GLuint)index, (const GLchar*)name);
+	public static native void glBindAttribLocation(int program, int index, String name); /*
+		ext_glBindAttribLocation((GLuint)program, (GLuint)index, (const GLchar*)(name));
 	*/
 
 	public static native void glCompileShader(int shader); /*
@@ -12254,20 +12250,18 @@ public class GL {
 		ext_glEnableVertexAttribArray((GLuint)index);
 	*/
 
-	public static native void glGetActiveAttrib(int program, int index, int bufSize, Buffer length, int lengthByteOffset, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset, Buffer name, int nameByteOffset); /*
-		ext_glGetActiveAttrib((GLuint)program, (GLuint)index, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLchar*)(name + nameByteOffset));
+	public static native String glGetActiveAttrib(int program, int index, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset); /*
+        // FIXME 2K limit for attrib names
+        char cname[2048];
+		ext_glGetActiveAttrib((GLuint)program, (GLuint)index, (GLsizei)2048, 0, (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), cname);
+        return env->NewStringUTF( cname );
 	*/
 
-	public static native void glGetActiveAttrib(int program, int index, int bufSize, long length, long size, long type, long name); /*
-		ext_glGetActiveAttrib((GLuint)program, (GLuint)index, (GLsizei)bufSize, (GLsizei*)length, (GLint*)size, (GLenum*)type, (GLchar*)name);
-	*/
-
-	public static native void glGetActiveUniform(int program, int index, int bufSize, Buffer length, int lengthByteOffset, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset, Buffer name, int nameByteOffset); /*
-		ext_glGetActiveUniform((GLuint)program, (GLuint)index, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLchar*)(name + nameByteOffset));
-	*/
-
-	public static native void glGetActiveUniform(int program, int index, int bufSize, long length, long size, long type, long name); /*
-		ext_glGetActiveUniform((GLuint)program, (GLuint)index, (GLsizei)bufSize, (GLsizei*)length, (GLint*)size, (GLenum*)type, (GLchar*)name);
+	public static native String glGetActiveUniform(int program, int index, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset); /*
+        // FIXME 2K limit for uniform names
+        char cname[2048];
+		ext_glGetActiveUniform((GLuint)program, (GLuint)index, (GLsizei)2048, 0, (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), cname);
+        return env->NewStringUTF(cname);
 	*/
 
 	public static native void glGetAttachedShaders(int program, int maxCount, Buffer count, int countByteOffset, Buffer obj, int objByteOffset); /*
@@ -12278,12 +12272,8 @@ public class GL {
 		ext_glGetAttachedShaders((GLuint)program, (GLsizei)maxCount, (GLsizei*)count, (GLuint*)obj);
 	*/
 
-	public static native int glGetAttribLocation(int program, Buffer name, int nameByteOffset); /*
-		return (jint)ext_glGetAttribLocation((GLuint)program, (const GLchar*)(name + nameByteOffset));
-	*/
-
-	public static native int glGetAttribLocation(int program, long name); /*
-		return (jint)ext_glGetAttribLocation((GLuint)program, (const GLchar*)name);
+	public static native int glGetAttribLocation(int program, String name); /*
+		return (jint)ext_glGetAttribLocation((GLuint)program, (const GLchar*)(name));
 	*/
 
 	public static native void glGetProgramiv(int program, int pname, Buffer params, int paramsByteOffset); /*
@@ -12294,12 +12284,12 @@ public class GL {
 		ext_glGetProgramiv((GLuint)program, (GLenum)pname, (GLint*)params);
 	*/
 
-	public static native void glGetProgramInfoLog(int program, int bufSize, Buffer length, int lengthByteOffset, Buffer infoLog, int infoLogByteOffset); /*
-		ext_glGetProgramInfoLog((GLuint)program, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(infoLog + infoLogByteOffset));
-	*/
-
-	public static native void glGetProgramInfoLog(int program, int bufSize, long length, long infoLog); /*
-		ext_glGetProgramInfoLog((GLuint)program, (GLsizei)bufSize, (GLsizei*)length, (GLchar*)infoLog);
+	public static native String glGetProgramInfoLog(int program); /*
+		// FIXME 10K limit
+		char info[1024*10];
+		int length = 0;
+        ext_glGetProgramInfoLog(program, 1024*10, &length, info);
+		return env->NewStringUTF(info);
 	*/
 
 	public static native void glGetShaderiv(int shader, int pname, Buffer params, int paramsByteOffset); /*
@@ -12310,12 +12300,12 @@ public class GL {
 		ext_glGetShaderiv((GLuint)shader, (GLenum)pname, (GLint*)params);
 	*/
 
-	public static native void glGetShaderInfoLog(int shader, int bufSize, Buffer length, int lengthByteOffset, Buffer infoLog, int infoLogByteOffset); /*
-		ext_glGetShaderInfoLog((GLuint)shader, (GLsizei)bufSize, (GLsizei*)(length + lengthByteOffset), (GLchar*)(infoLog + infoLogByteOffset));
-	*/
-
-	public static native void glGetShaderInfoLog(int shader, int bufSize, long length, long infoLog); /*
-		ext_glGetShaderInfoLog((GLuint)shader, (GLsizei)bufSize, (GLsizei*)length, (GLchar*)infoLog);
+	public static native String glGetShaderInfoLog(int shader); /*
+		// FIXME 10K limit
+		char info[1024*10];
+		int length = 0;
+        ext_glGetShaderInfoLog(shader, 1024*10, &length, info);
+		return env->NewStringUTF(info);
 	*/
 
 	public static native void glGetShaderSource(int shader, int bufSize, Buffer length, int lengthByteOffset, Buffer source, int sourceByteOffset); /*
@@ -12326,12 +12316,8 @@ public class GL {
 		ext_glGetShaderSource((GLuint)shader, (GLsizei)bufSize, (GLsizei*)length, (GLchar*)source);
 	*/
 
-	public static native int glGetUniformLocation(int program, Buffer name, int nameByteOffset); /*
-		return (jint)ext_glGetUniformLocation((GLuint)program, (const GLchar*)(name + nameByteOffset));
-	*/
-
-	public static native int glGetUniformLocation(int program, long name); /*
-		return (jint)ext_glGetUniformLocation((GLuint)program, (const GLchar*)name);
+	public static native int glGetUniformLocation(int program, String name); /*
+		return (jint)ext_glGetUniformLocation((GLuint)program, (const GLchar*)(name));
 	*/
 
 	public static native void glGetUniformfv(int program, int location, Buffer params, int paramsByteOffset); /*
