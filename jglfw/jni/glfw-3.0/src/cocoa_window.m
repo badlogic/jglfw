@@ -342,8 +342,6 @@ static int convertMacKeyCode(unsigned int macKeyCode)
 
 - (void)mouseDown:(NSEvent *)event
 {
-	printf("mouse down!\n");
-	fflush(stdout);
     _glfwInputMouseClick(window, GLFW_MOUSE_BUTTON_LEFT, GLFW_PRESS);
 }
 
