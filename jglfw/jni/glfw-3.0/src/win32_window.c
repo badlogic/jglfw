@@ -696,6 +696,11 @@ static int createWindow(_GLFWwindow* window,
             window->win32.dwExStyle |= WS_EX_WINDOWEDGE;
         }
 
+        if (wndconfig->undecorated) {
+           window->win32.dwStyle = WS_POPUP;
+           window->win32.dwExStyle = 0;
+        }
+
         xpos = CW_USEDEFAULT;
         ypos = CW_USEDEFAULT;
 

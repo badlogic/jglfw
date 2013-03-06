@@ -207,6 +207,7 @@ public class Glfw {
 	public static final int  GLFW_ICONIFIED              = 0x00020002;
 	public static final int  GLFW_RESIZABLE              = 0x00022007;
 	public static final int  GLFW_VISIBLE                = 0x00022008;
+	public static final int  GLFW_UNDECORATED            = 0x00022009;
 
 	public static final int  GLFW_CONTEXT_REVISION       = 0x00020004;
 	public static final int  GLFW_RED_BITS               = 0x00021000;

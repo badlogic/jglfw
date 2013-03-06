@@ -373,6 +373,8 @@ extern "C" {
 #define com_badlogic_jglfw_Glfw_GLFW_RESIZABLE 139271L
 #undef com_badlogic_jglfw_Glfw_GLFW_VISIBLE
 #define com_badlogic_jglfw_Glfw_GLFW_VISIBLE 139272L
+#undef com_badlogic_jglfw_Glfw_GLFW_UNDECORATED
+#define com_badlogic_jglfw_Glfw_GLFW_UNDECORATED 139273L
 #undef com_badlogic_jglfw_Glfw_GLFW_CONTEXT_REVISION
 #define com_badlogic_jglfw_Glfw_GLFW_CONTEXT_REVISION 131076L
 #undef com_badlogic_jglfw_Glfw_GLFW_RED_BITS
