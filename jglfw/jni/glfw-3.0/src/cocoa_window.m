@@ -655,7 +655,7 @@ static GLboolean createWindow(_GLFWwindow* window,
 {
     unsigned int styleMask = 0;
 
-    if (wndconfig->monitor)
+    if (wndconfig->monitor || wndconfig->undecorated)
         styleMask = NSBorderlessWindowMask;
     else
     {
