@@ -132,6 +132,7 @@ static GLboolean createWindow(_GLFWwindow* window,
                                            &wa);
 
         if (wndconfig->undecorated) {
+		/*
             Atom motif_hints_atom = XInternAtom(_glfw.x11.display, "_MOTIF_WM_HINTS", False);
             MotifWmHints motif_hints;
             motif_hints.flags = MWM_HINTS_DECORATIONS;
@@ -139,7 +140,7 @@ static GLboolean createWindow(_GLFWwindow* window,
             XChangeProperty(_glfw.x11.display, window->x11.handle,
                 motif_hints_atom, motif_hints_atom, 32,
                 PropModeReplace,
-                (unsigned char *)&motif_hints, sizeof(MotifWmHints) / sizeof(long));
+                (unsigned char *)&motif_hints, sizeof(MotifWmHints) / sizeof(long));*/
         }
 
         if (!window->x11.handle)
