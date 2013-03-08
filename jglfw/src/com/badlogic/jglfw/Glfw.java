@@ -267,8 +267,6 @@ public class Glfw {
 	/*JNI 
 	#include <GL/glfw3.h>
 	
-	// keeping this in statics is not the smartest move, but oh well...
-	static jclass callbackClass = 0;
 	static jmethodID errorId = 0;
 	static jmethodID monitorId = 0;
 	static jmethodID windowPosId = 0;
@@ -284,90 +282,101 @@ public class Glfw {
 	static jmethodID cursorEnterId = 0;
 	static jmethodID scrollId = 0;
 	static jobject callback = 0;
-	static JNIEnv* staticEnv;
-	
+	static JavaVM* vm = 0;
+
+	JNIEnv* getEnv () {
+		static JNIEnv* env = 0;
+		if (!env) {
+			if (vm->GetEnv((void**)&env, JNI_VERSION_1_2) != JNI_OK) {
+				printf("Unable to get Env."); fflush(stdout);
+				return 0;
+			}
+		}
+		return env;
+	}
+
 	void error(int errorCode, const char* description) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, errorId, (jint)errorCode, staticEnv->NewStringUTF(description));
+			getEnv()->CallVoidMethod(callback, errorId, (jint)errorCode, getEnv()->NewStringUTF(description));
 		}
 	}
 	
 	void windowPos(GLFWwindow* window, int x, int y) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, windowPosId, (jlong)window, (jint)x, (jint)y);
+			getEnv()->CallVoidMethod(callback, windowPosId, (jlong)window, (jint)x, (jint)y);
 		}
 	}
 	
 	void windowSize(GLFWwindow* window, int width, int height) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, windowSizeId, (jlong)window, (jint)width, (jint)height);
+			getEnv()->CallVoidMethod(callback, windowSizeId, (jlong)window, (jint)width, (jint)height);
 		}
 	}
 	
 	int windowClose(GLFWwindow* window) {
 		if(callback) {
-			return (staticEnv->CallBooleanMethod(callback, windowCloseId, (jlong)window)?GL_TRUE:GL_FALSE);
+			return (getEnv()->CallBooleanMethod(callback, windowCloseId, (jlong)window)?GL_TRUE:GL_FALSE);
 		}
 		return GL_TRUE;
 	}
 	
 	void windowRefresh(GLFWwindow* window) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, windowRefreshId, (jlong)window);
+			getEnv()->CallVoidMethod(callback, windowRefreshId, (jlong)window);
 		}
 	}
 	
 	void windowFocus(GLFWwindow* window, int focused) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, windowFocusId, (jlong)window, (jboolean)(GL_TRUE==focused));
+			getEnv()->CallVoidMethod(callback, windowFocusId, (jlong)window, (jboolean)(GL_TRUE==focused));
 		}
 	}
 	
 	void windowIconify(GLFWwindow* window, int iconified) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, windowIconifyId, (jlong)window, (jboolean)(GL_TRUE==iconified));
+			getEnv()->CallVoidMethod(callback, windowIconifyId, (jlong)window, (jboolean)(GL_TRUE==iconified));
 		}
 	}
 	
 	void mouseButton(GLFWwindow* window, int button, int action) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, mouseButtonId, (jlong)window, (jint)button, (jint)action);
+			getEnv()->CallVoidMethod(callback, mouseButtonId, (jlong)window, (jint)button, (jint)action);
 		}
 	}
 	
 	void cursorPos(GLFWwindow* window, int x, int y) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, cursorPosId, (jlong)window, (jint)x, (jint)y);
+			getEnv()->CallVoidMethod(callback, cursorPosId, (jlong)window, (jint)x, (jint)y);
 		}
 	}
 	
 	void cursorEnter(GLFWwindow* window, int entered) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, cursorEnterId, (jlong)window, (jboolean)(GL_TRUE==entered));
+			getEnv()->CallVoidMethod(callback, cursorEnterId, (jlong)window, (jboolean)(GL_TRUE==entered));
 		}
 	}
 	
 	void scroll(GLFWwindow* window, double xpos, double ypos) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, scrollId, (jlong)window, (jdouble)xpos, (jdouble)ypos);
+			getEnv()->CallVoidMethod(callback, scrollId, (jlong)window, (jdouble)xpos, (jdouble)ypos);
 		}
 	}
 	
 	void key(GLFWwindow* window, int key, int action) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, keyId, (jlong)window, (jint)key, (jint)action);
+			getEnv()->CallVoidMethod(callback, keyId, (jlong)window, (jint)key, (jint)action);
 		}
 	}
 	
 	void character(GLFWwindow* window, unsigned int character) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, characterId, (jlong)window, (jchar)character);
+			getEnv()->CallVoidMethod(callback, characterId, (jlong)window, (jchar)character);
 		}
 	}
 	
 	void monitor(GLFWmonitor* monitor, int event) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, monitorId, (jlong)monitor, (jboolean)(GLFW_CONNECTED==event));
+			getEnv()->CallVoidMethod(callback, monitorId, (jlong)monitor, (jboolean)(GLFW_CONNECTED==event));
 		}
 	}
 	
@@ -379,100 +388,100 @@ public class Glfw {
 	}
 	
 	public static native boolean glfwInitJni(); /*
+		env->GetJavaVM(&vm);
+
+		jclass exception = env->FindClass("java/lang/Exception");
+	
+		jclass callbackClass = env->FindClass("com/badlogic/jglfw/GlfwCallback");
 		if(!callbackClass) {
-			jclass exception = env->FindClass("java/lang/Exception");
-		
-			callbackClass = (jclass)env->NewGlobalRef(env->FindClass("com/badlogic/jglfw/GlfwCallback"));
-			if(!callbackClass) {
-				env->ThrowNew(exception, "Couldn't find class Glfw3Callback");
-				return false;
-			}
-		
-			errorId = env->GetMethodID(callbackClass, "error", "(ILjava/lang/String;)V");
-			if(!errorId) {
-				env->ThrowNew(exception, "Couldn't find error() method");
-				return false;
-			}
-		
-			monitorId = env->GetMethodID(callbackClass, "monitor", "(JZ)V");
-			if(!monitorId) {
-				env->ThrowNew(exception, "Couldn't find monitor() method");
-				return false;
-			}
-
-			windowPosId = env->GetMethodID(callbackClass, "windowPos", "(JII)V");
-			if(!windowPosId) {
-				env->ThrowNew(exception, "Couldn't find windowPosId() method");
-				return false;
-			}
-			
-			windowSizeId = env->GetMethodID(callbackClass, "windowSize", "(JII)V");
-			if(!windowSizeId) {
-				env->ThrowNew(exception, "Couldn't find windowSizeId() method");
-				return false;
-			}
-
-			windowCloseId = env->GetMethodID(callbackClass, "windowClose", "(J)Z");
-			if(!windowCloseId) {
-				env->ThrowNew(exception, "Couldn't find windowCloseId() method");
-				return false;
-			}
-
-			windowRefreshId = env->GetMethodID(callbackClass, "windowRefresh", "(J)V");
-			if(!windowRefreshId) {
-				env->ThrowNew(exception, "Couldn't find windowRefresh() method");
-				return false;
-			}
-
-			windowFocusId = env->GetMethodID(callbackClass, "windowFocus", "(JZ)V");
-			if(!windowFocusId) {
-				env->ThrowNew(exception, "Couldn't find windowFocus() method");
-				return false;
-			}
-
-			windowIconifyId = env->GetMethodID(callbackClass, "windowIconify", "(JZ)V");
-			if(!windowIconifyId) {
-				env->ThrowNew(exception, "Couldn't find windowIconify() method");
-				return false;
-			}
-
-			keyId = env->GetMethodID(callbackClass, "key", "(JII)V");
-			if(!keyId) {
-				env->ThrowNew(exception, "Couldn't find key() method");
-				return false;
-			}
-
-			characterId = env->GetMethodID(callbackClass, "character", "(JC)V");
-			if(!characterId) {
-				env->ThrowNew(exception, "Couldn't find character() method");
-				return false;
-			}
-			
-			mouseButtonId = env->GetMethodID(callbackClass, "mouseButton", "(JIZ)V");
-			if(!mouseButtonId) {
-				env->ThrowNew(exception, "Couldn't find mouseButton() method");
-				return false;
-			}
-			
-			cursorPosId = env->GetMethodID(callbackClass, "cursorPos", "(JII)V");
-			if(!cursorPosId) {
-				env->ThrowNew(exception, "Couldn't find cursorPos() method");
-				return false;
-			}
-			
-			cursorEnterId = env->GetMethodID(callbackClass, "cursorEnter", "(JZ)V");
-			if(!cursorEnterId) {
-				env->ThrowNew(exception, "Couldn't find cursorEnter() method");
-				return false;
-			}
-			
-			scrollId = env->GetMethodID(callbackClass, "scroll", "(JDD)V");
-			if(!scrollId) {
-				env->ThrowNew(exception, "Couldn't find scroll() method");
-				return false;
-			}
+			env->ThrowNew(exception, "Couldn't find class Glfw3Callback");
+			return false;
 		}
 	
+		errorId = env->GetMethodID(callbackClass, "error", "(ILjava/lang/String;)V");
+		if(!errorId) {
+			env->ThrowNew(exception, "Couldn't find error() method");
+			return false;
+		}
+	
+		monitorId = env->GetMethodID(callbackClass, "monitor", "(JZ)V");
+		if(!monitorId) {
+			env->ThrowNew(exception, "Couldn't find monitor() method");
+			return false;
+		}
+
+		windowPosId = env->GetMethodID(callbackClass, "windowPos", "(JII)V");
+		if(!windowPosId) {
+			env->ThrowNew(exception, "Couldn't find windowPosId() method");
+			return false;
+		}
+		
+		windowSizeId = env->GetMethodID(callbackClass, "windowSize", "(JII)V");
+		if(!windowSizeId) {
+			env->ThrowNew(exception, "Couldn't find windowSizeId() method");
+			return false;
+		}
+
+		windowCloseId = env->GetMethodID(callbackClass, "windowClose", "(J)Z");
+		if(!windowCloseId) {
+			env->ThrowNew(exception, "Couldn't find windowCloseId() method");
+			return false;
+		}
+
+		windowRefreshId = env->GetMethodID(callbackClass, "windowRefresh", "(J)V");
+		if(!windowRefreshId) {
+			env->ThrowNew(exception, "Couldn't find windowRefresh() method");
+			return false;
+		}
+
+		windowFocusId = env->GetMethodID(callbackClass, "windowFocus", "(JZ)V");
+		if(!windowFocusId) {
+			env->ThrowNew(exception, "Couldn't find windowFocus() method");
+			return false;
+		}
+
+		windowIconifyId = env->GetMethodID(callbackClass, "windowIconify", "(JZ)V");
+		if(!windowIconifyId) {
+			env->ThrowNew(exception, "Couldn't find windowIconify() method");
+			return false;
+		}
+
+		keyId = env->GetMethodID(callbackClass, "key", "(JII)V");
+		if(!keyId) {
+			env->ThrowNew(exception, "Couldn't find key() method");
+			return false;
+		}
+
+		characterId = env->GetMethodID(callbackClass, "character", "(JC)V");
+		if(!characterId) {
+			env->ThrowNew(exception, "Couldn't find character() method");
+			return false;
+		}
+		
+		mouseButtonId = env->GetMethodID(callbackClass, "mouseButton", "(JIZ)V");
+		if(!mouseButtonId) {
+			env->ThrowNew(exception, "Couldn't find mouseButton() method");
+			return false;
+		}
+		
+		cursorPosId = env->GetMethodID(callbackClass, "cursorPos", "(JII)V");
+		if(!cursorPosId) {
+			env->ThrowNew(exception, "Couldn't find cursorPos() method");
+			return false;
+		}
+		
+		cursorEnterId = env->GetMethodID(callbackClass, "cursorEnter", "(JZ)V");
+		if(!cursorEnterId) {
+			env->ThrowNew(exception, "Couldn't find cursorEnter() method");
+			return false;
+		}
+		
+		scrollId = env->GetMethodID(callbackClass, "scroll", "(JDD)V");
+		if(!scrollId) {
+			env->ThrowNew(exception, "Couldn't find scroll() method");
+			return false;
+		}
+
 		jboolean result = glfwInit() == GL_TRUE;
 		if(result) {
 			glfwSetErrorCallback(error);
@@ -481,15 +490,19 @@ public class Glfw {
 		}
 		return result;
 	*/
-	
+
 	public static native void glfwTerminate(); /*
+		if (callback) {
+			env->DeleteGlobalRef(callback);
+			callback = 0;
+		}
 		glfwTerminate();
 	*/
-	
+
 	public static String glfwGetVersion() {
 		return "3.0.0";
 	}
-	
+
 	public static native String glfwGetVersionString(); /*
 		return env->NewStringUTF(glfwGetVersionString());
 	*/
@@ -621,14 +634,13 @@ public class Glfw {
 	
 	public static long glfwCreateWindow(int width, int height, String title, long monitor, long share) {
 		long window = glfwCreateWindowJni(width, height, title==null?"GLFW":title, monitor, share);
-		if(window != 0) {
+		if (window != 0) {
 			glfwMakeContextCurrent(window);
 			GL.init();
 		}
 		return window;
 	}
 
-	
 	public static native long glfwCreateWindowJni(int width, int height, String title, long monitor, long share); /*
 		GLFWwindow* window = glfwCreateWindow(width, height, title, (GLFWmonitor*)monitor, (GLFWwindow*)share);
 		if(window) {
@@ -731,31 +743,31 @@ public class Glfw {
 	 * @param callback the callback or null
 	 */
 	public static void glfwSetCallback(GlfwCallback callback) {
-		Glfw.callback = callback;
+		glfwSetCallbackJni(callback);
 	}
-		
+
+	public static native void glfwSetCallbackJni(GlfwCallback javaCallback); /*
+		if (callback) {
+			env->DeleteGlobalRef(callback);
+			callback = 0;
+		}
+		if (javaCallback) callback = env->NewGlobalRef(javaCallback);
+	*/
+
 	public static void glfwPollEvents() {
 		glfwPollEventsJni(callback);
 	}
 	
 	private static native void glfwPollEventsJni(GlfwCallback javaCallback); /*
-		callback = javaCallback;
-		staticEnv = env;
 		glfwPollEvents();
-		callback = 0;
-		staticEnv = 0;
 	*/
-	
+
 	public static void glfwWaitEvents() {
 		glfwWaitEventsJni(callback);
 	}
 	
 	private static native void glfwWaitEventsJni(GlfwCallback javaCallback); /*
-		callback = javaCallback;
-		staticEnv = env;
 		glfwWaitEvents();
-		callback = 0;
-		staticEnv = 0;
 	*/
 	
 	public static native int glfwGetInputMode(long window, int mode); /*
