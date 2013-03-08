@@ -131,6 +131,15 @@ static GLboolean createWindow(_GLFWwindow* window,
                                            wamask,
                                            &wa);
 
+        if (!window->x11.handle)
+        {
+            // TODO: Handle all the various error codes here and translate them
+            // to GLFW errors
+
+            _glfwInputError(GLFW_PLATFORM_ERROR, "X11: Failed to create window");
+            return GL_FALSE;
+        }
+
         if (wndconfig->undecorated) {
 		/*
             Atom motif_hints_atom = XInternAtom(_glfw.x11.display, "_MOTIF_WM_HINTS", False);
@@ -141,15 +150,6 @@ static GLboolean createWindow(_GLFWwindow* window,
                 motif_hints_atom, motif_hints_atom, 32,
                 PropModeReplace,
                 (unsigned char *)&motif_hints, sizeof(MotifWmHints) / sizeof(long));*/
-        }
-
-        if (!window->x11.handle)
-        {
-            // TODO: Handle all the various error codes here and translate them
-            // to GLFW errors
-
-            _glfwInputError(GLFW_PLATFORM_ERROR, "X11: Failed to create window");
-            return GL_FALSE;
         }
     }
 

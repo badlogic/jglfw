@@ -733,6 +733,14 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetWindowParam
 
 /*
  * Class:     com_badlogic_jglfw_Glfw
+ * Method:    glfwSetCallbackJni
+ * Signature: (Lcom/badlogic/jglfw/GlfwCallback;)V
+ */
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetCallbackJni
+  (JNIEnv *, jclass, jobject);
+
+/*
+ * Class:     com_badlogic_jglfw_Glfw
  * Method:    glfwPollEventsJni
  * Signature: (Lcom/badlogic/jglfw/GlfwCallback;)V
  */

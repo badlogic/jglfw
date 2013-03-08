@@ -102,7 +102,6 @@ public class GlfwBuild {
 		mac.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/" };
 		mac.libraries = "-framework Cocoa -framework OpenGL -framework IOKit";
 
-		
 		BuildConfig config = new BuildConfig("jglfw");
 		new AntScriptGenerator().generate(config, win32home, win32, win64 /*, linux32 */, linux64, mac);
 		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true clean");

@@ -4,8 +4,6 @@
  
 	#include <GL/glfw3.h>
 	
-	// keeping this in statics is not the smartest move, but oh well...
-	static jclass callbackClass = 0;
 	static jmethodID errorId = 0;
 	static jmethodID monitorId = 0;
 	static jmethodID windowPosId = 0;
@@ -21,192 +19,203 @@
 	static jmethodID cursorEnterId = 0;
 	static jmethodID scrollId = 0;
 	static jobject callback = 0;
-	static JNIEnv* staticEnv;
-	
+	static JavaVM* vm = 0;
+
+	JNIEnv* getEnv () {
+		static JNIEnv* env = 0;
+		if (!env) {
+			if (vm->GetEnv((void**)&env, JNI_VERSION_1_2) != JNI_OK) {
+				printf("Unable to get Env."); fflush(stdout);
+				return 0;
+			}
+		}
+		return env;
+	}
+
 	void error(int errorCode, const char* description) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, errorId, (jint)errorCode, staticEnv->NewStringUTF(description));
+			getEnv()->CallVoidMethod(callback, errorId, (jint)errorCode, getEnv()->NewStringUTF(description));
 		}
 	}
 	
 	void windowPos(GLFWwindow* window, int x, int y) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, windowPosId, (jlong)window, (jint)x, (jint)y);
+			getEnv()->CallVoidMethod(callback, windowPosId, (jlong)window, (jint)x, (jint)y);
 		}
 	}
 	
 	void windowSize(GLFWwindow* window, int width, int height) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, windowSizeId, (jlong)window, (jint)width, (jint)height);
+			getEnv()->CallVoidMethod(callback, windowSizeId, (jlong)window, (jint)width, (jint)height);
 		}
 	}
 	
 	int windowClose(GLFWwindow* window) {
 		if(callback) {
-			return (staticEnv->CallBooleanMethod(callback, windowCloseId, (jlong)window)?GL_TRUE:GL_FALSE);
+			return (getEnv()->CallBooleanMethod(callback, windowCloseId, (jlong)window)?GL_TRUE:GL_FALSE);
 		}
 		return GL_TRUE;
 	}
 	
 	void windowRefresh(GLFWwindow* window) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, windowRefreshId, (jlong)window);
+			getEnv()->CallVoidMethod(callback, windowRefreshId, (jlong)window);
 		}
 	}
 	
 	void windowFocus(GLFWwindow* window, int focused) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, windowFocusId, (jlong)window, (jboolean)(GL_TRUE==focused));
+			getEnv()->CallVoidMethod(callback, windowFocusId, (jlong)window, (jboolean)(GL_TRUE==focused));
 		}
 	}
 	
 	void windowIconify(GLFWwindow* window, int iconified) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, windowIconifyId, (jlong)window, (jboolean)(GL_TRUE==iconified));
+			getEnv()->CallVoidMethod(callback, windowIconifyId, (jlong)window, (jboolean)(GL_TRUE==iconified));
 		}
 	}
 	
 	void mouseButton(GLFWwindow* window, int button, int action) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, mouseButtonId, (jlong)window, (jint)button, (jint)action);
+			getEnv()->CallVoidMethod(callback, mouseButtonId, (jlong)window, (jint)button, (jint)action);
 		}
 	}
 	
 	void cursorPos(GLFWwindow* window, int x, int y) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, cursorPosId, (jlong)window, (jint)x, (jint)y);
+			getEnv()->CallVoidMethod(callback, cursorPosId, (jlong)window, (jint)x, (jint)y);
 		}
 	}
 	
 	void cursorEnter(GLFWwindow* window, int entered) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, cursorEnterId, (jlong)window, (jboolean)(GL_TRUE==entered));
+			getEnv()->CallVoidMethod(callback, cursorEnterId, (jlong)window, (jboolean)(GL_TRUE==entered));
 		}
 	}
 	
 	void scroll(GLFWwindow* window, double xpos, double ypos) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, scrollId, (jlong)window, (jdouble)xpos, (jdouble)ypos);
+			getEnv()->CallVoidMethod(callback, scrollId, (jlong)window, (jdouble)xpos, (jdouble)ypos);
 		}
 	}
 	
 	void key(GLFWwindow* window, int key, int action) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, keyId, (jlong)window, (jint)key, (jint)action);
+			getEnv()->CallVoidMethod(callback, keyId, (jlong)window, (jint)key, (jint)action);
 		}
 	}
 	
 	void character(GLFWwindow* window, unsigned int character) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, characterId, (jlong)window, (jchar)character);
+			getEnv()->CallVoidMethod(callback, characterId, (jlong)window, (jchar)character);
 		}
 	}
 	
 	void monitor(GLFWmonitor* monitor, int event) {
 		if(callback) {
-			staticEnv->CallVoidMethod(callback, monitorId, (jlong)monitor, (jboolean)(GLFW_CONNECTED==event));
+			getEnv()->CallVoidMethod(callback, monitorId, (jlong)monitor, (jboolean)(GLFW_CONNECTED==event));
 		}
 	}
 	
 	JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_Glfw_glfwInitJni(JNIEnv* env, jclass clazz) {
 
 
-//@line:381
+//@line:390
 
+		env->GetJavaVM(&vm);
+
+		jclass exception = env->FindClass("java/lang/Exception");
+	
+		jclass callbackClass = env->FindClass("com/badlogic/jglfw/GlfwCallback");
 		if(!callbackClass) {
-			jclass exception = env->FindClass("java/lang/Exception");
-		
-			callbackClass = (jclass)env->NewGlobalRef(env->FindClass("com/badlogic/jglfw/GlfwCallback"));
-			if(!callbackClass) {
-				env->ThrowNew(exception, "Couldn't find class Glfw3Callback");
-				return false;
-			}
-		
-			errorId = env->GetMethodID(callbackClass, "error", "(ILjava/lang/String;)V");
-			if(!errorId) {
-				env->ThrowNew(exception, "Couldn't find error() method");
-				return false;
-			}
-		
-			monitorId = env->GetMethodID(callbackClass, "monitor", "(JZ)V");
-			if(!monitorId) {
-				env->ThrowNew(exception, "Couldn't find monitor() method");
-				return false;
-			}
-
-			windowPosId = env->GetMethodID(callbackClass, "windowPos", "(JII)V");
-			if(!windowPosId) {
-				env->ThrowNew(exception, "Couldn't find windowPosId() method");
-				return false;
-			}
-			
-			windowSizeId = env->GetMethodID(callbackClass, "windowSize", "(JII)V");
-			if(!windowSizeId) {
-				env->ThrowNew(exception, "Couldn't find windowSizeId() method");
-				return false;
-			}
-
-			windowCloseId = env->GetMethodID(callbackClass, "windowClose", "(J)Z");
-			if(!windowCloseId) {
-				env->ThrowNew(exception, "Couldn't find windowCloseId() method");
-				return false;
-			}
-
-			windowRefreshId = env->GetMethodID(callbackClass, "windowRefresh", "(J)V");
-			if(!windowRefreshId) {
-				env->ThrowNew(exception, "Couldn't find windowRefresh() method");
-				return false;
-			}
-
-			windowFocusId = env->GetMethodID(callbackClass, "windowFocus", "(JZ)V");
-			if(!windowFocusId) {
-				env->ThrowNew(exception, "Couldn't find windowFocus() method");
-				return false;
-			}
-
-			windowIconifyId = env->GetMethodID(callbackClass, "windowIconify", "(JZ)V");
-			if(!windowIconifyId) {
-				env->ThrowNew(exception, "Couldn't find windowIconify() method");
-				return false;
-			}
-
-			keyId = env->GetMethodID(callbackClass, "key", "(JII)V");
-			if(!keyId) {
-				env->ThrowNew(exception, "Couldn't find key() method");
-				return false;
-			}
-
-			characterId = env->GetMethodID(callbackClass, "character", "(JC)V");
-			if(!characterId) {
-				env->ThrowNew(exception, "Couldn't find character() method");
-				return false;
-			}
-			
-			mouseButtonId = env->GetMethodID(callbackClass, "mouseButton", "(JIZ)V");
-			if(!mouseButtonId) {
-				env->ThrowNew(exception, "Couldn't find mouseButton() method");
-				return false;
-			}
-			
-			cursorPosId = env->GetMethodID(callbackClass, "cursorPos", "(JII)V");
-			if(!cursorPosId) {
-				env->ThrowNew(exception, "Couldn't find cursorPos() method");
-				return false;
-			}
-			
-			cursorEnterId = env->GetMethodID(callbackClass, "cursorEnter", "(JZ)V");
-			if(!cursorEnterId) {
-				env->ThrowNew(exception, "Couldn't find cursorEnter() method");
-				return false;
-			}
-			
-			scrollId = env->GetMethodID(callbackClass, "scroll", "(JDD)V");
-			if(!scrollId) {
-				env->ThrowNew(exception, "Couldn't find scroll() method");
-				return false;
-			}
+			env->ThrowNew(exception, "Couldn't find class Glfw3Callback");
+			return false;
 		}
 	
+		errorId = env->GetMethodID(callbackClass, "error", "(ILjava/lang/String;)V");
+		if(!errorId) {
+			env->ThrowNew(exception, "Couldn't find error() method");
+			return false;
+		}
+	
+		monitorId = env->GetMethodID(callbackClass, "monitor", "(JZ)V");
+		if(!monitorId) {
+			env->ThrowNew(exception, "Couldn't find monitor() method");
+			return false;
+		}
+
+		windowPosId = env->GetMethodID(callbackClass, "windowPos", "(JII)V");
+		if(!windowPosId) {
+			env->ThrowNew(exception, "Couldn't find windowPosId() method");
+			return false;
+		}
+		
+		windowSizeId = env->GetMethodID(callbackClass, "windowSize", "(JII)V");
+		if(!windowSizeId) {
+			env->ThrowNew(exception, "Couldn't find windowSizeId() method");
+			return false;
+		}
+
+		windowCloseId = env->GetMethodID(callbackClass, "windowClose", "(J)Z");
+		if(!windowCloseId) {
+			env->ThrowNew(exception, "Couldn't find windowCloseId() method");
+			return false;
+		}
+
+		windowRefreshId = env->GetMethodID(callbackClass, "windowRefresh", "(J)V");
+		if(!windowRefreshId) {
+			env->ThrowNew(exception, "Couldn't find windowRefresh() method");
+			return false;
+		}
+
+		windowFocusId = env->GetMethodID(callbackClass, "windowFocus", "(JZ)V");
+		if(!windowFocusId) {
+			env->ThrowNew(exception, "Couldn't find windowFocus() method");
+			return false;
+		}
+
+		windowIconifyId = env->GetMethodID(callbackClass, "windowIconify", "(JZ)V");
+		if(!windowIconifyId) {
+			env->ThrowNew(exception, "Couldn't find windowIconify() method");
+			return false;
+		}
+
+		keyId = env->GetMethodID(callbackClass, "key", "(JII)V");
+		if(!keyId) {
+			env->ThrowNew(exception, "Couldn't find key() method");
+			return false;
+		}
+
+		characterId = env->GetMethodID(callbackClass, "character", "(JC)V");
+		if(!characterId) {
+			env->ThrowNew(exception, "Couldn't find character() method");
+			return false;
+		}
+		
+		mouseButtonId = env->GetMethodID(callbackClass, "mouseButton", "(JIZ)V");
+		if(!mouseButtonId) {
+			env->ThrowNew(exception, "Couldn't find mouseButton() method");
+			return false;
+		}
+		
+		cursorPosId = env->GetMethodID(callbackClass, "cursorPos", "(JII)V");
+		if(!cursorPosId) {
+			env->ThrowNew(exception, "Couldn't find cursorPos() method");
+			return false;
+		}
+		
+		cursorEnterId = env->GetMethodID(callbackClass, "cursorEnter", "(JZ)V");
+		if(!cursorEnterId) {
+			env->ThrowNew(exception, "Couldn't find cursorEnter() method");
+			return false;
+		}
+		
+		scrollId = env->GetMethodID(callbackClass, "scroll", "(JDD)V");
+		if(!scrollId) {
+			env->ThrowNew(exception, "Couldn't find scroll() method");
+			return false;
+		}
+
 		jboolean result = glfwInit() == GL_TRUE;
 		if(result) {
 			glfwSetErrorCallback(error);
@@ -221,8 +230,12 @@
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwTerminate(JNIEnv* env, jclass clazz) {
 
 
-//@line:485
+//@line:494
 
+		if (callback) {
+			env->DeleteGlobalRef(callback);
+			callback = 0;
+		}
 		glfwTerminate();
 	
 
@@ -231,7 +244,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwTerminate(JNIEnv* env, j
 JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetVersionString(JNIEnv* env, jclass clazz) {
 
 
-//@line:493
+//@line:506
 
 		return env->NewStringUTF(glfwGetVersionString());
 	
@@ -241,7 +254,7 @@ JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetVersionString(JNIE
 static inline jint wrapped_Java_com_badlogic_jglfw_Glfw_glfwGetMonitorsJni
 (JNIEnv* env, jclass clazz, jlongArray obj_monitors, long long* monitors) {
 
-//@line:505
+//@line:518
 
 		int count = 0;
 		GLFWmonitor** mons = glfwGetMonitors(&count);
@@ -267,7 +280,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetMonitorsJni(JNIEnv* e
 JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetPrimaryMonitor(JNIEnv* env, jclass clazz) {
 
 
-//@line:516
+//@line:529
 
 		return (jlong)glfwGetPrimaryMonitor();
 	
@@ -277,7 +290,7 @@ JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetPrimaryMonitor(JNIEn
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetMonitorX(JNIEnv* env, jclass clazz, jlong monitor) {
 
 
-//@line:520
+//@line:533
 
 		int x = 0;
 		int y = 0;
@@ -290,7 +303,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetMonitorX(JNIEnv* env,
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetMonitorY(JNIEnv* env, jclass clazz, jlong monitor) {
 
 
-//@line:527
+//@line:540
 
 		int x = 0;
 		int y = 0;
@@ -303,7 +316,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetMonitorY(JNIEnv* env,
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetMonitorPhysicalWidth(JNIEnv* env, jclass clazz, jlong monitor) {
 
 
-//@line:534
+//@line:547
 
 		int width = 0;
 		int height = 0;
@@ -316,7 +329,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetMonitorPhysicalWidth(
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetMonitorPhysicalHeight(JNIEnv* env, jclass clazz, jlong monitor) {
 
 
-//@line:541
+//@line:554
 
 		int width = 0;
 		int height = 0;
@@ -329,7 +342,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetMonitorPhysicalHeight
 JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetMonitorName(JNIEnv* env, jclass clazz, jlong monitor) {
 
 
-//@line:548
+//@line:561
 
 		return env->NewStringUTF(glfwGetMonitorName((GLFWmonitor*)monitor));
 	
@@ -339,7 +352,7 @@ JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetMonitorName(JNIEnv
 static inline jint wrapped_Java_com_badlogic_jglfw_Glfw_glfwGetVideoModesJni
 (JNIEnv* env, jclass clazz, jlong monitor, jintArray obj_modes, int* modes) {
 
-//@line:568
+//@line:581
 
 		int numModes = 0;
 		const GLFWvidmode* vidModes = glfwGetVideoModes((GLFWmonitor*)monitor, &numModes);
@@ -368,7 +381,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetVideoModeJni(JNIEnv* 
 	int* buffer = (int*)env->GetPrimitiveArrayCritical(obj_buffer, 0);
 
 
-//@line:593
+//@line:606
 
 		GLFWvidmode mode = glfwGetVideoMode((GLFWmonitor*)monitor);
 		buffer[0] = mode.width;
@@ -384,7 +397,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetVideoModeJni(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetGamma(JNIEnv* env, jclass clazz, jlong monitor, jfloat gamma) {
 
 
-//@line:602
+//@line:615
 
 		glfwSetGamma((GLFWmonitor*)monitor, gamma);
 	
@@ -394,7 +407,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetGamma(JNIEnv* env, jc
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetGammaRamp(JNIEnv* env, jclass clazz) {
 
 
-//@line:606
+//@line:619
 
 		// FIXME
 	
@@ -404,7 +417,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetGammaRamp(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetGammaRamp(JNIEnv* env, jclass clazz) {
 
 
-//@line:610
+//@line:623
 
 		// FIXME
 	
@@ -414,7 +427,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetGammaRamp(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwDefaultWindowHints(JNIEnv* env, jclass clazz) {
 
 
-//@line:614
+//@line:627
 
 		glfwDefaultWindowHints();
 	
@@ -424,7 +437,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwDefaultWindowHints(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwWindowHint(JNIEnv* env, jclass clazz, jint target, jint hint) {
 
 
-//@line:618
+//@line:631
 
 		glfwWindowHint(target, hint);
 	
@@ -434,7 +447,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwWindowHint(JNIEnv* env, 
 static inline jlong wrapped_Java_com_badlogic_jglfw_Glfw_glfwCreateWindowJni
 (JNIEnv* env, jclass clazz, jint width, jint height, jstring obj_title, jlong monitor, jlong share, char* title) {
 
-//@line:632
+//@line:644
 
 		GLFWwindow* window = glfwCreateWindow(width, height, title, (GLFWmonitor*)monitor, (GLFWwindow*)share);
 		if(window) {
@@ -468,7 +481,7 @@ JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_Glfw_glfwCreateWindowJni(JNIEnv*
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwDestroyWindow(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:651
+//@line:663
 
 		glfwDestroyWindow((GLFWwindow*)window);
 	
@@ -478,7 +491,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwDestroyWindow(JNIEnv* en
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_Glfw_glfwWindowShouldClose(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:655
+//@line:667
 
 		return GL_TRUE == glfwWindowShouldClose((GLFWwindow*)window);
 	
@@ -488,7 +501,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_Glfw_glfwWindowShouldClose(JN
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowShouldClose(JNIEnv* env, jclass clazz, jlong window, jint value) {
 
 
-//@line:659
+//@line:671
 
 		glfwSetWindowShouldClose((GLFWwindow*)window, value);
 	
@@ -499,7 +512,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowTitle(JNIEnv* e
 	char* title = (char*)env->GetStringUTFChars(obj_title, 0);
 
 
-//@line:663
+//@line:675
 
 		glfwSetWindowTitle((GLFWwindow*)window, title);
 	
@@ -510,7 +523,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowTitle(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowPos(JNIEnv* env, jclass clazz, jlong window, jint x, jint y) {
 
 
-//@line:667
+//@line:679
 
 		glfwSetWindowPos((GLFWwindow*)window, x, y);
 	
@@ -520,7 +533,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowPos(JNIEnv* env
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetWindowX(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:671
+//@line:683
 
 		int x = 0;
 		int y = 0;
@@ -533,7 +546,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetWindowX(JNIEnv* env, 
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetWindowY(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:678
+//@line:690
 
 		int x = 0;
 		int y = 0;
@@ -546,7 +559,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetWindowY(JNIEnv* env, 
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetWindowWidth(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:685
+//@line:697
 
 		int width = 0;
 		int height = 0;
@@ -559,7 +572,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetWindowWidth(JNIEnv* e
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetWindowHeight(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:692
+//@line:704
 
 		int width = 0;
 		int height = 0;
@@ -572,7 +585,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetWindowHeight(JNIEnv* 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowSize(JNIEnv* env, jclass clazz, jlong window, jint width, jint height) {
 
 
-//@line:699
+//@line:711
 
 		glfwSetWindowSize((GLFWwindow*)window, width, height);
 	
@@ -582,7 +595,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetWindowSize(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwIconifyWindow(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:703
+//@line:715
 
 		glfwIconifyWindow((GLFWwindow*)window);
 	
@@ -592,7 +605,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwIconifyWindow(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwRestoreWindow(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:707
+//@line:719
 
 		glfwRestoreWindow((GLFWwindow*)window);
 	
@@ -602,7 +615,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwRestoreWindow(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwHideWindow(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:711
+//@line:723
 
 		glfwHideWindow((GLFWwindow*)window);
 	
@@ -612,7 +625,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwHideWindow(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwShowWindow(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:715
+//@line:727
 
 		glfwShowWindow((GLFWwindow*)window);
 	
@@ -622,7 +635,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwShowWindow(JNIEnv* env, 
 JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetWindowMonitor(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:719
+//@line:731
 
 		return (jlong)glfwGetWindowMonitor((GLFWwindow*)window);
 	
@@ -632,9 +645,23 @@ JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetWindowMonitor(JNIEnv
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetWindowParam(JNIEnv* env, jclass clazz, jlong window, jint param) {
 
 
-//@line:723
+//@line:735
 
 		return glfwGetWindowParam((GLFWwindow*)window, param);
+	
+
+}
+
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetCallbackJni(JNIEnv* env, jclass clazz, jobject javaCallback) {
+
+
+//@line:749
+
+		if (callback) {
+			env->DeleteGlobalRef(callback);
+			callback = 0;
+		}
+		if (javaCallback) callback = env->NewGlobalRef(javaCallback);
 	
 
 }
@@ -642,13 +669,9 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetWindowParam(JNIEnv* e
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwPollEventsJni(JNIEnv* env, jclass clazz, jobject javaCallback) {
 
 
-//@line:741
+//@line:761
 
-		callback = javaCallback;
-		staticEnv = env;
 		glfwPollEvents();
-		callback = 0;
-		staticEnv = 0;
 	
 
 }
@@ -656,13 +679,9 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwPollEventsJni(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwWaitEventsJni(JNIEnv* env, jclass clazz, jobject javaCallback) {
 
 
-//@line:753
+//@line:769
 
-		callback = javaCallback;
-		staticEnv = env;
 		glfwWaitEvents();
-		callback = 0;
-		staticEnv = 0;
 	
 
 }
@@ -670,7 +689,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwWaitEventsJni(JNIEnv* en
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetInputMode(JNIEnv* env, jclass clazz, jlong window, jint mode) {
 
 
-//@line:761
+//@line:773
 
 		return glfwGetInputMode((GLFWwindow*)window, mode);
 	
@@ -680,7 +699,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetInputMode(JNIEnv* env
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetInputMode(JNIEnv* env, jclass clazz, jlong window, jint mode, jint value) {
 
 
-//@line:765
+//@line:777
 
 		glfwSetInputMode((GLFWwindow*)window, mode, value);
 	
@@ -690,7 +709,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetInputMode(JNIEnv* env
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetKey(JNIEnv* env, jclass clazz, jlong window, jint key) {
 
 
-//@line:769
+//@line:781
 
 		return glfwGetKey((GLFWwindow*)window, key) == GLFW_PRESS;
 	
@@ -700,7 +719,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetKey(JNIEnv* env, 
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetMouseButton(JNIEnv* env, jclass clazz, jlong window, jint button) {
 
 
-//@line:773
+//@line:785
 
 		return glfwGetMouseButton((GLFWwindow*)window, button) == GLFW_PRESS;
 	
@@ -710,7 +729,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetMouseButton(JNIEn
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetCursorPosX(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:777
+//@line:789
 
 		int x = 0;
 		int y = 0;
@@ -723,7 +742,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetCursorPosX(JNIEnv* en
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetCursorPosY(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:784
+//@line:796
 
 		int x = 0;
 		int y = 0;
@@ -736,7 +755,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetCursorPosY(JNIEnv* en
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetCursorPos(JNIEnv* env, jclass clazz, jlong window, jint x, jint y) {
 
 
-//@line:791
+//@line:803
 
 		glfwSetCursorPos((GLFWwindow*)window, x, y);
 	
@@ -746,7 +765,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetCursorPos(JNIEnv* env
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetJoystickParam(JNIEnv* env, jclass clazz, jint joy, jint param) {
 
 
-//@line:795
+//@line:807
 
 		return glfwGetJoystickParam(joy, param);
 	
@@ -756,7 +775,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetJoystickParam(JNIEnv*
 static inline jint wrapped_Java_com_badlogic_jglfw_Glfw_glfwGetJoystickAxes
 (JNIEnv* env, jclass clazz, jint joy, jfloatArray obj_axes, float* axes) {
 
-//@line:799
+//@line:811
 
 		return glfwGetJoystickAxes(joy, axes, env->GetArrayLength(obj_axes));
 	
@@ -775,7 +794,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetJoystickAxes(JNIEnv* 
 static inline jint wrapped_Java_com_badlogic_jglfw_Glfw_glfwGetJoystickButtons
 (JNIEnv* env, jclass clazz, jint joy, jbyteArray obj_buttons, char* buttons) {
 
-//@line:803
+//@line:815
 
 		return glfwGetJoystickButtons(joy, (unsigned char*)buttons, env->GetArrayLength(obj_buttons));
 	
@@ -794,7 +813,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetJoystickButtons(JNIEn
 JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetJoystickName(JNIEnv* env, jclass clazz, jint joy) {
 
 
-//@line:807
+//@line:819
 
 		return env->NewStringUTF(glfwGetJoystickName(joy));
 	
@@ -805,7 +824,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetClipboardString(JNIEn
 	char* string = (char*)env->GetStringUTFChars(obj_string, 0);
 
 
-//@line:811
+//@line:823
 
 		glfwSetClipboardString((GLFWwindow*)window, string);
 	
@@ -816,7 +835,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetClipboardString(JNIEn
 JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetClipboardString(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:815
+//@line:827
 
 		return env->NewStringUTF(glfwGetClipboardString((GLFWwindow*)window));
 	
@@ -826,7 +845,7 @@ JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetClipboardString(JN
 JNIEXPORT jdouble JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetTime(JNIEnv* env, jclass clazz) {
 
 
-//@line:819
+//@line:831
 
 		return glfwGetTime();
 	
@@ -836,7 +855,7 @@ JNIEXPORT jdouble JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetTime(JNIEnv* env, 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetTime(JNIEnv* env, jclass clazz, jdouble time) {
 
 
-//@line:823
+//@line:835
 
 		glfwSetTime(time);
 	
@@ -846,7 +865,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetTime(JNIEnv* env, jcl
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwMakeContextCurrent(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:827
+//@line:839
 
 		glfwMakeContextCurrent((GLFWwindow*)window);
 	
@@ -856,7 +875,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwMakeContextCurrent(JNIEn
 JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetCurrentContext(JNIEnv* env, jclass clazz) {
 
 
-//@line:831
+//@line:843
 
 		return (jlong)glfwGetCurrentContext();
 	
@@ -866,7 +885,7 @@ JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetCurrentContext(JNIEn
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSwapBuffers(JNIEnv* env, jclass clazz, jlong window) {
 
 
-//@line:835
+//@line:847
 
 		glfwSwapBuffers((GLFWwindow*)window);
 	
@@ -876,7 +895,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSwapBuffers(JNIEnv* env,
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSwapInterval(JNIEnv* env, jclass clazz, jint interval) {
 
 
-//@line:839
+//@line:851
 
 		glfwSwapInterval(interval);
 	
@@ -886,7 +905,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSwapInterval(JNIEnv* env
 static inline jboolean wrapped_Java_com_badlogic_jglfw_Glfw_glfwExtensionSupported
 (JNIEnv* env, jclass clazz, jstring obj_extension, char* extension) {
 
-//@line:843
+//@line:855
 
 		return glfwExtensionSupported(extension) == GL_TRUE;
 	
