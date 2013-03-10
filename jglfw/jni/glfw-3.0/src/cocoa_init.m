@@ -109,7 +109,7 @@ int _glfwPlatformInit(void)
     return GL_TRUE;
 }
 
-@interface GLFWTerminate
+@interface GLFWTerminate : NSObject
 @end
 @implementation GLFWTerminate
 - (void)terminate
