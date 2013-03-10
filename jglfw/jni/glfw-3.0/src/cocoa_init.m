@@ -109,6 +109,16 @@ int _glfwPlatformInit(void)
     return GL_TRUE;
 }
 
+@interface GLFWTerminate
+@end
+@implementation GLFWTerminate
+- (void)terminate
+{
+    [_glfw.ns.autoreleasePool release];
+    _glfw.ns.autoreleasePool = nil;
+}
+@end
+
 void _glfwPlatformTerminate(void)
 {
     // TODO: Probably other cleanup
@@ -123,8 +133,9 @@ void _glfwPlatformTerminate(void)
     [_glfw.ns.delegate release];
     _glfw.ns.delegate = nil;
 
-    [_glfw.ns.autoreleasePool release];
-    _glfw.ns.autoreleasePool = nil;
+	[[[[GLFWTerminate alloc] init] autorelease]
+		performSelectorOnMainThread:@selector(terminate)
+        withObject:nil waitUntilDone:NO];
 
     _glfwTerminateJoysticks();
 
