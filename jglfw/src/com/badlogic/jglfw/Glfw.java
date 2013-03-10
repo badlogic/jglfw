@@ -282,17 +282,17 @@ public class Glfw {
 	static jmethodID cursorEnterId = 0;
 	static jmethodID scrollId = 0;
 	static jobject callback = 0;
-	static JavaVM* vm = 0;
+	static JavaVM* staticVM = 0;
+	static JNIEnv* staticEnv = 0;
 
 	JNIEnv* getEnv () {
-		static JNIEnv* env = 0;
-		if (!env) {
-			if (vm->GetEnv((void**)&env, JNI_VERSION_1_2) != JNI_OK) {
+		if (!staticEnv) {
+			if (staticVM->GetEnv((void**)&staticEnv, JNI_VERSION_1_2) != JNI_OK) {
 				printf("Unable to get Env."); fflush(stdout);
 				return 0;
 			}
 		}
-		return env;
+		return staticEnv;
 	}
 
 	void error(int errorCode, const char* description) {
@@ -388,7 +388,7 @@ public class Glfw {
 	}
 	
 	public static native boolean glfwInitJni(); /*
-		env->GetJavaVM(&vm);
+		env->GetJavaVM(&staticVM);
 
 		jclass exception = env->FindClass("java/lang/Exception");
 	
@@ -496,6 +496,7 @@ public class Glfw {
 			env->DeleteGlobalRef(callback);
 			callback = 0;
 		}
+		staticEnv = 0;
 		glfwTerminate();
 	*/
 
