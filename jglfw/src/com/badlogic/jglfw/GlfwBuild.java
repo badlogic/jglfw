@@ -104,14 +104,14 @@ public class GlfwBuild {
 
 		BuildConfig config = new BuildConfig("jglfw");
 		new AntScriptGenerator().generate(config, win32home, win32, win64 /*, linux32 */, linux64, mac);
-		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true clean");
-		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true");
+//		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true clean");
+//		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true");
 //		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true");
 //		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true");
 //		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true clean");
-//		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true");
+		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true");
 		BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
 		
 //		GlfwTest.main(new String[0]);

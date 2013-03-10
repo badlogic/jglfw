@@ -843,8 +843,7 @@ void _glfwPlatformRestoreWindow(_GLFWwindow* window)
 
 void _glfwPlatformShowWindow(_GLFWwindow* window)
 {
-    [window->ns.object performSelectorOnMainThread:@selector(makeKeyAndOrderFront:)
-        withObject:nil waitUntilDone:NO];
+    [window->ns.object makeKeyAndOrderFront:nil];
     _glfwInputWindowVisibility(window, GL_TRUE);
 }
 
