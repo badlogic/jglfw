@@ -123,7 +123,8 @@ void _glfwPlatformTerminate(void)
     [_glfw.ns.delegate release];
     _glfw.ns.delegate = nil;
 
-    [_glfw.ns.autoreleasePool release];
+    [_glfw.ns.autoreleasePool performSelectorOnMainThread:@selector(release)
+        withObject:nil waitUntilDone:NO];
     _glfw.ns.autoreleasePool = nil;
 
     _glfwTerminateJoysticks();
