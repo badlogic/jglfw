@@ -78,7 +78,7 @@ static void changeToResourcesDirectory(void)
 
 int _glfwPlatformInit(void)
 {
-    _glfw.ns.autoreleasePool = [[NSAutoreleasePool alloc] init];
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
     _glfw.nsgl.framework =
         CFBundleGetBundleWithIdentifier(CFSTR("com.apple.opengl"));
@@ -106,18 +106,10 @@ int _glfwPlatformInit(void)
 
     CGEventSourceSetLocalEventsSuppressionInterval(_glfw.ns.eventSource, 0.0);
 
+	[pool drain];
+
     return GL_TRUE;
 }
-
-@interface GLFWTerminate : NSObject
-@end
-@implementation GLFWTerminate
-- (void)terminate
-{
-    [_glfw.ns.autoreleasePool release];
-    _glfw.ns.autoreleasePool = nil;
-}
-@end
 
 void _glfwPlatformTerminate(void)
 {
@@ -132,10 +124,6 @@ void _glfwPlatformTerminate(void)
     [NSApp setDelegate:nil];
     [_glfw.ns.delegate release];
     _glfw.ns.delegate = nil;
-
-	[[[[GLFWTerminate alloc] init] autorelease]
-		performSelectorOnMainThread:@selector(terminate)
-        withObject:nil waitUntilDone:NO];
 
     _glfwTerminateJoysticks();
 
