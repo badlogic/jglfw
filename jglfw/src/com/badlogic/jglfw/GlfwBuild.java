@@ -17,7 +17,7 @@ public class GlfwBuild {
 	
 	public static void main(String[] args) throws Exception {
 		NativeCodeGenerator jniGen = new NativeCodeGenerator();
-		jniGen.generate("src/", "bin/", "jni", new String[] { "**/GL.java", "**/Glfw.java", "**/Memory.java" }, null);
+		jniGen.generate("src/", "bin/", "jni", new String[] { "**/GL.java", "**/AL.java", "**/ALC.java", "**/Glfw.java", "**/Memory.java" }, null);
 		
 		String[] commonSrc = { 
 			"glfw-3.0/src/clipboard.c",
@@ -44,7 +44,7 @@ public class GlfwBuild {
 			"glfw-3.0/src/wgl_context.c"
 		);
 		win32.cFlags += " -D_GLFW_WIN32 -D_GLFW_WGL -D_GLFW_USE_OPENGL";
-		win32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/" };
+		win32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/", "al-headers"};
 		win32.libraries = "-lopengl32 -lwinmm -lgdi32";
 		
 		BuildTarget win32home = BuildTarget.newDefaultTarget(TargetOs.Windows, false);
@@ -77,7 +77,7 @@ public class GlfwBuild {
 			"glfw-3.0/src/glx_context.c"
 		);
 		linux32.cFlags += " -D_GLFW_X11 -D_GLFW_GLX -D_GLFW_USE_OPENGL -D_GLFW_HAS_DLOPEN";
-		linux32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/" };
+		linux32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/", "al-headers" };
 		linux32.libraries = "-lX11 -lXrandr -lXxf86vm";
 		
 		BuildTarget linux64 = BuildTarget.newDefaultTarget(TargetOs.Linux, true);
@@ -99,8 +99,8 @@ public class GlfwBuild {
 			"glfw-3.0/src/nsgl_context.m"
 		);
 		mac.cFlags += " -D_GLFW_COCOA -D_GLFW_NSGL -D_GLFW_USE_OPENGL -D_GLFW_USE_MENUBAR";
-		mac.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/" };
-		mac.libraries = "-framework Cocoa -framework OpenGL -framework IOKit";
+		mac.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/", "al-headers"};
+		mac.libraries = "-framework Cocoa -framework OpenGL -framework IOKit -L../../../jni/al-libs -lopenal";
 
 		BuildConfig config = new BuildConfig("jglfw");
 		new AntScriptGenerator().generate(config, win32home, win32, win64 /*, linux32 */, linux64, mac);
