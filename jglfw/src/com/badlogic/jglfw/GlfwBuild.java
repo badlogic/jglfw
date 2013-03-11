@@ -104,7 +104,7 @@ public class GlfwBuild {
 		);
 		mac.cFlags += " -D_GLFW_COCOA -D_GLFW_NSGL -D_GLFW_USE_OPENGL -D_GLFW_USE_MENUBAR";
 		mac.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/", "al-headers"};
-		mac.libraries = "-framework Cocoa -framework OpenGL -framework IOKit -lpthread -L../../../jni/al-libs -lopenal";
+		mac.libraries = "-framework Cocoa -framework OpenGL -framework IOKit -lpthread"; // -L../../../jni/al-libs -lopenal";
 		mac.cppExcludes = new String[] { "**/*AL*.cpp" };
 
 		BuildConfig config = new BuildConfig("jglfw");
