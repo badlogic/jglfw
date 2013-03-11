@@ -877,10 +877,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwSetTime
 
 /*
  * Class:     com_badlogic_jglfw_Glfw
- * Method:    glfwMakeContextCurrent
+ * Method:    glfwMakeContextCurrentJni
  * Signature: (J)V
  */
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwMakeContextCurrent
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_Glfw_glfwMakeContextCurrentJni
   (JNIEnv *, jclass, jlong);
 
 /*

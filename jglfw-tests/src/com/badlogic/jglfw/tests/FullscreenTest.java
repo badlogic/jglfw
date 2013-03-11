@@ -87,6 +87,7 @@ public class FullscreenTest {
 					if (newWindow == 0) {
 						throw new RuntimeException("Couldn't create window");
 					}
+					glfwMakeContextCurrent(newWindow);
 					glfwDestroyWindow(window);
 					window = newWindow;
 				}

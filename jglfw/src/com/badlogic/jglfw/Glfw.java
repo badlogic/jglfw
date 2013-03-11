@@ -673,17 +673,12 @@ public class Glfw {
 	*/
 	
 	public static long glfwCreateWindow(int width, int height, String title, long monitor, long share) {
-		long window = glfwCreateWindowJni(width, height, title==null?"GLFW":title, monitor, share);
-		if (window != 0) {
-			glfwMakeContextCurrent(window);
-			GL.init();
-		}
-		return window;
+		return glfwCreateWindowJni(width, height, title == null ? "GLFW" : title, monitor, share);
 	}
 
-	public static native long glfwCreateWindowJni(int width, int height, String title, long monitor, long share); /*
+	private static native long glfwCreateWindowJni(int width, int height, String title, long monitor, long share); /*
 		GLFWwindow* window = glfwCreateWindow(width, height, title, (GLFWmonitor*)monitor, (GLFWwindow*)share);
-		if(window) {
+		if (window) {
 			glfwSetWindowPosCallback(window, windowPos);
 			glfwSetWindowSizeCallback(window, windowSize);
 			glfwSetWindowCloseCallback(window, windowClose);
@@ -875,8 +870,13 @@ public class Glfw {
 	public static native void glfwSetTime(double time); /*
 		glfwSetTime(time);
 	*/
+
+	public static void glfwMakeContextCurrent(long window) {
+		glfwMakeContextCurrentJni(window);
+		GL.init();
+	}
 	
-	public static native void glfwMakeContextCurrent(long window); /*
+	private static native void glfwMakeContextCurrentJni(long window); /*
 		glfwMakeContextCurrent((GLFWwindow*)window);
 	*/
 	
