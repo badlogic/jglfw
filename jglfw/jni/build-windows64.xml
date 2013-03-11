@@ -48,7 +48,8 @@
 		<exclude name="target/"/>
 				<include name="**/*.cpp"/>
 
-		
+				<exclude name="**/*AL*.cpp"/>
+
 	</fileset>
 
 	<!-- define linker and options -->

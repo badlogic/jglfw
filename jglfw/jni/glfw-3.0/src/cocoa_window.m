@@ -843,8 +843,8 @@ void _glfwPlatformRestoreWindow(_GLFWwindow* window)
 
 void _glfwPlatformShowWindow(_GLFWwindow* window)
 {
-    [window->ns.object performSelectorOnMainThread:@selector(makeKeyAndOrderFront:)
-        withObject:nil waitUntilDone:NO];
+    [window->ns.object performSelectorOnMainThread:@selector(makeKeyAndOrderFront:) 
+    	withObject:nil waitUntilDone:NO];
     _glfwInputWindowVisibility(window, GL_TRUE);
 }
 
@@ -856,6 +856,8 @@ void _glfwPlatformHideWindow(_GLFWwindow* window)
 
 void _glfwPlatformPollEvents(void)
 {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
     for (;;)
     {
         NSEvent* event = [NSApp nextEventMatchingMask:NSAnyEventMask
@@ -868,8 +870,7 @@ void _glfwPlatformPollEvents(void)
         [NSApp sendEvent:event];
     }
 
-    [_glfw.ns.autoreleasePool drain];
-    _glfw.ns.autoreleasePool = [[NSAutoreleasePool alloc] init];
+    [pool drain];
 }
 
 void _glfwPlatformWaitEvents(void)

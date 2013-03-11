@@ -46,6 +46,7 @@ public class GlfwBuild {
 		win32.cFlags += " -D_GLFW_WIN32 -D_GLFW_WGL -D_GLFW_USE_OPENGL";
 		win32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/", "al-headers"};
 		win32.libraries = "-lopengl32 -lwinmm -lgdi32";
+		win32.cppExcludes = new String[] { "**/*AL*.cpp" };
 		
 		BuildTarget win32home = BuildTarget.newDefaultTarget(TargetOs.Windows, false);
 		win32home.compilerPrefix = "";
@@ -56,12 +57,14 @@ public class GlfwBuild {
 		win32home.headerDirs = win32.headerDirs;
 		win32home.buildFileName = "build-windows32home.xml";
 		win32home.libraries = win32.libraries;
+		win32home.cppExcludes = new String[] { "**/*AL*.cpp" };
 		
 		BuildTarget win64 = BuildTarget.newDefaultTarget(TargetOs.Windows, true);
 		win64.cIncludes = win32.cIncludes;
 		win64.cFlags += " -D_GLFW_WIN32 -D_GLFW_WGL -D_GLFW_USE_OPENGL";
 		win64.headerDirs = win32.headerDirs;
 		win64.libraries = win32.libraries;
+		win64.cppExcludes = new String[] { "**/*AL*.cpp" };
 		
 		/* LINUX */
 		BuildTarget linux32 = BuildTarget.newDefaultTarget(TargetOs.Linux, false);
@@ -78,13 +81,14 @@ public class GlfwBuild {
 		);
 		linux32.cFlags += " -D_GLFW_X11 -D_GLFW_GLX -D_GLFW_USE_OPENGL -D_GLFW_HAS_DLOPEN";
 		linux32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/", "al-headers" };
-		linux32.libraries = "-lX11 -lXrandr -lXxf86vm";
+		linux32.libraries = "-lX11 -lXrandr -lXxf86vm -lpthread";
 		
 		BuildTarget linux64 = BuildTarget.newDefaultTarget(TargetOs.Linux, true);
 		linux64.cIncludes = linux32.cIncludes;
 		linux64.cFlags += " -D_GLFW_X11 -D_GLFW_GLX -D_GLFW_USE_OPENGL -D_GLFW_HAS_DLOPEN";
 		linux64.headerDirs = linux32.headerDirs;
 		linux64.libraries = linux32.libraries;
+		linux64.cppExcludes = new String[] { "**/*AL*.cpp" };
 		
 		/* MAC OS X */
 		BuildTarget mac = BuildTarget.newDefaultTarget(TargetOs.MacOsX, true);
@@ -100,7 +104,8 @@ public class GlfwBuild {
 		);
 		mac.cFlags += " -D_GLFW_COCOA -D_GLFW_NSGL -D_GLFW_USE_OPENGL -D_GLFW_USE_MENUBAR";
 		mac.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/", "al-headers"};
-		mac.libraries = "-framework Cocoa -framework OpenGL -framework IOKit -L../../../jni/al-libs -lopenal";
+		mac.libraries = "-framework Cocoa -framework OpenGL -framework IOKit -lpthread -L../../../jni/al-libs -lopenal";
+		mac.cppExcludes = new String[] { "**/*AL*.cpp" };
 
 		BuildConfig config = new BuildConfig("jglfw");
 		new AntScriptGenerator().generate(config, win32home, win32, win64 /*, linux32 */, linux64, mac);
@@ -110,7 +115,7 @@ public class GlfwBuild {
 //		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true");
 //		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true");
-//		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true clean");
+		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true clean");
 		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true");
 		BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
 		

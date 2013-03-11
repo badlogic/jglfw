@@ -111,7 +111,6 @@ typedef struct _GLFWlibraryNS
 
     CGEventSourceRef eventSource;
     id              delegate;
-    id              autoreleasePool;
 
     char*           clipboardString;
 

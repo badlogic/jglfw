@@ -1,0 +1,5 @@
+alcCreateContext
+	public static native Buffer alcCreateContext(Buffer device, int deviceByteOffset, Buffer attrlist, int attrlistByteOffset); /*
+		return (ALCcontext*)alcCreateContext((ALCdevice*)(device + deviceByteOffset), (const ALCint*)(attrlist + attrlistByteOffset));
+	*/
+-----

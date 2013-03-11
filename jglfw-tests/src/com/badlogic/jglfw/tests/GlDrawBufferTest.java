@@ -13,7 +13,7 @@ public class GlDrawBufferTest {
 	public static void main (String[] args) {
 		glfwInit();
 //		glfwWindowHint(GLFW_DEPTH_BITS, 16);
-		long window = glfwCreateWindow(480, 320, "GL Draw Buffer Test", 0, 0);
+		long window = glfwCreateWindow(800, 600, "GL Draw Buffer Test", glfwGetPrimaryMonitor(), 0);
 		glfwMakeContextCurrent(window);
 		glfwSetCallback(new GlfwCallbackAdapter() {
 			@Override
@@ -27,7 +27,7 @@ public class GlDrawBufferTest {
 		CharBuffer indices = Memory.malloc(3 * 2).asCharBuffer();
 		indices.put(new char[] { 0, 1, 2 });
 		
-		while(!glfwWindowShouldClose(window)) {
+		while(!glfwWindowShouldClose(window) || glfwGetKey(window,  GLFW_KEY_ESCAPE)) {
 			glClearColor(1,  0,  0,  1);
 			glClear(GL_COLOR_BUFFER_BIT);
 			

@@ -49,13 +49,14 @@
 		<exclude name="target/"/>
 				<include name="**/*.cpp"/>
 
-		
+				<exclude name="**/*AL*.cpp"/>
+
 	</fileset>
 
 	<!-- define linker and options -->
 	<property name="linker" value="${compilerPrefix}g++${compilerSuffix}"/>
 	<property name="linker-opts" value="-shared -m64 -Wl,-wrap,memcpy"/>
-	<property name="libraries" value="-lX11 -lXrandr -lXxf86vm"/>
+	<property name="libraries" value="-lX11 -lXrandr -lXxf86vm -lpthread"/>
 	
 	<!-- cleans the build directory, removes all object files and shared libs -->
 	<target name="clean">
