@@ -73,6 +73,7 @@ public class Memory {
 		if(buffer instanceof IntBuffer) return buffer.position() << 2;
 		if(buffer instanceof LongBuffer) return buffer.position() << 3;
 		if(buffer instanceof ShortBuffer) return buffer.position() << 1;
+		if(buffer == null) return 0;
 		return buffer.position();
 	}
 }

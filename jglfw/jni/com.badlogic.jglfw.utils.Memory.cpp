@@ -18,7 +18,7 @@
 }
 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_utils_Memory_free(JNIEnv* env, jclass clazz, jobject obj_buffer) {
-	unsigned char* buffer = (unsigned char*)env->GetDirectBufferAddress(obj_buffer);
+	unsigned char* buffer = (unsigned char*)(obj_buffer?env->GetDirectBufferAddress(obj_buffer):0);
 
 
 //@line:53
@@ -38,7 +38,7 @@ static inline jlong wrapped_Java_com_badlogic_jglfw_utils_Memory_getBufferAddres
 }
 
 JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_utils_Memory_getBufferAddress(JNIEnv* env, jclass clazz, jobject obj_buffer) {
-	unsigned char* buffer = (unsigned char*)env->GetDirectBufferAddress(obj_buffer);
+	unsigned char* buffer = (unsigned char*)(obj_buffer?env->GetDirectBufferAddress(obj_buffer):0);
 
 	jlong JNI_returnValue = wrapped_Java_com_badlogic_jglfw_utils_Memory_getBufferAddress(env, clazz, obj_buffer, buffer);
 

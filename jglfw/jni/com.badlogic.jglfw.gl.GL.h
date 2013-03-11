@@ -3408,7 +3408,7 @@ extern "C" {
 #undef com_badlogic_jglfw_gl_GL_GL_SYNC_FLUSH_COMMANDS_BIT
 #define com_badlogic_jglfw_gl_GL_GL_SYNC_FLUSH_COMMANDS_BIT 1L
 #undef com_badlogic_jglfw_gl_GL_GL_TIMEOUT_IGNORED
-#define com_badlogic_jglfw_gl_GL_GL_TIMEOUT_IGNORED -1LL
+#define com_badlogic_jglfw_gl_GL_GL_TIMEOUT_IGNORED -1i64
 #undef com_badlogic_jglfw_gl_GL_GL_SAMPLE_POSITION
 #define com_badlogic_jglfw_gl_GL_GL_SAMPLE_POSITION 36432L
 #undef com_badlogic_jglfw_gl_GL_GL_SAMPLE_MASK
