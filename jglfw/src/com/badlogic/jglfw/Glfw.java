@@ -267,7 +267,6 @@ public class Glfw {
 	// @off
 	/*JNI 
 	#include <GL/glfw3.h>
-	#include <pthread.h>
 	
 	static jmethodID errorId = 0;
 	static jmethodID monitorId = 0;
@@ -287,6 +286,7 @@ public class Glfw {
 	static JavaVM* staticVM = 0;
 
 #ifndef _WIN32
+	#include <pthread.h>
 	static pthread_key_t envTLS = 0;
 	
 	void createTLS() {
