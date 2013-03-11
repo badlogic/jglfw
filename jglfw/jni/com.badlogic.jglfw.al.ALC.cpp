@@ -27,8 +27,8 @@ static inline jobject wrapped_Java_com_badlogic_jglfw_al_ALC_alcCreateContext
 }
 
 JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcCreateContext(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, jobject obj_attrlist, jint attrlistByteOffset) {
-	unsigned char* device = (unsigned char*)env->GetDirectBufferAddress(obj_device);
-	unsigned char* attrlist = (unsigned char*)env->GetDirectBufferAddress(obj_attrlist);
+	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
+	unsigned char* attrlist = (unsigned char*)(obj_attrlist?env->GetDirectBufferAddress(obj_attrlist):0);
 
 	jobject JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcCreateContext(env, clazz, obj_device, deviceByteOffset, obj_attrlist, attrlistByteOffset, device, attrlist);
 
@@ -46,7 +46,7 @@ static inline jboolean wrapped_Java_com_badlogic_jglfw_al_ALC_alcMakeContextCurr
 }
 
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcMakeContextCurrent__Ljava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_context, jint contextByteOffset) {
-	unsigned char* context = (unsigned char*)env->GetDirectBufferAddress(obj_context);
+	unsigned char* context = (unsigned char*)(obj_context?env->GetDirectBufferAddress(obj_context):0);
 
 	jboolean JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcMakeContextCurrent__Ljava_nio_Buffer_2I(env, clazz, obj_context, contextByteOffset, context);
 
@@ -65,7 +65,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcMakeContextCurrent_
 }
 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcProcessContext__Ljava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_context, jint contextByteOffset) {
-	unsigned char* context = (unsigned char*)env->GetDirectBufferAddress(obj_context);
+	unsigned char* context = (unsigned char*)(obj_context?env->GetDirectBufferAddress(obj_context):0);
 
 
 //@line:61
@@ -86,7 +86,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcProcessContext__J(JNIEn
 }
 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcSuspendContext__Ljava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_context, jint contextByteOffset) {
-	unsigned char* context = (unsigned char*)env->GetDirectBufferAddress(obj_context);
+	unsigned char* context = (unsigned char*)(obj_context?env->GetDirectBufferAddress(obj_context):0);
 
 
 //@line:69
@@ -107,7 +107,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcSuspendContext__J(JNIEn
 }
 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcDestroyContext__Ljava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_context, jint contextByteOffset) {
-	unsigned char* context = (unsigned char*)env->GetDirectBufferAddress(obj_context);
+	unsigned char* context = (unsigned char*)(obj_context?env->GetDirectBufferAddress(obj_context):0);
 
 
 //@line:77
@@ -147,7 +147,7 @@ static inline jobject wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetContextsDevic
 }
 
 JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetContextsDevice__Ljava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_context, jint contextByteOffset) {
-	unsigned char* context = (unsigned char*)env->GetDirectBufferAddress(obj_context);
+	unsigned char* context = (unsigned char*)(obj_context?env->GetDirectBufferAddress(obj_context):0);
 
 	jobject JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetContextsDevice__Ljava_nio_Buffer_2I(env, clazz, obj_context, contextByteOffset, context);
 
@@ -175,7 +175,7 @@ static inline jobject wrapped_Java_com_badlogic_jglfw_al_ALC_alcOpenDevice__Ljav
 }
 
 JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcOpenDevice__Ljava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_devicename, jint devicenameByteOffset) {
-	unsigned char* devicename = (unsigned char*)env->GetDirectBufferAddress(obj_devicename);
+	unsigned char* devicename = (unsigned char*)(obj_devicename?env->GetDirectBufferAddress(obj_devicename):0);
 
 	jobject JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcOpenDevice__Ljava_nio_Buffer_2I(env, clazz, obj_devicename, devicenameByteOffset, devicename);
 
@@ -203,7 +203,7 @@ static inline jboolean wrapped_Java_com_badlogic_jglfw_al_ALC_alcCloseDevice__Lj
 }
 
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcCloseDevice__Ljava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset) {
-	unsigned char* device = (unsigned char*)env->GetDirectBufferAddress(obj_device);
+	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
 
 	jboolean JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcCloseDevice__Ljava_nio_Buffer_2I(env, clazz, obj_device, deviceByteOffset, device);
 
@@ -231,7 +231,7 @@ static inline jint wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetError__Ljava_nio
 }
 
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetError__Ljava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset) {
-	unsigned char* device = (unsigned char*)env->GetDirectBufferAddress(obj_device);
+	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
 
 	jint JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetError__Ljava_nio_Buffer_2I(env, clazz, obj_device, deviceByteOffset, device);
 
@@ -259,8 +259,8 @@ static inline jboolean wrapped_Java_com_badlogic_jglfw_al_ALC_alcIsExtensionPres
 }
 
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcIsExtensionPresent__Ljava_nio_Buffer_2ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, jobject obj_extname, jint extnameByteOffset) {
-	unsigned char* device = (unsigned char*)env->GetDirectBufferAddress(obj_device);
-	unsigned char* extname = (unsigned char*)env->GetDirectBufferAddress(obj_extname);
+	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
+	unsigned char* extname = (unsigned char*)(obj_extname?env->GetDirectBufferAddress(obj_extname):0);
 
 	jboolean JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcIsExtensionPresent__Ljava_nio_Buffer_2ILjava_nio_Buffer_2I(env, clazz, obj_device, deviceByteOffset, obj_extname, extnameByteOffset, device, extname);
 
@@ -288,8 +288,8 @@ static inline jobject wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetProcAddress__
 }
 
 JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetProcAddress__Ljava_nio_Buffer_2ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, jobject obj_funcname, jint funcnameByteOffset) {
-	unsigned char* device = (unsigned char*)env->GetDirectBufferAddress(obj_device);
-	unsigned char* funcname = (unsigned char*)env->GetDirectBufferAddress(obj_funcname);
+	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
+	unsigned char* funcname = (unsigned char*)(obj_funcname?env->GetDirectBufferAddress(obj_funcname):0);
 
 	jobject JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetProcAddress__Ljava_nio_Buffer_2ILjava_nio_Buffer_2I(env, clazz, obj_device, deviceByteOffset, obj_funcname, funcnameByteOffset, device, funcname);
 
@@ -317,8 +317,8 @@ static inline jint wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetEnumValue__Ljava
 }
 
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetEnumValue__Ljava_nio_Buffer_2ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, jobject obj_enumname, jint enumnameByteOffset) {
-	unsigned char* device = (unsigned char*)env->GetDirectBufferAddress(obj_device);
-	unsigned char* enumname = (unsigned char*)env->GetDirectBufferAddress(obj_enumname);
+	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
+	unsigned char* enumname = (unsigned char*)(obj_enumname?env->GetDirectBufferAddress(obj_enumname):0);
 
 	jint JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetEnumValue__Ljava_nio_Buffer_2ILjava_nio_Buffer_2I(env, clazz, obj_device, deviceByteOffset, obj_enumname, enumnameByteOffset, device, enumname);
 
@@ -346,7 +346,7 @@ static inline jobject wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetString__Ljava
 }
 
 JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetString__Ljava_nio_Buffer_2II(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, jint param) {
-	unsigned char* device = (unsigned char*)env->GetDirectBufferAddress(obj_device);
+	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
 
 	jobject JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetString__Ljava_nio_Buffer_2II(env, clazz, obj_device, deviceByteOffset, param, device);
 
@@ -365,8 +365,8 @@ JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetString__JI(JNIEnv
 }
 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetIntegerv__Ljava_nio_Buffer_2IIILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, jint param, jint size, jobject obj_values, jint valuesByteOffset) {
-	unsigned char* device = (unsigned char*)env->GetDirectBufferAddress(obj_device);
-	unsigned char* values = (unsigned char*)env->GetDirectBufferAddress(obj_values);
+	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
+	unsigned char* values = (unsigned char*)(obj_values?env->GetDirectBufferAddress(obj_values):0);
 
 
 //@line:153
@@ -396,7 +396,7 @@ static inline jobject wrapped_Java_com_badlogic_jglfw_al_ALC_alcCaptureOpenDevic
 }
 
 JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureOpenDevice__Ljava_nio_Buffer_2IIII(JNIEnv* env, jclass clazz, jobject obj_devicename, jint devicenameByteOffset, jint frequency, jint format, jint buffersize) {
-	unsigned char* devicename = (unsigned char*)env->GetDirectBufferAddress(obj_devicename);
+	unsigned char* devicename = (unsigned char*)(obj_devicename?env->GetDirectBufferAddress(obj_devicename):0);
 
 	jobject JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcCaptureOpenDevice__Ljava_nio_Buffer_2IIII(env, clazz, obj_devicename, devicenameByteOffset, frequency, format, buffersize, devicename);
 
@@ -424,7 +424,7 @@ static inline jboolean wrapped_Java_com_badlogic_jglfw_al_ALC_alcCaptureCloseDev
 }
 
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureCloseDevice__Ljava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset) {
-	unsigned char* device = (unsigned char*)env->GetDirectBufferAddress(obj_device);
+	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
 
 	jboolean JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcCaptureCloseDevice__Ljava_nio_Buffer_2I(env, clazz, obj_device, deviceByteOffset, device);
 
@@ -443,7 +443,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureCloseDevice_
 }
 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureStart__Ljava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset) {
-	unsigned char* device = (unsigned char*)env->GetDirectBufferAddress(obj_device);
+	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
 
 
 //@line:177
@@ -464,7 +464,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureStart__J(JNIEnv*
 }
 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureStop__Ljava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset) {
-	unsigned char* device = (unsigned char*)env->GetDirectBufferAddress(obj_device);
+	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
 
 
 //@line:185
@@ -485,8 +485,8 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureStop__J(JNIEnv* 
 }
 
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureSamples__Ljava_nio_Buffer_2ILjava_nio_Buffer_2II(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, jobject obj_buffer, jint bufferByteOffset, jint samples) {
-	unsigned char* device = (unsigned char*)env->GetDirectBufferAddress(obj_device);
-	unsigned char* buffer = (unsigned char*)env->GetDirectBufferAddress(obj_buffer);
+	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
+	unsigned char* buffer = (unsigned char*)(obj_buffer?env->GetDirectBufferAddress(obj_buffer):0);
 
 
 //@line:193
