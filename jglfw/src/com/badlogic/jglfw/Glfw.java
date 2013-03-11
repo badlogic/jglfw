@@ -285,7 +285,13 @@ public class Glfw {
 	static jmethodID scrollId = 0;
 	static jobject callback = 0;
 	static JavaVM* staticVM = 0;
+
+#ifndef _WIN32
 	static pthread_key_t envTLS = 0;
+	
+	void createTLS() {
+		pthread_key_create(&envTLS, NULL);
+	}
 
 	JNIEnv* getEnv () {
 		JNIEnv* env = (JNIEnv*)pthread_getspecific(envTLS);
@@ -298,6 +304,33 @@ public class Glfw {
 		}
 		return env;
 	}
+	
+	void destroyEnv() {
+		if (envTLS) {
+			pthread_key_delete(envTLS);
+			envTLS = 0;
+		}
+	}
+#else
+	static __thread JNIEnv* envTLS = 0;
+
+	void createTLS() {
+	}
+
+	JNIEnv* getEnv () {
+		if (!envTLS) {
+			if (staticVM->GetEnv((void**)&envTLS, JNI_VERSION_1_2) != JNI_OK) {
+				printf("Unable to get Env."); fflush(stdout);
+				return 0;
+			}
+		}
+		return envTLS;
+	}
+	
+	void destroyEnv() {
+		envTLS = 0;
+	}
+#endif
 
 	void error(int errorCode, const char* description) {
 		if(callback) {
@@ -394,7 +427,7 @@ public class Glfw {
 	
 	public static native boolean glfwInitJni(); /*
 		env->GetJavaVM(&staticVM);
-		pthread_key_create(&envTLS, NULL);
+		createTLS();
 
 		jclass exception = env->FindClass("java/lang/Exception");
 	
@@ -502,10 +535,7 @@ public class Glfw {
 			env->DeleteGlobalRef(callback);
 			callback = 0;
 		}
-		if (envTLS) {
-			pthread_key_delete(envTLS);
-			envTLS = 0;
-		}
+		destroyEnv();
 		glfwTerminate();
 	*/
 

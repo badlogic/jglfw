@@ -45,7 +45,7 @@ public class GlfwBuild {
 		);
 		win32.cFlags += " -D_GLFW_WIN32 -D_GLFW_WGL -D_GLFW_USE_OPENGL";
 		win32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/" };
-		win32.libraries = "-lopengl32 -lwinmm -lgdi32 -lpthread";
+		win32.libraries = "-lopengl32 -lwinmm -lgdi32";
 		
 		BuildTarget win32home = BuildTarget.newDefaultTarget(TargetOs.Windows, false);
 		win32home.compilerPrefix = "";
@@ -104,7 +104,7 @@ public class GlfwBuild {
 
 		BuildConfig config = new BuildConfig("jglfw");
 		new AntScriptGenerator().generate(config, win32home, win32, win64 /*, linux32 */, linux64, mac);
-		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true clean");
+//		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true clean");
 		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true");
 //		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true");
