@@ -120,6 +120,7 @@ public class GlfwTest {
 		System.out.println(glfwGetWindowMonitor(window));
 		
 		glfwMakeContextCurrent(window);
+		glfwSwapInterval(1);
 		
 		while(!glfwWindowShouldClose(window)) {
 			GL.glViewport(0, 0, 640, 480);
