@@ -472,7 +472,6 @@ static int convertMacKeyCode(unsigned int macKeyCode)
         // If the GLFWApplication sendEvent command key fix could not be used,
         // just send a key up immediately.
         if (![NSApp isKindOfClass:[GLFWApplication class]]) {
-        	printf("sending fake key up!\n"); fflush(stdout);
         	_glfwInputKey(window, key, GLFW_RELEASE);
         }
     }    
