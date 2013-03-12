@@ -290,6 +290,29 @@ static int convertMacKeyCode(unsigned int macKeyCode)
 
 
 //------------------------------------------------------------------------
+// GLFW application class
+//------------------------------------------------------------------------
+
+@interface GLFWApplication : NSApplication
+@end
+
+@implementation GLFWApplication
+
+// From http://cocoadev.com/index.pl?GameKeyboardHandlingAlmost
+// This works around an AppKit bug, where key up events while holding
+// down the command key don't get sent to the key window.
+- (void)sendEvent:(NSEvent *)event
+{
+    if ([event type] == NSKeyUp && ([event modifierFlags] & NSCommandKeyMask))
+        [[self keyWindow] sendEvent:event];
+    else
+        [super sendEvent:event];
+}
+
+@end
+
+
+//------------------------------------------------------------------------
 // Content view class for the GLFW window
 //------------------------------------------------------------------------
 
@@ -444,8 +467,15 @@ static int convertMacKeyCode(unsigned int macKeyCode)
 
     _glfwInputKey(window, key, GLFW_PRESS);
 
-    if ([event modifierFlags] & NSCommandKeyMask)
+    if ([event modifierFlags] & NSCommandKeyMask) {
         [super keyDown:event];
+        // If the GLFWApplication sendEvent command key fix could not be used,
+        // just send a key up immediately.
+        if (![NSApp isKindOfClass:[GLFWApplication class]]) {
+        	printf("sending fake key up!\n"); fflush(stdout);
+        	_glfwInputKey(window, key, GLFW_RELEASE);
+        }
+    }    
     else
     {
         characters = [event characters];
@@ -492,28 +522,6 @@ static int convertMacKeyCode(unsigned int macKeyCode)
 
 @end
 
-
-//------------------------------------------------------------------------
-// GLFW application class
-//------------------------------------------------------------------------
-
-@interface GLFWApplication : NSApplication
-@end
-
-@implementation GLFWApplication
-
-// From http://cocoadev.com/index.pl?GameKeyboardHandlingAlmost
-// This works around an AppKit bug, where key up events while holding
-// down the command key don't get sent to the key window.
-- (void)sendEvent:(NSEvent *)event
-{
-    if ([event type] == NSKeyUp && ([event modifierFlags] & NSCommandKeyMask))
-        [[self keyWindow] sendEvent:event];
-    else
-        [super sendEvent:event];
-}
-
-@end
 
 #if defined(_GLFW_USE_MENUBAR)
 
