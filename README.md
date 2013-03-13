@@ -45,7 +45,7 @@ If you want to compile the native code yourself, you'll have a much more fun tim
 #### Linux (to compile for Windows 32-/64-bit and Linux 32-/64-bit)
 Install dependencies and devel libs
 
-    sudo apt-get install g++-mingw-w64-i686 g++-mingw-w64-x86-64 g++-multilib gcc-multilib libX11-dev libXrandr libXxf86vm libgl1-mesa-dev libgl1-mesa-glx
+    sudo apt-get install g++-mingw-w64-i686 g++-mingw-w64-x86-64 g++-multilib gcc-multilib libX11-dev libXrandr-dev libXxf86vm-dev libgl1-mesa-dev libgl1-mesa-glx
 
 Compile
  
