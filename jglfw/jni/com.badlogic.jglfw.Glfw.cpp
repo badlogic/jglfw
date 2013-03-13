@@ -166,7 +166,7 @@
 	
 		jclass callbackClass = env->FindClass("com/badlogic/jglfw/GlfwCallback");
 		if(!callbackClass) {
-			env->ThrowNew(exception, "Couldn't find class Glfw3Callback");
+			env->ThrowNew(exception, "Couldn't find class GlfwCallback");
 			return false;
 		}
 	
