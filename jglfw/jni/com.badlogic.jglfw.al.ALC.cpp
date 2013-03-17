@@ -3,13 +3,14 @@
 //@line:37
 
 	#include "AL/alc.h"
+	#include "AL/al.h"
 	
-//@line:41
+//@line:42
 
 	static int initialized = 0;	JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_init(JNIEnv* env, jclass clazz) {
 
 
-//@line:44
+//@line:45
 
 		if(initialized) return;
 		initialized = -1;
@@ -17,21 +18,21 @@
 
 }
 
-static inline jobject wrapped_Java_com_badlogic_jglfw_al_ALC_alcCreateContext
-(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, jobject obj_attrlist, jint attrlistByteOffset, unsigned char* device, unsigned char* attrlist) {
+static inline jlong wrapped_Java_com_badlogic_jglfw_al_ALC_alcCreateContext
+(JNIEnv* env, jclass clazz, jlong device, jintArray obj_attrlist, int* attrlist) {
 
-//@line:49
+//@line:50
 
-		return (ALCcontext*)alcCreateContext((ALCdevice*)(device + deviceByteOffset), (const ALCint*)(attrlist + attrlistByteOffset));
+		return (jlong)alcCreateContext((ALCdevice*)(device), (const ALCint*)(attrlist));
 	
 }
 
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcCreateContext(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, jobject obj_attrlist, jint attrlistByteOffset) {
-	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
-	unsigned char* attrlist = (unsigned char*)(obj_attrlist?env->GetDirectBufferAddress(obj_attrlist):0);
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_al_ALC_alcCreateContext(JNIEnv* env, jclass clazz, jlong device, jintArray obj_attrlist) {
+	int* attrlist = (int*)env->GetPrimitiveArrayCritical(obj_attrlist, 0);
 
-	jobject JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcCreateContext(env, clazz, obj_device, deviceByteOffset, obj_attrlist, attrlistByteOffset, device, attrlist);
+	jlong JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcCreateContext(env, clazz, device, obj_attrlist, attrlist);
 
+	env->ReleasePrimitiveArrayCritical(obj_attrlist, attrlist, 0);
 
 	return JNI_returnValue;
 }
@@ -39,7 +40,7 @@ JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcCreateContext(JNIEnv
 static inline jboolean wrapped_Java_com_badlogic_jglfw_al_ALC_alcMakeContextCurrent__Ljava_nio_Buffer_2I
 (JNIEnv* env, jclass clazz, jobject obj_context, jint contextByteOffset, unsigned char* context) {
 
-//@line:53
+//@line:54
 
 		return (jboolean)alcMakeContextCurrent((ALCcontext*)(context + contextByteOffset));
 	
@@ -57,7 +58,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcMakeContextCurrent_
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcMakeContextCurrent__J(JNIEnv* env, jclass clazz, jlong context) {
 
 
-//@line:57
+//@line:58
 
 		return (jboolean)alcMakeContextCurrent((ALCcontext*)context);
 	
@@ -68,7 +69,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcProcessContext__Ljava_n
 	unsigned char* context = (unsigned char*)(obj_context?env->GetDirectBufferAddress(obj_context):0);
 
 
-//@line:61
+//@line:62
 
 		alcProcessContext((ALCcontext*)(context + contextByteOffset));
 	
@@ -78,7 +79,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcProcessContext__Ljava_n
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcProcessContext__J(JNIEnv* env, jclass clazz, jlong context) {
 
 
-//@line:65
+//@line:66
 
 		alcProcessContext((ALCcontext*)context);
 	
@@ -89,7 +90,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcSuspendContext__Ljava_n
 	unsigned char* context = (unsigned char*)(obj_context?env->GetDirectBufferAddress(obj_context):0);
 
 
-//@line:69
+//@line:70
 
 		alcSuspendContext((ALCcontext*)(context + contextByteOffset));
 	
@@ -99,7 +100,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcSuspendContext__Ljava_n
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcSuspendContext__J(JNIEnv* env, jclass clazz, jlong context) {
 
 
-//@line:73
+//@line:74
 
 		alcSuspendContext((ALCcontext*)context);
 	
@@ -110,7 +111,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcDestroyContext__Ljava_n
 	unsigned char* context = (unsigned char*)(obj_context?env->GetDirectBufferAddress(obj_context):0);
 
 
-//@line:77
+//@line:78
 
 		alcDestroyContext((ALCcontext*)(context + contextByteOffset));
 	
@@ -120,83 +121,56 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcDestroyContext__Ljava_n
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcDestroyContext__J(JNIEnv* env, jclass clazz, jlong context) {
 
 
-//@line:81
+//@line:82
 
 		alcDestroyContext((ALCcontext*)context);
 	
 
 }
 
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetCurrentContext(JNIEnv* env, jclass clazz) {
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetCurrentContext(JNIEnv* env, jclass clazz) {
 
 
-//@line:85
+//@line:86
 
-		return (ALCcontext*)alcGetCurrentContext();
+		return (jlong)alcGetCurrentContext();
 	
 
 }
 
-static inline jobject wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetContextsDevice__Ljava_nio_Buffer_2I
-(JNIEnv* env, jclass clazz, jobject obj_context, jint contextByteOffset, unsigned char* context) {
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetContextsDevice(JNIEnv* env, jclass clazz, jlong context) {
 
-//@line:89
 
-		return (ALCdevice*)alcGetContextsDevice((ALCcontext*)(context + contextByteOffset));
+//@line:90
+
+		return (jlong)alcGetContextsDevice((ALCcontext*)context);
+	
+
+}
+
+static inline jlong wrapped_Java_com_badlogic_jglfw_al_ALC_alcOpenDevice
+(JNIEnv* env, jclass clazz, jstring obj_deviceName, char* deviceName) {
+
+//@line:94
+
+		return (long)alcOpenDevice((const ALCchar*)(deviceName));
 	
 }
 
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetContextsDevice__Ljava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_context, jint contextByteOffset) {
-	unsigned char* context = (unsigned char*)(obj_context?env->GetDirectBufferAddress(obj_context):0);
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_al_ALC_alcOpenDevice(JNIEnv* env, jclass clazz, jstring obj_deviceName) {
+	char* deviceName = (char*)env->GetStringUTFChars(obj_deviceName, 0);
 
-	jobject JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetContextsDevice__Ljava_nio_Buffer_2I(env, clazz, obj_context, contextByteOffset, context);
+	jlong JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcOpenDevice(env, clazz, obj_deviceName, deviceName);
 
+	env->ReleaseStringUTFChars(obj_deviceName, deviceName);
 
 	return JNI_returnValue;
-}
-
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetContextsDevice__J(JNIEnv* env, jclass clazz, jlong context) {
-
-
-//@line:93
-
-		return (ALCdevice*)alcGetContextsDevice((ALCcontext*)context);
-	
-
-}
-
-static inline jobject wrapped_Java_com_badlogic_jglfw_al_ALC_alcOpenDevice__Ljava_nio_Buffer_2I
-(JNIEnv* env, jclass clazz, jobject obj_devicename, jint devicenameByteOffset, unsigned char* devicename) {
-
-//@line:97
-
-		return (ALCdevice*)alcOpenDevice((const ALCchar*)(devicename + devicenameByteOffset));
-	
-}
-
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcOpenDevice__Ljava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_devicename, jint devicenameByteOffset) {
-	unsigned char* devicename = (unsigned char*)(obj_devicename?env->GetDirectBufferAddress(obj_devicename):0);
-
-	jobject JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcOpenDevice__Ljava_nio_Buffer_2I(env, clazz, obj_devicename, devicenameByteOffset, devicename);
-
-
-	return JNI_returnValue;
-}
-
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcOpenDevice__J(JNIEnv* env, jclass clazz, jlong devicename) {
-
-
-//@line:101
-
-		return (ALCdevice*)alcOpenDevice((const ALCchar*)devicename);
-	
-
 }
 
 static inline jboolean wrapped_Java_com_badlogic_jglfw_al_ALC_alcCloseDevice__Ljava_nio_Buffer_2I
 (JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, unsigned char* device) {
 
-//@line:105
+//@line:98
 
 		return (jboolean)alcCloseDevice((ALCdevice*)(device + deviceByteOffset));
 	
@@ -214,7 +188,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcCloseDevice__Ljava_
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcCloseDevice__J(JNIEnv* env, jclass clazz, jlong device) {
 
 
-//@line:109
+//@line:102
 
 		return (jboolean)alcCloseDevice((ALCdevice*)device);
 	
@@ -224,7 +198,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcCloseDevice__J(JNIE
 static inline jint wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetError__Ljava_nio_Buffer_2I
 (JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, unsigned char* device) {
 
-//@line:113
+//@line:106
 
 		return (jint)alcGetError((ALCdevice*)(device + deviceByteOffset));
 	
@@ -242,7 +216,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetError__Ljava_nio_Buf
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetError__J(JNIEnv* env, jclass clazz, jlong device) {
 
 
-//@line:117
+//@line:110
 
 		return (jint)alcGetError((ALCdevice*)device);
 	
@@ -252,7 +226,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetError__J(JNIEnv* env
 static inline jboolean wrapped_Java_com_badlogic_jglfw_al_ALC_alcIsExtensionPresent__Ljava_nio_Buffer_2ILjava_nio_Buffer_2I
 (JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, jobject obj_extname, jint extnameByteOffset, unsigned char* device, unsigned char* extname) {
 
-//@line:121
+//@line:114
 
 		return (jboolean)alcIsExtensionPresent((ALCdevice*)(device + deviceByteOffset), (const ALCchar*)(extname + extnameByteOffset));
 	
@@ -271,38 +245,9 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcIsExtensionPresent_
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcIsExtensionPresent__JJ(JNIEnv* env, jclass clazz, jlong device, jlong extname) {
 
 
-//@line:125
+//@line:118
 
 		return (jboolean)alcIsExtensionPresent((ALCdevice*)device, (const ALCchar*)extname);
-	
-
-}
-
-static inline jobject wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetProcAddress__Ljava_nio_Buffer_2ILjava_nio_Buffer_2I
-(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, jobject obj_funcname, jint funcnameByteOffset, unsigned char* device, unsigned char* funcname) {
-
-//@line:129
-
-		return (void*)alcGetProcAddress((ALCdevice*)(device + deviceByteOffset), (const ALCchar*)(funcname + funcnameByteOffset));
-	
-}
-
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetProcAddress__Ljava_nio_Buffer_2ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, jobject obj_funcname, jint funcnameByteOffset) {
-	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
-	unsigned char* funcname = (unsigned char*)(obj_funcname?env->GetDirectBufferAddress(obj_funcname):0);
-
-	jobject JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetProcAddress__Ljava_nio_Buffer_2ILjava_nio_Buffer_2I(env, clazz, obj_device, deviceByteOffset, obj_funcname, funcnameByteOffset, device, funcname);
-
-
-	return JNI_returnValue;
-}
-
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetProcAddress__JJ(JNIEnv* env, jclass clazz, jlong device, jlong funcname) {
-
-
-//@line:133
-
-		return (void*)alcGetProcAddress((ALCdevice*)device, (const ALCchar*)funcname);
 	
 
 }
@@ -310,7 +255,7 @@ JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetProcAddress__JJ(J
 static inline jint wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetEnumValue__Ljava_nio_Buffer_2ILjava_nio_Buffer_2I
 (JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, jobject obj_enumname, jint enumnameByteOffset, unsigned char* device, unsigned char* enumname) {
 
-//@line:137
+//@line:122
 
 		return (jint)alcGetEnumValue((ALCdevice*)(device + deviceByteOffset), (const ALCchar*)(enumname + enumnameByteOffset));
 	
@@ -329,37 +274,19 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetEnumValue__Ljava_nio
 JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetEnumValue__JJ(JNIEnv* env, jclass clazz, jlong device, jlong enumname) {
 
 
-//@line:141
+//@line:126
 
 		return (jint)alcGetEnumValue((ALCdevice*)device, (const ALCchar*)enumname);
 	
 
 }
 
-static inline jobject wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetString__Ljava_nio_Buffer_2II
-(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, jint param, unsigned char* device) {
-
-//@line:145
-
-		return (const ALCchar*)alcGetString((ALCdevice*)(device + deviceByteOffset), (ALCenum)param);
-	
-}
-
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetString__Ljava_nio_Buffer_2II(JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, jint param) {
-	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
-
-	jobject JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcGetString__Ljava_nio_Buffer_2II(env, clazz, obj_device, deviceByteOffset, param, device);
+JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetString(JNIEnv* env, jclass clazz, jlong device, jint name) {
 
 
-	return JNI_returnValue;
-}
+//@line:130
 
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetString__JI(JNIEnv* env, jclass clazz, jlong device, jint param) {
-
-
-//@line:149
-
-		return (const ALCchar*)alcGetString((ALCdevice*)device, (ALCenum)param);
+		return env->NewStringUTF((const char*)alcGetString((ALCdevice*)device, (ALCenum)name));
 	
 
 }
@@ -369,7 +296,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetIntegerv__Ljava_nio_
 	unsigned char* values = (unsigned char*)(obj_values?env->GetDirectBufferAddress(obj_values):0);
 
 
-//@line:153
+//@line:134
 
 		alcGetIntegerv((ALCdevice*)(device + deviceByteOffset), (ALCenum)param, (ALCsizei)size, (ALCint*)(values + valuesByteOffset));
 	
@@ -379,45 +306,36 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetIntegerv__Ljava_nio_
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetIntegerv__JIIJ(JNIEnv* env, jclass clazz, jlong device, jint param, jint size, jlong values) {
 
 
-//@line:157
+//@line:138
 
 		alcGetIntegerv((ALCdevice*)device, (ALCenum)param, (ALCsizei)size, (ALCint*)values);
 	
 
 }
 
-static inline jobject wrapped_Java_com_badlogic_jglfw_al_ALC_alcCaptureOpenDevice__Ljava_nio_Buffer_2IIII
-(JNIEnv* env, jclass clazz, jobject obj_devicename, jint devicenameByteOffset, jint frequency, jint format, jint buffersize, unsigned char* devicename) {
+static inline jlong wrapped_Java_com_badlogic_jglfw_al_ALC_alcCaptureOpenDevice
+(JNIEnv* env, jclass clazz, jstring obj_deviceName, jint frequency, jint format, jint buffersize, char* deviceName) {
 
-//@line:161
+//@line:142
 
-		return (ALCdevice*)alcCaptureOpenDevice((const ALCchar*)(devicename + devicenameByteOffset), (ALCuint)frequency, (ALCenum)format, (ALCsizei)buffersize);
+		return (jlong)alcCaptureOpenDevice((const ALCchar*)deviceName, (ALCuint)frequency, (ALCenum)format, (ALCsizei)buffersize);
 	
 }
 
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureOpenDevice__Ljava_nio_Buffer_2IIII(JNIEnv* env, jclass clazz, jobject obj_devicename, jint devicenameByteOffset, jint frequency, jint format, jint buffersize) {
-	unsigned char* devicename = (unsigned char*)(obj_devicename?env->GetDirectBufferAddress(obj_devicename):0);
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureOpenDevice(JNIEnv* env, jclass clazz, jstring obj_deviceName, jint frequency, jint format, jint buffersize) {
+	char* deviceName = (char*)env->GetStringUTFChars(obj_deviceName, 0);
 
-	jobject JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcCaptureOpenDevice__Ljava_nio_Buffer_2IIII(env, clazz, obj_devicename, devicenameByteOffset, frequency, format, buffersize, devicename);
+	jlong JNI_returnValue = wrapped_Java_com_badlogic_jglfw_al_ALC_alcCaptureOpenDevice(env, clazz, obj_deviceName, frequency, format, buffersize, deviceName);
 
+	env->ReleaseStringUTFChars(obj_deviceName, deviceName);
 
 	return JNI_returnValue;
-}
-
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureOpenDevice__JIII(JNIEnv* env, jclass clazz, jlong devicename, jint frequency, jint format, jint buffersize) {
-
-
-//@line:165
-
-		return (ALCdevice*)alcCaptureOpenDevice((const ALCchar*)devicename, (ALCuint)frequency, (ALCenum)format, (ALCsizei)buffersize);
-	
-
 }
 
 static inline jboolean wrapped_Java_com_badlogic_jglfw_al_ALC_alcCaptureCloseDevice__Ljava_nio_Buffer_2I
 (JNIEnv* env, jclass clazz, jobject obj_device, jint deviceByteOffset, unsigned char* device) {
 
-//@line:169
+//@line:146
 
 		return (jboolean)alcCaptureCloseDevice((ALCdevice*)(device + deviceByteOffset));
 	
@@ -435,7 +353,7 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureCloseDevice_
 JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureCloseDevice__J(JNIEnv* env, jclass clazz, jlong device) {
 
 
-//@line:173
+//@line:150
 
 		return (jboolean)alcCaptureCloseDevice((ALCdevice*)device);
 	
@@ -446,7 +364,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureStart__Ljava_nio
 	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
 
 
-//@line:177
+//@line:154
 
 		alcCaptureStart((ALCdevice*)(device + deviceByteOffset));
 	
@@ -456,7 +374,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureStart__Ljava_nio
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureStart__J(JNIEnv* env, jclass clazz, jlong device) {
 
 
-//@line:181
+//@line:158
 
 		alcCaptureStart((ALCdevice*)device);
 	
@@ -467,7 +385,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureStop__Ljava_nio_
 	unsigned char* device = (unsigned char*)(obj_device?env->GetDirectBufferAddress(obj_device):0);
 
 
-//@line:185
+//@line:162
 
 		alcCaptureStop((ALCdevice*)(device + deviceByteOffset));
 	
@@ -477,7 +395,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureStop__Ljava_nio_
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureStop__J(JNIEnv* env, jclass clazz, jlong device) {
 
 
-//@line:189
+//@line:166
 
 		alcCaptureStop((ALCdevice*)device);
 	
@@ -489,7 +407,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureSamples__Ljava_n
 	unsigned char* buffer = (unsigned char*)(obj_buffer?env->GetDirectBufferAddress(obj_buffer):0);
 
 
-//@line:193
+//@line:170
 
 		alcCaptureSamples((ALCdevice*)(device + deviceByteOffset), (ALCvoid*)(buffer + bufferByteOffset), (ALCsizei)samples);
 	
@@ -499,7 +417,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureSamples__Ljava_n
 JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureSamples__JJI(JNIEnv* env, jclass clazz, jlong device, jlong buffer, jint samples) {
 
 
-//@line:197
+//@line:174
 
 		alcCaptureSamples((ALCdevice*)device, (ALCvoid*)buffer, (ALCsizei)samples);
 	

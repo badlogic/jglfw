@@ -36,6 +36,7 @@ public class ALC {
 	// @off
 	/*JNI
 	#include "AL/alc.h"
+	#include "AL/al.h"
 	*/
 	// @off
 	/*JNI
@@ -46,8 +47,8 @@ public class ALC {
 		initialized = -1;
 	*/
 
-	public static native Buffer alcCreateContext(Buffer device, int deviceByteOffset, Buffer attrlist, int attrlistByteOffset); /*
-		return (ALCcontext*)alcCreateContext((ALCdevice*)(device + deviceByteOffset), (const ALCint*)(attrlist + attrlistByteOffset));
+	public static native long alcCreateContext(long device, int[] attrlist); /*
+		return (jlong)alcCreateContext((ALCdevice*)(device), (const ALCint*)(attrlist));
 	*/
 
 	public static native boolean alcMakeContextCurrent(Buffer context, int contextByteOffset); /*
@@ -82,24 +83,16 @@ public class ALC {
 		alcDestroyContext((ALCcontext*)context);
 	*/
 
-	public static native Buffer alcGetCurrentContext(); /*
-		return (ALCcontext*)alcGetCurrentContext();
+	public static native long alcGetCurrentContext(); /*
+		return (jlong)alcGetCurrentContext();
 	*/
 
-	public static native Buffer alcGetContextsDevice(Buffer context, int contextByteOffset); /*
-		return (ALCdevice*)alcGetContextsDevice((ALCcontext*)(context + contextByteOffset));
+	public static native long alcGetContextsDevice(long context); /*
+		return (jlong)alcGetContextsDevice((ALCcontext*)context);
 	*/
 
-	public static native Buffer alcGetContextsDevice(long context); /*
-		return (ALCdevice*)alcGetContextsDevice((ALCcontext*)context);
-	*/
-
-	public static native Buffer alcOpenDevice(Buffer devicename, int devicenameByteOffset); /*
-		return (ALCdevice*)alcOpenDevice((const ALCchar*)(devicename + devicenameByteOffset));
-	*/
-
-	public static native Buffer alcOpenDevice(long devicename); /*
-		return (ALCdevice*)alcOpenDevice((const ALCchar*)devicename);
+	public static native long alcOpenDevice(String deviceName); /*
+		return (long)alcOpenDevice((const ALCchar*)(deviceName));
 	*/
 
 	public static native boolean alcCloseDevice(Buffer device, int deviceByteOffset); /*
@@ -126,14 +119,6 @@ public class ALC {
 		return (jboolean)alcIsExtensionPresent((ALCdevice*)device, (const ALCchar*)extname);
 	*/
 
-	public static native Buffer alcGetProcAddress(Buffer device, int deviceByteOffset, Buffer funcname, int funcnameByteOffset); /*
-		return (void*)alcGetProcAddress((ALCdevice*)(device + deviceByteOffset), (const ALCchar*)(funcname + funcnameByteOffset));
-	*/
-
-	public static native Buffer alcGetProcAddress(long device, long funcname); /*
-		return (void*)alcGetProcAddress((ALCdevice*)device, (const ALCchar*)funcname);
-	*/
-
 	public static native int alcGetEnumValue(Buffer device, int deviceByteOffset, Buffer enumname, int enumnameByteOffset); /*
 		return (jint)alcGetEnumValue((ALCdevice*)(device + deviceByteOffset), (const ALCchar*)(enumname + enumnameByteOffset));
 	*/
@@ -142,12 +127,8 @@ public class ALC {
 		return (jint)alcGetEnumValue((ALCdevice*)device, (const ALCchar*)enumname);
 	*/
 
-	public static native Buffer alcGetString(Buffer device, int deviceByteOffset, int param); /*
-		return (const ALCchar*)alcGetString((ALCdevice*)(device + deviceByteOffset), (ALCenum)param);
-	*/
-
-	public static native Buffer alcGetString(long device, int param); /*
-		return (const ALCchar*)alcGetString((ALCdevice*)device, (ALCenum)param);
+	public static native String alcGetString(long device, int name); /*
+		return env->NewStringUTF((const char*)alcGetString((ALCdevice*)device, (ALCenum)name));
 	*/
 
 	public static native void alcGetIntegerv(Buffer device, int deviceByteOffset, int param, int size, Buffer values, int valuesByteOffset); /*
@@ -158,12 +139,8 @@ public class ALC {
 		alcGetIntegerv((ALCdevice*)device, (ALCenum)param, (ALCsizei)size, (ALCint*)values);
 	*/
 
-	public static native Buffer alcCaptureOpenDevice(Buffer devicename, int devicenameByteOffset, int frequency, int format, int buffersize); /*
-		return (ALCdevice*)alcCaptureOpenDevice((const ALCchar*)(devicename + devicenameByteOffset), (ALCuint)frequency, (ALCenum)format, (ALCsizei)buffersize);
-	*/
-
-	public static native Buffer alcCaptureOpenDevice(long devicename, int frequency, int format, int buffersize); /*
-		return (ALCdevice*)alcCaptureOpenDevice((const ALCchar*)devicename, (ALCuint)frequency, (ALCenum)format, (ALCsizei)buffersize);
+	public static native long alcCaptureOpenDevice(String deviceName, int frequency, int format, int buffersize); /*
+		return (jlong)alcCaptureOpenDevice((const ALCchar*)deviceName, (ALCuint)frequency, (ALCenum)format, (ALCsizei)buffersize);
 	*/
 
 	public static native boolean alcCaptureCloseDevice(Buffer device, int deviceByteOffset); /*

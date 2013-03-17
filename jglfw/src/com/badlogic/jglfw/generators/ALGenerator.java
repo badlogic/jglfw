@@ -48,6 +48,7 @@ public class ALGenerator {
 		buffer.append("\t// @off\n");
 		buffer.append("\t/*JNI\n"); 
 		buffer.append("\t#include \"AL/alc.h\"\n");
+		buffer.append("\t#include \"AL/al.h\"\n");
 		buffer.append("\t*/\n");
 	}
 
@@ -218,14 +219,11 @@ public class ALGenerator {
 		List<ALProcedure> procs = new ArrayList<ALProcedure>();
 		List<ALConstant> consts = new ArrayList<ALConstant>();
 		new ALParser().parse(procs, consts, "jni/al-headers/AL/alc.h");
-		Set<String> names = new HashSet<String>();
-		for(ALProcedure proc: procs) {
-			if(names.contains(proc.name)) {
-				System.out.println("duplicate " + proc.name);
-			} else {
-				names.add(proc.name);
-			}
-		}
 		new ALGenerator().generate("src/com/badlogic/jglfw/al/ALC.java", "com.badlogic.jglfw.al", "ALC", procs, consts);
+		
+		procs = new ArrayList<ALProcedure>();
+		consts = new ArrayList<ALConstant>();
+		new ALParser().parse(procs, consts, "jni/al-headers/AL/al.h");
+		new ALGenerator().generate("src/com/badlogic/jglfw/al/AL.java", "com.badlogic.jglfw.al", "AL", procs, consts);
 	}
 }

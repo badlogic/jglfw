@@ -82,6 +82,7 @@ public class GlfwBuild {
 		linux32.cFlags += " -D_GLFW_X11 -D_GLFW_GLX -D_GLFW_USE_OPENGL -D_GLFW_HAS_DLOPEN";
 		linux32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/", "al-headers" };
 		linux32.libraries = "-lX11 -lXrandr -lXxf86vm -lpthread";
+		linux32.cppExcludes = new String[] { "**/*AL*.cpp" };
 		
 		BuildTarget linux64 = BuildTarget.newDefaultTarget(TargetOs.Linux, true);
 		linux64.cIncludes = linux32.cIncludes;
@@ -104,19 +105,19 @@ public class GlfwBuild {
 		);
 		mac.cFlags += " -D_GLFW_COCOA -D_GLFW_NSGL -D_GLFW_USE_OPENGL -D_GLFW_USE_MENUBAR";
 		mac.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/", "al-headers"};
-		mac.libraries = "-framework Cocoa -framework OpenGL -framework IOKit -lpthread"; // -L../../../jni/al-libs -lopenal";
+		mac.libraries = "-framework Cocoa -framework OpenGL -framework IOKit -lpthread";
 		mac.cppExcludes = new String[] { "**/*AL*.cpp" };
 
 		BuildConfig config = new BuildConfig("jglfw");
 		new AntScriptGenerator().generate(config, win32home, win32, win64 /*, linux32 */, linux64, mac);
-		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true clean");
-		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true");
+//		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true clean");
+//		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true");
 //		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true");
 //		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true");
-//		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true clean");
-//		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true");
+		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true clean");
+		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true");
 		BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
 		
 //		GlfwTest.main(new String[0]);

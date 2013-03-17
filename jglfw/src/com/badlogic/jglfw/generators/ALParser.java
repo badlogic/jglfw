@@ -40,6 +40,18 @@ public class ALParser {
 			javaTypes.put("ALCfloat", "float");
 			javaTypes.put("ALCdouble", "double");
 			javaTypes.put("ALCvoid", "void");
+			javaTypes.put("ALboolean", "boolean");
+			javaTypes.put("ALbyte", "byte");
+			javaTypes.put("ALubyte", "byte");
+			javaTypes.put("ALshort", "short");
+			javaTypes.put("ALushort", "short");
+			javaTypes.put("ALint", "int");
+			javaTypes.put("ALuint", "int");
+			javaTypes.put("ALsizei", "int");
+			javaTypes.put("ALenum", "int");
+			javaTypes.put("ALfloat", "float");
+			javaTypes.put("ALdouble", "double");
+			javaTypes.put("ALvoid", "void");
 		}
 		
 		public String text;
@@ -134,7 +146,7 @@ public class ALParser {
 		// the medal of stupidity. I'm tired.
 		for(int i = 0; i < constants.size(); i++) {
 			ALConstant c = constants.get(i);
-			if(c.value.startsWith("GL_")) {
+			if(c.value.startsWith("ALC_") || c.value.startsWith("AL_")) {
 				for(int j = i; j < constants.size(); j++) {
 					ALConstant c2 = constants.get(j);
 					if(c2.name.equals(c.value)) {
@@ -177,25 +189,14 @@ public class ALParser {
 		BufferedReader reader = null;
 		try {
 			reader = new BufferedReader(new FileReader(input));
-			Map<String, ALProcedure> extensions = new HashMap<String, ALProcedure>();
 			while(true) {				
 				String line = reader.readLine();
 				if(line == null) break;
 				if(line.startsWith("#define AL_") || line.startsWith("#define ALC_")) {
 					parseConstant(line, constants);
-				} else if(line.startsWith("ALC_API") && !isExcludedProcedure(line)) {
-					ALProcedure proc = parseProcedure(line, procedures);
-					extensions.put("LP" + proc.name.toUpperCase(), proc);
-				} 
-//				else if(line.startsWith("typedef") && line.contains("APIENTRYP") && !isExcludedProcedure(line)) {
-//					String extName = line.substring(line.indexOf("PFNGL"), line.indexOf(")", line.indexOf("PFNGL"))).trim();
-//					ALProcedure proc = extensions.remove(extName);
-//					if(proc == null) {
-//						throw new RuntimeException("Extension " + extName + " not defined");
-//					}
-//					proc.extensionName = extName;
-//					proc.isExtension = true;
-//				}
+				} else if((line.startsWith("ALC_API") || line.startsWith("AL_API")) && !isExcludedProcedure(line)) {
+					parseProcedure(line, procedures);
+				}
 			}			
 		} catch(IOException e) {
 			throw new RuntimeException("Couldn't parse header file, " + e);
@@ -210,6 +211,14 @@ public class ALParser {
 			return true;
 		}
 		if(line.toLowerCase().contains("glgetpointerv")) {
+			System.out.println("ALParser warning: skipped " + line);
+			return true;
+		}
+		if(line.toLowerCase().contains("alcgetprocaddress")) {
+			System.out.println("ALParser warning: skipped " + line);
+			return true;
+		}
+		if(line.toLowerCase().contains("algetprocaddress")) {
 			System.out.println("ALParser warning: skipped " + line);
 			return true;
 		}
@@ -236,9 +245,12 @@ public class ALParser {
 	}
 	
 	private ALProcedure parseProcedure(String line, List<ALProcedure> procedures) {
-		line = line.substring("ALC_API".length());
-		String returnType = line.substring(0, line.indexOf("ALC_APIENTRY")).trim();
-		String name = line.substring(line.indexOf("ALC_APIENTRY") + "ALC_APIENTRY".length(), line.indexOf("(")).trim();
+		String api = line.startsWith("ALC_")?"ALC_API":"AL_API";
+		String apiEntry = line.contains("ALC_APIENTRY")?"ALC_APIENTRY": "AL_APIENTRY";
+		
+		line = line.substring(api.length());
+		String returnType = line.substring(0, line.indexOf(apiEntry)).trim();
+		String name = line.substring(line.indexOf(apiEntry) + apiEntry.length(), line.indexOf("(")).trim();
 		String[] params = line.substring(line.indexOf("(") + 1, line.indexOf(")")).trim().split(",");
 		ALProcedure proc = new ALProcedure();
 		proc.text = line;

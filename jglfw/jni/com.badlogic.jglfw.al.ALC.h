@@ -76,10 +76,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_init
 /*
  * Class:     com_badlogic_jglfw_al_ALC
  * Method:    alcCreateContext
- * Signature: (Ljava/nio/Buffer;ILjava/nio/Buffer;I)Ljava/nio/Buffer;
+ * Signature: (J[I)J
  */
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcCreateContext
-  (JNIEnv *, jclass, jobject, jint, jobject, jint);
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_al_ALC_alcCreateContext
+  (JNIEnv *, jclass, jlong, jintArray);
 
 /*
  * Class:     com_badlogic_jglfw_al_ALC
@@ -148,42 +148,26 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcDestroyContext__J
 /*
  * Class:     com_badlogic_jglfw_al_ALC
  * Method:    alcGetCurrentContext
- * Signature: ()Ljava/nio/Buffer;
+ * Signature: ()J
  */
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetCurrentContext
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetCurrentContext
   (JNIEnv *, jclass);
 
 /*
  * Class:     com_badlogic_jglfw_al_ALC
  * Method:    alcGetContextsDevice
- * Signature: (Ljava/nio/Buffer;I)Ljava/nio/Buffer;
+ * Signature: (J)J
  */
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetContextsDevice__Ljava_nio_Buffer_2I
-  (JNIEnv *, jclass, jobject, jint);
-
-/*
- * Class:     com_badlogic_jglfw_al_ALC
- * Method:    alcGetContextsDevice
- * Signature: (J)Ljava/nio/Buffer;
- */
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetContextsDevice__J
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetContextsDevice
   (JNIEnv *, jclass, jlong);
 
 /*
  * Class:     com_badlogic_jglfw_al_ALC
  * Method:    alcOpenDevice
- * Signature: (Ljava/nio/Buffer;I)Ljava/nio/Buffer;
+ * Signature: (Ljava/lang/String;)J
  */
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcOpenDevice__Ljava_nio_Buffer_2I
-  (JNIEnv *, jclass, jobject, jint);
-
-/*
- * Class:     com_badlogic_jglfw_al_ALC
- * Method:    alcOpenDevice
- * Signature: (J)Ljava/nio/Buffer;
- */
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcOpenDevice__J
-  (JNIEnv *, jclass, jlong);
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_al_ALC_alcOpenDevice
+  (JNIEnv *, jclass, jstring);
 
 /*
  * Class:     com_badlogic_jglfw_al_ALC
@@ -235,22 +219,6 @@ JNIEXPORT jboolean JNICALL Java_com_badlogic_jglfw_al_ALC_alcIsExtensionPresent_
 
 /*
  * Class:     com_badlogic_jglfw_al_ALC
- * Method:    alcGetProcAddress
- * Signature: (Ljava/nio/Buffer;ILjava/nio/Buffer;I)Ljava/nio/Buffer;
- */
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetProcAddress__Ljava_nio_Buffer_2ILjava_nio_Buffer_2I
-  (JNIEnv *, jclass, jobject, jint, jobject, jint);
-
-/*
- * Class:     com_badlogic_jglfw_al_ALC
- * Method:    alcGetProcAddress
- * Signature: (JJ)Ljava/nio/Buffer;
- */
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetProcAddress__JJ
-  (JNIEnv *, jclass, jlong, jlong);
-
-/*
- * Class:     com_badlogic_jglfw_al_ALC
  * Method:    alcGetEnumValue
  * Signature: (Ljava/nio/Buffer;ILjava/nio/Buffer;I)I
  */
@@ -268,17 +236,9 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetEnumValue__JJ
 /*
  * Class:     com_badlogic_jglfw_al_ALC
  * Method:    alcGetString
- * Signature: (Ljava/nio/Buffer;II)Ljava/nio/Buffer;
+ * Signature: (JI)Ljava/lang/String;
  */
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetString__Ljava_nio_Buffer_2II
-  (JNIEnv *, jclass, jobject, jint, jint);
-
-/*
- * Class:     com_badlogic_jglfw_al_ALC
- * Method:    alcGetString
- * Signature: (JI)Ljava/nio/Buffer;
- */
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetString__JI
+JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetString
   (JNIEnv *, jclass, jlong, jint);
 
 /*
@@ -300,18 +260,10 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_al_ALC_alcGetIntegerv__JIIJ
 /*
  * Class:     com_badlogic_jglfw_al_ALC
  * Method:    alcCaptureOpenDevice
- * Signature: (Ljava/nio/Buffer;IIII)Ljava/nio/Buffer;
+ * Signature: (Ljava/lang/String;III)J
  */
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureOpenDevice__Ljava_nio_Buffer_2IIII
-  (JNIEnv *, jclass, jobject, jint, jint, jint, jint);
-
-/*
- * Class:     com_badlogic_jglfw_al_ALC
- * Method:    alcCaptureOpenDevice
- * Signature: (JIII)Ljava/nio/Buffer;
- */
-JNIEXPORT jobject JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureOpenDevice__JIII
-  (JNIEnv *, jclass, jlong, jint, jint, jint);
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_al_ALC_alcCaptureOpenDevice
+  (JNIEnv *, jclass, jstring, jint, jint, jint);
 
 /*
  * Class:     com_badlogic_jglfw_al_ALC

@@ -1,5 +1,35 @@
 alcCreateContext
-	public static native Buffer alcCreateContext(Buffer device, int deviceByteOffset, Buffer attrlist, int attrlistByteOffset); /*
-		return (ALCcontext*)alcCreateContext((ALCdevice*)(device + deviceByteOffset), (const ALCint*)(attrlist + attrlistByteOffset));
+	public static native long alcCreateContext(long device, int[] attrlist); /*
+		return (jlong)alcCreateContext((ALCdevice*)(device), (const ALCint*)(attrlist));
+	*/
+-----
+alcGetCurrentContext
+	public static native long alcGetCurrentContext(); /*
+		return (jlong)alcGetCurrentContext();
+	*/
+-----
+alcGetContextsDevice
+	public static native long alcGetContextsDevice(long context); /*
+		return (jlong)alcGetContextsDevice((ALCcontext*)context);
+	*/
+-----
+alcOpenDevice
+	public static native long alcOpenDevice(String deviceName); /*
+		return (long)alcOpenDevice((const ALCchar*)(deviceName));
+	*/
+-----
+alcGetString
+	public static native String alcGetString(long device, int name); /*
+		return env->NewStringUTF((const char*)alcGetString((ALCdevice*)device, (ALCenum)name));
+	*/
+-----
+alcCaptureOpenDevice
+	public static native long alcCaptureOpenDevice(String deviceName, int frequency, int format, int buffersize); /*
+		return (jlong)alcCaptureOpenDevice((const ALCchar*)deviceName, (ALCuint)frequency, (ALCenum)format, (ALCsizei)buffersize);
+	*/
+-----
+alGetString
+	public static native Buffer alGetString(int param); /*
+		return env->NewStringUTF((const char*)alGetString((ALenum)param));
 	*/
 -----
