@@ -65,7 +65,7 @@
 
 - (void)windowDidResize:(NSNotification *)notification
 {
-    [window->nsgl.context update];
+    // [window->nsgl.context update]; // This crashes 10.7.x! Need to call update from _glfwPlatformShowWindow.
 
     int width, height;
     _glfwPlatformGetWindowSize(window, &width, &height);
@@ -861,6 +861,7 @@ void _glfwPlatformShowWindow(_GLFWwindow* window)
     [window->ns.object performSelectorOnMainThread:@selector(makeKeyAndOrderFront:) 
     	withObject:nil waitUntilDone:NO];
     _glfwInputWindowVisibility(window, GL_TRUE);
+    [window->nsgl.context update]; // This is only here because it can't be called in windowDidResize!
 }
 
 void _glfwPlatformHideWindow(_GLFWwindow* window)
