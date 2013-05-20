@@ -36,8 +36,8 @@ public class GlfwCallbacks implements GlfwCallback {
 
 	public boolean windowClose (long window) {
 		for (int i = 0, n = processors.size(); i < n; i++)
-			if (processors.get(i).windowClose(window)) return true;
-		return false;
+			if (!processors.get(i).windowClose(window)) return false;
+		return true;
 	}
 
 	public void windowRefresh (long window) {
