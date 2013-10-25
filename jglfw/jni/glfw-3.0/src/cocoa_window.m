@@ -468,7 +468,8 @@ static int convertMacKeyCode(unsigned int macKeyCode)
     _glfwInputKey(window, key, GLFW_PRESS);
 
     if ([event modifierFlags] & NSCommandKeyMask) {
-        [super keyDown:event];
+        // [super keyDown:event]; // causes beep sound
+
         // If the GLFWApplication sendEvent command key fix could not be used,
         // just send a key up immediately.
         if (![NSApp isKindOfClass:[GLFWApplication class]]) {
