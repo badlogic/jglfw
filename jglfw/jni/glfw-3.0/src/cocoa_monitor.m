@@ -47,9 +47,10 @@ const char* getDisplayName(CGDirectDisplayID displayID)
 
     info = IODisplayCreateInfoDictionary(CGDisplayIOServicePort(displayID),
                                          kIODisplayOnlyPreferredName);
-    names = CFDictionaryGetValue(info, CFSTR(kDisplayProductName));
+    if (!info) return strdup("Unknown");
 
-    if (!CFDictionaryGetValueIfPresent(names, CFSTR("en_US"),
+    names = CFDictionaryGetValue(info, CFSTR(kDisplayProductName));
+    if (!names || !CFDictionaryGetValueIfPresent(names, CFSTR("en_US"),
                                        (const void**) &value))
     {
         CFRelease(info);
