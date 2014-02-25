@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashSet;
+import java.util.UUID;
 import java.util.zip.CRC32;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
@@ -23,7 +24,12 @@ public class SharedLibraryLoader {
 	static public boolean isMac = System.getProperty("os.name").contains("Mac");
 	static public boolean isIos = false;
 	static public boolean isAndroid = false;
+	static public boolean isARM = System.getProperty("os.arch").startsWith("arm");
 	static public boolean is64Bit = System.getProperty("os.arch").equals("amd64");
+
+	// JDK 8 only.
+	static public String abi = (System.getProperty("sun.arch.abi") != null ? System.getProperty("sun.arch.abi") : "");
+
 	static {
 		String vm = System.getProperty("java.vm.name");
 		if (vm != null && vm.contains("Dalvik")) {
@@ -39,7 +45,7 @@ public class SharedLibraryLoader {
 		}
 	}
 
-	static private HashSet<String> loadedLibraries = new HashSet();
+	static private final HashSet<String> loadedLibraries = new HashSet();
 
 	private String nativesJar;
 
@@ -66,16 +72,16 @@ public class SharedLibraryLoader {
 		} catch (Exception ex) {
 			try {
 				input.close();
-			} catch (Exception ignored) {
+			} catch (IOException ex1) {
 			}
 		}
-		return Long.toString(crc.getValue());
+		return Long.toString(crc.getValue(), 16);
 	}
 
 	/** Maps a platform independent library name to a platform dependent name. */
 	public String mapLibraryName (String libraryName) {
 		if (isWindows) return libraryName + (is64Bit ? "64.dll" : ".dll");
-		if (isLinux) return "lib" + libraryName + (is64Bit ? "64.so" : ".so");
+		if (isLinux) return "lib" + libraryName + (isARM ? "arm" + abi : "") + (is64Bit ? "64.so" : ".so");
 		if (isMac) return "lib" + libraryName + ".dylib";
 		return libraryName;
 	}
@@ -93,7 +99,7 @@ public class SharedLibraryLoader {
 			if (isAndroid)
 				System.loadLibrary(libraryName);
 			else
-				System.load(extractFile(libraryName, null).getAbsolutePath());
+				loadFile(libraryName);
 		} catch (Throwable ex) {
 			throw new RuntimeException("Couldn't load shared library '" + libraryName + "' for target: "
 				+ System.getProperty("os.name") + (is64Bit ? ", 64-bit" : ", 32-bit"), ex);
@@ -119,18 +125,79 @@ public class SharedLibraryLoader {
 		}
 	}
 
-	/** Extracts the specified file into the temp directory if it does not already exist or the CRC does not match.
+	/** Extracts the specified file into the temp directory if it does not already exist or the CRC does not match. If file
+	 * extraction fails and the file exists at java.library.path, that file is returned.
 	 * @param sourcePath The file to extract from the classpath or JAR.
 	 * @param dirName The name of the subdirectory where the file will be extracted. If null, the file's CRC will be used.
 	 * @return The extracted file. */
 	public File extractFile (String sourcePath, String dirName) throws IOException {
-		String sourceCrc = crc(readFile(sourcePath));
-		if (dirName == null) dirName = sourceCrc;
+		try {
+			String sourceCrc = crc(readFile(sourcePath));
+			if (dirName == null) dirName = sourceCrc;
 
-		File extractedDir = new File(System.getProperty("java.io.tmpdir") + "/libgdx" + System.getProperty("user.name") + "/"
-			+ dirName);
-		File extractedFile = new File(extractedDir, new File(sourcePath).getName());
+			File extractedFile = getExtractedFile(dirName, new File(sourcePath).getName());
+			return extractFile(sourcePath, sourceCrc, extractedFile);
+		} catch (RuntimeException ex) {
+			// Fallback to file at java.library.path location, eg for applets.
+			File file = new File(System.getProperty("java.library.path"), sourcePath);
+			if (file.exists()) return file;
+			throw ex;
+		}
+	}
 
+	/** Returns a path to a file that can be written. Tries multiple locations and verifies writing succeeds. */
+	private File getExtractedFile (String dirName, String fileName) {
+		// Temp directory with username in path.
+		File idealFile = new File(System.getProperty("java.io.tmpdir") + "/libgdx" + System.getProperty("user.name") + "/"
+			+ dirName, fileName);
+		if (canWrite(idealFile)) return idealFile;
+
+		// System provided temp directory.
+		try {
+			File file = File.createTempFile(dirName, null);
+			if (file.delete()) {
+				file = new File(file, fileName);
+				if (canWrite(file)) return file;
+			}
+		} catch (IOException ignored) {
+		}
+
+		// User home.
+		File file = new File(System.getProperty("user.home") + "/.libgdx/" + dirName, fileName);
+		if (canWrite(file)) return file;
+
+		// Relative directory.
+		file = new File(".temp/" + dirName, fileName);
+		if (canWrite(file)) return file;
+
+		return idealFile; // Will likely fail, but we did our best.
+	}
+
+	/** Returns true if the parent directories of the file can be created and the file can be written. */
+	private boolean canWrite (File file) {
+		File parent = file.getParentFile();
+		File testFile;
+		if (file.exists()) {
+			if (!file.canWrite() || !file.canExecute()) return false;
+			// Don't overwrite existing file just to check if we can write to directory.
+			testFile = new File(parent, UUID.randomUUID().toString());
+		} else {
+			parent.mkdirs();
+			if (!parent.isDirectory()) return false;
+			testFile = file;
+		}
+		try {
+			new FileOutputStream(testFile).close();
+			if (!testFile.canExecute()) return false;
+			return true;
+		} catch (Throwable ex) {
+			return false;
+		} finally {
+			testFile.delete();
+		}
+	}
+
+	private File extractFile (String sourcePath, String sourceCrc, File extractedFile) throws IOException {
 		String extractedCrc = null;
 		if (extractedFile.exists()) {
 			try {
@@ -143,7 +210,7 @@ public class SharedLibraryLoader {
 		if (extractedCrc == null || !extractedCrc.equals(sourceCrc)) {
 			try {
 				InputStream input = readFile(sourcePath);
-				extractedDir.mkdirs();
+				extractedFile.getParentFile().mkdirs();
 				FileOutputStream output = new FileOutputStream(extractedFile);
 				byte[] buffer = new byte[4096];
 				while (true) {
@@ -154,10 +221,59 @@ public class SharedLibraryLoader {
 				input.close();
 				output.close();
 			} catch (IOException ex) {
-				throw new RuntimeException("Error extracting file: " + sourcePath, ex);
+				throw new RuntimeException("Error extracting file: " + sourcePath + "\nTo: " + extractedFile.getAbsolutePath(), ex);
 			}
 		}
-		if (!extractedFile.exists()) throw new RuntimeException("Unable to extract file: " + sourcePath);
+
 		return extractedFile;
+	}
+
+	/** Extracts the source file and calls System.load. Attemps to extract and load from multiple locations. Throws runtime
+	 * exception if all fail. */
+	private void loadFile (String sourcePath) {
+		String sourceCrc = crc(readFile(sourcePath));
+
+		String fileName = new File(sourcePath).getName();
+
+		// Temp directory with username in path.
+		File file = new File(System.getProperty("java.io.tmpdir") + "/libgdx" + System.getProperty("user.name") + "/" + sourceCrc,
+			fileName);
+		Throwable ex = loadFile(sourcePath, sourceCrc, file);
+		if (ex == null) return;
+
+		// System provided temp directory.
+		try {
+			file = File.createTempFile(sourceCrc, null);
+			if (file.delete() && loadFile(sourcePath, sourceCrc, file) == null) return;
+		} catch (Throwable ignored) {
+		}
+
+		// User home.
+		file = new File(System.getProperty("user.home") + "/.libgdx/" + sourceCrc, fileName);
+		if (loadFile(sourcePath, sourceCrc, file) == null) return;
+
+		// Relative directory.
+		file = new File(".temp/" + sourceCrc, fileName);
+		if (loadFile(sourcePath, sourceCrc, file) == null) return;
+
+		// Fallback to java.library.path location, eg for applets.
+		file = new File(System.getProperty("java.library.path"), sourcePath);
+		if (file.exists()) {
+			System.load(file.getAbsolutePath());
+			return;
+		}
+
+		throw new RuntimeException(ex);
+	}
+
+	/** @return null if the file was extracted and loaded. */
+	private Throwable loadFile (String sourcePath, String sourceCrc, File extractedFile) {
+		try {
+			System.load(extractFile(sourcePath, sourceCrc, extractedFile).getAbsolutePath());
+			return null;
+		} catch (Throwable ex) {
+			ex.printStackTrace();
+			return ex;
+		}
 	}
 }
