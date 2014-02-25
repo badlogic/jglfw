@@ -14258,47 +14258,47 @@ public class GL {
 		ext_glGetQueryObjectuivARB((GLuint)id, (GLenum)pname, (GLuint*)params);
 	*/
 
-	public static native void glDeleteObjectARB(int obj); /*
+	public static native void glDeleteObjectARB(long obj); /*
 		ext_glDeleteObjectARB((GLhandleARB)obj);
 	*/
 
-	public static native int glGetHandleARB(int pname); /*
-		return (jint)ext_glGetHandleARB((GLenum)pname);
+	public static native long glGetHandleARB(int pname); /*
+		return (jlong)ext_glGetHandleARB((GLenum)pname);
 	*/
 
-	public static native void glDetachObjectARB(int containerObj, int attachedObj); /*
+	public static native void glDetachObjectARB(long containerObj, long attachedObj); /*
 		ext_glDetachObjectARB((GLhandleARB)containerObj, (GLhandleARB)attachedObj);
 	*/
 
-	public static native int glCreateShaderObjectARB(int shaderType); /*
-		return (jint)ext_glCreateShaderObjectARB((GLenum)shaderType);
+	public static native long glCreateShaderObjectARB(int shaderType); /*
+		return (jlong)ext_glCreateShaderObjectARB((GLenum)shaderType);
 	*/
 
 	public static native void glShaderSourceARB(int shader, String string); /*
 		ext_glShaderSource((GLuint)shader, 1, &string, 0);
 	*/
 
-	public static native void glCompileShaderARB(int shaderObj); /*
+	public static native void glCompileShaderARB(long shaderObj); /*
 		ext_glCompileShaderARB((GLhandleARB)shaderObj);
 	*/
 
-	public static native int glCreateProgramObjectARB(); /*
-		return (jint)ext_glCreateProgramObjectARB();
+	public static native long glCreateProgramObjectARB(); /*
+		return (jlong)ext_glCreateProgramObjectARB();
 	*/
 
-	public static native void glAttachObjectARB(int containerObj, int obj); /*
+	public static native void glAttachObjectARB(long containerObj, long obj); /*
 		ext_glAttachObjectARB((GLhandleARB)containerObj, (GLhandleARB)obj);
 	*/
 
-	public static native void glLinkProgramARB(int programObj); /*
+	public static native void glLinkProgramARB(long programObj); /*
 		ext_glLinkProgramARB((GLhandleARB)programObj);
 	*/
 
-	public static native void glUseProgramObjectARB(int programObj); /*
+	public static native void glUseProgramObjectARB(long programObj); /*
 		ext_glUseProgramObjectARB((GLhandleARB)programObj);
 	*/
 
-	public static native void glValidateProgramARB(int programObj); /*
+	public static native void glValidateProgramARB(long programObj); /*
 		ext_glValidateProgramARB((GLhandleARB)programObj);
 	*/
 
@@ -14422,99 +14422,99 @@ public class GL {
 		ext_glUniformMatrix4fvARB((GLint)location, (GLsizei)count, (GLboolean)transpose, (const GLfloat*)value);
 	*/
 
-	public static native void glGetObjectParameterfvARB(int obj, int pname, Buffer params, int paramsByteOffset); /*
+	public static native void glGetObjectParameterfvARB(long obj, int pname, Buffer params, int paramsByteOffset); /*
 		ext_glGetObjectParameterfvARB((GLhandleARB)obj, (GLenum)pname, (GLfloat*)(params + paramsByteOffset));
 	*/
 
-	public static native void glGetObjectParameterfvARB(int obj, int pname, long params); /*
+	public static native void glGetObjectParameterfvARB(long obj, int pname, long params); /*
 		ext_glGetObjectParameterfvARB((GLhandleARB)obj, (GLenum)pname, (GLfloat*)params);
 	*/
 
-	public static native void glGetObjectParameterivARB(int obj, int pname, Buffer params, int paramsByteOffset); /*
+	public static native void glGetObjectParameterivARB(long obj, int pname, Buffer params, int paramsByteOffset); /*
 		ext_glGetObjectParameterivARB((GLhandleARB)obj, (GLenum)pname, (GLint*)(params + paramsByteOffset));
 	*/
 
-	public static native void glGetObjectParameterivARB(int obj, int pname, long params); /*
+	public static native void glGetObjectParameterivARB(long obj, int pname, long params); /*
 		ext_glGetObjectParameterivARB((GLhandleARB)obj, (GLenum)pname, (GLint*)params);
 	*/
 
-	public static native void glGetInfoLogARB(int obj, int maxLength, Buffer length, int lengthByteOffset, Buffer infoLog, int infoLogByteOffset); /*
+	public static native void glGetInfoLogARB(long obj, int maxLength, Buffer length, int lengthByteOffset, Buffer infoLog, int infoLogByteOffset); /*
 		ext_glGetInfoLogARB((GLhandleARB)obj, (GLsizei)maxLength, (GLsizei*)(length + lengthByteOffset), (GLcharARB*)(infoLog + infoLogByteOffset));
 	*/
 
-	public static native void glGetInfoLogARB(int obj, int maxLength, long length, long infoLog); /*
+	public static native void glGetInfoLogARB(long obj, int maxLength, long length, long infoLog); /*
 		ext_glGetInfoLogARB((GLhandleARB)obj, (GLsizei)maxLength, (GLsizei*)length, (GLcharARB*)infoLog);
 	*/
 
-	public static native void glGetAttachedObjectsARB(int containerObj, int maxCount, Buffer count, int countByteOffset, Buffer obj, int objByteOffset); /*
+	public static native void glGetAttachedObjectsARB(long containerObj, int maxCount, Buffer count, int countByteOffset, Buffer obj, int objByteOffset); /*
 		ext_glGetAttachedObjectsARB((GLhandleARB)containerObj, (GLsizei)maxCount, (GLsizei*)(count + countByteOffset), (GLhandleARB*)(obj + objByteOffset));
 	*/
 
-	public static native void glGetAttachedObjectsARB(int containerObj, int maxCount, long count, long obj); /*
+	public static native void glGetAttachedObjectsARB(long containerObj, int maxCount, long count, long obj); /*
 		ext_glGetAttachedObjectsARB((GLhandleARB)containerObj, (GLsizei)maxCount, (GLsizei*)count, (GLhandleARB*)obj);
 	*/
 
-	public static native int glGetUniformLocationARB(int programObj, Buffer name, int nameByteOffset); /*
+	public static native int glGetUniformLocationARB(long programObj, Buffer name, int nameByteOffset); /*
 		return (jint)ext_glGetUniformLocationARB((GLhandleARB)programObj, (const GLcharARB*)(name + nameByteOffset));
 	*/
 
-	public static native int glGetUniformLocationARB(int programObj, long name); /*
+	public static native int glGetUniformLocationARB(long programObj, long name); /*
 		return (jint)ext_glGetUniformLocationARB((GLhandleARB)programObj, (const GLcharARB*)name);
 	*/
 
-	public static native void glGetActiveUniformARB(int programObj, int index, int maxLength, Buffer length, int lengthByteOffset, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset, Buffer name, int nameByteOffset); /*
+	public static native void glGetActiveUniformARB(long programObj, int index, int maxLength, Buffer length, int lengthByteOffset, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset, Buffer name, int nameByteOffset); /*
 		ext_glGetActiveUniformARB((GLhandleARB)programObj, (GLuint)index, (GLsizei)maxLength, (GLsizei*)(length + lengthByteOffset), (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLcharARB*)(name + nameByteOffset));
 	*/
 
-	public static native void glGetActiveUniformARB(int programObj, int index, int maxLength, long length, long size, long type, long name); /*
+	public static native void glGetActiveUniformARB(long programObj, int index, int maxLength, long length, long size, long type, long name); /*
 		ext_glGetActiveUniformARB((GLhandleARB)programObj, (GLuint)index, (GLsizei)maxLength, (GLsizei*)length, (GLint*)size, (GLenum*)type, (GLcharARB*)name);
 	*/
 
-	public static native void glGetUniformfvARB(int programObj, int location, Buffer params, int paramsByteOffset); /*
+	public static native void glGetUniformfvARB(long programObj, int location, Buffer params, int paramsByteOffset); /*
 		ext_glGetUniformfvARB((GLhandleARB)programObj, (GLint)location, (GLfloat*)(params + paramsByteOffset));
 	*/
 
-	public static native void glGetUniformfvARB(int programObj, int location, long params); /*
+	public static native void glGetUniformfvARB(long programObj, int location, long params); /*
 		ext_glGetUniformfvARB((GLhandleARB)programObj, (GLint)location, (GLfloat*)params);
 	*/
 
-	public static native void glGetUniformivARB(int programObj, int location, Buffer params, int paramsByteOffset); /*
+	public static native void glGetUniformivARB(long programObj, int location, Buffer params, int paramsByteOffset); /*
 		ext_glGetUniformivARB((GLhandleARB)programObj, (GLint)location, (GLint*)(params + paramsByteOffset));
 	*/
 
-	public static native void glGetUniformivARB(int programObj, int location, long params); /*
+	public static native void glGetUniformivARB(long programObj, int location, long params); /*
 		ext_glGetUniformivARB((GLhandleARB)programObj, (GLint)location, (GLint*)params);
 	*/
 
-	public static native void glGetShaderSourceARB(int obj, int maxLength, Buffer length, int lengthByteOffset, Buffer source, int sourceByteOffset); /*
+	public static native void glGetShaderSourceARB(long obj, int maxLength, Buffer length, int lengthByteOffset, Buffer source, int sourceByteOffset); /*
 		ext_glGetShaderSourceARB((GLhandleARB)obj, (GLsizei)maxLength, (GLsizei*)(length + lengthByteOffset), (GLcharARB*)(source + sourceByteOffset));
 	*/
 
-	public static native void glGetShaderSourceARB(int obj, int maxLength, long length, long source); /*
+	public static native void glGetShaderSourceARB(long obj, int maxLength, long length, long source); /*
 		ext_glGetShaderSourceARB((GLhandleARB)obj, (GLsizei)maxLength, (GLsizei*)length, (GLcharARB*)source);
 	*/
 
-	public static native void glBindAttribLocationARB(int programObj, int index, Buffer name, int nameByteOffset); /*
+	public static native void glBindAttribLocationARB(long programObj, int index, Buffer name, int nameByteOffset); /*
 		ext_glBindAttribLocationARB((GLhandleARB)programObj, (GLuint)index, (const GLcharARB*)(name + nameByteOffset));
 	*/
 
-	public static native void glBindAttribLocationARB(int programObj, int index, long name); /*
+	public static native void glBindAttribLocationARB(long programObj, int index, long name); /*
 		ext_glBindAttribLocationARB((GLhandleARB)programObj, (GLuint)index, (const GLcharARB*)name);
 	*/
 
-	public static native void glGetActiveAttribARB(int programObj, int index, int maxLength, Buffer length, int lengthByteOffset, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset, Buffer name, int nameByteOffset); /*
+	public static native void glGetActiveAttribARB(long programObj, int index, int maxLength, Buffer length, int lengthByteOffset, Buffer size, int sizeByteOffset, Buffer type, int typeByteOffset, Buffer name, int nameByteOffset); /*
 		ext_glGetActiveAttribARB((GLhandleARB)programObj, (GLuint)index, (GLsizei)maxLength, (GLsizei*)(length + lengthByteOffset), (GLint*)(size + sizeByteOffset), (GLenum*)(type + typeByteOffset), (GLcharARB*)(name + nameByteOffset));
 	*/
 
-	public static native void glGetActiveAttribARB(int programObj, int index, int maxLength, long length, long size, long type, long name); /*
+	public static native void glGetActiveAttribARB(long programObj, int index, int maxLength, long length, long size, long type, long name); /*
 		ext_glGetActiveAttribARB((GLhandleARB)programObj, (GLuint)index, (GLsizei)maxLength, (GLsizei*)length, (GLint*)size, (GLenum*)type, (GLcharARB*)name);
 	*/
 
-	public static native int glGetAttribLocationARB(int programObj, Buffer name, int nameByteOffset); /*
+	public static native int glGetAttribLocationARB(long programObj, Buffer name, int nameByteOffset); /*
 		return (jint)ext_glGetAttribLocationARB((GLhandleARB)programObj, (const GLcharARB*)(name + nameByteOffset));
 	*/
 
-	public static native int glGetAttribLocationARB(int programObj, long name); /*
+	public static native int glGetAttribLocationARB(long programObj, long name); /*
 		return (jint)ext_glGetAttribLocationARB((GLhandleARB)programObj, (const GLcharARB*)name);
 	*/
 

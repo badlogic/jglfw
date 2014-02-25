@@ -47,7 +47,7 @@ public class GLParser {
 			javaTypes.put("GLsync", "long");
 			javaTypes.put("cl_context", "long");
 			javaTypes.put("cl_event", "long");
-			javaTypes.put("GLhandleARB", "int");
+			javaTypes.put("GLhandleARB", "long");
 			javaTypes.put("GLuint64", "long");
 			javaTypes.put("GLsizeiptrARB", "long");
 			javaTypes.put("GLintptrARB", "long");
