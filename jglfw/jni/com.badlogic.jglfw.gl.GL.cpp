@@ -17300,7 +17300,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetQueryObjectuivARB__IIJ
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteObjectARB(JNIEnv* env, jclass clazz, jint obj) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteObjectARB(JNIEnv* env, jclass clazz, jlong obj) {
 
 
 //@line:14261
@@ -17310,17 +17310,17 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDeleteObjectARB(JNIEnv* e
 
 }
 
-JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetHandleARB(JNIEnv* env, jclass clazz, jint pname) {
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glGetHandleARB(JNIEnv* env, jclass clazz, jint pname) {
 
 
 //@line:14265
 
-		return (jint)ext_glGetHandleARB((GLenum)pname);
+		return (jlong)ext_glGetHandleARB((GLenum)pname);
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDetachObjectARB(JNIEnv* env, jclass clazz, jint containerObj, jint attachedObj) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDetachObjectARB(JNIEnv* env, jclass clazz, jlong containerObj, jlong attachedObj) {
 
 
 //@line:14269
@@ -17330,12 +17330,12 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glDetachObjectARB(JNIEnv* e
 
 }
 
-JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCreateShaderObjectARB(JNIEnv* env, jclass clazz, jint shaderType) {
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glCreateShaderObjectARB(JNIEnv* env, jclass clazz, jint shaderType) {
 
 
 //@line:14273
 
-		return (jint)ext_glCreateShaderObjectARB((GLenum)shaderType);
+		return (jlong)ext_glCreateShaderObjectARB((GLenum)shaderType);
 	
 
 }
@@ -17352,7 +17352,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glShaderSourceARB(JNIEnv* e
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompileShaderARB(JNIEnv* env, jclass clazz, jint shaderObj) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompileShaderARB(JNIEnv* env, jclass clazz, jlong shaderObj) {
 
 
 //@line:14281
@@ -17362,17 +17362,17 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glCompileShaderARB(JNIEnv* 
 
 }
 
-JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glCreateProgramObjectARB(JNIEnv* env, jclass clazz) {
+JNIEXPORT jlong JNICALL Java_com_badlogic_jglfw_gl_GL_glCreateProgramObjectARB(JNIEnv* env, jclass clazz) {
 
 
 //@line:14285
 
-		return (jint)ext_glCreateProgramObjectARB();
+		return (jlong)ext_glCreateProgramObjectARB();
 	
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAttachObjectARB(JNIEnv* env, jclass clazz, jint containerObj, jint obj) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAttachObjectARB(JNIEnv* env, jclass clazz, jlong containerObj, jlong obj) {
 
 
 //@line:14289
@@ -17382,7 +17382,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glAttachObjectARB(JNIEnv* e
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLinkProgramARB(JNIEnv* env, jclass clazz, jint programObj) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLinkProgramARB(JNIEnv* env, jclass clazz, jlong programObj) {
 
 
 //@line:14293
@@ -17392,7 +17392,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glLinkProgramARB(JNIEnv* en
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUseProgramObjectARB(JNIEnv* env, jclass clazz, jint programObj) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUseProgramObjectARB(JNIEnv* env, jclass clazz, jlong programObj) {
 
 
 //@line:14297
@@ -17402,7 +17402,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUseProgramObjectARB(JNIEn
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glValidateProgramARB(JNIEnv* env, jclass clazz, jint programObj) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glValidateProgramARB(JNIEnv* env, jclass clazz, jlong programObj) {
 
 
 //@line:14301
@@ -17723,7 +17723,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glUniformMatrix4fvARB__IIZJ
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterfvARB__IILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jint obj, jint pname, jobject obj_params, jint paramsByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterfvARB__JILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jlong obj, jint pname, jobject obj_params, jint paramsByteOffset) {
 	unsigned char* params = (unsigned char*)(obj_params?env->GetDirectBufferAddress(obj_params):0);
 
 
@@ -17734,7 +17734,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterfvARB__
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterfvARB__IIJ(JNIEnv* env, jclass clazz, jint obj, jint pname, jlong params) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterfvARB__JIJ(JNIEnv* env, jclass clazz, jlong obj, jint pname, jlong params) {
 
 
 //@line:14429
@@ -17744,7 +17744,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterfvARB__
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterivARB__IILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jint obj, jint pname, jobject obj_params, jint paramsByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterivARB__JILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jlong obj, jint pname, jobject obj_params, jint paramsByteOffset) {
 	unsigned char* params = (unsigned char*)(obj_params?env->GetDirectBufferAddress(obj_params):0);
 
 
@@ -17755,7 +17755,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterivARB__
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterivARB__IIJ(JNIEnv* env, jclass clazz, jint obj, jint pname, jlong params) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterivARB__JIJ(JNIEnv* env, jclass clazz, jlong obj, jint pname, jlong params) {
 
 
 //@line:14437
@@ -17765,7 +17765,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetObjectParameterivARB__
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetInfoLogARB__IILjava_nio_Buffer_2ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jint obj, jint maxLength, jobject obj_length, jint lengthByteOffset, jobject obj_infoLog, jint infoLogByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetInfoLogARB__JILjava_nio_Buffer_2ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jlong obj, jint maxLength, jobject obj_length, jint lengthByteOffset, jobject obj_infoLog, jint infoLogByteOffset) {
 	unsigned char* length = (unsigned char*)(obj_length?env->GetDirectBufferAddress(obj_length):0);
 	unsigned char* infoLog = (unsigned char*)(obj_infoLog?env->GetDirectBufferAddress(obj_infoLog):0);
 
@@ -17777,7 +17777,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetInfoLogARB__IILjava_ni
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetInfoLogARB__IIJJ(JNIEnv* env, jclass clazz, jint obj, jint maxLength, jlong length, jlong infoLog) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetInfoLogARB__JIJJ(JNIEnv* env, jclass clazz, jlong obj, jint maxLength, jlong length, jlong infoLog) {
 
 
 //@line:14445
@@ -17787,7 +17787,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetInfoLogARB__IIJJ(JNIEn
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttachedObjectsARB__IILjava_nio_Buffer_2ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jint containerObj, jint maxCount, jobject obj_count, jint countByteOffset, jobject obj_obj, jint objByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttachedObjectsARB__JILjava_nio_Buffer_2ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jlong containerObj, jint maxCount, jobject obj_count, jint countByteOffset, jobject obj_obj, jint objByteOffset) {
 	unsigned char* count = (unsigned char*)(obj_count?env->GetDirectBufferAddress(obj_count):0);
 	unsigned char* obj = (unsigned char*)(obj_obj?env->GetDirectBufferAddress(obj_obj):0);
 
@@ -17799,7 +17799,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttachedObjectsARB__II
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttachedObjectsARB__IIJJ(JNIEnv* env, jclass clazz, jint containerObj, jint maxCount, jlong count, jlong obj) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttachedObjectsARB__JIJJ(JNIEnv* env, jclass clazz, jlong containerObj, jint maxCount, jlong count, jlong obj) {
 
 
 //@line:14453
@@ -17809,8 +17809,8 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttachedObjectsARB__II
 
 }
 
-static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetUniformLocationARB__ILjava_nio_Buffer_2I
-(JNIEnv* env, jclass clazz, jint programObj, jobject obj_name, jint nameByteOffset, unsigned char* name) {
+static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetUniformLocationARB__JLjava_nio_Buffer_2I
+(JNIEnv* env, jclass clazz, jlong programObj, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
 //@line:14457
 
@@ -17818,16 +17818,16 @@ static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetUniformLocationARB
 	
 }
 
-JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformLocationARB__ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jint programObj, jobject obj_name, jint nameByteOffset) {
+JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformLocationARB__JLjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jlong programObj, jobject obj_name, jint nameByteOffset) {
 	unsigned char* name = (unsigned char*)(obj_name?env->GetDirectBufferAddress(obj_name):0);
 
-	jint JNI_returnValue = wrapped_Java_com_badlogic_jglfw_gl_GL_glGetUniformLocationARB__ILjava_nio_Buffer_2I(env, clazz, programObj, obj_name, nameByteOffset, name);
+	jint JNI_returnValue = wrapped_Java_com_badlogic_jglfw_gl_GL_glGetUniformLocationARB__JLjava_nio_Buffer_2I(env, clazz, programObj, obj_name, nameByteOffset, name);
 
 
 	return JNI_returnValue;
 }
 
-JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformLocationARB__IJ(JNIEnv* env, jclass clazz, jint programObj, jlong name) {
+JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformLocationARB__JJ(JNIEnv* env, jclass clazz, jlong programObj, jlong name) {
 
 
 //@line:14461
@@ -17837,7 +17837,7 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformLocationARB__IJ
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniformARB__IIILjava_nio_Buffer_2ILjava_nio_Buffer_2ILjava_nio_Buffer_2ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jint programObj, jint index, jint maxLength, jobject obj_length, jint lengthByteOffset, jobject obj_size, jint sizeByteOffset, jobject obj_type, jint typeByteOffset, jobject obj_name, jint nameByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniformARB__JIILjava_nio_Buffer_2ILjava_nio_Buffer_2ILjava_nio_Buffer_2ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jlong programObj, jint index, jint maxLength, jobject obj_length, jint lengthByteOffset, jobject obj_size, jint sizeByteOffset, jobject obj_type, jint typeByteOffset, jobject obj_name, jint nameByteOffset) {
 	unsigned char* length = (unsigned char*)(obj_length?env->GetDirectBufferAddress(obj_length):0);
 	unsigned char* size = (unsigned char*)(obj_size?env->GetDirectBufferAddress(obj_size):0);
 	unsigned char* type = (unsigned char*)(obj_type?env->GetDirectBufferAddress(obj_type):0);
@@ -17851,7 +17851,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniformARB__IIIL
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniformARB__IIIJJJJ(JNIEnv* env, jclass clazz, jint programObj, jint index, jint maxLength, jlong length, jlong size, jlong type, jlong name) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniformARB__JIIJJJJ(JNIEnv* env, jclass clazz, jlong programObj, jint index, jint maxLength, jlong length, jlong size, jlong type, jlong name) {
 
 
 //@line:14469
@@ -17861,7 +17861,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveUniformARB__IIIJ
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformfvARB__IILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jint programObj, jint location, jobject obj_params, jint paramsByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformfvARB__JILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jlong programObj, jint location, jobject obj_params, jint paramsByteOffset) {
 	unsigned char* params = (unsigned char*)(obj_params?env->GetDirectBufferAddress(obj_params):0);
 
 
@@ -17872,7 +17872,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformfvARB__IILjava_
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformfvARB__IIJ(JNIEnv* env, jclass clazz, jint programObj, jint location, jlong params) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformfvARB__JIJ(JNIEnv* env, jclass clazz, jlong programObj, jint location, jlong params) {
 
 
 //@line:14477
@@ -17882,7 +17882,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformfvARB__IIJ(JNIE
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformivARB__IILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jint programObj, jint location, jobject obj_params, jint paramsByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformivARB__JILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jlong programObj, jint location, jobject obj_params, jint paramsByteOffset) {
 	unsigned char* params = (unsigned char*)(obj_params?env->GetDirectBufferAddress(obj_params):0);
 
 
@@ -17893,7 +17893,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformivARB__IILjava_
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformivARB__IIJ(JNIEnv* env, jclass clazz, jint programObj, jint location, jlong params) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformivARB__JIJ(JNIEnv* env, jclass clazz, jlong programObj, jint location, jlong params) {
 
 
 //@line:14485
@@ -17903,7 +17903,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetUniformivARB__IIJ(JNIE
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderSourceARB__IILjava_nio_Buffer_2ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jint obj, jint maxLength, jobject obj_length, jint lengthByteOffset, jobject obj_source, jint sourceByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderSourceARB__JILjava_nio_Buffer_2ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jlong obj, jint maxLength, jobject obj_length, jint lengthByteOffset, jobject obj_source, jint sourceByteOffset) {
 	unsigned char* length = (unsigned char*)(obj_length?env->GetDirectBufferAddress(obj_length):0);
 	unsigned char* source = (unsigned char*)(obj_source?env->GetDirectBufferAddress(obj_source):0);
 
@@ -17915,7 +17915,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderSourceARB__IILja
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderSourceARB__IIJJ(JNIEnv* env, jclass clazz, jint obj, jint maxLength, jlong length, jlong source) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderSourceARB__JIJJ(JNIEnv* env, jclass clazz, jlong obj, jint maxLength, jlong length, jlong source) {
 
 
 //@line:14493
@@ -17925,7 +17925,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetShaderSourceARB__IIJJ(
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindAttribLocationARB__IILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jint programObj, jint index, jobject obj_name, jint nameByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindAttribLocationARB__JILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jlong programObj, jint index, jobject obj_name, jint nameByteOffset) {
 	unsigned char* name = (unsigned char*)(obj_name?env->GetDirectBufferAddress(obj_name):0);
 
 
@@ -17936,7 +17936,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindAttribLocationARB__II
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindAttribLocationARB__IIJ(JNIEnv* env, jclass clazz, jint programObj, jint index, jlong name) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindAttribLocationARB__JIJ(JNIEnv* env, jclass clazz, jlong programObj, jint index, jlong name) {
 
 
 //@line:14501
@@ -17946,7 +17946,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glBindAttribLocationARB__II
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveAttribARB__IIILjava_nio_Buffer_2ILjava_nio_Buffer_2ILjava_nio_Buffer_2ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jint programObj, jint index, jint maxLength, jobject obj_length, jint lengthByteOffset, jobject obj_size, jint sizeByteOffset, jobject obj_type, jint typeByteOffset, jobject obj_name, jint nameByteOffset) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveAttribARB__JIILjava_nio_Buffer_2ILjava_nio_Buffer_2ILjava_nio_Buffer_2ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jlong programObj, jint index, jint maxLength, jobject obj_length, jint lengthByteOffset, jobject obj_size, jint sizeByteOffset, jobject obj_type, jint typeByteOffset, jobject obj_name, jint nameByteOffset) {
 	unsigned char* length = (unsigned char*)(obj_length?env->GetDirectBufferAddress(obj_length):0);
 	unsigned char* size = (unsigned char*)(obj_size?env->GetDirectBufferAddress(obj_size):0);
 	unsigned char* type = (unsigned char*)(obj_type?env->GetDirectBufferAddress(obj_type):0);
@@ -17960,7 +17960,7 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveAttribARB__IIILj
 
 }
 
-JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveAttribARB__IIIJJJJ(JNIEnv* env, jclass clazz, jint programObj, jint index, jint maxLength, jlong length, jlong size, jlong type, jlong name) {
+JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveAttribARB__JIIJJJJ(JNIEnv* env, jclass clazz, jlong programObj, jint index, jint maxLength, jlong length, jlong size, jlong type, jlong name) {
 
 
 //@line:14509
@@ -17970,8 +17970,8 @@ JNIEXPORT void JNICALL Java_com_badlogic_jglfw_gl_GL_glGetActiveAttribARB__IIIJJ
 
 }
 
-static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetAttribLocationARB__ILjava_nio_Buffer_2I
-(JNIEnv* env, jclass clazz, jint programObj, jobject obj_name, jint nameByteOffset, unsigned char* name) {
+static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetAttribLocationARB__JLjava_nio_Buffer_2I
+(JNIEnv* env, jclass clazz, jlong programObj, jobject obj_name, jint nameByteOffset, unsigned char* name) {
 
 //@line:14513
 
@@ -17979,16 +17979,16 @@ static inline jint wrapped_Java_com_badlogic_jglfw_gl_GL_glGetAttribLocationARB_
 	
 }
 
-JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttribLocationARB__ILjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jint programObj, jobject obj_name, jint nameByteOffset) {
+JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttribLocationARB__JLjava_nio_Buffer_2I(JNIEnv* env, jclass clazz, jlong programObj, jobject obj_name, jint nameByteOffset) {
 	unsigned char* name = (unsigned char*)(obj_name?env->GetDirectBufferAddress(obj_name):0);
 
-	jint JNI_returnValue = wrapped_Java_com_badlogic_jglfw_gl_GL_glGetAttribLocationARB__ILjava_nio_Buffer_2I(env, clazz, programObj, obj_name, nameByteOffset, name);
+	jint JNI_returnValue = wrapped_Java_com_badlogic_jglfw_gl_GL_glGetAttribLocationARB__JLjava_nio_Buffer_2I(env, clazz, programObj, obj_name, nameByteOffset, name);
 
 
 	return JNI_returnValue;
 }
 
-JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttribLocationARB__IJ(JNIEnv* env, jclass clazz, jint programObj, jlong name) {
+JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_gl_GL_glGetAttribLocationARB__JJ(JNIEnv* env, jclass clazz, jlong programObj, jlong name) {
 
 
 //@line:14517
