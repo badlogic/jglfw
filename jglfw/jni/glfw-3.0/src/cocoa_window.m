@@ -28,6 +28,7 @@
 //========================================================================
 
 #include "internal.h"
+#include <Availability.h>
 
 // Needed for _NSGetProgname
 #include <crt_externs.h>
@@ -704,6 +705,10 @@ static GLboolean createWindow(_GLFWwindow* window,
 
     if ([window->ns.object respondsToSelector:@selector(setRestorable:)])
         [window->ns.object setRestorable:NO];
+
+#ifdef __MAC_10_7
+    [window->ns.object setCollectionBehavior: NSWindowCollectionBehaviorFullScreenPrimary];
+#endif
 
     return GL_TRUE;
 }
