@@ -18,7 +18,7 @@
 			<fileset dir="../libs/windows32" includes="jglfw.dll"/>
 			<fileset dir="../libs/windows64" includes="jglfw64.dll"/>
 			<fileset dir="../libs/linux64" includes="libjglfw64.so"/>
-			<fileset dir="../libs/macosx32" includes="libjglfw.dylib"/>
+			<fileset dir="../libs/macosx64" includes="libjglfw64.dylib"/>
 
 		</jar>
 	</target>
