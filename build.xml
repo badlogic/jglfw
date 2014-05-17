@@ -15,6 +15,10 @@
 	        <target name="clean"/>
 			<target name="postcompile"/>
 	    </ant>
+        <ant antfile="build-macosx64.xml" dir="jni">
+	        <target name="clean"/>
+			<target name="postcompile"/>
+	    </ant>
 	</target>
 	
 	<target name="compile-natives">
