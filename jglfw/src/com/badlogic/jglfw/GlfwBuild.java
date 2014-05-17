@@ -92,8 +92,8 @@ public class GlfwBuild {
 		linux64.cppExcludes = new String[] { "**/*AL*.cpp" };
 		
 		/* MAC OS X */
-		BuildTarget mac = BuildTarget.newDefaultTarget(TargetOs.MacOsX, true);
-		mac.cIncludes = merge(commonSrc,
+		BuildTarget mac32 = BuildTarget.newDefaultTarget(TargetOs.MacOsX, false);
+		mac32.cIncludes = merge(commonSrc,
 			"glfw-3.0/src/cocoa_clipboard.m",
 			"glfw-3.0/src/cocoa_gamma.c",
 			"glfw-3.0/src/cocoa_init.m",
@@ -103,22 +103,39 @@ public class GlfwBuild {
 			"glfw-3.0/src/cocoa_window.m",
 			"glfw-3.0/src/nsgl_context.m"
 		);
-		mac.cFlags += " -D_GLFW_COCOA -D_GLFW_NSGL -D_GLFW_USE_OPENGL -D_GLFW_USE_MENUBAR";
-		mac.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/", "al-headers"};
-		mac.libraries = "-framework Cocoa -framework OpenGL -framework IOKit -lpthread";
-		mac.cppExcludes = new String[] { "**/*AL*.cpp" };
+		mac32.cFlags += " -D_GLFW_COCOA -D_GLFW_NSGL -D_GLFW_USE_OPENGL -D_GLFW_USE_MENUBAR";
+		mac32.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/", "al-headers"};
+		mac32.libraries = "-framework Cocoa -framework OpenGL -framework IOKit -lpthread";
+		mac32.cppExcludes = new String[] { "**/*AL*.cpp" };
+		
+		/* MAC OS X */
+		BuildTarget mac64 = BuildTarget.newDefaultTarget(TargetOs.MacOsX, true);
+		mac64.cIncludes = merge(commonSrc,
+			"glfw-3.0/src/cocoa_clipboard.m",
+			"glfw-3.0/src/cocoa_gamma.c",
+			"glfw-3.0/src/cocoa_init.m",
+			"glfw-3.0/src/cocoa_joystick.m",
+			"glfw-3.0/src/cocoa_monitor.m",
+			"glfw-3.0/src/cocoa_time.c",
+			"glfw-3.0/src/cocoa_window.m",
+			"glfw-3.0/src/nsgl_context.m"
+		);
+		mac64.cFlags += " -D_GLFW_COCOA -D_GLFW_NSGL -D_GLFW_USE_OPENGL -D_GLFW_USE_MENUBAR";
+		mac64.headerDirs = new String[] { "glfw-3.0/include", "glfw-3.0/src", "gl-headers/", "al-headers"};
+		mac64.libraries = "-framework Cocoa -framework OpenGL -framework IOKit -lpthread";
+		mac64.cppExcludes = new String[] { "**/*AL*.cpp" };
 
 		BuildConfig config = new BuildConfig("jglfw");
-		new AntScriptGenerator().generate(config, win32home, win32, win64 /*, linux32 */, linux64, mac);
+		new AntScriptGenerator().generate(config, win32home, win32, win64 /*, linux32 */, linux64, mac32, mac64);
 //		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true");
 //		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true");
 //		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true");
-		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true clean");
-		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true");
-		BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
+//		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true clean");
+//		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true");
+//		BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
 		
 //		GlfwTest.main(new String[0]);
 	}
