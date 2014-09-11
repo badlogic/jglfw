@@ -5,7 +5,7 @@ JGLFW is a crossplatform (Windows, Linux, Mac OS X) wrapper for
  * OpenGL, for graphics
  * OpenAL, for audio
 
-The GLFW bindings where created manually using [gdx-jnigen](https://code.google.com/p/libgdx/wiki/SourceBuilding#Jnigen). The bindings for OpenGL and OpenAL are automatically generated from the [GLEW](http://glew.sourceforge.net/) header and the standard [OpenAL Soft](http://kcat.strangesoft.net/openal.html) headers.
+The GLFW bindings were created manually using [gdx-jnigen](https://github.com/libgdx/libgdx/wiki/jnigen). The bindings for OpenGL and OpenAL are automatically generated from the [GLEW](http://glew.sourceforge.net/) header and the standard [OpenAL Soft](http://kcat.strangesoft.net/openal.html) headers.
 
 Usage
 -----
