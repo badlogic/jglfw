@@ -108,19 +108,20 @@ public class SharedLibraryLoader {
 		// in case of iOS, things have been linked statically to the executable, bail out.
 		if (isIos) return;
 
-		libraryName = mapLibraryName(libraryName);
-		if (loadedLibraries.contains(libraryName)) return;
-
-		try {
-			if (isAndroid)
-				System.loadLibrary(libraryName);
-			else
-				loadFile(libraryName);
-		} catch (Throwable ex) {
-			throw new RuntimeException("Couldn't load shared library '" + libraryName + "' for target: "
-				+ System.getProperty("os.name") + (is64Bit ? ", 64-bit" : ", 32-bit"), ex);
+		synchronized (SharedLibraryLoader.class) {
+			if (isLoaded(libraryName)) return;
+			String platformName = mapLibraryName(libraryName);
+			try {
+				if (isAndroid)
+					System.loadLibrary(platformName);
+				else
+					loadFile(platformName);
+				setLoaded(libraryName);
+			} catch (Throwable ex) {
+				throw new RuntimeException("Couldn't load shared library '" + platformName + "' for target: "
+					+ System.getProperty("os.name") + (is64Bit ? ", 64-bit" : ", 32-bit"), ex);
+			}
 		}
-		loadedLibraries.add(libraryName);
 	}
 
 	private InputStream readFile (String path) {
@@ -164,8 +165,8 @@ public class SharedLibraryLoader {
 	/** Returns a path to a file that can be written. Tries multiple locations and verifies writing succeeds. */
 	private File getExtractedFile (String dirName, String fileName) {
 		// Temp directory with username in path.
-		File idealFile = new File(System.getProperty("java.io.tmpdir") + "/libgdx" + System.getProperty("user.name") + "/"
-			+ dirName, fileName);
+		File idealFile = new File(
+			System.getProperty("java.io.tmpdir") + "/libgdx" + System.getProperty("user.name") + "/" + dirName, fileName);
 		if (canWrite(idealFile)) return idealFile;
 
 		// System provided temp directory.
@@ -305,5 +306,14 @@ public class SharedLibraryLoader {
 			ex.printStackTrace();
 			return ex;
 		}
+	}
+
+	/** Sets the library as loaded, for when application code wants to handle libary loading itself. */
+	static public synchronized void setLoaded (String libraryName) {
+		loadedLibraries.add(libraryName);
+	}
+
+	static public synchronized boolean isLoaded (String libraryName) {
+		return loadedLibraries.contains(libraryName);
 	}
 }
