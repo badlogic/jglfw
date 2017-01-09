@@ -1,11 +1,8 @@
-
 package com.badlogic.jglfw.tests;
 
 import static com.badlogic.jglfw.Glfw.*;
 
 import com.badlogic.jglfw.GlfwCallback;
-
-import java.util.Arrays;
 
 import com.badlogic.jglfw.gl.GL;
 
