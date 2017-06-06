@@ -38,9 +38,9 @@
 #define GLFW_FALSE 0
 #define GLFW_TRUE -1
 
-#define _GLFW_USE_OPENGL
-#define _GLFW_COCOA
-#define _GLFW_NSGL
+// #define _GLFW_USE_OPENGL
+// #define _GLFW_COCOA
+// #define _GLFW_NSGL
 
 #if defined(_GLFW_USE_OPENGL)
  // This is the default for glfw3.h
