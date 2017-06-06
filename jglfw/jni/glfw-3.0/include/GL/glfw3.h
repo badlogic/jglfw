@@ -386,6 +386,7 @@ extern "C" {
 #define GLFW_KEY_RIGHT_SUPER        347
 #define GLFW_KEY_MENU               348
 #define GLFW_KEY_LAST               GLFW_KEY_MENU
+#define GLFW_KEY_UNKNOWN			-1
 
 /* GLFW 2.x key name aliases (deprecated) */
 #define GLFW_KEY_ESC                GLFW_KEY_ESCAPE
@@ -401,6 +402,11 @@ extern "C" {
 #define GLFW_KEY_RSHIFT             GLFW_KEY_RIGHT_SHIFT
 #define GLFW_KEY_RALT               GLFW_KEY_RIGHT_ALT
 #define GLFW_KEY_RSUPER             GLFW_KEY_RIGHT_SUPER
+	
+#define GLFW_MOD_SHIFT           0x0001
+#define GLFW_MOD_CONTROL         0x0002
+#define GLFW_MOD_ALT             0x0004
+#define GLFW_MOD_SUPER           0x0008
 
 /*! @} */
 
@@ -680,7 +686,7 @@ typedef void (* GLFWscrollfun)(GLFWwindow*,double,double);
  *
  *  @sa glfwSetKeyCallback
  */
-typedef void (* GLFWkeyfun)(GLFWwindow*,int,int);
+typedef void (* GLFWkeyfun)(GLFWwindow*,int,int,int,int);
 
 /*! @brief The function signature for Unicode character callbacks.
  *  @param[in] window The window that received the event.

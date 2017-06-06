@@ -28,13 +28,13 @@ if (APPLE)
     add_executable(Boing MACOSX_BUNDLE boing.c)
     add_executable(Gears MACOSX_BUNDLE gears.c)
     add_executable(Simple MACOSX_BUNDLE simple.c)
-    add_executable("Split View" MACOSX_BUNDLE splitview.c)
+    add_executable(SplitView MACOSX_BUNDLE splitview.c)
     add_executable(Wave MACOSX_BUNDLE wave.c)
 
     set_target_properties(Boing PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "Boing")
     set_target_properties(Gears PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "Gears")
     set_target_properties(Simple PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "Simple")
-    set_target_properties("Split View" PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "Split View")
+    set_target_properties(SplitView PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "SplitView")
     set_target_properties(Wave PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "Wave")
 else()
     # Set boring names for executables
@@ -55,7 +55,7 @@ if (MSVC)
 endif()
 
 if (APPLE)
-    set(BUNDLE_BINARIES Boing Gears Simple "Split View" Wave)
+    set(BUNDLE_BINARIES Boing Gears Simple SplitView Wave)
 
     set_target_properties(${BUNDLE_BINARIES} PROPERTIES
                           MACOSX_BUNDLE_SHORT_VERSION_STRING ${GLFW_VERSION}

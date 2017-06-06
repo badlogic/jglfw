@@ -35,6 +35,13 @@
 //#include "config.h"
 #define _GLFW_VERSION_FULL "3.0.0"
 
+#define GLFW_FALSE 0
+#define GLFW_TRUE -1
+
+#define _GLFW_USE_OPENGL
+#define _GLFW_COCOA
+#define _GLFW_NSGL
+
 #if defined(_GLFW_USE_OPENGL)
  // This is the default for glfw3.h
 #elif defined(_GLFW_USE_GLESV1)
@@ -235,7 +242,7 @@ struct _GLFWwindow
     int                 cursorPosX, cursorPosY;
     int                 cursorMode;
     char                mouseButton[GLFW_MOUSE_BUTTON_LAST + 1];
-    char                key[GLFW_KEY_LAST + 1];
+    char                keys[GLFW_KEY_LAST + 1];
 
     // OpenGL extensions and context attributes
     int                 clientAPI;
@@ -588,7 +595,7 @@ void _glfwInputWindowCloseRequest(_GLFWwindow* window);
  *  @param[in] action @ref GLFW_PRESS or @ref GLFW_RELEASE.
  *  @ingroup event
  */
-void _glfwInputKey(_GLFWwindow* window, int key, int action);
+void _glfwInputKey(_GLFWwindow* window, int key, int scancode, int action, int mods);
 
 /*! @brief Notifies shared code of a Unicode character input event.
  *  @param[in] window The window that received the event.

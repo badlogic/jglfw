@@ -78,8 +78,8 @@ static void setStickyKeys(_GLFWwindow* window, int enabled)
         // Release all sticky keys
         for (i = 0;  i <= GLFW_KEY_LAST;  i++)
         {
-            if (window->key[i] == _GLFW_STICK)
-                window->key[i] = GLFW_RELEASE;
+            if (window->keys[i] == _GLFW_STICK)
+                window->keys[i] = GLFW_RELEASE;
         }
     }
 
@@ -113,26 +113,29 @@ static void setStickyMouseButtons(_GLFWwindow* window, int enabled)
 //////                         GLFW event API                       //////
 //////////////////////////////////////////////////////////////////////////
 
-void _glfwInputKey(_GLFWwindow* window, int key, int action)
+void _glfwInputKey(_GLFWwindow* window, int key, int scancode, int action, int mods)
 {
-    GLboolean repeated = GL_FALSE;
-
-    if (key < 0 || key > GLFW_KEY_LAST)
-        return;
-
-    if (action == GLFW_PRESS && window->key[key] == GLFW_PRESS)
-        repeated = GL_TRUE;
-
-    if (action == GLFW_RELEASE && window->stickyKeys)
-        window->key[key] = _GLFW_STICK;
-    else
-        window->key[key] = (char) action;
-
-    if (repeated)
-        action = GLFW_REPEAT;
-
-    if (window->callbacks.key)
-        window->callbacks.key((GLFWwindow*) window, key, action);
+	if (key >= 0 && key <= GLFW_KEY_LAST)
+	{
+		int repeated = GLFW_FALSE;
+		
+		if (action == GLFW_RELEASE && window->keys[key] == GLFW_RELEASE)
+			return;
+		
+		if (action == GLFW_PRESS && window->keys[key] == GLFW_PRESS)
+			repeated = GLFW_TRUE;
+		
+		if (action == GLFW_RELEASE && window->stickyKeys)
+			window->keys[key] = _GLFW_STICK;
+		else
+			window->keys[key] = (char) action;
+		
+		if (repeated)
+			action = GLFW_REPEAT;
+	}
+	
+	if (window->callbacks.key)
+		window->callbacks.key((GLFWwindow*) window, key, scancode, action, mods);
 }
 
 void _glfwInputChar(_GLFWwindow* window, unsigned int character)
@@ -259,14 +262,14 @@ GLFWAPI int glfwGetKey(GLFWwindow* handle, int key)
         return GLFW_RELEASE;
     }
 
-    if (window->key[key] == _GLFW_STICK)
+    if (window->keys[key] == _GLFW_STICK)
     {
         // Sticky mode: release key now
-        window->key[key] = GLFW_RELEASE;
+        window->keys[key] = GLFW_RELEASE;
         return GLFW_PRESS;
     }
 
-    return (int) window->key[key];
+    return (int) window->keys[key];
 }
 
 GLFWAPI int glfwGetMouseButton(GLFWwindow* handle, int button)

@@ -113,6 +113,9 @@ typedef struct _GLFWlibraryNS
     id              delegate;
 
     char*           clipboardString;
+	
+	short int       keycodes[256];
+	short int       scancodes[GLFW_KEY_LAST + 1];
 
     _GLFWjoy        joysticks[GLFW_JOYSTICK_LAST + 1];
 } _GLFWlibraryNS;
