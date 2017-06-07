@@ -378,7 +378,15 @@ static NSUInteger translateKeyToModifierFlag(int key)
 	
 	_glfwInputKey(window, key, [event keyCode], GLFW_PRESS, mods);
 	
-	[self interpretKeyEvents:[NSArray arrayWithObject:event]];
+	if (!([event modifierFlags] & NSCommandKeyMask)) {
+		NSUInteger i, length;
+		NSString* characters;
+		characters = [event characters];
+		length = [characters length];
+		
+		for (i = 0;  i < length;  i++)
+			_glfwInputChar(window, [characters characterAtIndex:i]);
+	}
 }
 
 - (void)flagsChanged:(NSEvent *)event

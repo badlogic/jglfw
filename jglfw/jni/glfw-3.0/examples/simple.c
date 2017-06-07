@@ -225,6 +225,28 @@ static void error_callback(int error, const char* description)
     fputs(description, stderr);
 }
 
+static const char* get_character_string(int character)
+{
+	// This assumes UTF-8, which is stupid
+	static char result[6 + 1];
+	
+	int length = wctomb(result, character);
+	if (length == -1)
+		length = 0;
+	
+	result[length] = '\0';
+	return result;
+}
+
+static void char_callback(GLFWwindow* window, unsigned int character)
+{
+	printf("%08x at %0.3f: Character 0x%08x (%s) input\n",
+		   counter++,
+		   glfwGetTime(),
+		   character,
+		   get_character_string(character));
+}
+
 int main(void)
 {
     GLFWwindow* window;
@@ -242,6 +264,7 @@ int main(void)
     }
 	
 	glfwSetKeyCallback(window, key_callback);
+	glfwSetCharCallback(window, char_callback);
 
     glfwMakeContextCurrent(window);
 
