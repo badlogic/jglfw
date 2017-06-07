@@ -38,8 +38,7 @@
 #define GLFW_FALSE 0
 #define GLFW_TRUE -1
 
-#define _GLFW_USE_OPENGL
-
+// #define _GLFW_USE_OPENGL
 // #define _GLFW_WIN32 
 // #define _GLFW_WGL
 

@@ -55,9 +55,9 @@ public class GlfwCallbacks implements GlfwCallback {
 			processors.get(i).windowIconify(window, iconified);
 	}
 
-	public void key (long window, int key, int action) {
+	public void key (long window, int key, int scancode, int action, int mods) {
 		for (int i = 0, n = processors.size(); i < n; i++)
-			processors.get(i).key(window, key, action);
+			processors.get(i).key(window, key, scancode, action, mods);
 	}
 
 	public void character (long window, char character) {

@@ -133,9 +133,9 @@ public class GlfwBuild {
 //		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true");
 //		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-linux64.xml", "-v -Dhas-compiler=true");
-//		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true clean");
-//		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true");
-//		BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
+		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true clean");
+		BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v -Dhas-compiler=true");
+		// BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
 		
 //		GlfwTest.main(new String[0]);
 	}

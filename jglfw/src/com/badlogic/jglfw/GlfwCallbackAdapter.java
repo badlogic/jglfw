@@ -35,7 +35,7 @@ public class GlfwCallbackAdapter implements GlfwCallback {
 	}
 
 	@Override
-	public void key (long window, int key, int action) {
+	public void key (long window, int key, int scanCode, int action, int mods) {
 	}
 
 	@Override

@@ -400,9 +400,9 @@ public class Glfw {
 		}
 	}
 	
-	void key(GLFWwindow* window, int key, int action) {
+	void key(GLFWwindow* window, int key, int scancode, int action, int mods) {
 		if(callback) {
-			getEnv()->CallVoidMethod(callback, keyId, (jlong)window, (jint)key, (jint)action);
+			getEnv()->CallVoidMethod(callback, keyId, (jlong)window, (jint)key, (jint)scancode, (jint)action, (jint)mods);
 		}
 	}
 	
@@ -485,9 +485,9 @@ public class Glfw {
 			return false;
 		}
 
-		keyId = env->GetMethodID(callbackClass, "key", "(JII)V");
+		keyId = env->GetMethodID(callbackClass, "key", "(JIIII)V");
 		if(!keyId) {
-			env->ThrowNew(exception, "Couldn't find key() method");
+			env->ThrowNew(exception, "Couldn't find key(JIIII)V method");
 			return false;
 		}
 
