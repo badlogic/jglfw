@@ -68,7 +68,7 @@ public class GlfwTest {
 			}
 
 			@Override
-			public void key (long window, int key, int action) {
+			public void key (long window, int key, int scancode, int action, int modifiers) {
 				String actionStr = "pressed";
 				if(action == GLFW_RELEASE) actionStr = "released";
 				if(action == GLFW_REPEAT) actionStr = "repeated";

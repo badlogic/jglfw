@@ -52,7 +52,7 @@
 - (id)initWithGlfwWindow:(_GLFWwindow *)initWindow
 {
     self = [super init];
-    if (self != nil)
+	if (self != nil)
         window = initWindow;
 
     return self;
@@ -94,6 +94,8 @@
 
 - (void)windowDidBecomeKey:(NSNotification *)notification
 {
+	// clear last modifier keys
+	window->lastModifierKeys = 0;
     _glfwInputWindowFocus(window, GL_TRUE);
 }
 
@@ -214,8 +216,9 @@ static NSUInteger translateKeyToModifierFlag(int key)
 {
     if ([event type] == NSKeyUp && ([event modifierFlags] & NSCommandKeyMask))
         [[self keyWindow] sendEvent:event];
-    else
+	else {
         [super sendEvent:event];
+	}
 }
 
 @end
@@ -229,6 +232,7 @@ static NSUInteger translateKeyToModifierFlag(int key)
 {
     _GLFWwindow* window;
     NSTrackingArea* trackingArea;
+	int lastModifierKeys;
 }
 
 - (id)initWithGlfwWindow:(_GLFWwindow *)initWindow;
@@ -243,6 +247,7 @@ static NSUInteger translateKeyToModifierFlag(int key)
     if (self != nil)
     {
         window = initWindow;
+		window->lastModifierKeys = 0;
         trackingArea = nil;
 
         [self updateTrackingAreas];
@@ -381,8 +386,24 @@ static NSUInteger translateKeyToModifierFlag(int key)
 	int action;
 	const unsigned int modifierFlags =
 	[event modifierFlags] & NSEventModifierFlagDeviceIndependentFlagsMask;
-	const int key = translateKey([event keyCode]);
+	int scanCode = [event keyCode];
+	int key = translateKey(scanCode);
 	const int mods = translateFlags(modifierFlags);
+	
+	// Fix for Wacom, see https://github.com/EsotericSoftware/spine-editor/issues/174
+	// Wacom sends keyCode 0 for modifier keys, so we need
+	// to generate a keyCode for the modifier key that was
+	// pressed outselfs
+	if (scanCode == 0) {
+		int changedMods = mods ^ window->lastModifierKeys;
+		if (changedMods & GLFW_MOD_ALT) scanCode = 0x3D; // right alt
+		if (changedMods & GLFW_MOD_CONTROL) scanCode = 0x3E; // right control
+		if (changedMods & GLFW_MOD_SHIFT) scanCode = 0x3C; // right shift
+		if (changedMods & GLFW_MOD_SUPER) scanCode = 0x36; // right command / super
+			
+		key = translateKey(scanCode);
+	}
+	
 	const NSUInteger keyFlag = translateKeyToModifierFlag(key);
 	
 	if (keyFlag & modifierFlags)
@@ -395,7 +416,9 @@ static NSUInteger translateKeyToModifierFlag(int key)
 	else
 		action = GLFW_RELEASE;
 	
-	_glfwInputKey(window, key, [event keyCode], action, mods);
+	window->lastModifierKeys = mods;
+	
+	_glfwInputKey(window, key, scanCode, action, mods);
 }
 
 - (void)keyUp:(NSEvent *)event
