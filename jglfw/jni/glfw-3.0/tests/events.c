@@ -308,7 +308,7 @@ static void scroll_callback(GLFWwindow* window, double x, double y)
     printf("%08x at %0.3f: Scroll: %0.3f %0.3f\n", counter++, glfwGetTime(), x, y);
 }
 
-static void key_callback(GLFWwindow* window, int key, int action)
+static void key_callback(GLFWwindow* window, int key, int scanCode, int action, int mods)
 {
     const char* name = get_key_name(key);
 

@@ -161,6 +161,9 @@ typedef struct _GLFWlibraryWin32
     DWORD               foregroundLockTimeout;
     char*               clipboardString;
 
+	short int           keycodes[512];
+	short int           scancodes[GLFW_KEY_LAST + 1];
+
     // Timer data
     struct {
         GLboolean       hasPC;
