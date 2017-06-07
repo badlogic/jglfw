@@ -2,14 +2,12 @@
 	<target name="clean">
 		<ant antfile="build-windows32.xml" target="clean"/>
 		<ant antfile="build-windows64.xml" target="clean"/>
-		<ant antfile="build-linux64.xml" target="clean"/>
 
 	</target>
 	
 	<target name="compile-natives">
 		<ant antfile="build-windows32.xml"/>
 		<ant antfile="build-windows64.xml"/>
-		<ant antfile="build-linux64.xml"/>
 
 	</target>
 	
@@ -17,7 +15,6 @@
 		<jar destfile="../libs/jglfw-natives.jar">
 			<fileset dir="../libs/windows32" includes="jglfw.dll"/>
 			<fileset dir="../libs/windows64" includes="jglfw64.dll"/>
-			<fileset dir="../libs/linux64" includes="libjglfw64.so"/>
 			<fileset dir="../libs/macosx32" includes="libjglfw.dylib"/>
 			<fileset dir="../libs/macosx64" includes="libjglfw64.dylib"/>
 

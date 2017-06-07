@@ -126,7 +126,7 @@ public class GlfwBuild {
 		mac64.cppExcludes = new String[] { "**/*AL*.cpp" };
 
 		BuildConfig config = new BuildConfig("jglfw");
-		new AntScriptGenerator().generate(config, win32home, win32, win64 /*, linux32 */, linux64, mac32, mac64);
+		new AntScriptGenerator().generate(config, win32home, win32, win64 /*, linux32 */, mac32, mac64);
 //		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true clean");
 //		BuildExecutor.executeAnt("jni/build-windows32home.xml", "-v -Dhas-compiler=true");
 //		BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true clean");
