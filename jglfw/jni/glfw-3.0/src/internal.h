@@ -40,8 +40,8 @@
 
 #define _GLFW_USE_OPENGL
 
-#define _GLFW_WIN32 
-#define _GLFW_WGL
+// #define _GLFW_WIN32 
+// #define _GLFW_WGL
 
 #if defined(_GLFW_USE_OPENGL)
  // This is the default for glfw3.h
