@@ -378,7 +378,18 @@ static NSUInteger translateKeyToModifierFlag(int key)
 	
 	_glfwInputKey(window, key, [event keyCode], GLFW_PRESS, mods);
 	
-	if (!([event modifierFlags] & NSCommandKeyMask)) {
+	
+	if ([event modifierFlags] & NSCommandKeyMask)
+	{
+		// If the GLFWApplication sendEvent command key fix could not be used,
+		// just send a key up immediately.
+		if (![NSApp isKindOfClass:[GLFWApplication class]])
+		{
+			_glfwInputKey(window, key, [event keyCode], GLFW_RELEASE, mods);
+		}
+	}
+	else
+	{
 		NSUInteger i, length;
 		NSString* characters;
 		characters = [event characters];
@@ -433,6 +444,7 @@ static NSUInteger translateKeyToModifierFlag(int key)
 {
 	const int key = translateKey([event keyCode]);
 	const int mods = translateFlags([event modifierFlags]);
+
 	_glfwInputKey(window, key, [event keyCode], GLFW_RELEASE, mods);
 }
 
