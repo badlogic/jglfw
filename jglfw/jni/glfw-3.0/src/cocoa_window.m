@@ -632,6 +632,7 @@ static GLboolean createWindow(_GLFWwindow* window,
     }
 
     window->ns.view = [[GLFWContentView alloc] initWithGlfwWindow:window];
+	 [window->ns.view setWantsBestResolutionOpenGLSurface:YES];
 
     [window->ns.object setTitle:[NSString stringWithUTF8String:wndconfig->title]];
     [window->ns.object setContentView:window->ns.view];
