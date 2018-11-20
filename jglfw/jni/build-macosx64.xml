@@ -1,6 +1,6 @@
 <project name="jglfw-MacOsX-64" basedir="." default="postcompile">
 	<!-- include the environment -->
-	<property environment="env"/>	
+	<property environment="env"/>
 	<!-- output directory for temporary object files -->
 	<property name="buildDir" value="target/macosx64" />
 	<!-- output directory for the shared library -->
@@ -11,14 +11,14 @@
 	<property name="jniPlatform" value="mac"/>
 	<!-- the compilerPrefix for the C & C++ compilers -->
 	<property name="compilerPrefix" value=""/>
-	<!--  the compilerSuffix for the C & C++ compilers -->	
-	<property name="compilerSuffix" value="" />	
-	
+	<!--  the compilerSuffix for the C & C++ compilers -->
+	<property name="compilerSuffix" value="" />
+
 	<!-- define gcc compiler, options and files to compile -->
-	<property name="gcc" value="${compilerPrefix}gcc${compilerSuffix}"/>	
-	<property name="gcc-opts" value="-c -Wall -O2 -arch x86_64 -DFIXED_POINT -fmessage-length=0 -fPIC -mmacosx-version-min=10.5 -D_GLFW_COCOA -D_GLFW_NSGL -D_GLFW_USE_OPENGL -D_GLFW_USE_MENUBAR"/>
+	<property name="gcc" value="${compilerPrefix}clang${compilerSuffix}"/>
+	<property name="gcc-opts" value="-c -Wall -O2 -arch x86_64 -DFIXED_POINT -fmessage-length=0 -fPIC -mmacosx-version-min=10.7 -D_GLFW_COCOA -D_GLFW_NSGL -D_GLFW_USE_OPENGL -D_GLFW_USE_MENUBAR"/>
 	<fileset id="gcc-files" dir="./">
-		<exclude name="target/"/>		
+		<exclude name="target/"/>
 				<include name="memcpy_wrap.c"/>
 		<include name="glfw-3.0/src/clipboard.c"/>
 		<include name="glfw-3.0/src/context.c"/>
@@ -38,12 +38,12 @@
 		<include name="glfw-3.0/src/cocoa_window.m"/>
 		<include name="glfw-3.0/src/nsgl_context.m"/>
 
-		
+
 	</fileset>
-	
+
 	<!-- define g++ compiler, options and files to compile -->
 	<property name="g++" value="${compilerPrefix}g++${compilerSuffix}"/>
-	<property name="g++-opts" value="-c -Wall -O2 -arch x86_64 -DFIXED_POINT -fmessage-length=0 -fPIC -mmacosx-version-min=10.5"/>
+	<property name="g++-opts" value="-c -Wall -O2 -arch x86_64 -DFIXED_POINT -fmessage-length=0 -fPIC -mmacosx-version-min=10.7"/>
 	<fileset id="g++-files" dir="./">
 		<exclude name="target/"/>
 				<include name="**/*.cpp"/>
@@ -54,9 +54,9 @@
 
 	<!-- define linker and options -->
 	<property name="linker" value="${compilerPrefix}g++${compilerSuffix}"/>
-	<property name="linker-opts" value="-shared -arch x86_64 -mmacosx-version-min=10.5"/>
+	<property name="linker-opts" value="-shared -arch x86_64 -mmacosx-version-min=10.7"/>
 	<property name="libraries" value="-framework Cocoa -framework OpenGL -framework IOKit -lpthread"/>
-	
+
 	<!-- cleans the build directory, removes all object files and shared libs -->
 	<target name="clean">
 		<delete includeemptydirs="true" quiet="true">
@@ -64,7 +64,7 @@
 			<fileset dir="${libsDir}" includes="**/*" excludes="**/.svn"/>
 		</delete>
 	</target>
-	
+
 	<target name="precompile">
 		<condition property="compiler-found">
 			<and>
@@ -83,9 +83,9 @@
 		<condition property="has-compiler">
 			<equals arg1="${compiler-found}" arg2="true"/>
 		</condition>
-		
+
 	</target>
-	
+
 	<target name="create-build-dir" depends="precompile" if="has-compiler">
 		<!-- FIXME this is pretty nasty :/ -->
 		<copy todir="${buildDir}">
@@ -141,9 +141,9 @@
 				<mapper type="glob" from="*.m" to="*.o"/>
 			</compositemapper>
 		</apply>
-	</target>	
+	</target>
 
-	<!-- links the shared library based on the previously compiled object files -->	
+	<!-- links the shared library based on the previously compiled object files -->
 	<target name="link" depends="compile" if="has-compiler">
 		<fileset dir="${buildDir}" id="objFileSet">
 			<patternset>
@@ -159,9 +159,9 @@
 			<arg line="${objFiles}"/>
 			<arg line="${libraries}" />
 		</exec>
-	</target>	
-	
+	</target>
+
 	<target name="postcompile" depends="link">
-		
+
 	</target>
 </project>

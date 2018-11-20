@@ -776,7 +776,7 @@ void _glfwPlatformSetWindowPos(_GLFWwindow* window, int x, int y)
 void _glfwPlatformGetWindowSize(_GLFWwindow* window, int* width, int* height)
 {
     const NSRect contentRect =
-        [window->ns.object contentRectForFrameRect:[window->ns.object frame]];
+	        [window->ns.object contentRectForFrameRect:[window->ns.object frame]];
 
     if (width)
         *width = contentRect.size.width;
