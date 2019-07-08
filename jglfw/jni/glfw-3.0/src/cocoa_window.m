@@ -303,8 +303,13 @@ static NSUInteger translateKeyToModifierFlag(int key)
         const NSPoint p = [event locationInWindow];
 
         // Cocoa coordinate system has origin at lower left
-        const int x = lround(floor(p.x));
-        const int y = contentRect.size.height - lround(ceil(p.y));
+        int x = lround(floor(p.x));
+        int y = contentRect.size.height - lround(ceil(p.y));
+
+        const NSRect backingRect = [window->ns.object convertRectToBacking:[window->ns.object contentRectForFrameRect:[window->ns.object frame]]];
+        float scaleFactor = (float)backingRect.size.width / (float)contentRect.size.width;
+        x = (int)(x * scaleFactor);
+        y = (int)(y * scaleFactor);
 
         _glfwInputCursorMotion(window, x, y);
     }
@@ -632,7 +637,7 @@ static GLboolean createWindow(_GLFWwindow* window,
     }
 
     window->ns.view = [[GLFWContentView alloc] initWithGlfwWindow:window];
-	 [window->ns.view setWantsBestResolutionOpenGLSurface:YES];
+	[window->ns.view setWantsBestResolutionOpenGLSurface:YES];
 
     [window->ns.object setTitle:[NSString stringWithUTF8String:wndconfig->title]];
     [window->ns.object setContentView:window->ns.view];
@@ -775,13 +780,16 @@ void _glfwPlatformSetWindowPos(_GLFWwindow* window, int x, int y)
 
 void _glfwPlatformGetWindowSize(_GLFWwindow* window, int* width, int* height)
 {
-    const NSRect contentRect =
-        [window->ns.object contentRectForFrameRect:[window->ns.object frame]];
+	// Use the backing rect instead of this to get a 1:1 pixel mapping
+    //const NSRect contentRect =
+    //    [window->ns.object contentRectForFrameRect:[window->ns.object frame]];
+
+    const NSRect backingRect = [window->ns.object convertRectToBacking:[window->ns.object contentRectForFrameRect:[window->ns.object frame]]];
 
     if (width)
-        *width = contentRect.size.width;
+        *width = backingRect.size.width;
     if (height)
-        *height = contentRect.size.height;
+        *height = backingRect.size.height;
 }
 
 void _glfwPlatformSetWindowSize(_GLFWwindow* window, int width, int height)
