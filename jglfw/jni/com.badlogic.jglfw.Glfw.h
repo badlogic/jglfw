@@ -733,6 +733,14 @@ JNIEXPORT jint JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetWindowParam
 
 /*
  * Class:     com_badlogic_jglfw_Glfw
+ * Method:    glfwGetUnitToPixelRatio
+ * Signature: (J)F
+ */
+JNIEXPORT jfloat JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetUnitToPixelRatio
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     com_badlogic_jglfw_Glfw
  * Method:    glfwSetCallbackJni
  * Signature: (Lcom/badlogic/jglfw/GlfwCallback;)V
  */

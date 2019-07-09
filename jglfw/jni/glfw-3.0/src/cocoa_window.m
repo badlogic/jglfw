@@ -153,7 +153,7 @@
 static int translateFlags(NSUInteger flags)
 {
 	int mods = 0;
-	
+
 	if (flags & NSEventModifierFlagShift)
 		mods |= GLFW_MOD_SHIFT;
 	if (flags & NSEventModifierFlagControl)
@@ -162,7 +162,7 @@ static int translateFlags(NSUInteger flags)
 		mods |= GLFW_MOD_ALT;
 	if (flags & NSEventModifierFlagCommand)
 		mods |= GLFW_MOD_SUPER;
-	
+
 	return mods;
 }
 
@@ -172,7 +172,7 @@ static int translateKey(unsigned int key)
 {
 	if (key >= sizeof(_glfw.ns.keycodes) / sizeof(_glfw.ns.keycodes[0]))
 		return GLFW_KEY_UNKNOWN;
-	
+
 	return _glfw.ns.keycodes[key];
 }
 
@@ -195,7 +195,7 @@ static NSUInteger translateKeyToModifierFlag(int key)
 		case GLFW_KEY_RIGHT_SUPER:
 			return NSEventModifierFlagCommand;
 	}
-	
+
 	return 0;
 }
 
@@ -380,10 +380,10 @@ static NSUInteger translateKeyToModifierFlag(int key)
 {
 	const int key = translateKey([event keyCode]);
 	const int mods = translateFlags([event modifierFlags]);
-	
+
 	_glfwInputKey(window, key, [event keyCode], GLFW_PRESS, mods);
-	
-	
+
+
 	if ([event modifierFlags] & NSCommandKeyMask)
 	{
 		// If the GLFWApplication sendEvent command key fix could not be used,
@@ -399,7 +399,7 @@ static NSUInteger translateKeyToModifierFlag(int key)
 		NSString* characters;
 		characters = [event characters];
 		length = [characters length];
-		
+
 		for (i = 0;  i < length;  i++)
 			_glfwInputChar(window, [characters characterAtIndex:i]);
 	}
@@ -413,7 +413,7 @@ static NSUInteger translateKeyToModifierFlag(int key)
 	int scanCode = [event keyCode];
 	int key = translateKey(scanCode);
 	const int mods = translateFlags(modifierFlags);
-	
+
 	// Fix for Wacom, see https://github.com/EsotericSoftware/spine-editor/issues/174
 	// Wacom sends keyCode 0 for modifier keys, so we need
 	// to generate a keyCode for the modifier key that was
@@ -424,12 +424,12 @@ static NSUInteger translateKeyToModifierFlag(int key)
 		if (changedMods & GLFW_MOD_CONTROL) scanCode = 0x3E; // right control
 		if (changedMods & GLFW_MOD_SHIFT) scanCode = 0x3C; // right shift
 		if (changedMods & GLFW_MOD_SUPER) scanCode = 0x36; // right command / super
-			
+
 		key = translateKey(scanCode);
 	}
-	
+
 	const NSUInteger keyFlag = translateKeyToModifierFlag(key);
-	
+
 	if (keyFlag & modifierFlags)
 	{
 		if (window->keys[key] == GLFW_PRESS)
@@ -439,9 +439,9 @@ static NSUInteger translateKeyToModifierFlag(int key)
 	}
 	else
 		action = GLFW_RELEASE;
-	
+
 	window->lastModifierKeys = mods;
-	
+
 	_glfwInputKey(window, key, scanCode, action, mods);
 }
 
@@ -809,7 +809,7 @@ void _glfwPlatformRestoreWindow(_GLFWwindow* window)
 
 void _glfwPlatformShowWindow(_GLFWwindow* window)
 {
-    [window->ns.object performSelectorOnMainThread:@selector(makeKeyAndOrderFront:) 
+    [window->ns.object performSelectorOnMainThread:@selector(makeKeyAndOrderFront:)
     	withObject:nil waitUntilDone:NO];
     _glfwInputWindowVisibility(window, GL_TRUE);
     [window->nsgl.context update]; // This is only here because it can't be called in windowDidResize!
@@ -903,5 +903,12 @@ GLFWAPI id glfwGetCocoaWindow(GLFWwindow* handle)
     _GLFWwindow* window = (_GLFWwindow*) handle;
     _GLFW_REQUIRE_INIT_OR_RETURN(nil);
     return window->ns.object;
+}
+
+float _glfwPlatformGetUnitsToPixelsRatio(_GLFWwindow* window)
+{
+    const NSRect contentRect = [window->ns.object contentRectForFrameRect:[window->ns.object frame]];
+    const NSRect backingRect = [window->ns.object convertRectToBacking:[window->ns.object contentRectForFrameRect:[window->ns.object frame]]];
+    return (float)backingRect.size.width / (float)contentRect.size.width;
 }
 

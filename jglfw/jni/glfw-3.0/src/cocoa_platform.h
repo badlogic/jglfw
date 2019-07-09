@@ -113,7 +113,7 @@ typedef struct _GLFWlibraryNS
     id              delegate;
 
     char*           clipboardString;
-	
+
 	short int       keycodes[256];
 	short int       scancodes[GLFW_KEY_LAST + 1];
 
@@ -154,5 +154,7 @@ int _glfwCreateContext(_GLFWwindow* window,
                        const _GLFWwndconfig* wndconfig,
                        const _GLFWfbconfig* fbconfig);
 void _glfwDestroyContext(_GLFWwindow* window);
+
+float _glfwPlatformGetUnitsToPixelsRatio(_GLFWwindow* window);
 
 #endif // _cocoa_platform_h_

@@ -1068,3 +1068,7 @@ GLFWAPI Window glfwGetX11Window(GLFWwindow* handle)
     return window->x11.handle;
 }
 
+float _glfwPlatformGetUnitsToPixelsRatio(_GLFWwindow* window)
+{
+    return 1;
+}

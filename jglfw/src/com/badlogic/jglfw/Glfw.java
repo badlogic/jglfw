@@ -771,6 +771,9 @@ public class Glfw {
 		return glfwGetWindowParam((GLFWwindow*)window, param);
 	*/
 
+	public static native float glfwGetUnitToPixelRatio(long window); /*
+		return glfwGetUnitsToPixelsRatio((GLFWwindow*)window);
+	*/
 
 	/**
 	 * Sets the {@link GlfwCallback} that will get invoked by

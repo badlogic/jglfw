@@ -402,7 +402,7 @@ extern "C" {
 #define GLFW_KEY_RSHIFT             GLFW_KEY_RIGHT_SHIFT
 #define GLFW_KEY_RALT               GLFW_KEY_RIGHT_ALT
 #define GLFW_KEY_RSUPER             GLFW_KEY_RIGHT_SUPER
-	
+
 #define GLFW_MOD_SHIFT           0x0001
 #define GLFW_MOD_CONTROL         0x0002
 #define GLFW_MOD_ALT             0x0004
@@ -1734,6 +1734,11 @@ GLFWAPI int glfwExtensionSupported(const char* extension);
  *  @remarks This function may be called from secondary threads.
  */
 GLFWAPI GLFWglproc glfwGetProcAddress(const char* procname);
+
+/*!
+ * @brief Returns the ratio of units to pixels.
+ */
+GLFWAPI float glfwGetUnitsToPixelsRatio(GLFWwindow* window);
 
 
 /*************************************************************************

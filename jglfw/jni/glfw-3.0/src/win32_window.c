@@ -1100,3 +1100,7 @@ GLFWAPI HWND glfwGetWin32Window(GLFWwindow* handle)
     return window->win32.handle;
 }
 
+float _glfwPlatformGetUnitsToPixelsRatio(_GLFWwindow* window)
+{
+    return 1;
+}

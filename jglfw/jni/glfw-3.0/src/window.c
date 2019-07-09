@@ -647,3 +647,8 @@ GLFWAPI void glfwWaitEvents(void)
     _glfwPlatformWaitEvents();
 }
 
+GLFWAPI float glfwGetUnitsToPixelsRatio(GLFWwindow* window)
+{
+    return _glfwPlatformGetUnitsToPixelsRatio((_GLFWwindow*)window);
+}
+
