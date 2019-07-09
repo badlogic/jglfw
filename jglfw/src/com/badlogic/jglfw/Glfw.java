@@ -771,7 +771,12 @@ public class Glfw {
 		return glfwGetWindowParam((GLFWwindow*)window, param);
 	*/
 
-	public static native float glfwGetUnitToPixelRatio(long window); /*
+	public static float glfwGetUnitToPixelRatio(long window) {
+		if (SharedLibraryLoader.isMac) return glfwGetUnitToPixelRatioJni(window);
+		return 1;
+	}
+
+	private static native float glfwGetUnitToPixelRatioJni (long window); /*
 		return glfwGetUnitsToPixelsRatio((GLFWwindow*)window);
 	*/
 
