@@ -611,48 +611,54 @@ static GLboolean initializeAppKit(void)
 static GLboolean createWindow(_GLFWwindow* window,
                               const _GLFWwndconfig* wndconfig)
 {
-    unsigned int styleMask = 0;
+	__block GLboolean result = GL_FALSE;
+	dispatch_sync(dispatch_get_main_queue(), ^{
+		unsigned int styleMask = 0;
 
-    if (wndconfig->monitor || wndconfig->undecorated)
-        styleMask = NSBorderlessWindowMask;
-    else
-    {
-        styleMask = NSTitledWindowMask | NSClosableWindowMask |
-                    NSMiniaturizableWindowMask;
+		if (wndconfig->monitor || wndconfig->undecorated)
+			styleMask = NSBorderlessWindowMask;
+		else
+		{
+			styleMask = NSTitledWindowMask | NSClosableWindowMask |
+						NSMiniaturizableWindowMask;
 
-        if (wndconfig->resizable)
-            styleMask |= NSResizableWindowMask;
-    }
+			if (wndconfig->resizable)
+				styleMask |= NSResizableWindowMask;
+		}
 
-    window->ns.object = [[GLFWWindow alloc]
-        initWithContentRect:NSMakeRect(0, 0, wndconfig->width, wndconfig->height)
-                  styleMask:styleMask
-                    backing:NSBackingStoreBuffered
-                      defer:NO];
 
-    if (window->ns.object == nil)
-    {
-        _glfwInputError(GLFW_PLATFORM_ERROR, "Cocoa: Failed to create window");
-        return GL_FALSE;
-    }
+		window->ns.object = [[GLFWWindow alloc]
+			initWithContentRect:NSMakeRect(0, 0, wndconfig->width, wndconfig->height)
+					  styleMask:styleMask
+						backing:NSBackingStoreBuffered
+						  defer:NO];
 
-    window->ns.view = [[GLFWContentView alloc] initWithGlfwWindow:window];
-	[window->ns.view setWantsBestResolutionOpenGLSurface:YES];
+		if (window->ns.object == nil)
+		{
+			_glfwInputError(GLFW_PLATFORM_ERROR, "Cocoa: Failed to create window");
+			result = GL_FALSE;
+			return;
+		}
 
-    [window->ns.object setTitle:[NSString stringWithUTF8String:wndconfig->title]];
-    [window->ns.object setContentView:window->ns.view];
-    [window->ns.object setDelegate:window->ns.delegate];
-    [window->ns.object setAcceptsMouseMovedEvents:YES];
-    [window->ns.object center];
+		window->ns.view = [[GLFWContentView alloc] initWithGlfwWindow:window];
+		[window->ns.view setWantsBestResolutionOpenGLSurface:YES];
 
-    if ([window->ns.object respondsToSelector:@selector(setRestorable:)])
-        [window->ns.object setRestorable:NO];
+		[window->ns.object setTitle:[NSString stringWithUTF8String:wndconfig->title]];
+		[window->ns.object setContentView:window->ns.view];
+		[window->ns.object setDelegate:window->ns.delegate];
+		[window->ns.object setAcceptsMouseMovedEvents:YES];
+		[window->ns.object center];
 
-#ifdef __MAC_10_7
-    [window->ns.object setCollectionBehavior: NSWindowCollectionBehaviorFullScreenPrimary];
-#endif
+		if ([window->ns.object respondsToSelector:@selector(setRestorable:)])
+			[window->ns.object setRestorable:NO];
 
-    return GL_TRUE;
+	#ifdef __MAC_10_7
+		[window->ns.object setCollectionBehavior: NSWindowCollectionBehaviorFullScreenPrimary];
+	#endif
+
+		result = GL_TRUE;
+	});
+	return result;
 }
 
 
@@ -729,30 +735,32 @@ int _glfwPlatformCreateWindow(_GLFWwindow* window,
 
 void _glfwPlatformDestroyWindow(_GLFWwindow* window)
 {
-    [window->ns.object orderOut:nil];
+	dispatch_sync(dispatch_get_main_queue(), ^{
+		[window->ns.object orderOut:nil];
 
-    if (window->monitor)
-    {
-        _glfwRestoreVideoMode(window->monitor);
+		if (window->monitor)
+		{
+			_glfwRestoreVideoMode(window->monitor);
 
-        // Exit full screen after the video restore to avoid a nasty display
-        // flickering during the fade.
-        [[window->ns.object contentView] exitFullScreenModeWithOptions:nil];
-    }
+			// Exit full screen after the video restore to avoid a nasty display
+			// flickering during the fade.
+			[[window->ns.object contentView] exitFullScreenModeWithOptions:nil];
+		}
 
-    _glfwDestroyContext(window);
+		_glfwDestroyContext(window);
 
-    [window->ns.object setDelegate:nil];
-    [window->ns.delegate release];
-    window->ns.delegate = nil;
+		[window->ns.object setDelegate:nil];
+		[window->ns.delegate release];
+		window->ns.delegate = nil;
 
-    [window->ns.view release];
-    window->ns.view = nil;
+		[window->ns.view release];
+		window->ns.view = nil;
 
-    [window->ns.object close];
-    window->ns.object = nil;
+		[window->ns.object close];
+		window->ns.object = nil;
 
-    // TODO: Probably more cleanup
+		// TODO: Probably more cleanup
+	});
 }
 
 void _glfwPlatformSetWindowTitle(_GLFWwindow* window, const char *title)
@@ -794,30 +802,38 @@ void _glfwPlatformGetWindowSize(_GLFWwindow* window, int* width, int* height)
 
 void _glfwPlatformSetWindowSize(_GLFWwindow* window, int width, int height)
 {
-    [window->ns.object setContentSize:NSMakeSize(width, height)];
+	dispatch_sync(dispatch_get_main_queue(), ^{
+    	[window->ns.object setContentSize:NSMakeSize(width, height)];
+	});
 }
 
 void _glfwPlatformIconifyWindow(_GLFWwindow* window)
 {
-    [window->ns.object miniaturize:nil];
+	dispatch_sync(dispatch_get_main_queue(), ^{
+    	[window->ns.object miniaturize:nil];
+	});
 }
 
 void _glfwPlatformRestoreWindow(_GLFWwindow* window)
 {
-    [window->ns.object deminiaturize:nil];
+	dispatch_sync(dispatch_get_main_queue(), ^{
+    	[window->ns.object deminiaturize:nil];
+	});
 }
 
 void _glfwPlatformShowWindow(_GLFWwindow* window)
 {
-    [window->ns.object performSelectorOnMainThread:@selector(makeKeyAndOrderFront:)
-    	withObject:nil waitUntilDone:NO];
-    _glfwInputWindowVisibility(window, GL_TRUE);
-    [window->nsgl.context update]; // This is only here because it can't be called in windowDidResize!
+	dispatch_sync(dispatch_get_main_queue(), ^{
+		[window->ns.object performSelectorOnMainThread:@selector(makeKeyAndOrderFront:)
+			withObject:nil waitUntilDone:NO];
+		_glfwInputWindowVisibility(window, GL_TRUE);
+		[window->nsgl.context update]; // This is only here because it can't be called in windowDidResize!
+	});
 }
 
 void _glfwPlatformHideWindow(_GLFWwindow* window)
 {
-    [window->ns.object orderOut:nil];
+	[window->ns.object orderOut:nil];
     _glfwInputWindowVisibility(window, GL_FALSE);
 }
 
@@ -856,41 +872,45 @@ void _glfwPlatformWaitEvents(void)
 
 void _glfwPlatformSetCursorPos(_GLFWwindow* window, int x, int y)
 {
-    if (window->monitor)
-    {
-        CGPoint globalPoint = CGPointMake(x, y);
-        CGDisplayMoveCursorToPoint(CGMainDisplayID(), globalPoint);
-    }
-    else
-    {
-        const NSRect contentRect =
-            [window->ns.object contentRectForFrameRect:[window->ns.object frame]];
-        NSPoint localPoint = NSMakePoint(x, contentRect.size.height - y - 1);
-        NSPoint globalPoint = [window->ns.object convertBaseToScreen:localPoint];
-        CGPoint mainScreenOrigin = CGDisplayBounds(CGMainDisplayID()).origin;
-        double mainScreenHeight = CGDisplayBounds(CGMainDisplayID()).size.height;
-        CGPoint targetPoint = CGPointMake(globalPoint.x - mainScreenOrigin.x,
-                                          mainScreenHeight - globalPoint.y -
-                                            mainScreenOrigin.y);
-        CGDisplayMoveCursorToPoint(CGMainDisplayID(), targetPoint);
-    }
+	dispatch_sync(dispatch_get_main_queue(), ^{
+		if (window->monitor)
+		{
+			CGPoint globalPoint = CGPointMake(x, y);
+			CGDisplayMoveCursorToPoint(CGMainDisplayID(), globalPoint);
+		}
+		else
+		{
+			const NSRect contentRect =
+				[window->ns.object contentRectForFrameRect:[window->ns.object frame]];
+			NSPoint localPoint = NSMakePoint(x, contentRect.size.height - y - 1);
+			NSPoint globalPoint = [window->ns.object convertBaseToScreen:localPoint];
+			CGPoint mainScreenOrigin = CGDisplayBounds(CGMainDisplayID()).origin;
+			double mainScreenHeight = CGDisplayBounds(CGMainDisplayID()).size.height;
+			CGPoint targetPoint = CGPointMake(globalPoint.x - mainScreenOrigin.x,
+											  mainScreenHeight - globalPoint.y -
+												mainScreenOrigin.y);
+			CGDisplayMoveCursorToPoint(CGMainDisplayID(), targetPoint);
+		}
+	});
 }
 
 void _glfwPlatformSetCursorMode(_GLFWwindow* window, int mode)
 {
-    switch (mode)
-    {
-        case GLFW_CURSOR_NORMAL:
-            [NSCursor unhide];
-            CGAssociateMouseAndMouseCursorPosition(true);
-            break;
-        case GLFW_CURSOR_HIDDEN:
-            break;
-        case GLFW_CURSOR_CAPTURED:
-            [NSCursor hide];
-            CGAssociateMouseAndMouseCursorPosition(false);
-            break;
-    }
+	dispatch_sync(dispatch_get_main_queue(), ^{
+		switch (mode)
+		{
+			case GLFW_CURSOR_NORMAL:
+				[NSCursor unhide];
+				CGAssociateMouseAndMouseCursorPosition(true);
+				break;
+			case GLFW_CURSOR_HIDDEN:
+				break;
+			case GLFW_CURSOR_CAPTURED:
+				[NSCursor hide];
+				CGAssociateMouseAndMouseCursorPosition(false);
+				break;
+		}
+	});
 }
 
 
