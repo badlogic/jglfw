@@ -1,15 +1,15 @@
 <project name="jglfw" default="package" basedir="jglfw">
 	<property name="version" value="1.0"/>
-	
+
 	<target name="clean">
 	    <delete dir="target"/>
 	    <mkdir dir="target/java"/>
 	</target>
-	
+
 	<target name="fetch">
 		<get src="http://libgdx.badlogicgames.com/jglfw/nightlies/dist/jglfw-natives.jar" dest="libs/"/>
 	</target>
-	
+
 	<target name="compile-mac-natives">
 	    <ant antfile="build-macosx32.xml" dir="jni">
 	        <target name="clean"/>
@@ -20,25 +20,25 @@
 			<target name="postcompile"/>
 	    </ant>
 	</target>
-	
+
 	<target name="compile-natives">
 	    <ant antfile="build.xml" dir="jni">
 	        <target name="clean"/>
 			<target name="all"/>
 	    </ant>
 	</target>
-	
+
 	<target name="compile" depends="clean">
-		<javac debug="on" 
+		<javac debug="on"
 		       encoding="utf-8"
-		       source="1.6" target="1.6"
+		       source="1.7" target="1.7"
 		       srcdir="src/"
 		       destdir="target/java"
 		       excludes="**/GlfwBuild.java,**/GlfwTest.java"
 		       includeantruntime="false"/>
 	</target>
-	
-	<target name="package" depends="compile">
+
+	<target name="package" depends="compile, compile-natives">
 		<jar destfile="target/jglfw.jar">
 			<fileset dir="target/java"/>
 		</jar>

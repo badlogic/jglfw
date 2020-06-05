@@ -611,53 +611,51 @@ static GLboolean initializeAppKit(void)
 static GLboolean createWindow(_GLFWwindow* window,
                               const _GLFWwndconfig* wndconfig)
 {
-	__block GLboolean result = GL_FALSE;
-	dispatch_sync(dispatch_get_main_queue(), ^{
-		unsigned int styleMask = 0;
+	GLboolean result = GL_FALSE;
+	unsigned int styleMask = 0;
 
-		if (wndconfig->monitor || wndconfig->undecorated)
-			styleMask = NSBorderlessWindowMask;
-		else
-		{
-			styleMask = NSTitledWindowMask | NSClosableWindowMask |
-						NSMiniaturizableWindowMask;
+	if (wndconfig->monitor || wndconfig->undecorated)
+		styleMask = NSBorderlessWindowMask;
+	else
+	{
+		styleMask = NSTitledWindowMask | NSClosableWindowMask |
+					NSMiniaturizableWindowMask;
 
-			if (wndconfig->resizable)
-				styleMask |= NSResizableWindowMask;
-		}
+		if (wndconfig->resizable)
+			styleMask |= NSResizableWindowMask;
+	}
 
 
-		window->ns.object = [[GLFWWindow alloc]
-			initWithContentRect:NSMakeRect(0, 0, wndconfig->width, wndconfig->height)
-					  styleMask:styleMask
-						backing:NSBackingStoreBuffered
-						  defer:NO];
+	window->ns.object = [[GLFWWindow alloc]
+		initWithContentRect:NSMakeRect(0, 0, wndconfig->width, wndconfig->height)
+					styleMask:styleMask
+					backing:NSBackingStoreBuffered
+						defer:NO];
 
-		if (window->ns.object == nil)
-		{
-			_glfwInputError(GLFW_PLATFORM_ERROR, "Cocoa: Failed to create window");
-			result = GL_FALSE;
-			return;
-		}
+	if (window->ns.object == nil)
+	{
+		_glfwInputError(GLFW_PLATFORM_ERROR, "Cocoa: Failed to create window");
+		result = GL_FALSE;
+		return result;
+	}
 
-		window->ns.view = [[GLFWContentView alloc] initWithGlfwWindow:window];
-		[window->ns.view setWantsBestResolutionOpenGLSurface:YES];
+	window->ns.view = [[GLFWContentView alloc] initWithGlfwWindow:window];
+	[window->ns.view setWantsBestResolutionOpenGLSurface:YES];
 
-		[window->ns.object setTitle:[NSString stringWithUTF8String:wndconfig->title]];
-		[window->ns.object setContentView:window->ns.view];
-		[window->ns.object setDelegate:window->ns.delegate];
-		[window->ns.object setAcceptsMouseMovedEvents:YES];
-		[window->ns.object center];
+	[window->ns.object setTitle:[NSString stringWithUTF8String:wndconfig->title]];
+	[window->ns.object setContentView:window->ns.view];
+	[window->ns.object setDelegate:window->ns.delegate];
+	[window->ns.object setAcceptsMouseMovedEvents:YES];
+	[window->ns.object center];
 
-		if ([window->ns.object respondsToSelector:@selector(setRestorable:)])
-			[window->ns.object setRestorable:NO];
+	if ([window->ns.object respondsToSelector:@selector(setRestorable:)])
+		[window->ns.object setRestorable:NO];
 
-	#ifdef __MAC_10_7
-		[window->ns.object setCollectionBehavior: NSWindowCollectionBehaviorFullScreenPrimary];
-	#endif
+#ifdef __MAC_10_7
+	[window->ns.object setCollectionBehavior: NSWindowCollectionBehaviorFullScreenPrimary];
+#endif
 
-		result = GL_TRUE;
-	});
+	result = GL_TRUE;
 	return result;
 }
 
@@ -670,67 +668,80 @@ int _glfwPlatformCreateWindow(_GLFWwindow* window,
                               const _GLFWwndconfig* wndconfig,
                               const _GLFWfbconfig* fbconfig)
 {
-    if (!initializeAppKit())
-        return GL_FALSE;
+	__block GLboolean result = GL_FALSE;
+	dispatch_sync(dispatch_get_main_queue(), ^{
+		if (!initializeAppKit()) {
+			result = GL_FALSE;
+			return;
+		}
 
-    // There can only be one application delegate, but we allocate it the
-    // first time a window is created to keep all window code in this file
-    if (_glfw.ns.delegate == nil)
-    {
-        _glfw.ns.delegate = [[GLFWApplicationDelegate alloc] init];
-        if (_glfw.ns.delegate == nil)
-        {
-            _glfwInputError(GLFW_PLATFORM_ERROR,
-                            "Cocoa: Failed to create application delegate");
-            return GL_FALSE;
-        }
+		// There can only be one application delegate, but we allocate it the
+		// first time a window is created to keep all window code in this file
+		if (_glfw.ns.delegate == nil)
+		{
+			_glfw.ns.delegate = [[GLFWApplicationDelegate alloc] init];
+			if (_glfw.ns.delegate == nil)
+			{
+				_glfwInputError(GLFW_PLATFORM_ERROR,
+								"Cocoa: Failed to create application delegate");
+				result = GL_FALSE;
+				return;
+			}
 
-        [NSApp setDelegate:_glfw.ns.delegate];
-    }
+			[NSApp setDelegate:_glfw.ns.delegate];
+		}
 
-    window->ns.delegate = [[GLFWWindowDelegate alloc] initWithGlfwWindow:window];
-    if (window->ns.delegate == nil)
-    {
-        _glfwInputError(GLFW_PLATFORM_ERROR,
-                        "Cocoa: Failed to create window delegate");
-        return GL_FALSE;
-    }
+		window->ns.delegate = [[GLFWWindowDelegate alloc] initWithGlfwWindow:window];
+		if (window->ns.delegate == nil)
+		{
+			_glfwInputError(GLFW_PLATFORM_ERROR,
+							"Cocoa: Failed to create window delegate");
+			result = GL_FALSE;
+			return;
+		}
 
-    // Mac OS X needs non-zero color size, so set resonable values
-    int colorBits = fbconfig->redBits + fbconfig->greenBits + fbconfig->blueBits;
-    if (colorBits == 0)
-        colorBits = 24;
-    else if (colorBits < 15)
-        colorBits = 15;
+		// Mac OS X needs non-zero color size, so set resonable values
+		int colorBits = fbconfig->redBits + fbconfig->greenBits + fbconfig->blueBits;
+		if (colorBits == 0)
+			colorBits = 24;
+		else if (colorBits < 15)
+			colorBits = 15;
 
-    // Don't use accumulation buffer support; it's not accelerated
-    // Aux buffers probably aren't accelerated either
+		// Don't use accumulation buffer support; it's not accelerated
+		// Aux buffers probably aren't accelerated either
 
-    if (!createWindow(window, wndconfig))
-        return GL_FALSE;
+		if (!createWindow(window, wndconfig)) {
+			result = GL_FALSE;
+			return;
+		}
 
-    if (!_glfwCreateContext(window, wndconfig, fbconfig))
-        return GL_FALSE;
+		if (!_glfwCreateContext(window, wndconfig, fbconfig)) {
+			result = GL_FALSE;
+			return;
+		}
 
-    [window->nsgl.context setView:[window->ns.object contentView]];
+		[window->nsgl.context setView:[window->ns.object contentView]];
 
-    if (wndconfig->monitor)
-    {
-        int bpp = colorBits + fbconfig->alphaBits;
+		if (wndconfig->monitor)
+		{
+			int bpp = colorBits + fbconfig->alphaBits;
 
-        if (!_glfwSetVideoMode(window->monitor, &window->videoMode.width, &window->videoMode.height, &bpp))
-            return GL_FALSE;
+			if (!_glfwSetVideoMode(window->monitor, &window->videoMode.width, &window->videoMode.height, &bpp)) {
+				result = GL_FALSE;
+				return;
+			}
 
-        _glfwPlatformShowWindow(window);
-        [[window->ns.object contentView] enterFullScreenMode:[NSScreen mainScreen]
-                                                 withOptions:nil];
-    }
+			_glfwPlatformShowWindow(window);
+			[[window->ns.object contentView] enterFullScreenMode:[NSScreen mainScreen]
+													withOptions:nil];
+		}
 
-    NSPoint point = [[NSCursor currentCursor] hotSpot];
-    window->cursorPosX = point.x;
-    window->cursorPosY = point.y;
-
-    return GL_TRUE;
+		NSPoint point = [[NSCursor currentCursor] hotSpot];
+		window->cursorPosX = point.x;
+		window->cursorPosY = point.y;
+		result = GL_TRUE;
+	});
+    return result;
 }
 
 void _glfwPlatformDestroyWindow(_GLFWwindow* window)
@@ -781,9 +792,11 @@ void _glfwPlatformGetWindowPos(_GLFWwindow* window, int* xpos, int* ypos)
 
 void _glfwPlatformSetWindowPos(_GLFWwindow* window, int x, int y)
 {
-    const NSRect frameRect =
-        [window->ns.object frameRectForContentRect:NSMakeRect(x, y, 0, 0)];
-    [window->ns.object setFrameOrigin:frameRect.origin];
+	dispatch_sync(dispatch_get_main_queue(), ^{
+		const NSRect frameRect =
+			[window->ns.object frameRectForContentRect:NSMakeRect(x, y, 0, 0)];
+		[window->ns.object setFrameOrigin:frameRect.origin];
+	});
 }
 
 void _glfwPlatformGetWindowSize(_GLFWwindow* window, int* width, int* height)
