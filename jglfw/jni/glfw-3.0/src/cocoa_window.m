@@ -776,7 +776,9 @@ void _glfwPlatformDestroyWindow(_GLFWwindow* window)
 
 void _glfwPlatformSetWindowTitle(_GLFWwindow* window, const char *title)
 {
-    [window->ns.object setTitle:[NSString stringWithUTF8String:title]];
+	dispatch_sync(dispatch_get_main_queue(), ^{
+    	[window->ns.object setTitle:[NSString stringWithUTF8String:title]];
+	});
 }
 
 void _glfwPlatformGetWindowPos(_GLFWwindow* window, int* xpos, int* ypos)

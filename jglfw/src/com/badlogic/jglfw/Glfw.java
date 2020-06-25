@@ -283,6 +283,7 @@ public class Glfw {
 	static jmethodID cursorEnterId = 0;
 	static jmethodID scrollId = 0;
 	static jobject callback = 0;
+	static int useOldKey = 0;
 	static JavaVM* staticVM = 0;
 
 #ifndef _WIN32
@@ -402,7 +403,10 @@ public class Glfw {
 
 	void key(GLFWwindow* window, int key, int scancode, int action, int mods) {
 		if(callback) {
-			getEnv()->CallVoidMethod(callback, keyId, (jlong)window, (jint)key, (jint)scancode, (jint)action, (jint)mods);
+			if (!useOldKey)
+				getEnv()->CallVoidMethod(callback, keyId, (jlong)window, (jint)key, (jint)scancode, (jint)action, (jint)mods);
+			else
+				getEnv()->CallVoidMethod(callback, keyId, (jlong)window, (jint)key, (jint)action);
 		}
 	}
 
@@ -487,8 +491,13 @@ public class Glfw {
 
 		keyId = env->GetMethodID(callbackClass, "key", "(JIIII)V");
 		if(!keyId) {
-			env->ThrowNew(exception, "Couldn't find key(JIIII)V method");
-			return false;
+			env->ExceptionClear();
+			keyId = env->GetMethodID(callbackClass, "key", "(JII)V");
+			if (!keyId) {
+				useOldKey = -1;
+				env->ThrowNew(exception, "Couldn't find key(JIIII)V method");
+				return false;
+			}
 		}
 
 		characterId = env->GetMethodID(callbackClass, "character", "(JC)V");
