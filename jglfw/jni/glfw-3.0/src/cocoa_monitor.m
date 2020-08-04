@@ -348,14 +348,12 @@ bool ProfileIterationCallback(CFDictionaryRef colorSyncDeviceProfileInfo, void *
     CFStringRef deviceName = (CFStringRef) CFDictionaryGetValue(colorSyncDeviceProfileInfo, DeviceDescription);
     CFShow(deviceName);
     char* monitorName = monitor->name;
-    NSLog(@"Lookup device name %s\n", monitorName);
     if (deviceName != NULL) {
         char* utf8DeviceName = CFStringToUTF8String(deviceName);
         if (!strcmp(monitorName, utf8DeviceName) && profilePath != NULL) {
             const char* utf8ProfilePath = CFStringToUTF8String(CFURLGetString(profilePath));
             monitor->iccProfilePath = strdup(utf8ProfilePath);
             free(utf8ProfilePath);
-            NSLog(@"Found profile %s for monitor %s\n", monitor->iccProfilePath, monitorName);
         }
         free(utf8DeviceName);
     }
