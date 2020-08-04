@@ -39,7 +39,7 @@
 #define GLFW_TRUE -1
 
 // #define _GLFW_USE_OPENGL
-// #define _GLFW_WIN32 
+// #define _GLFW_WIN32
 // #define _GLFW_WGL
 
 #if defined(_GLFW_USE_OPENGL)
@@ -282,6 +282,7 @@ struct _GLFWwindow
 struct _GLFWmonitor
 {
     char*           name;
+    char*           iccProfilePath;
 
     // Physical dimensions in millimeters.
     int             widthMM, heightMM;
@@ -396,6 +397,8 @@ void _glfwPlatformGetGammaRamp(_GLFWmonitor* monitor, GLFWgammaramp* ramp);
  *  @ingroup platform
  */
 void _glfwPlatformSetGammaRamp(_GLFWmonitor* monitor, const GLFWgammaramp* ramp);
+
+const char* _glfwPlatformGetMonitorICCProfilePath(_GLFWmonitor* monitor);
 
 /*! @copydoc glfwSetClipboardString
  *  @ingroup platform

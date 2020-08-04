@@ -611,6 +611,10 @@ public class Glfw {
 		return env->NewStringUTF(glfwGetMonitorName((GLFWmonitor*)monitor));
 	*/
 
+	public static native String glfwGetMonitorIccProfilePath(long monitor); /*
+		return env->NewStringUTF(glfwGetMonitorICCProfilePath((GLFWmonitor*)monitor));
+	*/
+
 	public static List<GlfwVideoMode> glfwGetVideoModes(long monitor) {
 		int[] buffer = new int[5 * 256]; // 256 video modes are enough for everyone...
 		int numModes = glfwGetVideoModesJni(monitor, buffer);

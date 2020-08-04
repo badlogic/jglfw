@@ -298,6 +298,87 @@ void _glfwPlatformGetMonitorPos(_GLFWmonitor* monitor, int* xpos, int* ypos)
         *ypos = (int) bounds.origin.y;
 }
 
+char * CFStringToUTF8String(CFStringRef aString) {
+  if (aString == NULL) {
+    return NULL;
+  }
+
+  CFIndex length = CFStringGetLength(aString);
+  CFIndex maxSize =
+  CFStringGetMaximumSizeForEncoding(length, kCFStringEncodingUTF8) + 1;
+  char *buffer = (char *)malloc(maxSize);
+  if (CFStringGetCString(aString, buffer, maxSize,
+                         kCFStringEncodingUTF8)) {
+    return buffer;
+  }
+  free(buffer); // If we failed
+  return NULL;
+}
+
+bool ProfileIterationCallback(CFDictionaryRef colorSyncDeviceProfileInfo, void *userInfo)
+{
+    _GLFWmonitor* monitor = (_GLFWmonitor*)userInfo;
+    long size = CFDictionaryGetCount(colorSyncDeviceProfileInfo);
+    CFTypeRef *keysTypeRef = (CFTypeRef *) malloc( size * sizeof(CFTypeRef) );
+    const void **keys = (const void **) keysTypeRef;
+    CFTypeRef *valuesTypeRef = (CFTypeRef *) malloc( size * sizeof(CFTypeRef) );
+    CFDictionaryGetKeysAndValues(colorSyncDeviceProfileInfo, (const void **) keysTypeRef, (const void **) valuesTypeRef);
+    CFStringRef *keyStrings = (CFStringRef *) keysTypeRef;
+
+
+    CFStringRef DeviceProfileURLKey = CFSTR("DeviceProfileURL");
+    CFStringRef DeviceDescription = CFSTR("DeviceDescription");
+    CFStringRef DeviceProfileIsCurrentKey = CFSTR("DeviceProfileIsCurrent");
+    CFStringRef DeviceClassKey = CFSTR("DeviceClass");
+    CFStringRef MonitorDeviceClassValue = CFSTR("mntr");
+    CFStringRef DeviceProfileIsDefaultKey = CFSTR("DeviceProfileIsDefault");
+
+    CFStringRef typeRef = (CFStringRef) CFDictionaryGetValue(colorSyncDeviceProfileInfo, DeviceClassKey);
+    if (CFStringCompare(typeRef, MonitorDeviceClassValue, 0) != 0) {
+        goto cleanUp;
+    }
+
+    CFBooleanRef isCurrentRef = (CFBooleanRef) CFDictionaryGetValue(colorSyncDeviceProfileInfo, DeviceProfileIsCurrentKey);
+    bool isCurrent = isCurrentRef == kCFBooleanTrue;
+    if (!isCurrent) {
+        goto cleanUp;
+    }
+
+    CFURLRef profilePath = (CFURLRef) CFDictionaryGetValue(colorSyncDeviceProfileInfo, DeviceProfileURLKey);
+    CFStringRef deviceName = (CFStringRef) CFDictionaryGetValue(colorSyncDeviceProfileInfo, DeviceDescription);
+    CFShow(deviceName);
+    char* monitorName = monitor->name;
+    NSLog(@"Lookup device name %s\n", monitorName);
+    if (deviceName != NULL) {
+        char* utf8DeviceName = CFStringToUTF8String(deviceName);
+        if (!strcmp(monitorName, utf8DeviceName) && profilePath != NULL) {
+            const char* utf8ProfilePath = CFStringToUTF8String(CFURLGetString(profilePath));
+            monitor->iccProfilePath = strdup(utf8ProfilePath);
+            free(utf8ProfilePath);
+            NSLog(@"Found profile %s for monitor %s\n", monitor->iccProfilePath, monitorName);
+        }
+        free(utf8DeviceName);
+    }
+
+cleanUp:
+    free(keysTypeRef);
+    free(valuesTypeRef);
+    return true;
+}
+
+const char* _glfwPlatformGetMonitorICCProfilePath(_GLFWmonitor* monitor) {
+    if(monitor->iccProfilePath) {
+        free(monitor->iccProfilePath);
+        monitor->iccProfilePath = NULL;
+    }
+
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        ColorSyncIterateDeviceProfiles(&ProfileIterationCallback, monitor);
+    });
+
+    return monitor->iccProfilePath;
+}
+
 GLFWvidmode* _glfwPlatformGetVideoModes(_GLFWmonitor* monitor, int* found)
 {
     CFArrayRef modes;

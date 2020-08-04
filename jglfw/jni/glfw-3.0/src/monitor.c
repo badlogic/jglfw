@@ -165,6 +165,7 @@ _GLFWmonitor* _glfwCreateMonitor(const char* name, int widthMM, int heightMM)
     }
 
     monitor->name = strdup(name);
+    monitor->iccProfilePath = NULL;
     monitor->widthMM = widthMM;
     monitor->heightMM = heightMM;
 
@@ -295,6 +296,12 @@ GLFWAPI const char* glfwGetMonitorName(GLFWmonitor* handle)
     _GLFWmonitor* monitor = (_GLFWmonitor*) handle;
     _GLFW_REQUIRE_INIT_OR_RETURN(NULL);
     return monitor->name;
+}
+
+GLFWAPI const char* glfwGetMonitorICCProfilePath(GLFWmonitor* handle)
+{
+    _GLFWmonitor* monitor = (_GLFWmonitor*) handle;
+    return _glfwPlatformGetMonitorICCProfilePath(monitor);
 }
 
 GLFWAPI void glfwSetMonitorCallback(GLFWmonitorfun cbfun)

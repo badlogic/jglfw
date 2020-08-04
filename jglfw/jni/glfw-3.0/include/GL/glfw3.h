@@ -867,6 +867,8 @@ GLFWAPI void glfwGetMonitorPhysicalSize(GLFWmonitor* monitor, int* width, int* h
  */
 GLFWAPI const char* glfwGetMonitorName(GLFWmonitor* monitor);
 
+GLFWAPI const char* glfwGetMonitorICCProfilePath(GLFWmonitor* monitor);
+
 /*! @brief Sets the monitor configuration callback.
  *  @param[in] cbfun The new callback, or @c NULL to remove the currently set
  *  callback.

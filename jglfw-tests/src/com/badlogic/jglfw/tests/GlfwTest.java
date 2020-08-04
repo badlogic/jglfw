@@ -1,16 +1,17 @@
+
 package com.badlogic.jglfw.tests;
 
 import static com.badlogic.jglfw.Glfw.*;
 
-import com.badlogic.jglfw.GlfwCallback;
-
+import java.io.IOException;
 import java.util.Arrays;
 
+import com.badlogic.jglfw.GlfwCallback;
 import com.badlogic.jglfw.gl.GL;
 
 public class GlfwTest {
-	public static void main (String[] args) throws InterruptedException {
-		if(!glfwInit()) {
+	public static void main (String[] args) throws InterruptedException, IOException {
+		if (!glfwInit()) {
 			System.out.println("Couldn't initialize GLFW");
 			System.exit(-1);
 		}
@@ -24,7 +25,9 @@ public class GlfwTest {
 		System.out.println(glfwGetMonitorName(monitor));
 		System.out.println(glfwGetVideoModes(monitor));
 		System.out.println(glfwGetVideoMode(monitor));
-		
+
+		System.out.println("ICC profile path: " + glfwGetMonitorIccProfilePath(monitor));
+
 		glfwSetCallback(new GlfwCallback() {
 			@Override
 			public void error (int error, String description) {
@@ -33,7 +36,7 @@ public class GlfwTest {
 
 			@Override
 			public void monitor (long monitor, boolean connected) {
-				System.out.println("monitor " + monitor + " " + (connected?"connected":"disconnected"));
+				System.out.println("monitor " + monitor + " " + (connected ? "connected" : "disconnected"));
 			}
 
 			@Override
@@ -59,19 +62,19 @@ public class GlfwTest {
 
 			@Override
 			public void windowFocus (long window, boolean focused) {
-				System.out.println("window " + (focused?"focused":"lost focus"));
+				System.out.println("window " + (focused ? "focused" : "lost focus"));
 			}
 
 			@Override
 			public void windowIconify (long window, boolean iconified) {
-				System.out.println("window " + (iconified?"iconified": "deiconified"));
+				System.out.println("window " + (iconified ? "iconified" : "deiconified"));
 			}
 
 			@Override
 			public void key (long window, int key, int scancode, int action, int modifiers) {
 				String actionStr = "pressed";
-				if(action == GLFW_RELEASE) actionStr = "released";
-				if(action == GLFW_REPEAT) actionStr = "repeated";
+				if (action == GLFW_RELEASE) actionStr = "released";
+				if (action == GLFW_REPEAT) actionStr = "repeated";
 				System.out.println("key " + key + " " + actionStr);
 			}
 
@@ -82,7 +85,7 @@ public class GlfwTest {
 
 			@Override
 			public void mouseButton (long window, int button, boolean pressed) {
-				System.out.println("mouse button " + button + " " + (pressed?"pressed":"released"));
+				System.out.println("mouse button " + button + " " + (pressed ? "pressed" : "released"));
 			}
 
 			@Override
@@ -92,19 +95,19 @@ public class GlfwTest {
 
 			@Override
 			public void cursorEnter (long window, boolean entered) {
-				System.out.println("cursor " + (entered?"entered":"left"));
+				System.out.println("cursor " + (entered ? "entered" : "left"));
 			}
 
 			@Override
 			public void scroll (long window, double scrollX, double scrollY) {
 				System.out.println("scrolled " + scrollX + ", " + scrollY);
 			}
-			
+
 		});
-		
+
 		glfwWindowHint(GLFW_DEPTH_BITS, 16); // this is needed on virtualbox...
 		long window = glfwCreateWindow(800, 600, "Test", 0, 0);
-		if(window == 0) {
+		if (window == 0) {
 			throw new RuntimeException("Couldn't create window");
 		}
 		System.out.println(glfwGetWindowX(window) + ", " + glfwGetWindowY(window));
@@ -118,11 +121,11 @@ public class GlfwTest {
 		Thread.sleep(1000);
 		glfwShowWindow(window);
 		System.out.println(glfwGetWindowMonitor(window));
-		
+
 		glfwMakeContextCurrent(window);
 		glfwSwapInterval(1);
-		
-		while(!glfwWindowShouldClose(window)) {
+
+		while (!glfwWindowShouldClose(window)) {
 			GL.glViewport(0, 0, 640, 480);
 			GL.glClear(GL.GL_COLOR_BUFFER_BIT);
 			GL.glRotatef(0.01f, 0, 0, 1);
@@ -134,7 +137,7 @@ public class GlfwTest {
 			glfwPollEvents();
 			glfwSwapBuffers(window);
 		}
-		
+
 		glfwDestroyWindow(window);
 		glfwTerminate();
 	}

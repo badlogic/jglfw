@@ -541,6 +541,14 @@ JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetMonitorName
 
 /*
  * Class:     com_badlogic_jglfw_Glfw
+ * Method:    glfwGetMonitorIccProfilePath
+ * Signature: (J)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_com_badlogic_jglfw_Glfw_glfwGetMonitorIccProfilePath
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     com_badlogic_jglfw_Glfw
  * Method:    glfwGetVideoModesJni
  * Signature: (J[I)I
  */
