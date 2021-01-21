@@ -75,7 +75,7 @@
 
 - (void)windowDidMove:(NSNotification *)notification
 {
-    [window->nsgl.context update];
+    // [window->nsgl.context update];
 
     int x, y;
     _glfwPlatformGetWindowPos(window, &x, &y);
@@ -854,21 +854,23 @@ void _glfwPlatformHideWindow(_GLFWwindow* window)
 
 void _glfwPlatformPollEvents(void)
 {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
-    for (;;)
-    {
-        NSEvent* event = [NSApp nextEventMatchingMask:NSAnyEventMask
-                                            untilDate:[NSDate distantPast]
-                                               inMode:NSDefaultRunLoopMode
-                                              dequeue:YES];
-        if (event == nil)
-            break;
-
-        [NSApp sendEvent:event];
-    }
-
-    [pool drain];
+	dispatch_sync(dispatch_get_main_queue(), ^{
+		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	
+	    for (;;)
+	    {
+	        NSEvent* event = [NSApp nextEventMatchingMask:NSAnyEventMask
+	                                            untilDate:[NSDate distantPast]
+	                                               inMode:NSDefaultRunLoopMode
+	                                              dequeue:YES];
+	        if (event == nil)
+	            break;
+	
+	        [NSApp sendEvent:event];
+	    }
+	
+	    [pool drain];
+	});
 }
 
 void _glfwPlatformWaitEvents(void)

@@ -134,7 +134,7 @@ public class GlfwTest {
 			GL.glVertex2f(0.5f, -0.5f);
 			GL.glVertex2f(0, 0.5f);
 			GL.glEnd();
-			glfwPollEvents();
+			// glfwPollEvents();
 			glfwSwapBuffers(window);
 		}
 

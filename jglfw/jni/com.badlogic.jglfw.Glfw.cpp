@@ -33,7 +33,7 @@
 	JNIEnv* getEnv () {
 		JNIEnv* env = (JNIEnv*)pthread_getspecific(envTLS);
 		if (!env) {
-			if (staticVM->GetEnv((void**)&env, JNI_VERSION_1_2) != JNI_OK) {
+			if (staticVM->AttachCurrentThread((void**)&env, NULL) != JNI_OK) {
 				printf("Unable to get Env."); fflush(stdout);
 				return 0;
 			}
@@ -56,7 +56,7 @@
 
 	JNIEnv* getEnv () {
 		if (!envTLS) {
-			if (staticVM->GetEnv((void**)&envTLS, JNI_VERSION_1_2) != JNI_OK) {
+			if (staticVM->AttachCurrentThread((void**)&env, NULL) != JNI_OK) {
 				printf("Unable to get Env."); fflush(stdout);
 				return 0;
 			}

@@ -346,7 +346,6 @@ bool ProfileIterationCallback(CFDictionaryRef colorSyncDeviceProfileInfo, void *
 
     CFURLRef profilePath = (CFURLRef) CFDictionaryGetValue(colorSyncDeviceProfileInfo, DeviceProfileURLKey);
     CFStringRef deviceName = (CFStringRef) CFDictionaryGetValue(colorSyncDeviceProfileInfo, DeviceDescription);
-    CFShow(deviceName);
     char* monitorName = monitor->name;
     if (deviceName != NULL) {
         char* utf8DeviceName = CFStringToUTF8String(deviceName);
