@@ -39,8 +39,8 @@ public class SharedLibraryLoader {
 	static public boolean isMac = System.getProperty("os.name").contains("Mac");
 	static public boolean isIos = false;
 	static public boolean isAndroid = false;
-	static public boolean isARM = System.getProperty("os.arch").startsWith("arm");
-	static public boolean is64Bit = System.getProperty("os.arch").equals("amd64")
+	static public boolean isARM = System.getProperty("os.arch").startsWith("arm") || System.getProperty("os.arch").startsWith("aarch64");
+	static public boolean is64Bit = System.getProperty("os.arch").equals("amd64") || System.getProperty("os.arch").startsWith("aarch64")
 		|| System.getProperty("os.arch").equals("x86_64");
 
 	// JDK 8 only.
@@ -98,7 +98,7 @@ public class SharedLibraryLoader {
 	public String mapLibraryName (String libraryName) {
 		if (isWindows) return libraryName + (is64Bit ? "64.dll" : ".dll");
 		if (isLinux) return "lib" + libraryName + (isARM ? "arm" + abi : "") + (is64Bit ? "64.so" : ".so");
-		if (isMac) return "lib" + libraryName + (is64Bit ? "64.dylib" : ".dylib");
+		if (isMac) return "lib" + libraryName + (is64Bit ? (isARM ? "arm64.dylib" : "64.dylib") : ".dylib");
 		return libraryName;
 	}
 
