@@ -40,7 +40,7 @@ CXX_SOURCES=(
 
 echo "${CC_SOURCES[@]}"
 
-LINKER_FLAGS="-shared -m64 -framework Cocoa -framework OpenGL -framework IOKit -lpthread"
+LINKER_FLAGS="-shared -m64 -framework Cocoa -framework OpenGL -framework IOKit -lpthread -mmacosx-version-min=10.7"
 LIBRARIES="-L$BUILD_DIR -lm"
 
 JNI_MD="mac"
