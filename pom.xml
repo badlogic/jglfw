@@ -78,7 +78,6 @@
     
     <modules>
         <module>jglfw</module>
-        <module>jglfw/jni/maven</module>
         <module>jglfw-tests</module>
     </modules>	
 </project>

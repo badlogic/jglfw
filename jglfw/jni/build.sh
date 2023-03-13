@@ -149,6 +149,8 @@ trace $STRIP "$OUTPUT_FILE"
 echo
 
 echo "--- Updating spine-editor-natives.jar"
+mkdir -p ../libs/macos
+cp "$OUTPUT_FILE" ../libs/macos
 if test -f ../libs/jglfw-natives.jar; then
     trace $JAR uf ../libs/jglfw-natives.jar -C "$OUTPUT_DIR" "$OUTPUT_PREFIX$OUTPUT_NAME$OUTPUT_SUFFIX"
 else
