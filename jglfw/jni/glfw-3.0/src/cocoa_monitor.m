@@ -327,11 +327,9 @@ bool ProfileIterationCallback(CFDictionaryRef colorSyncDeviceProfileInfo, void *
 
 
     CFStringRef DeviceProfileURLKey = CFSTR("DeviceProfileURL");
-    CFStringRef DeviceDescription = CFSTR("DeviceDescription");
     CFStringRef DeviceProfileIsCurrentKey = CFSTR("DeviceProfileIsCurrent");
     CFStringRef DeviceClassKey = CFSTR("DeviceClass");
     CFStringRef MonitorDeviceClassValue = CFSTR("mntr");
-    CFStringRef DeviceProfileIsDefaultKey = CFSTR("DeviceProfileIsDefault");
 
     CFStringRef typeRef = (CFStringRef) CFDictionaryGetValue(colorSyncDeviceProfileInfo, DeviceClassKey);
     if (CFStringCompare(typeRef, MonitorDeviceClassValue, 0) != 0) {
@@ -345,17 +343,16 @@ bool ProfileIterationCallback(CFDictionaryRef colorSyncDeviceProfileInfo, void *
     }
 
     CFURLRef profilePath = (CFURLRef) CFDictionaryGetValue(colorSyncDeviceProfileInfo, DeviceProfileURLKey);
-    CFStringRef deviceName = (CFStringRef) CFDictionaryGetValue(colorSyncDeviceProfileInfo, DeviceDescription);
-    char* monitorName = monitor->name;
-    if (deviceName != NULL) {
-        char* utf8DeviceName = CFStringToUTF8String(deviceName);
-        if (!strcmp(monitorName, utf8DeviceName) && profilePath != NULL) {
-            const char* utf8ProfilePath = CFStringToUTF8String(CFURLGetString(profilePath));
-            monitor->iccProfilePath = strdup(utf8ProfilePath);
-            free(utf8ProfilePath);
-        }
-        free(utf8DeviceName);
-    }
+
+    CFUUIDRef uuid;
+	if (!CFDictionaryGetValueIfPresent(colorSyncDeviceProfileInfo, kColorSyncDeviceID, (const void**)&uuid))
+		goto cleanUp;
+
+	if (CFEqual(uuid, CGDisplayCreateUUIDFromDisplayID(monitor->ns.displayID))) {
+		const char* utf8ProfilePath = CFStringToUTF8String(CFURLGetString(profilePath));
+        monitor->iccProfilePath = strdup(utf8ProfilePath);
+        free(utf8ProfilePath);
+	}
 
 cleanUp:
     free(keysTypeRef);
