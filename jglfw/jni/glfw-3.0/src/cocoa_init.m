@@ -227,7 +227,9 @@ int _glfwPlatformInit(void)
 
     _glfwInitTimer();
 
-    _glfwInitJoysticks();
+    // prevent to initialize joysticks; when a joystick is plugged in an additional
+    // empty joystick is initialized, making the joystick terminate fails
+    // _glfwInitJoysticks();
 
     if (!_glfwInitContextAPI())
         return GL_FALSE;
@@ -257,7 +259,8 @@ void _glfwPlatformTerminate(void)
     [_glfw.ns.delegate release];
     _glfw.ns.delegate = nil;
 
-    _glfwTerminateJoysticks();
+    // joysticks are not initialized
+    // _glfwTerminateJoysticks();
 
     _glfwTerminateContextAPI();
 }
