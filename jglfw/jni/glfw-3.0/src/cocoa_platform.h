@@ -111,6 +111,7 @@ typedef struct _GLFWlibraryNS
 
     CGEventSourceRef eventSource;
     id              delegate;
+    id              keyUpMonitor;
 
     char*           clipboardString;
 
