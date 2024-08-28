@@ -218,7 +218,19 @@ int _glfwPlatformInit(void)
                         "NSGL: Failed to locate OpenGL framework");
         return GL_FALSE;
     }
-	
+
+    NSEvent* (^block)(NSEvent*) = ^ NSEvent* (NSEvent* event)
+    {
+        if ([event modifierFlags] & NSEventModifierFlagCommand)
+            [[NSApp keyWindow] sendEvent:event];
+
+        return event;
+    };
+
+    _glfw.ns.keyUpMonitor =
+        [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskKeyUp
+                                              handler:block];
+
 	createKeyTables();
 
 #if defined(_GLFW_USE_CHDIR)
@@ -261,6 +273,9 @@ void _glfwPlatformTerminate(void)
 
     // joysticks are not initialized
     // _glfwTerminateJoysticks();
+
+	if (_glfw.ns.keyUpMonitor)
+		[NSEvent removeMonitor:_glfw.ns.keyUpMonitor];
 
     _glfwTerminateContextAPI();
 }

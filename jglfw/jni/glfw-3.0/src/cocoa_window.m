@@ -199,31 +199,6 @@ static NSUInteger translateKeyToModifierFlag(int key)
 	return 0;
 }
 
-
-//------------------------------------------------------------------------
-// GLFW application class
-//------------------------------------------------------------------------
-
-@interface GLFWApplication : NSApplication
-@end
-
-@implementation GLFWApplication
-
-// From http://cocoadev.com/index.pl?GameKeyboardHandlingAlmost
-// This works around an AppKit bug, where key up events while holding
-// down the command key don't get sent to the key window.
-- (void)sendEvent:(NSEvent *)event
-{
-    if ([event type] == NSKeyUp && ([event modifierFlags] & NSCommandKeyMask))
-        [[self keyWindow] sendEvent:event];
-	else {
-        [super sendEvent:event];
-	}
-}
-
-@end
-
-
 //------------------------------------------------------------------------
 // Content view class for the GLFW window
 //------------------------------------------------------------------------
@@ -383,17 +358,8 @@ static NSUInteger translateKeyToModifierFlag(int key)
 
 	_glfwInputKey(window, key, [event keyCode], GLFW_PRESS, mods);
 
-
-	if ([event modifierFlags] & NSCommandKeyMask)
-	{
-		// If the GLFWApplication sendEvent command key fix could not be used,
-		// just send a key up immediately.
-		if (![NSApp isKindOfClass:[GLFWApplication class]])
-		{
-			_glfwInputKey(window, key, [event keyCode], GLFW_RELEASE, mods);
-		}
-	}
-	else
+	// Avoid to send the keyDown event when command is pressed
+	if (!([event modifierFlags] & NSCommandKeyMask))
 	{
 		NSUInteger i, length;
 		NSString* characters;
@@ -423,7 +389,15 @@ static NSUInteger translateKeyToModifierFlag(int key)
 		if (changedMods & GLFW_MOD_ALT) scanCode = 0x3D; // right alt
 		if (changedMods & GLFW_MOD_CONTROL) scanCode = 0x3E; // right control
 		if (changedMods & GLFW_MOD_SHIFT) scanCode = 0x3C; // right shift
-		if (changedMods & GLFW_MOD_SUPER) scanCode = 0x36; // right command / super
+
+		// scanCode 0 is sent also when pressing cmd + tab to switch applications, but rather
+		// than selecting a different application, the very same one is selected.
+		// In that case, scanCode 0 is sent and we must send a key release of the cmd pressed
+		// otherwise the application will think that cmd is still pressed (clicking in this
+		// state results in having a cmd + click).
+		// It's definitely more common to use left cmd + tab to switch applications, so it's
+		// better to send a virtual left command, rather than right as previously done.
+		if (changedMods & GLFW_MOD_SUPER) scanCode = 0x37; // left command / super
 
 		key = translateKey(scanCode);
 	}
@@ -584,7 +558,7 @@ static GLboolean initializeAppKit(void)
         return GL_TRUE;
 
     // Implicitly create shared NSApplication instance
-    [GLFWApplication sharedApplication];
+    [NSApplication sharedApplication];
 
 #if defined(_GLFW_USE_MENUBAR)
     // Menu bar setup must go between sharedApplication above and
