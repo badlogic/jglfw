@@ -822,8 +822,10 @@ void _glfwPlatformShowWindow(_GLFWwindow* window)
 
 void _glfwPlatformHideWindow(_GLFWwindow* window)
 {
-	[window->ns.object orderOut:nil];
-    _glfwInputWindowVisibility(window, GL_FALSE);
+	dispatch_sync(dispatch_get_main_queue(), ^{
+		[window->ns.object orderOut:nil];
+		_glfwInputWindowVisibility(window, GL_FALSE);
+	});
 }
 
 void _glfwPlatformPollEvents(void)
