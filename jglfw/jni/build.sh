@@ -1,10 +1,11 @@
 #!/bin/bash
-set -e
+set -euo pipefail
+cd "$(dirname "$0")"
 
 BUILD=debug
-BUILD_DIR="target"
+VARIANT=editor
+TARGET=
 
-JAR=$JAVA_HOME/bin/jar
 STRIP="strip -S -x "
 CC=clang
 CC_FLAGS="-c -m64 -Wfatal-errors -Wall -fPIC -mmacosx-version-min=10.7 -D_GLFW_COCOA -D_GLFW_NSGL -D_GLFW_USE_OPENGL -D_GLFW_USE_MENUBAR -DNS_FORMAT_ARGUMENT(A)= -D_Nullable_result=_Nullable"
@@ -38,40 +39,36 @@ CXX_SOURCES=(
     "com.badlogic.jglfw.utils.Memory.cpp"
 )
 
-echo "${CC_SOURCES[@]}"
-
 LINKER_FLAGS="-shared -m64 -framework Cocoa -framework OpenGL -framework IOKit -lpthread -mmacosx-version-min=10.7"
-LIBRARIES="-L$BUILD_DIR -lm"
+LIBRARIES="-lm"
 
 JNI_MD="mac"
-
-OUTPUT_DIR="$BUILD_DIR"
 OUTPUT_PREFIX="lib"
 OUTPUT_NAME="jglfw"
 OUTPUT_SUFFIX=".dylib"
 
 function usage {
   cat <<EOF
-Usage: $SELF [options]
+Usage: $0 [options]
 Options:
-  --build=[release|debug] Specifies the build type. If not set both release
-						  and debug versions of the libraries will be built.
-  --target=...            Specifies the target to build for. Supported
-						  targets are macosx and macosx-aarch64. If not set the
-						  current host OS determines the targets.
-  --help                  Displays this information and exits.
+  --build=release|debug     Build type (default: debug).
+  --target=macosx|macosx-aarch64
+                           Required target architecture.
+  --variant=editor|launcher Native namespace (default: editor).
+  --help                   Displays this information and exits.
 EOF
   exit $1
 }
 
-+() { :;} 2> /dev/null; trace() { (PS4=; set -x; "$@";{ set +x; } 2> /dev/null); "$@";}
+trace() { printf '+ '; printf '%q ' "$@"; printf '\n'; "$@"; }
 
-while [ "${1:0:2}" = '--' ]; do
+while [ "$#" -gt 0 ]; do
   NAME=${1%%=*}
   VALUE=${1#*=}
   case $NAME in
 	'--target') TARGET="$VALUE" ;;
-	'--build') BUILD="$VALUE" ;;	
+	'--build') BUILD="$VALUE" ;;
+	'--variant') VARIANT="$VALUE" ;;
 	'--help')
 	  usage 0
 	  ;;
@@ -83,13 +80,30 @@ while [ "${1:0:2}" = '--' ]; do
   shift
 done
 
-if [ "x$TARGET" = 'x' ]; then
-	echo "Please specify a target with --target=<target>: macosx, macosx-aarch64"
-	exit 1
-fi
+case "$TARGET" in
+  macosx|macosx-aarch64) ;;
+  *) echo "Specify --target=macosx or --target=macosx-aarch64" >&2; exit 1 ;;
+esac
+case "$BUILD" in
+  release|debug) ;;
+  *) echo "Unknown build type: $BUILD" >&2; exit 1 ;;
+esac
+case "$VARIANT" in
+  editor) ;;
+  launcher)
+    OUTPUT_NAME="jglfw-launcher"
+    # Objective-C names are process-global, even across separate dylibs.
+    NAMESPACE="-DGLFWWindow=SpineLauncherGLFWWindow -DGLFWWindowDelegate=SpineLauncherGLFWWindowDelegate -DGLFWApplicationDelegate=SpineLauncherGLFWApplicationDelegate -DGLFWContentView=SpineLauncherGLFWContentView"
+    CC_FLAGS="$CC_FLAGS -fvisibility=hidden $NAMESPACE"
+    CXX_FLAGS="$CXX_FLAGS -fvisibility=hidden $NAMESPACE"
+    ;;
+  *) echo "Unknown native variant: $VARIANT" >&2; exit 1 ;;
+esac
+NATIVES_JAR="../libs/$OUTPUT_NAME-natives.jar"
+BUILD_DIR="target/$VARIANT/$TARGET"
+OUTPUT_DIR="$BUILD_DIR"
 
 if [ "x$TARGET" != 'x' ]; then
-	OS=${TARGET%%-*}
 	ARCH=${TARGET#*-}
 
     if [ "$ARCH" = "aarch64" ]; then     
@@ -98,8 +112,6 @@ if [ "x$TARGET" != 'x' ]; then
       OUTPUT_NAME="$OUTPUT_NAME""64"
     fi 
 			
-	# CXX_FLAGS="$CXX_FLAGS -DNS_FORMAT_ARGUMENT(A)= -D_Nullable_result=_Nullable -mmacosx-version-min=10.7"
-
     if [ "$ARCH" == "aarch64" ]; then			
         CC_FLAGS="$CC_FLAGS -arch arm64"
         CXX_FLAGS="$CXX_FLAGS -arch arm64"
@@ -119,12 +131,12 @@ if [ "x$TARGET" != 'x' ]; then
 fi
 
 HEADERS="$HEADERS -Ijni-headers/${JNI_MD}"
+JAR="${JAVA_HOME:?Set JAVA_HOME to a JDK}/bin/jar"
 
-rm -rf $BUILD_DIR
-mkdir -p $BUILD_DIR
-mkdir -p $OUTPUT_DIR
+rm -rf "$BUILD_DIR"
+mkdir -p "$BUILD_DIR"
 
-echo "--- Compiling for $TARGET, build type $BUILD"
+echo "--- Compiling $VARIANT for $TARGET, build type $BUILD"
 
 echo "------ Compiling C sources"
 for f in "${CC_SOURCES[@]}"; do
@@ -145,16 +157,37 @@ LINKER=$CXX
 OBJ_FILES=`find $BUILD_DIR -name "*.o"`
 OUTPUT_FILE="$OUTPUT_DIR/$OUTPUT_PREFIX$OUTPUT_NAME$OUTPUT_SUFFIX"
 trace $LINKER $OBJ_FILES $LIBRARIES $LINKER_FLAGS -o "$OUTPUT_FILE"
+if [ "$VARIANT" = launcher ]; then
+    SYMBOLS="$(nm -U "$OUTPUT_FILE")"
+    for CLASS in GLFWWindow GLFWWindowDelegate GLFWApplicationDelegate GLFWContentView; do
+        if ! grep -Fq "_OBJC_CLASS_\$_SpineLauncher$CLASS" <<< "$SYMBOLS"; then
+            echo "Missing launcher Objective-C class: $CLASS" >&2
+            exit 1
+        fi
+    done
+    if grep -Eq '_OBJC_(META)?CLASS_\$_GLFW' <<< "$SYMBOLS"; then
+        echo "Unprefixed GLFW Objective-C class in launcher native" >&2
+        exit 1
+    fi
+    EXPORTS="$(nm -gU "$OUTPUT_FILE")"
+    if ! grep -Fq ' _Java_com_badlogic_jglfw_' <<< "$EXPORTS"; then
+        echo "Missing JNI exports in launcher native" >&2
+        exit 1
+    fi
+    if grep -Eq ' (__?glfw)' <<< "$EXPORTS"; then
+        echo "GLFW internals exported by launcher native" >&2
+        exit 1
+    fi
+fi
 trace $STRIP "$OUTPUT_FILE"
+trace codesign --force --sign - "$OUTPUT_FILE"
 echo
 
-echo "--- Updating spine-editor-natives.jar"
+echo "--- Updating $NATIVES_JAR"
 mkdir -p ../libs/macos
 cp "$OUTPUT_FILE" ../libs/macos
-if test -f ../libs/jglfw-natives.jar; then
-    trace $JAR uf ../libs/jglfw-natives.jar -C "$OUTPUT_DIR" "$OUTPUT_PREFIX$OUTPUT_NAME$OUTPUT_SUFFIX"
+if test -f "$NATIVES_JAR"; then
+    trace "$JAR" uf "$NATIVES_JAR" -C "$OUTPUT_DIR" "$OUTPUT_PREFIX$OUTPUT_NAME$OUTPUT_SUFFIX"
 else
-    trace $JAR cf ../libs/jglfw-natives.jar -C "$OUTPUT_DIR" "$OUTPUT_PREFIX$OUTPUT_NAME$OUTPUT_SUFFIX"
+    trace "$JAR" cf "$NATIVES_JAR" -C "$OUTPUT_DIR" "$OUTPUT_PREFIX$OUTPUT_NAME$OUTPUT_SUFFIX"
 fi
-
-#trace rm -rf $BUILD_DIR

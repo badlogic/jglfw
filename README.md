@@ -52,11 +52,35 @@ Compile
     ant clean compile-natives package
     
 #### Mac
-Install the latest XCode from the Mac OS X App Store. To compile the Mac OS X natives (jglfw/libs/macosx32/libjglfw.dylib, a fat shared lib for 32-/64-bit):
+Install Xcode and set `JAVA_HOME` to a JDK. The current Mac native build is `jglfw/jni/build.sh`:
 
-    ant clean compile-mac-natives
+```bash
+bash jglfw/jni/build.sh --target=macosx --build=release --variant=editor
+bash jglfw/jni/build.sh --target=macosx-aarch64 --build=release --variant=editor
+```
 
-You can add the resulting .dylib to the `jglfw-natives.jar` generated on Linux as shown above.
+`editor` is the default variant and keeps the original `GLFW*` Objective-C names and `libjglfw{64,arm64}.dylib` filenames. `launcher` builds `libjglfw-launcher{64,arm64}.dylib` with `SpineLauncherGLFW*` classes and hidden internal C symbols; JNI exports remain public. Each variant has separate build directories and native JARs. Both are ad-hoc signed after stripping.
+
+To build both architectures and install the launcher variant into a Spine checkout:
+
+```bash
+bash jglfw/jni/build-spine.sh /path/to/spine launcher
+```
+
+This installs `spine-launcher/libs/jglfw-launcher-natives.jar`. Before installation it tests co-loading with Spine's frozen compatibility archive, in both orders, on the host architecture. It does not change editor or compatibility binaries. Build this artifact on a Mac before packaging a new launcher; include the generated JAR when distributing the build inputs.
+
+Use `editor` instead of `launcher` to update `other/spine-backend-jglfw/libs/spine-backend-jglfw-natives.jar` for new editors. Never replace the launcher's frozen compatibility archive with a new editor build.
+
+Checks:
+
+```bash
+# Portable control-flow/packaging fixture; does not compile native code.
+bash jglfw/jni/test-build-variants.sh
+# Real macOS class registration, image ownership, JNI exports and symbol isolation.
+bash jglfw/jni/test-mac-variants.sh /path/to/launcher-natives.jar /path/to/editor-natives.jar
+```
+
+The native test does not initialize GLFW or exercise windows/input. Test actual launcher-to-editor handoff with old bundled-native editors, old fallback-native editors, pre-4.2 replacements and a current editor on Intel and Apple Silicon.
 
 #### Modifying the Wrapper Code
 
