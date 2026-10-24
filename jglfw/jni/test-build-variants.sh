@@ -92,6 +92,10 @@ done
 grep -Fq -- '-fvisibility=hidden' "$LOG"
 grep -Fq -- '-arch arm64' "$LOG"
 grep -Fq -- '-arch x86_64' "$LOG"
+# Launcher arm64 links for macOS 12 (chained fixups); its x86_64 stays at 10.7.
+grep -q -- '-arch arm64 .*-mmacosx-version-min=12.0' "$LOG"
+grep -q -- '-arch x86_64 .*-mmacosx-version-min=10.7' "$LOG"
+! grep -q -- '-arch x86_64 .*-mmacosx-version-min=12' "$LOG"
 [[ "$(grep -c '^codesign ' "$LOG")" -eq 2 ]]
 [[ "$(grep -c '^coload ' "$LOG")" -eq 1 ]]
 cp "$LAUNCHER" "$WORK/launcher-baseline"
@@ -106,6 +110,7 @@ grep -Fxq libjglfw64.dylib "$EDITOR"
 grep -Fxq libjglfwarm64.dylib "$EDITOR"
 ! grep -Fq -- '-DGLFWWindow=' "$LOG"
 ! grep -Fq -- '-fvisibility=hidden' "$LOG"
+! grep -Fq -- '-mmacosx-version-min=12' "$LOG" # Old launchers on macOS 11 can load new editors.
 
 for FAILURE in BAD_CLASS BAD_EXPORT BAD_JNI; do
 	if env "$FAILURE=true" bash "$WORK/jni/build.sh" --target=macosx --variant=launcher > "$WORK/rejected.log" 2>&1; then

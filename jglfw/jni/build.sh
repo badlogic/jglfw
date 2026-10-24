@@ -8,9 +8,9 @@ TARGET=
 
 STRIP="strip -S -x "
 CC=clang
-CC_FLAGS="-c -m64 -Wfatal-errors -Wall -fPIC -mmacosx-version-min=10.7 -D_GLFW_COCOA -D_GLFW_NSGL -D_GLFW_USE_OPENGL -D_GLFW_USE_MENUBAR -DNS_FORMAT_ARGUMENT(A)= -D_Nullable_result=_Nullable"
+CC_FLAGS="-c -m64 -Wfatal-errors -Wall -fPIC -D_GLFW_COCOA -D_GLFW_NSGL -D_GLFW_USE_OPENGL -D_GLFW_USE_MENUBAR -DNS_FORMAT_ARGUMENT(A)= -D_Nullable_result=_Nullable"
 CXX=clang
-CXX_FLAGS="-c -m64 -Wfatal-errors -Wall -std=c++11 -stdlib=libc++ -fPIC -mmacosx-version-min=10.7 -D_GLFW_COCOA -D_GLFW_NSGL -D_GLFW_USE_OPENGL -D_GLFW_USE_MENUBAR -DNS_FORMAT_ARGUMENT(A)= -D_Nullable_result=_Nullable"
+CXX_FLAGS="-c -m64 -Wfatal-errors -Wall -std=c++11 -stdlib=libc++ -fPIC -D_GLFW_COCOA -D_GLFW_NSGL -D_GLFW_USE_OPENGL -D_GLFW_USE_MENUBAR -DNS_FORMAT_ARGUMENT(A)= -D_Nullable_result=_Nullable"
 
 HEADERS="-I./ -Iglfw-3.0/include -Iglfw-3.0/src -Igl-headers/ -Ijni-headers"
 CC_SOURCES=(
@@ -39,7 +39,8 @@ CXX_SOURCES=(
     "com.badlogic.jglfw.utils.Memory.cpp"
 )
 
-LINKER_FLAGS="-shared -m64 -framework Cocoa -framework OpenGL -framework IOKit -lpthread -mmacosx-version-min=10.7"
+LINKER_FLAGS="-shared -m64 -framework Cocoa -framework OpenGL -framework IOKit -lpthread"
+MACOS_MIN=10.7
 LIBRARIES="-lm"
 
 JNI_MD="mac"
@@ -113,6 +114,8 @@ if [ "x$TARGET" != 'x' ]; then
     fi 
 			
     if [ "$ARCH" == "aarch64" ]; then			
+        # Apple Silicon launchers require macOS 12: imports bind with chained fixups into read-only __DATA_CONST.
+        if [ "$VARIANT" = launcher ]; then MACOS_MIN=12.0; fi
         CC_FLAGS="$CC_FLAGS -arch arm64"
         CXX_FLAGS="$CXX_FLAGS -arch arm64"
         LINKER_FLAGS="$LINKER_FLAGS -arch arm64"
@@ -121,6 +124,9 @@ if [ "x$TARGET" != 'x' ]; then
         CXX_FLAGS="$CXX_FLAGS -arch x86_64"
         LINKER_FLAGS="$LINKER_FLAGS -arch x86_64"
     fi	
+    CC_FLAGS="$CC_FLAGS -mmacosx-version-min=$MACOS_MIN"
+    CXX_FLAGS="$CXX_FLAGS -mmacosx-version-min=$MACOS_MIN"
+    LINKER_FLAGS="$LINKER_FLAGS -mmacosx-version-min=$MACOS_MIN"
 
 	if [ "$BUILD" = "debug" ]; then
 		CXX_FLAGS="$CXX_FLAGS -g"
